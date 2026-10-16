@@ -166,6 +166,28 @@
         return '';
     }
 
+    function clearHeld(el) {
+        if (!el.hasAttribute('data-spcc-src')) {
+            return;
+        }
+        if (el.tagName === 'SCRIPT') {
+            var type = el.getAttribute('data-spcc-type');
+            if (type) {
+                set.call(el, 'type', type);
+            } else {
+                remove.call(el, 'type');
+            }
+        }
+        var box = el.tagName === 'IFRAME' ? el.closest('.spcc-embed') : null;
+        each(['data-spcc-src', 'data-spcc-service', 'data-spcc-category', 'data-spcc-type'], function (name) {
+            remove.call(el, name);
+        });
+        if (box) {
+            insert.call(box.parentNode, el, box);
+            box.remove();
+        }
+    }
+
     // Runs BEFORE insertion or a connected element's src setter. Observers
     // alone cannot prevent a request (or a script executing synchronously).
     function hold(el, src) {
@@ -181,10 +203,12 @@
         var category = services[id] ? services[id].category : id.slice(7);
         if (!id) {
             matched.delete(el);
+            clearHeld(el);
             return false;
         }
         matched.set(el, { id: id, category: category });
         if (spcc.allows(id, category)) {
+            clearHeld(el);
             return false;
         }
         set.call(el, 'data-spcc-service', id);

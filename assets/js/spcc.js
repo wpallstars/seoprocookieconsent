@@ -88,6 +88,15 @@
         var wait = src && !old.hasAttribute('async');
         if (src) {
             s.async = old.hasAttribute('async');
+            if (old.hasAttribute('data-spcc-src')) {
+                // Runtime loaders attach listeners to the original node.
+                // Relay completion from the executable replacement to it.
+                ['load', 'error'].forEach(function (name) {
+                    s.addEventListener(name, function () {
+                        old.dispatchEvent(new w.Event(name));
+                    });
+                });
+            }
             if (wait) {
                 s.onload = s.onerror = function () {
                     run(queue, i + 1);
@@ -119,8 +128,9 @@
             }
             var frame = box.querySelector('iframe[data-spcc-src]');
             if (frame) {
-                frame.setAttribute('src', frame.getAttribute('data-spcc-src'));
+                var src = frame.getAttribute('data-spcc-src');
                 strip(frame);
+                frame.setAttribute('src', src);
                 box.parentNode.insertBefore(frame, box);
             }
             box.parentNode.removeChild(box);
