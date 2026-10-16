@@ -83,7 +83,7 @@ final class SEOProCookieConsent_Thumbnails {
             $data     = json_decode($response, true);
             $url      = is_array($data) && isset($data[0]['thumbnail_large']) ? $data[0]['thumbnail_large'] : '';
             // Only Vimeo's image CDN, never an arbitrary oEmbed/API-supplied host.
-            if (!is_string($url) || !preg_match('#^https://i\.vimeocdn\.com/video/[A-Za-z0-9_./-]+$#D', $url)) {
+            if (!is_string($url) || !preg_match('#^https://i\.vimeocdn\.com/video/[A-Za-z0-9_./-]+(?:\?[A-Za-z0-9_%=&.-]+)?$#D', $url)) {
                 return;
             }
         }

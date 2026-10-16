@@ -23,6 +23,7 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 |---|---|---|
 | Services | `includes/class-seoprocookieconsent-services.php` | Categories, the known services (match patterns, cookies, privacy links) and what the site was seen using. |
 | Blocker | `includes/class-seoprocookieconsent-blocker.php` | Output buffer on front-end HTML: holds back matching `<script>` and `<iframe>` tags and wraps iframes in a placeholder. |
+| Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs. |
 | Consent | `includes/features/class-seoprocookieconsent-consent.php` | The feature: settings, buffer start, head config, banner and dialog markup, footer menu link, Cookie settings shortcode and block. |
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
 | Front end | `assets/js/spcc.js`, `assets/css/spcc.css` | Region decision, consent cookie, banner and dialog, releasing held-back tags, Google Consent Mode and WP Consent API signals. |
@@ -49,6 +50,21 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
   settings card, so the owner can add any that set cookies to Also hold
   back. Records are written only when something new is seen, never on
   every page.
+
+## Local thumbnails
+
+The blocker reads a non-autoloaded option per validated provider/video ID and
+queues one `seoprocookieconsent_thumbnail` event on a cache miss. No provider
+HTTP runs during rendering. Cron uses fixed provider endpoints, rejects
+redirects, limits response size, validates JPEG bytes and writes only under
+`uploads/seoprocookieconsent-thumbnails`. Vimeo metadata may point only to
+its HTTPS image CDN. Failed attempts are held for a day; unsupported/private
+videos retain the plain placeholder. Disabled consent stops downloads.
+
+The browser receives only a same-host uploads URL, never a provider or external
+CDN URL. Markup is visitor-independent, and existing page caches need their
+normal refresh before a newly downloaded image appears. Uninstall clears
+the event, all thumbnail options and cached JPEGs on every site.
 
 ## Regions
 
@@ -107,6 +123,6 @@ starting point, not legal advice: the README says so.
 ## Not yet
 
 Tracked as issues: Terms and conditions generator (Complianz Terms &
-Conditions), consent records, local video thumbnails, scripts added
+Conditions), consent records, scripts added
 after page load (lightboxes), a Scan now button and first-run guide,
 and per-language banner text beyond translations.
