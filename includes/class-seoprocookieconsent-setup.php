@@ -33,7 +33,13 @@ final class SEOProCookieConsent_Setup {
      * Each lives in includes/features/class-{lowercase-hyphenated-name}.php,
      * for example SEOProCookieConsent_Example in class-seoprocookieconsent-example.php.
      */
-    const FEATURES = array();
+    const FEATURES = array(
+        'SEOProCookieConsent_Consent',
+        'SEOProCookieConsent_Policy',
+    );
+
+    /** Handle of the editor script for the plugin's blocks. */
+    const BLOCKS_SCRIPT = 'seoprocookieconsent-blocks';
 
     /**
      * Features that some builds leave out, loaded only when their file is
@@ -47,8 +53,9 @@ final class SEOProCookieConsent_Setup {
      * After a release, bump it for a new or changed import and add a line.
      *
      * v1: first version.
+     * v2: imports Complianz's region and consent expiry settings.
      */
-    const DB_VERSION = 1;
+    const DB_VERSION = 2;
 
     /**
      * Renamed tab slugs, old => new. Settings that still use an old slug
@@ -84,6 +91,62 @@ final class SEOProCookieConsent_Setup {
      * Load the plugin's own helpers, before the features.
      */
     public static function load() {
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-services.php';
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-blocker.php';
+    }
+
+    /**
+     * A plugin file's version for its asset URL: its modified time, or the
+     * plugin version when that can't be read.
+     *
+     * @param string $file Path relative to the plugin folder.
+     * @return string
+     */
+    public static function asset_version($file) {
+        $time = file_exists(SEOPROCOOKIECONSENT_DIR . $file) ? filemtime(SEOPROCOOKIECONSENT_DIR . $file) : false;
+        return false === $time ? SEOPROCOOKIECONSENT_VERSION : (string) $time;
+    }
+
+    /**
+     * Register a server-rendered block, seoprocookieconsent/{name}, shown
+     * in the editor with ServerSideRender (assets/js/blocks.js).
+     *
+     * @param string   $name   Block name without the namespace.
+     * @param array    $meta   title, description, icon (a Dashicon name).
+     * @param callable $render Returns the block's HTML.
+     */
+    public static function register_block($name, array $meta, callable $render) {
+        if (!function_exists('register_block_type')) {
+            return;
+        }
+        if (!wp_script_is(self::BLOCKS_SCRIPT, 'registered')) {
+            wp_register_script(
+                self::BLOCKS_SCRIPT,
+                SEOPROCOOKIECONSENT_URL . 'assets/js/blocks.js',
+                array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-server-side-render'),
+                self::asset_version('assets/js/blocks.js'),
+                true
+            );
+        }
+        $block = array(
+            'name'        => 'seoprocookieconsent/' . $name,
+            'title'       => (string) $meta['title'],
+            'description' => (string) $meta['description'],
+            'icon'        => (string) $meta['icon'],
+        );
+        wp_add_inline_script(self::BLOCKS_SCRIPT, 'window.spccBlocks=(window.spccBlocks||[]).concat(' . wp_json_encode(array($block)) . ');', 'before');
+        register_block_type($block['name'], array(
+            'api_version'           => '2',
+            'title'                 => $block['title'],
+            'description'           => $block['description'],
+            'icon'                  => $block['icon'],
+            'category'              => 'widgets',
+            'supports'              => array('html' => false),
+            'editor_script_handles' => array(self::BLOCKS_SCRIPT),
+            'render_callback'       => function () use ($render) {
+                return (string) call_user_func($render);
+            },
+        ));
     }
 
     /**
@@ -114,9 +177,13 @@ final class SEOProCookieConsent_Setup {
      */
     public static function settings_tabs() {
         return array(
-            'general' => array(
-                'label'       => __('General', 'seoprocookieconsent'),
-                'description' => __('SEO Pro Cookie Consent\'s settings appear here as features are added.', 'seoprocookieconsent'),
+            'consent'  => array(
+                'label'       => __('Consent', 'seoprocookieconsent'),
+                'description' => __('Hold back cookies until visitors allow them, with a short banner only where it is needed.', 'seoprocookieconsent'),
+            ),
+            'policies' => array(
+                'label'       => __('Policies', 'seoprocookieconsent'),
+                'description' => __('A cookie policy that keeps itself up to date, inside pages you write.', 'seoprocookieconsent'),
             ),
         );
     }

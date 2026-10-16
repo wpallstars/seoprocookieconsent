@@ -20,7 +20,9 @@
 
 Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme.
 
-SEO Pro Cookie Consent is what wpallstars plugins are made from. It has no features of its own: it holds the parts every plugin needs, built and tested in real plugins, so a new plugin starts with them working and spends its time on what makes it different.
+SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. It replaces Complianz, with nothing to scan, no wizard to finish and nothing sent to outside services.
+
+It is a tool, not legal advice: check its defaults and your policy text with whoever advises you on privacy law.
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
@@ -44,32 +46,35 @@ Version: 0.1.0
 
 ## What you get
 
-- **A settings screen** (Settings → SEO Pro Cookie Consent) that features fill by declaring their settings: switches, numbers, text, lists, choices and Media Library pictures, saved instantly with no Save button, searchable, in tabs. With no features yet it shows one empty tab.
-- **Multisite**: the same screen for the whole network, whose settings new sites start with. Apply a card to every site so sites cannot change it, see which sites have settings of their own, and make every site the same (Multisite below).
-- **A Read Me tab** that shows this file, banner included, so users read the same guide inside WordPress as on GitHub.
-- **Admin colour mode**: Light, Dark or System from the header, saved per person and shared with other wpallstars colour-mode controls. System follows the computer live, including on network settings and the plugin's own screens with the shared header.
-- **Features as classes**: one file per feature, off by default, with settings, hooks, one-off imports from the plugins it replaces and clean uninstall.
-- **Replaced plugins**: a feature that does another plugin's job imports its settings once, waits while that plugin is active, and the Plugins screen suggests deactivating and deleting it.
-- **Updates from GitHub**: the shared wpallstars updater (`includes/github-updater/`). Sites get each GitHub release as a normal WordPress update. Every wpallstars plugin carries a copy and only the newest copy on a site runs, so they are all checked together, once. Update checks that fall due while someone opens an admin screen run in WP-Cron instead, so the screen does not wait for update servers.
-- **Two builds of each version**: the GitHub release, and a WordPress.org build without the updater, as WordPress.org requires.
-- **Scripts and CI**: lint (PHP 7.4, WordPress coding and security rules, PHPStan), a smoke test on a real WordPress, the release build, a preflight check of both zips, Plugin Check, a preview site, the banner and icon build, and `scripts/sync-core.sh` to keep each plugin's shared parts the same as the starter's.
-- **Shared rules for people and AI**: `STANDARDS.md` (structure, code rules, performance, releases, styling, testing), `DEVELOPMENT.md` (set-up and checks) and `RELEASING.md`, the same in every plugin made from the starter.
+SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free and Pro editions counted separately. The one that can be downloaded is 7.6 MB zipped; SEO Pro Cookie Consent is 278 KB.
 
-## Start a plugin
+- **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
+- **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
+- **A short, fair banner.** Accept all and Reject all look the same, Settings opens a dialog with one switch per kind of cookie, and the message names what is on the page ("This page uses YouTube and Google Analytics…"). A bar along the bottom, or a box at the bottom left or right.
+- **Videos and maps with a Load button.** A held-back YouTube video, map or post shows a placeholder the same size, with a button that loads just that one.
+- **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
+- **Easy to change your mind.** A Cookie settings link joins your footer menu (or a small button shows after visitors choose), and any link to `#cookie-settings` opens it. Taking consent back removes those services' cookies and reloads the page so they stop.
+- **Global Privacy Control** turns marketing off where visitors are not asked first.
+- **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
+- **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
+- **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
+- **Replaces Complianz.** Its region and expiry settings are imported once, and while Complianz is active this waits, so two banners never show.
 
-1. On GitHub, choose **Use this template** to make your repository, and clone it.
-2. Give it its names: `scripts/rename-plugin.sh --slug my-plugin --name "My Plugin" --prefix MyPlugin`. Add `--css mp` for a short CSS prefix and `--repo owner/repo` if it is not under wpallstars. Put in your own details too, or the plugin keeps the starter's: `--description`, `--author`, `--author-uri`, `--contributors` (WordPress.org usernames) and `--donate` (a link, or `none`); `--help` lists them all. The new plugin starts at version 0.1.0 (`--version` for another) with a changelog of its own. Review with `git diff`, then commit.
-3. Replace this README, `readme.txt`, `changelog.txt`, `AGENTS.md` and `LAUNCH.md` with your plugin's own, its banner and icon (`.wordpress-org/banner.svg` and `icon.svg`, then `scripts/build-banner.sh`), and screenshots (`.wordpress-org/screenshot-N.png` with captions in `readme.txt`, and GitHub-only ones in `docs/images/`). The renamer starts `LAUNCH.md` with a private pre-launch state and a Before 1.0 checklist, and `AGENTS.md` with the plugin's names and a line to say what it does; keep both current as the plugin, its releases, services and submissions change. Keep the licence and the starter's credit, as its licence requires (`ATTRIBUTION.txt`, `STANDARDS.md` → Structure): GPL-3.0-or-later, `LICENSE`, `ATTRIBUTION.txt`, the licence lines at the top of each file, both copyright lines in the main file and this README's License section, and the "Made from" line here and in `readme.txt`. The renamer gives the plugin its own Provenance ID (`scripts/provenance.sh`); keep the Provenance lines too. Please keep the rest of the Built with AI section too.
-4. Add features: a class in `includes/features/` listed in `MyPlugin_Setup::FEATURES` (see Developers below and `STANDARDS.md`).
-5. Keep the shared parts up to date: change them in the starter first, then run `scripts/sync-core.sh` in each plugin (`--check` lists what differs).
+For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
 
-The easiest way to do all of this is with [aidevops](https://aidevops.sh): open the repository with it and describe the plugin you want. It reads `AGENTS.md` and the guidance it lists, builds the features, tests them on a real site and runs the release checks. Any AI assistant works the same way: `AGENTS.md` (or `CLAUDE.md`, which points to it) tells it what to read first, and `ATTRIBUTION.txt` tells it what every copy keeps.
+## Set it up
+
+1. Go to **Settings → SEO Pro Cookie Consent → Consent** and switch on **Cookie consent**.
+2. Open a few pages of your site. The card lists what was found.
+3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
+
+That is all. Under Options you can choose who is asked first, where the banner sits, its message and the policy page it links to. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
 
 ## Where to find it
 
 Go to **Settings → SEO Pro Cookie Consent**. The screen has two groups of tabs:
 
-- **Settings**: General, empty until features add settings. Changes save instantly; there is no Save button. **Search features** (next to the plugin name) finds settings on every tab.
+- **Settings**: Consent and Policies. Changes save instantly; there is no Save button. **Search features** (next to the plugin name) finds settings on every tab.
 - **About**: this Read Me.
 
 On a multisite network, super admins also have **Network Admin → Settings → SEO Pro Cookie Consent** (Multisite below).
@@ -114,6 +119,17 @@ Mark test builds as pre-releases on GitHub (or tag them with letters, such as `v
 
 A feature is a class in `includes/features/class-seoprocookieconsent-{name}.php` that extends `SEOProCookieConsent_Feature`, listed in `SEOProCookieConsent_Setup::FEATURES`. It declares its settings in `settings()`, adds its hooks in `boot()` (returning early unless `self::enabled()`), and can import another plugin’s settings once in `migrate()` with `self::import_setting()`. Anything only this plugin needs goes in `SEOProCookieConsent_Setup` (`includes/class-seoprocookieconsent-setup.php`): features, settings tabs, header links, settings version, `MENU_PARENT` (its own top-level menu, if any, which then holds the settings screen as **Settings**) and its own helpers. Link to the settings screen with `SEOProCookieConsent_Admin_Manager::page_url()` or `tab_url()`. A screen of the plugin's own shows the settings screen's header: call `SEOProCookieConsent_Admin_Manager::enqueue_header()` on `admin_enqueue_scripts`, then print `<div class="wrap spcc-wrap">`, `SEOProCookieConsent_Admin_Manager::render_header()`, `<hr class="wp-header-end">` and the screen's content in `<div class="spcc-main">`; sections go between the last two as the settings screen's tabs (`<nav class="spcc-nav">` with `<a class="spcc-nav__tab">` links, the one shown `is-active`), and `SEOProCookieConsent_Admin_Page::title_section( 'Section name' )` on the screen's `load-{hook}` action puts the section shown after the screen's name in the browser title, as the settings screen does for its tabs. `admin/css/seoprocookieconsent-header.css` styles only those and the header, so the content keeps its styles. The other files in `includes/` and `admin/` are the starter’s core files: `STANDARDS.md` → Structure.
 
+How consent works inside (holding back, regions, the consent cookie and signals): `docs/architecture.md` in the repository.
+
+Consent filters and browser API:
+
+- `seoprocookieconsent_services`: add or change the services held back and listed in the cookie policy (ID => `name`, `category` of preferences, statistics, embeds or marketing, `patterns` found in a script's or iframe's address or an inline script, `privacy` link, `cookies` as name => purpose and how long, and `embed`, a word for the Load button such as "video").
+- `seoprocookieconsent_hold_back`: return false to leave a page's scripts alone (page builders' editing views are skipped already).
+- `seoprocookieconsent_front_config`: change what the browser reads; set `model` to `opt-in`, `opt-out` or `quiet` to decide on the server, only on sites without page caching.
+- Skip one tag with a `data-spcc-ignore` attribute.
+- In the browser: `spcc.has('statistics')`, `spcc.open()` and the `spcc:consent` event on `document` (detail: `categories`, `services`, `model`); Google Tag Manager gets a `spcc_consent_update` event.
+- Shortcodes: `[spcc_cookie_policy]` and `[spcc_cookie_settings label="Cookie settings"]`; blocks: Cookie policy and Cookie settings button.
+
 Filters:
 
 - `seoprocookieconsent_features`: register a feature class that extends `SEOProCookieConsent_Feature`.
@@ -141,9 +157,14 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 
 ## Uninstall
 
-Deleting the plugin removes its settings (on multisite, every site's and the network's), its cached data, who hid lines of the Plugins screen notice about replaced plugins, and the cached GitHub releases.
+Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins, and the cached GitHub releases.
 
 ## Changelog
+
+### Unreleased
+
+- Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
+- Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
 
 ### 0.1.0
 

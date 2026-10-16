@@ -28,6 +28,8 @@ function seoprocookieconsent_uninstall_site() {
     delete_option('seoprocookieconsent_network_seen');
     // The network option's save lock (main site only), if a save stopped.
     delete_option('seoprocookieconsent_network_lock');
+    // Services and hosts Cookie consent found on the site's pages.
+    delete_option('seoprocookieconsent_seen');
 
     $patterns = array('_transient_seoprocookieconsent_', '_transient_timeout_seoprocookieconsent_');
     foreach ($patterns as $pattern) {
