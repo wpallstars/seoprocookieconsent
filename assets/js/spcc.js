@@ -19,7 +19,8 @@
     var banner = d.getElementById('spcc-banner');
     var dialog = d.getElementById('spcc-dialog');
     var reopen = d.querySelector('.spcc-reopen');
-    var ran = {};
+    var ran = spcc.ran = spcc.ran || {};
+    var queued = new WeakSet();
     var opener = null;
 
     function each(list, fn) {
@@ -34,7 +35,7 @@
     var held = Object.keys(page).length > 0;
 
     function serviceName(id) {
-        return c.services && c.services[id] ? c.services[id].name : '';
+        return c.services && c.services[id] ? c.services[id].name : c.text.content;
     }
 
     function list(names) {
@@ -64,6 +65,11 @@
             return;
         }
         var old = queue[i];
+        if (!old.isConnected || !spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+            queued.delete(old);
+            run(queue, i + 1);
+            return;
+        }
         var s = d.createElement('script');
         each(old.attributes, function (a) {
             if (a.name !== 'type' && a.name.indexOf('data-spcc-') !== 0) {
@@ -75,10 +81,22 @@
             s.type = type;
         }
         ran[old.getAttribute('data-spcc-category')] = 1;
-        var src = old.getAttribute('src');
+        var src = old.getAttribute('data-spcc-src') || old.getAttribute('src');
+        if (src) {
+            s.setAttribute('src', src);
+        }
         var wait = src && !old.hasAttribute('async');
         if (src) {
             s.async = old.hasAttribute('async');
+            if (old.hasAttribute('data-spcc-src')) {
+                // Runtime loaders attach listeners to the original node.
+                // Relay completion from the executable replacement to it.
+                ['load', 'error'].forEach(function (name) {
+                    s.addEventListener(name, function () {
+                        old.dispatchEvent(new w.Event(name));
+                    });
+                });
+            }
             if (wait) {
                 s.onload = s.onerror = function () {
                     run(queue, i + 1);
@@ -88,6 +106,7 @@
             s.text = old.text;
         }
         old.parentNode.replaceChild(s, old);
+        queued.delete(old);
         if (!wait) {
             run(queue, i + 1);
         }
@@ -96,7 +115,8 @@
     function release() {
         var queue = [];
         each(d.querySelectorAll('script[type="text/plain"][data-spcc-category]'), function (old) {
-            if (spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+            if (!queued.has(old) && spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+                queued.add(old);
                 queue.push(old);
             }
         });
@@ -108,8 +128,9 @@
             }
             var frame = box.querySelector('iframe[data-spcc-src]');
             if (frame) {
-                frame.setAttribute('src', frame.getAttribute('data-spcc-src'));
+                var src = frame.getAttribute('data-spcc-src');
                 strip(frame);
+                frame.setAttribute('src', src);
                 box.parentNode.insertBefore(frame, box);
             }
             box.parentNode.removeChild(box);
@@ -402,15 +423,25 @@
         showBanner();
         return;
     }
+    // The head observer also catches lightboxes on pages initially empty of
+    // services. Reuse the same release, banner and dialog state, not a second UI.
+    spcc.refresh = function () {
+        Object.keys(spcc.dynamicPage || {}).forEach(function (id) {
+            page[id] = spcc.dynamicPage[id];
+        });
+        held = Object.keys(page).length > 0;
+        release();
+        if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
+            showBanner();
+        } else {
+            showReopen();
+        }
+    };
+
     if (w.location.hash === '#cookie-settings') {
         open();
     }
-    release();
-    if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
-        showBanner();
-    } else {
-        showReopen();
-    }
+    spcc.refresh();
     if (spcc.choice || spcc.model !== 'opt-in') {
         signal();
     }

@@ -49,6 +49,26 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
   settings card, so the owner can add any that set cookies to Also hold
   back. Records are written only when something new is seen, never on
   every page.
+- `spcc-head.js` also guards dynamic script and iframe sources and common
+  DOM insertion methods before they can start requests. Markup inserted by
+  `innerHTML`, `outerHTML` or `insertAdjacentHTML` is checked in an inert
+  template first. The early `MutationObserver` watches added subtrees and
+  source changes, wraps held iframes, and tells `spcc.js` to refresh the
+  existing banner, category rows and release queue. An observer alone is
+  too late to stop script execution or iframe navigation.
+- Browser matching uses compact URL fragments from the same service list,
+  not the built-in inline-code signatures or cookies' descriptions. Keep
+  paths where a shared host serves several purposes (Google tags versus
+  reCAPTCHA); Also hold back, Never hold back and Google advanced mode
+  retain their precedence. Dynamic matches are page-local: no reporting
+  request or database write is added. A dynamic script's source is kept in
+  `data-spcc-src` until release, and each queued script runs only once.
+- This is not a browser-wide network firewall: scripts must not run before
+  `spcc-head`, and optimizers must not delay or reorder it. Unintercepted
+  parser APIs (`document.write`, range fragments), shadow roots, other
+  documents, inline-only injected code, `srcdoc`, fetch/XHR and scripts
+  using saved native methods are outside dynamic URL blocking. Integrations
+  using those paths must consult `spcc.allows()` before loading content.
 
 ## Regions
 
@@ -138,6 +158,6 @@ reloads after each Consent setting saves
 
 ## Not yet
 
-Tracked as issues: consent records, local video thumbnails, scripts added
-after page load (lightboxes), a Scan now button and first-run guide,
+Tracked as issues: consent records, local video thumbnails,
+a Scan now button and first-run guide,
 and per-language banner text beyond translations.
