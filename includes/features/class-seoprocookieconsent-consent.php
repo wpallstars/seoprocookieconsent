@@ -184,17 +184,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if ($from_version >= 2) {
             return $options;
         }
-        $cmplz = get_option('cmplz_options', array());
-        if (!is_array($cmplz) || empty($cmplz)) {
-            return $options;
-        }
-        if (array_key_exists('use_country', $cmplz)) {
-            $options = self::import_setting($options, 'consent_regions', !empty($cmplz['use_country']) ? 'region' : 'everywhere');
-        }
-        if (!empty($cmplz['cookie_expiry']) && is_numeric($cmplz['cookie_expiry'])) {
-            $options = self::import_setting($options, 'consent_days', (int) $cmplz['cookie_expiry']);
-        }
-        return $options;
+        return SEOProCookieConsent_Migrate::legacy_settings($options);
     }
 
     /**
@@ -343,6 +333,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'days'       => (int) SEOProCookieConsent_Settings::get('consent_days'),
             'cookie'     => self::COOKIE,
             'secure'     => is_ssl(),
+            'migrate'    => SEOProCookieConsent_Migrate::front_config(),
             'records'    => SEOProCookieConsent_Settings::get('consent_records') ? rest_url('seoprocookieconsent/v1/records') : '',
             'policy'     => wp_html_excerpt((string) SEOProCookieConsent_Settings::get('consent_policy_version'), 100, ''),
             'categories' => SEOProCookieConsent_Services::optional_categories(),

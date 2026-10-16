@@ -30,6 +30,10 @@ function seoprocookieconsent_uninstall_site() {
     delete_option('seoprocookieconsent_network_lock');
     // Services and hosts Cookie consent found on the site's pages.
     delete_option('seoprocookieconsent_seen');
+    // Only our import history/configuration; never run source cleanup on uninstall.
+    delete_option('seoprocookieconsent_imports');
+    delete_option('seoprocookieconsent_migrate');
+    delete_option('seoprocookieconsent_import_lock');
     delete_option('seoprocookieconsent_records_schema');
     wp_clear_scheduled_hook('seoprocookieconsent_records_cleanup');
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- remove only this site's own table on uninstall.
