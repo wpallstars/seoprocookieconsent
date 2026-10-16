@@ -41,6 +41,11 @@ palette of their own.
 - Placeholders keep the embed's size (its width and height, or core's
   responsive wrapper) with a translucent tint, centred text, a Load
   button and a Cookie settings text button.
+- YouTube and Vimeo can show a decorative, locally cached thumbnail cropped
+  to fill the existing placeholder. The notice has a 96%-opaque theme-surface
+  scrim behind it so text and buttons keep their light/dark contrast. Missing
+  images keep the plain tint; no new motion or breakpoints. Actions continue
+  wrapping on phones, with existing 44px touch targets.
 - Focus outlines are 2px in the strong text colour. Only the switches
   animate, and only without reduced motion.
 
