@@ -216,13 +216,35 @@
         }
         var before = current();
         var beforeServices = keptServices();
+        var recordId = spcc.choice && spcc.choice.id;
         spcc.choice = { v: c.version, c: cats, s: services || [], m: mode, t: Math.floor(Date.now() / 1000) };
+        if (c.records && w.crypto && w.crypto.getRandomValues) {
+            try {
+                if (!recordId || !/^[a-f0-9]{32}$/.test(recordId)) {
+                    var bytes = new Uint8Array(16);
+                    w.crypto.getRandomValues(bytes);
+                    recordId = Array.prototype.map.call(bytes, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+                }
+                spcc.choice.id = recordId;
+                spcc.choice.policy = c.policy;
+            } catch (e) {
+                // Optional recording must never stop a local consent choice.
+            }
+        }
         if (pending) {
             spcc.choice.p = 1;
         }
         var cookie = (c.cookie || 'spcc_consent') + '=' + encodeURIComponent(JSON.stringify(spcc.choice))
             + '; Max-Age=' + (Math.max(1, c.days || 365) * 86400) + '; Path=/; SameSite=Lax' + (c.secure ? '; Secure' : '');
         d.cookie = cookie;
+        if (c.records && spcc.choice.id && w.navigator.sendBeacon) {
+            // Best effort: never delay consent or a withdrawal's page reload.
+            try {
+                w.navigator.sendBeacon(c.records, new Blob([JSON.stringify(spcc.choice)], { type: 'application/json' }));
+            } catch (e) {
+                // A blocked transport cannot change the visitor's choice.
+            }
+        }
         if (!pending) {
             hideBanner();
         }

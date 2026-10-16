@@ -23,6 +23,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
 * **Cookie settings** link in the footer menu, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
+* **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after the consent lifetime. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
 * **Replaces Complianz**: imports its region and expiry settings once.
 * **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
@@ -70,6 +71,10 @@ Ask aidevops (https://aidevops.sh): open the plugin's repository, or your site, 
 
 With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cron (External services below). The browser loads only the local copy before consent. Other held-back services load according to the visitor's region and choices.
 
+= Can I keep consent records? =
+
+Enable Keep consent records under Consent, then reload settings for Export consent records (CSV). Each choice sends a best-effort request to your own site; ordinary page views send none. Records include an anonymous cookie ID, choices, times and your policy version label, not IP addresses or browser details. They are self-reported, not authenticated proof. Keep policy text separately, clear page caches after settings changes, and disclose records in your privacy policy. WP-Cron removes expired records in batches even with recording off; uninstall removes them all. See README.md for limits.
+
 = When do versions reach WordPress.org? =
 
 GitHub releases are the stable beta channel: each version comes out there first. WordPress.org gets it 30 days later, except security releases, which come out on both at once.
@@ -86,6 +91,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
+* Optional consent records, CSV export and automatic retention; off by default.
 * Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.
 * Hold back recognised scripts and iframes added after page load, including lightboxes.
 * Local YouTube and Vimeo thumbnails, downloaded by WP-Cron without pre-consent browser requests to those services.

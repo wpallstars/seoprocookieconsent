@@ -3,6 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
+* Optional consent records: anonymous cookie ID, category/service choices, model, browser and receipt times, and policy label; admin-only CSV export, indexed per-site storage, bounded cron retention and uninstall cleanup. Off by default, with no ordinary page-view request or IP logging.
 * Consent card: Scan now samples up to eight public same-origin pages with bounded loopback requests, updates findings in place and reports blocked requests; a three-step guide explains enabling consent, checking findings and adding the Cookie policy block.
 * Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 * Terms and conditions: off-by-default block and [spcc_terms] shortcode; business, country, offering, returns and contact answers; optional plain-text wording override; one-time import of unset Complianz Terms & Conditions identity/contact answers, leaving source options and pages unchanged.

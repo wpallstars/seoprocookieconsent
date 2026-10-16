@@ -146,6 +146,20 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'label'       => __('Load Google tags before consent (Consent Mode advanced)', 'seoprocookieconsent'),
                 'description' => __('Google Analytics, Ads and Tag Manager load straight away and are told consent is denied until visitors allow it, so Google sends cookieless pings. Leave off unless your Google set-up needs it.', 'seoprocookieconsent'),
             ),
+            'consent_records'          => array(
+                'type'        => 'bool',
+                'default'     => false,
+                'parent'      => self::KEY,
+                'label'       => __('Keep consent records', 'seoprocookieconsent'),
+                'description' => __('Optional anonymous choice history, stored on this site for the same lifetime as choices. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored.', 'seoprocookieconsent'),
+            ),
+            'consent_policy_version'   => array(
+                'type'        => 'text',
+                'default'     => '1',
+                'parent'      => self::KEY,
+                'label'       => __('Policy version', 'seoprocookieconsent'),
+                'description' => __('A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text.', 'seoprocookieconsent'),
+            ),
             'consent_days'             => array(
                 'type'        => 'int',
                 'default'     => 365,
@@ -327,6 +341,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'days'       => (int) SEOProCookieConsent_Settings::get('consent_days'),
             'cookie'     => self::COOKIE,
             'secure'     => is_ssl(),
+            'records'    => SEOProCookieConsent_Settings::get('consent_records') ? rest_url('seoprocookieconsent/v1/records') : '',
+            'policy'     => wp_html_excerpt((string) SEOProCookieConsent_Settings::get('consent_policy_version'), 100, ''),
             'categories' => SEOProCookieConsent_Services::optional_categories(),
             'labels'     => $labels,
             'services'   => $services,
@@ -569,6 +585,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         echo '<div data-spcc-findings>';
         self::findings();
         echo '</div></div>';
+        SEOProCookieConsent_Records::panel();
         if (self::enabled()) {
             self::preview_panel();
         }
