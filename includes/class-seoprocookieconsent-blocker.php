@@ -227,14 +227,16 @@ final class SEOProCookieConsent_Blocker {
         $width  = (int) $tags->get_attribute('width');
         $height = (int) $tags->get_attribute('height');
         $style  = $width > 0 && $height > 0 ? sprintf('aspect-ratio:%d/%d;max-width:%dpx', $width, $height, $width) : '';
+        $image  = SEOProCookieConsent_Thumbnails::url($service, $src);
 
         return sprintf(
-            '<div class="spcc-embed" data-spcc-embed="%1$s" data-spcc-category="%2$s"%3$s>%4$s%5$s</div>',
+            '<div class="spcc-embed" data-spcc-embed="%1$s" data-spcc-category="%2$s"%3$s>%6$s%4$s%5$s</div>',
             esc_attr($service),
             esc_attr($category),
             '' !== $style ? ' style="' . esc_attr($style) . '"' : '',
             $tags->get_updated_html(),
-            self::notice($service, $category)
+            self::notice($service, $category),
+            '' !== $image ? '<img class="spcc-embed__thumbnail" src="' . esc_url($image) . '" alt="" loading="lazy" decoding="async" />' : ''
         );
     }
 
