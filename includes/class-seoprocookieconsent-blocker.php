@@ -307,6 +307,7 @@ final class SEOProCookieConsent_Blocker {
      * @return bool
      */
     private static function well_known_safe($host) {
+        // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- host names compared with scripts already on the page (reCAPTCHA, Turnstile); nothing is loaded from them.
         $safe = array('wp.com', 'wordpress.com', 'gstatic.com', 'recaptcha.net', 'challenges.cloudflare.com', 'js.stripe.com', 'paypal.com', 'paypalobjects.com', 'www.google.com');
         foreach ($safe as $domain) {
             if ($host === $domain || substr($host, -strlen('.' . $domain)) === '.' . $domain) {
