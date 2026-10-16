@@ -68,7 +68,7 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 ## Set it up
 
 1. Go to **Settings → SEO Pro Cookie Consent → Consent** and switch on **Cookie consent**.
-2. Open a few pages of your site. The card lists what was found.
+2. Choose **Scan now** and check **Found on your pages** on the card. It checks the home page, privacy page and up to three recent posts and three pages, without running scripts or contacting the embedded services. This is a sample, not a full audit or a browser scan: services inserted only by JavaScript are not discovered. Pages are also checked as visitors browse. If loopback requests are blocked, open a few pages yourself instead.
 3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
 4. Optional: under **Policies → Terms and conditions**, enter your answers, switch the feature on and add the Terms and conditions block (or `[spcc_terms]`) to a page. Review the whole page before publishing.
 
@@ -183,6 +183,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.
 - Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 - Optional Terms and conditions block and `[spcc_terms]` shortcode, five owner answers, a plain-text wording override and a one-time non-overwriting import of Complianz Terms & Conditions identity/contact answers.
 - Local YouTube and Vimeo thumbnails in held-back video placeholders, fetched in cron without contacting video services from visitors' browsers.

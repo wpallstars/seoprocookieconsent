@@ -6,6 +6,13 @@ tabs and cards; it adds no independent brand palette to Light mode.
 
 ## Admin colour mode
 
+The Consent card starts with a three-step guide, a standard WordPress **Scan
+now** button when consent is enabled, a polite live status and the existing
+findings list. While scanning, the button is disabled and the status says
+Scanning. Findings update in place without reloading the settings or moving
+focus; failures keep the old list and explain the browse-pages fallback.
+All controls inherit the existing Light/Dark admin styling.
+
 - The header has an icon button after Buy me a coffee, with Light, Dark
   and System radio menu items. Each item has an icon, label and current
   choice tick. Screen readers get the mode name and save-failure message.

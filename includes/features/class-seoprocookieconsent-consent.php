@@ -192,6 +192,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (is_admin()) {
             add_action('seoprocookieconsent_setting_panel', array(__CLASS__, 'panel'), 10, 1);
             add_action('seoprocookieconsent_admin_enqueue', array(__CLASS__, 'admin_enqueue'));
+            add_action('wp_ajax_seoprocookieconsent_scan', array(__CLASS__, 'scan'));
         }
         if (!self::enabled()) {
             return;
@@ -555,12 +556,31 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (self::KEY !== $key) {
             return;
         }
+        echo '<div class="spcc-panel-note">';
+        echo '<p><strong>' . esc_html__('Get started', 'seoprocookieconsent') . '</strong></p><ol>';
+        echo '<li>' . esc_html__('Switch on Cookie consent.', 'seoprocookieconsent') . '</li>';
+        echo '<li>' . esc_html__('Choose Scan now, then check Found on your pages below.', 'seoprocookieconsent') . '</li>';
+        echo '<li>' . esc_html__('Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page.', 'seoprocookieconsent') . '</li></ol>';
+        if (self::enabled()) {
+            echo '<p><button type="button" class="button" data-spcc-scan>' . esc_html__('Scan now', 'seoprocookieconsent') . '</button></p>';
+            echo '<p class="description">' . esc_html__('Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run.', 'seoprocookieconsent') . '</p>';
+            echo '<p role="status" aria-live="polite" data-spcc-scan-status></p>';
+        }
+        echo '<div data-spcc-findings>';
+        self::findings();
+        echo '</div></div>';
+        if (self::enabled()) {
+            self::preview_panel();
+        }
+    }
+
+    /** The findings, also returned after a scan without reloading controls. */
+    private static function findings() {
         $seen       = SEOProCookieConsent_Services::seen();
         $categories = SEOProCookieConsent_Services::categories();
-        echo '<div class="spcc-panel-note">';
         $groups = SEOProCookieConsent_Services::seen_by_category();
         if (empty($groups)) {
-            echo '<p>' . esc_html__('No services that set cookies found yet. Pages are checked as they are viewed, so open a few pages of your site after switching this on.', 'seoprocookieconsent') . '</p>';
+            echo '<p>' . esc_html__('No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site.', 'seoprocookieconsent') . '</p>';
         } else {
             echo '<p>' . esc_html__('Found on your pages and held back until allowed:', 'seoprocookieconsent') . '</p><ul>';
             foreach ($groups as $category => $services) {
@@ -576,10 +596,108 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 esc_html(implode(', ', array_keys($seen['hosts'])))
             );
         }
-        echo '</div>';
-        if (self::enabled()) {
-            self::preview_panel();
+    }
+
+    /** Scan a small public sample. No caller-supplied URLs or visitor cookies. */
+    public static function scan() {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(array('message' => __('You cannot scan this site.', 'seoprocookieconsent')), 403);
         }
+        check_ajax_referer('seoprocookieconsent_scan', 'nonce');
+        if (!self::enabled()) {
+            wp_send_json_error(array('message' => __('Switch on Cookie consent before scanning.', 'seoprocookieconsent')), 400);
+        }
+        $urls = array(home_url('/'), get_privacy_policy_url());
+        foreach (array('post', 'page') as $type) {
+            $posts = get_posts(array(
+                'post_type'              => $type,
+                'post_status'            => 'publish',
+                'has_password'           => false,
+                'posts_per_page'         => 3,
+                'fields'                 => 'ids',
+                'no_found_rows'          => true,
+                'update_post_meta_cache' => false,
+                'update_post_term_cache' => false,
+            ));
+            foreach ($posts as $id) {
+                $urls[] = get_permalink($id);
+            }
+        }
+        $home    = wp_parse_url(home_url('/'));
+        $checked = 0;
+        $failed  = 0;
+        // Create the record before loopbacks can create it in another request.
+        // Otherwise this request's cached missing option can defeat its first save.
+        SEOProCookieConsent_Services::record(array(), array());
+        foreach (array_unique(array_filter($urls)) as $url) {
+            $parts = wp_parse_url($url);
+            if (!is_array($parts) || !is_array($home)
+                || ($parts['scheme'] ?? '') !== ($home['scheme'] ?? '')
+                || ($parts['host'] ?? '') !== ($home['host'] ?? '')
+                || ($parts['port'] ?? 0) !== ($home['port'] ?? 0)
+                || isset($parts['user']) || isset($parts['pass'])) {
+                ++$failed;
+                continue;
+            }
+            // Trusted same-origin loopback, including private/local hosts.
+            // Redirects are forbidden so a page cannot send us off-site.
+            $response = wp_remote_get(add_query_arg('spcc_scan', wp_generate_uuid4(), $url), array(
+                'timeout'             => 3,
+                'redirection'         => 0,
+                'limit_response_size' => 2 * MB_IN_BYTES,
+                'cookies'             => array(),
+                'headers'             => array('Cache-Control' => 'no-cache'),
+            ));
+            $content_type = wp_remote_retrieve_header($response, 'content-type');
+            if (is_wp_error($response) || 200 !== wp_remote_retrieve_response_code($response)
+                || !is_string($content_type) || false === stripos($content_type, 'text/html')) {
+                ++$failed;
+                continue;
+            }
+            // Loopbacks also record services. Refresh only our option's entries
+            // before merging, preserving every other option in shared caches.
+            $alloptions = wp_load_alloptions();
+            unset($alloptions[SEOProCookieConsent_Services::SEEN_OPTION]);
+            wp_cache_set('alloptions', $alloptions, 'options');
+            $notoptions = wp_cache_get('notoptions', 'options');
+            if (is_array($notoptions)) {
+                unset($notoptions[SEOProCookieConsent_Services::SEEN_OPTION]);
+                wp_cache_set('notoptions', $notoptions, 'options');
+            }
+            wp_cache_delete(SEOProCookieConsent_Services::SEEN_OPTION, 'options');
+            self::scan_page(wp_remote_retrieve_body($response));
+            ++$checked;
+        }
+        ob_start();
+        self::findings();
+        $html = ob_get_clean();
+        wp_send_json_success(array('checked' => $checked, 'failed' => $failed, 'html' => $html));
+    }
+
+    /**
+     * Use the same blocker for cached raw HTML and already held-back markup.
+     * Record here too: cached pages need not execute the front-end buffer.
+     *
+     * @param string $html Public page HTML.
+     */
+    private static function scan_page($html) {
+        $blocker = new SEOProCookieConsent_Blocker(
+            preg_split('/[\r\n]+/', (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array(),
+            SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
+            SEOProCookieConsent_Settings::get('consent_google_advanced') ? self::GOOGLE_SERVICES : array()
+        );
+        $tags     = new WP_HTML_Tag_Processor($blocker->process($html));
+        $services = $blocker->found();
+        while ($tags->next_tag()) {
+            if (!in_array($tags->get_tag(), array('SCRIPT', 'IFRAME'), true)) {
+                continue;
+            }
+            $service = $tags->get_attribute('data-spcc-service');
+            if (is_string($service)) {
+                $services[] = $service;
+            }
+        }
+        SEOProCookieConsent_Services::record($services, $blocker->hosts());
     }
 
     /**
@@ -632,6 +750,12 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'home'    => home_url('/'),
             'arg'     => self::PREVIEW_ARG,
             'noPages' => __('No pages found.', 'seoprocookieconsent'),
+            'ajax'    => admin_url('admin-ajax.php'),
+            'nonce'   => wp_create_nonce('seoprocookieconsent_scan'),
+            'scanning' => __('Scanning…', 'seoprocookieconsent'),
+            /* translators: 1: pages checked; 2: pages that could not be checked. */
+            'scanned' => __('Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below.', 'seoprocookieconsent'),
+            'scanFailed' => __('The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse.', 'seoprocookieconsent'),
         ));
     }
 }

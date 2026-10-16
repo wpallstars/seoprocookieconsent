@@ -171,5 +171,31 @@
     $(function () {
         pagePicker();
         preview();
+        $(document).on('click', '[data-spcc-scan]', function () {
+            var $button = $(this);
+            var $panel = $button.closest('.spcc-panel-note');
+            var $status = $panel.find('[data-spcc-scan-status]');
+            $button.prop('disabled', true);
+            $status.text(data.scanning);
+            $.ajax({
+                url: data.ajax,
+                method: 'POST',
+                dataType: 'json',
+                timeout: 35000,
+                data: { action: 'seoprocookieconsent_scan', nonce: data.nonce }
+            }).done(function (response) {
+                if (!response || !response.success) {
+                    $status.text(data.scanFailed);
+                    return;
+                }
+                $panel.find('[data-spcc-findings]').html(response.data.html);
+                $status.text(response.data.checked ? data.scanned.replace('%1$s', response.data.checked).replace('%2$s', response.data.failed) : data.scanFailed);
+            }).fail(function (xhr) {
+                var response = xhr.responseJSON;
+                $status.text(response && response.data && response.data.message ? response.data.message : data.scanFailed);
+            }).always(function () {
+                $button.prop('disabled', false);
+            });
+        });
     });
 }(window.jQuery, window.wp, window.spccConsentAdmin));
