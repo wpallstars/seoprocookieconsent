@@ -1,0 +1,409 @@
+![WPALLSTARS WP Plugin Starter: Built with AI](admin/images/banner.svg)
+
+# WP Plugin Starter
+
+<!-- aidevops:badges:start -->
+<!-- On GitHub only: the Read Me tab skips this block. scripts/rename-plugin.sh rewrites it. -->
+[![CI](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/actions/workflows/ci.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wpallstars_wp-plugin-starter-template-for-ai-coding&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=wpallstars_wp-plugin-starter-template-for-ai-coding)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/905754fd010b481490b496fb800e6144)](https://app.codacy.com/gh/wpallstars/wp-plugin-starter-template-for-ai-coding/dashboard)
+[![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/wp-plugin-starter-template-for-ai-coding/badge)](https://www.codefactor.io/repository/github/wpallstars/wp-plugin-starter-template-for-ai-coding)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/wp-plugin-starter-template-for-ai-coding)
+[![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/wpallstars/wp-plugin-starter-template-for-ai-coding)](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/releases)
+
+[![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
+[![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
+[![Requires PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg?logo=php)](readme.txt)
+[![Lines of code](docs/metrics/badges/loc.svg)](docs/metrics/repo-metrics.md)
+[![Dependencies](docs/metrics/badges/dependencies.svg)](docs/metrics/repo-metrics.md)
+
+[![Languages by lines of code](docs/metrics/badges/languages.svg)](docs/metrics/repo-metrics.md)
+<!-- aidevops:badges:end -->
+
+A clean start for a WordPress plugin: a settings screen, a Read Me tab, updates from GitHub and release scripts, ready for your features.
+
+WP Plugin Starter is what wpallstars plugins are made from. It has no features of its own: it holds the parts every plugin needs, built and tested in real plugins, so a new plugin starts with them working and spends its time on what makes it different.
+
+If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
+
+Version: 1.0.39
+
+<!-- github-only:start -->
+## Screenshots
+
+**Settings → WP Plugin Starter**: the General tab, empty until features add settings, with search and the Source code, Support and Buy me a coffee links.
+
+![The WP Plugin Starter settings screen on the General tab](.wordpress-org/screenshot-1.png)
+
+**The Read Me tab** shows this file inside WordPress, banner included.
+
+![The Read Me tab showing README.md](.wordpress-org/screenshot-2.png)
+
+**Updates from GitHub** (GitHub build): each GitHub release is offered on the Plugins screen as a normal WordPress update.
+
+![The Plugins screen offering WP Plugin Starter 1.0.12 from GitHub](docs/images/github-update.png)
+<!-- github-only:end -->
+
+## What you get
+
+- **A settings screen** (Settings → WP Plugin Starter) that features fill by declaring their settings: switches, numbers, text, lists, choices and Media Library pictures, saved instantly with no Save button, searchable, in tabs. With no features yet it shows one empty tab.
+- **Multisite**: the same screen for the whole network, whose settings new sites start with. Apply a card to every site so sites cannot change it, see which sites have settings of their own, and make every site the same (Multisite below).
+- **A Read Me tab** that shows this file, banner included, so users read the same guide inside WordPress as on GitHub.
+- **Admin colour mode**: Light, Dark or System from the header, saved per person and shared with other wpallstars colour-mode controls. System follows the computer live, including on network settings and the plugin's own screens with the shared header.
+- **Features as classes**: one file per feature, off by default, with settings, hooks, one-off imports from the plugins it replaces and clean uninstall.
+- **Replaced plugins**: a feature that does another plugin's job imports its settings once, waits while that plugin is active, and the Plugins screen suggests deactivating and deleting it.
+- **Updates from GitHub**: the shared wpallstars updater (`includes/github-updater/`). Sites get each GitHub release as a normal WordPress update. Every wpallstars plugin carries a copy and only the newest copy on a site runs, so they are all checked together, once. Update checks that fall due while someone opens an admin screen run in WP-Cron instead, so the screen does not wait for update servers.
+- **Two builds of each version**: the GitHub release, and a WordPress.org build without the updater, as WordPress.org requires.
+- **Scripts and CI**: lint (PHP 7.4, WordPress coding and security rules, PHPStan), a smoke test on a real WordPress, the release build, a preflight check of both zips, Plugin Check, a preview site, the banner and icon build, and `scripts/sync-core.sh` to keep each plugin's shared parts the same as the starter's.
+- **Shared rules for people and AI**: `STANDARDS.md` (structure, code rules, performance, releases, styling, testing), `DEVELOPMENT.md` (set-up and checks) and `RELEASING.md`, the same in every plugin made from the starter.
+
+## Start a plugin
+
+1. On GitHub, choose **Use this template** to make your repository, and clone it.
+2. Give it its names: `scripts/rename-plugin.sh --slug my-plugin --name "My Plugin" --prefix MyPlugin`. Add `--css mp` for a short CSS prefix and `--repo owner/repo` if it is not under wpallstars. Put in your own details too, or the plugin keeps the starter's: `--description`, `--author`, `--author-uri`, `--contributors` (WordPress.org usernames) and `--donate` (a link, or `none`); `--help` lists them all. The new plugin starts at version 0.1.0 (`--version` for another) with a changelog of its own. Review with `git diff`, then commit.
+3. Replace this README, `readme.txt`, `changelog.txt`, `AGENTS.md` and `LAUNCH.md` with your plugin's own, its banner and icon (`.wordpress-org/banner.svg` and `icon.svg`, then `scripts/build-banner.sh`), and screenshots (`.wordpress-org/screenshot-N.png` with captions in `readme.txt`, and GitHub-only ones in `docs/images/`). The renamer starts `LAUNCH.md` with a private pre-launch state and a Before 1.0 checklist, and `AGENTS.md` with the plugin's names and a line to say what it does; keep both current as the plugin, its releases, services and submissions change. Keep the licence and the starter's credit, as its licence requires (`ATTRIBUTION.txt`, `STANDARDS.md` → Structure): GPL-3.0-or-later, `LICENSE`, `ATTRIBUTION.txt`, the licence lines at the top of each file, both copyright lines in the main file and this README's License section, and the "Made from" line here and in `readme.txt`. The renamer gives the plugin its own Provenance ID (`scripts/provenance.sh`); keep the Provenance lines too. Please keep the rest of the Built with AI section too.
+4. Add features: a class in `includes/features/` listed in `MyPlugin_Setup::FEATURES` (see Developers below and `STANDARDS.md`).
+5. Keep the shared parts up to date: change them in the starter first, then run `scripts/sync-core.sh` in each plugin (`--check` lists what differs).
+
+The easiest way to do all of this is with [aidevops](https://aidevops.sh): open the repository with it and describe the plugin you want. It reads `AGENTS.md` and the guidance it lists, builds the features, tests them on a real site and runs the release checks. Any AI assistant works the same way: `AGENTS.md` (or `CLAUDE.md`, which points to it) tells it what to read first, and `ATTRIBUTION.txt` tells it what every copy keeps.
+
+## Where to find it
+
+Go to **Settings → WP Plugin Starter**. The screen has two groups of tabs:
+
+- **Settings**: General, empty until features add settings. Changes save instantly; there is no Save button. **Search features** (next to the plugin name) finds settings on every tab.
+- **About**: this Read Me.
+
+On a multisite network, super admins also have **Network Admin → Settings → WP Plugin Starter** (Multisite below).
+
+At the top right of the screen, **Source code** opens the plugin’s [GitHub repository](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding) in a new tab, and **Support** opens its [GitHub issues](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/issues) in a new tab. Say what you did, what you expected and what happened, with the versions of WordPress, PHP and WP Plugin Starter. Leave out passwords, licence keys and personal data, since issues are public. For questions, ask [aidevops](https://aidevops.sh) (Built with AI below). **Buy me a coffee**, next to it, opens the maker’s [Buy Me a Coffee](https://buymeacoffee.com/marcusquinn) page in a new tab.
+
+## Multisite
+
+On a multisite network, **Network Admin → Settings → WP Plugin Starter** has the same header, search, tabs and cards as each site's screen, for super admins. Its settings are the network's own, kept apart from each site's:
+
+- **New sites start with them**, and so does a site where WP Plugin Starter runs for the first time.
+- **Apply to every site**, under each card, makes every site use the card's network settings. Each site's screen shows the card locked, saying the network administrator sets it, with a link to the network screen for super admins. Switch it off and each site has its own settings again: they are never overwritten.
+- Under each card, the sites whose own settings differ, up to 10 named with links to their settings, and **Make every site the same**, which copies the card's network settings into every site's own settings once. Sites can change them again afterwards, unless the card is applied to every site. Networks of more than 500 sites are not compared, and Make every site the same is not offered there.
+- When the network changes a site's settings, the site does what saving them there would do (schedules, rules, files) on its next admin screen, cron run or WP-CLI command, never on a visitor's page.
+- Settings that only make sense on each site, such as Media Library pictures, are not on the network screen.
+
+## Requirements
+
+- WordPress 6.2 or later
+- PHP 7.4 or later
+
+## Updates and releases
+
+There are two builds of each version:
+
+- **GitHub release** (`wp-plugin-starter-template-X.Y.Z.zip` on the repository’s Releases page): everything, including the shared updater in `includes/github-updater/`, so sites get each release as a normal update. Its main file also gets an `Update URI` header on github.com, so WordPress.org never offers a plugin of the same name in its place.
+- **WordPress.org**: the same files without the updater (listed in `.distignore-wporg`) and without the `GitHub Plugin URI`, `Primary Branch`, `Release Asset` and `Update URI` header lines, because plugins hosted there may not install or update code from elsewhere.
+
+The updater waits while Git Updater is active, so the two never both update a plugin.
+
+GitHub releases are the stable beta channel: each version is released there first. WordPress.org gets a version 30 days later, once it has been used on real sites, except security releases, which go to WordPress.org at once. The WordPress.org build has no affiliate links: those listed in `.wporg-links` are replaced by plain ones when it is built.
+
+Releasing on GitHub:
+
+1. Merge the version change (`Version:` and `WPSTARTER_VERSION` in `wp-plugin-starter-template.php`, `Stable tag:` in `readme.txt`, `Version:` near the top of this file) to `main`.
+2. Straight away, tag that commit `vX.Y.Z` and push the tag. The Release workflow (`.github/workflows/release.yml`) builds `wp-plugin-starter-template-X.Y.Z.zip` from the tag with `scripts/build-release.sh` (`.distignore` applied, everything inside a `wp-plugin-starter-template/` folder), checks it with `scripts/preflight-release.sh` and publishes the GitHub release with it attached; in a public repository it also attaches signed build provenance, which `gh attestation verify` checks. Sites pick the latest release whose tag is a plain version number and the asset named exactly `wp-plugin-starter-template-X.Y.Z.zip`, so never attach the WordPress.org zip. Full steps: `RELEASING.md`.
+3. Sites offer the update when they next check (within 12 hours, or at once with **Check again** on the Updates screen).
+
+Mark test builds as pre-releases on GitHub (or tag them with letters, such as `v1.2.0-rc1`): sites never offer those. Do not add an `Update URI` header to the plugin file in Git: WordPress.org rejects it. The build adds it to the GitHub zip only.
+
+## Developers
+
+A feature is a class in `includes/features/class-wpstarter-{name}.php` that extends `WPStarter_Feature`, listed in `WPStarter_Setup::FEATURES`. It declares its settings in `settings()`, adds its hooks in `boot()` (returning early unless `self::enabled()`), and can import another plugin’s settings once in `migrate()` with `self::import_setting()`. Anything only this plugin needs goes in `WPStarter_Setup` (`includes/class-wpstarter-setup.php`): features, settings tabs, header links, settings version, `MENU_PARENT` (its own top-level menu, if any, which then holds the settings screen as **Settings**) and its own helpers. Link to the settings screen with `WPStarter_Admin_Manager::page_url()` or `tab_url()`. A screen of the plugin's own shows the settings screen's header: call `WPStarter_Admin_Manager::enqueue_header()` on `admin_enqueue_scripts`, then print `<div class="wrap wps-wrap">`, `WPStarter_Admin_Manager::render_header()`, `<hr class="wp-header-end">` and the screen's content in `<div class="wps-main">`; sections go between the last two as the settings screen's tabs (`<nav class="wps-nav">` with `<a class="wps-nav__tab">` links, the one shown `is-active`), and `WPStarter_Admin_Page::title_section( 'Section name' )` on the screen's `load-{hook}` action puts the section shown after the screen's name in the browser title, as the settings screen does for its tabs. `admin/css/wpstarter-header.css` styles only those and the header, so the content keeps its styles. The other files in `includes/` and `admin/` are the starter’s core files: `STANDARDS.md` → Structure.
+
+Filters:
+
+- `wpstarter_features`: register a feature class that extends `WPStarter_Feature`.
+- `wpstarter_settings_schema`: add or change settings. Each entry sets `type` (bool, int, text, url, lines, domains, select, multi, times or media, a picture from the Media Library stored as its attachment ID), `default`, `label`, `description` and either `tab` or `parent`; select and multi also take `options` (an array or a callable, which runs on every settings save, so keep it small: `STANDARDS.md` → Performance) and `open` to keep saved values that are not currently registered. A child setting can take `hidden` (true): it is not shown or searched, for wiring that code sets. A child setting with `group` set to `troubleshooting` is shown last, in a closed **Troubleshooting** section of the panel, for bypasses people need only when something is wrong (`STANDARDS.md` → Code rules); the section opens by itself when one of its settings differs from its default or matches a search. `reload` (true) makes the saved message ask to reload the page, for changes that show only after a page load. `network` (false) leaves a setting off the network screen (multisite), for one that only makes sense on each site, such as a list of the site's own posts or people; media fields and `hidden` wiring are left off already. A multi setting can take `locked` (values, or a callable returning them): choices that are always chosen, shown ticked with a lock, cannot be unticked and are never stored, so the feature itself treats them as chosen. `replaces` (slug => name) shows which plugin a feature replaces; keep that list in the feature's `REPLACES` class constant and pass `self::REPLACES` (`STANDARDS.md` → Structure). Settings render and save automatically.
+- `wpstarter_admin_tabs`: add or reorder admin tabs. Each tab sets `label`, `group` (settings, discover or about), a `render` callback, an optional `capability`, an optional `preload` and an optional `network` (true: also on the network screen, multisite, where its callback runs with `is_network_admin()` true; settings tabs and Read Me have it); tabs the current user lacks the capability for are hidden. The screen draws the active tab with the other tabs of its group that preload (settings tabs and Read Me do), and switches between them without a reload (`WPStarter_Admin_Manager::page_tabs()`). Set `preload` to true only when the tab is cheap to draw and its script works while its panel is hidden. An optional `menu` (a name) gathers tabs: tabs of a group with the same `menu` show in the bar as one tab with that name, which opens the first of them, and while one of them is shown, they show as a second row of tabs under the bar (`WPStarter_Admin_Page::nav()`).
+- `wpstarter_admin_script_deps` and `wpstarter_admin_script_data`: the settings screen script’s dependencies (once for each tab drawn on the page) and the data it reads as `wpstarterAdmin` (with the active tab; `wpstarterAdmin.tab` follows the tab shown, `tabs` lists the tabs drawn, `titles` their browser titles, and `network` is true on the network screen).
+- `wpstarter_troubleshooting_open`: whether a setting's Troubleshooting section starts open (open, setting key), for a feature that fell back after an error.
+- `wpstarter_can_change_settings`: return false to stop the current user changing WP Plugin Starter’s settings (on top of `manage_options`).
+- `wpstarter_replaced_plugin_extras`: what a replaced plugin does on this site that WP Plugin Starter does not (plain names, plugin folder). The Plugins screen names them instead of saying the plugin can go.
+- `wpstarter_stored_active_plugins` and `wpstarter_plugins_skipped`: for code that skips plugins on some requests, the active plugin files as stored and whether some are skipped on this request, so features still count those plugins as active.
+- `wpallstars_github_plugins` (GitHub builds, shared updater): change which plugins update from GitHub releases (plugin file => `repo` as owner/repo, `asset_only`, `version`, `name`).
+- `wpallstars_github_token` (GitHub builds, shared updater): GitHub token for a repository (token, owner/repo), for private repositories; defaults to the `WPALLSTARS_GITHUB_TOKEN` constant.
+- `wpallstars_github_updater_enabled` and `wpallstars_github_updater_early` (GitHub builds, shared updater): whether it runs (false while Git Updater is active) and whether plugins also on WordPress.org take GitHub releases first.
+- `wpallstars_github_updater_checks_in_cron` (GitHub builds, shared updater): return false to let update checks that fall due run on the admin screen being opened, as in core, instead of in WP-Cron.
+
+Actions:
+
+- `wpstarter_admin_enqueue`: enqueue the plugin’s own admin styles and scripts on its settings screen, depending on `wpstarter-admin`; it fires once for each tab drawn on the page, the active tab first. Its script can use `wpstarterAdmin.api` (`post`, `speak`, `errorMessage`), and the `wpstarter:tab-shown` jQuery event (tab slug) on `document` tells it when another tab is shown.
+- `wpstarter_setting_saved`: a setting was saved from the admin screen (setting key, value), or the network changed it for this site (multisite): then on the site's next admin, cron or WP-CLI request, as nobody, while `WPStarter_Network_Sites::syncing()` is true.
+- `wpstarter_settings_changed`: settings changed, however they were saved (the admin screen, presets, WP-CLI, `update_option()`) or by the network for this site, as above (old and new settings, as features read them). Use it rather than `update_option_wpstarter_options`, which misses the network's changes.
+- `wpstarter_setting_panel`: print status at the top of a setting’s options panel (setting key, schema entry); wrap it in `<div class="wps-panel-note">`. On the network screen, `wpstarter_network_setting_panel` fires instead, for notes about the whole network.
+- `wpstarter_settings_tab_after`: print a section after a settings tab’s cards (tab slug). On the network screen, `wpstarter_network_settings_tab_after` fires instead.
+
+Read a setting with `WPStarter_Settings::get( 'key' )`, never the option itself: on multisite it includes the settings the network applies to every site. Code that runs before the plugin loads (a must-use file) reads the network option's `enforced` values (`wpstarter_network`: card => setting => value) over the site's own, as `WPStarter_Settings::all()` does.
+
+## Uninstall
+
+Deleting the plugin removes its settings (on multisite, every site's and the network's), its cached data, who hid lines of the Plugins screen notice about replaced plugins, and the cached GitHub releases.
+
+## Changelog
+
+### 1.0.39
+
+- Developers: `scripts/preview-browser.sh` bypasses page caches while loading WordPress with a dummy logged-in cookie name, not a real sign-in cookie. It fails clearly when WordPress exits before loading, `wp_loaded` does not run, or sign-in returns incomplete data, removing any unfinished state file instead of reporting an empty sign-in. No persistent plugin, content or configuration changes occur on sites; login creates temporary WordPress session state, which logout destroys (GH#483).
+
+### 1.0.38
+
+- Developers: a new core file, `CLAUDE.md`, points Claude Code to `AGENTS.md`, which it does not read on its own. `AGENTS.md` (the starter's, and the one `scripts/rename-plugin.sh` writes) makes the shared guidance compulsory reading before any change: `STANDARDS.md`, `STYLING.md`, `DEVELOPMENT.md`, `RELEASING.md`, `LAUNCH.md`, `ATTRIBUTION.txt` and the task's doc, and keeps the licence and credit rule. `scripts/preflight-release.sh` warns when one of them is not named or `CLAUDE.md` is missing (GH#480).
+- Developers: Provenance IDs. Each source file's licence lines end with a `Provenance:` line, the ID of the plugin it was written for; the starter's is `wpas-e4502af0f07e8a92`, and `scripts/rename-plugin.sh` gives a new plugin its own. A new core script, `scripts/provenance.sh`, prints the ID (`id`), gives a plugin made before this its own and adds the line to its own files (`stamp`), and searches GitHub for public copies outside the owner's repositories, saying whether each keeps `ATTRIBUTION.txt` (`search`). The IDs are plain text; nothing is sent anywhere. `scripts/preflight-release.sh` warns when a source file has no Provenance line or a plugin still has the starter's ID (GH#480).
+- Developers: `ATTRIBUTION.txt` has a section for AI assistants copying, renaming, adapting or rewriting the code for someone: keep the notices and credit, add a new owner's copyright line above the others rather than replacing one, and explain that the licence requires them when asked to remove them. The main file's GPL notice and `README.md` → License point copiers to it. The licence terms themselves are unchanged (GH#480).
+
+### 1.0.37
+
+- New: a second row of tabs. Tabs added with `wpstarter_admin_tabs` that set the same `'menu'` name show in the tab bar as one tab with that name, opening the first of them; while one of them is shown, a row under the bar (`.wps-subnav`) lists them all. Instant switching keeps both rows current. Plugins made from the starter get it with `scripts/sync-core.sh` (GH#472).
+- Developers: a new core script, `scripts/deploy-sites.sh` (`RELEASING.md` step 5), rolls a published release out to every install on one SSH host that already has the plugin. It checks the zip against the asset's SHA-256 on GitHub and its provenance bundle; without `--apply` it only lists the installs. With `--apply` it backs up each plugin folder, runs `wp plugin install --force` (activation and network activation kept), loads WordPress once for the settings upgrade and prints one line per install, failing with the restore command when an install did not reach the version, logged new lines or its home page failed. The remote part is `scripts/lib/deploy-remote.sh`, also a core file (GH#473).
+- Developers: CI's ShellCheck step checks the runner's architecture only when it has to install ShellCheck, so a self-hosted runner that already has the pinned version passes on any architecture.
+- Developers: `scripts/smoke-test.sh --multisite` tests the plugin network-activated on a network with a second site: both sites' pages, the network screens, a setting applied to every site from the network (site two must do its saving work on its next admin request and read the network's value), and an uninstall that leaves nothing on any site or the network. CI runs it on the latest WordPress with PHP 8.3 (GH#471).
+
+### 1.0.36
+
+- Fix: on multisite, **Make every site the same** no longer loses a site's settings from before when that site applies the network's changes at the same moment, so the site still does the saving work for the copied settings on its next admin, cron or WP-CLI request (GH#469).
+- Developers: `WPStarter_Settings::replace_site_values()` keeps the site's settings from before (`WPStarter_Network_Sites::remember()`) under the site's save lock, and `WPStarter_Network_Sites::sync()` reads and records the site's `wpstarter_network_seen` under the same lock, then does the saving work after releasing it. `WPStarter_Settings::under_lock()` with no table and name takes the site's settings save lock. Plugins made from the starter get it with `scripts/sync-core.sh`.
+
+### 1.0.35
+
+- New: the header's colour-mode button chooses **Light**, **Dark** or **System**, saved per person and shared with the other wpallstars plugins. System follows the computer live. Only the plugin's own screens change; SEO Pro Stack's admin bar control follows the header and vice versa (GH#456).
+- Developers: `WPStarter_Admin_Theme` and its CSS and JS are core files. Own screens calling `enqueue_header()` before priority 20 and `render_header()` get the same mode; `wpstarter_admin_theme_screens` also accepts screen hooks before the head. Call `WPStarter_Admin_Theme::uninstall()` from the plugin's own uninstall file after syncing; remove private theme copies in the same change. The shared preference is kept while another wpallstars plugin is installed.
+- New: Multisite. Network Admin → Settings → WP Plugin Starter has the same tabs and cards for the whole network, for super admins. New sites start with its settings. **Apply to every site**, under each card, sets the card for every site, which then show it locked; switched off, each site has its own settings again. Each card names the sites whose own settings differ, with **Make every site the same**. Sites do the saving work for the network's changes on their next admin, cron or WP-CLI request (GH#452).
+- Developers: new core files `includes/class-wpstarter-network-settings.php` (network values and applied cards), `includes/class-wpstarter-network-sites.php` (seeding new sites and each site's saving work), `includes/class-wpstarter-network-differences.php` (the sites that differ, and Make every site the same) and `admin/includes/class-network-manager.php` (the network screen); plugins made from the starter get them with `scripts/sync-core.sh`, then add to their own `uninstall.php` the network option and each site's `wpstarter_network_seen` and `wpstarter_network_lock` (the network option's save lock, on the main site), as the starter's does. Schema keys `network` (false: each site only) and `locked` (multi: always chosen, never stored); tabs take `network`; new actions `wpstarter_settings_changed`, `wpstarter_network_setting_panel` and `wpstarter_network_settings_tab_after` (Developers above). `STANDARDS.md` → Multisite has the rules for features.
+- Developers: the shared updater's View details tabs and readme text are made by smaller private methods, within SonarCloud's cognitive complexity limit; the tabs, their order and their HTML are unchanged (shared updater 1.6.2; plugins made from the starter get it with `scripts/sync-core.sh`) (GH#461).
+- Developers: `scripts/sync-core.sh` never undoes a newer starter change or discards a plugin's own change. `--check` shows each differing file's class (behind, missing, newer or changed here); a sync writes nothing while a file is newer or changed here and says what to do, and `--discard-local` replaces changed-here files once their change is safe. The weekly Starter sync shows each file's class (`DEVELOPMENT.md` → Starter sync) (GH#464).
+- Developers: new core script `scripts/preview-browser.sh` signs a browser in to the preview site's admin (a one-hour session in a mode-600 Playwright `storageState` file; `logout` ends it), and prints the debug log entries a check added (`log-mark`, `log-since`). It needs no WP-CLI and no file reads outside the repository, so headless workers can do the preview check too (`DEVELOPMENT.md` → Preview site) (GH#459).
+
+### 1.0.34
+
+- New: the browser tab names the settings screen's tab shown after the screen's name, such as "WP Plugin Starter: Read Me ‹ Site — WordPress", so open tabs and history entries can be told apart. It changes with the tab when tabs switch without a reload, and on Back (GH#453).
+- Developers: the plugin's own screens with sections name the section shown in the browser title with `WPStarter_Admin_Page::title_section()` on their `load-{hook}` action; `screen_title()` gives the format.
+
+### 1.0.33
+
+- Developers: CI selects the checksum-verified ShellCheck archive for X64 or ARM64 runners and rejects other architectures; README badge rewrites reject missing, duplicate or misordered markers instead of dropping content.
+- Developers: qlty stays: `DEVELOPMENT.md` lists it again among the review apps, and a qlty check that fails only because the organization's free monthly minutes ran out does not block a merge (GH#446).
+
+### 1.0.32
+
+- Fix (GitHub builds): when a check for updates on GitHub fails, the Plugins and Updates screens say a newer release may not be shown until a check succeeds, instead of saying the release found before is offered, which was wrong when there was none (shared updater 1.6.1).
+- Developers: `STANDARDS.md`'s banner and icon picture rules no longer name other plugins, so plugins made from the starter read them correctly after `scripts/sync-core.sh`.
+- Developers: repository metrics refresh again: `repo-metrics.yml` uses aidevops v3.39.1, which reads the metrics' age from their `generated_at` date rather than the file's modified time; a metrics push still rejected after its retries now fails the run (GH#442).
+
+### 1.0.31
+
+- Developers: the workflows run on a self-hosted runner when the repository variable `CI_RUNNER` holds its label, and on GitHub-hosted runners otherwise, so private plugins can use the organization's runners while their core files stay the same as the starter's (`DEVELOPMENT.md` → Services setup, step 6). CI's lint job installs a pinned, checksum-verified ShellCheck 0.11.0 when the runner has another version or none. Nothing changes for public repositories.
+- Fix (GitHub builds): **Check again** on the Updates screen offers a release published since the last check. WordPress skips its plugin check for a minute after the last one, which opening the Updates screen runs, so pressing **Check again** straight after found nothing new. The shared updater (version 1.6.0) now asks GitHub on **Check again** even then (at most once a minute), without asking WordPress.org again.
+- New (GitHub builds): a failed check for updates on GitHub is no longer silent. When GitHub does not answer or another plugin blocks the request (such as HTTP Requests Manager), the plugin keeps offering the release found before, and the Plugins screen shows the error under the plugin, with a **Check again now** link, and the Updates screen lists it, until a check succeeds.
+- Developers: `STANDARDS.md` → Structure has the rules for every wpallstars banner and icon picture: keep the stack of tiles under the arc of five stars, vary only the tiles' colours and the top tile's picture, and draw that picture on the tile's isometric axes through the starter's face matrix (in `.wordpress-org/banner.svg`). The pictures are unchanged.
+
+### 1.0.30
+
+- Developers: two SonarCloud code smells in core files: the Read Me manager's nested ternary, and a repeated character range in Updates from GitHub's redirect check. No change in behaviour.
+- Fix: the Read Me tab shows a paragraph or list item written over several lines (Markdown wrapped at a fixed width) as one paragraph, as GitHub does, instead of a separate paragraph for every line, which also split inline code across lines. Fenced code blocks (backticks or tildes) show as code instead of their fence lines and text.
+- Fix: the Read Me tab keeps a line's text, unformatted, when its bold, italic, code or link formatting cannot be read (such as invalid UTF-8), instead of showing nothing.
+- Developers: PHPStan runs at level 8 (`phpstan.neon.dist`): `null` used as a value is also a finding. Plugins made from the starter fix their own level-8 findings before syncing `phpstan.neon.dist`.
+- Developers: Codacy settings that fit a WordPress plugin: `.eslintrc.json` and `phpmd.xml.dist` (core files, not in either zip). Turn on **Configuration file** for ESLint and PHP Mess Detector in Codacy's Code patterns (`DEVELOPMENT.md` → Services setup).
+- Developers: SonarCloud and Codacy leave out `assets/build/`, the JavaScript build's output; they analyse its sources in `packages/`.
+- New: **View details** (Plugins and Updates screens) shows a banner with its words above the plugin name WordPress writes over its lower left, instead of under it; this README and the Read Me tab keep the banner with its words centred. GitHub builds ship it as `admin/images/banner-details.svg`, which the shared updater (version 1.5.0) shows first; the WordPress.org banners have that layout too, as WordPress.org's View details shows them.
+- Developers: `.wordpress-org/banner.svg` holds the words twice, `<g id="words">` (centred) and `<g id="words-details">` (above y 340), and `scripts/build-banner.sh` builds each output from one of them. Every wpallstars-branded banner keeps the starter's two layouts (`STANDARDS.md` → Structure).
+- Developers: `scripts/rename-plugin.sh` writes a **Before 1.0** checklist into the new plugin's `LAUNCH.md`: its own description, README and readme, banner, icon and screenshots, version 1.0.0, checks and the owner's approval. `scripts/preflight-release.sh` warns under Starter leftovers when a plugin still has the starter's banner words, the plug on its banner or icon, the starter's description or screenshots. `RELEASING.md` → First release points to both. Plugins made before this keep their `LAUNCH.md`; copy the checklist from `scripts/rename-plugin.sh` if you want it.
+- Developers: one README badges block for every plugin, in three rows on GitHub: status (CI, SonarCloud, Codacy, CodeFactor, OpenSSF Scorecard, licence, latest release), requirements from `readme.txt` (Requires WordPress, Tested up to, Requires PHP) with lines of code and dependencies, then the languages chart alone. A new core script, `scripts/readme-badges.sh`, rewrites an existing plugin's block (it keeps the services the block shows; `--add` and `--codacy` add one; `--check` changes nothing), and `scripts/rename-plugin.sh` writes the same rows. `scripts/preflight-release.sh` warns when the block has a comment or blank line splitting a row, a chart beside badges, or requirement badges that disagree with `readme.txt`. The block is the starter's: other tools leave it alone (`STANDARDS.md` → Structure).
+
+### 1.0.29
+
+- Developers: `STANDARDS.md` is shorter (under 500 lines, so plugins can push their core sync again) with every rule kept. The admin form spacing and front-end dark mode rules moved to a new core file, `STYLING.md` (`scripts/sync-core.sh` adds it; it stays out of both zips); the WordPress.org build's affiliate-link format and checks are now only in `RELEASING.md` → WordPress.org.
+- Developers: `scripts/rename-plugin.sh` now writes the new plugin its own `AGENTS.md`: its names in the placeholder table (including `{css}`, which kept the starter's), what belongs in the plugin, and the test sites, instead of the starter's own guide. `scripts/preflight-release.sh` warns when a plugin's `AGENTS.md` still describes the starter.
+
+### 1.0.28
+
+- Developers: `scripts/sync-core.sh` keeps a plugin's own lines between its `{css}-own:start` / `{css}-own:end` comment markers in core files, including `.distignore`, `DEVELOPMENT.md` and `RELEASING.md`. Check mode ignores those lines as drift; malformed or excess blocks stop the sync before any core files are written.
+- New (GitHub builds): admin screens no longer wait for update servers. When WordPress's stored core, plugin or theme update check is 12 hours old, the next admin screen opened ran it, waiting while WordPress and every plugin's own updater asked their servers (seconds on sites with many premium plugins). The shared updater (version 1.4.0) schedules that check as core's own cron event instead, and WP-Cron starts it in the background as the screen finishes. The Plugins, Themes and Updates screens still check as before, as do the twice-daily checks, the checks after updating and automatic updates; while WP-Cron is not running, or when a check cannot be scheduled, checks stay on admin screens. The `wpallstars_github_updater_checks_in_cron` filter turns this off. It replaces the separate "Update checks in cron" must-use file some sites had.
+- Developers: `STANDARDS.md` says changes to when and where update checks run belong in the shared updater too, admin screens do not wait on remote requests that can run in cron, and plugins clear only their own object-cache keys, never the whole cache (`wp_cache_flush()`), which many hosts share between every site on the account.
+- New: tabs in the same group of the settings screen (between two dividers) switch at once, without loading the page again. The screen draws the group's tabs together; the address follows the tab shown, so Back, reload and bookmarks work as before. Search results and tabs in other groups still open as pages.
+- Developers: a tab added with `wpstarter_admin_tabs` joins its group's instant switching with `'preload' => true`; others still load on their own. `wpstarter_admin_enqueue` and `wpstarter_admin_script_deps` run once for each tab drawn on the page (`WPStarter_Admin_Manager::page_tabs()`), the active tab first; `wpstarterAdmin.tab` follows the tab shown, `wpstarterAdmin.tabs` lists the tabs drawn, and `wpstarter:tab-shown` fires on `document` when another tab is shown.
+- Developers: the plugin's own admin screens can show the settings screen's header (name, version, feature search and links) with `WPStarter_Admin_Manager::enqueue_header()` and `render_header()`. Its styles, with the colour tokens, the tab bar and the main area, moved to `admin/css/wpstarter-header.css` (a new core file), which the settings stylesheet loads first; it styles only `.wps-wrap`, the header, `.wps-nav` and `.wps-main`, so a screen's content keeps its styles. A screen with sections shows them as the settings screen's tabs (`.wps-nav`, `.wps-nav__tab`, `is-active`) under the header. The feature search shows only to people who can open the settings screen.
+- Developers: `scripts/rename-plugin.sh` now resets `LAUNCH.md` to the new plugin's private pre-launch state, with no release or WordPress.org submission yet.
+- Developers: a plugin with its own top-level menu sets `WPStarter_Setup::MENU_PARENT` to that menu's slug, and its settings screen becomes **Settings**, the last item in that menu, instead of a second entry under WordPress's Settings. Its links (`WPStarter_Admin_Manager::page_url()`, `tab_url()`, the Plugins screen's Settings link, search) follow it, and an old `options-general.php?page=…` address redirects there. `WPStarter_Admin_Manager::hook()` gives the screen's hook suffix wherever it is; `HOOK` stays the one under Settings. Nothing changes for plugins that leave `MENU_PARENT` empty, or whose Setup does not have it. `scripts/smoke-test.sh` loads the plugin's top-level menu page too, and fails when one of its admin pages answers 4xx; `scripts/update-test.sh` opens the settings screen where it is.
+- Developers: Git ignores the files AI tools make in each checkout (`.clinerules`, `.cursorrules`, `.windsurfrules`, `MODELS.md`), so they no longer reach release zips, where Plugin Check fails hidden files. `scripts/plugin-check.sh` also expects `missing_direct_file_access_protection` in GitHub-only files (`.distignore-wporg`) in the GitHub zip: such a file may be an endpoint requested directly; WordPress.org never gets it.
+
+### 1.0.27
+
+- New: **View details** for plugins updated from GitHub shows what WordPress.org would. The shared updater (version 1.3.0) reads the installed `readme.txt`: the Description, Installation, FAQ, Screenshots and Changelog tabs (Other Notes for other sections), Compatible up to and the donate link, with the author linked to `Author URI`. The Changelog tab starts with a newer release's notes from GitHub, when there are any, then the readme's changelog. "Tested up to: 7.1" counts for every 7.1.x, as on WordPress.org, so the Updates screen shows the author's compatibility instead of "Not tested". Nothing more is fetched from GitHub.
+- Developers: `scripts/build-banner.sh` also writes `admin/images/screenshot-N.webp` (about 25 to 75 KB each) from `.wordpress-org/screenshot-N.png` for View details; `scripts/build-release.sh` leaves them out of the WordPress.org build, and `scripts/preflight-release.sh` warns when one is missing and errors if the WordPress.org zip has one. `STANDARDS.md` → Structure and Updates from GitHub say so.
+- Developers: `scripts/smoke-test.sh` lists the plugin's own database tables (`{$wpdb->prefix}{prefix}_*`) before uninstalling and fails if any is left afterwards, as it already did for options and cron events.
+- Developers: support for plugins with a JavaScript build. Sources in `packages/` and `package.json`, `package-lock.json` and build tool configuration stay out of release zips (`.distignore`, `.gitattributes`; the preflight fails if one gets in); built files in `assets/build/` are committed and ship. `scripts/lint.sh build` runs the plugin's npm `check` script, then a fresh build, and fails if `assets/build/` differs; CI runs it when `package-lock.json` exists; packages' install scripts never run. `package-lock.json` is no longer ignored by Git. `DEVELOPMENT.md` → JavaScript builds has the rules. Nothing changes for plugins without a build.
+
+### 1.0.26
+
+- Fixed: a plugin deleted while still listed as active no longer makes a feature that replaces it wait. The base feature checks that each site or network-wide plugin has a valid path and its file still exists; installed plugins skipped on a request still count as active.
+- Developers: `WPStarter_Feature::plugin_installed($file)` checks whether a listed plugin file exists at a valid path, as WordPress does when loading active plugins.
+
+### 1.0.25
+
+- New: GitHub updates show the plugin's icon on the Updates screen, and its banner in **View details**, instead of WordPress's grey plug. The shared updater (version 1.2.0) looks in each installed plugin's folder for WordPress.org's listing image names (`icon.svg`, `icon-256x256.png`, `icon-128x128.png`, `banner-772x250.png`, `banner-1544x500.png`, or `banner.svg`) in `admin/images/`, `assets/` or `.wordpress-org/`, and uses the installed files, so nothing is fetched from GitHub when the screen loads and private repositories work too. The icon shows from the update after the one that brings this version, as the installed copy of the updater builds the entry.
+- Developers: `scripts/build-banner.sh` also writes `admin/images/icon.svg` (shipped, about 9 KB) from `.wordpress-org/icon.svg`, and `scripts/preflight-release.sh` warns when a plugin with `.wordpress-org/icon.svg` does not ship it. `STANDARDS.md` → Structure and Updates from GitHub say so.
+
+### 1.0.24
+
+- Developers: a child setting with `'group' => 'troubleshooting'` is shown last in its parent's Options panel, in a closed **Troubleshooting** section, so bypass lists and switches are there as a last resort without asking people to choose. The section opens by itself when one of its settings differs from its default, when a search matched one of its labels, or when the new `wpstarter_troubleshooting_open` filter (open, setting key) returns true, for a feature that fell back after an error. Values and saving are unchanged. `STANDARDS.md` → Code rules puts bypasses there. Nothing changes for users until a plugin uses it.
+
+### 1.0.23
+
+- Developers: `STANDARDS.md` → Structure now says where a replacing feature keeps its list: in a class constant on the feature class, `const REPLACES = array(slug => name);`, passed as `'replaces' => self::REPLACES`, so migrations, audits and checks for active plugins read the same list instead of repeating it (SonarCloud flags the repeats as duplication). `scripts/replaced-plugins.php` already reads it. The Developers section points to the rule. Nothing changes for users.
+
+### 1.0.22
+
+- Developers: `STANDARDS.md` → Performance has a new rule, Small choice lists. A select or multi setting's `options` callable runs on every settings save, because a save checks every setting, so it must never list what grows with the site (pages, posts, users). Mark the field `open` to keep any ID, and offer the list only where it is shown, paged or searched. From SEO Pro Stack, where one such list ran out of memory on every save on a site with 60,000 pages. The Developers section now says select takes `open` too, as it always has. Nothing changes for users.
+
+### 1.0.21
+
+- Fixed: two saves that find the same stale save lock no longer both take it over, and a save whose lock was taken over no longer removes the new one. Saving keeps the settings of features switched off on this request. Text, URL, lines, domains and times settings turn an array into an empty value instead of the text "Array" and a PHP notice, and a URL with a backslash is refused (browsers read `/\` as another site).
+- Fixed: GitHub updates find the release zip whatever the case of owner/repo in the `GitHub Plugin URI` header, and a renamed or moved repository is reported with its new name instead of reading as "no releases". With a token, every repository it is given for is read through the API (documented). Updater 1.1.1.
+- Developers: `.wporg-links` replaces whole links only, so a listed link no longer changes a longer one that starts with it, and also in SVG, XML and translation files; `build-release.sh` removes the updater headers only from the plugin header. `preflight-release.sh` finds referral links written with `&amp;` or `&#038;`, scans Markdown, CSS and SVG, warns when `README.md` has no Version line, and checks the updater files line by line. The smoke, update and Plugin Check scripts fail when they cannot check instead of passing, remove every container they started, and match the update offer exactly. `rename-plugin.sh` and `sync-core.sh` stop on a failed write and remove half-written files; `rename-plugin.sh` checks each value whole (a new line no longer passes) and sets the version `define` in either quote style; `sync-core.sh` refuses core paths outside the plugin or through symbolic links and lists a core file whose executable bit differs.
+
+### 1.0.20
+
+- Developers: `STANDARDS.md` → Performance no longer forbids indexes on WordPress's own tables. It forbids an index that duplicates one the table already has, which other plugins or the host may have added: check the keys (`SHOW INDEX`) first. An index on a table the plugin does not own is opt-in, and uninstall removes only the ones it added. Nothing changes for users.
+
+### 1.0.19
+
+- Developers: `STANDARDS.md` is under 500 lines again (481), so plugins can sync it without failing the aidevops push gate for long Markdown files. How the preview site works, its conflicts and throwaway sites moved to `DEVELOPMENT.md` → Preview site; the rules stay in `STANDARDS.md` → Testing, and the starter sync bullet points to `DEVELOPMENT.md` → Starter sync. No rule changed. Nothing changes for users.
+
+### 1.0.18
+
+- Changed: WordPress.org gets each version 30 days after its GitHub release, not 90 (`STANDARDS.md` → Releases, `RELEASING.md` → WordPress.org), so its users do not wait too long for fixes. Security releases still go to WordPress.org at once. [Updates and releases](#updates-and-releases) and the `readme.txt` FAQ say so.
+
+### 1.0.17
+
+- Developers: four rules in `STANDARDS.md` that plugins made from the starter learned. A changed default is only sure to reach new installs, as migrations and saves store every setting (Structure). SQL goes through `$wpdb->prepare()`, with the plugin's own table and column names as `%i`, which Plugin Check otherwise warns about. A notice shown once after an action adds its query argument to `removable_query_args`, so a reload does not show it again. An inline `NOSONAR` needs its reason on that line, as `phpcs:ignore` does (Code rules). Nothing changes for users.
+
+### 1.0.16
+
+- Changed: two release channels, at the owner's decision (`STANDARDS.md` → Releases, `RELEASING.md` → WordPress.org). GitHub releases are the stable beta channel: each version comes out there first. WordPress.org gets a version 90 days after its GitHub release, built from its tag, except security releases (changelog entries starting "Security:"), which go to WordPress.org at once. [Updates and releases](#updates-and-releases) and the `readme.txt` FAQ say so.
+- Developers: the WordPress.org build has no affiliate links. A plugin lists each referral link, or its referral query, in the new optional `.wporg-links` file with its plain replacement (a tab between them); `scripts/build-release.sh` replaces them, HTML-escaped forms included, in the WordPress.org build only. `scripts/preflight-release.sh` errors when a listed text is left in that build and warns about other addresses with referral parameters (`ref=`, `aff=`, `irpid=`, `via=` and the like). `.wporg-links` stays out of both zips.
+
+### 1.0.15
+
+- Changed: the licence is now GPL-3.0-or-later (it was GPL-2.0-or-later), with additional terms under section 7(b) of the GPL version 3, set out in the new `ATTRIBUTION.txt`: keep the copyright notices, the "Made from WP Plugin Starter" line in `README.md` and `readme.txt`, and `ATTRIBUTION.txt` itself. Every source file starts with SPDX licence and copyright lines and a pointer to `ATTRIBUTION.txt`. Nothing changes on sites.
+- Developers: plugins made from the starter take the new licence with `scripts/sync-core.sh` (`LICENSE` and `ATTRIBUTION.txt` are core files now; `ATTRIBUTION.txt` keeps the starter's names, word for word). `scripts/preflight-release.sh` expects GPL-3.0-or-later, errors when `ATTRIBUTION.txt` is missing from a zip, and warns when it is missing from Git or a source file has no SPDX copyright line.
+- Developers: a licence rule for plugins made from the starter (`STANDARDS.md` → Structure): keep the licence, `LICENSE`, the GPL notice, the starter's copyright line and its credit. The starter now has a copyright line (Marcus Quinn); `scripts/rename-plugin.sh` gives a new plugin its own copyright line above it. `scripts/preflight-release.sh` checks `LICENSE` is in both zips, that `readme.txt` names the same licence as the plugin header, and warns when a copyright line is missing. Nothing changes for users.
+- Developers: `scripts/preflight-release.sh` no longer stops without a message (exit 141) when `README.md` is over 64 KB: the `Version:` check read only up to the first match, so `git show` was cut off.
+
+### 1.0.14
+
+- New: WordPress.org icons (`icon-128x128.png`, `icon-256x256.png` and `icon.svg` in `.wordpress-org/`), the banner's plugin stack and stars on their own. `scripts/build-banner.sh` builds the PNGs from `.wordpress-org/icon.svg` when a plugin has one.
+- Developers: `scripts/preflight-release.sh` checks the listing images in `.wordpress-org/`: banner and icon sizes (warnings when missing), and screenshots numbered from 1 with one `readme.txt` caption each (errors).
+- Developers: `scripts/rename-plugin.sh` no longer adds a CodeFactor badge to a new plugin's README. CodeFactor serves a badge only once the repository is added on codefactor.io, so it showed as a broken image on GitHub. `DEVELOPMENT.md` → Services setup has a new step 3 for CodeFactor, with the badge to add afterwards. Nothing changes for users.
+
+### 1.0.13
+
+- New: screenshots at the top of this README on GitHub and in `readme.txt` → Screenshots, saved as `.wordpress-org/screenshot-N.png` (WordPress.org's `assets/` names; not in the release zip). The Updates from GitHub one is GitHub-only, in `docs/images/`, since the WordPress.org build has no GitHub updater.
+- Changed: the settings screen's header buttons are **Source code** (the GitHub repository) and **Support** (GitHub issues), with **Buy me a coffee**, on one row. Developers: `{Prefix}_Setup::header_links()` takes a `source` link; an older `website` link still shows as Visit website when there is no `source`.
+- Developers: the Read Me tab leaves out anything between `<!-- github-only:start -->` and `<!-- github-only:end -->`, like the badges block, for parts of `README.md` that only make sense on GitHub.
+- Developers: `README.md`'s `Version:` line holds the version itself, so GitHub shows it; `scripts/preflight-release.sh` checks it and `scripts/rename-plugin.sh` sets it.
+
+### 1.0.12
+
+- Fixed: Updates from GitHub reads the last `Location` header when GitHub sends more than one, instead of the text "Array" and a PHP warning, when it looks up the latest release and a private release's download.
+- Fixed: the settings screen's styles and script are versioned by their file times as text, falling back to the plugin version when a file time can't be read; empty script handles from the `wpstarter_admin_script_deps` filter are dropped.
+- Fixed: the Read Me tab, release notes, line lists and domain lists no longer fail on text that a regular expression can't split; they are treated as empty.
+- Developers: PHPStan runs at level 7 (`phpstan.neon.dist`), without the `missingType.*` checks. Plugins made from the starter fix their own level-7 findings, or note stub mistakes in `phpstan-plugin.neon`, before syncing `phpstan.neon.dist`.
+
+### 1.0.11
+
+- Developers: new core workflow `.github/workflows/release.yml`. Pushing a `vX.Y.Z` tag on `main` builds the zip from the tag, runs the preflight and publishes the GitHub release, with notes from this changelog. In a public repository it signs the zip's build provenance with Sigstore and attaches it as `provenance-{slug}-X.Y.Z.sigstore.json` (OpenSSF Scorecard: Signed-Releases); check a download with `gh attestation verify`. `RELEASING.md` step 3 is now tag and push; publishing by hand stays as the fallback.
+- Developers: `scripts/update-test.sh` accepts the provenance bundle next to the zip and verifies it against the zip, the Release workflow and the tag; any other asset still fails. Nothing changes for users.
+
+### 1.0.10
+
+- Changed: the Built with AI section says the plugin works well with [SEO Pro Stack](https://github.com/wpallstars/seoprostack), the wpallstars base plugin for speed and an organised admin. `readme.txt` and the plugin's screens don't mention it.
+- Developers: every plugin keeps that line in `README.md` only (`STANDARDS.md` → Structure); `scripts/preflight-release.sh` warns when it is missing. `DEVELOPMENT.md` → Test site resources: test sites run SEO Pro Stack.
+- Developers: new core workflow `.github/workflows/scorecard.yml`: OpenSSF Scorecard on pushes to `main`, weekly, on branch protection changes and by hand, with results in code scanning and the Scorecard badge. No setup; skipped in private repositories (`DEVELOPMENT.md` → Checks → Scorecard).
+- Developers: new core file `CODE_OF_CONDUCT.md` (Contributor Covenant 2.0), linked from `CONTRIBUTING.md`, with reports going privately to the contact in `SECURITY.md`. It stays out of both release zips. Nothing changes for users.
+
+### 1.0.9
+
+- Developers: `STANDARDS.md` → Performance: load only what is used, no full table scans (no unlimited queries, no lookups or sorting by `meta_value`, `LIKE '%term%'`, `REGEXP` or `ORDER BY RAND()` on large tables, indexes on the plugin's own tables), one autoloaded settings array, caching, bulk work in batches through cron, no request on every page view. Code rules add "WordPress first".
+- Developers: PHPCS adds WordPress VIP's performance sniffs (`automattic/vipwpcs`, the `WordPressVIPMinimum.Performance` group only). Plugins made from the starter run `composer update` after syncing.
+- Developers: `scripts/smoke-test.sh` seeds 10,000 posts (`--posts N`), lists each request's queries, and fails on a full table or index scan, or a sort without an index, over 1,000 rows in the plugin's own queries (`EXPLAIN`, with a canary that proves the check works). New core file: `scripts/smoke-queries.php`.
+- Developers: `scripts/update-test.sh` accepts the release asset's API address the shared updater offers with `WPALLSTARS_GITHUB_TOKEN` set.
+
+### 1.0.8
+
+- Changed: the Built with AI section sends questions to [aidevops](https://aidevops.sh), which reads the plugin's docs and code to answer and can report a problem for you, and credits the starter with a "Made from WP Plugin Starter" line. `readme.txt` gets a "Where do I get help?" answer.
+- Developers: every plugin made from the starter keeps both credits (`STANDARDS.md` → Structure). `scripts/rename-plugin.sh` writes the "Made from" line for a new plugin, and `scripts/preflight-release.sh` warns when a credit is missing. `DEVELOPMENT.md` → Set up recommends aidevops for development, the sites the plugins run on and questions.
+- Developers: new core script `scripts/update-test.sh` for `RELEASING.md` step 4: it installs the previous GitHub release on a disposable WordPress in Docker and checks that the new release is offered from its one asset (WP-CLI, **Check again**, the Plugins screen), installs and keeps the plugin working. `--from`/`--to` pick the releases; a private repository works with `gh` and `WPALLSTARS_GITHUB_TOKEN` from the environment.
+- Developers: the scripts pass text to `grep -q` and early-exit `awk` as here-strings, not pipes, so `pipefail` no longer fails a check on text over 64 KB (the preflight sometimes missed a large `changelog.txt` entry). Nothing changes for sites.
+
+### 1.0.7
+
+- Developers: `DEVELOPMENT.md` → Services setup gives the steps, with a check for each, to connect a new plugin's repository to SonarCloud (import, Automatic Analysis off, `SONAR_TOKEN`) and Codacy, to add `SYNC_PAT` once `main` is protected, and to run Starter sync once, with which steps wait for public launch in a private repository. The steps that need the owner's accounts or make secrets are left to the owner.
+- Developers: `STANDARDS.md` → Agent docs tells AI agents to keep a plugin at the starter's standard: check for an open `starter-sync` issue first, read the starter's copy of any core file or rule the task touches, and make a change every plugin needs in the starter first. `scripts/preflight-release.sh` warns when `AGENTS.md` does not name `STANDARDS.md`. Nothing changes for users.
+
+### 1.0.6
+
+- Developers: new core workflow `.github/workflows/starter-sync.yml`. Every Monday it compares a plugin's core files with the starter's and keeps one `starter-sync` issue open while any differ, with the files and the steps to sync; it closes the issue once they match. No setup; the repository variable `STARTER_REPO` follows another starter.
+- Developers: SonarCloud runs from GitHub Actions (`.github/workflows/sonarcloud.yml`) with the new core file `sonar-project.properties`: it ignores the rules WordPress coding standards contradict, the findings that are by design (each scoped to its files with the reason) and coverage. SonarCloud reports no open issues.
+- Developers: the Read Me tab's Markdown reader, the settings page navigation, the Plugins screen's replaced-plugin states and `scripts/replaced-plugins.php` are split into smaller methods, with output compared unchanged. Nothing changes for users.
+
+### 1.0.5
+
+- Fix: two settings saved at the same moment (two tabs, or two admins) could undo each other, as each save wrote back the whole settings array. A save now holds a short lock while it reads and writes; in a test of 20 saves at once, all 20 are kept. Uninstalling also removes the lock's row, if one was left.
+- Fix: a site on the GitHub build could be offered an unrelated WordPress.org plugin with the same folder name. The GitHub zip's main file now carries an `Update URI` on github.com (added by `scripts/build-release.sh`; the WordPress.org zip has none), and the updater (1.1.0) never takes WordPress.org's answer for such a build.
+- Fix: the updater no longer offers a release without its requirements when GitHub does not answer for them (it tries again within the hour), takes only `{folder}-{version}.zip` with a token, and asks for a failed private download address once, using only an https address on a GitHub download host.
+- Fix: "Select all" and "Clear" on a long list of choices find the list by id, so they also work for a setting whose key holds a dot or other selector character.
+- Developers: scripts report failures instead of success: `smoke-test.sh` fails a page the site did not answer, `sync-core.sh` stops when the core file list cannot be read, is empty or names an empty folder, `plugin-check.sh` fails when Plugin Check exits with an error but reports none, and `preview-site.sh` takes over a lock only when its run has gone.
+- Developers: `scripts/rename-plugin.sh` takes plugin names with quotes, `$` and `&`, escaped for where they land; unsafe names and URLs are refused before any file changes.
+- Developers: the settings screen's `render_field()`, the settings store's `sanitize_value()` and `search()`, and the updater's longest methods are split into small methods. HTML, values, hooks and filters are unchanged.
+- Developers: the Bash scripts use `[[ ]]`, every `case` has a default, and option values are read into named variables. New core file `.codacy.yml` (Codacy skips `composer.lock`). README badges and repository metrics on GitHub, left out of the Read Me tab. Nothing changes for users.
+
+### 1.0.4
+
+- Developers: `scripts/rename-plugin.sh` starts the new plugin at version 0.1.0 (`--version` for another), with the changelogs in `README.md`, `readme.txt` and `changelog.txt` starting again from that version and `readme.txt`'s upgrade notices removed. Before, a new plugin kept the starter's version and changelog.
+- Developers: a top-level setting with `'panel' => true` shows its Options panel even without visible child settings, so a feature can render its own controls there (`wpstarter_setting_panel`), under its switch, instead of in a separate card. Nothing changes for users.
+
+### 1.0.3
+
+- Developers: `scripts/rename-plugin.sh` takes `--description`, `--author`, `--author-uri`, `--plugin-uri`, `--contributors` and `--donate`, so a plugin made from the starter carries its maker's details instead of the starter's. Each is optional; left out, the starter's value stays. Nothing changes for users.
+
+### 1.0.2
+
+- Developers: new **Agent docs** section in `STANDARDS.md`. `AGENTS.md`, which AI agents read in every session, stays a short map: the plugin's names, its own standing rules and one line per doc saying when to read it. Guidance for one kind of task goes in `docs/{topic}.md`, which never ships (`.distignore`, `.gitattributes`). The same pattern fits a small plugin (only `AGENTS.md`) and a large one (as many docs as it needs). `scripts/preflight-release.sh` warns when `AGENTS.md` is over 150 lines, names a doc that does not exist, or leaves out one in `docs/`, and fails if `docs/` gets into a release zip. Nothing changes for users.
+
+### 1.0.1
+
+- Fix: a select or multi-select setting whose options list fails (its callback throws, for example when another plugin's tables are missing) no longer stops every page after an update. That list is treated as empty, so the settings upgrade finishes.
+- Fix: `scripts/sync-core.sh` in a plugin made from the starter finds the starter in `wp-plugin-starter-template-for-ai-coding` next to it again, without `--from`.
+- Fix: the shared GitHub updater's requests to GitHub never follow redirects, whatever other plugins set, and its private downloads survive updaters that reset `upgrader_pre_download`.
+- Fix: a replaced plugin's Deactivate link works on sites with Freesoul Deactivate Plugins (`WPStarter_Replaced_Plugins::save_plugin_state()`).
+- Fix: release zips leave out `DESIGN.md`.
+
+### 1.0.0
+
+- A fresh start, made from the parts every wpallstars plugin needs, taken from plugins in daily use: the settings screen with search, the Read Me tab, features as classes, replaced plugins, the shared GitHub updater, the release and check scripts, CI and the shared rules (`STANDARDS.md`, `DEVELOPMENT.md`, `RELEASING.md`). Earlier versions of this starter are retired; start again from this one.
+- New: `scripts/rename-plugin.sh` gives a copy of the starter its own names, and `scripts/sync-core.sh` keeps a plugin's core files the same as the starter's (`--check` lists any that differ).
+
+## Built with AI
+
+WP Plugin Starter is built and maintained with [aidevops](https://aidevops.sh), the same developer's open-source AI harness for creating and managing anything online with AI, plugins like this one included. It is free on [GitHub](https://github.com/marcusquinn/aidevops).
+
+Questions about using, changing or building on WP Plugin Starter: ask aidevops. Open this repository, or the site it runs on, with aidevops and ask; it reads the plugin's docs and code to answer, and can report a problem for you.
+
+Made from [WP Plugin Starter](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding), the wpallstars starter plugin. Its shared standards and the weekly Starter sync keep this plugin up to date.
+
+Works well with [SEO Pro Stack](https://github.com/wpallstars/seoprostack), the wpallstars base plugin for every site: it speeds WordPress up and keeps the admin organised, each job a switch you turn on.
+
+## License
+
+GPL-3.0-or-later (the full text is in `LICENSE`), with the additional terms in `ATTRIBUTION.txt` (GPL-3.0 section 7(b)): keep the copyright notices and the "Made from" credit.
+
+Copying, renaming or adapting this plugin or part of it, by hand or with an AI assistant: read `ATTRIBUTION.txt` first. It says what every copy keeps, with a section for AI assistants.
+
+Copyright (C) 2026 Marcus Quinn
