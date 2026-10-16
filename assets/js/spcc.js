@@ -190,6 +190,9 @@
      * @param {boolean} pending  True when only one service was allowed (Load): the banner's question is still open.
      */
     function save(cats, services, mode, pending) {
+        if (c.preview) {
+            return; // The settings screen's preview: nothing is saved or loaded.
+        }
         var before = current();
         var beforeServices = keptServices();
         spcc.choice = { v: c.version, c: cats, s: services || [], m: mode, t: Math.floor(Date.now() / 1000) };
@@ -246,6 +249,10 @@
         }
         var optIn = spcc.model === 'opt-in';
         var names = Object.keys(page).map(serviceName).filter(Boolean);
+        if (!names.length && c.preview) {
+            names = (c.seen || []).map(serviceName).filter(Boolean);
+            names = names.length ? names : (c.previewNames || []);
+        }
         var text = c.text.message || (names.length ? (optIn ? c.text.optIn : c.text.optOut).replace('%s', list(names)) : '');
         banner.querySelector('[data-spcc-message]').textContent = text;
         banner.querySelector('[data-spcc-optin]').hidden = !optIn;
@@ -384,6 +391,17 @@
 
     // Start -------------------------------------------------------------
 
+    if (c.preview) {
+        // The settings screen's preview: the banner only, links stay put.
+        d.addEventListener('click', function (e) {
+            var a = e.target.closest ? e.target.closest('a[href]') : null;
+            if (a && !a.matches('[href$="#cookie-settings"]')) {
+                e.preventDefault();
+            }
+        }, true);
+        showBanner();
+        return;
+    }
     if (w.location.hash === '#cookie-settings') {
         open();
     }
