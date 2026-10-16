@@ -31,6 +31,19 @@ function seoprocookieconsent_uninstall_site() {
     // Services and hosts Cookie consent found on the site's pages.
     delete_option('seoprocookieconsent_seen');
 
+    wp_unschedule_hook('seoprocookieconsent_thumbnail');
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one-off removal of indexed, non-autoloaded thumbnail cache options.
+    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->options} WHERE option_name LIKE %s", $wpdb->esc_like('seoprocookieconsent_thumbnail_') . '%'));
+    $upload = wp_upload_dir(null, false);
+    $dir    = $upload['basedir'] . '/seoprocookieconsent-thumbnails';
+    foreach (glob($dir . '/*.jpg') ?: array() as $file) {
+        wp_delete_file($file);
+    }
+    if (is_dir($dir)) {
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rmdir -- remove only our now-empty cache directory.
+        rmdir($dir);
+    }
+
     $patterns = array('_transient_seoprocookieconsent_', '_transient_timeout_seoprocookieconsent_');
     foreach ($patterns as $pattern) {
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one-off cleanup of our transients.

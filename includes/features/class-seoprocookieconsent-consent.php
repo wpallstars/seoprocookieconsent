@@ -181,6 +181,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      * Hooks.
      */
     public static function boot() {
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-thumbnails.php';
+        add_action(SEOProCookieConsent_Thumbnails::HOOK, array('SEOProCookieConsent_Thumbnails', 'fetch'), 10, 2);
         if (is_admin()) {
             add_action('seoprocookieconsent_setting_panel', array(__CLASS__, 'panel'), 10, 1);
         }

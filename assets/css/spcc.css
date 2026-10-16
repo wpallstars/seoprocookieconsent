@@ -395,6 +395,9 @@
 /* Held-back embeds ------------------------------------------------------- */
 
 .spcc-embed {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -422,7 +425,28 @@
 }
 
 .spcc-embed__notice {
+    position: relative;
     max-width: 420px;
+}
+
+.spcc-embed > .spcc-embed__thumbnail {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
+
+.spcc-embed__thumbnail ~ .spcc-embed__notice::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    z-index: -1;
+    border-radius: var(--spcc-radius);
+    background: var(--spcc-bg);
+    opacity: 0.96;
 }
 
 .spcc-embed__notice p {
