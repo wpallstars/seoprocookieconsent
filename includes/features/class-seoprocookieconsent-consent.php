@@ -211,6 +211,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (!self::enabled()) {
             return;
         }
+        add_action('admin_init', array(__CLASS__, 'register_translations'));
+        add_action('seoprocookieconsent_settings_changed', array(__CLASS__, 'register_translations'));
         if (isset($_GET[self::PREVIEW_ARG])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only shows the banner to the admin; preview() checks who asks.
             add_filter('show_admin_bar', array(__CLASS__, 'preview_admin_bar'));
         }
@@ -354,7 +356,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'text'       => array(
                 /* translators: %s: service names, such as "Google Analytics, Hotjar". */
                 'usedBy'  => __('Used by: %s.', 'seoprocookieconsent'),
-                'message' => (string) SEOProCookieConsent_Settings::get('consent_message'),
+                'message' => self::translated_setting('consent_message'),
                 /* translators: %s: the services on the page, such as "YouTube and Google Analytics". */
                 'optIn'   => __('This page uses %s, which may set cookies and share data about your visit. Choose what to allow.', 'seoprocookieconsent'),
                 /* translators: %s: the services on the page, such as "YouTube and Google Analytics". */
@@ -469,17 +471,65 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         }
     }
 
+    /** Register owner strings on admin requests and after settings changes. */
+    public static function register_translations() {
+        foreach (array('consent_message', 'consent_policy_url') as $key) {
+            $value = (string) SEOProCookieConsent_Settings::get($key);
+            if ('' === $value) {
+                continue;
+            }
+            do_action('wpml_register_single_string', 'SEO Pro Cookie Consent', $key, $value); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public registration API.
+            if (function_exists('pll_register_string')) {
+                pll_register_string($key, $value, 'SEO Pro Cookie Consent', 'consent_message' === $key);
+            }
+        }
+    }
+
     /**
-     * The cookie policy link.
+     * Read owner text in the page language, never the visitor's language.
+     *
+     * @param string $key Setting key.
+     * @return string
+     */
+    private static function translated_setting($key) {
+        $value = (string) SEOProCookieConsent_Settings::get($key);
+        if ('' === $value) {
+            return '';
+        }
+        $translated = (string) apply_filters('wpml_translate_single_string', $value, 'SEO Pro Cookie Consent', $key); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public translation API.
+        if (function_exists('pll__')) {
+            $translated = (string) pll__($value);
+        } elseif ('consent_message' === $key && function_exists('trp_translate')) {
+            // Plain text for JSON, without TranslatePress's editing wrappers.
+            $translated = (string) trp_translate($translated, null, false);
+        }
+        return '' !== $translated ? $translated : $value;
+    }
+
+    /**
+     * The cookie policy link, including a translated policy page when present.
      *
      * @return string
      */
     public static function policy_url() {
-        $url = (string) SEOProCookieConsent_Settings::get('consent_policy_url');
+        $url = self::translated_setting('consent_policy_url');
         if ('' !== $url && '/' === $url[0]) {
             $url = home_url($url);
         }
-        return '' !== $url ? $url : get_privacy_policy_url();
+        if ('' === $url) {
+            $url = get_privacy_policy_url();
+        }
+        $page = '' !== $url ? url_to_postid($url) : 0;
+        if ($page) {
+            $translated = (int) apply_filters('wpml_object_id', $page, 'page', true); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public page translation API.
+            if (function_exists('pll_get_post')) {
+                $translated = (int) pll_get_post($page);
+            }
+            if ($translated && $translated !== $page && 'publish' === get_post_status($translated)) {
+                $url = get_permalink($translated) ?: $url;
+            }
+        }
+        return $url;
     }
 
     /**

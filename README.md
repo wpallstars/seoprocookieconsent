@@ -75,6 +75,12 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 
 That is all. **Preview the banner**, at the top of the card's options, shows your home page with the banner as a visitor who is asked first, or one shown a notice, sees it, on a desktop or phone screen; it updates after each change, and choices made in it are not saved. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to (start typing a page title to pick one), and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
 
+## Multilingual sites
+
+The banner, dialog and placeholders use the page's WordPress translations. With WPML String Translation or Polylang, open the site's admin after enabling consent, then translate `consent_message` and, if needed, `consent_policy_url` in the **SEO Pro Cookie Consent** string group. Saving settings refreshes the registered source strings. An empty message keeps the automatic translated message.
+
+Policy links use the current language's published policy-page translation when available, including the default privacy policy page; otherwise they keep the original link. TranslatePress translates ordinary page output and uses its string translation API for a custom banner message. Supply translations in your multilingual plugin; this plugin does not translate text automatically or bundle language packs. Clear each language's page cache after changing text or translations. Language follows the page, not browser preferences, cookies or IP. Without a multilingual plugin, the saved message and policy link work as before.
+
 ## Consent records
 
 Under Consent → Options, turn on **Keep consent records** only if you need a history. Each explicit choice (including Reject, a later withdrawal, a dismissed opt-out notice and a single-service Load) sends one small, best-effort request to your own site. Ordinary page views, automatic regional defaults and banner previews send none. A random anonymous ID in the consent cookie joins a visitor's choices until the cookie expires or is removed. No IP address, user agent, page URL or WordPress user ID is stored.
@@ -194,6 +200,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Multilingual custom banner messages and policy links with WPML and Polylang, plus TranslatePress custom-text translation.
 - Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.
 - Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.
 - Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
