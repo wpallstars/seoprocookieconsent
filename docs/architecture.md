@@ -204,9 +204,21 @@ The toolbar is hidden. Anyone else gets the page as usual. The frame
 reloads after each Consent setting saves
 (`seoprocookieconsent:setting-saved`).
 
-## Not yet
+## Page language
 
-Tracked as an issue: per-language banner text beyond translations.
+Consent registers nonempty `consent_message` and `consent_policy_url` strings in
+the SEO Pro Cookie Consent group on `admin_init` and settings changes. WPML's
+single-string filter and Polylang's string API resolve the message and URL at
+render time. TranslatePress's plain-string API handles the custom JSON message;
+normal page-output translation handles its other markup. Default labels retain
+WordPress gettext, and `Intl.ListFormat` uses `document.documentElement.lang`.
+
+Policy links also resolve the current language's published page using
+`wpml_object_id` or `pll_get_post`, including the default privacy policy page.
+Missing translations retain the original text or link. No source setting is
+rewritten, no registration writes occur on visitor requests, and no visitor
+cookies, browser language or IP decide server output. Multilingual page caches
+must separate page languages and be refreshed after translation/settings changes.
 
 ## First-run scan
 

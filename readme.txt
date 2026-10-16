@@ -51,6 +51,10 @@ Made from WP Plugin Starter (https://github.com/wpallstars/wp-plugin-starter-tem
 
 Not until you switch on Cookie consent, so nothing changes on a live site before you look.
 
+= Does it work on multilingual sites? =
+
+With WPML String Translation or Polylang, translate consent_message and consent_policy_url in the SEO Pro Cookie Consent string group after opening admin with consent enabled. Published policy-page translations are linked automatically. TranslatePress uses its string API for custom banner text and translates ordinary page output. Default labels need available WordPress/plugin translations. Clear language page caches after changes; without a multilingual plugin the original text and links stay unchanged.
+
 = How does it know where visitors are? =
 
 From the time zone their browser reports. Nothing is looked up or sent anywhere, and cached pages work. When the time zone is unclear (UTC, or none), visitors are asked first.
@@ -91,6 +95,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
+* Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.
 * Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.
 * Hold back recognised scripts and iframes added after page load, including lightboxes.
