@@ -95,6 +95,8 @@ final class SEOProCookieConsent_Setup {
     public static function load() {
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-services.php';
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-blocker.php';
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-records.php';
+        SEOProCookieConsent_Records::boot();
     }
 
     /**

@@ -58,6 +58,7 @@ SEO Pro Cookie Consent replaces **3 plugins**, some of them in part, with free a
 - **Easy to change your mind.** A Cookie settings link joins your footer menu, the Cookie settings button block or any link to `#cookie-settings` opens it, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
 - **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
+- **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
 - **Replaces Complianz.** Its region and expiry settings are imported once, and while Complianz is active this waits, so two banners never show.
@@ -73,6 +74,16 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 4. Optional: under **Policies → Terms and conditions**, enter your answers, switch the feature on and add the Terms and conditions block (or `[spcc_terms]`) to a page. Review the whole page before publishing.
 
 That is all. **Preview the banner**, at the top of the card's options, shows your home page with the banner as a visitor who is asked first, or one shown a notice, sees it, on a desktop or phone screen; it updates after each change, and choices made in it are not saved. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to (start typing a page title to pick one), and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
+
+## Consent records
+
+Under Consent → Options, turn on **Keep consent records** only if you need a history. Each explicit choice (including Reject, a later withdrawal, a dismissed opt-out notice and a single-service Load) sends one small, best-effort request to your own site. Ordinary page views, automatic regional defaults and banner previews send none. A random anonymous ID in the consent cookie joins a visitor's choices until the cookie expires or is removed. No IP address, user agent, page URL or WordPress user ID is stored.
+
+Records contain categories, individually allowed services, the choice model, whether the banner still needs an answer, browser choice time, server receipt time and **Policy version** (up to 100 characters). Change that label when your policy changes and keep copies of your policy separately: the plugin does not archive the text or ask again on a version change. Clear page caches after changing recording settings or the label.
+
+Reload the settings screen after enabling to see **Export consent records (CSV)**. Only site administrators can export. Exports omit expired records and protect spreadsheet formula prefixes. Treat the ID and exports as potentially personal data and include this processing in your privacy policy. WordPress's hourly cron deletes expired records in batches of 1,000, even after recording is switched off; deletion depends on WP-Cron running and busy sites may take several batches. Changing the consent lifetime also changes record retention. Uninstall removes all records and the cleanup event on every site in a network.
+
+These are self-reported snapshots, not authenticated identity evidence or a guarantee of legal compliance. Delivery can fail (offline, blocked REST, unavailable storage or browser support); no retry or recording-success claim is made. Browsers without secure random generation or `sendBeacon` still save consent locally, but send no record. The write-only public route accepts bounded JSON from the site's origin; it is not protection against bots forging requests. Use your host's request limits for abuse protection. Each multisite site has separate storage and exports.
 
 ## Terms and conditions
 
@@ -183,6 +194,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.
 - Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.
 - Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 - Optional Terms and conditions block and `[spcc_terms]` shortcode, five owner answers, a plain-text wording override and a one-time non-overwriting import of Complianz Terms & Conditions identity/contact answers.

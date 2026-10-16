@@ -113,9 +113,41 @@ HTTPS): JSON with `v` (format version), `c` (category => 0/1), `s`
 (services allowed one at a time), `m` (model when given), `t` (time) and
 `p: 1` while the only answer is a Load button: the banner stays until the
 visitor chooses, and Reject all drops those services too.
+When optional records are on, `id` is a cryptographically random 128-bit hex
+identifier, reused for choices until the cookie is lost or expires, and `policy`
+is the configured policy label (up to 100 Unicode characters). Neither affects
+the format version or whether the stored choice is accepted.
 Kept for the Consent kept for days setting (default 365). A dismissed
 opt-out notice stores the defaults with `m: "opt-out"`; it never counts
 as opt-in consent if the visitor later shows up in an opt-in place.
+
+## Optional consent records
+
+`includes/class-seoprocookieconsent-records.php`, loaded by Setup, owns a
+write-only `POST /seoprocookieconsent/v1/records` route. Only when Consent and
+Keep consent records are enabled does it accept bounded same-origin JSON.
+The browser calls `sendBeacon` only from `save()`, including Load, Reject and
+withdrawals; page loads, automatic defaults and previews never send records.
+No nonce is embedded in cached HTML. Origin checks stop cross-site browser
+submissions, not forged clients. Records are self-reported, best-effort,
+not authenticated proof; there is no public record read or deletion API.
+
+Storage is a per-site `{db_prefix}seoprocookieconsent_records` table, lazily
+created with dbDelta after opt-in on admin/settings work. The non-autoloaded
+`seoprocookieconsent_records_schema` option versions this separate schema.
+It stores only the cookie ID, categories/services/model/pending state, client
+time, server receipt time and policy label. No IP, user agent or page URL.
+The primary ID and receipt-time index cover export and expiry. CSV export
+uses manage_options plus an admin-post nonce, primary-key pages of 500 and
+an upper ID snapshot; expired rows are omitted and policy formula prefixes
+escaped. Policy text is not archived; label changes do not invalidate consent.
+
+Hourly `seoprocookieconsent_records_cleanup` deletes up to 1,000 rows older
+than the current consent lifetime by indexed server receipt time, continuing
+after five minutes when a batch is full. Existing data continues to expire
+with recording/Consent disabled. WP-Cron must run; purge page caches after
+settings changes. Uninstall drops each site's table, schema option and event.
+No record table or cron is created for sites that never enable records.
 
 ## Signals to other code
 
@@ -174,8 +206,7 @@ reloads after each Consent setting saves
 
 ## Not yet
 
-Tracked as issues: consent records,
-and per-language banner text beyond translations.
+Tracked as an issue: per-language banner text beyond translations.
 
 ## First-run scan
 
