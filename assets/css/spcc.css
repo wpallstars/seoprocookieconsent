@@ -1,0 +1,492 @@
+/**
+ * SEO Pro Cookie Consent: banner, Cookie settings dialog, embed
+ * placeholders and the Cookie settings button. Colours come from the
+ * theme: Kadence's palette (light and dark), then block theme presets,
+ * then neutral fallbacks (STYLING.md → Front-end styling and dark mode).
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2026 Marcus Quinn
+ * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
+ * Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
+ */
+
+.spcc,
+.spcc-reopen,
+.spcc-embed {
+    --spcc-bg: var(--global-palette9, var(--wp--preset--color--base, #fff));
+    --spcc-text: var(--global-palette4, var(--global-palette3, var(--wp--preset--color--contrast, #1d2327)));
+    --spcc-strong: var(--global-palette3, var(--wp--preset--color--contrast, #1d2327));
+    --spcc-border: rgba(127, 127, 127, 0.3);
+    --spcc-btn-bg: var(--global-palette-btn-bg, var(--global-palette1, var(--wp--preset--color--primary, #2271b1)));
+    --spcc-btn-text: var(--global-palette-btn, #fff);
+    --spcc-btn-bg-hover: var(--global-palette-btn-bg-hover, var(--global-palette2, var(--spcc-btn-bg)));
+    --spcc-btn-text-hover: var(--global-palette-btn-hover, var(--spcc-btn-text));
+    --spcc-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.spcc *,
+.spcc *::before,
+.spcc *::after {
+    box-sizing: border-box;
+}
+
+.spcc [hidden],
+.spcc[hidden],
+.spcc-reopen[hidden] {
+    display: none !important;
+}
+
+/* Buttons: Accept and Reject look the same, so neither is the easy way. */
+.spcc-btn,
+.spcc-embed__load {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 18px;
+    border: 1px solid transparent;
+    border-radius: var(--spcc-radius);
+    background: var(--spcc-btn-bg);
+    color: var(--spcc-btn-text);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.spcc-btn:hover,
+.spcc-embed__load:hover {
+    background: var(--spcc-btn-bg-hover);
+    color: var(--spcc-btn-text-hover);
+}
+
+.spcc-btn--quiet {
+    border-color: var(--spcc-border);
+    background: transparent;
+    color: var(--spcc-strong);
+}
+
+.spcc-btn--quiet:hover {
+    border-color: currentColor;
+    background: rgba(127, 127, 127, 0.12);
+    color: var(--spcc-strong);
+}
+
+.spcc button:focus-visible,
+.spcc a:focus-visible,
+.spcc input:focus-visible,
+.spcc-reopen:focus-visible,
+.spcc-embed button:focus-visible {
+    outline: 2px solid var(--spcc-strong);
+    outline-offset: 2px;
+}
+
+/* Banner ----------------------------------------------------------------- */
+
+.spcc-banner {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--spcc-border);
+    background: var(--spcc-bg);
+    color: var(--spcc-text);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+}
+
+.spcc-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    max-width: var(--global-content-width, 1200px);
+    margin: 0 auto;
+}
+
+.spcc-banner__text {
+    flex: 1 1 320px;
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+.spcc-banner__policy,
+.spcc-dialog__intro a {
+    color: inherit;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.spcc-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.spcc-banner--left,
+.spcc-banner--right {
+    bottom: 16px;
+    left: 16px;
+    right: auto;
+    width: calc(100% - 32px);
+    max-width: 420px;
+    border: 1px solid var(--spcc-border);
+    border-radius: calc(var(--spcc-radius) * 2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    padding: 16px;
+}
+
+.spcc-banner--right {
+    left: auto;
+    right: 16px;
+}
+
+.spcc-banner--left .spcc-banner__inner,
+.spcc-banner--right .spcc-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.spcc-banner--left .spcc-banner__text,
+.spcc-banner--right .spcc-banner__text {
+    flex: none;
+}
+
+.spcc-banner--left .spcc-btn,
+.spcc-banner--right .spcc-btn {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 599px) {
+    .spcc-banner,
+    .spcc-banner--left,
+    .spcc-banner--right {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        border-width: 1px 0 0;
+        border-radius: calc(var(--spcc-radius) * 2) calc(var(--spcc-radius) * 2) 0 0;
+        padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .spcc-banner__actions {
+        width: 100%;
+    }
+
+    .spcc-banner .spcc-btn {
+        flex: 1 1 auto;
+    }
+
+    /* Settings on its own row, Reject and Accept side by side below. */
+    .spcc-banner .spcc-btn--quiet {
+        flex-basis: 100%;
+        order: 2;
+    }
+}
+
+/* Cookie settings dialog ------------------------------------------------- */
+
+.spcc-dialog {
+    width: calc(100% - 32px);
+    max-width: 560px;
+    max-height: calc(100vh - 32px);
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+    border: 1px solid var(--spcc-border);
+    border-radius: calc(var(--spcc-radius) * 2);
+    background: var(--spcc-bg);
+    color: var(--spcc-text);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+.spcc-dialog[open]:not(:modal) {
+    position: fixed;
+    z-index: 100000;
+    inset: 16px;
+}
+
+.spcc-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.spcc-dialog__form {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 20px;
+}
+
+.spcc-dialog__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.spcc-dialog__title {
+    margin: 0;
+    color: var(--spcc-strong);
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.spcc-dialog__close {
+    width: 44px;
+    height: 44px;
+    margin: -8px -8px -8px 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--spcc-radius);
+    background: transparent;
+    color: var(--spcc-strong);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.spcc-dialog__close:hover {
+    background: rgba(127, 127, 127, 0.12);
+}
+
+.spcc-dialog__intro,
+.spcc-dialog__desc {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+.spcc-dialog__list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.spcc-dialog__category {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--spcc-border);
+}
+
+.spcc-dialog__desc {
+    padding-inline-start: 52px;
+    font-size: 0.875rem;
+    opacity: 0.85;
+}
+
+.spcc-dialog__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+    padding-top: 4px;
+}
+
+@media (max-width: 599px) {
+    .spcc-dialog__actions .spcc-btn {
+        flex: 1 1 auto;
+    }
+}
+
+/* Switches: real checkboxes, drawn as switches. */
+.spcc-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: var(--spcc-strong);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.spcc-switch input {
+    position: relative;
+    flex: none;
+    width: 40px;
+    height: 24px;
+    margin: 0;
+    border: 1px solid var(--spcc-border);
+    border-radius: 12px;
+    background: rgba(127, 127, 127, 0.35);
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.spcc-switch input::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.spcc-switch input:checked {
+    border-color: transparent;
+    background: var(--spcc-btn-bg);
+}
+
+.spcc-switch input:checked::before {
+    left: 18px;
+}
+
+.spcc-switch input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+[dir="rtl"] .spcc-switch input::before {
+    left: auto;
+    right: 2px;
+}
+
+[dir="rtl"] .spcc-switch input:checked::before {
+    right: 18px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spcc-switch input,
+    .spcc-switch input::before {
+        transition: background-color 0.15s, left 0.15s, right 0.15s;
+    }
+}
+
+/* Held-back embeds ------------------------------------------------------- */
+
+.spcc-embed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 180px;
+    padding: 16px;
+    border: 1px solid var(--spcc-border);
+    border-radius: var(--spcc-radius);
+    background: rgba(127, 127, 127, 0.12);
+    color: inherit;
+    text-align: center;
+}
+
+.spcc-embed iframe {
+    display: none;
+}
+
+/* Core's responsive embeds size the wrapper; fill it. */
+.wp-embed-responsive .wp-has-aspect-ratio .spcc-embed {
+    position: absolute;
+    inset: 0;
+    max-width: none !important;
+    min-height: 0;
+    aspect-ratio: auto !important;
+}
+
+.spcc-embed__notice {
+    max-width: 420px;
+}
+
+.spcc-embed__notice p {
+    margin: 0 0 12px;
+    font-size: 0.9375rem;
+}
+
+.spcc-embed__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 16px;
+}
+
+.spcc-embed__notice .spcc-embed__actions {
+    margin: 0;
+}
+
+.spcc-embed__settings {
+    padding: 4px;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Cookie settings button when no footer menu link ------------------------ */
+
+.spcc-reopen {
+    position: fixed;
+    z-index: 99998;
+    bottom: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    border: 1px solid var(--spcc-border);
+    border-radius: 999px;
+    background: var(--spcc-bg);
+    color: var(--spcc-strong);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font: inherit;
+    font-size: 0.8125rem;
+    cursor: pointer;
+}
+
+[dir="rtl"] .spcc-reopen {
+    left: auto;
+    right: 16px;
+}
+
+/* Cookie policy block ---------------------------------------------------- */
+
+.spcc-policy__scroll {
+    overflow-x: auto;
+    margin: 0 0 1.5em;
+}
+
+.spcc-policy__table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.9375em;
+}
+
+.spcc-policy__table th,
+.spcc-policy__table td {
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+    text-align: start;
+    vertical-align: top;
+}
+
+.spcc-policy__table code {
+    font-size: 0.875em;
+    overflow-wrap: anywhere;
+}
+
+.spcc-policy__updated {
+    font-size: 0.875em;
+    opacity: 0.85;
+}
+
+@media print {
+    .spcc-banner,
+    .spcc-reopen {
+        display: none !important;
+    }
+}

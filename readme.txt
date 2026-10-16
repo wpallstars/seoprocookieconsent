@@ -1,7 +1,7 @@
 === SEO Pro Cookie Consent ===
 Contributors: wpallstars
 Donate link: https://buymeacoffee.com/marcusquinn
-Tags: starter, boilerplate, settings, developer, template
+Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -13,16 +13,19 @@ Simple, light cookie consent: blocks scripts until consent, asks only where the 
 
 == Description ==
 
-SEO Pro Cookie Consent is what wpallstars plugins are made from. It has no features of its own: it holds the parts every plugin needs, so a new plugin starts with them working.
+Free cookie consent you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies, holds them back until visitors allow them, and shows a short banner that matches your theme, only on pages that have them and only as strictly as each visitor's region needs.
 
-* **A settings screen** (Settings → SEO Pro Cookie Consent) that features fill by declaring their settings, saved instantly, searchable, in tabs. With no features yet it shows one empty tab.
-* **Multisite**: the same screen for the whole network (Network Admin → Settings), whose settings new sites start with. Apply a card to every site, see which sites differ, and make every site the same.
-* **A Read Me tab** that shows the plugin's README.md, banner included.
-* **Admin colour mode**: Light, Dark or System in the header, saved per person and shared with other wpallstars colour-mode controls, on settings, network settings and own screens.
-* **Features as classes**, off by default, with settings, hooks, one-off imports from the plugins they replace and clean uninstall.
-* **Release and check scripts**: lint, smoke test, release build, preflight and Plugin Check.
+* **Holds back** Google Analytics, Tag Manager and Ads, Meta, TikTok, LinkedIn, Pinterest, Microsoft, Hotjar, HubSpot and X tags, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram and Facebook embeds, and live chats. Nothing to scan.
+* **Asks only where needed**: Europe (EU, EEA, UK, Switzerland), Quebec and unclear locations are asked first; elsewhere a short notice, or none. Decided from the browser's time zone, so nothing is looked up and page caches keep working.
+* **A fair banner**: Accept all and Reject all look the same, Settings has one switch per kind of cookie, and the message names what is on the page.
+* **Load buttons** on held-back videos, maps and posts.
+* **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
+* **Cookie settings** link in the footer menu, a button, block or shortcode; taking consent back removes cookies and stops scripts.
+* **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
+* **Cookie policy block** that lists your site's cookies and keeps itself up to date, plus suggested privacy policy text.
+* **Replaces Complianz**: imports its region and expiry settings once.
 
-Start a plugin from it on GitHub (wpallstars/seoprocookieconsent): the Read Me tab explains how.
+It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
 
 = Built with AI =
 
@@ -35,13 +38,22 @@ Made from WP Plugin Starter (https://github.com/wpallstars/wp-plugin-starter-tem
 == Installation ==
 
 1. Upload the `seoprocookieconsent` folder to `/wp-content/plugins/`, or install the zip from Plugins → Add New → Upload Plugin.
-2. Activate it, then open Settings → SEO Pro Cookie Consent.
+2. Activate it, then open Settings → SEO Pro Cookie Consent and switch on Cookie consent.
+3. Open a few pages of your site: the settings card lists what it found.
 
 == Frequently Asked Questions ==
 
 = Does it do anything on its own? =
 
-No. It adds an empty settings screen and a Read Me tab, ready for a plugin's features.
+Not until you switch on Cookie consent, so nothing changes on a live site before you look.
+
+= How does it know where visitors are? =
+
+From the time zone their browser reports. Nothing is looked up or sent anywhere, and cached pages work. When the time zone is unclear (UTC, or none), visitors are asked first.
+
+= A script that sets cookies still loads =
+
+Add part of its address under Troubleshooting → Also hold back. The settings card lists other third-party scripts it saw.
 
 = Where do I get help? =
 
@@ -49,7 +61,7 @@ Ask aidevops (https://aidevops.sh): open the plugin's repository, or your site, 
 
 = Does it contact other services? =
 
-No. The WordPress.org build contacts nothing outside WordPress.
+No. The WordPress.org build contacts nothing outside WordPress. The services it holds back are contacted by your site's own scripts and embeds, only after visitors allow them.
 
 = When do versions reach WordPress.org? =
 
@@ -61,6 +73,9 @@ GitHub releases are the stable beta channel: each version comes out there first.
 2. The Read Me tab, showing the plugin's README.md inside WordPress.
 
 == Changelog ==
+
+= Unreleased =
+* Cookie consent, with a cookie policy block that keeps itself up to date.
 
 = 0.1.0 =
 * First version, made from WP Plugin Starter 1.0.39.

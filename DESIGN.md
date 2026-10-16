@@ -16,6 +16,34 @@ tabs and cards; it adds no independent brand palette to Light mode.
   Light keeps existing colours. System follows the OS live. There are no
   mode transitions, including for reduced-motion users.
 
+## Front end
+
+The banner, Cookie settings dialog, embed placeholders and Cookie
+settings button (`assets/css/spcc.css`) take the theme's look: no brand
+palette of their own.
+
+- Colours are `--spcc-*` tokens set on each component from Kadence's
+  palette (`--global-palette9` background, `3` strong text, `4` text, the
+  `--global-palette-btn*` button colours), then block theme presets
+  (`--wp--preset--color--base`, `contrast`, `primary`), then neutral
+  fallbacks. Borders and tints are translucent grey, so Kadence's dark
+  mode needs no extra rules. Fonts inherit.
+- Accept all and Reject all share one solid button style; Settings and
+  Save choices are the quiet outline style. Buttons are at least 44px
+  tall; radius 6px (boxes and dialog 12px).
+- Banner: a bar along the bottom by default, content up to the theme's
+  content width, or a 420px box at the bottom left or right. Under 600px
+  every position is a bottom sheet: message, then Reject all and Accept
+  all side by side, then Settings across the full width.
+- Dialog: native `<dialog>`, 560px wide, a sheet with 16px margins on
+  phones, one switch row per kind of cookie with a top border, actions
+  at the end (Reject all, Save choices, Accept all).
+- Placeholders keep the embed's size (its width and height, or core's
+  responsive wrapper) with a translucent tint, centred text, a Load
+  button and a Cookie settings text button.
+- Focus outlines are 2px in the strong text colour. Only the switches
+  animate, and only without reduced motion.
+
 ## Responsive Behaviour
 
 - Keep the existing header's wrapping and small-screen breakpoints.
