@@ -120,6 +120,26 @@ text is never overwritten and the list stays current. The privacy
 policy guide (Settings → Privacy) gets suggested text too. Text is a
 starting point, not legal advice: the README says so.
 
+Terms (`includes/features/class-seoprocookieconsent-terms.php`) is a separate,
+off-by-default feature on Policies. `seoprocookieconsent/terms` and
+`[spcc_terms]` use the same live settings: business, country, offerings,
+returns and contact, or a full plain-text override. Every line is escaped
+as a paragraph; there are no extra front-end assets, HTML execution or
+visitor-dependent responses. Incomplete suggested wording is hidden from
+everyone until business and contact are filled; the settings explain this.
+Owners write surrounding blocks normally. Full-page caches need purging
+after answer changes, as for other dynamic WordPress blocks.
+
+DB version 3 imports unset identity/contact answers from
+`complianz_tc_options_terms-conditions` (`organisation_name`,
+`country_company`, and `email_company` or `page_company` according to
+`contact_company`). It neither enables the feature nor guesses sales or
+returns clauses. The shared replacement gate waits while the plugin in
+`SEOProCookieConsent_Terms::REPLACES` is active. Source options and pages are
+untouched; the owner reviews the wording and replaces the old block or
+shortcode. This is not a country-specific legal generator, checkout
+acceptance system or withdrawal form.
+
 ## Settings screen preview
 
 The Consent card's **Preview the banner** frames the home page with
@@ -134,7 +154,6 @@ reloads after each Consent setting saves
 
 ## Not yet
 
-Tracked as issues: Terms and conditions generator (Complianz Terms &
-Conditions), consent records, scripts added
+Tracked as issues: consent records, scripts added
 after page load (lightboxes), a Scan now button and first-run guide,
 and per-language banner text beyond translations.

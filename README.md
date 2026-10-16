@@ -46,7 +46,7 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free and Pro editions counted separately. The one that can be downloaded is 7.6 MB zipped; SEO Pro Cookie Consent is 278 KB.
+SEO Pro Cookie Consent replaces **3 plugins**, some of them in part, with free and Pro editions counted separately. It replaces Complianz's consent features and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
@@ -60,6 +60,7 @@ SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free a
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
 - **Replaces Complianz.** Its region and expiry settings are imported once, and while Complianz is active this waits, so two banners never show.
+- **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
 
@@ -68,8 +69,19 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 1. Go to **Settings → SEO Pro Cookie Consent → Consent** and switch on **Cookie consent**.
 2. Open a few pages of your site. The card lists what was found.
 3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
+4. Optional: under **Policies → Terms and conditions**, enter your answers, switch the feature on and add the Terms and conditions block (or `[spcc_terms]`) to a page. Review the whole page before publishing.
 
 That is all. **Preview the banner**, at the top of the card's options, shows your home page with the banner as a visitor who is asked first, or one shown a notice, sees it, on a desktop or phone screen; it updates after each change, and choices made in it are not saved. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to (start typing a page title to pick one), and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
+
+## Terms and conditions
+
+This feature is off by default and independent of Cookie consent. Fill in your legal business or owner name and public contact details before using the suggested wording; it stays empty for visitors until both are present. Country identifies where you are based, not a choice of governing law. Describe what you offer, payment and delivery terms where relevant, and your returns, refunds and cancellation process. No return period or country-specific legal clause is assumed. Empty optional answers omit their sections.
+
+The block and shortcode read current settings on every render. After changing answers, clear any full-page cache to update cached copies. **Your own wording** replaces all suggested text with plain text, one paragraph per line; HTML and shortcodes are not executed. Normal blocks around it remain yours to edit.
+
+On upgrade, the plugin imports only unset business name, country and the selected email/contact-page answer from Complianz Terms & Conditions. Review imported country codes and complete the other answers yourself. It never enables Terms for you, changes the old plugin's options, or converts its blocks, shortcodes, documents or withdrawal forms. While that plugin is active, Terms waits. Review your replacement page and any required withdrawal process before deactivating it, then replace its block or shortcode with this one.
+
+The wording is a starting point, **not legal advice** or a guarantee of compliance. Have someone qualified for your business and jurisdictions review it, including consumer rights, sales disclosures and any required online withdrawal process. This feature does not provide checkout acceptance or a withdrawal form.
 
 ## Where to find it
 
@@ -171,6 +183,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Local YouTube and Vimeo thumbnails in held-back video placeholders, fetched in cron without contacting video services from visitors' browsers.
+- Optional Terms and conditions block and `[spcc_terms]` shortcode, five owner answers, a plain-text wording override and a one-time non-overwriting import of Complianz Terms & Conditions identity/contact answers.
 - Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
 - Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
 - Settings screen: a banner preview on the Consent card (home page, asked-first or notice visitor, desktop or phone, updates after each change) and a page picker for the Cookie policy page.

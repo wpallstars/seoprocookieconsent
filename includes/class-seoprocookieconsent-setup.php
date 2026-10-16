@@ -36,6 +36,7 @@ final class SEOProCookieConsent_Setup {
     const FEATURES = array(
         'SEOProCookieConsent_Consent',
         'SEOProCookieConsent_Policy',
+        'SEOProCookieConsent_Terms',
     );
 
     /** Handle of the editor script for the plugin's blocks. */
@@ -54,8 +55,9 @@ final class SEOProCookieConsent_Setup {
      *
      * v1: first version.
      * v2: imports Complianz's region and consent expiry settings.
+     * v3: imports Complianz Terms & Conditions identity and contact answers.
      */
-    const DB_VERSION = 2;
+    const DB_VERSION = 3;
 
     /**
      * Renamed tab slugs, old => new. Settings that still use an old slug
@@ -233,7 +235,7 @@ final class SEOProCookieConsent_Setup {
             ),
             'policies' => array(
                 'label'       => __('Policies', 'seoprocookieconsent'),
-                'description' => __('A cookie policy that keeps itself up to date, inside pages you write.', 'seoprocookieconsent'),
+                'description' => __('Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice.', 'seoprocookieconsent'),
             ),
         );
     }
