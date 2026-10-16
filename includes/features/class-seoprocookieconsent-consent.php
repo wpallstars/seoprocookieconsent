@@ -106,7 +106,14 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'default'     => true,
                 'parent'      => self::KEY,
                 'label'       => __('Cookie settings link in the footer menu', 'seoprocookieconsent'),
-                'description' => __('Lets visitors change their mind at any time. Without a footer menu, a small Cookie settings button shows at the bottom of the page after they choose. Any link to #cookie-settings opens it too.', 'seoprocookieconsent'),
+                'description' => __('Lets visitors change their mind at any time. No footer menu? Add the Cookie settings button block, or link to #cookie-settings anywhere.', 'seoprocookieconsent'),
+            ),
+            'consent_floating_button'  => array(
+                'type'        => 'bool',
+                'default'     => false,
+                'parent'      => self::KEY,
+                'label'       => __('Floating Cookie settings button', 'seoprocookieconsent'),
+                'description' => __('A small button in the bottom corner after visitors choose. It shows only on pages with no other Cookie settings link or button.', 'seoprocookieconsent'),
             ),
             'consent_block'            => array(
                 'type'        => 'lines',
@@ -371,11 +378,12 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
 
     /**
      * Footer: the banner when the theme has no wp_body_open, and the
-     * Cookie settings button when no menu link was printed.
+     * floating Cookie settings button, when switched on and no menu link
+     * or button was printed.
      */
     public static function footer() {
         self::banner();
-        if (!self::$menu_link) {
+        if (!self::$menu_link && SEOProCookieConsent_Settings::get('consent_floating_button')) {
             printf(
                 '<button type="button" class="spcc-reopen" data-spcc-action="settings" hidden>%s</button>',
                 esc_html__('Cookie settings', 'seoprocookieconsent')

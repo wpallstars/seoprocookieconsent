@@ -53,7 +53,7 @@ SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free a
 - **A short, fair banner.** Accept all and Reject all look the same, Settings opens a dialog with one switch per kind of cookie, and the message names what is on the page ("This page uses YouTube and Google Analytics…"). A bar along the bottom, or a box at the bottom left or right.
 - **Videos and maps with a Load button.** A held-back YouTube video, map or post shows a placeholder the same size, with a button that loads just that one.
 - **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
-- **Easy to change your mind.** A Cookie settings link joins your footer menu (or a small button shows after visitors choose), and any link to `#cookie-settings` opens it. Taking consent back removes those services' cookies and reloads the page so they stop.
+- **Easy to change your mind.** A Cookie settings link joins your footer menu, the Cookie settings button block or any link to `#cookie-settings` opens it, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
 - **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
@@ -68,7 +68,7 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 2. Open a few pages of your site. The card lists what was found.
 3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
 
-That is all. Under Options you can choose who is asked first, where the banner sits, its message and the policy page it links to. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
+That is all. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to, and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
 
 ## Where to find it
 
@@ -165,6 +165,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 - Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
 - Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
+- Cookie consent: the floating Cookie settings button is optional and off by default; the banner shows above floating language switchers and chat buttons; the dialog's close button and the banner buttons keep their colours on hover and focus in themes that style every button.
 
 ### 0.1.0
 

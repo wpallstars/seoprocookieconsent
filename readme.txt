@@ -20,7 +20,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **A fair banner**: Accept all and Reject all look the same, Settings has one switch per kind of cookie, and the message names what is on the page.
 * **Load buttons** on held-back videos, maps and posts.
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
-* **Cookie settings** link in the footer menu, a button, block or shortcode; taking consent back removes cookies and stops scripts.
+* **Cookie settings** link in the footer menu, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, plus suggested privacy policy text.
 * **Replaces Complianz**: imports its region and expiry settings once.
