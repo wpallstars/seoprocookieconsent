@@ -34,7 +34,7 @@
     var held = Object.keys(page).length > 0;
 
     function serviceName(id) {
-        return c.services && c.services[id] ? c.services[id].name : '';
+        return c.services && c.services[id] ? c.services[id].name : c.text.content;
     }
 
     function list(names) {
@@ -75,7 +75,10 @@
             s.type = type;
         }
         ran[old.getAttribute('data-spcc-category')] = 1;
-        var src = old.getAttribute('src');
+        var src = old.getAttribute('data-spcc-src') || old.getAttribute('src');
+        if (src) {
+            s.setAttribute('src', src);
+        }
         var wait = src && !old.hasAttribute('async');
         if (src) {
             s.async = old.hasAttribute('async');
@@ -402,15 +405,25 @@
         showBanner();
         return;
     }
+    // The head observer also catches lightboxes on pages initially empty of
+    // services. Reuse the same release, banner and dialog state, not a second UI.
+    spcc.refresh = function () {
+        Object.keys(spcc.dynamicPage || {}).forEach(function (id) {
+            page[id] = spcc.dynamicPage[id];
+        });
+        held = Object.keys(page).length > 0;
+        release();
+        if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
+            showBanner();
+        } else {
+            showReopen();
+        }
+    };
+
     if (w.location.hash === '#cookie-settings') {
         open();
     }
-    release();
-    if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
-        showBanner();
-    } else {
-        showReopen();
-    }
+    spcc.refresh();
     if (spcc.choice || spcc.model !== 'opt-in') {
         signal();
     }
