@@ -56,7 +56,7 @@ SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free a
 - **Easy to change your mind.** A Cookie settings link joins your footer menu, the Cookie settings button block or any link to `#cookie-settings` opens it, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
 - **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
-- **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
+- **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
 - **Replaces Complianz.** Its region and expiry settings are imported once, and while Complianz is active this waits, so two banners never show.
 
@@ -68,7 +68,7 @@ For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs
 2. Open a few pages of your site. The card lists what was found.
 3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
 
-That is all. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to, and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
+That is all. **Preview the banner**, at the top of the card's options, shows your home page with the banner as a visitor who is asked first, or one shown a notice, sees it, on a desktop or phone screen; it updates after each change, and choices made in it are not saved. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to (start typing a page title to pick one), and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
 
 ## Where to find it
 
@@ -128,7 +128,9 @@ Consent filters and browser API:
 - `seoprocookieconsent_front_config`: change what the browser reads; set `model` to `opt-in`, `opt-out` or `quiet` to decide on the server, only on sites without page caching.
 - Skip one tag with a `data-spcc-ignore` attribute.
 - In the browser: `spcc.has('statistics')`, `spcc.open()` and the `spcc:consent` event on `document` (detail: `categories`, `services`, `model`); Google Tag Manager gets a `spcc_consent_update` event.
-- Shortcodes: `[spcc_cookie_policy]` and `[spcc_cookie_settings label="Cookie settings"]`; blocks: Cookie policy and Cookie settings button.
+- Shortcodes: `[spcc_cookie_policy intro="yes" button="yes" heading="h3" updated="yes"]` (intro, Cookie settings button and last-updated date on unless `no`; heading `h2`, `h3` or `h4`) and `[spcc_cookie_settings label="Cookie settings" style="button"]` (`style="link"` for a plain link); blocks: Cookie policy and Cookie settings button, with the same settings in the block sidebar.
+- Blocks with settings: `SEOProCookieConsent_Setup::register_block()` takes `attributes` (each with `type` boolean or string, `default`, `label`, and `options` for a choice or `placeholder` for text); the editor shows them in the block sidebar and the render callback gets them.
+- `?spcc_preview=opt-in` or `opt-out` on a front-end page shows the banner as for a first visit to someone who can manage options (the settings screen's preview): nothing is saved or loaded, and links do not navigate.
 
 Filters:
 
@@ -165,6 +167,8 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 - Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
 - Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
+- Settings screen: a banner preview on the Consent card (home page, asked-first or notice visitor, desktop or phone, updates after each change) and a page picker for the Cookie policy page.
+- Blocks: the Cookie policy block's sidebar turns the introduction, Cookie settings button and last-updated date on or off and sets the heading level; the Cookie settings block takes its text and shows as a button or a link. The shortcodes take the same options.
 - Cookie consent: the floating Cookie settings button is optional and off by default; the banner shows above floating language switchers and chat buttons; the dialog's close button and the banner buttons keep their colours on hover and focus in themes that style every button.
 
 ### 0.1.0

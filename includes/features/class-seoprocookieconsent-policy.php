@@ -21,6 +21,13 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
 
     const KEY = 'policy';
 
+    /** Heading levels for each kind of cookie (block and shortcode). */
+    const HEADINGS = array(
+        'h2' => 'H2',
+        'h3' => 'H3',
+        'h4' => 'H4',
+    );
+
     /**
      * Settings.
      *
@@ -58,6 +65,29 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
             'title'       => __('Cookie policy', 'seoprocookieconsent'),
             'description' => __('Lists the cookies this site uses, kept up to date.', 'seoprocookieconsent'),
             'icon'        => 'privacy',
+            'attributes'  => array(
+                'intro'   => array(
+                    'type'    => 'boolean',
+                    'default' => true,
+                    'label'   => __('Short introduction', 'seoprocookieconsent'),
+                ),
+                'button'  => array(
+                    'type'    => 'boolean',
+                    'default' => true,
+                    'label'   => __('Cookie settings button', 'seoprocookieconsent'),
+                ),
+                'heading' => array(
+                    'type'    => 'string',
+                    'default' => 'h3',
+                    'label'   => __('Heading level for each kind of cookie', 'seoprocookieconsent'),
+                    'options' => self::HEADINGS,
+                ),
+                'updated' => array(
+                    'type'    => 'boolean',
+                    'default' => true,
+                    'label'   => __('Date the list was last updated', 'seoprocookieconsent'),
+                ),
+            ),
         ), array(__CLASS__, 'render'));
     }
 
@@ -94,27 +124,40 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
     /**
      * The cookie policy list.
      *
+     * @param array|string $atts Block or shortcode attributes: intro, button
+     *                           and updated (on unless "no"), heading (h2, h3 or h4).
      * @return string
      */
-    public static function render() {
+    public static function render($atts = array()) {
         wp_enqueue_style('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . 'assets/css/spcc.css', array(), SEOProCookieConsent_Setup::asset_version('assets/css/spcc.css'));
+
+        $atts    = shortcode_atts(array(
+            'intro'   => true,
+            'button'  => true,
+            'heading' => 'h3',
+            'updated' => true,
+        ), is_array($atts) ? $atts : array(), 'spcc_cookie_policy');
+        $heading = strtolower((string) $atts['heading']);
+        $heading = array_key_exists($heading, self::HEADINGS) ? $heading : 'h3';
 
         $categories = SEOProCookieConsent_Services::categories();
         $groups     = array('necessary' => self::necessary()) + SEOProCookieConsent_Services::seen_by_category();
         $seen       = SEOProCookieConsent_Services::seen();
 
-        $html  = '<div class="spcc-policy">';
-        $html .= '<p>' . esc_html__('This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time.', 'seoprocookieconsent') . '</p>';
-        if (SEOProCookieConsent_Consent::enabled()) {
+        $html = '<div class="spcc-policy">';
+        if (SEOProCookieConsent_Setup::flag($atts['intro'])) {
+            $html .= '<p>' . esc_html__('This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time.', 'seoprocookieconsent') . '</p>';
+        }
+        if (SEOProCookieConsent_Setup::flag($atts['button']) && SEOProCookieConsent_Consent::enabled()) {
             $html .= '<p>' . SEOProCookieConsent_Consent::settings_button() . '</p>';
         }
 
         foreach ($groups as $category => $services) {
-            $html .= '<h3>' . esc_html($categories[$category]['label']) . '</h3>';
+            $html .= sprintf('<%1$s>%2$s</%1$s>', $heading, esc_html($categories[$category]['label']));
             $html .= '<p>' . esc_html($categories[$category]['description']) . '</p>';
             $html .= self::table($services);
         }
-        if ($seen['updated'] > 0) {
+        if ($seen['updated'] > 0 && SEOProCookieConsent_Setup::flag($atts['updated'])) {
             $html .= '<p class="spcc-policy__updated">' . esc_html(sprintf(
                 /* translators: %s: date. */
                 __('List last updated %s.', 'seoprocookieconsent'),
