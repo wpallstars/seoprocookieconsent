@@ -4,6 +4,11 @@
 # ignore with the identifier, the file and the reason.
 parameters:
 	ignoreErrors:
+		# WP-CLI is available only in CLI requests; cli() checks WP_CLI first.
+		-
+			identifier: class.notFound
+			message: '#unknown class WP_CLI#'
+			path: includes/migrate/class-seoprocookieconsent-migrate.php
 		# The starter has no features, tabs to rename or helpers yet:
 		# SEOProCookieConsent_Setup's lists are empty and its methods do nothing, so
 		# PHPStan reads the core code that uses them as having no effect.

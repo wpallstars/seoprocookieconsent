@@ -98,7 +98,7 @@ final class SEOProCookieConsent_Import_Tab {
         }
         echo '<h3>' . esc_html__('Import history', 'seoprocookieconsent') . '</h3>';
         foreach (array_reverse((array) get_option(SEOProCookieConsent_Migrate::IMPORTS, array()), true) as $id => $record) {
-            printf('<p>%1$s — %2$s — %3$s</p>', esc_html($record['source']), esc_html(wp_date('Y-m-d H:i', $record['time'])), esc_html(!empty($record['undone']) ? __('Undone', 'seoprocookieconsent') : $record['state']));
+            printf('<p>%1$s — %2$s — %3$s</p>', esc_html($record['source']), esc_html(wp_date('Y-m-d H:i', $record['time']) ?: ''), esc_html(!empty($record['undone']) ? __('Undone', 'seoprocookieconsent') : $record['state']));
             if (empty($record['undone'])) {
                 echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
                 self::fields('undo', $id);

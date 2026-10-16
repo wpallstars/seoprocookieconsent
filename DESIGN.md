@@ -13,6 +13,13 @@ Scanning. Findings update in place without reloading the settings or moving
 focus; failures keep the old list and explain the browse-pages fallback.
 All controls inherit the existing Light/Dark admin styling.
 
+The Import tab uses native details, lists, page checkboxes and WordPress buttons
+instead of a new card or palette. Dry-run output precedes each action; pages
+require individual selection and irreversible cleanup has a required backup
+acknowledgement. Forms remain usable without JavaScript. Content and actions
+flow vertically on phones, with the existing wrapping navigation; no motion
+or new breakpoints. Long artifact names must wrap rather than widen the page.
+
 - The header has an icon button after Buy me a coffee, with Light, Dark
   and System radio menu items. Each item has an icon, label and current
   choice tick. Screen readers get the mode name and save-failure message.

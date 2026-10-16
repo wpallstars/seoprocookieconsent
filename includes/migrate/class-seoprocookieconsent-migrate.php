@@ -19,6 +19,10 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     const CONFIG = 'seoprocookieconsent_migrate';
     const LOCK = 'seoprocookieconsent_import_lock';
 
+    /** This utility uses the base import sanitizer, not feature hooks. */
+    public static function boot() {
+    }
+
     /** @return array<string,SEOProCookieConsent_Migrate_Source> */
     public static function sources() {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-source.php';
