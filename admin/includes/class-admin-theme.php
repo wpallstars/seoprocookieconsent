@@ -10,21 +10,21 @@
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-final class WPStarter_Admin_Theme {
+final class SEOProCookieConsent_Admin_Theme {
 
-    const META        = 'wpstarter_admin_theme';
+    const META        = 'seoprocookieconsent_admin_theme';
     const SHARED_META = 'wpallstars_admin_theme';
-    const ACTION      = 'wpstarter_admin_theme';
+    const ACTION      = 'seoprocookieconsent_admin_theme';
     const MODES       = array('light', 'dark', 'system');
-    const CSS_FILE    = 'admin/css/wpstarter-theme.css';
-    const JS_FILE     = 'admin/js/wpstarter-theme.js';
+    const CSS_FILE    = 'admin/css/seoprocookieconsent-theme.css';
+    const JS_FILE     = 'admin/js/seoprocookieconsent-theme.js';
 
     /** Register on admin requests, after the screen's own styles. */
     public static function init() {
@@ -44,7 +44,7 @@ final class WPStarter_Admin_Theme {
     public static function participants($participants) {
         $participants = is_array($participants) ? $participants : array();
         if (current_user_can(is_network_admin() ? 'manage_network_options' : 'manage_options')) {
-            $participants['wp-plugin-starter-template'] = true;
+            $participants['seoprocookieconsent'] = true;
         }
         return $participants;
     }
@@ -87,9 +87,9 @@ final class WPStarter_Admin_Theme {
      * @return string[]
      */
     public static function screens() {
-        return (array) apply_filters('wpstarter_admin_theme_screens', array(
-            WPStarter_Admin_Manager::hook(),
-            WPStarter_Network_Manager::hook(),
+        return (array) apply_filters('seoprocookieconsent_admin_theme_screens', array(
+            SEOProCookieConsent_Admin_Manager::hook(),
+            SEOProCookieConsent_Network_Manager::hook(),
         ));
     }
 
@@ -106,7 +106,7 @@ final class WPStarter_Admin_Theme {
             return false;
         }
         return in_array($screen->id, self::screens(), true)
-            || ($current instanceof WP_Screen && $current->id === $screen->id && wp_style_is('wpstarter-header', 'enqueued'));
+            || ($current instanceof WP_Screen && $current->id === $screen->id && wp_style_is('seoprocookieconsent-header', 'enqueued'));
     }
 
     /**
@@ -118,10 +118,10 @@ final class WPStarter_Admin_Theme {
         if (!in_array($hook, self::screens(), true) && !self::is_screen()) {
             return;
         }
-        wp_enqueue_style('wpstarter-theme', WPSTARTER_URL . self::CSS_FILE, array('wpstarter-header'), self::asset_version(self::CSS_FILE));
-        wp_enqueue_script('wpstarter-theme', WPSTARTER_URL . self::JS_FILE, array('wp-i18n', 'wp-a11y'), self::asset_version(self::JS_FILE), true);
-        wp_set_script_translations('wpstarter-theme', 'wp-plugin-starter-template');
-        wp_add_inline_script('wpstarter-theme', 'window.wpstarterTheme = ' . wp_json_encode(array(
+        wp_enqueue_style('seoprocookieconsent-theme', SEOPROCOOKIECONSENT_URL . self::CSS_FILE, array('seoprocookieconsent-header'), self::asset_version(self::CSS_FILE));
+        wp_enqueue_script('seoprocookieconsent-theme', SEOPROCOOKIECONSENT_URL . self::JS_FILE, array('wp-i18n', 'wp-a11y'), self::asset_version(self::JS_FILE), true);
+        wp_set_script_translations('seoprocookieconsent-theme', 'seoprocookieconsent');
+        wp_add_inline_script('seoprocookieconsent-theme', 'window.seoprocookieconsentTheme = ' . wp_json_encode(array(
             'mode'    => self::mode(),
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'action'  => self::ACTION,
@@ -137,8 +137,8 @@ final class WPStarter_Admin_Theme {
      * @return string
      */
     private static function asset_version($file) {
-        $time = file_exists(WPSTARTER_DIR . $file) ? filemtime(WPSTARTER_DIR . $file) : false;
-        return false === $time ? WPSTARTER_VERSION : (string) $time;
+        $time = file_exists(SEOPROCOOKIECONSENT_DIR . $file) ? filemtime(SEOPROCOOKIECONSENT_DIR . $file) : false;
+        return false === $time ? SEOPROCOOKIECONSENT_VERSION : (string) $time;
     }
 
     /** Set the mode classes before the body is parsed. */
@@ -147,10 +147,10 @@ final class WPStarter_Admin_Theme {
             return;
         }
         $script = '(function(r,m){var q=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)");'
-            . 'r.classList.add("wps-theme-"+m);'
-            . 'if(m==="dark"||(m==="system"&&q&&q.matches)){r.classList.add("wps-dark");}'
+            . 'r.classList.add("spcc-theme-"+m);'
+            . 'if(m==="dark"||(m==="system"&&q&&q.matches)){r.classList.add("spcc-dark");}'
             . '})(document.documentElement,' . wp_json_encode(self::mode()) . ');';
-        wp_print_inline_script_tag($script, array('id' => 'wpstarter-theme-mode'));
+        wp_print_inline_script_tag($script, array('id' => 'seoprocookieconsent-theme-mode'));
     }
 
     /**
@@ -169,14 +169,14 @@ final class WPStarter_Admin_Theme {
         $network = isset($_POST['network']) && '1' === $_POST['network'];
         check_ajax_referer(self::nonce_action($network), 'nonce');
         if (!current_user_can($network ? 'manage_network_options' : 'manage_options')) {
-            wp_send_json_error(array('message' => __('You cannot change this.', 'wp-plugin-starter-template')), 403);
+            wp_send_json_error(array('message' => __('You cannot change this.', 'seoprocookieconsent')), 403);
         }
         $mode = isset($_POST['mode']) && is_string($_POST['mode']) ? sanitize_key(wp_unslash($_POST['mode'])) : '';
         if (!in_array($mode, self::MODES, true)) {
-            wp_send_json_error(array('message' => __('Unknown colour mode.', 'wp-plugin-starter-template')), 400);
+            wp_send_json_error(array('message' => __('Unknown colour mode.', 'seoprocookieconsent')), 400);
         }
         if (!self::store($mode)) {
-            wp_send_json_error(array('message' => __('The colour mode could not be saved.', 'wp-plugin-starter-template')), 500);
+            wp_send_json_error(array('message' => __('The colour mode could not be saved.', 'seoprocookieconsent')), 500);
         }
         wp_send_json_success(array('mode' => $mode));
     }

@@ -1,20 +1,58 @@
-# WP Plugin Starter — launch state
+# SEO Pro Cookie Consent launch state
 
-The starter is released on GitHub only. It is not meant for WordPress.org:
-it has no features, and plugins made from it are submitted under their own
-names. `RELEASING.md` → WordPress.org applies to those plugins, each with its
-own `LAUNCH.md`.
+Version: 0.1.0
 
-`scripts/preflight-release.sh` and `scripts/plugin-check.sh` still run on
-every release, so the core files stay ready for a plugin's submission.
+In development; no release yet. The repository is private. Making it public
+needs the owner's say.
 
-The repository is public. From `DEVELOPMENT.md` → At public launch, these
-are on: CodeQL (default setup: GitHub Actions and JavaScript), Dependabot
-security updates, secret scanning with push protection, private
-vulnerability reporting, OpenSSF Scorecard, and a `main` ruleset (pull
-requests with squash merges, the four CI checks required, no force pushes or
-deletion; repository admins may bypass, so the maintainer can merge their
-own pull requests). Releases are built, signed and published by the Release
-workflow. Still open: `SYNC_PAT` (`DEVELOPMENT.md` → Services setup, step
-3); until it is set, the repository metrics on protected `main` are not
-updated.
+## While private
+
+Follow `DEVELOPMENT.md` → While private. No branch protection or repository
+rules, CodeQL, secret scanning or Scorecard are on: they need a public
+repository or a paid GitHub plan. Connect Codacy, CodeFactor and SonarCloud
+at public launch. `SYNC_PAT` is needed only once `main` is protected
+(`DEVELOPMENT.md` → Services setup, step 4).
+
+## Before 1.0
+
+Tick these off; `scripts/preflight-release.sh` checks most of them (Starter
+leftovers lists what is still the starter's).
+
+- [ ] Description: the `Description:` header and `readme.txt`'s short
+  description (150 characters at most) say what this plugin does, not the
+  starter's.
+- [ ] `README.md` and `readme.txt` open with this plugin's own offering (what
+  it does, for whom, why it differs), then getting started and a guide. Keep
+  both credits (Built with AI, Made from).
+- [ ] `readme.txt`: under 10 KB, up to 5 tags, Tested up to the latest
+  WordPress, FAQ, an External services section for every service the plugin
+  contacts, one Screenshots caption per screenshot.
+- [ ] Banner and icon: in `.wordpress-org/banner.svg` replace the headline and
+  tagline, and replace the starter's plug on the stack with this plugin's own
+  mark (the same in `.wordpress-org/icon.svg`); run `scripts/build-banner.sh`
+  and check the icon reads at 128 px.
+- [ ] Screenshots of this plugin in `.wordpress-org/screenshot-N.png`
+  (`scripts/build-banner.sh` makes the View details copies).
+- [ ] `AGENTS.md` describes this plugin; `DESIGN.md` and search keywords, if
+  the plugin has them, are current.
+- [ ] Version 1.0.0 everywhere: `Version:`, the version constant, `Stable tag:`,
+  `README.md`'s Version line and the three changelogs.
+- [ ] `scripts/sync-core.sh --check` lists no differences from the starter.
+- [ ] Checks pass: `scripts/lint.sh`, `scripts/preflight-release.sh` (no
+  errors; each warning understood), `scripts/smoke-test.sh`,
+  `scripts/plugin-check.sh` (no errors on either zip).
+- [ ] The owner has seen it on a test site (`scripts/preview-site.sh`) and
+  approved the banner, icon and screenshots.
+- [ ] WordPress.org: if the Plugin Name gives another slug, ask for this
+  plugin's slug in the submission notes.
+- [ ] After the release: `scripts/update-test.sh`.
+
+## At public launch
+
+First follow `DEVELOPMENT.md` → Secrets in history, then
+`DEVELOPMENT.md` → At public launch. Update this file with what is on.
+
+## WordPress.org
+
+Not submitted. Follow `RELEASING.md` → WordPress.org when the owner says,
+and record the submission here.

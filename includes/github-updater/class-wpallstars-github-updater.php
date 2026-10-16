@@ -67,7 +67,7 @@
  *   files in the same folders, with the readme's captions) and Changelog
  *   tabs, Compatible up to and the donate link.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  */
 
 if (!defined('ABSPATH')) {
@@ -604,7 +604,7 @@ final class WPAllStars_GitHub_Updater {
      */
     private static function status_error($code) {
         /* translators: %d: HTTP status code */
-        return new WP_Error('wpallstars_github', sprintf(__('GitHub answered with status %d.', 'wp-plugin-starter-template'), $code));
+        return new WP_Error('wpallstars_github', sprintf(__('GitHub answered with status %d.', 'seoprocookieconsent'), $code));
     }
 
     /**
@@ -637,7 +637,7 @@ final class WPAllStars_GitHub_Updater {
             // A renamed or moved repository: say where, so the plugin's
             // header can be changed (requests never follow redirects).
             /* translators: 1: owner/repo in the plugin's header, 2: owner/repo GitHub points to */
-            return new WP_Error('wpallstars_github_moved', sprintf(__('GitHub repository %1$s has moved to %2$s; change the plugin\'s GitHub Plugin URI header.', 'wp-plugin-starter-template'), $repo, $moved[1]));
+            return new WP_Error('wpallstars_github_moved', sprintf(__('GitHub repository %1$s has moved to %2$s; change the plugin\'s GitHub Plugin URI header.', 'seoprocookieconsent'), $repo, $moved[1]));
         }
         if (!preg_match('#^https://github\.com/' . preg_quote($repo, '#') . '/releases/tag/([^/?\#]+)$#i', $location, $match)) {
             // No releases yet: GitHub sends the releases list instead.
@@ -1014,7 +1014,7 @@ final class WPAllStars_GitHub_Updater {
      */
     private static function failed_ago($checked) {
         /* translators: %s: time since the check, such as "5 mins" */
-        return sprintf(__('%s ago', 'wp-plugin-starter-template'), human_time_diff($checked, time()));
+        return sprintf(__('%s ago', 'seoprocookieconsent'), human_time_diff($checked, time()));
     }
 
     /**
@@ -1026,7 +1026,7 @@ final class WPAllStars_GitHub_Updater {
         if (!$failures) {
             return;
         }
-        echo '<div class="notice notice-warning"><p>' . esc_html__('Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:', 'wp-plugin-starter-template') . '</p><ul class="ul-disc">';
+        echo '<div class="notice notice-warning"><p>' . esc_html__('Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:', 'seoprocookieconsent') . '</p><ul class="ul-disc">';
         foreach ($failures as $failure) {
             printf(
                 '<li><strong>%1$s</strong> (%2$s): %3$s.</li>',
@@ -1080,12 +1080,12 @@ final class WPAllStars_GitHub_Updater {
             (int) $columns,
             esc_html(sprintf(
                 /* translators: 1: time since the check, such as "5 mins ago", 2: error message */
-                __('Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour.', 'wp-plugin-starter-template'),
+                __('Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour.', 'seoprocookieconsent'),
                 self::failed_ago($failure['checked']),
                 $failure['failed']
             )),
             esc_url(self_admin_url('update-core.php?force-check=1')),
-            esc_html__('Check again now', 'wp-plugin-starter-template')
+            esc_html__('Check again now', 'seoprocookieconsent')
         );
     }
 
@@ -1316,7 +1316,7 @@ final class WPAllStars_GitHub_Updater {
         if ($release && ('' === $readme || version_compare($release['version'], $installed, '>'))) {
             $html = '<h4>' . esc_html($release['version']) . '</h4>'
                 . self::text_html($release['notes'])
-                . sprintf('<p><a href="%1$s">%2$s</a></p>', esc_url($release['url']), esc_html__('Release notes on GitHub', 'wp-plugin-starter-template'));
+                . sprintf('<p><a href="%1$s">%2$s</a></p>', esc_url($release['url']), esc_html__('Release notes on GitHub', 'seoprocookieconsent'));
         }
         return $html . $readme;
     }
@@ -1571,11 +1571,11 @@ final class WPAllStars_GitHub_Updater {
         }
         $location = self::header_value($response, 'location');
         if ('' === $location || !in_array((int) wp_remote_retrieve_response_code($response), array(301, 302, 303, 307, 308), true)) {
-            return new WP_Error('wpallstars_github_download', __('GitHub did not give a download address. Check the token’s access to the repository.', 'wp-plugin-starter-template'));
+            return new WP_Error('wpallstars_github_download', __('GitHub did not give a download address. Check the token’s access to the repository.', 'seoprocookieconsent'));
         }
         $host = strtolower((string) wp_parse_url($location, PHP_URL_HOST));
         if ('https' !== strtolower((string) wp_parse_url($location, PHP_URL_SCHEME)) || !preg_match(self::DOWNLOAD_HOSTS, $host)) {
-            return new WP_Error('wpallstars_github_download', __('GitHub sent the download to an unexpected address.', 'wp-plugin-starter-template'));
+            return new WP_Error('wpallstars_github_download', __('GitHub sent the download to an unexpected address.', 'seoprocookieconsent'));
         }
         return $location;
     }
@@ -1609,11 +1609,11 @@ final class WPAllStars_GitHub_Updater {
             // A zip without a top folder: move its files aside, then into the folder.
             $from = untrailingslashit($remote_source) . '-github-updater';
             if (!$wp_filesystem->move(untrailingslashit($remote_source), $from, true) || !$wp_filesystem->mkdir(untrailingslashit($remote_source), FS_CHMOD_DIR)) {
-                return new WP_Error('wpallstars_github_folder', __('The update could not be unpacked into the plugin’s folder.', 'wp-plugin-starter-template'));
+                return new WP_Error('wpallstars_github_folder', __('The update could not be unpacked into the plugin’s folder.', 'seoprocookieconsent'));
             }
         }
         if (!$wp_filesystem->move($from, untrailingslashit($target), true)) {
-            return new WP_Error('wpallstars_github_folder', __('The update could not be unpacked into the plugin’s folder.', 'wp-plugin-starter-template'));
+            return new WP_Error('wpallstars_github_folder', __('The update could not be unpacked into the plugin’s folder.', 'seoprocookieconsent'));
         }
         return $target;
     }

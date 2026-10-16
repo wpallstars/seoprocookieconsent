@@ -1,12 +1,12 @@
 <?php
 /**
- * WP Plugin Starter sites that differ from the network (multisite).
+ * SEO Pro Cookie Consent sites that differ from the network (multisite).
  *
  * The network screen names the sites whose own values differ from the
- * network values (WPStarter_Network_Settings) for each card
+ * network values (SEOProCookieConsent_Network_Settings) for each card
  * (differences()), and Make every site the same copies a card's network
  * values into every site's own settings once (copy()); each site then runs
- * its saving work (WPStarter_Network_Sites::sync()). Both read and write
+ * its saving work (SEOProCookieConsent_Network_Sites::sync()). Both read and write
  * each site's options table directly: switching to each site would load
  * all of its autoloaded options.
  *
@@ -15,7 +15,7 @@
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 1.0.35
  */
 
@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class WPStarter_Network_Differences {
+class SEOProCookieConsent_Network_Differences {
 
     /** Most sites the network screen compares or changes in one request. */
     const MAX_SITES = 500;
@@ -73,7 +73,7 @@ class WPStarter_Network_Differences {
         $rows = $wpdb->get_results($wpdb->prepare(
             'SELECT option_name, option_value FROM %i WHERE option_name IN (%s, %s, %s)',
             $wpdb->get_blog_prefix($site_id) . 'options',
-            WPStarter_Settings::OPTION,
+            SEOProCookieConsent_Settings::OPTION,
             'blogname',
             'siteurl'
         ));
@@ -81,7 +81,7 @@ class WPStarter_Network_Differences {
 
         $site = array('options' => null, 'name' => '', 'url' => '');
         foreach ((array) $rows as $row) {
-            if (WPStarter_Settings::OPTION === $row->option_name) {
+            if (SEOProCookieConsent_Settings::OPTION === $row->option_name) {
                 $options         = maybe_unserialize($row->option_value);
                 $site['options'] = is_array($options) ? $options : null;
             } elseif ('blogname' === $row->option_name) {
@@ -113,7 +113,7 @@ class WPStarter_Network_Differences {
         }
 
         $cards    = self::cards();
-        $defaults = WPStarter_Settings::defaults();
+        $defaults = SEOProCookieConsent_Settings::defaults();
 
         foreach ($ids as $id) {
             $site = self::read_site($id);
@@ -135,15 +135,15 @@ class WPStarter_Network_Differences {
 
     /**
      * The cards the network screen shows, each with the settings the
-     * network can set on it (WPStarter_Network_Settings::card_keys()).
+     * network can set on it (SEOProCookieConsent_Network_Settings::card_keys()).
      *
      * @return array<string,string[]>
      */
     private static function cards() {
         $cards = array();
-        foreach (WPStarter_Settings::schema() as $key => $field) {
-            if (empty($field['parent']) && WPStarter_Network_Settings::eligible((string) $key)) {
-                $cards[(string) $key] = WPStarter_Network_Settings::card_keys((string) $key);
+        foreach (SEOProCookieConsent_Settings::schema() as $key => $field) {
+            if (empty($field['parent']) && SEOProCookieConsent_Network_Settings::eligible((string) $key)) {
+                $cards[(string) $key] = SEOProCookieConsent_Network_Settings::card_keys((string) $key);
             }
         }
         return $cards;
@@ -152,7 +152,7 @@ class WPStarter_Network_Differences {
     /**
      * Whether a site's own values for a card differ from the network's.
      *
-     * @param string[] $keys     The card's keys (WPStarter_Network_Settings::card_keys()).
+     * @param string[] $keys     The card's keys (SEOProCookieConsent_Network_Settings::card_keys()).
      * @param array    $options  The site's stored settings.
      * @param array    $defaults Defaults.
      * @return bool
@@ -160,7 +160,7 @@ class WPStarter_Network_Differences {
     private static function card_differs(array $keys, array $options, array $defaults) {
         foreach ($keys as $key) {
             $own = array_key_exists($key, $options) ? $options[$key] : $defaults[$key];
-            if (!WPStarter_Settings::same($own, WPStarter_Network_Settings::value($key))) {
+            if (!SEOProCookieConsent_Settings::same($own, SEOProCookieConsent_Network_Settings::value($key))) {
                 return true;
             }
         }
@@ -171,33 +171,33 @@ class WPStarter_Network_Differences {
      * Make every site the same: copy a card's network values into the own
      * settings of every site where the plugin has run. Each site runs its
      * saving work on its next admin, cron or WP-CLI request
-     * (WPStarter_Network_Sites::sync()); sites can change the values again
+     * (SEOProCookieConsent_Network_Sites::sync()); sites can change the values again
      * afterwards unless the card is applied.
      *
      * @param string $key Card's setting key.
      * @return int|WP_Error Number of sites changed.
      */
     public static function copy($key) {
-        $keys = WPStarter_Network_Settings::card_keys($key);
+        $keys = SEOProCookieConsent_Network_Settings::card_keys($key);
         if (!$keys) {
-            return new WP_Error('wpstarter_unknown_setting', __('This setting is set on each site.', 'wp-plugin-starter-template'));
+            return new WP_Error('seoprocookieconsent_unknown_setting', __('This setting is set on each site.', 'seoprocookieconsent'));
         }
         $ids = self::site_ids();
         if (null === $ids) {
             /* translators: %d: number of sites */
-            return new WP_Error('wpstarter_too_many_sites', sprintf(__('This network has more than %d sites, too many to change at once.', 'wp-plugin-starter-template'), self::MAX_SITES));
+            return new WP_Error('seoprocookieconsent_too_many_sites', sprintf(__('This network has more than %d sites, too many to change at once.', 'seoprocookieconsent'), self::MAX_SITES));
         }
 
         $values = array();
         foreach ($keys as $card_key) {
-            $values[$card_key] = WPStarter_Network_Settings::value($card_key);
+            $values[$card_key] = SEOProCookieConsent_Network_Settings::value($card_key);
         }
 
         $changed = 0;
         foreach ($ids as $id) {
             // Also keeps the site's values from before, under the same lock
-            // (WPStarter_Network_Sites::remember()).
-            if (WPStarter_Settings::replace_site_values($id, $values)) {
+            // (SEOProCookieConsent_Network_Sites::remember()).
+            if (SEOProCookieConsent_Settings::replace_site_values($id, $values)) {
                 $changed++;
             }
         }

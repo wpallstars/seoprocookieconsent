@@ -1,12 +1,12 @@
 /**
- * WP Plugin Starter screen header.
+ * SEO Pro Cookie Consent screen header.
  *
- * The colour tokens, the full-width screen (.wps-wrap), its header, the
- * tab bar under it (.wps-nav) and the main area: shared by the settings
+ * The colour tokens, the full-width screen (.spcc-wrap), its header, the
+ * tab bar under it (.spcc-nav) and the main area: shared by the settings
  * screen, whose stylesheet depends on this one, and the plugin's own
- * screens (WPStarter_Admin_Manager::enqueue_header() and render_header()),
- * so their tabs look the same. Only .wps-wrap, the header, .wps-nav (and
- * its second row, .wps-subnav) and .wps-main are styled here, so a
+ * screens (SEOProCookieConsent_Admin_Manager::enqueue_header() and render_header()),
+ * so their tabs look the same. Only .spcc-wrap, the header, .spcc-nav (and
+ * its second row, .spcc-subnav) and .spcc-main are styled here, so a
  * screen's content keeps its styles. Uses
  * core admin tokens so the header follows the active admin colour scheme;
  * logical properties keep RTL working.
@@ -17,58 +17,58 @@
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  */
 
-.wps-wrap {
-	--wps-accent: var(--wp-admin-theme-color, #2271b1);
-	--wps-accent-dark: var(--wp-admin-theme-color-darker-10, #135e96);
-	--wps-text: #1d2327;
-	--wps-muted: #646970;
-	--wps-border: #dcdcde;
-	--wps-surface: #fff;
-	--wps-subtle: #f6f7f7;
-	--wps-success: #008a20;
-	--wps-error: #d63638;
-	--wps-radius: 8px;
-	--wps-shadow: 0 1px 2px rgb(0 0 0 / 4%);
-	--wps-focus: 0 0 0 2px var(--wps-surface), 0 0 0 4px var(--wps-accent);
+.spcc-wrap {
+	--spcc-accent: var(--wp-admin-theme-color, #2271b1);
+	--spcc-accent-dark: var(--wp-admin-theme-color-darker-10, #135e96);
+	--spcc-text: #1d2327;
+	--spcc-muted: #646970;
+	--spcc-border: #dcdcde;
+	--spcc-surface: #fff;
+	--spcc-subtle: #f6f7f7;
+	--spcc-success: #008a20;
+	--spcc-error: #d63638;
+	--spcc-radius: 8px;
+	--spcc-shadow: 0 1px 2px rgb(0 0 0 / 4%);
+	--spcc-focus: 0 0 0 2px var(--spcc-surface), 0 0 0 4px var(--spcc-accent);
 
 	margin-block-start: 0;
 	margin-inline: -20px 0;
-	color: var(--wps-text);
+	color: var(--spcc-text);
 
 	/* Start below the Screen Options / Notices tabs, so they never narrow the header. */
 	clear: both;
 }
 
-.wps-header,
-.wps-header *,
-.wps-header *::before,
-.wps-header *::after,
-.wps-nav,
-.wps-nav *,
-.wps-subnav,
-.wps-subnav * {
+.spcc-header,
+.spcc-header *,
+.spcc-header *::before,
+.spcc-header *::after,
+.spcc-nav,
+.spcc-nav *,
+.spcc-subnav,
+.spcc-subnav * {
 	box-sizing: border-box;
 }
 
 /* Header ------------------------------------------------------------- */
 
-.wps-header {
+.spcc-header {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 12px 24px;
 	padding: 14px 24px;
-	background: var(--wps-surface);
-	border-block-end: 1px solid var(--wps-border);
+	background: var(--spcc-surface);
+	border-block-end: 1px solid var(--spcc-border);
 }
 
-.wps-header__brand {
+.spcc-header__brand {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
-.wps-header__logo {
+.spcc-header__logo {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -76,11 +76,11 @@
 	height: 32px;
 	font-size: 20px;
 	color: #fff;
-	background: var(--wps-accent);
+	background: var(--spcc-accent);
 	border-radius: 6px;
 }
 
-.wps-wrap .wps-header__title {
+.spcc-wrap .spcc-header__title {
 	margin: 0;
 	padding: 0;
 	font-size: 20px;
@@ -88,7 +88,7 @@
 	line-height: 1.3;
 }
 
-.wps-header__actions {
+.spcc-header__actions {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -96,7 +96,7 @@
 	margin-inline-start: auto;
 }
 
-.wps-wrap .wps-header__support {
+.spcc-wrap .spcc-header__support {
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
@@ -104,65 +104,65 @@
 
 /* line-height: 1 stops the icon taking the button's taller line height,
    which draws the glyph below the middle of its box. */
-.wps-wrap .wps-header__support .dashicons {
+.spcc-wrap .spcc-header__support .dashicons {
 	width: 18px;
 	height: 18px;
 	font-size: 18px;
 	line-height: 1;
 }
 
-.wps-badge {
+.spcc-badge {
 	display: inline-block;
 	padding: 2px 8px;
 	font-size: 11px;
 	font-weight: 500;
 	line-height: 1.6;
-	color: var(--wps-muted);
+	color: var(--spcc-muted);
 	vertical-align: middle;
-	background: var(--wps-subtle);
-	border: 1px solid var(--wps-border);
+	background: var(--spcc-subtle);
+	border: 1px solid var(--spcc-border);
 	border-radius: 999px;
 }
 
-.wps-badge--success {
+.spcc-badge--success {
 	color: #00450c;
 	background: #edfaef;
 	border-color: #b8e6bf;
 }
 
 /* The network screen (multisite), so it is never taken for a site's. */
-.wps-badge--network {
+.spcc-badge--network {
 	color: #fff;
-	background: var(--wps-accent);
-	border-color: var(--wps-accent);
+	background: var(--spcc-accent);
+	border-color: var(--spcc-accent);
 }
 
 /* Search ------------------------------------------------------------- */
 
 /* Stretch, so the field always matches the button's height, whatever
    size the admin colour scheme or WordPress version gives buttons. */
-.wps-search {
+.spcc-search {
 	display: flex;
 	align-items: stretch;
 	gap: 6px;
 }
 
-.wps-search__field {
+.spcc-search__field {
 	position: relative;
 	display: flex;
 	align-items: stretch;
 }
 
-.wps-wrap .wps-search__icon {
+.spcc-wrap .spcc-search__icon {
 	position: absolute;
 	inset-block: 0;
 	inset-inline-start: 9px;
 	margin-block: auto;
-	color: var(--wps-muted);
+	color: var(--spcc-muted);
 	pointer-events: none;
 }
 
-.wps-wrap .wps-search__input {
+.spcc-wrap .spcc-search__input {
 	width: 260px;
 	max-width: 100%;
 	height: auto;
@@ -172,34 +172,34 @@
 	padding-inline: 34px 10px;
 	font-size: 14px;
 	line-height: normal;
-	color: var(--wps-text);
-	background: var(--wps-surface);
+	color: var(--spcc-text);
+	background: var(--spcc-surface);
 
 	/* Border and corners stay core's, so they match core buttons in each version. */
 	box-shadow: none;
 	transition: border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-.wps-wrap .wps-search__input::placeholder {
-	color: var(--wps-muted);
+.spcc-wrap .spcc-search__input::placeholder {
+	color: var(--spcc-muted);
 	opacity: 1;
 }
 
-.wps-wrap .wps-search__input:hover {
-	border-color: var(--wps-accent);
+.spcc-wrap .spcc-search__input:hover {
+	border-color: var(--spcc-accent);
 }
 
-.wps-wrap .wps-search__input:focus {
-	border-color: var(--wps-accent);
-	box-shadow: 0 0 0 1px var(--wps-accent);
+.spcc-wrap .spcc-search__input:focus {
+	border-color: var(--spcc-accent);
+	box-shadow: 0 0 0 1px var(--spcc-accent);
 	outline: 2px solid transparent;
 }
 
-.wps-wrap .wps-search__field:focus-within .wps-search__icon {
-	color: var(--wps-accent);
+.spcc-wrap .spcc-search__field:focus-within .spcc-search__icon {
+	color: var(--spcc-accent);
 }
 
-.wps-wrap .wps-search__button {
+.spcc-wrap .spcc-search__button {
 	margin: 0;
 }
 
@@ -207,164 +207,164 @@
 
 /* The tab bar under the header: the settings screen's groups of tabs, or
    a plugin screen's own sections, in one look. */
-.wps-nav {
+.spcc-nav {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
 	padding-inline: 12px;
-	background: var(--wps-surface);
-	border-block-end: 1px solid var(--wps-border);
+	background: var(--spcc-surface);
+	border-block-end: 1px solid var(--spcc-border);
 	overflow-x: auto;
 }
 
-.wps-nav__group {
+.spcc-nav__group {
 	display: flex;
 	align-items: stretch;
 }
 
-.wps-nav__group + .wps-nav__group {
+.spcc-nav__group + .spcc-nav__group {
 	margin-inline-start: 8px;
 	padding-inline-start: 8px;
-	border-inline-start: 1px solid var(--wps-border);
+	border-inline-start: 1px solid var(--spcc-border);
 }
 
-.wps-nav__tab {
+.spcc-nav__tab {
 	display: inline-flex;
 	align-items: center;
 	padding: 14px 12px 11px;
 	font-size: 14px;
 	font-weight: 500;
-	color: var(--wps-muted);
+	color: var(--spcc-muted);
 	text-decoration: none;
 	white-space: nowrap;
 	border-block-end: 3px solid transparent;
 	transition: color 0.1s ease, border-color 0.1s ease;
 }
 
-.wps-nav__tab:hover {
-	color: var(--wps-text);
+.spcc-nav__tab:hover {
+	color: var(--spcc-text);
 }
 
-.wps-nav__tab:focus {
+.spcc-nav__tab:focus {
 	outline: none;
 	box-shadow: none;
 }
 
-.wps-nav__tab:focus-visible {
-	outline: 2px solid var(--wps-accent);
+.spcc-nav__tab:focus-visible {
+	outline: 2px solid var(--spcc-accent);
 	outline-offset: -4px;
 	border-radius: 4px;
 }
 
-.wps-nav__tab.is-active {
-	color: var(--wps-text);
+.spcc-nav__tab.is-active {
+	color: var(--spcc-text);
 	font-weight: 600;
-	border-block-end-color: var(--wps-accent);
+	border-block-end-color: var(--spcc-accent);
 }
 
 /* The second row: the tabs of the menu shown (a tab with 'menu'). */
-.wps-subnav {
+.spcc-subnav {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 4px;
 	padding: 8px 24px;
-	background: var(--wps-subtle);
-	border-block-end: 1px solid var(--wps-border);
+	background: var(--spcc-subtle);
+	border-block-end: 1px solid var(--spcc-border);
 	overflow-x: auto;
 }
 
-.wps-subnav[hidden] {
+.spcc-subnav[hidden] {
 	display: none;
 }
 
-.wps-subnav__tab {
+.spcc-subnav__tab {
 	display: inline-flex;
 	align-items: center;
 	padding: 6px 12px;
 	font-size: 13px;
 	font-weight: 500;
-	color: var(--wps-muted);
+	color: var(--spcc-muted);
 	text-decoration: none;
 	white-space: nowrap;
 	border-radius: 999px;
 	transition: color 0.1s ease, background-color 0.1s ease;
 }
 
-.wps-subnav__tab:hover {
-	color: var(--wps-text);
-	background: var(--wps-surface);
+.spcc-subnav__tab:hover {
+	color: var(--spcc-text);
+	background: var(--spcc-surface);
 }
 
-.wps-subnav__tab:focus {
+.spcc-subnav__tab:focus {
 	outline: none;
 	box-shadow: none;
 }
 
-.wps-subnav__tab:focus-visible {
-	outline: 2px solid var(--wps-accent);
+.spcc-subnav__tab:focus-visible {
+	outline: 2px solid var(--spcc-accent);
 	outline-offset: 1px;
 }
 
-.wps-subnav__tab.is-active {
-	color: var(--wps-text);
+.spcc-subnav__tab.is-active {
+	color: var(--spcc-text);
 	font-weight: 600;
-	background: var(--wps-surface);
-	box-shadow: inset 0 0 0 1px var(--wps-border);
+	background: var(--spcc-surface);
+	box-shadow: inset 0 0 0 1px var(--spcc-border);
 }
 
 /* Main --------------------------------------------------------------- */
 
-.wps-wrap > .notice,
-.wps-wrap > div.updated,
-.wps-wrap > div.error {
+.spcc-wrap > .notice,
+.spcc-wrap > div.updated,
+.spcc-wrap > div.error {
 	margin: 16px 24px 0;
 }
 
-.wps-main {
+.spcc-main {
 	max-width: 1200px;
 	padding: 24px;
 }
 
 /* Tabs drawn on the page but not shown. */
-.wps-main[hidden] {
+.spcc-main[hidden] {
 	display: none;
 }
 
 /* Responsive --------------------------------------------------------- */
 
 @media screen and (width <= 782px) {
-	.wps-wrap {
+	.spcc-wrap {
 		margin-inline-start: -10px;
 	}
 
 	/* One row that scrolls sideways. */
-	.wps-nav,
-	.wps-subnav {
+	.spcc-nav,
+	.spcc-subnav {
 		flex-wrap: nowrap;
 	}
 
-	.wps-subnav {
+	.spcc-subnav {
 		padding-inline: 12px;
 	}
 
-	.wps-header,
-	.wps-main {
+	.spcc-header,
+	.spcc-main {
 		padding-inline: 12px;
 	}
 
 	/* Brand and website link on the first row, search across the second. */
-	.wps-search {
+	.spcc-search {
 		order: 1;
 		flex: 1 1 100%;
 		min-width: 0;
 	}
 
-	.wps-search__field {
+	.spcc-search__field {
 		flex: 1 1 0;
 		min-width: 0;
 	}
 
-	.wps-wrap .wps-search__input {
+	.spcc-wrap .spcc-search__input {
 		flex: 1 1 0;
 		width: auto;
 		min-width: 0;
@@ -372,17 +372,17 @@
 		font-size: 16px;
 	}
 
-	.wps-search .button {
+	.spcc-search .button {
 		flex-shrink: 0;
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.wps-header *,
-	.wps-header *::before,
-	.wps-header *::after,
-	.wps-nav__tab,
-	.wps-subnav__tab {
+	.spcc-header *,
+	.spcc-header *::before,
+	.spcc-header *::after,
+	.spcc-nav__tab,
+	.spcc-subnav__tab {
 		transition: none !important;
 		animation: none !important;
 	}

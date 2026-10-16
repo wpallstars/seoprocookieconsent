@@ -6,12 +6,12 @@
 
 # Bootstrap, feature registry, base feature, settings store and its
 # network settings and their sites (multisite).
-includes/class-wpstarter.php
-includes/class-wpstarter-feature.php
-includes/class-wpstarter-settings.php
-includes/class-wpstarter-network-settings.php
-includes/class-wpstarter-network-sites.php
-includes/class-wpstarter-network-differences.php
+includes/class-seoprocookieconsent.php
+includes/class-seoprocookieconsent-feature.php
+includes/class-seoprocookieconsent-settings.php
+includes/class-seoprocookieconsent-network-settings.php
+includes/class-seoprocookieconsent-network-sites.php
+includes/class-seoprocookieconsent-network-differences.php
 
 # Shared GitHub updater: only the newest copy on a site runs.
 includes/github-updater/
@@ -27,11 +27,11 @@ admin/includes/class-admin-theme.php
 admin/includes/class-settings-manager.php
 admin/includes/class-readme-manager.php
 admin/includes/class-replaced-plugins.php
-admin/css/wpstarter-header.css
-admin/css/wpstarter-admin.css
-admin/css/wpstarter-theme.css
-admin/js/wpstarter-admin.js
-admin/js/wpstarter-theme.js
+admin/css/seoprocookieconsent-header.css
+admin/css/seoprocookieconsent-admin.css
+admin/css/seoprocookieconsent-theme.css
+admin/js/seoprocookieconsent-admin.js
+admin/js/seoprocookieconsent-theme.js
 
 # Build, check, release and preview scripts.
 scripts/build-banner.sh

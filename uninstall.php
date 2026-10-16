@@ -1,15 +1,15 @@
 <?php
 /**
- * Remove WP Plugin Starter's settings and caches on uninstall (every site on
+ * Remove SEO Pro Cookie Consent's settings and caches on uninstall (every site on
  * multisite). Add every option, post meta, user meta, transient, cron hook
  * and file a feature stores (STANDARDS.md → Structure).
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
- * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
+ * Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  */
 
 if (!defined('WP_UNINSTALL_PLUGIN')) {
@@ -19,17 +19,17 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
 /**
  * Delete the plugin's options and transients for the current site.
  */
-function wpstarter_uninstall_site() {
+function seoprocookieconsent_uninstall_site() {
     global $wpdb;
 
-    delete_option('wpstarter_options');
-    delete_option('wpstarter_options_lock');
-    delete_option('wpstarter_db_version');
-    delete_option('wpstarter_network_seen');
+    delete_option('seoprocookieconsent_options');
+    delete_option('seoprocookieconsent_options_lock');
+    delete_option('seoprocookieconsent_db_version');
+    delete_option('seoprocookieconsent_network_seen');
     // The network option's save lock (main site only), if a save stopped.
-    delete_option('wpstarter_network_lock');
+    delete_option('seoprocookieconsent_network_lock');
 
-    $patterns = array('_transient_wpstarter_', '_transient_timeout_wpstarter_');
+    $patterns = array('_transient_seoprocookieconsent_', '_transient_timeout_seoprocookieconsent_');
     foreach ($patterns as $pattern) {
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one-off cleanup of our transients.
         $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->options} WHERE option_name LIKE %s", $wpdb->esc_like($pattern) . '%'));
@@ -37,22 +37,22 @@ function wpstarter_uninstall_site() {
 }
 
 if (is_multisite()) {
-    foreach (get_sites(array('fields' => 'ids', 'number' => 0)) as $wpstarter_site_id) {
-        switch_to_blog($wpstarter_site_id);
-        wpstarter_uninstall_site();
+    foreach (get_sites(array('fields' => 'ids', 'number' => 0)) as $seoprocookieconsent_site_id) {
+        switch_to_blog($seoprocookieconsent_site_id);
+        seoprocookieconsent_uninstall_site();
         restore_current_blog();
     }
-    // The network screen's settings (WPStarter_Network_Settings).
-    delete_site_option('wpstarter_network');
+    // The network screen's settings (SEOProCookieConsent_Network_Settings).
+    delete_site_option('seoprocookieconsent_network');
 } else {
-    wpstarter_uninstall_site();
+    seoprocookieconsent_uninstall_site();
 }
 
-// Hidden "WP Plugin Starter can do the job of these plugins" lines.
-delete_metadata('user', 0, 'wpstarter_replaced_plugins_hidden', '', true);
+// Hidden "SEO Pro Cookie Consent can do the job of these plugins" lines.
+delete_metadata('user', 0, 'seoprocookieconsent_replaced_plugins_hidden', '', true);
 
 require_once __DIR__ . '/admin/includes/class-admin-theme.php';
-WPStarter_Admin_Theme::uninstall();
+SEOProCookieConsent_Admin_Theme::uninstall();
 
 // Latest GitHub releases (the shared GitHub updater). Only a cache: another
 // plugin's copy asks again.

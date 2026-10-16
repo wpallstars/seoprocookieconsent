@@ -169,8 +169,8 @@ Every pull request and every push to `main` runs these in GitHub Actions
 
 `scripts/lint.sh` with no arguments runs the first seven.
 
-<!-- wps-own:start -->
-<!-- wps-own:end -->
+<!-- spcc-own:start -->
+<!-- spcc-own:end -->
 
 The scripts work out which plugin they are in from its main file
 (`scripts/lib/plugin.sh`): the PHP file at the top of the repository with a

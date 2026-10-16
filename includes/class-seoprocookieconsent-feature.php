@@ -1,6 +1,6 @@
 <?php
 /**
- * Base class for WP Plugin Starter features.
+ * Base class for SEO Pro Cookie Consent features.
  *
  * A feature is a self-contained class that:
  * - declares its settings in settings() (the on/off switch first, keyed by KEY,
@@ -15,14 +15,14 @@
  * run side by side (two admin bar menus, analytics loaded twice). The
  * settings card says so, with a deactivate link.
  *
- * Register extra features with the `wpstarter_features` filter.
+ * Register extra features with the `seoprocookieconsent_features` filter.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 0.3.0
  */
 
@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-abstract class WPStarter_Feature {
+abstract class SEOProCookieConsent_Feature {
 
     /** Setting key of the feature's on/off switch. */
     const KEY = '';
@@ -60,7 +60,7 @@ abstract class WPStarter_Feature {
      * @return bool
      */
     public static function switched_on() {
-        return '' !== static::KEY && (bool) WPStarter_Settings::get(static::KEY);
+        return '' !== static::KEY && (bool) SEOProCookieConsent_Settings::get(static::KEY);
     }
 
     /**
@@ -70,7 +70,7 @@ abstract class WPStarter_Feature {
      * @return array<string,string> slug => name
      */
     public static function replaced_active($key) {
-        $schema = WPStarter_Settings::schema();
+        $schema = SEOProCookieConsent_Settings::schema();
         if (empty($schema[$key]['replaces']) || !is_array($schema[$key]['replaces'])) {
             return array();
         }
@@ -126,12 +126,12 @@ abstract class WPStarter_Feature {
         $files = is_array($files) ? array_values(array_filter($files, 'is_string')) : array();
         /**
          * Filter the active plugin files as stored, for code that skips
-         * plugins on some requests (WP Plugin Starter's "Load plugins only
+         * plugins on some requests (SEO Pro Cookie Consent's "Load plugins only
          * where needed" filters the option itself).
          *
          * @param string[] $files Plugin files, such as "akismet/akismet.php".
          */
-        $files = apply_filters('wpstarter_stored_active_plugins', $files);
+        $files = apply_filters('seoprocookieconsent_stored_active_plugins', $files);
         return is_array($files) ? array_values(array_filter($files, 'is_string')) : array();
     }
 
@@ -147,12 +147,12 @@ abstract class WPStarter_Feature {
          *
          * @param bool $skipped Whether they are.
          */
-        return (bool) apply_filters('wpstarter_plugins_skipped', false);
+        return (bool) apply_filters('seoprocookieconsent_plugins_skipped', false);
     }
 
     /**
      * Import settings once, when the stored settings version is older than
-     * WPStarter_Settings::DB_VERSION. Only fill keys that are not stored yet.
+     * SEOProCookieConsent_Settings::DB_VERSION. Only fill keys that are not stored yet.
      *
      * @param array $options      Stored settings (raw, without defaults).
      * @param int   $from_version Stored settings version before this upgrade.
@@ -172,9 +172,9 @@ abstract class WPStarter_Feature {
      * @return array
      */
     protected static function import_setting(array $options, $key, $value) {
-        $schema = WPStarter_Settings::schema();
+        $schema = SEOProCookieConsent_Settings::schema();
         if (null !== $value && !array_key_exists($key, $options) && isset($schema[$key])) {
-            $options[$key] = WPStarter_Settings::sanitize_value($value, $schema[$key]);
+            $options[$key] = SEOProCookieConsent_Settings::sanitize_value($value, $schema[$key]);
         }
         return $options;
     }
