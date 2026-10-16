@@ -646,11 +646,23 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'cookies'             => array(),
                 'headers'             => array('Cache-Control' => 'no-cache'),
             ));
+            $content_type = wp_remote_retrieve_header($response, 'content-type');
             if (is_wp_error($response) || 200 !== wp_remote_retrieve_response_code($response)
-                || false === stripos((string) wp_remote_retrieve_header($response, 'content-type'), 'text/html')) {
+                || !is_string($content_type) || false === stripos($content_type, 'text/html')) {
                 ++$failed;
                 continue;
             }
+            // Loopbacks also record services. Refresh only our option's entries
+            // before merging, preserving every other option in shared caches.
+            $alloptions = wp_load_alloptions();
+            unset($alloptions[SEOProCookieConsent_Services::SEEN_OPTION]);
+            wp_cache_set('alloptions', $alloptions, 'options');
+            $notoptions = wp_cache_get('notoptions', 'options');
+            if (is_array($notoptions)) {
+                unset($notoptions[SEOProCookieConsent_Services::SEEN_OPTION]);
+                wp_cache_set('notoptions', $notoptions, 'options');
+            }
+            wp_cache_delete(SEOProCookieConsent_Services::SEEN_OPTION, 'options');
             self::scan_page(wp_remote_retrieve_body($response));
             ++$checked;
         }
