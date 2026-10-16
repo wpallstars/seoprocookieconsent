@@ -119,4 +119,235 @@
 
     // WP Consent API reads these.
     w.wp_consent_type = m === 'opt-in' ? 'optin' : 'optout';
+
+    if (!c.dynamic || !w.MutationObserver) {
+        return;
+    }
+
+    var services = c.services || {};
+    var ids = Object.keys(services);
+    var set = w.Element.prototype.setAttribute;
+    var remove = w.Element.prototype.removeAttribute;
+    var insert = w.Node.prototype.insertBefore;
+    var append = w.Node.prototype.appendChild;
+    var dynamicPage = spcc.dynamicPage = {};
+    var noticed = new WeakSet();
+    var changed = false;
+
+    function each(nodes, fn) {
+        Array.prototype.forEach.call(nodes, fn);
+    }
+
+    function contains(text, patterns) {
+        return patterns.some(function (pattern) {
+            return text.indexOf(pattern) !== -1;
+        });
+    }
+
+    function classify(src) {
+        var text = src.toLowerCase();
+        if (!text || contains(text, c.allow || [])) {
+            return '';
+        }
+        var extra = Object.keys(c.block || {});
+        for (var i = 0; i < extra.length; i++) {
+            if (text.indexOf(extra[i]) !== -1) {
+                return 'custom:' + c.block[extra[i]];
+            }
+        }
+        for (var j = 0; j < ids.length; j++) {
+            var id = ids[j];
+            if (contains(text, services[id].patterns || [])) {
+                return (c.skip || []).indexOf(id) === -1 ? id : '';
+            }
+        }
+        return '';
+    }
+
+    // Runs BEFORE insertion or a connected element's src setter. Observers
+    // alone cannot prevent a request (or a script executing synchronously).
+    function hold(el, src) {
+        if (!el || (el.tagName !== 'SCRIPT' && el.tagName !== 'IFRAME') || el.hasAttribute('data-spcc-ignore')) {
+            return false;
+        }
+        var type = (el.getAttribute('type') || '').trim().toLowerCase();
+        if (el.tagName === 'SCRIPT' && /^(application\/(ld\+json|json)|text\/(plain|template|x-template|html)|importmap|speculationrules)$/.test(type)) {
+            return false;
+        }
+        var id = classify(src);
+        var category = services[id] ? services[id].category : id.slice(7);
+        if (!id || spcc.allows(id, category)) {
+            return false;
+        }
+        set.call(el, 'data-spcc-service', id);
+        set.call(el, 'data-spcc-category', category);
+        set.call(el, 'data-spcc-src', src);
+        if (el.tagName === 'SCRIPT') {
+            if (type) {
+                set.call(el, 'data-spcc-type', el.getAttribute('type'));
+            }
+            set.call(el, 'type', 'text/plain');
+        }
+        remove.call(el, 'src');
+        return true;
+    }
+
+    function scan(node) {
+        if (!node || (node.nodeType !== 1 && node.nodeType !== 11)) {
+            return;
+        }
+        if (node.nodeType === 1) {
+            hold(node, node.getAttribute('src') || '');
+        }
+        each(node.querySelectorAll('script[src], iframe[src]'), function (el) {
+            hold(el, el.getAttribute('src') || '');
+        });
+    }
+
+    // Keep native return values, node identity, listeners and attributes.
+    ['appendChild', 'insertBefore', 'replaceChild'].forEach(function (name) {
+        var native = w.Node.prototype[name];
+        w.Node.prototype[name] = function (node) {
+            scan(node);
+            return native.apply(this, arguments);
+        };
+    });
+    [w.Element.prototype, w.Document.prototype, w.DocumentFragment.prototype].forEach(function (proto) {
+        ['append', 'prepend', 'replaceChildren', 'before', 'after', 'replaceWith'].forEach(function (name) {
+            var native = proto[name];
+            if (!native) {
+                return;
+            }
+            proto[name] = function () {
+                each(arguments, scan);
+                return native.apply(this, arguments);
+            };
+        });
+    });
+
+    w.Element.prototype.setAttribute = function (name, value) {
+        if (String(name).toLowerCase() === 'src' && hold(this, String(value))) {
+            return;
+        }
+        return set.apply(this, arguments);
+    };
+    [w.HTMLScriptElement.prototype, w.HTMLIFrameElement.prototype].forEach(function (proto) {
+        var descriptor = Object.getOwnPropertyDescriptor(proto, 'src');
+        if (!descriptor || !descriptor.configurable) {
+            return;
+        }
+        Object.defineProperty(proto, 'src', {
+            configurable: descriptor.configurable,
+            enumerable: descriptor.enumerable,
+            get: descriptor.get,
+            set: function (value) {
+                if (!hold(this, String(value))) {
+                    descriptor.set.call(this, value);
+                }
+            }
+        });
+    });
+
+    // Parse markup in an inert template, not a live container: iframe
+    // navigation starts during innerHTML/insertAdjacentHTML otherwise.
+    var html = Object.getOwnPropertyDescriptor(w.Element.prototype, 'innerHTML');
+    function safeHTML(value) {
+        if (typeof value !== 'string' || !/<(?:script|iframe)\b/i.test(value)) {
+            return value;
+        }
+        var template = d.createElement('template');
+        html.set.call(template, value);
+        scan(template.content);
+        return html.get.call(template);
+    }
+    ['innerHTML', 'outerHTML'].forEach(function (name) {
+        var descriptor = Object.getOwnPropertyDescriptor(w.Element.prototype, name);
+        Object.defineProperty(w.Element.prototype, name, {
+            configurable: descriptor.configurable,
+            enumerable: descriptor.enumerable,
+            get: descriptor.get,
+            set: function (value) {
+                descriptor.set.call(this, safeHTML(value));
+            }
+        });
+    });
+    var adjacent = w.Element.prototype.insertAdjacentHTML;
+    w.Element.prototype.insertAdjacentHTML = function (position, value) {
+        return adjacent.call(this, position, safeHTML(value));
+    };
+
+    function placeholder(frame) {
+        if (!frame.parentNode || frame.closest('.spcc-embed')) {
+            return;
+        }
+        var id = frame.getAttribute('data-spcc-service');
+        var category = frame.getAttribute('data-spcc-category');
+        var box = d.createElement('div');
+        box.className = 'spcc-embed';
+        set.call(box, 'data-spcc-embed', id);
+        set.call(box, 'data-spcc-category', category);
+        var width = parseInt(frame.getAttribute('width'), 10);
+        var height = parseInt(frame.getAttribute('height'), 10);
+        if (width > 0 && height > 0) {
+            box.style.aspectRatio = width + '/' + height;
+            box.style.maxWidth = width + 'px';
+        }
+        var notice = d.createElement('div');
+        notice.className = 'spcc-embed__notice';
+        var text = d.createElement('p');
+        text.textContent = c.text.embed.replace('%1$s', services[id] ? services[id].name : c.text.content)
+            .replace('%2$s', c.labels[category] || category);
+        append.call(notice, text);
+        var actions = d.createElement('p');
+        actions.className = 'spcc-embed__actions';
+        ['allow-service', 'settings'].forEach(function (action) {
+            var button = d.createElement('button');
+            button.type = 'button';
+            button.className = action === 'settings' ? 'spcc-embed__settings' : 'spcc-embed__load';
+            button.textContent = action === 'settings' ? c.text.settings : c.text.load;
+            set.call(button, 'data-spcc-action', action);
+            set.call(button, 'data-spcc-service', id);
+            append.call(actions, button);
+        });
+        append.call(notice, actions);
+        insert.call(frame.parentNode, box, frame);
+        append.call(box, frame);
+        append.call(box, notice);
+    }
+
+    function added(node) {
+        scan(node);
+        if (!node || node.nodeType !== 1 || !node.isConnected) {
+            return;
+        }
+        function note(el) {
+            if (!noticed.has(el)) {
+                noticed.add(el);
+                dynamicPage[el.getAttribute('data-spcc-service')] = el.getAttribute('data-spcc-category');
+                changed = true;
+            }
+        }
+        if (node.matches('[data-spcc-service][data-spcc-src]')) {
+            note(node);
+        }
+        each(node.querySelectorAll('[data-spcc-service][data-spcc-src]'), note);
+        if (node.matches('iframe[data-spcc-src]')) {
+            placeholder(node);
+        }
+        each(node.querySelectorAll('iframe[data-spcc-src]'), placeholder);
+    }
+    var observer = new w.MutationObserver(function (records) {
+        records.forEach(function (record) {
+            if (record.type === 'attributes') {
+                added(record.target);
+            } else {
+                each(record.addedNodes, added);
+            }
+        });
+        if (changed && typeof spcc.refresh === 'function') {
+            changed = false;
+            spcc.refresh();
+        }
+    });
+    observer.observe(d.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
 }(window, document));

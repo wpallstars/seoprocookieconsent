@@ -307,6 +307,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'name'     => $service['name'],
                 'category' => $service['category'],
                 'cookies'  => array_keys($service['cookies']),
+                // URL fragments only: no built-in inline-code signatures.
+                'patterns' => array_values(array_filter($service['patterns'], function ($pattern) {
+                    return false !== strpos($pattern, '.') || 0 === strpos($pattern, 'gtag/js?');
+                })),
             );
         }
         $labels = array();
@@ -322,6 +326,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'categories' => SEOProCookieConsent_Services::optional_categories(),
             'labels'     => $labels,
             'services'   => $services,
+            'dynamic'    => null !== self::$blocker,
+            'allow'      => array_values(array_filter(array_map('trim', preg_split('/[\r\n]+/', strtolower((string) SEOProCookieConsent_Settings::get('consent_allow'))) ?: array()))),
+            'block'      => SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
+            'skip'       => SEOProCookieConsent_Settings::get('consent_google_advanced') ? self::GOOGLE_SERVICES : array(),
             'seen'       => array_keys(SEOProCookieConsent_Services::seen()['services']),
             'text'       => array(
                 /* translators: %s: service names, such as "Google Analytics, Hotjar". */
@@ -332,6 +340,11 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 /* translators: %s: the services on the page, such as "YouTube and Google Analytics". */
                 'optOut'  => __('This page uses %s, which may set cookies. You can turn them off in Cookie settings.', 'seoprocookieconsent'),
                 'other'   => __('other services', 'seoprocookieconsent'),
+                /* translators: 1: service name; 2: cookie category. */
+                'embed'   => __('%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings.', 'seoprocookieconsent'),
+                'content' => __('This content', 'seoprocookieconsent'),
+                'load'    => __('Load content', 'seoprocookieconsent'),
+                'settings' => __('Cookie settings', 'seoprocookieconsent'),
             ),
         );
         $preview = self::preview();
