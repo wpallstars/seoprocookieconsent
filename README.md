@@ -46,7 +46,7 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **2 plugins**.
+SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free and Pro editions counted separately. The one that can be downloaded is 7.6 MB zipped; SEO Pro Cookie Consent is 278 KB.
 
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
