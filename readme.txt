@@ -24,6 +24,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
 * **Replaces Complianz**: imports its region and expiry settings once.
+* **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
 
@@ -51,6 +52,10 @@ Not until you switch on Cookie consent, so nothing changes on a live site before
 
 From the time zone their browser reports. Nothing is looked up or sent anywhere, and cached pages work. When the time zone is unclear (UTC, or none), visitors are asked first.
 
+= How do I add terms and conditions? =
+
+Under Policies, fill in Terms and conditions, switch it on and add its block or [spcc_terms] to a page. Suggested wording needs your business name and contact details. Optional answers cover country, offerings and returns; Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages are not converted; replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
+
 = A script that sets cookies still loads =
 
 Add part of its address under Troubleshooting → Also hold back. The settings card lists other third-party scripts it saw.
@@ -76,6 +81,7 @@ GitHub releases are the stable beta channel: each version comes out there first.
 
 = Unreleased =
 * Cookie consent, with a cookie policy block that keeps itself up to date.
+* Optional terms and conditions block and shortcode, editable wording and a one-time identity/contact import from Complianz Terms & Conditions.
 
 = 0.1.0 =
 * First version, made from WP Plugin Starter 1.0.39.
