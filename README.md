@@ -183,6 +183,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.
 - Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 - Optional Terms and conditions block and `[spcc_terms]` shortcode, five owner answers, a plain-text wording override and a one-time non-overwriting import of Complianz Terms & Conditions identity/contact answers.
 - Local YouTube and Vimeo thumbnails in held-back video placeholders, fetched in cron without contacting video services from visitors' browsers.
