@@ -302,7 +302,7 @@
 }
 
 /* Switches: real checkboxes, drawn as switches. */
-.spcc-switch {
+.spcc-toggle {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -312,7 +312,7 @@
     cursor: pointer;
 }
 
-.spcc-switch input {
+.spcc-toggle input {
     position: relative;
     flex: none;
     width: 40px;
@@ -326,7 +326,7 @@
     cursor: pointer;
 }
 
-.spcc-switch input::before {
+.spcc-toggle input::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -338,32 +338,32 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.spcc-switch input:checked {
+.spcc-toggle input:checked {
     border-color: transparent;
     background: var(--spcc-btn-bg);
 }
 
-.spcc-switch input:checked::before {
+.spcc-toggle input:checked::before {
     left: 18px;
 }
 
-.spcc-switch input:disabled {
+.spcc-toggle input:disabled {
     cursor: not-allowed;
     opacity: 0.6;
 }
 
-[dir="rtl"] .spcc-switch input::before {
+[dir="rtl"] .spcc-toggle input::before {
     left: auto;
     right: 2px;
 }
 
-[dir="rtl"] .spcc-switch input:checked::before {
+[dir="rtl"] .spcc-toggle input:checked::before {
     right: 18px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .spcc-switch input,
-    .spcc-switch input::before {
+    .spcc-toggle input,
+    .spcc-toggle input::before {
         transition: background-color 0.15s, left 0.15s, right 0.15s;
     }
 }

@@ -46,6 +46,8 @@ Version: 0.1.0
 
 ## What you get
 
+SEO Pro Cookie Consent replaces **2 plugins**.
+
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
 - **A short, fair banner.** Accept all and Reject all look the same, Settings opens a dialog with one switch per kind of cookie, and the message names what is on the page ("This page uses YouTube and Google Analytics…"). A bar along the bottom, or a box at the bottom left or right.

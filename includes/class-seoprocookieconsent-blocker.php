@@ -299,14 +299,15 @@ final class SEOProCookieConsent_Blocker {
     }
 
     /**
-     * Hosts that serve code without tracking, or are needed for security
-     * or payments: not worth listing as unrecognised.
+     * Hosts needed for security or payments, or WordPress's own: not worth
+     * listing as unrecognised. Library CDNs stay listed: they still receive
+     * visitors' IP addresses, so the owner should see them.
      *
      * @param string $host Host.
      * @return bool
      */
     private static function well_known_safe($host) {
-        $safe = array('wp.com', 'wordpress.com', 'gstatic.com', 'recaptcha.net', 'challenges.cloudflare.com', 'cdnjs.cloudflare.com', 'jsdelivr.net', 'unpkg.com', 'js.stripe.com', 'paypal.com', 'paypalobjects.com', 'ajax.googleapis.com', 'www.google.com');
+        $safe = array('wp.com', 'wordpress.com', 'gstatic.com', 'recaptcha.net', 'challenges.cloudflare.com', 'js.stripe.com', 'paypal.com', 'paypalobjects.com', 'www.google.com');
         foreach ($safe as $domain) {
             if ($host === $domain || substr($host, -strlen('.' . $domain)) === '.' . $domain) {
                 return true;

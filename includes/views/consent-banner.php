@@ -56,9 +56,9 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
             <?php foreach ($seoprocookieconsent_categories as $seoprocookieconsent_id => $seoprocookieconsent_category) : ?>
                 <?php $seoprocookieconsent_necessary = 'necessary' === $seoprocookieconsent_id; ?>
                 <li class="spcc-dialog__category" data-spcc-category-row="<?php echo esc_attr($seoprocookieconsent_id); ?>"<?php echo $seoprocookieconsent_necessary ? '' : ' hidden'; ?>>
-                    <label class="spcc-switch">
+                    <label class="spcc-toggle">
                         <input type="checkbox" role="switch" name="<?php echo esc_attr($seoprocookieconsent_id); ?>" value="1" aria-describedby="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>"<?php echo $seoprocookieconsent_necessary ? ' checked disabled' : ''; ?> />
-                        <span class="spcc-switch__label"><?php echo esc_html($seoprocookieconsent_category['label']); ?></span>
+                        <span class="spcc-toggle__label"><?php echo esc_html($seoprocookieconsent_category['label']); ?></span>
                     </label>
                     <p id="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>" class="spcc-dialog__desc">
                         <?php echo esc_html($seoprocookieconsent_category['description']); ?>
