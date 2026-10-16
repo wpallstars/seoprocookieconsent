@@ -19,7 +19,8 @@
     var banner = d.getElementById('spcc-banner');
     var dialog = d.getElementById('spcc-dialog');
     var reopen = d.querySelector('.spcc-reopen');
-    var ran = {};
+    var ran = spcc.ran = spcc.ran || {};
+    var queued = new WeakSet();
     var opener = null;
 
     function each(list, fn) {
@@ -64,6 +65,11 @@
             return;
         }
         var old = queue[i];
+        if (!old.isConnected || !spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+            queued.delete(old);
+            run(queue, i + 1);
+            return;
+        }
         var s = d.createElement('script');
         each(old.attributes, function (a) {
             if (a.name !== 'type' && a.name.indexOf('data-spcc-') !== 0) {
@@ -91,6 +97,7 @@
             s.text = old.text;
         }
         old.parentNode.replaceChild(s, old);
+        queued.delete(old);
         if (!wait) {
             run(queue, i + 1);
         }
@@ -99,7 +106,8 @@
     function release() {
         var queue = [];
         each(d.querySelectorAll('script[type="text/plain"][data-spcc-category]'), function (old) {
-            if (spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+            if (!queued.has(old) && spcc.allows(old.getAttribute('data-spcc-service'), old.getAttribute('data-spcc-category'))) {
+                queued.add(old);
                 queue.push(old);
             }
         });

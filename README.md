@@ -52,6 +52,7 @@ SEO Pro Cookie Consent replaces **2 plugins**, some of them in part, with free a
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
 - **A short, fair banner.** Accept all and Reject all look the same, Settings opens a dialog with one switch per kind of cookie, and the message names what is on the page ("This page uses YouTube and Google Analytics…"). A bar along the bottom, or a box at the bottom left or right.
 - **Videos and maps with a Load button.** A held-back YouTube video, map or post shows a placeholder the same size, with a button that loads just that one.
+- **Catches lightboxes too.** Recognised script and iframe addresses added after page load through common DOM APIs wait for the same consent choice. Keep the consent head script excluded from script-delay optimizers. This is not a network firewall: inline-only injected code, shadow roots and unusual parser APIs need integration with the browser consent API.
 - **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
 - **Easy to change your mind.** A Cookie settings link joins your footer menu, the Cookie settings button block or any link to `#cookie-settings` opens it, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
@@ -165,6 +166,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 - Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
 - Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
 - Settings screen: a banner preview on the Consent card (home page, asked-first or notice visitor, desktop or phone, updates after each change) and a page picker for the Cookie policy page.

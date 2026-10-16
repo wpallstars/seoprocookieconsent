@@ -131,7 +131,9 @@
     var insert = w.Node.prototype.insertBefore;
     var append = w.Node.prototype.appendChild;
     var dynamicPage = spcc.dynamicPage = {};
-    var noticed = new WeakSet();
+    var noticed = new WeakMap();
+    var matched = new WeakMap();
+    var ran = spcc.ran = {};
     var changed = false;
 
     function each(nodes, fn) {
@@ -167,23 +169,29 @@
     // Runs BEFORE insertion or a connected element's src setter. Observers
     // alone cannot prevent a request (or a script executing synchronously).
     function hold(el, src) {
-        if (!el || (el.tagName !== 'SCRIPT' && el.tagName !== 'IFRAME') || el.hasAttribute('data-spcc-ignore')) {
+        if (!src || !el || (el.tagName !== 'SCRIPT' && el.tagName !== 'IFRAME') || el.hasAttribute('data-spcc-ignore')) {
             return false;
         }
         var type = (el.getAttribute('type') || '').trim().toLowerCase();
-        if (el.tagName === 'SCRIPT' && /^(application\/(ld\+json|json)|text\/(plain|template|x-template|html)|importmap|speculationrules)$/.test(type)) {
+        var held = el.hasAttribute('data-spcc-src');
+        if (el.tagName === 'SCRIPT' && !held && /^(application\/(ld\+json|json)|text\/(plain|template|x-template|html)|importmap|speculationrules)$/.test(type)) {
             return false;
         }
         var id = classify(src);
         var category = services[id] ? services[id].category : id.slice(7);
-        if (!id || spcc.allows(id, category)) {
+        if (!id) {
+            matched.delete(el);
+            return false;
+        }
+        matched.set(el, { id: id, category: category });
+        if (spcc.allows(id, category)) {
             return false;
         }
         set.call(el, 'data-spcc-service', id);
         set.call(el, 'data-spcc-category', category);
         set.call(el, 'data-spcc-src', src);
         if (el.tagName === 'SCRIPT') {
-            if (type) {
+            if (type && !held) {
                 set.call(el, 'data-spcc-type', el.getAttribute('type'));
             }
             set.call(el, 'type', 'text/plain');
@@ -277,11 +285,19 @@
     };
 
     function placeholder(frame) {
-        if (!frame.parentNode || frame.closest('.spcc-embed')) {
+        if (!frame.parentNode) {
             return;
         }
         var id = frame.getAttribute('data-spcc-service');
         var category = frame.getAttribute('data-spcc-category');
+        var previous = frame.closest('.spcc-embed');
+        if (previous) {
+            if (previous.getAttribute('data-spcc-embed') === id) {
+                return;
+            }
+            insert.call(previous.parentNode, frame, previous);
+            previous.remove();
+        }
         var box = d.createElement('div');
         box.className = 'spcc-embed';
         set.call(box, 'data-spcc-embed', id);
@@ -321,16 +337,22 @@
             return;
         }
         function note(el) {
-            if (!noticed.has(el)) {
-                noticed.add(el);
-                dynamicPage[el.getAttribute('data-spcc-service')] = el.getAttribute('data-spcc-category');
+            var match = matched.get(el);
+            var id = match ? match.id : el.getAttribute('data-spcc-service');
+            var category = match ? match.category : el.getAttribute('data-spcc-category');
+            if (id && noticed.get(el) !== id) {
+                noticed.set(el, id);
+                dynamicPage[id] = category;
+                if (spcc.allows(id, category)) {
+                    ran[category] = 1;
+                }
                 changed = true;
             }
         }
-        if (node.matches('[data-spcc-service][data-spcc-src]')) {
+        if (node.matches('script, iframe')) {
             note(node);
         }
-        each(node.querySelectorAll('[data-spcc-service][data-spcc-src]'), note);
+        each(node.querySelectorAll('script, iframe'), note);
         if (node.matches('iframe[data-spcc-src]')) {
             placeholder(node);
         }
@@ -349,5 +371,5 @@
             spcc.refresh();
         }
     });
-    observer.observe(d.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    observer.observe(d.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src', 'data-spcc-src'] });
 }(window, document));
