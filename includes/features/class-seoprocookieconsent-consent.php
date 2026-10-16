@@ -309,7 +309,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'cookies'  => array_keys($service['cookies']),
                 // URL fragments only: no built-in inline-code signatures.
                 'patterns' => array_values(array_filter($service['patterns'], function ($pattern) {
-                    return false !== strpos($pattern, '.') || 0 === strpos($pattern, 'gtag/js?');
+                    return 'gtm.start' !== $pattern && false === strpos($pattern, '(')
+                        && (false !== strpos($pattern, '.') || 0 === strpos($pattern, 'gtag/js?'));
                 })),
             );
         }
