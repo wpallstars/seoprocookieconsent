@@ -257,8 +257,19 @@
         });
     });
 
+    function source(el, value) {
+        var src = String(value);
+        // Explicit cancellation differs from scanning an inert held node.
+        if (!src || el.hasAttribute('data-spcc-ignore')) {
+            clearHeld(el);
+            matched.delete(el);
+            return false;
+        }
+        return hold(el, src);
+    }
+
     w.Element.prototype.setAttribute = function (name, value) {
-        if (String(name).toLowerCase() === 'src' && hold(this, String(value))) {
+        if (String(name).toLowerCase() === 'src' && source(this, value)) {
             return;
         }
         return set.apply(this, arguments);
@@ -273,7 +284,7 @@
             enumerable: descriptor.enumerable,
             get: descriptor.get,
             set: function (value) {
-                if (!hold(this, String(value))) {
+                if (!source(this, value)) {
                     descriptor.set.call(this, value);
                 }
             }
