@@ -1,16 +1,16 @@
 <?php
 /**
- * WP Plugin Starter settings store.
+ * SEO Pro Cookie Consent settings store.
  *
- * Every setting lives in a single `wpstarter_options` array and is described
+ * Every setting lives in a single `seoprocookieconsent_options` array and is described
  * by a schema entry (type, default, UI metadata) declared by its feature.
- * Features read values with WPStarter_Settings::get(); the admin UI renders
+ * Features read values with SEOProCookieConsent_Settings::get(); the admin UI renders
  * cards from the same schema; the AJAX endpoint and the Settings API sanitize
- * through it. Add settings with the `wpstarter_settings_schema` filter or by
- * registering a feature (see WPStarter_Feature).
+ * through it. Add settings with the `seoprocookieconsent_settings_schema` filter or by
+ * registering a feature (see SEOProCookieConsent_Feature).
  *
  * On multisite, values the network applies to every site
- * (WPStarter_Network_Settings) take the place of the site's own when read;
+ * (SEOProCookieConsent_Network_Settings) take the place of the site's own when read;
  * the option keeps only the site's own values.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -18,7 +18,7 @@
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 0.3.0
  */
 
@@ -26,22 +26,22 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class WPStarter_Settings {
+class SEOProCookieConsent_Settings {
 
     /** Option that stores every setting. */
-    const OPTION = 'wpstarter_options';
+    const OPTION = 'seoprocookieconsent_options';
 
     /** Settings API group. */
-    const GROUP = 'wpstarter_settings';
+    const GROUP = 'seoprocookieconsent_settings';
 
     /** Nonce action shared by admin AJAX requests. */
-    const NONCE = 'wpstarter_admin';
+    const NONCE = 'seoprocookieconsent_admin';
 
     /** Stored schema version, used for one-off migrations. */
-    const DB_VERSION_OPTION = 'wpstarter_db_version';
+    const DB_VERSION_OPTION = 'seoprocookieconsent_db_version';
 
-    /** Current schema version; its history is in WPStarter_Setup. */
-    const DB_VERSION = WPStarter_Setup::DB_VERSION;
+    /** Current schema version; its history is in SEOProCookieConsent_Setup. */
+    const DB_VERSION = SEOProCookieConsent_Setup::DB_VERSION;
 
     /** Seconds after which a save lock is taken as left behind (see lock()). */
     const LOCK_TIMEOUT = 10;
@@ -105,29 +105,29 @@ class WPStarter_Settings {
      * Register hooks.
      */
     public static function init() {
-        // Priority 0, before WPStarter::boot_features() so features read
+        // Priority 0, before SEOProCookieConsent::boot_features() so features read
         // migrated values, and before widgets_init (init:1).
         add_action('init', array(__CLASS__, 'maybe_migrate'), 0);
         add_action('admin_init', array(__CLASS__, 'register_setting'));
-        add_action('wp_ajax_wpstarter_save_setting', array(__CLASS__, 'ajax_save'));
+        add_action('wp_ajax_seoprocookieconsent_save_setting', array(__CLASS__, 'ajax_save'));
         add_action('update_option_' . self::OPTION, array(__CLASS__, 'option_updated'), 10, 2);
         add_filter('option_page_capability_' . self::GROUP, array(__CLASS__, 'capability'));
-        WPStarter_Network_Sites::init();
+        SEOProCookieConsent_Network_Sites::init();
     }
 
     /**
-     * Whether the current user may change WP Plugin Starter's settings.
+     * Whether the current user may change SEO Pro Cookie Consent's settings.
      *
      * @return bool
      */
     public static function can_change() {
         /**
-         * Filter whether the current user may change WP Plugin Starter's settings
+         * Filter whether the current user may change SEO Pro Cookie Consent's settings
          * (on top of the manage_options check).
          *
          * @param bool $can Whether they may.
          */
-        return current_user_can('manage_options') && (bool) apply_filters('wpstarter_can_change_settings', true);
+        return current_user_can('manage_options') && (bool) apply_filters('seoprocookieconsent_can_change_settings', true);
     }
 
     /**
@@ -154,7 +154,7 @@ class WPStarter_Settings {
      * - replaces:    top-level only; plugin slug => name this setting replaces
      * - panel:       top-level only; true to show the Options panel even with
      *                no visible child settings, for a feature that renders its
-     *                own controls there (wpstarter_setting_panel)
+     *                own controls there (seoprocookieconsent_setting_panel)
      * - hidden:      child only; true for wiring set by starter data or code,
      *                which the panel does not show
      * - locked:      multi only; values (or a callable returning them) that
@@ -180,7 +180,7 @@ class WPStarter_Settings {
         }
 
         $schema = array();
-        foreach (WPStarter::features() as $class) {
+        foreach (SEOProCookieConsent::features() as $class) {
             $schema += (array) $class::settings();
         }
 
@@ -189,7 +189,7 @@ class WPStarter_Settings {
          *
          * @param array $schema Setting definitions keyed by setting key.
          */
-        $schema = (array) apply_filters('wpstarter_settings_schema', $schema);
+        $schema = (array) apply_filters('seoprocookieconsent_settings_schema', $schema);
 
         foreach ($schema as $key => $field) {
             if (isset($field['tab']) && is_string($field['tab'])) {
@@ -287,7 +287,7 @@ class WPStarter_Settings {
      */
     private static function effective(array $stored) {
         $all = array_merge(self::defaults(), array_intersect_key($stored, self::schema()));
-        return is_multisite() ? array_merge($all, array_intersect_key(WPStarter_Network_Settings::enforced(), $all)) : $all;
+        return is_multisite() ? array_merge($all, array_intersect_key(SEOProCookieConsent_Network_Settings::enforced(), $all)) : $all;
     }
 
     /**
@@ -312,7 +312,7 @@ class WPStarter_Settings {
              * @param array $old Settings before, as features read them.
              * @param array $new Settings after.
              */
-            do_action('wpstarter_settings_changed', $old, $new);
+            do_action('seoprocookieconsent_settings_changed', $old, $new);
         }
     }
 
@@ -370,10 +370,10 @@ class WPStarter_Settings {
     public static function set($key, $value) {
         $schema = self::schema();
         if (!isset($schema[$key])) {
-            return new WP_Error('wpstarter_unknown_setting', __('Unknown setting.', 'wp-plugin-starter-template'));
+            return new WP_Error('seoprocookieconsent_unknown_setting', __('Unknown setting.', 'seoprocookieconsent'));
         }
-        if (WPStarter_Network_Settings::is_enforced($key)) {
-            return new WP_Error('wpstarter_network_setting', __('The network administrator sets this for every site, so it cannot be changed here.', 'wp-plugin-starter-template'));
+        if (SEOProCookieConsent_Network_Settings::is_enforced($key)) {
+            return new WP_Error('seoprocookieconsent_network_setting', __('The network administrator sets this for every site, so it cannot be changed here.', 'seoprocookieconsent'));
         }
 
         $clean = self::sanitize_value($value, $schema[$key]);
@@ -382,7 +382,7 @@ class WPStarter_Settings {
         // and writes it all back. The lock stops two saves at once (two tabs,
         // two admins) each writing back a copy without the other's change.
         if (!self::lock()) {
-            return new WP_Error('wpstarter_not_saved', __('The setting could not be saved. Please try again.', 'wp-plugin-starter-template'));
+            return new WP_Error('seoprocookieconsent_not_saved', __('The setting could not be saved. Please try again.', 'seoprocookieconsent'));
         }
         try {
             // Read what is stored now, not the copy loaded when this request
@@ -398,20 +398,20 @@ class WPStarter_Settings {
         }
 
         if (!$saved) {
-            return new WP_Error('wpstarter_not_saved', __('The setting could not be saved. Please try again.', 'wp-plugin-starter-template'));
+            return new WP_Error('seoprocookieconsent_not_saved', __('The setting could not be saved. Please try again.', 'seoprocookieconsent'));
         }
         return $clean;
     }
 
     /**
      * Store sanitized values as a site's own settings, for the network
-     * (WPStarter_Network_Differences::copy()), under that site's save lock.
+     * (SEOProCookieConsent_Network_Differences::copy()), under that site's save lock.
      * Read and written straight in its options table: switching to each
      * site would load all of its autoloaded options, and run this
      * request's hooks, which belong to another site; the site runs its own
      * saving work on its next request, for the values from before that are
-     * kept under the same lock (WPStarter_Network_Sites::remember()), so
-     * that work never misses them (WPStarter_Network_Sites::sync()). Sites
+     * kept under the same lock (SEOProCookieConsent_Network_Sites::remember()), so
+     * that work never misses them (SEOProCookieConsent_Network_Sites::sync()). Sites
      * where the plugin has not run yet are left alone.
      *
      * @param int   $site_id Site ID.
@@ -447,8 +447,8 @@ class WPStarter_Settings {
                 if (false === $wpdb->update($table, array('option_value' => maybe_serialize($stored)), array('option_name' => self::OPTION))) {
                     return null;
                 }
-                WPStarter_Network_Sites::flush_site_cache((int) $site_id, array(self::OPTION));
-                WPStarter_Network_Sites::remember((int) $site_id, $previous);
+                SEOProCookieConsent_Network_Sites::flush_site_cache((int) $site_id, array(self::OPTION));
+                SEOProCookieConsent_Network_Sites::remember((int) $site_id, $previous);
             }
             return $previous;
         } finally {
@@ -528,9 +528,9 @@ class WPStarter_Settings {
      * Run a change under a save lock (lock()), released however the change
      * ends: one of its own, for an option kept outside this site's
      * settings, such as the network option
-     * (WPStarter_Network_Settings::change()); or, with no table and name,
+     * (SEOProCookieConsent_Network_Settings::change()); or, with no table and name,
      * this site's save lock, for an option the network also writes under it
-     * (WPStarter_Network_Sites::sync()). The change must not save settings
+     * (SEOProCookieConsent_Network_Sites::sync()). The change must not save settings
      * itself (set()): it would wait on the lock it is under.
      *
      * @param callable $change The change; its result is returned.
@@ -586,13 +586,13 @@ class WPStarter_Settings {
 
     /**
      * Map a renamed tab slug to its current slug
-     * (WPStarter_Setup::RENAMED_TABS).
+     * (SEOProCookieConsent_Setup::RENAMED_TABS).
      *
      * @param string $tab Tab slug.
      * @return string
      */
     public static function resolve_tab($tab) {
-        $renamed = WPStarter_Setup::RENAMED_TABS;
+        $renamed = SEOProCookieConsent_Setup::RENAMED_TABS;
         return array_key_exists($tab, $renamed) ? $renamed[$tab] : $tab;
     }
 
@@ -979,7 +979,7 @@ class WPStarter_Settings {
      * network applies to every site are not (own()), and a save cannot
      * change the site's own value of a setting the network applies, as
      * set() cannot. Migrations store them, as a new site starts with the
-     * network's values (WPStarter_Network_Sites::seed()).
+     * network's values (SEOProCookieConsent_Network_Sites::seed()).
      *
      * @param mixed $input Raw option value.
      * @return array
@@ -989,7 +989,7 @@ class WPStarter_Settings {
         $schema   = self::schema();
         $stored   = self::stored_all();
         $clean    = self::own();
-        $enforced = self::$migrating ? array() : WPStarter_Network_Settings::enforced();
+        $enforced = self::$migrating ? array() : SEOProCookieConsent_Network_Settings::enforced();
         if (!self::$migrating) {
             // Settings not registered on this request (their feature is
             // switched off) keep their stored values, even when the input
@@ -1034,7 +1034,7 @@ class WPStarter_Settings {
         check_ajax_referer(self::NONCE, 'nonce');
 
         if (!self::can_change()) {
-            wp_send_json_error(array('message' => __('You are not allowed to change these settings.', 'wp-plugin-starter-template')), 403);
+            wp_send_json_error(array('message' => __('You are not allowed to change these settings.', 'seoprocookieconsent')), 403);
         }
 
         $key = isset($_POST['key']) ? sanitize_key(wp_unslash($_POST['key'])) : '';
@@ -1052,29 +1052,29 @@ class WPStarter_Settings {
          * @param string $key   Setting key.
          * @param mixed  $value Sanitized value.
          */
-        do_action('wpstarter_setting_saved', $key, $value);
+        do_action('seoprocookieconsent_setting_saved', $key, $value);
 
         $schema = self::schema();
         $reload = !empty($schema[$key]['reload']);
         wp_send_json_success(array(
             'key'     => $key,
             'value'   => $value,
-            'message' => $reload ? __('Saved. Reload the page to see the change.', 'wp-plugin-starter-template') : __('Saved', 'wp-plugin-starter-template'),
+            'message' => $reload ? __('Saved. Reload the page to see the change.', 'seoprocookieconsent') : __('Saved', 'seoprocookieconsent'),
             'reload'  => $reload,
         ));
     }
 
     /**
-     * One-off migrations, once per DB_VERSION: WPStarter_Setup::migrate()
+     * One-off migrations, once per DB_VERSION: SEOProCookieConsent_Setup::migrate()
      * (imports that belong to no feature), then each feature's migrate().
-     * The history of versions is in WPStarter_Setup::DB_VERSION.
+     * The history of versions is in SEOProCookieConsent_Setup::DB_VERSION.
      *
      * Old options are left in place so a downgrade keeps working;
      * uninstall.php removes ours. Other plugins' options are never touched.
      *
      * On multisite, a site where the plugin runs for the first time starts
      * with the values saved on the network screen, for anything not
-     * imported (WPStarter_Network_Sites::seed()).
+     * imported (SEOProCookieConsent_Network_Sites::seed()).
      */
     public static function maybe_migrate() {
         $from = (int) get_option(self::DB_VERSION_OPTION, 0);
@@ -1084,13 +1084,13 @@ class WPStarter_Settings {
 
         $options = get_option(self::OPTION, array());
         $options = is_array($options) ? $options : array();
-        $options = (array) WPStarter_Setup::migrate($options, $from);
+        $options = (array) SEOProCookieConsent_Setup::migrate($options, $from);
 
-        foreach (WPStarter::features() as $class) {
+        foreach (SEOProCookieConsent::features() as $class) {
             $options = (array) $class::migrate($options, $from);
         }
         if (0 === $from) {
-            $options = WPStarter_Network_Sites::seed($options);
+            $options = SEOProCookieConsent_Network_Sites::seed($options);
         }
 
         // Keys the migrations removed stay removed (see sanitize_all()),

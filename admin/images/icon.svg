@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
-  WP Plugin Starter icon (WordPress.org icons).
+  SEO Pro Cookie Consent icon (WordPress.org icons).
   Source: .wordpress-org/icon.svg. Edit that, then run scripts/build-banner.sh,
   which exports icon-256x256.png and icon-128x128.png from it.
   The banner's picture (.wordpress-org/banner.svg) on its own: the wpallstars
@@ -19,7 +19,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <title
-     id="title1">WP Plugin Starter</title>
+     id="title1">SEO Pro Cookie Consent</title>
   <defs
      id="defs15">
     <linearGradient

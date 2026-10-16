@@ -1,6 +1,6 @@
 <?php
 /**
- * What makes this plugin WP Plugin Starter: its features, settings tabs,
+ * What makes this plugin SEO Pro Cookie Consent: its features, settings tabs,
  * links, settings history and the helpers only it needs.
  *
  * The other files in includes/ and admin/ that the starter plugin also has
@@ -16,9 +16,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
- * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
+ * Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 1.0.0
  */
 
@@ -26,12 +26,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-final class WPStarter_Setup {
+final class SEOProCookieConsent_Setup {
 
     /**
      * Built-in features, in the order their cards appear within each tab.
      * Each lives in includes/features/class-{lowercase-hyphenated-name}.php,
-     * for example WPStarter_Example in class-wpstarter-example.php.
+     * for example SEOProCookieConsent_Example in class-seoprocookieconsent-example.php.
      */
     const FEATURES = array();
 
@@ -42,7 +42,7 @@ final class WPStarter_Setup {
     const OPTIONAL_FEATURES = array();
 
     /**
-     * Settings version. WPStarter_Settings::maybe_migrate() runs
+     * Settings version. SEOProCookieConsent_Settings::maybe_migrate() runs
      * migrate() below and every feature's migrate() once per version.
      * After a release, bump it for a new or changed import and add a line.
      *
@@ -59,7 +59,7 @@ final class WPStarter_Setup {
     /**
      * Slug of the plugin's own top-level menu (add_menu_page()), when it
      * has one: the settings screen is then Settings, the last item in that
-     * menu, and not in WordPress's Settings menu. Empty: Settings → WP Plugin Starter.
+     * menu, and not in WordPress's Settings menu. Empty: Settings → SEO Pro Cookie Consent.
      */
     const MENU_PARENT = '';
 
@@ -74,8 +74,8 @@ final class WPStarter_Setup {
      */
     public static function header_links() {
         return array(
-            'source'  => 'https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding',
-            'support' => 'https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding/issues',
+            'source'  => 'https://github.com/wpallstars/seoprocookieconsent',
+            'support' => 'https://github.com/wpallstars/seoprocookieconsent/issues',
             'donate'  => 'https://buymeacoffee.com/marcusquinn',
         );
     }
@@ -115,16 +115,16 @@ final class WPStarter_Setup {
     public static function settings_tabs() {
         return array(
             'general' => array(
-                'label'       => __('General', 'wp-plugin-starter-template'),
-                'description' => __('WP Plugin Starter\'s settings appear here as features are added.', 'wp-plugin-starter-template'),
+                'label'       => __('General', 'seoprocookieconsent'),
+                'description' => __('SEO Pro Cookie Consent\'s settings appear here as features are added.', 'seoprocookieconsent'),
             ),
         );
     }
 
     /**
      * Admin requests: load and start the plugin's own admin parts (other
-     * tabs with the wpstarter_admin_tabs filter, scripts with the
-     * wpstarter_admin_enqueue action).
+     * tabs with the seoprocookieconsent_admin_tabs filter, scripts with the
+     * seoprocookieconsent_admin_enqueue action).
      */
     public static function admin() {
     }

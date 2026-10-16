@@ -1,4 +1,4 @@
-# WP Plugin Starter design
+# SEO Pro Cookie Consent design
 
 Shared styling rules and tokens live in `STYLING.md`. The starter uses
 WordPress admin components, its colour scheme and its existing header,
@@ -12,7 +12,7 @@ tabs and cards; it adds no independent brand palette to Light mode.
 - Dark tokens: canvas `#101517`, surface `#1d2327`, raised `#2c3338`,
   border `#3c434a`, text `#f0f0f1`, muted `#c3c4c7`, field border `#8c8f94`.
   Accent fills follow WordPress's scheme; text accents are lightened.
-- Palette overrides apply only below `html.wps-dark` on own screens.
+- Palette overrides apply only below `html.spcc-dark` on own screens.
   Light keeps existing colours. System follows the OS live. There are no
   mode transitions, including for reduced-motion users.
 

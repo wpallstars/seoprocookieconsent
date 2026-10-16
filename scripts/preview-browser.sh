@@ -26,7 +26,7 @@
 # options instead, such as "-d mysqli.default_socket=/path/to/mysqld.sock".
 # <PREFIX>_PREVIEW_HOST is the host name WordPress sees while it loads
 # (default: Local's domain for the site, else localhost). The prefix is the
-# plugin's constant prefix, such as WPSTARTER.
+# plugin's constant prefix, such as SEOPROCOOKIECONSENT.
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 # SPDX-FileCopyrightText: 2026 Marcus Quinn

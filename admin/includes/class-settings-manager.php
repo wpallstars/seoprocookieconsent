@@ -1,14 +1,14 @@
 <?php
 /**
- * WP Plugin Starter settings tabs.
+ * SEO Pro Cookie Consent settings tabs.
  *
- * Renders setting cards from WPStarter_Settings::schema(). Each top-level
+ * Renders setting cards from SEOProCookieConsent_Settings::schema(). Each top-level
  * setting is a card with a switch; child settings appear in an expandable
- * panel. Controls save instantly via AJAX (see admin/js/wpstarter-admin.js).
+ * panel. Controls save instantly via AJAX (see admin/js/seoprocookieconsent-admin.js).
  *
  * On the network screen (multisite) the same cards show and save network
  * values, with Apply to every site and the sites that differ
- * (WPStarter_Network_Manager). On a site, a card the network applies to
+ * (SEOProCookieConsent_Network_Manager). On a site, a card the network applies to
  * every site shows its values locked.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -16,7 +16,7 @@
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 0.2.0
  */
 
@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class WPStarter_Settings_Manager {
+class SEOProCookieConsent_Settings_Manager {
 
     /** Control renderer for each child field type (render_field()); any other type is text. */
     private const CONTROLS = array(
@@ -61,7 +61,7 @@ class WPStarter_Settings_Manager {
      * @return mixed
      */
     private static function value($key) {
-        return is_network_admin() ? WPStarter_Network_Settings::value($key) : WPStarter_Settings::get($key);
+        return is_network_admin() ? SEOProCookieConsent_Network_Settings::value($key) : SEOProCookieConsent_Settings::get($key);
     }
 
     /**
@@ -72,7 +72,7 @@ class WPStarter_Settings_Manager {
      * @return array
      */
     public static function fields_for_tab($tab) {
-        return is_network_admin() ? WPStarter_Network_Settings::fields_for_tab($tab) : WPStarter_Settings::fields_for_tab($tab);
+        return is_network_admin() ? SEOProCookieConsent_Network_Settings::fields_for_tab($tab) : SEOProCookieConsent_Settings::fields_for_tab($tab);
     }
 
     /**
@@ -82,44 +82,44 @@ class WPStarter_Settings_Manager {
      * and changed here.
      *
      * @param string $query Search text.
-     * @param array  $tabs  Registered tabs (see WPStarter_Admin_Manager::get_tabs()).
+     * @param array  $tabs  Registered tabs (see SEOProCookieConsent_Admin_Manager::get_tabs()).
      */
     public static function render_search($query, array $tabs) {
         $groups  = array();
         $network = is_network_admin();
-        foreach (WPStarter_Settings::search($query) as $key => $field) {
-            if (isset($tabs[$field['tab']]) && (!$network || WPStarter_Network_Settings::eligible((string) $key))) {
+        foreach (SEOProCookieConsent_Settings::search($query) as $key => $field) {
+            if (isset($tabs[$field['tab']]) && (!$network || SEOProCookieConsent_Network_Settings::eligible((string) $key))) {
                 $groups[$field['tab']][$key] = $field;
             }
         }
         $count = array_sum(array_map('count', $groups));
         ?>
-        <div class="wps-section">
-            <div class="wps-section__intro">
-                <h2 class="wps-section__title">
+        <div class="spcc-section">
+            <div class="spcc-section__intro">
+                <h2 class="spcc-section__title">
                     <?php
                     /* translators: %s: search text */
-                    echo esc_html(sprintf(__('Results for “%s”', 'wp-plugin-starter-template'), $query));
+                    echo esc_html(sprintf(__('Results for “%s”', 'seoprocookieconsent'), $query));
                     ?>
                 </h2>
-                <p class="wps-section__desc" role="status">
+                <p class="spcc-section__desc" role="status">
                     <?php
                     // role="status" rather than <output>: screen readers announce <output> changes unevenly.
                     echo esc_html($count
                         /* translators: %d: number of matching features */
-                        ? sprintf(_n('%d feature found.', '%d features found.', $count, 'wp-plugin-starter-template'), $count)
-                        : __('No features match. Try another word.', 'wp-plugin-starter-template'));
+                        ? sprintf(_n('%d feature found.', '%d features found.', $count, 'seoprocookieconsent'), $count)
+                        : __('No features match. Try another word.', 'seoprocookieconsent'));
                     ?>
                 </p>
                 <?php if ($count) : ?>
-                    <p class="wps-section__hint"><?php esc_html_e('Changes are saved automatically.', 'wp-plugin-starter-template'); ?></p>
+                    <p class="spcc-section__hint"><?php esc_html_e('Changes are saved automatically.', 'seoprocookieconsent'); ?></p>
                 <?php endif; ?>
             </div>
             <?php foreach ($groups as $tab => $fields) : ?>
-                <h3 class="wps-search__group">
-                    <a href="<?php echo esc_url(WPStarter_Admin_Manager::tab_url($tab)); ?>"><?php echo esc_html($tabs[$tab]['label']); ?></a>
+                <h3 class="spcc-search__group">
+                    <a href="<?php echo esc_url(SEOProCookieConsent_Admin_Manager::tab_url($tab)); ?>"><?php echo esc_html($tabs[$tab]['label']); ?></a>
                 </h3>
-                <div class="wps-cards">
+                <div class="spcc-cards">
                     <?php
                     self::$query = (string) $query;
                     foreach ($fields as $key => $field) {
@@ -144,20 +144,20 @@ class WPStarter_Settings_Manager {
         $fields  = self::fields_for_tab($tab);
         $network = is_network_admin();
         ?>
-        <div class="wps-section">
-            <div class="wps-section__intro">
-                <h2 class="wps-section__title"><?php echo esc_html($title); ?></h2>
+        <div class="spcc-section">
+            <div class="spcc-section__intro">
+                <h2 class="spcc-section__title"><?php echo esc_html($title); ?></h2>
                 <?php if ($description) : ?>
-                    <p class="wps-section__desc"><?php echo esc_html($description); ?></p>
+                    <p class="spcc-section__desc"><?php echo esc_html($description); ?></p>
                 <?php endif; ?>
                 <?php if ($fields && $network) : ?>
-                    <p class="wps-section__hint"><?php esc_html_e('New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically.', 'wp-plugin-starter-template'); ?></p>
+                    <p class="spcc-section__hint"><?php esc_html_e('New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically.', 'seoprocookieconsent'); ?></p>
                 <?php elseif ($fields) : ?>
-                    <p class="wps-section__hint"><?php esc_html_e('Changes are saved automatically.', 'wp-plugin-starter-template'); ?></p>
+                    <p class="spcc-section__hint"><?php esc_html_e('Changes are saved automatically.', 'seoprocookieconsent'); ?></p>
                 <?php endif; ?>
             </div>
             <?php if ($fields) : ?>
-                <div class="wps-cards">
+                <div class="spcc-cards">
                     <?php
                     foreach ($fields as $key => $field) {
                         self::render_card($key, $field);
@@ -165,8 +165,8 @@ class WPStarter_Settings_Manager {
                     ?>
                 </div>
             <?php else : ?>
-                <div class="wps-card wps-empty">
-                    <p><?php esc_html_e('No settings yet.', 'wp-plugin-starter-template'); ?></p>
+                <div class="spcc-card spcc-empty">
+                    <p><?php esc_html_e('No settings yet.', 'seoprocookieconsent'); ?></p>
                 </div>
             <?php endif; ?>
             <?php
@@ -177,16 +177,16 @@ class WPStarter_Settings_Manager {
                  *
                  * @param string $tab Tab slug.
                  */
-                do_action('wpstarter_network_settings_tab_after', $tab);
+                do_action('seoprocookieconsent_network_settings_tab_after', $tab);
             } else {
                 /**
                  * Fires after a settings tab's cards, for sections that are not
                  * settings (such as example data). Not on the network screen
-                 * (wpstarter_network_settings_tab_after).
+                 * (seoprocookieconsent_network_settings_tab_after).
                  *
                  * @param string $tab Tab slug.
                  */
-                do_action('wpstarter_settings_tab_after', $tab);
+                do_action('seoprocookieconsent_settings_tab_after', $tab);
             }
             ?>
         </div>
@@ -202,43 +202,43 @@ class WPStarter_Settings_Manager {
     public static function render_card($key, array $field) {
         $network  = is_network_admin();
         $children = self::visible_children($key);
-        // A feature may render its whole panel itself (wpstarter_setting_panel);
+        // A feature may render its whole panel itself (seoprocookieconsent_setting_panel);
         // the network screen shows only the child settings the network can set.
         $has_panel = $children || (!$network && !empty($field['panel']));
-        $id        = 'wps-' . $key;
+        $id        = 'spcc-' . $key;
         $panel_id  = $id . '-panel';
         $is_bool   = 'bool' === $field['type'];
         $value     = self::value($key);
         // On a site, a card the network applies to every site: its switch
         // and enforced settings are disabled (render_field()).
-        $locked      = !$network && WPStarter_Network_Settings::is_enforced($key);
+        $locked      = !$network && SEOProCookieConsent_Network_Settings::is_enforced($key);
         $describedby = $id . self::DESC . ($locked ? ' ' . $id . '-locked' : '');
         ?>
         <section class="<?php echo esc_attr(self::card_classes($key, $is_bool && $value, $has_panel, $locked)); ?>" data-setting-card="<?php echo esc_attr($key); ?>">
             <?php // Clicking the header (outside the switch) opens the options; only the switch changes the value. ?>
-            <div class="wps-setting__header"<?php echo $has_panel ? ' data-wps-panel-toggle' : ''; ?>>
+            <div class="spcc-setting__header"<?php echo $has_panel ? ' data-spcc-panel-toggle' : ''; ?>>
                 <?php if ($is_bool) : ?>
-                    <span class="wps-switch">
+                    <span class="spcc-switch">
                         <input type="checkbox"
                                role="switch"
-                               class="wps-switch__input"
+                               class="spcc-switch__input"
                                id="<?php echo esc_attr($id); ?>"
-                               data-wps-setting="<?php echo esc_attr($key); ?>"
+                               data-spcc-setting="<?php echo esc_attr($key); ?>"
                                aria-labelledby="<?php echo esc_attr($id); ?>-title"
                                aria-describedby="<?php echo esc_attr($describedby); ?>"
                                <?php checked((bool) $value); ?>
                                <?php disabled($locked); ?> />
-                        <span class="wps-switch__track" aria-hidden="true"></span>
+                        <span class="spcc-switch__track" aria-hidden="true"></span>
                     </span>
                 <?php endif; ?>
 
-                <div class="wps-setting__text">
-                    <div class="wps-setting__title-row">
-                        <span class="wps-setting__title" id="<?php echo esc_attr($id); ?>-title"><?php echo esc_html($field['label']); ?></span>
-                        <span class="wps-status" data-wps-status="<?php echo esc_attr($key); ?>" aria-hidden="true"></span>
+                <div class="spcc-setting__text">
+                    <div class="spcc-setting__title-row">
+                        <span class="spcc-setting__title" id="<?php echo esc_attr($id); ?>-title"><?php echo esc_html($field['label']); ?></span>
+                        <span class="spcc-status" data-spcc-status="<?php echo esc_attr($key); ?>" aria-hidden="true"></span>
                     </div>
                     <?php if (!empty($field['description'])) : ?>
-                        <p class="wps-setting__desc" id="<?php echo esc_attr($id . self::DESC); ?>"><?php echo esc_html($field['description']); ?></p>
+                        <p class="spcc-setting__desc" id="<?php echo esc_attr($id . self::DESC); ?>"><?php echo esc_html($field['description']); ?></p>
                     <?php endif; ?>
                     <?php self::render_replaces($field); ?>
                     <?php
@@ -250,24 +250,24 @@ class WPStarter_Settings_Manager {
 
                 <?php if ($has_panel) : ?>
                     <button type="button"
-                            class="wps-setting__expand button-link"
+                            class="spcc-setting__expand button-link"
                             aria-expanded="false"
                             aria-controls="<?php echo esc_attr($panel_id); ?>">
-                        <span class="wps-setting__expand-label"><?php esc_html_e('Options', 'wp-plugin-starter-template'); ?></span>
+                        <span class="spcc-setting__expand-label"><?php esc_html_e('Options', 'seoprocookieconsent'); ?></span>
                         <span class="dashicons dashicons-arrow-down-alt2" aria-hidden="true"></span>
-                        <span class="screen-reader-text"><?php echo esc_html(sprintf(/* translators: %s: setting name */ __('for %s', 'wp-plugin-starter-template'), $field['label'])); ?></span>
+                        <span class="screen-reader-text"><?php echo esc_html(sprintf(/* translators: %s: setting name */ __('for %s', 'seoprocookieconsent'), $field['label'])); ?></span>
                     </button>
                 <?php endif; ?>
             </div>
 
             <?php
             if ($network) {
-                WPStarter_Network_Manager::render_card_network($key);
+                SEOProCookieConsent_Network_Manager::render_card_network($key);
             }
             ?>
 
             <?php if ($has_panel) : ?>
-                <div class="wps-setting__panel" id="<?php echo esc_attr($panel_id); ?>" hidden>
+                <div class="spcc-setting__panel" id="<?php echo esc_attr($panel_id); ?>" hidden>
                     <?php self::render_panel($key, $field, $children); ?>
                 </div>
             <?php endif; ?>
@@ -284,11 +284,11 @@ class WPStarter_Settings_Manager {
      */
     private static function render_locked_note($id, array $field) {
         ?>
-        <p class="wps-locked-note" id="<?php echo esc_attr($id); ?>-locked">
+        <p class="spcc-locked-note" id="<?php echo esc_attr($id); ?>-locked">
             <span class="dashicons dashicons-lock" aria-hidden="true"></span>
-            <?php esc_html_e('The network administrator sets this for every site.', 'wp-plugin-starter-template'); ?>
+            <?php esc_html_e('The network administrator sets this for every site.', 'seoprocookieconsent'); ?>
             <?php if (current_user_can('manage_network_options')) : ?>
-                <a href="<?php echo esc_url(WPStarter_Network_Manager::page_url(empty($field['tab']) ? array() : array('tab' => (string) $field['tab']))); ?>"><?php esc_html_e('Change it for the network', 'wp-plugin-starter-template'); ?></a>
+                <a href="<?php echo esc_url(SEOProCookieConsent_Network_Manager::page_url(empty($field['tab']) ? array() : array('tab' => (string) $field['tab']))); ?>"><?php esc_html_e('Change it for the network', 'seoprocookieconsent'); ?></a>
             <?php endif; ?>
         </p>
         <?php
@@ -309,22 +309,22 @@ class WPStarter_Settings_Manager {
             /**
              * Fires at the top of a setting's options panel on the
              * network screen (multisite), for notes about the
-             * whole network (wrap output in .wps-panel-note).
+             * whole network (wrap output in .spcc-panel-note).
              *
              * @param string $key   Setting key.
              * @param array  $field Schema entry.
              */
-            do_action('wpstarter_network_setting_panel', $key, $field);
+            do_action('seoprocookieconsent_network_setting_panel', $key, $field);
         } else {
             /**
              * Fires at the top of a setting's options panel, for status
-             * such as progress (wrap output in .wps-panel-note). Not on
-             * the network screen (wpstarter_network_setting_panel).
+             * such as progress (wrap output in .spcc-panel-note). Not on
+             * the network screen (seoprocookieconsent_network_setting_panel).
              *
              * @param string $key   Setting key.
              * @param array  $field Schema entry.
              */
-            do_action('wpstarter_setting_panel', $key, $field);
+            do_action('seoprocookieconsent_setting_panel', $key, $field);
         }
 
         $troubleshooting = array_filter($children, function ($child) {
@@ -337,9 +337,9 @@ class WPStarter_Settings_Manager {
             return;
         }
         ?>
-        <details class="wps-troubleshooting"<?php echo self::troubleshooting_open($key, $troubleshooting) ? ' open' : ''; ?>>
-            <summary class="wps-troubleshooting__summary"><?php esc_html_e('Troubleshooting', 'wp-plugin-starter-template'); ?></summary>
-            <p class="wps-troubleshooting__intro"><?php esc_html_e('Leave these as they are unless something is missing or broken.', 'wp-plugin-starter-template'); ?></p>
+        <details class="spcc-troubleshooting"<?php echo self::troubleshooting_open($key, $troubleshooting) ? ' open' : ''; ?>>
+            <summary class="spcc-troubleshooting__summary"><?php esc_html_e('Troubleshooting', 'seoprocookieconsent'); ?></summary>
+            <p class="spcc-troubleshooting__intro"><?php esc_html_e('Leave these as they are unless something is missing or broken.', 'seoprocookieconsent'); ?></p>
             <?php
             foreach ($troubleshooting as $child_key => $child) {
                 self::render_field($child_key, $child);
@@ -375,7 +375,7 @@ class WPStarter_Settings_Manager {
          * @param bool   $open Whether it starts open (false).
          * @param string $key  Parent setting key.
          */
-        return (bool) apply_filters('wpstarter_troubleshooting_open', false, $key);
+        return (bool) apply_filters('seoprocookieconsent_troubleshooting_open', false, $key);
     }
 
     /**
@@ -429,8 +429,8 @@ class WPStarter_Settings_Manager {
      */
     private static function visible_children($key) {
         $network = is_network_admin();
-        return array_filter(WPStarter_Settings::children_of($key), function ($child, $child_key) use ($network) {
-            return empty($child['hidden']) && (!$network || WPStarter_Network_Settings::eligible((string) $child_key));
+        return array_filter(SEOProCookieConsent_Settings::children_of($key), function ($child, $child_key) use ($network) {
+            return empty($child['hidden']) && (!$network || SEOProCookieConsent_Network_Settings::eligible((string) $child_key));
         }, ARRAY_FILTER_USE_BOTH);
     }
 
@@ -446,14 +446,14 @@ class WPStarter_Settings_Manager {
      * @return string
      */
     private static function card_classes($key, $is_on, $has_panel, $locked) {
-        $applied = is_network_admin() && WPStarter_Network_Settings::is_applied($key);
-        return 'wps-card wps-setting' . ($is_on ? ' is-on' : '') . ($has_panel ? ' has-panel' : '')
+        $applied = is_network_admin() && SEOProCookieConsent_Network_Settings::is_applied($key);
+        return 'spcc-card spcc-setting' . ($is_on ? ' is-on' : '') . ($has_panel ? ' has-panel' : '')
             . ($locked ? ' is-locked' : '') . ($applied ? ' is-applied' : '');
     }
 
     /**
      * Note which plugins a setting replaces. While one is active the setting
-     * waits (WPStarter_Feature::replaced_active()); say so, with a
+     * waits (SEOProCookieConsent_Feature::replaced_active()); say so, with a
      * deactivate link where the user can deactivate it here. The network
      * screen notes only plugins active for the whole network, as each
      * site's own are for that site (deactivated on the network's Plugins
@@ -467,7 +467,7 @@ class WPStarter_Settings_Manager {
         }
 
         $network = is_network_admin();
-        $active  = $network ? self::network_active_plugins() : WPStarter_Feature::active_plugins();
+        $active  = $network ? self::network_active_plugins() : SEOProCookieConsent_Feature::active_plugins();
         $site    = $network ? array() : self::active_plugins_by_slug();
         $items  = array();
         $links  = array();
@@ -480,22 +480,22 @@ class WPStarter_Settings_Manager {
             $busy[] = (string) $name;
             if (isset($site[$slug]) && current_user_can('deactivate_plugin', $site[$slug])) {
                 // Comes back to this tab, where the setting then takes over.
-                $url     = WPStarter_Replaced_Plugins::deactivate_url($site[$slug]);
+                $url     = SEOProCookieConsent_Replaced_Plugins::deactivate_url($site[$slug]);
                 /* translators: %s: plugin name */
-                $links[] = sprintf('<a href="%1$s">%2$s</a>', esc_url($url), esc_html(sprintf(__('Deactivate %s', 'wp-plugin-starter-template'), $name)));
+                $links[] = sprintf('<a href="%1$s">%2$s</a>', esc_url($url), esc_html(sprintf(__('Deactivate %s', 'seoprocookieconsent'), $name)));
             }
         }
 
         printf(
-            '<p class="wps-replaces">%1$s %2$s</p>',
-            esc_html__('Replaces:', 'wp-plugin-starter-template'),
+            '<p class="spcc-replaces">%1$s %2$s</p>',
+            esc_html__('Replaces:', 'seoprocookieconsent'),
             implode(', ', $items) // phpcs:ignore WordPress.Security.EscapeOutput -- escaped above.
         );
         if ($busy) {
             printf(
-                '<p class="wps-replaces wps-replaces__active">%1$s %2$s</p>',
+                '<p class="spcc-replaces spcc-replaces__active">%1$s %2$s</p>',
                 /* translators: %s: plugin names */
-                esc_html(sprintf(__('%s is still active, so it does this job and this setting waits until it is deactivated.', 'wp-plugin-starter-template'), implode(', ', $busy))),
+                esc_html(sprintf(__('%s is still active, so it does this job and this setting waits until it is deactivated.', 'seoprocookieconsent'), implode(', ', $busy))),
                 implode(' · ', $links) // phpcs:ignore WordPress.Security.EscapeOutput -- escaped above.
             );
         }
@@ -526,7 +526,7 @@ class WPStarter_Settings_Manager {
         static $active = null;
         if (null === $active) {
             $active = array();
-            foreach (WPStarter_Feature::stored_active_plugins() as $file) {
+            foreach (SEOProCookieConsent_Feature::stored_active_plugins() as $file) {
                 $slug = dirname((string) $file);
                 if ('.' !== $slug) {
                     $active[$slug] = (string) $file;
@@ -546,37 +546,37 @@ class WPStarter_Settings_Manager {
      */
     public static function render_field($key, array $field) {
         $value   = self::value($key);
-        $id      = 'wps-' . $key;
+        $id      = 'spcc-' . $key;
         $desc_id = $id . self::DESC;
-        $attrs   = sprintf('id="%1$s" data-wps-setting="%2$s" aria-describedby="%3$s"', esc_attr($id), esc_attr($key), esc_attr($desc_id));
+        $attrs   = sprintf('id="%1$s" data-spcc-setting="%2$s" aria-describedby="%3$s"', esc_attr($id), esc_attr($key), esc_attr($desc_id));
         $is_multi = 'multi' === $field['type'];
-        $locked   = !is_network_admin() && WPStarter_Network_Settings::is_enforced($key);
+        $locked   = !is_network_admin() && SEOProCookieConsent_Network_Settings::is_enforced($key);
         ?>
-        <div class="wps-field">
+        <div class="spcc-field">
             <?php if ($is_multi) : ?>
-                <span class="wps-field__label" id="<?php echo esc_attr($id); ?>-label"><?php echo esc_html($field['label']); ?></span>
+                <span class="spcc-field__label" id="<?php echo esc_attr($id); ?>-label"><?php echo esc_html($field['label']); ?></span>
             <?php else : ?>
-                <label class="wps-field__label" for="<?php echo esc_attr($id); ?>"><?php echo esc_html($field['label']); ?></label>
+                <label class="spcc-field__label" for="<?php echo esc_attr($id); ?>"><?php echo esc_html($field['label']); ?></label>
             <?php endif; ?>
-            <div class="wps-field__control">
+            <div class="spcc-field__control">
                 <?php
                 // A disabled fieldset disables every control in it, buttons
                 // included (tokens, Select all, pictures).
                 if ($locked) {
-                    echo '<fieldset class="wps-setting__fields" disabled>';
+                    echo '<fieldset class="spcc-setting__fields" disabled>';
                 }
                 $method = isset(self::CONTROLS[$field['type']]) ? self::CONTROLS[$field['type']] : 'render_text';
                 self::$method($key, $field, $value, $attrs);
                 ?>
-                <span class="wps-status" data-wps-status="<?php echo esc_attr($key); ?>" aria-hidden="true"></span>
+                <span class="spcc-status" data-spcc-status="<?php echo esc_attr($key); ?>" aria-hidden="true"></span>
                 <?php if (!empty($field['description']) || !empty($field['tokens'])) : ?>
                     <p class="description" id="<?php echo esc_attr($desc_id); ?>">
                         <?php echo esc_html(isset($field['description']) ? $field['description'] : ''); ?>
                         <?php if (!empty($field['tokens'])) : ?>
-                            <span class="wps-tokens">
-                                <?php esc_html_e('Tokens:', 'wp-plugin-starter-template'); ?>
+                            <span class="spcc-tokens">
+                                <?php esc_html_e('Tokens:', 'seoprocookieconsent'); ?>
                                 <?php foreach ($field['tokens'] as $token) : ?>
-                                    <button type="button" class="wps-token" data-token="<?php echo esc_attr($token); ?>" data-target="<?php echo esc_attr($id); ?>" title="<?php esc_attr_e('Insert token', 'wp-plugin-starter-template'); ?>"><code><?php echo esc_html($token); ?></code></button>
+                                    <button type="button" class="spcc-token" data-token="<?php echo esc_attr($token); ?>" data-target="<?php echo esc_attr($id); ?>" title="<?php esc_attr_e('Insert token', 'seoprocookieconsent'); ?>"><code><?php echo esc_html($token); ?></code></button>
                                 <?php endforeach; ?>
                             </span>
                         <?php endif; ?>
@@ -604,11 +604,11 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_select($key, array $field, $value, $attrs) {
         printf('<select %s>', $attrs); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in render_field().
-        $choices = WPStarter_Settings::options_for($field);
+        $choices = SEOProCookieConsent_Settings::options_for($field);
         if (!empty($field['open']) && '' !== (string) $value && !array_key_exists((string) $value, $choices)) {
             // A saved choice whose plugin is not loaded here stays shown.
             $choices[(string) $value] = (string) $value;
@@ -632,16 +632,16 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_multi($key, array $field, $value, $attrs) {
-        $id      = 'wps-' . $key;
+        $id      = 'spcc-' . $key;
         $chosen  = array_map('strval', (array) $value);
-        $choices = WPStarter_Settings::options_for($field);
-        $locked  = WPStarter_Settings::locked_values($field);
+        $choices = SEOProCookieConsent_Settings::options_for($field);
+        $locked  = SEOProCookieConsent_Settings::locked_values($field);
         // With some plugins skipped on this request, a saved
         // choice may belong to one of them; keep it too.
-        if (!empty($field['open']) || WPStarter_Feature::plugins_skipped()) {
+        if (!empty($field['open']) || SEOProCookieConsent_Feature::plugins_skipped()) {
             // Saved items that are not registered right now stay visible so they can be unticked.
             foreach (array_diff($chosen, array_map('strval', array_keys($choices))) as $missing) {
                 $choices[$missing] = $missing;
@@ -655,15 +655,15 @@ class WPStarter_Settings_Manager {
         if ($long) {
             // Long lists (such as every active plugin) scroll, with quick choices.
             printf(
-                '<span class="wps-checkboxes__all"><button type="button" class="button-link" data-wps-check-all="%1$s">%2$s</button> · <button type="button" class="button-link" data-wps-check-none="%1$s">%3$s</button></span>',
+                '<span class="spcc-checkboxes__all"><button type="button" class="button-link" data-spcc-check-all="%1$s">%2$s</button> · <button type="button" class="button-link" data-spcc-check-none="%1$s">%3$s</button></span>',
                 esc_attr($id),
-                esc_html__('Select all', 'wp-plugin-starter-template'),
-                esc_html__('Clear', 'wp-plugin-starter-template')
+                esc_html__('Select all', 'seoprocookieconsent'),
+                esc_html__('Clear', 'seoprocookieconsent')
             );
         }
-        // The group carries data-wps-setting; the JS saves every checked value.
+        // The group carries data-spcc-setting; the JS saves every checked value.
         printf(
-            '<fieldset class="wps-checkboxes%3$s" data-wps-multi %1$s aria-labelledby="%2$s">',
+            '<fieldset class="spcc-checkboxes%3$s" data-spcc-multi %1$s aria-labelledby="%2$s">',
             $attrs, // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in render_field().
             esc_attr($id . '-label'),
             $long ? ' is-long' : ''
@@ -671,15 +671,15 @@ class WPStarter_Settings_Manager {
         foreach ($choices as $option_value => $option_label) {
             if (in_array((string) $option_value, $locked, true)) {
                 printf(
-                    '<label class="wps-checkbox is-locked"><input type="checkbox" value="%1$s" checked disabled data-wps-locked /> %2$s <span class="dashicons dashicons-lock" aria-hidden="true"></span><span class="screen-reader-text">%3$s</span></label>',
+                    '<label class="spcc-checkbox is-locked"><input type="checkbox" value="%1$s" checked disabled data-spcc-locked /> %2$s <span class="dashicons dashicons-lock" aria-hidden="true"></span><span class="screen-reader-text">%3$s</span></label>',
                     esc_attr((string) $option_value),
                     esc_html($option_label),
-                    esc_html__('(always chosen)', 'wp-plugin-starter-template')
+                    esc_html__('(always chosen)', 'seoprocookieconsent')
                 );
                 continue;
             }
             printf(
-                '<label class="wps-checkbox"><input type="checkbox" value="%1$s"%2$s /> %3$s</label>',
+                '<label class="spcc-checkbox"><input type="checkbox" value="%1$s"%2$s /> %3$s</label>',
                 esc_attr((string) $option_value),
                 checked(in_array((string) $option_value, $chosen, true), true, false),
                 esc_html($option_label)
@@ -687,7 +687,7 @@ class WPStarter_Settings_Manager {
         }
         echo '</fieldset>';
         if ($locked) {
-            printf('<p class="wps-locked-help">%s</p>', esc_html__('Choices with a lock are always chosen.', 'wp-plugin-starter-template'));
+            printf('<p class="spcc-locked-help">%s</p>', esc_html__('Choices with a lock are always chosen.', 'seoprocookieconsent'));
         }
     }
 
@@ -697,7 +697,7 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_url($key, array $field, $value, $attrs) {
         printf(
@@ -714,7 +714,7 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_times($key, array $field, $value, $attrs) {
         printf(
@@ -731,7 +731,7 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_int($key, array $field, $value, $attrs) {
         printf(
@@ -742,7 +742,7 @@ class WPStarter_Settings_Manager {
             esc_attr(isset($field['max']) ? (string) $field['max'] : '')
         );
         if (!empty($field['unit'])) {
-            echo ' <span class="wps-field__unit">' . esc_html($field['unit']) . '</span>';
+            echo ' <span class="spcc-field__unit">' . esc_html($field['unit']) . '</span>';
         }
     }
 
@@ -752,7 +752,7 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_textarea($key, array $field, $value, $attrs) {
         printf(
@@ -765,39 +765,39 @@ class WPStarter_Settings_Manager {
     }
 
     /**
-     * Render a media control. The hidden input carries data-wps-setting; the
+     * Render a media control. The hidden input carries data-spcc-setting; the
      * JS sets it from the media dialog and saves it.
      *
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_media($key, array $field, $value, $attrs) {
-        $id       = 'wps-' . $key;
+        $id       = 'spcc-' . $key;
         $image_id = (int) $value;
         $preview  = $image_id ? wp_get_attachment_image_url($image_id, 'thumbnail') : '';
-        echo '<div class="wps-media" data-wps-media>';
+        echo '<div class="spcc-media" data-spcc-media>';
         printf(
-            '<input type="hidden" data-wps-setting="%1$s" value="%2$s" />',
+            '<input type="hidden" data-spcc-setting="%1$s" value="%2$s" />',
             esc_attr($key),
             esc_attr((string) $image_id)
         );
         if ($preview) {
-            printf('<img class="wps-media__preview" src="%s" alt="" />', esc_url($preview));
+            printf('<img class="spcc-media__preview" src="%s" alt="" />', esc_url($preview));
         } else {
-            echo '<img class="wps-media__preview" alt="" hidden />';
+            echo '<img class="spcc-media__preview" alt="" hidden />';
         }
         printf(
-            '<button type="button" class="button wps-media__choose" id="%1$s" aria-describedby="%2$s">%3$s</button>',
+            '<button type="button" class="button spcc-media__choose" id="%1$s" aria-describedby="%2$s">%3$s</button>',
             esc_attr($id),
             esc_attr($id . self::DESC),
-            esc_html__('Choose picture', 'wp-plugin-starter-template')
+            esc_html__('Choose picture', 'seoprocookieconsent')
         );
         printf(
-            '<button type="button" class="button-link wps-media__remove"%1$s>%2$s</button>',
+            '<button type="button" class="button-link spcc-media__remove"%1$s>%2$s</button>',
             $image_id ? '' : ' hidden',
-            esc_html__('Remove', 'wp-plugin-starter-template')
+            esc_html__('Remove', 'seoprocookieconsent')
         );
         echo '</div>';
     }
@@ -809,11 +809,11 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_bool($key, array $field, $value, $attrs) {
         printf(
-            '<span class="wps-switch"><input type="checkbox" role="switch" class="wps-switch__input" %1$s %2$s /><span class="wps-switch__track" aria-hidden="true"></span></span>',
+            '<span class="spcc-switch"><input type="checkbox" role="switch" class="spcc-switch__input" %1$s %2$s /><span class="spcc-switch__track" aria-hidden="true"></span></span>',
             $attrs, // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in render_field().
             checked((bool) $value, true, false)
         );
@@ -825,7 +825,7 @@ class WPStarter_Settings_Manager {
      * @param string $key   Setting key.
      * @param array  $field Schema entry.
      * @param mixed  $value Current value.
-     * @param string $attrs Escaped id, data-wps-setting and aria-describedby.
+     * @param string $attrs Escaped id, data-spcc-setting and aria-describedby.
      */
     private static function render_text($key, array $field, $value, $attrs) {
         printf(

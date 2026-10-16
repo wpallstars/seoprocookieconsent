@@ -1,24 +1,24 @@
 <?php
 /**
- * WP Plugin Starter admin screen.
+ * SEO Pro Cookie Consent admin screen.
  *
  * Owns the settings screen: tab registry, page chrome and the admin
  * script and stylesheets. Its markup (header, navigation, panels) is in
- * WPStarter_Admin_Page; tab content is delegated to the manager classes.
- * Settings tabs and header links come from WPStarter_Setup; add other tabs
- * with the `wpstarter_admin_tabs` filter.
+ * SEOProCookieConsent_Admin_Page; tab content is delegated to the manager classes.
+ * Settings tabs and header links come from SEOProCookieConsent_Setup; add other tabs
+ * with the `seoprocookieconsent_admin_tabs` filter.
  *
  * The screen draws the active tab with the other tabs of its group
  * (page_tabs()), so the script switches between them without a reload.
  *
- * The screen is Settings → WP Plugin Starter, or Settings in the plugin's own
- * top-level menu when WPStarter_Setup::MENU_PARENT names that menu. Build
+ * The screen is Settings → SEO Pro Cookie Consent, or Settings in the plugin's own
+ * top-level menu when SEOProCookieConsent_Setup::MENU_PARENT names that menu. Build
  * its links with page_url() or tab_url(), which follow where it is. The
  * plugin's own screens show the same header with enqueue_header() and
  * render_header().
  *
  * On multisite the network admin has the same screen at Network Admin →
- * Settings → WP Plugin Starter (WPStarter_Network_Manager), drawn by the
+ * Settings → SEO Pro Cookie Consent (SEOProCookieConsent_Network_Manager), drawn by the
  * same code: its cards save network values. page_url() and tab_url() give
  * its addresses there.
  *
@@ -27,7 +27,7 @@
  * Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
  * Provenance: wpas-e4502af0f07e8a92. Copies, even of part, keep these lines.
  *
- * @package WPStarter
+ * @package SEOProCookieConsent
  * @since 0.2.0
  */
 
@@ -35,10 +35,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class WPStarter_Admin_Manager {
+class SEOProCookieConsent_Admin_Manager {
 
     /** Menu/page slug. */
-    const PAGE = 'wp-plugin-starter-template';
+    const PAGE = 'seoprocookieconsent';
 
     /**
      * Hook suffix of the screen under Settings. In the plugin's own menu it
@@ -52,9 +52,9 @@ class WPStarter_Admin_Manager {
      * header) is also for the plugin's own screens; the settings one
      * depends on it.
      */
-    const HEADER_CSS_FILE = 'admin/css/wpstarter-header.css';
-    const CSS_FILE        = 'admin/css/wpstarter-admin.css';
-    const JS_FILE         = 'admin/js/wpstarter-admin.js';
+    const HEADER_CSS_FILE = 'admin/css/seoprocookieconsent-header.css';
+    const CSS_FILE        = 'admin/css/seoprocookieconsent-admin.css';
+    const JS_FILE         = 'admin/js/seoprocookieconsent-admin.js';
 
     /** Hook suffix WordPress gave the screen when it was registered. */
     private static $hook = '';
@@ -63,24 +63,24 @@ class WPStarter_Admin_Manager {
      * Register hooks (once).
      */
     public static function init() {
-        require_once WPSTARTER_DIR . 'admin/includes/class-admin-theme.php';
-        WPStarter_Admin_Theme::init();
+        require_once SEOPROCOOKIECONSENT_DIR . 'admin/includes/class-admin-theme.php';
+        SEOProCookieConsent_Admin_Theme::init();
         // After the plugin's own top-level menu (priority 10), so Settings
         // is the last item in it.
         add_action('admin_menu', array(__CLASS__, 'register_admin_menu'), 20);
         add_action('admin_page_access_denied', array(__CLASS__, 'redirect_old_address'));
         add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue_assets'));
-        add_filter('plugin_action_links_' . plugin_basename(WPSTARTER_FILE), array(__CLASS__, 'plugin_action_links'));
+        add_filter('plugin_action_links_' . plugin_basename(SEOPROCOOKIECONSENT_FILE), array(__CLASS__, 'plugin_action_links'));
     }
 
     /**
      * Menu the screen is in: the plugin's own top-level menu
-     * (WPStarter_Setup::MENU_PARENT), or Settings.
+     * (SEOProCookieConsent_Setup::MENU_PARENT), or Settings.
      *
      * @return string Menu slug.
      */
     public static function parent() {
-        $constant = 'WPStarter_Setup::MENU_PARENT';
+        $constant = 'SEOProCookieConsent_Setup::MENU_PARENT';
         $parent   = defined($constant) ? (string) constant($constant) : '';
         return '' === $parent ? 'options-general.php' : $parent;
     }
@@ -103,7 +103,7 @@ class WPStarter_Admin_Manager {
      */
     public static function page_url(array $args = array()) {
         if (is_network_admin()) {
-            return WPStarter_Network_Manager::page_url($args);
+            return SEOProCookieConsent_Network_Manager::page_url($args);
         }
         return add_query_arg(array_merge(array('page' => self::PAGE), $args), admin_url(self::screen_file()));
     }
@@ -121,19 +121,19 @@ class WPStarter_Admin_Manager {
     const SEARCH = 'search';
 
     /**
-     * Settings tabs, in navigation order (WPStarter_Setup::settings_tabs()).
+     * Settings tabs, in navigation order (SEOProCookieConsent_Setup::settings_tabs()).
      *
      * @return array<string,array{label:string,description:string}>
      */
     public static function settings_tabs() {
-        return WPStarter_Setup::settings_tabs();
+        return SEOProCookieConsent_Setup::settings_tabs();
     }
 
     /**
      * Registered tabs. Settings tabs and Read Me preload: they are drawn
      * with the other tabs of their group (page_tabs()). The network screen
      * shows only tabs marked 'network' => true: settings tabs with
-     * settings the network can set (WPStarter_Settings_Manager::fields_for_tab()),
+     * settings the network can set (SEOProCookieConsent_Settings_Manager::fields_for_tab()),
      * and Read Me.
      *
      * @return array<string,array{label:string,group:string,render:callable,preload?:bool,capability?:string,network?:bool,menu?:string}>
@@ -147,13 +147,13 @@ class WPStarter_Admin_Manager {
         $settings_tabs = self::settings_tabs();
         $has_settings  = false;
         foreach (array_keys($settings_tabs) as $slug) {
-            if (WPStarter_Settings_Manager::fields_for_tab($slug)) {
+            if (SEOProCookieConsent_Settings_Manager::fields_for_tab($slug)) {
                 $has_settings = true;
                 break;
             }
         }
         foreach ($settings_tabs as $slug => $tab) {
-            if ($has_settings && !WPStarter_Settings_Manager::fields_for_tab($slug)) {
+            if ($has_settings && !SEOProCookieConsent_Settings_Manager::fields_for_tab($slug)) {
                 continue;
             }
             if (!$has_settings && $tabs) {
@@ -165,18 +165,18 @@ class WPStarter_Admin_Manager {
                 'preload' => true,
                 'network' => true,
                 'render'  => function () use ($slug, $tab) {
-                    WPStarter_Settings_Manager::render_tab($slug, $tab['label'], $tab['description']);
+                    SEOProCookieConsent_Settings_Manager::render_tab($slug, $tab['label'], $tab['description']);
                 },
             );
         }
 
         $tabs += array(
             'readme' => array(
-                'label'   => __('Read Me', 'wp-plugin-starter-template'),
+                'label'   => __('Read Me', 'seoprocookieconsent'),
                 'group'   => 'about',
                 'preload' => true,
                 'network' => true,
-                'render'  => array('WPStarter_Readme_Manager', 'display_tab_content'),
+                'render'  => array('SEOProCookieConsent_Readme_Manager', 'display_tab_content'),
             ),
         );
 
@@ -194,9 +194,9 @@ class WPStarter_Admin_Manager {
          *                    is true), optional menu (a name: tabs of a group
          *                    with the same menu show as one tab with that
          *                    name and, while one of them is shown, as a
-         *                    second row of tabs; WPStarter_Admin_Page::nav()).
+         *                    second row of tabs; SEOProCookieConsent_Admin_Page::nav()).
          */
-        $tabs = (array) apply_filters('wpstarter_admin_tabs', $tabs);
+        $tabs = (array) apply_filters('seoprocookieconsent_admin_tabs', $tabs);
 
         // Hide tabs the current user cannot use, and on the network screen
         // tabs that are only for sites.
@@ -219,7 +219,7 @@ class WPStarter_Admin_Manager {
         }
 
         $tabs = self::get_tabs();
-        $tab  = WPStarter_Settings::resolve_tab($tab);
+        $tab  = SEOProCookieConsent_Settings::resolve_tab($tab);
         if (!isset($tabs[$tab])) {
             $tab = (string) key($tabs);
         }
@@ -276,20 +276,20 @@ class WPStarter_Admin_Manager {
      * @return array
      */
     public static function plugin_action_links($links) {
-        array_unshift($links, sprintf('<a href="%s">%s</a>', esc_url(self::page_url()), esc_html__('Settings', 'wp-plugin-starter-template')));
+        array_unshift($links, sprintf('<a href="%s">%s</a>', esc_url(self::page_url()), esc_html__('Settings', 'seoprocookieconsent')));
         return $links;
     }
 
     /**
-     * Register Settings → WP Plugin Starter, or Settings in the plugin's own
+     * Register Settings → SEO Pro Cookie Consent, or Settings in the plugin's own
      * menu.
      */
     public static function register_admin_menu() {
         $parent = self::parent();
         if ('options-general.php' === $parent) {
             $hook = add_options_page(
-                __('WP Plugin Starter', 'wp-plugin-starter-template'),
-                __('WP Plugin Starter', 'wp-plugin-starter-template'),
+                __('SEO Pro Cookie Consent', 'seoprocookieconsent'),
+                __('SEO Pro Cookie Consent', 'seoprocookieconsent'),
                 'manage_options',
                 self::PAGE,
                 array(__CLASS__, 'render_settings_page')
@@ -298,8 +298,8 @@ class WPStarter_Admin_Manager {
             $hook = add_submenu_page(
                 $parent,
                 /* translators: %s: the plugin's name. */
-                sprintf(__('%s settings', 'wp-plugin-starter-template'), __('WP Plugin Starter', 'wp-plugin-starter-template')),
-                __('Settings', 'wp-plugin-starter-template'),
+                sprintf(__('%s settings', 'seoprocookieconsent'), __('SEO Pro Cookie Consent', 'seoprocookieconsent')),
+                __('Settings', 'seoprocookieconsent'),
                 'manage_options',
                 self::PAGE,
                 array(__CLASS__, 'render_settings_page')
@@ -308,7 +308,7 @@ class WPStarter_Admin_Manager {
         self::$hook = is_string($hook) ? $hook : '';
         if ('' !== self::$hook) {
             // The browser title names the tab shown.
-            add_action('load-' . self::$hook, array('WPStarter_Admin_Page', 'title_tab'));
+            add_action('load-' . self::$hook, array('SEOProCookieConsent_Admin_Page', 'title_tab'));
         }
     }
 
@@ -339,8 +339,8 @@ class WPStarter_Admin_Manager {
      * @return string
      */
     private static function asset_version($file) {
-        $time = file_exists(WPSTARTER_DIR . $file) ? filemtime(WPSTARTER_DIR . $file) : false;
-        return false === $time ? WPSTARTER_VERSION : (string) $time;
+        $time = file_exists(SEOPROCOOKIECONSENT_DIR . $file) ? filemtime(SEOPROCOOKIECONSENT_DIR . $file) : false;
+        return false === $time ? SEOPROCOOKIECONSENT_VERSION : (string) $time;
     }
 
     /**
@@ -348,7 +348,7 @@ class WPStarter_Admin_Manager {
      * own screens; the settings screen loads it with its own.
      */
     public static function enqueue_header() {
-        wp_enqueue_style('wpstarter-header', WPSTARTER_URL . self::HEADER_CSS_FILE, array('dashicons'), self::asset_version(self::HEADER_CSS_FILE));
+        wp_enqueue_style('seoprocookieconsent-header', SEOPROCOOKIECONSENT_URL . self::HEADER_CSS_FILE, array('dashicons'), self::asset_version(self::HEADER_CSS_FILE));
     }
 
     /**
@@ -358,7 +358,7 @@ class WPStarter_Admin_Manager {
      */
     public static function enqueue_assets($hook) {
         $network = is_network_admin();
-        if ($network ? WPStarter_Network_Manager::hook() !== $hook : self::hook() !== $hook) {
+        if ($network ? SEOProCookieConsent_Network_Manager::hook() !== $hook : self::hook() !== $hook) {
             return;
         }
 
@@ -366,7 +366,7 @@ class WPStarter_Admin_Manager {
         $page_tabs = self::page_tabs();
 
         self::enqueue_header();
-        wp_enqueue_style('wpstarter-admin', WPSTARTER_URL . self::CSS_FILE, array('wpstarter-header'), self::asset_version(self::CSS_FILE));
+        wp_enqueue_style('seoprocookieconsent-admin', SEOPROCOOKIECONSENT_URL . self::CSS_FILE, array('seoprocookieconsent-header'), self::asset_version(self::CSS_FILE));
 
         $deps = array('jquery', 'wp-a11y', 'wp-i18n');
         foreach ($page_tabs as $page_tab) {
@@ -378,7 +378,7 @@ class WPStarter_Admin_Manager {
              * @param string[] $deps Script handles.
              * @param string   $tab  Tab slug.
              */
-            $deps = (array) apply_filters('wpstarter_admin_script_deps', $deps, $page_tab);
+            $deps = (array) apply_filters('seoprocookieconsent_admin_script_deps', $deps, $page_tab);
         }
         $deps = array_values(array_unique(array_filter(array_map('strval', $deps))));
 
@@ -390,47 +390,47 @@ class WPStarter_Admin_Manager {
             }
         }
 
-        wp_enqueue_script('wpstarter-admin', WPSTARTER_URL . self::JS_FILE, $deps, self::asset_version(self::JS_FILE), true);
-        wp_set_script_translations('wpstarter-admin', 'wp-plugin-starter-template');
+        wp_enqueue_script('seoprocookieconsent-admin', SEOPROCOOKIECONSENT_URL . self::JS_FILE, $deps, self::asset_version(self::JS_FILE), true);
+        wp_set_script_translations('seoprocookieconsent-admin', 'seoprocookieconsent');
 
         /**
-         * Filter the data the admin script reads (wpstarterAdmin). Its tab
+         * Filter the data the admin script reads (seoprocookieconsentAdmin). Its tab
          * follows the tab shown; tabs lists the tabs drawn on the page, and
-         * titles their browser titles (WPStarter_Admin_Page::page_titles());
+         * titles their browser titles (SEOProCookieConsent_Admin_Page::page_titles());
          * network is true on the network screen, whose cards save network
          * values.
          *
          * @param array  $data Script data.
          * @param string $tab  Active tab.
          */
-        wp_localize_script('wpstarter-admin', 'wpstarterAdmin', (array) apply_filters('wpstarter_admin_script_data', array(
+        wp_localize_script('seoprocookieconsent-admin', 'seoprocookieconsentAdmin', (array) apply_filters('seoprocookieconsent_admin_script_data', array(
             'ajaxUrl' => admin_url('admin-ajax.php'),
-            'nonce'   => wp_create_nonce(WPStarter_Settings::NONCE),
+            'nonce'   => wp_create_nonce(SEOProCookieConsent_Settings::NONCE),
             'tab'     => $tab,
             'tabs'    => $page_tabs,
-            'titles'  => WPStarter_Admin_Page::page_titles($page_tabs, self::get_tabs()),
+            'titles'  => SEOProCookieConsent_Admin_Page::page_titles($page_tabs, self::get_tabs()),
             'network' => $network,
             'i18n'    => array(
-                'saving'      => __('Saving…', 'wp-plugin-starter-template'),
-                'saved'       => __('Saved', 'wp-plugin-starter-template'),
-                'saveFailed'  => __('Could not save. Please try again.', 'wp-plugin-starter-template'),
-                'chooseImage' => __('Choose a picture', 'wp-plugin-starter-template'),
-                'useImage'    => __('Use this picture', 'wp-plugin-starter-template'),
-                'copyConfirm' => __('Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site.', 'wp-plugin-starter-template'),
+                'saving'      => __('Saving…', 'seoprocookieconsent'),
+                'saved'       => __('Saved', 'seoprocookieconsent'),
+                'saveFailed'  => __('Could not save. Please try again.', 'seoprocookieconsent'),
+                'chooseImage' => __('Choose a picture', 'seoprocookieconsent'),
+                'useImage'    => __('Use this picture', 'seoprocookieconsent'),
+                'copyConfirm' => __('Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site.', 'seoprocookieconsent'),
             ),
         ), $tab));
 
         foreach ($page_tabs as $page_tab) {
             /**
              * Fires after the admin stylesheets and script are enqueued:
-             * enqueue the plugin's own, depending on 'wpstarter-admin'. Fires
+             * enqueue the plugin's own, depending on 'seoprocookieconsent-admin'. Fires
              * for each tab drawn on the page (page_tabs()), the active tab
              * first; WordPress loads each handle once, but guard inline code
              * with the tab.
              *
              * @param string $tab Tab slug.
              */
-            do_action('wpstarter_admin_enqueue', $page_tab);
+            do_action('seoprocookieconsent_admin_enqueue', $page_tab);
         }
     }
 
@@ -442,7 +442,7 @@ class WPStarter_Admin_Manager {
      * @return bool
      */
     private static function shows_media_field($tab) {
-        $schema = WPStarter_Settings::schema();
+        $schema = SEOProCookieConsent_Settings::schema();
         foreach ($schema as $field) {
             if (!isset($field['type']) || 'media' !== $field['type']) {
                 continue;
@@ -475,10 +475,10 @@ class WPStarter_Admin_Manager {
         $active    = self::get_active_tab();
         $page_tabs = self::page_tabs();
         ?>
-        <div class="wrap wps-wrap">
-            <?php WPStarter_Admin_Page::header(); ?>
+        <div class="wrap spcc-wrap">
+            <?php SEOProCookieConsent_Admin_Page::header(); ?>
 
-            <?php WPStarter_Admin_Page::nav($tabs, $active, $page_tabs); ?>
+            <?php SEOProCookieConsent_Admin_Page::nav($tabs, $active, $page_tabs); ?>
 
             <?php // Core moves admin notices after this marker instead of into the header. ?>
             <hr class="wp-header-end" />
@@ -487,13 +487,13 @@ class WPStarter_Admin_Manager {
 
             <?php
             if (self::SEARCH === $active) {
-                WPStarter_Admin_Page::panel($active, function () use ($tabs) {
-                    WPStarter_Settings_Manager::render_search(self::search_query(), $tabs);
+                SEOProCookieConsent_Admin_Page::panel($active, function () use ($tabs) {
+                    SEOProCookieConsent_Settings_Manager::render_search(self::search_query(), $tabs);
                 }, true);
             } else {
                 foreach ($page_tabs as $slug) {
                     if (isset($tabs[$slug]['render']) && is_callable($tabs[$slug]['render'])) {
-                        WPStarter_Admin_Page::panel($slug, $tabs[$slug]['render'], $slug === $active);
+                        SEOProCookieConsent_Admin_Page::panel($slug, $tabs[$slug]['render'], $slug === $active);
                     }
                 }
             }
@@ -505,21 +505,21 @@ class WPStarter_Admin_Manager {
     /**
      * Render the screen's header: the plugin's name and version, the feature
      * search (for people who can open the settings screen) and the links
-     * WPStarter_Setup::header_links() gives. The plugin's own screens can show
+     * SEOProCookieConsent_Setup::header_links() gives. The plugin's own screens can show
      * it too: enqueue_header() on their admin_enqueue_scripts, then print
-     * it first in `<div class="wrap wps-wrap">`, followed by
+     * it first in `<div class="wrap spcc-wrap">`, followed by
      * `<hr class="wp-header-end">` so admin notices go below it, and their
-     * content in `<div class="wps-main">`. A screen with sections puts them
-     * between the two as the settings screen's tabs: `<nav class="wps-nav">`
-     * holding `<a class="wps-nav__tab">` links, the one shown `is-active`
+     * content in `<div class="spcc-main">`. A screen with sections puts them
+     * between the two as the settings screen's tabs: `<nav class="spcc-nav">`
+     * holding `<a class="spcc-nav__tab">` links, the one shown `is-active`
      * with `aria-current="page"`, and name it in the browser title with
-     * WPStarter_Admin_Page::title_section() on the screen's load-{hook}
+     * SEOProCookieConsent_Admin_Page::title_section() on the screen's load-{hook}
      * action. The title puts the section after the screen's page title, so
      * the first item of the plugin's own menu (the one with the menu's
      * slug) keeps the plugin's name as its page title, with the first
      * section's name only as its menu title.
      */
     public static function render_header() {
-        WPStarter_Admin_Page::header();
+        SEOProCookieConsent_Admin_Page::header();
     }
 }

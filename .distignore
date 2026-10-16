@@ -54,8 +54,8 @@ DESIGN.md
 # Agent and developer task docs (STANDARDS.md → Agent docs).
 /docs
 /scripts
-# wps-own:start
-# wps-own:end
+# spcc-own:start
+# spcc-own:end
 reference-plugins
 project-documents
 node_modules
