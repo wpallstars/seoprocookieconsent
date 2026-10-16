@@ -150,7 +150,7 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
         $business = (string) SEOProCookieConsent_Settings::get('terms_business');
         $contact  = (string) SEOProCookieConsent_Settings::get('terms_contact');
         if ('' === trim($business) || '' === trim($contact)) {
-            return current_user_can('manage_options') ? '<p>' . esc_html__('Terms and conditions: add the business name and contact details in Settings → SEO Pro Cookie Consent → Policies before publishing.', 'seoprocookieconsent') . '</p>' : '';
+            return '';
         }
 
         $html  = '<div class="spcc-terms">';

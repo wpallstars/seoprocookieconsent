@@ -110,7 +110,7 @@ off-by-default feature on Policies. `seoprocookieconsent/terms` and
 returns and contact, or a full plain-text override. Every line is escaped
 as a paragraph; there are no extra front-end assets, HTML execution or
 visitor-dependent responses. Incomplete suggested wording is hidden from
-visitors until business and contact are filled; administrators see guidance.
+everyone until business and contact are filled; the settings explain this.
 Owners write surrounding blocks normally. Full-page caches need purging
 after answer changes, as for other dynamic WordPress blocks.
 
