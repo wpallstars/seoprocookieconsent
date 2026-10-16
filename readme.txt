@@ -41,7 +41,8 @@ Made from WP Plugin Starter (https://github.com/wpallstars/wp-plugin-starter-tem
 
 1. Upload the `seoprocookieconsent` folder to `/wp-content/plugins/`, or install the zip from Plugins → Add New → Upload Plugin.
 2. Activate it, then open Settings → SEO Pro Cookie Consent and switch on Cookie consent.
-3. Open a few pages of your site: the settings card lists what it found.
+3. Choose Scan now and check Found on your pages. It samples up to eight public pages without running scripts; if loopbacks are blocked, open pages yourself instead. JavaScript-only services are not discovered by the scan.
+4. Switch on Cookie policy on the Policies tab and add its block to your privacy or cookie policy page.
 
 == Frequently Asked Questions ==
 
@@ -81,6 +82,7 @@ GitHub releases are the stable beta channel: each version comes out there first.
 == Changelog ==
 
 = Unreleased =
+* Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.
 * Hold back recognised scripts and iframes added after page load, including lightboxes.
 * Cookie consent, with a cookie policy block that keeps itself up to date.
 * Optional terms and conditions block and shortcode, editable wording and a one-time identity/contact import from Complianz Terms & Conditions.

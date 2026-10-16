@@ -624,6 +624,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         $home    = wp_parse_url(home_url('/'));
         $checked = 0;
         $failed  = 0;
+        // Create the record before loopbacks can create it in another request.
+        // Otherwise this request's cached missing option can defeat its first save.
+        SEOProCookieConsent_Services::record(array(), array());
         foreach (array_unique(array_filter($urls)) as $url) {
             $parts = wp_parse_url($url);
             if (!is_array($parts) || !is_array($home)

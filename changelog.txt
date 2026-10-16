@@ -3,6 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
+* Consent card: Scan now samples up to eight public same-origin pages with bounded loopback requests, updates findings in place and reports blocked requests; a three-step guide explains enabling consent, checking findings and adding the Cookie policy block.
 * Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 * Terms and conditions: off-by-default block and [spcc_terms] shortcode; business, country, offering, returns and contact answers; optional plain-text wording override; one-time import of unset Complianz Terms & Conditions identity/contact answers, leaving source options and pages unchanged.
 * Cookie consent: holds back scripts and embeds from 23 services until visitors allow them; banner only on pages that have them; asks first by region (time zone); Global Privacy Control; Google Consent Mode v2; WP Consent API; embed placeholders with a Load button; Cookie settings dialog, footer menu link and button; imports Complianz's region and expiry settings once.

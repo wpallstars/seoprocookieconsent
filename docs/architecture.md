@@ -159,5 +159,20 @@ reloads after each Consent setting saves
 ## Not yet
 
 Tracked as issues: consent records, local video thumbnails,
-a Scan now button and first-run guide,
 and per-language banner text beyond translations.
+
+## First-run scan
+
+The site Consent card's Scan now action requires `manage_options`, a nonce
+and an enabled feature. It samples the home and privacy pages plus at most
+three published, non-password-protected posts and three pages. URLs must
+match the home origin; redirects are disabled, cookies are not forwarded,
+each request times out after three seconds and reads at most 2 MB. A fresh
+query argument and no-cache header avoid ordinary page-cache hits.
+
+The response is checked with the existing blocker and its service/host
+recorder, including service IDs in already-held-back cached markup. No
+JavaScript or third-party resources run, so JavaScript-only insertions are
+not discovered. Findings accumulate as usual, rather than being cleared on
+a failed or partial scan. The card updates in place and reports checked and
+failed page counts; blocked loopbacks offer browsing as the fallback.
