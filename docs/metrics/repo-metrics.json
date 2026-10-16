@@ -1,94 +1,94 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-10-04T03:35:55Z",
+  "generated_at": "2026-10-16T01:32:38Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
   },
   "repo": {
-    "name": "seoprocookieconsent-for-ai-coding",
+    "name": "seoprocookieconsent",
     "slug": "wpallstars/seoprocookieconsent"
   },
   "summary": {
-    "source_files": 47,
-    "code": 7056,
-    "comments": 1761,
-    "blanks": 921,
+    "source_files": 89,
+    "code": 17691,
+    "comments": 5252,
+    "blanks": 1925,
     "languages": 9,
-    "dependencies": 12
+    "dependencies": 14
   },
   "languages": [
     {
       "name": "PHP",
-      "files": 16,
-      "code": 2477,
-      "comments": 1324,
-      "blanks": 319,
-      "percentage": 35.1,
+      "files": 28,
+      "code": 5584,
+      "comments": 3786,
+      "blanks": 659,
+      "percentage": 31.56,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
-      "files": 10,
-      "code": 2085,
-      "comments": 334,
-      "blanks": 228,
-      "percentage": 29.55,
+      "files": 18,
+      "code": 5514,
+      "comments": 1072,
+      "blanks": 476,
+      "percentage": 31.17,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
-      "files": 9,
-      "code": 749,
+      "files": 14,
+      "code": 1895,
       "comments": 0,
-      "blanks": 175,
-      "percentage": 10.62,
+      "blanks": 340,
+      "percentage": 10.71,
       "color": "#083fa1"
     },
     {
       "name": "CSS",
-      "files": 1,
-      "code": 677,
-      "comments": 31,
-      "blanks": 140,
-      "percentage": 9.59,
+      "files": 4,
+      "code": 1496,
+      "comments": 104,
+      "blanks": 279,
+      "percentage": 8.46,
       "color": "#563d7c"
     },
     {
       "name": "SVG",
-      "files": 2,
-      "code": 539,
-      "comments": 18,
-      "blanks": 6,
-      "percentage": 7.64,
+      "files": 5,
+      "code": 1454,
+      "comments": 43,
+      "blanks": 12,
+      "percentage": 8.22,
       "color": "#6e7781"
     },
     {
       "name": "JavaScript",
-      "files": 1,
-      "code": 254,
-      "comments": 38,
-      "blanks": 30,
-      "percentage": 3.6,
+      "files": 5,
+      "code": 1098,
+      "comments": 151,
+      "blanks": 95,
+      "percentage": 6.21,
       "color": "#f1e05a"
     },
     {
       "name": "YAML",
-      "files": 5,
-      "code": 219,
-      "comments": 13,
-      "blanks": 21,
-      "percentage": 3.1,
+      "files": 11,
+      "code": 550,
+      "comments": 93,
+      "blanks": 62,
+      "percentage": 3.11,
       "color": "#cb171e"
     },
     {
       "name": "JSON",
-      "files": 2,
-      "code": 48,
+      "files": 3,
+      "code": 92,
       "comments": 0,
       "blanks": 0,
-      "percentage": 0.68,
+      "percentage": 0.52,
       "color": "#292929"
     },
     {
@@ -97,14 +97,16 @@
       "code": 8,
       "comments": 3,
       "blanks": 2,
-      "percentage": 0.11,
+      "percentage": 0.05,
       "color": "#9c4221"
     }
   ],
   "dependencies": {
-    "direct": 6,
-    "locked": 12,
-    "total": 12,
+    "direct": 7,
+    "runtime": 0,
+    "dev": 7,
+    "locked": 14,
+    "total": 14,
     "ecosystems": [
       "composer"
     ],
@@ -112,9 +114,21 @@
       {
         "path": "composer.json",
         "ecosystem": "composer",
-        "direct": 6,
-        "locked": 12,
+        "direct": 7,
+        "runtime": 0,
+        "dev": 7,
+        "locked": 14,
         "dependencies": [
+          "automattic/vipwpcs",
+          "dealerdirect/phpcodesniffer-composer-installer",
+          "phpcompatibility/phpcompatibility-wp",
+          "phpstan/extension-installer",
+          "phpstan/phpstan",
+          "szepeviktor/phpstan-wordpress",
+          "wp-coding-standards/wpcs"
+        ],
+        "dev_dependencies": [
+          "automattic/vipwpcs",
           "dealerdirect/phpcodesniffer-composer-installer",
           "phpcompatibility/phpcompatibility-wp",
           "phpstan/extension-installer",
