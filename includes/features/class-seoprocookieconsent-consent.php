@@ -36,6 +36,12 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     /** Name of the consent cookie (necessary). */
     const COOKIE = 'spcc_consent';
 
+    /** Query argument for the settings screen's banner preview: opt-in or opt-out. */
+    const PREVIEW_ARG = 'spcc_preview';
+
+    /** The banner preview's model, once worked out. @var string|null */
+    private static $preview = null;
+
     /** The page's blocker, when holding back. @var SEOProCookieConsent_Blocker|null */
     private static $blocker = null;
 
@@ -98,7 +104,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'parent'      => self::KEY,
                 'network'     => false,
                 'label'       => __('Cookie policy page', 'seoprocookieconsent'),
-                'description' => __('Linked from the banner. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use.', 'seoprocookieconsent'),
+                'description' => __('Linked from the banner. Start typing to pick a page, or enter an address. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use.', 'seoprocookieconsent'),
                 'placeholder' => __('Your privacy policy page', 'seoprocookieconsent'),
             ),
             'consent_menu_link'        => array(
@@ -185,9 +191,13 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         add_action(SEOProCookieConsent_Thumbnails::HOOK, array('SEOProCookieConsent_Thumbnails', 'fetch'), 10, 2);
         if (is_admin()) {
             add_action('seoprocookieconsent_setting_panel', array(__CLASS__, 'panel'), 10, 1);
+            add_action('seoprocookieconsent_admin_enqueue', array(__CLASS__, 'admin_enqueue'));
         }
         if (!self::enabled()) {
             return;
+        }
+        if (isset($_GET[self::PREVIEW_ARG])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only shows the banner to the admin; preview() checks who asks.
+            add_filter('show_admin_bar', array(__CLASS__, 'preview_admin_bar'));
         }
         add_shortcode('spcc_cookie_settings', array(__CLASS__, 'settings_button'));
         add_action('init', array(__CLASS__, 'register_block'), 20);
@@ -326,6 +336,17 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'other'   => __('other services', 'seoprocookieconsent'),
             ),
         );
+        $preview = self::preview();
+        if ('' !== $preview) {
+            // The settings screen's preview: this banner, whatever the page
+            // holds or the admin chose before, and nothing saved or loaded.
+            $config['model']        = $preview;
+            $config['preview']      = true;
+            $config['previewNames'] = array_values(array_filter(array(
+                isset($services['youtube']) ? $services['youtube']['name'] : '',
+                isset($services['google-analytics']) ? $services['google-analytics']['name'] : '',
+            )));
+        }
         /**
          * Filter the config SEO Pro Cookie Consent's browser script reads.
          * Set `model` to "opt-in", "opt-out" or "quiet" to choose the
@@ -334,6 +355,30 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
          * @param array $config Config.
          */
         return (array) apply_filters('seoprocookieconsent_front_config', $config);
+    }
+
+    /**
+     * The banner preview asked for by the settings screen: "opt-in" or
+     * "opt-out" for someone who can change the settings, else "".
+     *
+     * @return string
+     */
+    public static function preview() {
+        if (null === self::$preview) {
+            $model         = isset($_GET[self::PREVIEW_ARG]) ? sanitize_key(wp_unslash($_GET[self::PREVIEW_ARG])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view for the admin.
+            self::$preview = in_array($model, array('opt-in', 'opt-out'), true) && current_user_can('manage_options') ? $model : '';
+        }
+        return self::$preview;
+    }
+
+    /**
+     * No toolbar in the banner preview.
+     *
+     * @param bool $show Whether to show it.
+     * @return bool
+     */
+    public static function preview_admin_bar($show) {
+        return '' === self::preview() && $show;
     }
 
     /**
@@ -439,19 +484,23 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     }
 
     /**
-     * Cookie settings button (shortcode and block).
+     * Cookie settings button or link (shortcode and block).
      *
-     * @param array|string $atts Shortcode attributes: label.
+     * @param array|string $atts Attributes: label, style (button or link).
      * @return string
      */
     public static function settings_button($atts = array()) {
-        $atts = shortcode_atts(array('label' => __('Cookie settings', 'seoprocookieconsent')), is_array($atts) ? $atts : array(), 'spcc_cookie_settings');
+        $atts  = shortcode_atts(array('label' => '', 'style' => 'button'), is_array($atts) ? $atts : array(), 'spcc_cookie_settings');
+        $label = '' !== trim((string) $atts['label']) ? (string) $atts['label'] : __('Cookie settings', 'seoprocookieconsent');
         if (self::enabled() && !self::$menu_link) {
             self::$menu_link = true; // A visible button: no floating one needed.
         }
+        if ('link' === $atts['style']) {
+            return sprintf('<a href="#cookie-settings" class="spcc-settings-link" data-spcc-action="settings">%s</a>', esc_html($label));
+        }
         return sprintf(
             '<button type="button" class="spcc-settings-button wp-element-button" data-spcc-action="settings">%s</button>',
-            esc_html((string) $atts['label'])
+            esc_html($label)
         );
     }
 
@@ -463,9 +512,24 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'title'       => __('Cookie settings button', 'seoprocookieconsent'),
             'description' => __('Opens Cookie settings so visitors can change their choices.', 'seoprocookieconsent'),
             'icon'        => 'admin-settings',
-        ), function () {
-            return SEOProCookieConsent_Consent::settings_button();
-        });
+            'attributes'  => array(
+                'label' => array(
+                    'type'        => 'string',
+                    'default'     => '',
+                    'label'       => __('Text', 'seoprocookieconsent'),
+                    'placeholder' => __('Cookie settings', 'seoprocookieconsent'),
+                ),
+                'style' => array(
+                    'type'    => 'string',
+                    'default' => 'button',
+                    'label'   => __('Show as', 'seoprocookieconsent'),
+                    'options' => array(
+                        'button' => __('Button', 'seoprocookieconsent'),
+                        'link'   => __('Link', 'seoprocookieconsent'),
+                    ),
+                ),
+            ),
+        ), array(__CLASS__, 'settings_button'));
     }
 
     /**
@@ -499,5 +563,61 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             );
         }
         echo '</div>';
+        if (self::enabled()) {
+            self::preview_panel();
+        }
+    }
+
+    /**
+     * The banner preview: the home page in a frame, with the banner shown
+     * as the chosen visitor sees it. The frame loads when opened and
+     * reloads after each change on the card (assets/js/consent-admin.js).
+     */
+    private static function preview_panel() {
+        ?>
+        <details class="spcc-preview" data-spcc-preview data-spcc-preview-src="<?php echo esc_url(home_url('/')); ?>">
+            <summary class="spcc-preview__summary"><?php esc_html_e('Preview the banner', 'seoprocookieconsent'); ?></summary>
+            <div class="spcc-preview__body">
+                <div class="spcc-preview__controls">
+                    <label>
+                        <?php esc_html_e('Visitor', 'seoprocookieconsent'); ?>
+                        <select data-spcc-preview-model>
+                            <option value="opt-in"><?php esc_html_e('Asked first (Europe, Quebec)', 'seoprocookieconsent'); ?></option>
+                            <option value="opt-out"><?php esc_html_e('Shown a notice (elsewhere)', 'seoprocookieconsent'); ?></option>
+                        </select>
+                    </label>
+                    <label>
+                        <?php esc_html_e('Screen', 'seoprocookieconsent'); ?>
+                        <select data-spcc-preview-device>
+                            <option value="desktop"><?php esc_html_e('Desktop', 'seoprocookieconsent'); ?></option>
+                            <option value="phone"><?php esc_html_e('Phone', 'seoprocookieconsent'); ?></option>
+                        </select>
+                    </label>
+                    <button type="button" class="button" data-spcc-preview-reload><?php esc_html_e('Reload', 'seoprocookieconsent'); ?></button>
+                </div>
+                <div class="spcc-preview__viewport" data-spcc-preview-viewport>
+                    <iframe title="<?php esc_attr_e('Banner preview on your home page', 'seoprocookieconsent'); ?>" tabindex="-1"></iframe>
+                </div>
+                <p class="description"><?php esc_html_e('Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved.', 'seoprocookieconsent'); ?></p>
+            </div>
+        </details>
+        <?php
+    }
+
+    /**
+     * The settings screen's own script and styles: the banner preview and
+     * the page picker for the Cookie policy page.
+     */
+    public static function admin_enqueue() {
+        if (wp_script_is('seoprocookieconsent-consent-admin', 'enqueued')) {
+            return;
+        }
+        wp_enqueue_style('seoprocookieconsent-consent-admin', SEOPROCOOKIECONSENT_URL . 'assets/css/consent-admin.css', array('seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/css/consent-admin.css'));
+        wp_enqueue_script('seoprocookieconsent-consent-admin', SEOPROCOOKIECONSENT_URL . 'assets/js/consent-admin.js', array('jquery', 'jquery-ui-autocomplete', 'wp-api-fetch', 'seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/js/consent-admin.js'), true);
+        wp_localize_script('seoprocookieconsent-consent-admin', 'spccConsentAdmin', array(
+            'home'    => home_url('/'),
+            'arg'     => self::PREVIEW_ARG,
+            'noPages' => __('No pages found.', 'seoprocookieconsent'),
+        ));
     }
 }

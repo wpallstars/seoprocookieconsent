@@ -120,6 +120,18 @@ text is never overwritten and the list stays current. The privacy
 policy guide (Settings → Privacy) gets suggested text too. Text is a
 starting point, not legal advice: the README says so.
 
+## Settings screen preview
+
+The Consent card's **Preview the banner** frames the home page with
+`?spcc_preview=opt-in` or `opt-out` (`assets/js/consent-admin.js`). For
+someone who can manage options, `SEOProCookieConsent_Consent::config()`
+then sets the model, `preview` and sample service names; the head script
+ignores the stored choice, and `spcc.js` shows the banner without
+releasing, saving or signalling anything, and stops links navigating.
+The toolbar is hidden. Anyone else gets the page as usual. The frame
+reloads after each Consent setting saves
+(`seoprocookieconsent:setting-saved`).
+
 ## Not yet
 
 Tracked as issues: Terms and conditions generator (Complianz Terms &

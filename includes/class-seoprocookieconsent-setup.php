@@ -111,9 +111,14 @@ final class SEOProCookieConsent_Setup {
      * Register a server-rendered block, seoprocookieconsent/{name}, shown
      * in the editor with ServerSideRender (assets/js/blocks.js).
      *
+     * Settings: `attributes` maps each attribute to `type` (boolean or
+     * string), `default` and `label`, plus `options` (value => label) for a
+     * choice or `placeholder` for text. They show in the block's sidebar
+     * and reach $render as its first argument.
+     *
      * @param string   $name   Block name without the namespace.
-     * @param array    $meta   title, description, icon (a Dashicon name).
-     * @param callable $render Returns the block's HTML.
+     * @param array    $meta   title, description, icon (a Dashicon name), attributes.
+     * @param callable $render Returns the block's HTML from its attributes.
      */
     public static function register_block($name, array $meta, callable $render) {
         if (!function_exists('register_block_type')) {
@@ -123,9 +128,22 @@ final class SEOProCookieConsent_Setup {
             wp_register_script(
                 self::BLOCKS_SCRIPT,
                 SEOPROCOOKIECONSENT_URL . 'assets/js/blocks.js',
-                array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-server-side-render'),
+                array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render'),
                 self::asset_version('assets/js/blocks.js'),
                 true
+            );
+        }
+        $controls   = array();
+        $attributes = array();
+        foreach (isset($meta['attributes']) ? (array) $meta['attributes'] : array() as $key => $attribute) {
+            $type               = 'boolean' === $attribute['type'] ? 'boolean' : 'string';
+            $attributes[$key]   = array('type' => $type, 'default' => 'boolean' === $type ? (bool) $attribute['default'] : (string) $attribute['default']);
+            $controls[]         = array(
+                'key'         => (string) $key,
+                'type'        => isset($attribute['options']) ? 'select' : $type,
+                'label'       => (string) $attribute['label'],
+                'options'     => isset($attribute['options']) ? self::block_options((array) $attribute['options']) : array(),
+                'placeholder' => isset($attribute['placeholder']) ? (string) $attribute['placeholder'] : '',
             );
         }
         $block = array(
@@ -133,6 +151,9 @@ final class SEOProCookieConsent_Setup {
             'title'       => (string) $meta['title'],
             'description' => (string) $meta['description'],
             'icon'        => (string) $meta['icon'],
+            'attributes'  => $attributes,
+            'controls'    => $controls,
+            'panel'       => __('Settings', 'seoprocookieconsent'),
         );
         wp_add_inline_script(self::BLOCKS_SCRIPT, 'window.spccBlocks=(window.spccBlocks||[]).concat(' . wp_json_encode(array($block)) . ');', 'before');
         register_block_type($block['name'], array(
@@ -141,12 +162,41 @@ final class SEOProCookieConsent_Setup {
             'description'           => $block['description'],
             'icon'                  => $block['icon'],
             'category'              => 'widgets',
+            'attributes'            => $attributes,
             'supports'              => array('html' => false),
             'editor_script_handles' => array(self::BLOCKS_SCRIPT),
-            'render_callback'       => function () use ($render) {
-                return (string) call_user_func($render);
+            'render_callback'       => function ($block_attributes = array()) use ($render) {
+                return (string) call_user_func($render, is_array($block_attributes) ? $block_attributes : array());
             },
         ));
+    }
+
+    /**
+     * A choice's options as SelectControl reads them.
+     *
+     * @param array<string,string> $options value => label.
+     * @return array<int,array{value:string,label:string}>
+     */
+    private static function block_options(array $options) {
+        $list = array();
+        foreach ($options as $value => $label) {
+            $list[] = array('value' => (string) $value, 'label' => (string) $label);
+        }
+        return $list;
+    }
+
+    /**
+     * Whether a block attribute or shortcode attribute is on: true, or
+     * text other than 0, false, no or off.
+     *
+     * @param mixed $value Value.
+     * @return bool
+     */
+    public static function flag($value) {
+        if (is_bool($value)) {
+            return $value;
+        }
+        return !in_array(strtolower(trim((string) $value)), array('', '0', 'false', 'no', 'off'), true);
     }
 
     /**

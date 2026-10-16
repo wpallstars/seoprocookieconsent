@@ -6,6 +6,8 @@ Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in s
 * Local YouTube and Vimeo thumbnails in held-back video placeholders; WP-Cron downloads validated images once per video, retries failures after a day, and uninstall removes files, cache options and queued events.
 * Cookie consent: holds back scripts and embeds from 23 services until visitors allow them; banner only on pages that have them; asks first by region (time zone); Global Privacy Control; Google Consent Mode v2; WP Consent API; embed placeholders with a Load button; Cookie settings dialog, footer menu link and button; imports Complianz's region and expiry settings once.
 * Cookie policy block and shortcode that list the site's cookies and stay up to date; suggested privacy policy text.
+* Settings screen: banner preview on the Consent card (asked-first or notice visitor, desktop or phone; updates after each change) and a page picker for the Cookie policy page.
+* Blocks: Cookie policy block settings (introduction, Cookie settings button, last-updated date, heading level); Cookie settings block text and button or link style; the shortcodes take the same options.
 * Cookie consent: the floating Cookie settings button is optional and off by default; the banner shows above floating language switchers and chat buttons; the dialog's close button and the banner buttons keep their colours on hover and focus in themes that style every button.
 
 = 0.1.0 =

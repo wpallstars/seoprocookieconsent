@@ -59,7 +59,8 @@
     }
 
     var m = model();
-    var choice = stored();
+    // The settings screen's preview shows the banner as for a first visit.
+    var choice = c.preview ? null : stored();
     // A dismissed notice from an opt-out place is not consent in an opt-in one.
     if (choice && m === 'opt-in' && choice.m !== 'opt-in') {
         choice = null;

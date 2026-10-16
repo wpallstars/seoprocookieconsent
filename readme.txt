@@ -17,12 +17,12 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 
 * **Holds back** Google Analytics, Tag Manager and Ads, Meta, TikTok, LinkedIn, Pinterest, Microsoft, Hotjar, HubSpot and X tags, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram and Facebook embeds, and live chats. Nothing to scan.
 * **Asks only where needed**: Europe (EU, EEA, UK, Switzerland), Quebec and unclear locations are asked first; elsewhere a short notice, or none. Decided from the browser's time zone, so nothing is looked up and page caches keep working.
-* **A fair banner**: Accept all and Reject all look the same, Settings has one switch per kind of cookie, and the message names what is on the page.
+* **A fair banner**: Accept all and Reject all look the same, Settings has one switch per kind of cookie, and the message names what is on the page. Preview it on your home page from the settings screen.
 * **Load buttons** on held-back videos, maps and posts, with locally cached YouTube and Vimeo thumbnails.
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
 * **Cookie settings** link in the footer menu, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
-* **Cookie policy block** that lists your site's cookies and keeps itself up to date, plus suggested privacy policy text.
+* **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
 * **Replaces Complianz**: imports its region and expiry settings once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
@@ -63,13 +63,13 @@ Ask aidevops (https://aidevops.sh): open the plugin's repository, or your site, 
 
 With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cron (External services below). The browser loads only the local copy before consent. Other held-back services load according to the visitor's region and choices.
 
-== External services ==
-
-With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube images from i.ytimg.com; Vimeo metadata from vimeo.com and images from i.vimeocdn.com. Requests send the video ID and server IP, not visitor data. Images stay in local uploads; failures retry after a day. Disabling Cookie consent stops new downloads. Unavailable thumbnails leave a plain placeholder. YouTube privacy: https://policies.google.com/privacy ; Vimeo privacy: https://vimeo.com/privacy
-
 = When do versions reach WordPress.org? =
 
 GitHub releases are the stable beta channel: each version comes out there first. WordPress.org gets it 30 days later, except security releases, which come out on both at once.
+
+== External services ==
+
+With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube images from i.ytimg.com; Vimeo metadata from vimeo.com and images from i.vimeocdn.com. Requests send the video ID and server IP, not visitor data. Images stay in local uploads; failures retry after a day. Disabling Cookie consent stops new downloads. Unavailable thumbnails leave a plain placeholder. YouTube privacy: https://policies.google.com/privacy ; Vimeo privacy: https://vimeo.com/privacy
 
 == Screenshots ==
 
