@@ -111,10 +111,7 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
     public function detect() {
         $left = $this->leftovers();
         $notes = array();
-        if ($this->configured() && !$this->asked()) {
-            $notes[] = __('Borlabs Cookie was switched off or in setup mode, or skipped its dialog for some visitors (geo-IP or hidden pages), so visitors\' choices are not carried over.', 'seoprocookieconsent');
-        }
-        $notes[] = __('Borlabs Cookie let visitors choose single services. A category carries over as allowed only when every Borlabs Cookie service in it was accepted; otherwise it is refused. Its close button saved "only essential", which carries over as refused.', 'seoprocookieconsent');
+        $notes[] = __('Visitors\' Borlabs Cookie choices are not carried over: its cookie version, which decides whether a saved choice is still valid, could not be checked, so visitors are asked again once.', 'seoprocookieconsent');
         $coded = array();
         foreach ($this->services() as $service) {
             if ('' !== trim($service['code'])) {
@@ -238,34 +235,15 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
     }
 
     /**
-     * One cookie, "borlabs-cookie": URI-encoded JSON whose "consents" maps
-     * each group to the service keys accepted, with the cookie version.
-     * Its own service is listed for every choice, so its presence marks
-     * one. A category allows when every optional service in it was
-     * accepted; one with no services of its own follows them all.
+     * Not carried over. Its "borlabs-cookie" cookie lists accepted service
+     * keys per group, but whether a saved choice is still current depends
+     * on a cookie version that could not be checked, so visitors are asked
+     * again.
      *
      * @return array
      */
     public function consent_cookie() {
-        if (!$this->asked()) {
-            return array();
-        }
-        $optional = array();
-        $map = array('preferences' => array(), 'statistics' => array(), 'embeds' => array(), 'marketing' => array());
-        foreach ($this->services() as $service) {
-            if ('' !== $service['category']) {
-                $optional[] = $service['key'];
-                $map[$service['category']][] = $service['key'];
-            }
-        }
-        if (!$optional) {
-            return array();
-        }
-        foreach ($map as $category => $keys) {
-            $map[$category] = $keys ?: $optional;
-        }
-        $version = (int) get_site_option(self::PREFIX . 'CookieVersion', 1);
-        return array('keyed' => self::OWN, 'version' => $version > 0 ? $version : 1, 'status' => self::OWN, 'value' => '1', 'categories' => $map, 'allow' => '1', 'deny' => '0');
+        return array();
     }
 
     /**

@@ -82,6 +82,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookiebot.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-iubenda.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-termly.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-borlabs.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-ct-gdpr.php';
         $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
             'complianz'              => new SEOProCookieConsent_Migrate_Complianz(),
             'cookieyes'              => new SEOProCookieConsent_Migrate_CookieYes(),
@@ -93,6 +95,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             'cookiebot'              => new SEOProCookieConsent_Migrate_Cookiebot(),
             'iubenda'                => new SEOProCookieConsent_Migrate_Iubenda(),
             'termly'                 => new SEOProCookieConsent_Migrate_Termly(),
+            'borlabs-cookie'         => new SEOProCookieConsent_Migrate_Borlabs(),
+            'ct-ultimate-gdpr'       => new SEOProCookieConsent_Migrate_CT_GDPR(),
         ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;
