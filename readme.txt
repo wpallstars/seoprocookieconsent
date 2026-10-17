@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -98,19 +98,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= Unreleased =
+= 0.1.1 =
 * A video or map a visitor clicks that needs a category they have not allowed (such as a YouTube lightbox) now opens Cookie settings saying what it needs, instead of staying blank.
-
-= 0.1.0 =
-* Import tab and WP-CLI command for moving from the 12 consent plugins above: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
-* Move here notices on the Plugins and settings screens and Cookie consent card: the next step, import to cleanup.
-* Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
-* Optional consent records, CSV export and automatic retention; off by default.
-* Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.
-* Hold back recognised scripts and iframes added after page load, including lightboxes.
-* Local YouTube and Vimeo thumbnails, downloaded by WP-Cron without pre-consent browser requests to those services.
-* Cookie consent, with a cookie policy block that keeps itself up to date.
-* Optional terms and conditions block and shortcode, editable wording and a one-time identity/contact import from Complianz Terms & Conditions.
-* First version, made from WP Plugin Starter 1.0.39.
 
 Every change: changelog.txt.

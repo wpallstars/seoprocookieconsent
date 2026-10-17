@@ -26,7 +26,7 @@ It is a tool, not legal advice: check its defaults and your policy text with who
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.0
+Version: 0.1.1
 
 <!-- github-only:start -->
 ## Screenshots
@@ -304,6 +304,10 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### 0.1.1
+
+- A video or map a visitor clicks that needs a category they have not allowed, such as a YouTube lightbox (Kadence video popups), now opens Cookie settings with a note naming the service and category, instead of staying blank. Nothing is ticked for them; allowing it loads the video. A second click on the same video asks again; loading a page on its own never opens it.
 
 ### 0.1.0
 
