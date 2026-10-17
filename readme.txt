@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -104,13 +104,10 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 = Unreleased =
 * Stable consent-control hooks for banner-answering tools; autoconsent and Consent-O-Matic rule drafts are kept in the repository, pending upstream inclusion.
+
+= 0.1.3 =
 * Imports continue recording when source plugins have local consent rows; dry run and undo include Keep consent records. Hosted providers and empty tables leave it unchanged.
 * A page with an old autosave no longer stops the import. Importing a cookie policy turns on Cookie policy.
-
-= 0.1.2 =
-* Appearance → Menus has a ready-made Cookie settings link. The automatic footer link sits after the cookie policy link, or before the privacy policy link, and reaches footer menus shown by widgets.
-* Leftover cleanup also removes Complianz's post meta and generated uploads folders, and Real Cookie Banner's update-checker option.
-* Keep records for a separate period, up to 3,650 days and never shorter than choices; default 0 keeps existing behaviour.
-* Consent records link to deduplicated banner and policy snapshots, with separate CSV exports. Old cached pages still record choices.
+* Held-back maps and other embeds sized in percentages fill their space instead of shrinking to 100px. Maps show a generic map picture behind the notice.
 
 Every change: changelog.txt.
