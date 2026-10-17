@@ -457,7 +457,8 @@ class SEOProCookieConsent_Settings_Manager {
      * deactivate link where the user can deactivate it here. The network
      * screen notes only plugins active for the whole network, as each
      * site's own are for that site (deactivated on the network's Plugins
-     * screen, so no link).
+     * screen, so no link). seoprocookieconsent_replaces_link can change or drop the
+     * link, for a plugin with a step to take first (an import).
      *
      * @param array $field Schema entry.
      */
@@ -480,9 +481,15 @@ class SEOProCookieConsent_Settings_Manager {
             $busy[] = (string) $name;
             if (isset($site[$slug]) && current_user_can('deactivate_plugin', $site[$slug])) {
                 // Comes back to this tab, where the setting then takes over.
-                $url     = SEOProCookieConsent_Replaced_Plugins::deactivate_url($site[$slug]);
-                /* translators: %s: plugin name */
-                $links[] = sprintf('<a href="%1$s">%2$s</a>', esc_url($url), esc_html(sprintf(__('Deactivate %s', 'seoprocookieconsent'), $name)));
+                $link = array(
+                    'url'   => SEOProCookieConsent_Replaced_Plugins::deactivate_url($site[$slug]),
+                    /* translators: %s: plugin name */
+                    'label' => sprintf(__('Deactivate %s', 'seoprocookieconsent'), $name),
+                );
+                $link = apply_filters('seoprocookieconsent_replaces_link', $link, (string) $slug, $site[$slug], (string) $name);
+                if (is_array($link) && !empty($link['url']) && isset($link['label']) && '' !== (string) $link['label']) {
+                    $links[] = sprintf('<a href="%1$s">%2$s</a>', esc_url((string) $link['url']), esc_html((string) $link['label']));
+                }
             }
         }
 
