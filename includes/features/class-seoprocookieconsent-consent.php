@@ -25,6 +25,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     const REPLACES = array(
         'complianz-gdpr'         => 'Complianz',
         'complianz-gdpr-premium' => 'Complianz Premium',
+        'cookie-law-info'        => 'CookieYes',
+        'cookie-notice'          => 'Cookie Notice & Compliance',
     );
 
     /** Google services sent before consent with Consent Mode advanced. */
