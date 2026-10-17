@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,12 +102,8 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= Unreleased =
+= 0.1.4 =
+* Held-back embeds keep their notice readable when theme or site styles show every iframe.
 * Stable consent-control hooks for banner-answering tools; autoconsent and Consent-O-Matic rule drafts are kept in the repository, pending upstream inclusion.
-
-= 0.1.3 =
-* Imports continue recording when source plugins have local consent rows; dry run and undo include Keep consent records. Hosted providers and empty tables leave it unchanged.
-* A page with an old autosave no longer stops the import. Importing a cookie policy turns on Cookie policy.
-* Held-back maps and other embeds sized in percentages fill their space instead of shrinking to 100px. Maps show a generic map picture behind the notice.
 
 Every change: changelog.txt.

@@ -26,7 +26,7 @@ It is a tool, not legal advice: check its defaults and your policy text with who
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.3
+Version: 0.1.4
 
 <!-- github-only:start -->
 ## Screenshots
@@ -330,8 +330,9 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 0.1.4
 
+- A held-back embed's blank iframe stays hidden when theme or site styles set `display: block` on iframes, so the notice keeps its full width. Before, the empty iframe took the placeholder's space and the notice became a narrow column.
 - Stable language-independent consent controls and local draft rules for autoconsent and Consent-O-Matic; automated answers use the same consent and recording path as other choices.
 
 ### 0.1.3
