@@ -329,9 +329,14 @@
 
     // Cookie settings dialog ---------------------------------------------
 
+    var askNote = dialog ? dialog.querySelector('[data-spcc-ask]') : null;
+
     function open() {
         if (!dialog) {
             return;
+        }
+        if (askNote) {
+            askNote.hidden = true;
         }
         // Rows for categories used on the site or on this page.
         var used = {};
@@ -361,6 +366,50 @@
         }
     }
     spcc.open = open;
+
+    /**
+     * A visitor asked for something (a video lightbox, a map) that needs a
+     * category they have not allowed: open Cookie settings and say so.
+     * Nothing is ticked for them; allowing it releases what was held.
+     *
+     * @param {string} id       Service ID.
+     * @param {string} category Its category.
+     */
+    spcc.ask = function (id, category) {
+        if (c.preview || !dialog || dialog.open || spcc.allows(id, category)) {
+            return;
+        }
+        page[id] = category;
+        held = true;
+        open();
+        if (askNote && c.text.ask) {
+            askNote.textContent = c.text.ask.replace('%1$s', serviceName(id)).replace('%2$s', c.labels[category] || category);
+            askNote.hidden = false;
+        }
+    };
+
+    // Players cache their script, so a second click on the same video link
+    // holds nothing new: ask again for a service a click already needed.
+    var videoLinks = {
+        youtube: /(youtube(-nocookie)?\.com\/(watch|embed|shorts)|youtu\.be\/)/i,
+        vimeo: /vimeo\.com\/(video\/)?\d/i
+    };
+    function askForLink(e) {
+        var link = e.isTrusted && e.target.closest ? e.target.closest('a[href]') : null;
+        var wanted = spcc.wanted || {};
+        if (!link || (dialog && dialog.contains(link)) || (banner && banner.contains(link))) {
+            return;
+        }
+        Object.keys(videoLinks).forEach(function (id) {
+            if (wanted[id] && videoLinks[id].test(link.href)) {
+                w.setTimeout(function () {
+                    spcc.ask(id, wanted[id]);
+                }, 0);
+            }
+        });
+    }
+    // Capture: lightboxes often stop the click before it bubbles.
+    d.addEventListener('click', askForLink, true);
 
     function close(action) {
         if (typeof dialog.close === 'function') {

@@ -231,6 +231,31 @@
     var matched = new WeakMap();
     var ran = spcc.ran = {};
     var changed = false;
+    // A video or map a visitor just asked for (a lightbox, a tab) that needs
+    // a held category: Cookie settings opens to say so. Never on page load.
+    var gesture = 0;
+    var asked = new WeakSet();
+    var wanted = spcc.wanted = {};
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (type) {
+        d.addEventListener(type, function (e) {
+            if (e.isTrusted) {
+                gesture = Date.now();
+            }
+        }, { capture: true, passive: true });
+    });
+
+    function want(el, id, category) {
+        if (category !== 'embeds' || !gesture || Date.now() - gesture > 5000 || asked.has(el)) {
+            return;
+        }
+        asked.add(el);
+        wanted[id] = category;
+        w.setTimeout(function () {
+            if (typeof spcc.ask === 'function') {
+                spcc.ask(id, category);
+            }
+        }, 0);
+    }
 
     function each(nodes, fn) {
         Array.prototype.forEach.call(nodes, fn);
@@ -317,6 +342,7 @@
             set.call(el, 'type', 'text/plain');
         }
         remove.call(el, 'src');
+        want(el, id, category);
         return true;
     }
 
