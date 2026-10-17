@@ -269,6 +269,25 @@ A feature is a class in `includes/features/class-seoprocookieconsent-{name}.php`
 
 How consent works inside (holding back, regions, the consent cookie and signals): `docs/architecture.md` in the repository.
 
+### Consent automation contract
+
+Banner-answering tools can use the real controls, without a separate consent-setting API. These hooks are stable across translations and visual changes:
+
+| Purpose | Selector |
+| --- | --- |
+| Active banner | `#spcc-banner:not([hidden])` (also check visibility) |
+| Open settings | `#spcc-dialog[open]` (also check visibility) |
+| Open the dialog | Visible banner button `[data-spcc-action="settings"]` |
+| Explicit allow / refuse | `[data-spcc-action="accept"]` / `[data-spcc-action="reject"]` in the active banner or dialog |
+| Save category choices | `#spcc-dialog[open] [data-spcc-action="save"]` |
+| Category switches | `#spcc-dialog input[data-spcc-toggle="preferences"]`, `statistics`, `marketing`, `embeds` |
+
+Only interact with the visible prompt, not the persistent footer link or hidden banner controls. A regional opt-out notice's OK button is a dismissal, not Accept all: open Settings and use the dialog's explicit controls instead. Category rows not used on the site are hidden, but their switches remain in the DOM; set all four optional switches to the desired state before Save (a DOM click works on a hidden checkbox). Necessary is always checked and disabled. Escape, the close button and backdrop do not save a choice.
+
+Explicit refusal, acceptance and Save all use the normal save path (`spcc_consent.m: "opt-in"`, even in an opt-out region), blocker, consent signals and optional records. We do not attempt to detect or label automated answers: synthetic clicks are not reliable attribution, and storing browser/extension fingerprints adds no trustworthy evidence. Records remain self-reported choices, not proof of who clicked. No changes to regional defaults or legal guarantees.
+
+Draft rules for DuckDuckGo autoconsent and Consent-O-Matic, their category mapping, test results and upstream submission status are in `docs/consent-automation/` in the repository. Drafts here do not mean released browsers already include them.
+
 Consent filters and browser API:
 
 - `seoprocookieconsent_services`: add or change the services held back and listed in the cookie policy (ID => `name`, `category` of preferences, statistics, embeds or marketing, `patterns` found in a script's or iframe's address or an inline script, `privacy` link, `cookies` as name => purpose and how long, and `embed`, a word for the Load button such as "video").
@@ -313,6 +332,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Stable language-independent consent controls and local draft rules for autoconsent and Consent-O-Matic; automated answers use the same consent and recording path as other choices.
 - Imports continue consent recording when local record rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; hosted providers and empty tables leave it unchanged.
 - A selected page whose newest revision is an old autosave no longer stops the import; the newest saved revision is the undo point.
 - An import that puts the Cookie policy block on a page also turns on Cookie policy, which the block needs to show anything; undo turns it off again.
