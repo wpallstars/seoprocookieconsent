@@ -289,6 +289,19 @@
     font-size: 0.9375rem;
 }
 
+.spcc-dialog__ask {
+    margin: 0;
+    padding: 10px 12px;
+    border-inline-start: 3px solid currentColor;
+    background: rgba(127, 127, 127, 0.1);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.spcc-dialog__ask[hidden] {
+    display: none;
+}
+
 .spcc-dialog__list {
     display: grid;
     gap: 0;

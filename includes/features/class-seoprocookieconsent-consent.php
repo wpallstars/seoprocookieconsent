@@ -367,6 +367,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'other'   => __('other services', 'seoprocookieconsent'),
                 /* translators: 1: service name; 2: cookie category. */
                 'embed'   => __('%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings.', 'seoprocookieconsent'),
+                /* translators: 1: service name, such as "YouTube"; 2: cookie category. */
+                'ask'     => __('%1$s needs %2$s to show here. Allow it to see this content.', 'seoprocookieconsent'),
                 'content' => __('This content', 'seoprocookieconsent'),
                 'load'    => __('Load content', 'seoprocookieconsent'),
                 'settings' => __('Cookie settings', 'seoprocookieconsent'),

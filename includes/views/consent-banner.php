@@ -52,6 +52,7 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
                 <a href="<?php echo esc_url($seoprocookieconsent_policy); ?>"><?php esc_html_e('Cookie policy', 'seoprocookieconsent'); ?></a>
             <?php endif; ?>
         </p>
+        <p id="spcc-dialog-ask" class="spcc-dialog__ask" role="status" data-spcc-ask hidden></p>
         <ul class="spcc-dialog__list">
             <?php foreach ($seoprocookieconsent_categories as $seoprocookieconsent_id => $seoprocookieconsent_category) : ?>
                 <?php $seoprocookieconsent_necessary = 'necessary' === $seoprocookieconsent_id; ?>

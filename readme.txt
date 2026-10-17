@@ -98,6 +98,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
+= Unreleased =
+* A video or map a visitor clicks that needs a category they have not allowed (such as a YouTube lightbox) now opens Cookie settings saying what it needs, instead of staying blank.
+
 = 0.1.0 =
 * Import tab and WP-CLI command for moving from the 12 consent plugins above: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
 * Move here notices on the Plugins and settings screens and Cookie consent card: the next step, import to cleanup.
