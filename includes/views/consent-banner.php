@@ -68,6 +68,12 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
                 </li>
             <?php endforeach; ?>
         </ul>
+        <div class="spcc-dialog__record" data-spcc-record hidden>
+            <label for="spcc-consent-id"><?php esc_html_e('Your consent ID:', 'seoprocookieconsent'); ?></label>
+            <input id="spcc-consent-id" class="spcc-dialog__id" type="text" readonly dir="ltr" />
+            <button type="button" class="spcc-btn spcc-btn--quiet" data-spcc-copy aria-label="<?php esc_attr_e('Copy consent ID', 'seoprocookieconsent'); ?>"><?php esc_html_e('Copy', 'seoprocookieconsent'); ?></button>
+            <span class="spcc-dialog__copy-status" role="status" data-spcc-copy-status data-copied="<?php esc_attr_e('Consent ID copied.', 'seoprocookieconsent'); ?>" data-failed="<?php esc_attr_e('Could not copy. Select the consent ID and copy it manually.', 'seoprocookieconsent'); ?>"></span>
+        </div>
         <div class="spcc-dialog__actions">
             <button type="submit" value="reject" class="spcc-btn" data-spcc-action="reject"><?php esc_html_e('Reject all', 'seoprocookieconsent'); ?></button>
             <button type="submit" value="save" class="spcc-btn spcc-btn--quiet" data-spcc-action="save"><?php esc_html_e('Save choices', 'seoprocookieconsent'); ?></button>
