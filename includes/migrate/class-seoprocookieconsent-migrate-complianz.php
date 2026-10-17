@@ -215,7 +215,7 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
     public function leftovers() {
         global $wpdb;
         $options = array();
-        foreach (array('cmplz_', 'complianz_', '_transient_cmplz_', '_transient_timeout_cmplz_', '_transient_complianz_', '_transient_timeout_complianz_') as $prefix) {
+        foreach (array('cmplz_', 'cmplz-', 'complianz_', '_transient_cmplz_', '_transient_timeout_cmplz_', '_transient_complianz_', '_transient_timeout_complianz_') as $prefix) {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- indexed, source-owned option prefixes; names only, never licence values.
             $options = array_merge($options, $wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s ORDER BY option_name LIMIT 1000", $wpdb->esc_like($prefix) . '%')));
         }
