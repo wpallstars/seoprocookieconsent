@@ -338,7 +338,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             return (int) $revision;
         }
         foreach (wp_get_post_revisions($post->ID, array('orderby' => 'ID', 'order' => 'DESC')) as $latest) {
-            if (!wp_is_post_autosave($latest)) {
+            if ($latest instanceof WP_Post && !wp_is_post_autosave($latest)) {
                 return $latest->post_content === $post->post_content ? (int) $latest->ID : 0;
             }
         }
