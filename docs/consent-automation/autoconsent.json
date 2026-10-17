@@ -1,0 +1,30 @@
+{
+    "name": "SEO Pro Cookie Consent",
+    "detectCmp": [{ "exists": "#spcc-banner" }, { "exists": "#spcc-dialog" }],
+    "detectPopup": [{ "visible": "#spcc-banner:not([hidden]), #spcc-dialog[open]", "check": "any" }],
+    "optOut": [
+        {
+            "if": { "visible": "#spcc-dialog[open]" },
+            "then": [],
+            "else": [{ "click": "#spcc-banner:not([hidden]) [data-spcc-optin]:not([hidden]) [data-spcc-action='settings'], #spcc-banner:not([hidden]) [data-spcc-optout]:not([hidden]) [data-spcc-action='settings']" }]
+        },
+        { "waitForVisible": "#spcc-dialog[open]" },
+        { "click": "#spcc-dialog[open] [data-spcc-action='reject']" },
+        { "waitForVisible": "#spcc-banner:not([hidden]), #spcc-dialog[open]", "check": "none" }
+    ],
+    "optIn": [
+        {
+            "if": { "visible": "#spcc-dialog[open]" },
+            "then": [],
+            "else": [{ "click": "#spcc-banner:not([hidden]) [data-spcc-optin]:not([hidden]) [data-spcc-action='settings'], #spcc-banner:not([hidden]) [data-spcc-optout]:not([hidden]) [data-spcc-action='settings']" }]
+        },
+        { "waitForVisible": "#spcc-dialog[open]" },
+        { "click": "#spcc-dialog[open] [data-spcc-action='accept']" },
+        { "waitForVisible": "#spcc-banner:not([hidden]), #spcc-dialog[open]", "check": "none" }
+    ],
+    "test": [
+        { "cookieContains": "spcc_consent=" },
+        { "cookieContains": "%22m%22%3A%22opt-in%22" },
+        { "visible": "#spcc-banner:not([hidden]), #spcc-dialog[open]", "check": "none" }
+    ]
+}
