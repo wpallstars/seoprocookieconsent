@@ -85,6 +85,11 @@ final class SEOProCookieConsent_Import_Tab {
                         'manual'   => __('Form or live list with no direct equivalent. Not changed: replace or remove it yourself.', 'seoprocookieconsent'),
                         'gate'     => __('Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back.', 'seoprocookieconsent'),
                         'other'    => __('Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself.', 'seoprocookieconsent'),
+                        'link'     => __('Make this link or button open Cookie settings, keeping its text.', 'seoprocookieconsent'),
+                        'held'     => __('Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognises them.', 'seoprocookieconsent'),
+                        'unwrap'   => __('Keep the content and remove the tags around it.', 'seoprocookieconsent'),
+                        'hosted'   => __('Hosted document, button or widget that stops working when the old plugin or account goes. Not changed: replace it with your own page or link, or remove it yourself.', 'seoprocookieconsent'),
+                        'marked'   => __('Marked to wait for the old banner, so it never loads without it. Not changed: make it a normal script or embed again yourself.', 'seoprocookieconsent'),
                     );
                     $kind = (string) ($token['kind'] ?? ($token['cookie'] ? 'cookie' : 'render'));
                     $description = $descriptions[$kind] ?? ($token['renderable'] ? __('Freeze the rendered document as editable HTML, with a revision.', 'seoprocookieconsent') : __('Cannot render while the source is inactive: rewrite this document or reactivate the source before importing.', 'seoprocookieconsent'));

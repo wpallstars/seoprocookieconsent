@@ -79,6 +79,9 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-moove.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-wpconsent.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-real-cookie-banner.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookiebot.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-iubenda.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-termly.php';
         $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
             'complianz'              => new SEOProCookieConsent_Migrate_Complianz(),
             'cookieyes'              => new SEOProCookieConsent_Migrate_CookieYes(),
@@ -87,6 +90,9 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             'gdpr-cookie-compliance' => new SEOProCookieConsent_Migrate_Moove(),
             'wpconsent'              => new SEOProCookieConsent_Migrate_WPConsent(),
             'real-cookie-banner'     => new SEOProCookieConsent_Migrate_Real_Cookie_Banner(),
+            'cookiebot'              => new SEOProCookieConsent_Migrate_Cookiebot(),
+            'iubenda'                => new SEOProCookieConsent_Migrate_Iubenda(),
+            'termly'                 => new SEOProCookieConsent_Migrate_Termly(),
         ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;
@@ -260,9 +266,9 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 // A shortcode in core/shortcode must not become a nested invalid block.
                 $wrapped = '<!-- wp:shortcode -->' . "\n" . $token['token'] . "\n" . '<!-- /wp:shortcode -->';
                 $content = str_replace($wrapped, $replacement, $content);
-                // Anywhere else, such as inside a paragraph, a shortcode becomes ours; a block comment there is invalid.
+                // Anywhere else, such as inside a paragraph, a shortcode or HTML element becomes our shortcode; a block comment there is invalid.
                 $inline = array('<!-- wp:seoprocookieconsent/cookie-policy /-->' => '[spcc_cookie_policy]', '<!-- wp:seoprocookieconsent/cookie-settings /-->' => '[spcc_cookie_settings]');
-                $content = str_replace($token['token'], 0 === strpos($token['token'], '[') && isset($inline[$replacement]) ? $inline[$replacement] : $replacement, $content);
+                $content = str_replace($token['token'], 0 !== strpos($token['token'], '<!--') && isset($inline[$replacement]) ? $inline[$replacement] : $replacement, $content);
             }
             if ($content !== $post->post_content) {
                 $revision = self::revision($post);
