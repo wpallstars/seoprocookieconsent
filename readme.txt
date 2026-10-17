@@ -65,7 +65,7 @@ Under Policies, fill in Terms and conditions, switch it on and add its block or 
 
 = How do I move from another cookie plugin? =
 
-Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA: open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' clear choices carry over; anyone else is asked again, as are all visitors of hosted (web app) modes, Borlabs Cookie and Ultimate GDPR & CCPA. Deleting Borlabs Cookie also deletes its consent log: export it first. Scripts the old plugin ran itself stop when it is gone: the Import tab lists them to copy to your theme, where they are held back. Pro-only features are reported, not imported. Then deactivate and delete the old plugin, remove its leftover data (consent records are kept) and purge page caches. The Plugins and settings screens show each next step. WP-CLI: wp seoprocookieconsent migrate. See README.md.
+Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA: open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' clear choices carry over; anyone else is asked again, as are all visitors of hosted (web app) modes, Borlabs Cookie and Ultimate GDPR & CCPA. Scripts the old plugin ran itself stop when it is gone: the Import tab lists them to copy to your theme, where they are held back. Pro-only features are reported, not imported. Then deactivate and delete the old plugin, remove its leftover data (consent records are kept) and purge page caches. The Plugins and settings screens show each next step. WP-CLI: wp seoprocookieconsent migrate. See README.md.
 
 = A script that sets cookies still loads =
 
@@ -99,7 +99,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
-* Import tab and WP-CLI command for moving from Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance (Moove), WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
+* Import tab and WP-CLI command for moving from the 12 consent plugins above: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
 * Move here notices on the Plugins and settings screens and Cookie consent card: the next step, import to cleanup.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.
