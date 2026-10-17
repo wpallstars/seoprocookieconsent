@@ -432,6 +432,8 @@
 .wp-embed-responsive .wp-has-aspect-ratio .spcc-embed {
     position: absolute;
     inset: 0;
+    width: auto !important;
+    height: auto !important;
     max-width: none !important;
     min-height: 0;
     aspect-ratio: auto !important;

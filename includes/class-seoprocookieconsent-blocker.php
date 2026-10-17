@@ -224,10 +224,8 @@ final class SEOProCookieConsent_Blocker {
         $tags->set_attribute('data-spcc-category', $category);
         $tags->set_attribute('data-spcc-service', $service);
 
-        $width  = (int) $tags->get_attribute('width');
-        $height = (int) $tags->get_attribute('height');
-        $style  = $width > 0 && $height > 0 ? sprintf('aspect-ratio:%d/%d;max-width:%dpx', $width, $height, $width) : '';
-        $image  = SEOProCookieConsent_Thumbnails::url($service, $src);
+        $style = self::size($tags->get_attribute('width'), $tags->get_attribute('height'));
+        $image = SEOProCookieConsent_Thumbnails::url($service, $src);
 
         return sprintf(
             '<div class="spcc-embed" data-spcc-embed="%1$s" data-spcc-category="%2$s"%3$s>%6$s%4$s%5$s</div>',
@@ -238,6 +236,41 @@ final class SEOProCookieConsent_Blocker {
             self::notice($service, $category),
             '' !== $image ? '<img class="spcc-embed__thumbnail" src="' . esc_url($image) . '" alt="" loading="lazy" decoding="async" />' : ''
         );
+    }
+
+    /**
+     * The placeholder's inline size from the iframe's width and height
+     * attributes. Pixels on both keep the embed's shape up to its width;
+     * otherwise each is copied on its own, so `width="100%" height="100%"`
+     * fills the same container (Kadence's Google Maps block) instead of
+     * reading as 100 pixels. Spcc-head.js size() does the same.
+     *
+     * @param mixed $width  Width attribute.
+     * @param mixed $height Height attribute.
+     * @return string CSS declarations, or "".
+     */
+    private static function size($width, $height) {
+        $pixels  = '/^\s*([0-9]{1,5})(?:px)?\s*$/D';
+        $percent = '/^\s*([0-9]{1,3}(?:\.[0-9]{1,2})?)%\s*$/D';
+        $width   = is_string($width) ? $width : '';
+        $height  = is_string($height) ? $height : '';
+        $w       = preg_match($pixels, $width, $wm) ? (int) $wm[1] : 0;
+        $h       = preg_match($pixels, $height, $hm) ? (int) $hm[1] : 0;
+        if ($w > 0 && $h > 0) {
+            return sprintf('aspect-ratio:%d/%d;max-width:%dpx', $w, $h, $w);
+        }
+        $style = array();
+        if ($w > 0) {
+            $style[] = sprintf('max-width:%dpx', $w);
+        } elseif (preg_match($percent, $width, $wm)) {
+            $style[] = 'width:' . $wm[1] . '%';
+        }
+        if ($h > 0) {
+            $style[] = sprintf('height:%dpx', $h);
+        } elseif (preg_match($percent, $height, $hm)) {
+            $style[] = 'height:' . $hm[1] . '%';
+        }
+        return implode(';', $style);
     }
 
     /**

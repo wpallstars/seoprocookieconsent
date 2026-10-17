@@ -54,9 +54,11 @@ palette of their own.
   at the end (Reject all, Save choices, Accept all).
 - Placeholders keep the embed's size (its width and height, or core's
   responsive wrapper) with a translucent tint, centred text, a Load
-  button and a Cookie settings text button.
+  button and a Cookie settings text button. Pixel width and height keep
+  the shape; percentages fill the same container (Kadence's Maps block).
 - YouTube and Vimeo can show a decorative, locally cached thumbnail cropped
-  to fill the existing placeholder. The notice has a 96%-opaque theme-surface
+  to fill the existing placeholder; maps show a bundled generic map
+  (`assets/images/map-placeholder.svg`). The notice has a 96%-opaque theme-surface
   scrim behind it so text and buttons keep their light/dark contrast. Missing
   images keep the plain tint; no new motion or breakpoints. Actions continue
   wrapping on phones, with existing 44px touch targets.

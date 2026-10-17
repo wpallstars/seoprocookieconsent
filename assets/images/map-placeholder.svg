@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect width="800" height="450" fill="#e8eae6"/>
+<path d="M0 0h180v120H0zM230 0h210v90H230zM490 0h120v150H490zM660 0h140v110H660zM0 170h120v110H0zM170 140h150v130H170zM370 140h70v120H370zM490 200h170v90H490zM710 160h90v140H710zM0 330h90v120H0zM140 320h200v130H140zM390 310h130v140H390zM570 340h230v110H570z" fill="#f3f4f1"/>
+<path d="M230 140h90v130h-90z" fill="#cfe3c4"/>
+<path d="M560 0c30 60 10 110 60 160s130 40 180 90v-250z" fill="#c4dbe8"/>
+<path d="M0 145h800M0 300h800M205 0v450M465 0v450M685 0v450" stroke="#fff" stroke-width="22" fill="none"/>
+<path d="M0 145h800M0 300h800M205 0v450M465 0v450M685 0v450" stroke="#f6dfa4" stroke-width="10" fill="none"/>
+<path d="M0 60h205M345 0v145M120 300v150M545 300v150M340 300c40-60 80-90 125-90M685 225h115" stroke="#fff" stroke-width="9" fill="none"/>
+<path d="M-20 430L300 205 520 120 820 20" stroke="#fff" stroke-width="14" fill="none"/>
+<g transform="translate(335 48) scale(.75) translate(-400 -120)">
+<path d="M400 120c-25 0-44 19-44 43 0 33 44 79 44 79s44-46 44-79c0-24-19-43-44-43z" fill="#d93025"/>
+<circle cx="400" cy="163" r="15" fill="#a50e0e"/>
+</g>
+</svg>
