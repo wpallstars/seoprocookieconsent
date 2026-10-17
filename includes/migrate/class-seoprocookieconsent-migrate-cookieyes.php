@@ -214,6 +214,7 @@ final class SEOProCookieConsent_Migrate_CookieYes extends SEOProCookieConsent_Mi
         }
         global $wpdb;
         $map = array();
+        $all = array();
         $tables = $this->tables();
         if (in_array($wpdb->prefix . 'cky_cookie_categories', $tables, true)) {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source category table.
@@ -221,19 +222,23 @@ final class SEOProCookieConsent_Migrate_CookieYes extends SEOProCookieConsent_Mi
             // Its dialog has switches only for categories with listed cookies; the others always save "no".
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source cookie table: category IDs only.
             $used = in_array($wpdb->prefix . 'cky_cookies', $tables, true) ? array_map('intval', $wpdb->get_col($wpdb->prepare('SELECT DISTINCT category FROM %i LIMIT 100', $wpdb->prefix . 'cky_cookies'))) : array();
-            foreach (array(true, false) as $offered) {
-                foreach ((array) $rows as $row) {
-                    if ('necessary' !== $row['slug'] && preg_match('/^[a-z0-9_-]+$/', $row['slug']) && (!$offered || in_array((int) $row['category_id'], $used, true))) {
-                        $map[self::CATEGORIES[$row['slug']] ?? 'marketing'][] = $row['slug'];
+            $offered = array();
+            foreach ((array) $rows as $row) {
+                if ('necessary' !== $row['slug'] && preg_match('/^[a-z0-9_-]+$/', $row['slug'])) {
+                    $ours = self::CATEGORIES[$row['slug']] ?? 'marketing';
+                    $all[$ours][] = $row['slug'];
+                    if (in_array((int) $row['category_id'], $used, true)) {
+                        $offered[$ours][] = $row['slug'];
                     }
                 }
-                if ($map) {
-                    break; // With no listed cookies at all, every category was all-or-nothing.
-                }
+            }
+            // Where none of ours was offered, its source categories were all-or-nothing (Accept all, Reject all).
+            foreach ($all as $ours => $slugs) {
+                $map[$ours] = $offered[$ours] ?? $slugs;
             }
         }
         // CookieYes's cookie library files YouTube, Vimeo and similar embeds under Advertisement.
-        if (isset($map['marketing']) && in_array('advertisement', $map['marketing'], true)) {
+        if (in_array('advertisement', $all['marketing'] ?? array(), true)) {
             $map['embeds'] = array('advertisement');
         }
         if (!$map) {
