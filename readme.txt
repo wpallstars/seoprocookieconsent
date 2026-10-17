@@ -98,7 +98,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= Unreleased =
+= 0.1.0 =
 * Import tab and WP-CLI command for moving from the 12 consent plugins above: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
 * Move here notices on the Plugins and settings screens and Cookie consent card: the next step, import to cleanup.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
@@ -108,8 +108,6 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 * Local YouTube and Vimeo thumbnails, downloaded by WP-Cron without pre-consent browser requests to those services.
 * Cookie consent, with a cookie policy block that keeps itself up to date.
 * Optional terms and conditions block and shortcode, editable wording and a one-time identity/contact import from Complianz Terms & Conditions.
-
-= 0.1.0 =
 * First version, made from WP Plugin Starter 1.0.39.
 
 Every change: changelog.txt.

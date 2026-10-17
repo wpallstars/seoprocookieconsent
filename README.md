@@ -305,7 +305,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 0.1.0
 
 - Import from Complianz on the Import tab or with WP-CLI: dry run, default-only settings, script rules, selected policy pages with revisions, visitors' explicit choices, undo and confirmed leftover cleanup that keeps records of consent.
 - Import from CookieYes and Cookie Notice & Compliance in their local modes: banner settings, script rules from CookieYes's cookie list and Cookie Notice's after-acceptance scripts, settings and policy shortcodes in selected pages, and visitors' explicit choices by category; hosted (web app) and legacy modes are reported, not guessed. Source shortcodes inside a paragraph become this plugin's shortcodes instead of invalid nested blocks.
@@ -325,9 +325,6 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 - Settings screen: a banner preview on the Consent card (home page, asked-first or notice visitor, desktop or phone, updates after each change) and a page picker for the Cookie policy page.
 - Blocks: the Cookie policy block's sidebar turns the introduction, Cookie settings button and last-updated date on or off and sets the heading level; the Cookie settings block takes its text and shows as a button or a link. The shortcodes take the same options.
 - Cookie consent: the floating Cookie settings button is optional and off by default; the banner shows above floating language switchers and chat buttons; the dialog's close button and the banner buttons keep their colours on hover and focus in themes that style every button.
-
-### 0.1.0
-
 - First version, made from WP Plugin Starter 1.0.39.
 
 ## Built with AI

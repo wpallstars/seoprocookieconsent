@@ -2,8 +2,10 @@
 
 Version: 0.1.0
 
-In development; no release yet. The repository is private. Making it public
-needs the owner's say.
+First GitHub release: 0.1.0 (2026-10-17), a pre-1.0 beta; Before 1.0 below
+is still open. The repository is private, so sites get updates only with a
+read-only `WPALLSTARS_GITHUB_TOKEN` or by installing the release zip. Making
+it public needs the owner's say.
 
 ## While private
 
