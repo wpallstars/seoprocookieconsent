@@ -100,7 +100,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 = Unreleased =
 * Import tab and WP-CLI command for moving from Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance (Moove), WPConsent, Real Cookie Banner, Cookiebot, iubenda and Termly: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
-* Move here notices on the Plugins and settings screens: the next step, from import to removing leftovers.
+* Move here notices on the Plugins and settings screens and Cookie consent card: the next step, import to cleanup.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.
 * Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.
