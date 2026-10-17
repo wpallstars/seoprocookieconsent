@@ -56,7 +56,8 @@ final class SEOProCookieConsent_Import_Tab {
                 continue;
             }
             $found = true;
-            printf('<h3>%1$s — %2$s</h3>', esc_html($source::NAME), esc_html($plan['detection']['state']));
+            // The Move here notices link to each source by this ID.
+            printf('<h3 id="spcc-import-%3$s">%1$s — %2$s</h3>', esc_html($source::NAME), esc_html($plan['detection']['state']), esc_attr($key));
             echo '<details open><summary>' . esc_html__('Dry run: settings and script rules to add', 'seoprocookieconsent') . '</summary>';
             self::listing(array_merge($plan['settings'], $plan['scripts']));
             echo '</details><details><summary>' . esc_html__('Consent cookie mapping', 'seoprocookieconsent') . '</summary>';
@@ -87,7 +88,9 @@ final class SEOProCookieConsent_Import_Tab {
             echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
             self::fields('off', $key);
             submit_button(__('Stop carrying over old consent', 'seoprocookieconsent'), 'secondary', 'submit', false);
-            echo '</form><details><summary>' . esc_html__('Remove leftover data', 'seoprocookieconsent') . '</summary>';
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only opens a section; the notices' "Remove leftover data" link.
+            $open = isset($_GET['cleanup']) && sanitize_key(wp_unslash($_GET['cleanup'])) === $key ? ' open' : '';
+            printf('</form><details id="spcc-cleanup-%1$s"%2$s><summary>%3$s</summary>', esc_attr($key), esc_attr($open), esc_html__('Remove leftover data', 'seoprocookieconsent'));
             self::listing($plan['leftovers']);
             if (!empty($plan['leftovers']['kept'])) {
                 echo '<p>' . esc_html__('Kept: old consent records and data requests. Export them from the old plugin before deleting it if you must keep them, then remove these tables yourself after your retention period.', 'seoprocookieconsent') . '</p>';
@@ -111,7 +114,7 @@ final class SEOProCookieConsent_Import_Tab {
         if (!$found) {
             echo '<p>' . esc_html__('No supported source data found.', 'seoprocookieconsent') . '</p>';
         }
-        echo '<h3>' . esc_html__('Import history', 'seoprocookieconsent') . '</h3>';
+        echo '<h3 id="spcc-import-history">' . esc_html__('Import history', 'seoprocookieconsent') . '</h3>';
         foreach (array_reverse((array) get_option(SEOProCookieConsent_Migrate::IMPORTS, array()), true) as $id => $record) {
             printf('<p>%1$s — %2$s — %3$s</p>', esc_html($record['source']), esc_html(wp_date('Y-m-d H:i', $record['time']) ?: ''), esc_html(!empty($record['undone']) ? __('Undone', 'seoprocookieconsent') : $record['state']));
             if (empty($record['undone'])) {

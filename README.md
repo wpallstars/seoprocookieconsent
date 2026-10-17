@@ -112,6 +112,16 @@ Open **Settings → SEO Pro Cookie Consent → Import**. It finds Complianz data
 
 Each import can be undone while its values and pages are unchanged. After checking the banner and pages, deactivate and delete Complianz, then use **Remove leftover data** to delete exactly the listed options, tables and scheduled events, never while Complianz is active. Its records of consent and data requests are listed but kept; export them first if you must keep them. Check Complianz's own delete-data-on-uninstall setting first, and purge page caches after switching. The same steps run with WP-CLI: `wp seoprocookieconsent migrate plan|import|undo|cleanup complianz` (`--pages=ID,ID`, `--dry-run`).
 
+Until Complianz and its data are gone, the Plugins screen (a notice at the top and a note under each Complianz row) and this plugin's settings screen show the next step, with a link:
+
+| Step | When | Links |
+|---|---|---|
+| Import | Complianz is active and nothing is imported, or it is inactive or deleted with its settings still here (pages that show its documents may already be blank) | **Import from Complianz** |
+| Switch | Imported, Complianz still active | **Check the import**, **Turn on Cookie consent** when it is off, then **Deactivate** |
+| Remove | Complianz is inactive or deleted and left data | **Delete Complianz** (single sites), **Remove leftover data** |
+
+Only people who can activate plugins see these. **Hide** hides the current step for you; it shows again at the next step. The Plugins screen then leaves out its usual "can do the job of these plugins" line for Complianz, so it never says to deactivate before importing.
+
 ## Where to find it
 
 Go to **Settings → SEO Pro Cookie Consent**. The screen has two groups of tabs:
@@ -205,13 +215,14 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 
 ## Uninstall
 
-Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins, its import history, and the cached GitHub releases. It never removes another plugin's data.
+Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
 
 ### Unreleased
 
 - Import from Complianz on the Import tab or with WP-CLI: dry run, default-only settings, script rules, selected policy pages with revisions, visitors' explicit choices, undo and confirmed leftover cleanup that keeps records of consent.
+- Move here notices on the Plugins and settings screens: one next step per source, from import through switching to removing leftovers, with links and a per-person Hide.
 - Multilingual custom banner messages and policy links with WPML and Polylang, plus TranslatePress custom-text translation.
 - Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.
 - Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.

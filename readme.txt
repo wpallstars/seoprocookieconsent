@@ -65,7 +65,7 @@ Under Policies, fill in Terms and conditions, switch it on and add its block or 
 
 = How do I move from Complianz? =
 
-Open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' explicit category choices carry over; a dismissed banner does not. Then deactivate and delete Complianz, remove its leftover data (records of consent and data requests are kept) and purge page caches. WP-CLI: wp seoprocookieconsent migrate. See README.md.
+Open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' explicit category choices carry over; a dismissed banner does not. Then deactivate and delete Complianz, remove its leftover data (records of consent and data requests are kept) and purge page caches. The Plugins screen and settings screen show the next step, with a link, until Complianz and its data are gone. WP-CLI: wp seoprocookieconsent migrate. See README.md.
 
 = A script that sets cookies still loads =
 
@@ -100,6 +100,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 = Unreleased =
 * Import tab and WP-CLI command for moving from Complianz: dry run, settings, script rules, selected policy pages, visitors' explicit choices, undo and exact leftover cleanup.
+* Move here notices on the Plugins and settings screens: the next step, from import to removing leftovers.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.
 * Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.

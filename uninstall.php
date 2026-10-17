@@ -34,6 +34,9 @@ function seoprocookieconsent_uninstall_site() {
     delete_option('seoprocookieconsent_imports');
     delete_option('seoprocookieconsent_migrate');
     delete_option('seoprocookieconsent_import_lock');
+    // What the Move here notices last found (SEOProCookieConsent_Migrate::FOUND).
+    delete_option('seoprocookieconsent_migrate_found');
+    wp_clear_scheduled_hook('seoprocookieconsent_migrate_refresh');
     delete_option('seoprocookieconsent_records_schema');
     wp_clear_scheduled_hook('seoprocookieconsent_records_cleanup');
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- remove only this site's own table on uninstall.
@@ -73,6 +76,8 @@ if (is_multisite()) {
 
 // Hidden "SEO Pro Cookie Consent can do the job of these plugins" lines.
 delete_metadata('user', 0, 'seoprocookieconsent_replaced_plugins_hidden', '', true);
+// Hidden Move here steps (SEOProCookieConsent_Migrate_Notices::HIDDEN).
+delete_metadata('user', 0, 'seoprocookieconsent_migrate_hidden', '', true);
 
 require_once __DIR__ . '/admin/includes/class-admin-theme.php';
 SEOProCookieConsent_Admin_Theme::uninstall();
