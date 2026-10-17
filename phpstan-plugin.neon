@@ -19,9 +19,6 @@ parameters:
 				- staticMethod.resultUnused
 			path: includes/class-seoprocookieconsent.php
 		-
-			identifier: staticMethod.resultUnused
-			path: admin/settings.php
-		-
 			identifier: function.impossibleType
 			message: '#array_key_exists\(\) with mixed and array\{\}#'
 			path: includes/class-seoprocookieconsent-settings.php

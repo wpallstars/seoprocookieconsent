@@ -99,6 +99,7 @@ final class SEOProCookieConsent_Setup {
         SEOProCookieConsent_Records::boot();
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/migrate/class-seoprocookieconsent-migrate.php';
         SEOProCookieConsent_Migrate::cli();
+        SEOProCookieConsent_Migrate::watch();
         if (is_admin()) {
             require_once SEOPROCOOKIECONSENT_DIR . 'includes/admin/class-seoprocookieconsent-import-tab.php';
             SEOProCookieConsent_Import_Tab::boot();
@@ -254,5 +255,8 @@ final class SEOProCookieConsent_Setup {
      * seoprocookieconsent_admin_enqueue action).
      */
     public static function admin() {
+        // Move here: one next step per other cookie plugin, from import to removal.
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/admin/class-seoprocookieconsent-migrate-notices.php';
+        SEOProCookieConsent_Migrate_Notices::boot();
     }
 }

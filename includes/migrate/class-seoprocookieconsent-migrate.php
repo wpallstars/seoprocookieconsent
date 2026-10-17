@@ -18,9 +18,52 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     const IMPORTS = 'seoprocookieconsent_imports';
     const CONFIG = 'seoprocookieconsent_migrate';
     const LOCK = 'seoprocookieconsent_import_lock';
+    /** What refresh() last found per source, so notices never scan on page load. */
+    const FOUND = 'seoprocookieconsent_migrate_found';
+    /** One-off background refresh when FOUND is missing. */
+    const REFRESH = 'seoprocookieconsent_migrate_refresh';
 
     /** This utility uses the base import sanitizer, not feature hooks. */
     public static function boot() {
+    }
+
+    /** Refresh once, at the end of a request that activates, deactivates or deletes a source. */
+    public static function watch() {
+        add_action('activated_plugin', array(__CLASS__, 'plugin_changed'));
+        add_action('deactivated_plugin', array(__CLASS__, 'plugin_changed'));
+        add_action('deleted_plugin', array(__CLASS__, 'plugin_changed'));
+        add_action(self::REFRESH, array(__CLASS__, 'refresh'));
+    }
+
+    /** @param string $file Plugin file. */
+    public static function plugin_changed($file) {
+        foreach (self::sources() as $source) {
+            if (in_array(dirname((string) $file), $source::SLUGS, true) && !has_action('shutdown', array(__CLASS__, 'refresh'))) {
+                add_action('shutdown', array(__CLASS__, 'refresh'));
+            }
+        }
+    }
+
+    /** Cached detection: key => {present, data, pages}; schedules one background refresh when missing. @return array|null */
+    public static function found() {
+        $found = get_option(self::FOUND, null);
+        if (!is_array($found)) {
+            if (!wp_next_scheduled(self::REFRESH)) {
+                wp_schedule_single_event(time(), self::REFRESH);
+            }
+            return null;
+        }
+        return $found;
+    }
+
+    /** Whether a source has a complete import that was not undone. @param string $key Source. @return bool */
+    public static function imported($key) {
+        foreach ((array) get_option(self::IMPORTS, array()) as $record) {
+            if (is_array($record) && $key === ($record['source'] ?? '') && 'complete' === ($record['state'] ?? '') && empty($record['undone'])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** @return array<string,SEOProCookieConsent_Migrate_Source> */
@@ -44,12 +87,20 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         $config = array();
         $previous = (array) get_option(self::CONFIG, array());
         $imports = (array) get_option(self::IMPORTS, array());
+        $found = array();
         foreach (self::sources() as $key => $source) {
             $imported = false;
             foreach ($imports as $record) {
                 $imported = $imported || ($key === $record['source'] && empty($record['undone']));
             }
-            if (!isset($previous[$key]['off']) && ($source->detect()['present'] || $imported)) {
+            $detection = $source->detect();
+            $left = $source->leftovers();
+            $found[$key] = array(
+                'present' => !empty($detection['present']),
+                'data'    => (bool) array_filter(array_intersect_key($left, array_flip(array('options', 'tables', 'cron')))),
+                'pages'   => (bool) $source->pages(),
+            );
+            if (!isset($previous[$key]['off']) && ($detection['present'] || $imported)) {
                 $config[$key] = $source->consent_cookie();
             } elseif (isset($previous[$key]['off'])) {
                 $config[$key] = array('off' => true);
@@ -57,6 +108,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         }
         // Autoloaded: the consent script reads it on every front-end page.
         update_option(self::CONFIG, $config, true);
+        // Admin notices only: not autoloaded.
+        update_option(self::FOUND, $found, false);
     }
 
     /** Cached cookie descriptors only; no detection, scans or source queries. @return array */
@@ -195,11 +248,16 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 $pages[$post->ID] = array('revision' => $revision, 'before' => $post->post_content, 'after' => $content);
             }
         }
+        $records = (array) get_option(self::IMPORTS, array());
         if (!$after && !$pages) {
+            // Nothing left to bring across still counts as imported, so the notices move on to switching.
+            if (!self::imported($key)) {
+                $records[wp_generate_uuid4()] = array('source' => $key, 'time' => time(), 'before' => array(), 'after' => array(), 'lines' => array(), 'pages' => array(), 'state' => 'complete');
+                update_option(self::IMPORTS, $records, false);
+            }
             self::refresh();
             return array('changed' => false);
         }
-        $records = (array) get_option(self::IMPORTS, array());
         $id = wp_generate_uuid4();
         $record = array('source' => $key, 'time' => time(), 'before' => array_intersect_key($before, $after), 'after' => $after, 'lines' => $plan['scripts'], 'pages' => $pages, 'state' => 'applying');
         $records[$id] = $record;
@@ -308,6 +366,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         $config = (array) get_option(self::CONFIG, array());
         $config[$key] = array('off' => true);
         update_option(self::CONFIG, $config, true);
+        self::refresh();
         return array('removed' => $items);
     }
 

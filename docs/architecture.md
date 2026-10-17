@@ -192,6 +192,33 @@ untouched; the owner reviews the wording and replaces the old block or
 shortcode. This is not a country-specific legal generator, checkout
 acceptance system or withdrawal form.
 
+## Move here
+
+`SEOProCookieConsent_Migrate` (`includes/migrate/`) runs import, undo and
+confirmed cleanup for each source adapter
+(`SEOProCookieConsent_Migrate_Source`, filter
+`seoprocookieconsent_migrate_sources`). Adapters read source data only on
+the Import tab, in WP-CLI and in `refresh()`. `refresh()` stores two
+options: the browser's consent carry-over descriptors (autoloaded) and
+what it found per source: `present`, `data` (removable leftovers) and
+`pages` (`seoprocookieconsent_migrate_found`, not autoloaded). It runs on
+the Import tab, after import, undo and cleanup, at the end of a request
+that activates, deactivates or deletes a source plugin, and once in
+WP-Cron when the cache is missing.
+
+`SEOProCookieConsent_Migrate_Notices`
+(`includes/admin/class-seoprocookieconsent-migrate-notices.php`) reads
+only the stored plugin lists, the import records and that cache. Each
+source is `import` (active and not imported, or inactive with its data
+present), `switch` (imported, still active), `remove` (inactive or deleted,
+imported, leftovers remain) or nothing. It shows on the Plugins screen
+(a top notice and a note under each source row) and on the settings
+screen, for people who can activate plugins, not in the network admin.
+For sources with a step, the starter's replaced-plugins lines are left
+out: its row note is wrapped, and its notice reads that person's hidden
+list with those sources added, so nobody is told to deactivate before
+importing. Hide stores `source:state` in user meta.
+
 ## Settings screen preview
 
 The Consent card's **Preview the banner** frames the home page with
