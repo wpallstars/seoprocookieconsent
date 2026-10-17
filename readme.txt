@@ -21,7 +21,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Load buttons** on held-back videos, maps and posts, with locally cached YouTube and Vimeo thumbnails.
 * **Lightboxes too**: recognised script and iframe addresses added through common DOM APIs wait for consent. Exclude the consent head script from script-delay optimizers; inline-only code and unusual insertion APIs need integration.
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
-* **Cookie settings** link in the footer menu, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
+* **Cookie settings** link in the footer menu (beside your cookie or privacy policy link), a ready-made item in Appearance → Menus, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after your chosen period, never shorter than the consent lifetime. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
