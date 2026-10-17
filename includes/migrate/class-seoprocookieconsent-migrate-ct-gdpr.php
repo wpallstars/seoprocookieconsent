@@ -99,7 +99,10 @@ final class SEOProCookieConsent_Migrate_CT_GDPR extends SEOProCookieConsent_Migr
             $notes[] = sprintf(__('Its cookie scanner left the user %s behind, which it hides from the Users screen while active. Delete that user after deactivating it.', 'seoprocookieconsent'), self::SCAN_USER);
         }
         if ($options) {
-            $notes[] = __('Its banner texts are not imported: they describe its own banner. Ultimate GDPR & CCPA kept consent records; turn on Keep consent records if you need to go on documenting choices.', 'seoprocookieconsent');
+            $notes[] = __('Its banner texts are not imported: they describe its own banner.', 'seoprocookieconsent');
+        }
+        if (!empty($this->settings()['consent_records'])) {
+            $notes[] = __('The import turns on Keep consent records to continue its records.', 'seoprocookieconsent');
         }
         return array('present' => (bool) array_filter($left) || (bool) $this->pages(), 'state' => $this->state(), 'notes' => $notes);
     }
@@ -107,10 +110,18 @@ final class SEOProCookieConsent_Migrate_CT_GDPR extends SEOProCookieConsent_Migr
     /** @return array */
     public function settings() {
         $options = $this->options();
-        if (!$options) {
-            return array();
-        }
         $result = array();
+        global $wpdb;
+        $table = $wpdb->prefix . 'ct_ugdpr_consent_log';
+        if (in_array($table, $this->tables(), true)) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+                $result['consent_records'] = true;
+            }
+        }
+        if (!$options) {
+            return $result;
+        }
         if ($this->everywhere()) {
             // Its location check asked only European visitors and showed nothing elsewhere.
             $result['consent_regions'] = empty($options['cookie_check_if_user_is_from_eu']) ? 'everywhere' : 'region_quiet';

@@ -56,15 +56,26 @@ final class SEOProCookieConsent_Migrate_WPConsent extends SEOProCookieConsent_Mi
             $notes[] = __('WPConsent let visitors choose single services. Only its Statistics and Marketing choices carry over; anyone who chose only some services in a category is asked again.', 'seoprocookieconsent');
         }
         $notes[] = __('WPConsent Pro geolocation rules and custom scripts are not imported: check Who is asked first, and add any custom scripts to your theme or a header-code plugin before switching.', 'seoprocookieconsent');
+        if (!empty($this->settings()['consent_records'])) {
+            $notes[] = __('The import turns on Keep consent records to continue its records.', 'seoprocookieconsent');
+        }
         return array('present' => (bool) array_filter($left) || (bool) $this->pages(), 'state' => $this->state(), 'notes' => $notes);
     }
 
     /** @return array */
     public function settings() {
-        if (!$this->options()) {
-            return array();
-        }
         $result = array();
+        global $wpdb;
+        $table = $wpdb->prefix . 'wpconsent_consent_logs';
+        if (in_array($table, $this->tables(), true)) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check, excluding Do Not Track requests; never reads record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+                $result['consent_records'] = true;
+            }
+        }
+        if (!$this->options()) {
+            return $result;
+        }
         if ($this->asked()) {
             $result['consent_regions'] = 'everywhere';
         }
