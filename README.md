@@ -61,7 +61,7 @@ SEO Pro Cookie Consent replaces **3 plugins**, some of them in part, with free a
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
-- **Replaces Complianz.** Its region and expiry settings are imported once, and while Complianz is active this waits, so two banners never show.
+- **Replaces Complianz.** The Import tab previews, then imports its settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While Complianz is active this waits, so two banners never show.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
@@ -97,9 +97,20 @@ This feature is off by default and independent of Cookie consent. Fill in your l
 
 The block and shortcode read current settings on every render. After changing answers, clear any full-page cache to update cached copies. **Your own wording** replaces all suggested text with plain text, one paragraph per line; HTML and shortcodes are not executed. Normal blocks around it remain yours to edit.
 
-On upgrade, the plugin imports only unset business name, country and the selected email/contact-page answer from Complianz Terms & Conditions. Review imported country codes and complete the other answers yourself. It never enables Terms for you, changes the old plugin's options, or converts its blocks, shortcodes, documents or withdrawal forms. While that plugin is active, Terms waits. Review your replacement page and any required withdrawal process before deactivating it, then replace its block or shortcode with this one.
+On upgrade, the plugin imports only unset business name, country and the selected email/contact-page answer from Complianz Terms & Conditions. Review imported country codes and complete the other answers yourself. It never enables Terms for you, changes the old plugin's options, or converts its blocks, shortcodes, documents or withdrawal forms on its own. While that plugin is active, Terms waits. Review your replacement page and any required withdrawal process before deactivating it, then replace its block or shortcode with this one, or keep the old document as editable HTML from the Import tab.
 
 The wording is a starting point, **not legal advice** or a guarantee of compliance. Have someone qualified for your business and jurisdictions review it, including consumer rights, sales disclosures and any required online withdrawal process. This feature does not provide checkout acceptance or a withdrawal form.
+
+## Move from Complianz
+
+Open **Settings → SEO Pro Cookie Consent → Import**. It finds Complianz data even when the plugin is inactive or deleted, and shows a dry run before anything changes.
+
+- **Settings**: region handling, consent lifetime, Google Consent Mode, the default banner's position and message, and the cookie policy link. Only settings still at their defaults are filled in. When Complianz asked visitors elsewhere with an opt-in banner (EU, UK, South Africa or Brazil), everyone is asked first here too.
+- **Script rules**: enabled custom blocked and allowed URLs are added to **Also hold back** and **Never hold back**. Inline "add script" entries are not imported.
+- **Pages**, each only when you select it, with a saved revision: cookie policies become the Cookie policy block, Manage consent and revoke links become the Cookie settings button, a document you unlinked and edited keeps your text as editable HTML, and generated documents are kept as rendered HTML. Generated documents need Complianz active to render; a blank document is never saved. Forms (data requests, Do Not Sell) and live lists are listed for you to replace.
+- **Visitors' choices**: a visitor who chose categories in Complianz keeps them; only dismissing the banner is not consent. Carry-over starts once Complianz is inactive.
+
+Each import can be undone while its values and pages are unchanged. After checking the banner and pages, deactivate and delete Complianz, then use **Remove leftover data** to delete exactly the listed options, tables and scheduled events, never while Complianz is active. Its records of consent and data requests are listed but kept; export them first if you must keep them. Check Complianz's own delete-data-on-uninstall setting first, and purge page caches after switching. The same steps run with WP-CLI: `wp seoprocookieconsent migrate plan|import|undo|cleanup complianz` (`--pages=ID,ID`, `--dry-run`).
 
 ## Where to find it
 
@@ -194,19 +205,20 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 
 ## Uninstall
 
-Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins, and the cached GitHub releases.
+Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
 
 ### Unreleased
 
+- Import from Complianz on the Import tab or with WP-CLI: dry run, default-only settings, script rules, selected policy pages with revisions, visitors' explicit choices, undo and confirmed leftover cleanup that keeps records of consent.
 - Multilingual custom banner messages and policy links with WPML and Polylang, plus TranslatePress custom-text translation.
 - Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.
 - Consent card: Scan now samples up to eight public pages, refreshes findings in place and reports blocked loopbacks; a short guide explains the first-run steps.
 - Cookie consent: hold back recognised scripts and iframes added after page load, including lightboxes, and update the banner and settings when they appear.
 - Optional Terms and conditions block and `[spcc_terms]` shortcode, five owner answers, a plain-text wording override and a one-time non-overwriting import of Complianz Terms & Conditions identity/contact answers.
 - Local YouTube and Vimeo thumbnails in held-back video placeholders, fetched in cron without contacting video services from visitors' browsers.
-- Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's settings.
+- Cookie consent: holds back scripts and embeds from 23 services until visitors allow them, with a banner only on pages that have them, asking first by region (time zone), Global Privacy Control, Google Consent Mode v2, the WP Consent API, embed placeholders with a Load button, a Cookie settings dialog, footer menu link and button, and a one-off import of Complianz's region and expiry settings.
 - Cookie policy block and shortcode that list the cookies the site uses and stay up to date, and suggested privacy policy text.
 - Settings screen: a banner preview on the Consent card (home page, asked-first or notice visitor, desktop or phone, updates after each change) and a page picker for the Cookie policy page.
 - Blocks: the Cookie policy block's sidebar turns the introduction, Cookie settings button and last-updated date on or off and sets the heading level; the Cookie settings block takes its text and shows as a button or a link. The shortcodes take the same options.

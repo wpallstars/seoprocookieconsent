@@ -88,6 +88,9 @@ final class SEOProCookieConsent_Import_Tab {
             submit_button(__('Stop carrying over old consent', 'seoprocookieconsent'), 'secondary', 'submit', false);
             echo '</form><details><summary>' . esc_html__('Remove leftover data', 'seoprocookieconsent') . '</summary>';
             self::listing($plan['leftovers']);
+            if (!empty($plan['leftovers']['kept'])) {
+                echo '<p>' . esc_html__('Kept: old consent records and data requests. Export them from the old plugin before deleting it if you must keep them, then remove these tables yourself after your retention period.', 'seoprocookieconsent') . '</p>';
+            }
             $cleanup = SEOProCookieConsent_Migrate::cleanup($key, true);
             if (is_wp_error($cleanup)) {
                 echo '<p>' . esc_html($cleanup->get_error_message()) . '</p>';

@@ -25,7 +25,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after the consent lifetime. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
-* **Replaces Complianz**: imports its region and expiry settings once.
+* **Replaces Complianz**: the Import tab previews, then imports its settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup.
 * **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
@@ -61,7 +61,11 @@ From the time zone their browser reports. Nothing is looked up or sent anywhere,
 
 = How do I add terms and conditions? =
 
-Under Policies, fill in Terms and conditions, switch it on and add its block or [spcc_terms] to a page. Suggested wording needs your business name and contact details. Optional answers cover country, offerings and returns; Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages are not converted; replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
+Under Policies, fill in Terms and conditions, switch it on and add its block or [spcc_terms] to a page. Suggested wording needs your business name and contact details. Optional answers cover country, offerings and returns; Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages change only when you select them on the Import tab; otherwise replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
+
+= How do I move from Complianz? =
+
+Open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' explicit category choices carry over; a dismissed banner does not. Then deactivate and delete Complianz, remove its leftover data (records of consent and data requests are kept) and purge page caches. WP-CLI: wp seoprocookieconsent migrate. See README.md.
 
 = A script that sets cookies still loads =
 
@@ -95,6 +99,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
+* Import tab and WP-CLI command for moving from Complianz: dry run, settings, script rules, selected policy pages, visitors' explicit choices, undo and exact leftover cleanup.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.
 * Scan now and a first-run guide on the Consent card, with progress and blocked-loopback feedback.

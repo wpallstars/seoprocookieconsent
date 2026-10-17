@@ -227,7 +227,10 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
                 }
             }
         }
-        return array('options' => array_values(array_unique($options)), 'tables' => $this->tables(), 'cron' => array_values(array_unique($hooks)));
+        // Premium's records of consent (cmplz_statistics) and data requests (cmplz_dnsmpd) may need keeping: listed, never removed.
+        $records = array($wpdb->prefix . 'cmplz_statistics', $wpdb->prefix . 'cmplz_dnsmpd');
+        $tables = $this->tables();
+        return array('options' => array_values(array_unique($options)), 'tables' => array_values(array_diff($tables, $records)), 'cron' => array_values(array_unique($hooks)), 'kept' => array_values(array_intersect($tables, $records)));
     }
 
     /** @return string */
