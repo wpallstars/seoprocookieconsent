@@ -202,15 +202,15 @@ final class SEOProCookieConsent_Migrate_CT_GDPR extends SEOProCookieConsent_Migr
         $rows = $wpdb->get_results($wpdb->prepare(
             "SELECT p.ID, p.post_title, MAX(CASE WHEN m.meta_key = 'is_active' THEN m.meta_value END) AS active, MAX(CASE WHEN m.meta_key = 'type_of_cookie' THEN m.meta_value END) AS level, MAX(CASE WHEN m.meta_key = 'script_name' THEN m.meta_value END) AS scripts FROM {$wpdb->posts} p LEFT JOIN {$wpdb->postmeta} m ON m.post_id = p.ID AND m.meta_key IN ('is_active', 'type_of_cookie', 'script_name') WHERE p.post_type = %s AND p.post_status = 'publish' GROUP BY p.ID ORDER BY p.ID ASC LIMIT 500",
             self::POST_TYPE
-        ));
+        ), ARRAY_A);
         $services = array();
         foreach ((array) $rows as $row) {
-            $level = (int) $row->level;
-            if (empty($row->active) || !isset(self::LEVELS[$level])) {
+            $level = (int) ($row['level'] ?? 0);
+            if (empty($row['active']) || !isset(self::LEVELS[$level])) {
                 continue;
             }
-            $scripts = array_values(array_filter(array_map('trim', explode(',', (string) $row->scripts))));
-            $services[(int) $row->ID] = array('name' => (string) $row->post_title, 'category' => self::LEVELS[$level], 'scripts' => $scripts);
+            $scripts = array_values(array_filter(array_map('trim', explode(',', (string) ($row['scripts'] ?? '')))));
+            $services[(int) $row['ID']] = array('name' => (string) $row['post_title'], 'category' => self::LEVELS[$level], 'scripts' => $scripts);
         }
         return $services;
     }

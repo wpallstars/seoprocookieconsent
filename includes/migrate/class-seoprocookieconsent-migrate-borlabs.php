@@ -86,7 +86,7 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
 
     /** @param array $config Settings. @param string $key Setting. @return bool */
     private static function on(array $config, $key) {
-        return !empty($config[$key]) && true === (bool) $config[$key];
+        return !empty($config[$key]);
     }
 
     /** Its settings exist. @return bool */
