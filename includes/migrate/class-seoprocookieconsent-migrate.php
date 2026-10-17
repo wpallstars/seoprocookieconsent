@@ -72,10 +72,16 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-complianz.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieyes.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookie-notice.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieadmin.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-moove.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-wpconsent.php';
         $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
-            'complianz'     => new SEOProCookieConsent_Migrate_Complianz(),
-            'cookieyes'     => new SEOProCookieConsent_Migrate_CookieYes(),
-            'cookie-notice' => new SEOProCookieConsent_Migrate_Cookie_Notice(),
+            'complianz'              => new SEOProCookieConsent_Migrate_Complianz(),
+            'cookieyes'              => new SEOProCookieConsent_Migrate_CookieYes(),
+            'cookie-notice'          => new SEOProCookieConsent_Migrate_Cookie_Notice(),
+            'cookieadmin'            => new SEOProCookieConsent_Migrate_CookieAdmin(),
+            'gdpr-cookie-compliance' => new SEOProCookieConsent_Migrate_Moove(),
+            'wpconsent'              => new SEOProCookieConsent_Migrate_WPConsent(),
         ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;

@@ -27,6 +27,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         'complianz-gdpr-premium' => 'Complianz Premium',
         'cookie-law-info'        => 'CookieYes',
         'cookie-notice'          => 'Cookie Notice & Compliance',
+        'cookieadmin'            => 'CookieAdmin',
+        'gdpr-cookie-compliance' => 'GDPR Cookie Compliance',
+        'wpconsent-cookies-banner-privacy-suite' => 'WPConsent',
     );
 
     /** Google services sent before consent with Consent Mode advanced. */
