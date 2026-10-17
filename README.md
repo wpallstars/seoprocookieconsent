@@ -314,6 +314,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Imports continue consent recording when local record rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; hosted providers and empty tables leave it unchanged.
+- A selected page whose newest revision is an old autosave no longer stops the import; the newest saved revision is the undo point.
 
 ### 0.1.2
 

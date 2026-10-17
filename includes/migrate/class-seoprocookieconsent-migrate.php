@@ -317,6 +317,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     /**
      * A revision holding the current content. Core skips saving when the
      * newest revision already matches, which is normal after an editor save.
+     * Like core, compare the newest real revision: a newer autosave is not
+     * the saved content.
      *
      * @param WP_Post $post Page.
      * @return int Revision ID, or 0.
@@ -326,9 +328,12 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         if ($revision && !is_wp_error($revision)) {
             return (int) $revision;
         }
-        $latest = wp_get_post_revisions($post->ID, array('numberposts' => 1, 'orderby' => 'ID', 'order' => 'DESC'));
-        $latest = $latest ? reset($latest) : null;
-        return $latest instanceof WP_Post && $latest->post_content === $post->post_content ? (int) $latest->ID : 0;
+        foreach (wp_get_post_revisions($post->ID, array('orderby' => 'ID', 'order' => 'DESC')) as $latest) {
+            if (!wp_is_post_autosave($latest)) {
+                return $latest->post_content === $post->post_content ? (int) $latest->ID : 0;
+            }
+        }
+        return 0;
     }
 
     /** Undo only imported values, never silently overwrite subsequent owner edits. @param string $id Import ID, or a source key for its newest import. @return array|WP_Error */
