@@ -108,7 +108,7 @@ final class SEOProCookieConsent_Import_Tab {
             printf('</form><details id="spcc-cleanup-%1$s"%2$s><summary>%3$s</summary>', esc_attr($key), esc_attr($open), esc_html__('Remove leftover data', 'seoprocookieconsent'));
             self::listing($plan['leftovers']);
             if (!empty($plan['leftovers']['kept'])) {
-                echo '<p>' . esc_html__('Kept: old consent records and data requests. Export them from the old plugin before deleting it if you must keep them, then remove these tables yourself after your retention period.', 'seoprocookieconsent') . '</p>';
+                echo '<p>' . esc_html__('Kept: old consent records, data requests and anything not known to be generated. Export records from the old plugin before deleting it if you must keep them, then remove these tables or folders yourself after your retention period.', 'seoprocookieconsent') . '</p>';
             }
             $cleanup = SEOProCookieConsent_Migrate::cleanup($key, true);
             $removable = array_filter(array_intersect_key($plan['leftovers'], array_flip(SEOProCookieConsent_Migrate::REMOVABLE)));

@@ -377,6 +377,9 @@ final class SEOProCookieConsent_Migrate_Real_Cookie_Banner extends SEOProCookieC
         // Its licence client's options carry its slug as a suffix; others belong to sibling plugins.
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- source-owned licence client options; names only.
         $options = array_merge($options, $wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s AND (option_name LIKE %s OR option_name LIKE %s) ORDER BY option_name LIMIT 100", $wpdb->esc_like('rpm-wpc-') . '%', '%' . $wpdb->esc_like('_real-cookie-banner'), '%' . $wpdb->esc_like('_real-cookie-banner-') . '%')));
+        // Update-checker state some Pro copies keep under its slug.
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- exact source-slug option names only.
+        $options = array_merge($options, $wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name IN (%s, %s)", 'external_updates-real-cookie-banner', 'external_updates-real-cookie-banner-pro')));
         $hooks = array();
         foreach (_get_cron_array() ?: array() as $events) {
             foreach (array_keys($events) as $hook) {
