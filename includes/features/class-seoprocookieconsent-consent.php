@@ -370,6 +370,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'categories' => SEOProCookieConsent_Services::optional_categories(),
             'labels'     => $labels,
             'services'   => $services,
+            'images'     => SEOProCookieConsent_Thumbnails::bundled(),
             'dynamic'    => null !== self::$blocker,
             'allow'      => array_values(array_filter(array_map('trim', preg_split('/[\r\n]+/', strtolower((string) SEOProCookieConsent_Settings::get('consent_allow'))) ?: array()))),
             'block'      => SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),

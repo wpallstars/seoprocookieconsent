@@ -23,7 +23,7 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 |---|---|---|
 | Services | `includes/class-seoprocookieconsent-services.php` | Categories, the known services (match patterns, cookies, privacy links) and what the site was seen using. |
 | Blocker | `includes/class-seoprocookieconsent-blocker.php` | Output buffer on front-end HTML: holds back matching `<script>` and `<iframe>` tags and wraps iframes in a placeholder. |
-| Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs. |
+| Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs; maps get a bundled generic image. |
 | Consent | `includes/features/class-seoprocookieconsent-consent.php` | The feature: settings, buffer start, head config, banner and dialog markup, footer menu link (placed beside the policy links) and the Appearance → Menus box, Cookie settings shortcode and block. |
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
 | Front end | `assets/js/spcc.js`, `assets/css/spcc.css` | Region decision, consent cookie, banner and dialog, releasing held-back tags, Google Consent Mode and WP Consent API signals. |
@@ -85,6 +85,16 @@ The browser receives only a same-host uploads URL, never a provider or external
 CDN URL. Markup is visitor-independent, and existing page caches need their
 normal refresh before a newly downloaded image appears. Uninstall clears
 the event, all thumbnail options and cached JPEGs on every site.
+
+Maps (`SEOProCookieConsent_Thumbnails::MAPS`) skip all of this: they show the
+bundled generic `assets/images/map-placeholder.svg`, in server placeholders
+and, through the config's `images`, in ones `spcc-head.js` builds.
+
+The placeholder copies the iframe's width and height attributes: pixels on
+both set its aspect ratio and maximum width; otherwise each is copied alone
+(pixel width as a maximum, pixel height, or a percentage), so
+`width="100%" height="100%"` fills its container instead of reading as
+100px. The PHP `size()` and the head script's `size()` must match.
 
 ## Regions
 

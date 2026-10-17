@@ -441,6 +441,32 @@
         return adjacent.call(this, position, safeHTML(value));
     };
 
+    // The blocker's size(): pixels on both keep the shape; otherwise each
+    // dimension is copied on its own, so 100% fills the container.
+    function size(box, width, height) {
+        var pixels = /^\s*(\d{1,5})(?:px)?\s*$/;
+        var percent = /^\s*(\d{1,3}(?:\.\d{1,2})?)%\s*$/;
+        var wm = pixels.exec(width || '');
+        var hm = pixels.exec(height || '');
+        var w = wm ? parseInt(wm[1], 10) : 0;
+        var h = hm ? parseInt(hm[1], 10) : 0;
+        if (w > 0 && h > 0) {
+            box.style.aspectRatio = w + '/' + h;
+            box.style.maxWidth = w + 'px';
+            return;
+        }
+        if (w > 0) {
+            box.style.maxWidth = w + 'px';
+        } else if ((wm = percent.exec(width || ''))) {
+            box.style.width = wm[1] + '%';
+        }
+        if (h > 0) {
+            box.style.height = h + 'px';
+        } else if ((hm = percent.exec(height || ''))) {
+            box.style.height = hm[1] + '%';
+        }
+    }
+
     function placeholder(frame) {
         if (!frame.parentNode) {
             return;
@@ -459,11 +485,15 @@
         box.className = 'spcc-embed';
         set.call(box, 'data-spcc-embed', id);
         set.call(box, 'data-spcc-category', category);
-        var width = parseInt(frame.getAttribute('width'), 10);
-        var height = parseInt(frame.getAttribute('height'), 10);
-        if (width > 0 && height > 0) {
-            box.style.aspectRatio = width + '/' + height;
-            box.style.maxWidth = width + 'px';
+        size(box, frame.getAttribute('width'), frame.getAttribute('height'));
+        var image = c.images && c.images[id];
+        if (image) {
+            var img = d.createElement('img');
+            img.className = 'spcc-embed__thumbnail';
+            set.call(img, 'alt', '');
+            set.call(img, 'decoding', 'async');
+            set.call(img, 'src', image);
+            append.call(box, img);
         }
         var notice = d.createElement('div');
         notice.className = 'spcc-embed__notice';

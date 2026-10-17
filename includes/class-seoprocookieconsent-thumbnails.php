@@ -1,6 +1,7 @@
 <?php
 /**
- * Local video thumbnails, downloaded only by WP-Cron.
+ * Placeholder images: local video thumbnails, downloaded only by WP-Cron,
+ * and a bundled generic map.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
@@ -21,6 +22,21 @@ final class SEOProCookieConsent_Thumbnails {
     const DIRECTORY = 'seoprocookieconsent-thumbnails';
 
     /**
+     * Services shown with the bundled generic map image.
+     */
+    const MAPS = array('google-maps');
+
+    /**
+     * Bundled placeholder images by service: generic pictures shipped with
+     * the plugin, so nothing reaches the service before consent.
+     *
+     * @return array<string, string> Service ID => image URL.
+     */
+    public static function bundled() {
+        return array_fill_keys(self::MAPS, SEOPROCOOKIECONSENT_URL . 'assets/images/map-placeholder.svg');
+    }
+
+    /**
      * Read a local thumbnail or queue it, never contacting a video service.
      *
      * @param string $service Service ID.
@@ -28,6 +44,10 @@ final class SEOProCookieConsent_Thumbnails {
      * @return string
      */
     public static function url($service, $src) {
+        $bundled = self::bundled();
+        if (isset($bundled[$service])) {
+            return $bundled[$service];
+        }
         $parts = wp_parse_url(0 === strpos($src, '//') ? 'https:' . $src : $src);
         if (!is_array($parts) || !isset($parts['host'], $parts['path'])) {
             return '';
