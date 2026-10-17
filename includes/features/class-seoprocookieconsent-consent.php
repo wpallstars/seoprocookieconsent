@@ -392,7 +392,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
          *
          * @param array $config Config.
          */
-        return (array) apply_filters('seoprocookieconsent_front_config', $config);
+        $config = (array) apply_filters('seoprocookieconsent_front_config', $config);
+        $config['snapshot'] = SEOProCookieConsent_Records::snapshot_hash($config);
+        return $config;
     }
 
     /**

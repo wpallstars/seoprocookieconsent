@@ -41,6 +41,8 @@ function seoprocookieconsent_uninstall_site() {
     wp_clear_scheduled_hook('seoprocookieconsent_records_cleanup');
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- remove only this site's own table on uninstall.
     $wpdb->query($wpdb->prepare('DROP TABLE IF EXISTS %i', $wpdb->prefix . 'seoprocookieconsent_records'));
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- remove only this site's private presentation archive.
+    $wpdb->query($wpdb->prepare('DROP TABLE IF EXISTS %i', $wpdb->prefix . 'seoprocookieconsent_snapshots'));
 
     wp_unschedule_hook('seoprocookieconsent_thumbnail');
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one-off removal of indexed, non-autoloaded thumbnail cache options.

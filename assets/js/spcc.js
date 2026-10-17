@@ -227,6 +227,7 @@
                 }
                 spcc.choice.id = recordId;
                 spcc.choice.policy = c.policy;
+                spcc.choice.snapshot = c.snapshot || '';
             } catch (e) {
                 // Optional recording must never stop a local consent choice.
             }

@@ -136,17 +136,30 @@ Storage is a per-site `{db_prefix}seoprocookieconsent_records` table, lazily
 created with dbDelta after opt-in on admin/settings work. The non-autoloaded
 `seoprocookieconsent_records_schema` option versions this separate schema.
 It stores only the cookie ID, categories/services/model/pending state, client
-time, server receipt time and policy label. No IP, user agent or page URL.
+time, server receipt time, policy label and known snapshot hash. No IP, user agent or page URL.
 The primary ID and receipt-time index cover export and expiry. CSV export
 uses manage_options plus an admin-post nonce, primary-key pages of 500 and
 an upper ID snapshot; expired rows are omitted and policy formula prefixes
-escaped. Policy text is not archived; label changes do not invalidate consent.
+escaped. Schema 2 adds a snapshot column and private
+`{db_prefix}seoprocookieconsent_snapshots` table: unique SHA-256 hash over
+recursively key-sorted JSON, creation time and immutable content. Settings changes,
+admin sync and `wp_after_insert_post` for the linked policy deduplicate the banner
+config text, view labels, categories/services, plugin version and local policy
+source/modified time/latest revision ID. No snapshot is created on visitor or REST
+choice requests. Front config exposes only an existing matching hash; old, missing,
+malformed or unknown hashes are recorded as empty, including unarchived translations.
+Templates/catalogues are evidence of what was shown, not an exact browser rendering
+or capture of dynamic/external policy content. A separately authorized and paged
+CSV exports the archive; JSON object cells cannot start spreadsheet formulas.
+Label changes do not invalidate consent.
 
 Hourly `seoprocookieconsent_records_cleanup` deletes up to 1,000 rows older
 than the current consent lifetime by indexed server receipt time, continuing
 after five minutes when a batch is full. Existing data continues to expire
 with recording/Consent disabled. WP-Cron must run; purge page caches after
-settings changes. Uninstall drops each site's table, schema option and event.
+settings changes. Snapshots are kept until uninstall, never removed by record
+retention, preserving every kept reference. Uninstall drops both per-site tables,
+the schema option and event.
 No record table or cron is created for sites that never enable records.
 
 ## Signals to other code

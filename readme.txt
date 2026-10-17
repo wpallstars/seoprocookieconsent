@@ -81,7 +81,7 @@ With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cr
 
 = Can I keep consent records? =
 
-Enable Keep consent records under Consent, then reload settings for Export consent records (CSV). Each choice sends a best-effort request to your own site; ordinary page views send none. Records include an anonymous cookie ID, choices, times and your policy version label, not IP addresses or browser details. They are self-reported, not authenticated proof. Keep policy text separately, clear page caches after settings changes, and disclose records in your privacy policy. WP-Cron removes expired records in batches even with recording off; uninstall removes them all. See README.md for limits.
+Enable Keep consent records under Consent, then reload settings for records and snapshots CSV exports. Choices link by hash to archived banner wording, category/service details and local policy source/revision: evidence of what was shown, not a compliance guarantee. No IP addresses or browser details; ordinary page views send no record. Old cached pages without a known hash still record choices. Clear page caches after changes and disclose records in your privacy policy. WP-Cron expires records even with recording off; snapshots stay until uninstall, which removes both. External policies and dynamic content need separate copies. See README.md for limits.
 
 = When do versions reach WordPress.org? =
 
@@ -97,6 +97,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 2. The Read Me tab, showing the plugin's README.md inside WordPress.
 
 == Changelog ==
+
+= Unreleased =
+* Consent records link to deduplicated banner and policy snapshots, with separate CSV exports. Old cached pages still record choices.
 
 = 0.1.1 =
 * A video or map a visitor clicks that needs a category they have not allowed (such as a YouTube lightbox) now opens Cookie settings saying what it needs, instead of staying blank.
