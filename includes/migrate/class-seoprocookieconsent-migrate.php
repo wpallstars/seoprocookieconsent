@@ -55,7 +55,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 $config[$key] = array('off' => true);
             }
         }
-        update_option(self::CONFIG, $config, false);
+        // Autoloaded: the consent script reads it on every front-end page.
+        update_option(self::CONFIG, $config, true);
     }
 
     /** Cached cookie descriptors only; no detection, scans or source queries. @return array */
@@ -134,7 +135,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             if ('off' === $action) {
                 $config = (array) get_option(self::CONFIG, array());
                 $config[$key] = array('off' => true);
-                update_option(self::CONFIG, $config, false);
+                update_option(self::CONFIG, $config, true);
                 return array('carry_over' => false);
             }
             return new WP_Error('action', __('Unknown import action.', 'seoprocookieconsent'));
@@ -306,7 +307,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         }
         $config = (array) get_option(self::CONFIG, array());
         $config[$key] = array('off' => true);
-        update_option(self::CONFIG, $config, false);
+        update_option(self::CONFIG, $config, true);
         return array('removed' => $items);
     }
 
