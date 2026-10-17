@@ -57,7 +57,7 @@ It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compli
 - **Catches lightboxes too.** Recognised script and iframe addresses added after page load through common DOM APIs wait for the same consent choice. Keep the consent head script excluded from script-delay optimizers. This is not a network firewall: inline-only injected code, shadow roots and unusual parser APIs need integration with the browser consent API.
 - **Local video thumbnails.** YouTube and Vimeo placeholders show a locally stored thumbnail. WP-Cron fetches it once per video, not during a visitor's page request; until it is ready (or if unavailable), the plain placeholder stays. Cached pages show it after their next refresh. No visitor data is sent to the video service for the thumbnail.
 - **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
-- **Easy to change your mind.** A Cookie settings link joins your footer menu, the Cookie settings button block or any link to `#cookie-settings` opens it, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
+- **Easy to change your mind.** A Cookie settings link joins your footer menu, just after your cookie policy link or before your privacy policy link, including footer menus shown by widgets. To place it yourself, tick Cookie settings in Appearance → Menus; the automatic link then steps aside. The Cookie settings button block or any link to `#cookie-settings` opens it too, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
 - **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after your chosen period, never shorter than the consent lifetime. Off by default; no requests on ordinary page views.
@@ -311,6 +311,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Cookie settings in Appearance → Menus adds a ready-made `#cookie-settings` link. The automatic footer link now sits after the cookie policy link, or before the privacy policy link, and also reaches footer menus shown by widgets; it is skipped once a menu has a saved Cookie settings link.
 - Keep consent records for a separate period (up to 3,650 days), never shorter than visitors' choice lifetime. The default 0 keeps the existing retention behaviour.
 - Consent records link to deduplicated banner and local policy snapshots, with a separate administrator CSV export: evidence of what was shown. Old cached pages without a known hash still record choices.
 
