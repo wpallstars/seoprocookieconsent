@@ -40,8 +40,14 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
         return is_array($policy) ? $policy : array();
     }
 
-    /** Settings were saved by an installed copy: without them the law is unknown. @return bool */
-    private function known() {
+    /**
+     * Settings were saved by an installed copy: without them the law is unknown.
+     * Not named known(): PHP 7 rejects a non-static method shadowing the
+     * parent's private static known().
+     *
+     * @return bool
+     */
+    private function installed() {
         return false !== get_option('cookieadmin_version', false);
     }
 
@@ -49,7 +55,7 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
     public function detect() {
         $left = $this->leftovers();
         $notes = array();
-        if ($this->known() && 'cookieadmin_gdpr' !== $this->law()) {
+        if ($this->installed() && 'cookieadmin_gdpr' !== $this->law()) {
             $notes[] = __('CookieAdmin follows US state laws (opt-out) or a Pro law here, so visitors\' choices are not carried over: they are asked again.', 'seoprocookieconsent');
         }
         $geo = (string) ($this->policy()['cookieadmin_geo_tgt'] ?? '');
@@ -68,7 +74,7 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
 
     /** @return array */
     public function settings() {
-        if (!$this->known()) {
+        if (!$this->installed()) {
             return array();
         }
         $policy = $this->policy();
@@ -151,7 +157,7 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
      * @return array
      */
     public function consent_cookie() {
-        if (!$this->known() || 'cookieadmin_gdpr' !== $this->law()) {
+        if (!$this->installed() || 'cookieadmin_gdpr' !== $this->law()) {
             return array();
         }
         // Embeds have no switch of their own; like unclassified cookies, they follow Marketing.
