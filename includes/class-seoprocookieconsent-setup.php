@@ -97,6 +97,12 @@ final class SEOProCookieConsent_Setup {
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-blocker.php';
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-records.php';
         SEOProCookieConsent_Records::boot();
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/migrate/class-seoprocookieconsent-migrate.php';
+        SEOProCookieConsent_Migrate::cli();
+        if (is_admin()) {
+            require_once SEOPROCOOKIECONSENT_DIR . 'includes/admin/class-seoprocookieconsent-import-tab.php';
+            SEOProCookieConsent_Import_Tab::boot();
+        }
     }
 
     /**

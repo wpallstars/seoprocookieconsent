@@ -58,9 +58,44 @@
         return null;
     }
 
+    // Source adapters describe cookies, never executable code. Require every
+    // optional source category to have an explicit allow/deny value. Closing a
+    // banner alone, missing cookies and partial/unknown formats ask again.
+    function migrated() {
+        var cookies = {};
+        (d.cookie ? d.cookie.split(';') : []).forEach(function (part) {
+            var at = part.indexOf('=');
+            if (at < 0) { return; }
+            try { cookies[part.slice(0, at).trim()] = decodeURIComponent(part.slice(at + 1)); } catch (e) { /* Ignore malformed cookies. */ }
+        });
+        // A malformed or incompatible first-party choice is not permission to
+        // fall back to an older source choice after a visitor withdrew consent.
+        if (Object.prototype.hasOwnProperty.call(cookies, c.cookie || 'spcc_consent')) { return null; }
+        var sources = c.migrate || {};
+        var keys = Object.keys(sources);
+        for (var i = 0; i < keys.length; i++) {
+            var source = sources[keys[i]];
+            if (!source.categories || cookies[source.status] !== source.value) { continue; }
+            var cats = { preferences: 0, statistics: 0, embeds: 0, marketing: 0 };
+            var valid = Object.keys(source.categories).every(function (category) {
+                var value = cookies[source.categories[category]];
+                if (value !== source.allow && value !== source.deny) { return false; }
+                if (Object.prototype.hasOwnProperty.call(cats, category)) { cats[category] = value === source.allow ? 1 : 0; }
+                return true;
+            });
+            if (!valid || Object.keys(source.categories).length === 0) { continue; }
+            var result = { v: c.version, c: cats, s: [], m: m, t: Math.floor(Date.now() / 1000), src: keys[i] };
+            try {
+                d.cookie = (c.cookie || 'spcc_consent') + '=' + encodeURIComponent(JSON.stringify(result)) + ';path=/;max-age=' + ((c.days || 365) * 86400) + ';SameSite=Lax' + (c.secure ? ';Secure' : '');
+            } catch (e) { return null; }
+            return result;
+        }
+        return null;
+    }
+
     var m = model();
     // The settings screen's preview shows the banner as for a first visit.
-    var choice = c.preview ? null : stored();
+    var choice = c.preview ? null : (stored() || migrated());
     // A dismissed notice from an opt-out place is not consent in an opt-in one.
     if (choice && m === 'opt-in' && choice.m !== 'opt-in') {
         choice = null;
