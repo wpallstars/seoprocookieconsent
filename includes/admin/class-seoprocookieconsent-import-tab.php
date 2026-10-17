@@ -24,7 +24,8 @@ final class SEOProCookieConsent_Import_Tab {
 
     /** @param array $tabs Tabs. @return array */
     public static function tabs($tabs) {
-        $tabs['import'] = array('label' => __('Import', 'seoprocookieconsent'), 'render' => array(__CLASS__, 'render'), 'capability' => 'manage_options');
+        // A group is required for the tab bar; not preloaded, as it reads source data.
+        $tabs['import'] = array('label' => __('Import', 'seoprocookieconsent'), 'group' => 'settings', 'render' => array(__CLASS__, 'render'), 'capability' => 'manage_options');
         return $tabs;
     }
 
@@ -76,7 +77,7 @@ final class SEOProCookieConsent_Import_Tab {
                     );
                     $kind = (string) ($token['kind'] ?? ($token['cookie'] ? 'cookie' : 'render'));
                     $description = $descriptions[$kind] ?? ($token['renderable'] ? __('Freeze the rendered document as editable HTML, with a revision.', 'seoprocookieconsent') : __('Cannot render while the source is inactive: rewrite this document or reactivate the source before importing.', 'seoprocookieconsent'));
-                    printf('<li><code>%1$s</code> — %2$s</li>', esc_html($token['token']), esc_html($description));
+                    printf('<li><code>%1$s</code> — %2$s</li>', esc_html(mb_strlen($token['token']) > 160 ? mb_substr($token['token'], 0, 160) . '…' : $token['token']), esc_html($description));
                 }
                 echo '</ul>';
             }
@@ -92,7 +93,10 @@ final class SEOProCookieConsent_Import_Tab {
                 echo '<p>' . esc_html__('Kept: old consent records and data requests. Export them from the old plugin before deleting it if you must keep them, then remove these tables yourself after your retention period.', 'seoprocookieconsent') . '</p>';
             }
             $cleanup = SEOProCookieConsent_Migrate::cleanup($key, true);
-            if (is_wp_error($cleanup)) {
+            $removable = array_filter(array_intersect_key($plan['leftovers'], array_flip(array('options', 'tables', 'cron'))));
+            if (!$removable) {
+                echo '<p>' . esc_html__('Nothing to remove.', 'seoprocookieconsent') . '</p>';
+            } elseif (is_wp_error($cleanup)) {
                 echo '<p>' . esc_html($cleanup->get_error_message()) . '</p>';
             } else {
                 echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" data-spcc-cleanup>';
