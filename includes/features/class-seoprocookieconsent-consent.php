@@ -63,6 +63,12 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     /** Whether a Cookie settings link was printed in a menu. @var bool */
     private static $menu_link = false;
 
+    /** Where the automatic footer link goes, once worked out. @var array|null */
+    private static $menu_plan = null;
+
+    /** URL of the Cookie settings link. */
+    const SETTINGS_ANCHOR = '#cookie-settings';
+
     /**
      * Settings.
      *
@@ -124,7 +130,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'default'     => true,
                 'parent'      => self::KEY,
                 'label'       => __('Cookie settings link in the footer menu', 'seoprocookieconsent'),
-                'description' => __('Lets visitors change their mind at any time. No footer menu? Add the Cookie settings button block, or link to #cookie-settings anywhere.', 'seoprocookieconsent'),
+                'description' => __('Lets visitors change their mind at any time. It goes after your cookie policy link, or before your privacy policy link, in a footer menu; otherwise at the end of the theme\'s footer menu. To place it yourself, use the Cookie settings box in Appearance → Menus; then this adds nothing. No menu? Add the Cookie settings button block, or link to #cookie-settings anywhere.', 'seoprocookieconsent'),
             ),
             'consent_floating_button'  => array(
                 'type'        => 'bool',
@@ -235,6 +241,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue'));
         add_action('wp_body_open', array(__CLASS__, 'banner'), 1);
         add_action('wp_footer', array(__CLASS__, 'footer'), 5);
+        if (is_admin()) {
+            // Added this late, the box is not among those WordPress hides for a user's first visit.
+            add_action('admin_head-nav-menus.php', array(__CLASS__, 'add_menu_box'));
+        }
         if (SEOProCookieConsent_Settings::get('consent_menu_link')) {
             add_filter('wp_nav_menu_items', array(__CLASS__, 'menu_link'), 10, 2);
         }
@@ -549,22 +559,244 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     }
 
     /**
-     * Add Cookie settings to the theme's footer menu.
+     * Add Cookie settings to a footer menu: just after the cookie policy link, else just
+     * before the privacy policy link, else at the end of the theme's footer menu.
+     *
+     * Footer menus are those in a footer theme location or named "footer", which covers
+     * menus shown by widgets and blocks. A saved Cookie settings menu item wins: the
+     * owner has placed it, so nothing is added.
      *
      * @param string $items Menu items HTML.
      * @param object $args  wp_nav_menu() arguments.
      * @return string
      */
     public static function menu_link($items, $args) {
-        $location = is_object($args) && isset($args->theme_location) ? (string) $args->theme_location : '';
-        if ('' === $location || !in_array($location, self::FOOTER_LOCATIONS, true) || false !== strpos($items, '#cookie-settings')) {
+        if (false !== strpos($items, self::SETTINGS_ANCHOR)) {
             return $items;
         }
+        $plan = self::menu_plan();
+        if ($plan['placed']) {
+            return $items;
+        }
+        $html = null;
+        if ($plan['menu']) {
+            $menu = self::printed_menu($args);
+            if (!$menu || (int) $menu->term_id !== $plan['menu']) {
+                return $items;
+            }
+            $html = self::place_menu_link($items, $plan);
+        } else {
+            $location = is_object($args) && isset($args->theme_location) ? (string) $args->theme_location : '';
+            if ('' === $location || !in_array($location, self::FOOTER_LOCATIONS, true)) {
+                return $items;
+            }
+        }
         self::$menu_link = true;
-        return $items . sprintf(
-            '<li class="menu-item spcc-menu-item"><a href="#cookie-settings" data-spcc-action="settings">%s</a></li>',
-            esc_html__('Cookie settings', 'seoprocookieconsent')
+        return null !== $html ? $html : $items . self::menu_item_html(self::menu_label($plan['title']));
+    }
+
+    /**
+     * Where the footer link goes. Worked out once per request, from the site's menus.
+     *
+     * @return array{placed:bool,menu:int,item:int,where:string,title:string}
+     */
+    private static function menu_plan() {
+        if (null !== self::$menu_plan) {
+            return self::$menu_plan;
+        }
+        $plan = array('placed' => false, 'menu' => 0, 'item' => 0, 'where' => '', 'title' => '');
+        global $wpdb;
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one indexed lookup, only on requests that print a menu; drafts (added but not saved) do not count.
+        $plan['placed'] = (bool) $wpdb->get_var($wpdb->prepare(
+            "SELECT p.ID FROM {$wpdb->posts} p INNER JOIN {$wpdb->postmeta} m ON m.post_id = p.ID WHERE p.post_type = 'nav_menu_item' AND p.post_status = 'publish' AND m.meta_key = '_menu_item_url' AND m.meta_value LIKE %s LIMIT 1",
+            '%' . $wpdb->esc_like(self::SETTINGS_ANCHOR)
+        ));
+        $targets = array();
+        if ('' !== (string) SEOProCookieConsent_Settings::get('consent_policy_url')) {
+            $url = self::policy_url();
+            $targets[] = array('after', $url, (int) url_to_postid($url));
+        }
+        $targets[] = array('before', get_privacy_policy_url(), (int) get_option('wp_page_for_privacy_policy'));
+        $menus = self::footer_menus();
+        foreach ($targets as $target) {
+            list($where, $url, $page) = $target;
+            if ('' === $url && !$page) {
+                continue;
+            }
+            foreach ($menus as $menu_id => $items) {
+                foreach ($items as $item) {
+                    if (self::menu_item_is($item, (string) $url, $page)) {
+                        $plan = array_merge($plan, array('menu' => $menu_id, 'item' => (int) $item->ID, 'where' => $where, 'title' => (string) $item->title));
+                        break 3;
+                    }
+                }
+            }
+        }
+        self::$menu_plan = $plan;
+        return $plan;
+    }
+
+    /**
+     * Items of the footer menus, by menu ID.
+     *
+     * @return array<int,array>
+     */
+    private static function footer_menus() {
+        $locations = array_map('intval', (array) get_nav_menu_locations());
+        $menus = array();
+        foreach ((array) wp_get_nav_menus() as $menu) {
+            $placed = array_intersect(array_keys($locations, (int) $menu->term_id, true), self::FOOTER_LOCATIONS);
+            if ($placed || false !== stripos($menu->name . ' ' . $menu->slug, 'footer')) {
+                $menus[(int) $menu->term_id] = (array) wp_get_nav_menu_items($menu->term_id, array('update_post_term_cache' => false));
+            }
+        }
+        return $menus;
+    }
+
+    /**
+     * Whether a menu item links to a page, by ID or address.
+     *
+     * @param object $item Menu item.
+     * @param string $url  Page address.
+     * @param int    $page Page ID.
+     * @return bool
+     */
+    private static function menu_item_is($item, $url, $page) {
+        if ($page && isset($item->type, $item->object_id) && 'post_type' === $item->type && (int) $item->object_id === $page) {
+            return true;
+        }
+        return '' !== $url && isset($item->url) && '' !== self::url_key($url) && self::url_key((string) $item->url) === self::url_key($url);
+    }
+
+    /**
+     * Host and path of an address, for comparing links: no scheme, www., query or trailing slash.
+     *
+     * @param string $url Address.
+     * @return string
+     */
+    private static function url_key($url) {
+        $parts = wp_parse_url($url);
+        if (!is_array($parts) || (empty($parts['host']) && empty($parts['path']))) {
+            return '';
+        }
+        $host = !empty($parts['host']) ? $parts['host'] : (string) wp_parse_url(home_url(), PHP_URL_HOST);
+        return preg_replace('/^www\./', '', strtolower($host)) . '/' . trim((string) ($parts['path'] ?? ''), '/');
+    }
+
+    /**
+     * The menu wp_nav_menu() is printing.
+     *
+     * @param object $args wp_nav_menu() arguments.
+     * @return WP_Term|null
+     */
+    private static function printed_menu($args) {
+        if (!is_object($args)) {
+            return null;
+        }
+        $menu = !empty($args->menu) ? wp_get_nav_menu_object($args->menu) : false;
+        if (!$menu && !empty($args->theme_location)) {
+            $locations = (array) get_nav_menu_locations();
+            $menu = !empty($locations[$args->theme_location]) ? wp_get_nav_menu_object($locations[$args->theme_location]) : false;
+        }
+        return $menu instanceof WP_Term ? $menu : null;
+    }
+
+    /**
+     * Put the link beside the planned item, or null when it cannot be found.
+     *
+     * @param string $items Menu items HTML.
+     * @param array  $plan  Plan.
+     * @return string|null
+     */
+    private static function place_menu_link($items, array $plan) {
+        $id = (int) $plan['item'];
+        // Walker_Nav_Menu prints id="menu-item-N" and a menu-item-N class; custom walkers keep at least one.
+        if (!preg_match('/<li\b[^>]*?(?:\bid="menu-item-' . $id . '"|\bclass="[^"]*\bmenu-item-' . $id . '(?=[\s"]))[^>]*>/', $items, $m, PREG_OFFSET_CAPTURE)) {
+            return null;
+        }
+        $link = self::menu_item_html(self::menu_label($plan['title']));
+        $start = (int) $m[0][1];
+        if ('before' === $plan['where']) {
+            return substr_replace($items, $link, $start, 0);
+        }
+        $open = $start + strlen($m[0][0]);
+        $close = strpos($items, '</li>', $open);
+        $sub = strpos($items, '<ul', $open);
+        if (false === $close || (false !== $sub && $sub < $close)) {
+            return null; // It has a submenu: the end of the menu is safer.
+        }
+        return substr_replace($items, $link, $close + 5, 0);
+    }
+
+    /**
+     * A Cookie settings menu item.
+     *
+     * @param string $label Text.
+     * @return string
+     */
+    private static function menu_item_html($label) {
+        return sprintf(
+            '<li class="menu-item menu-item-type-custom menu-item-object-custom spcc-menu-item"><a href="%s" data-spcc-action="settings">%s</a></li>',
+            esc_attr(self::SETTINGS_ANCHOR),
+            esc_html($label)
         );
+    }
+
+    /**
+     * "Cookie settings", or "Cookie Settings" beside an English Title Case item such as "Cookie Policy".
+     *
+     * @param string $neighbour Title of the item it sits beside.
+     * @return string
+     */
+    private static function menu_label($neighbour) {
+        $label = __('Cookie settings', 'seoprocookieconsent');
+        $neighbour = trim(wp_strip_all_tags(html_entity_decode((string) $neighbour, ENT_QUOTES, 'UTF-8')));
+        if ('Cookie settings' === $label && preg_match('/^\p{Lu}\S*(?:\s+\p{Lu}\S*)+$/u', $neighbour)) {
+            return 'Cookie Settings';
+        }
+        return $label;
+    }
+
+    /**
+     * Add the Cookie settings box to Appearance → Menus.
+     */
+    public static function add_menu_box() {
+        add_meta_box('seoprocookieconsent-menu-link', __('Cookie settings', 'seoprocookieconsent'), array(__CLASS__, 'menu_box'), 'nav-menus', 'side', 'low');
+    }
+
+    /**
+     * The Cookie settings menu box, in core's markup so its Add to Menu button works.
+     */
+    public static function menu_box() {
+        global $_nav_menu_placeholder;
+        $_nav_menu_placeholder = 0 > $_nav_menu_placeholder ? $_nav_menu_placeholder - 1 : -1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- core's shared placeholder ID for new menu items.
+        $id = (int) $_nav_menu_placeholder;
+        $label = self::menu_label(self::menu_plan()['title']);
+        $field = 'menu-item[' . $id . ']';
+        ?>
+        <div id="posttype-seoprocookieconsent" class="posttypediv">
+            <p class="description"><?php esc_html_e('A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added.', 'seoprocookieconsent'); ?></p>
+            <div id="tabs-panel-seoprocookieconsent" class="tabs-panel tabs-panel-active">
+                <ul id="seoprocookieconsent-checklist" class="categorychecklist form-no-clear">
+                    <li>
+                        <label class="menu-item-title">
+                            <input type="checkbox" class="menu-item-checkbox" name="<?php echo esc_attr($field); ?>[menu-item-object-id]" value="<?php echo esc_attr((string) $id); ?>" />
+                            <?php echo esc_html($label); ?>
+                        </label>
+                        <input type="hidden" class="menu-item-type" name="<?php echo esc_attr($field); ?>[menu-item-type]" value="custom" />
+                        <input type="hidden" class="menu-item-title" name="<?php echo esc_attr($field); ?>[menu-item-title]" value="<?php echo esc_attr($label); ?>" />
+                        <input type="hidden" class="menu-item-url" name="<?php echo esc_attr($field); ?>[menu-item-url]" value="<?php echo esc_attr(self::SETTINGS_ANCHOR); ?>" />
+                    </li>
+                </ul>
+            </div>
+            <p class="button-controls wp-clearfix" data-items-type="posttype-seoprocookieconsent">
+                <span class="add-to-menu">
+                    <input type="submit" class="button submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu', 'seoprocookieconsent'); ?>" name="add-post-type-menu-item" id="submit-posttype-seoprocookieconsent" />
+                    <span class="spinner"></span>
+                </span>
+            </p>
+        </div>
+        <?php
     }
 
     /**
