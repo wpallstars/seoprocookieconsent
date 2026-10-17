@@ -3,6 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
+* Consent records: Keep records for (days), 0–3650, separates evidence retention from browser choice lifetime. Default 0 follows the current choice lifetime; positive values use the longer period for both cron cleanup and record exports. Records never expire sooner than choices, and snapshot retention is unchanged.
 * Consent records: private, canonical SHA-256 snapshots archive banner message templates and labels, category descriptions and service catalogue, local policy source, URL, modification time and revision ID, and plugin version. Settings/admin and policy saves deduplicate content, never visitor requests. Browser choices attach a known snapshot hash; missing, malformed and unknown hashes remain empty for old cached pages. Records CSV gains Snapshot and a second administrator-only, keyset-paged CSV exports archived content as JSON. Snapshot retention preserves every referenced archive; uninstall removes both per-site tables. Evidence of what was shown, not a compliance guarantee.
 
 = 0.1.1 =

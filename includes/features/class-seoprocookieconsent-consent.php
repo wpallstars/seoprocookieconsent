@@ -163,7 +163,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'default'     => false,
                 'parent'      => self::KEY,
                 'label'       => __('Keep consent records', 'seoprocookieconsent'),
-                'description' => __('Optional anonymous choice history, stored on this site for the same lifetime as choices. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored.', 'seoprocookieconsent'),
+                'description' => __('Optional anonymous choice history, stored on this site. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored.', 'seoprocookieconsent'),
             ),
             'consent_policy_version'   => array(
                 'type'        => 'text',
@@ -171,6 +171,15 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 'parent'      => self::KEY,
                 'label'       => __('Policy version', 'seoprocookieconsent'),
                 'description' => __('A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text.', 'seoprocookieconsent'),
+            ),
+            'consent_records_days'     => array(
+                'type'        => 'int',
+                'default'     => 0,
+                'min'         => 0,
+                'max'         => 3650,
+                'parent'      => self::KEY,
+                'label'       => __('Keep records for (days)', 'seoprocookieconsent'),
+                'description' => __('0 keeps them as long as visitors\' choices. Set this to how long you need evidence of consent. Records older than this are deleted.', 'seoprocookieconsent'),
             ),
             'consent_days'             => array(
                 'type'        => 'int',
