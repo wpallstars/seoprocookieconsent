@@ -1,8 +1,8 @@
 <?php
 /**
- * Complianz data formats, checked against an installed Complianz Free 7.5.6.
- * Premium is not available on this runner: only shared formats are read;
- * unknown formats are left alone. Terms uses its existing identity importer.
+ * Complianz data formats, checked against Complianz Free 7.5.6, Premium
+ * 7.5.4/7.6.5 and Terms & Conditions 1.4.1 sites. Unknown formats are left
+ * alone. Terms answers use the existing identity importer.
  * No third-party PHP or JavaScript is copied into this adapter.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -40,8 +40,9 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         $old = get_option('cmplz_options', array());
         $old = is_array($old) ? $old : array();
         $result = array();
-        if (isset($old['use_country'])) {
-            $result['consent_regions'] = !empty($old['use_country']) ? 'region' : 'everywhere';
+        $regions = $this->consent_regions($old);
+        if ('' !== $regions) {
+            $result['consent_regions'] = $regions;
         }
         if (isset($old['cookie_expiry']) && is_numeric($old['cookie_expiry'])) {
             $result['consent_days'] = (int) $old['cookie_expiry'];
@@ -51,8 +52,9 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         }
         global $wpdb;
         if (in_array($wpdb->prefix . 'cmplz_cookiebanners', $this->tables(), true)) {
+            // The default banner is the one visitors see; older rows often remain from A/B tests.
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source banner table.
-            $banner = $wpdb->get_row($wpdb->prepare('SELECT * FROM %i ORDER BY ID ASC LIMIT 1', $wpdb->prefix . 'cmplz_cookiebanners'), ARRAY_A);
+            $banner = $wpdb->get_row($wpdb->prepare('SELECT * FROM %i ORDER BY %i DESC, ID ASC LIMIT 1', $wpdb->prefix . 'cmplz_cookiebanners', 'default'), ARRAY_A);
             if (is_array($banner)) {
                 $positions = array('bottom' => 'bar', 'bottom-left' => 'left', 'bottom-right' => 'right');
                 if (isset($positions[$banner['position'] ?? ''])) {
@@ -95,27 +97,94 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         return $result;
     }
 
+    /**
+     * Map geo-targeting conservatively: an opt-in fallback region (EU, UK,
+     * ZA, BR) means every other visitor was asked first, so keep that.
+     *
+     * @param array $old Source options.
+     * @return string
+     */
+    private function consent_regions(array $old) {
+        $optin = array('eu', 'uk', 'za', 'br');
+        if (!empty($old['use_country'])) {
+            $other = (string) ($old['other_region_behaviour'] ?? '');
+            if ('' === $other) {
+                return '';
+            }
+            return 'none' === $other ? 'region_quiet' : (in_array($other, $optin, true) ? 'everywhere' : 'region');
+        }
+        if (!isset($old['use_country'])) {
+            return '';
+        }
+        $regions = array_values((array) ($old['regions'] ?? array()));
+        return !$regions || array_intersect($regions, $optin) ? 'everywhere' : 'region';
+    }
+
     /** Bounded document lookup, only in admin/CLI. @return array */
     public function pages() {
         global $wpdb;
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- explicit, bounded document hand-over lookup; never a visitor query.
-        $posts = $wpdb->get_results($wpdb->prepare("SELECT ID, post_title, post_content FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status NOT IN ('trash', 'auto-draft') AND (post_content LIKE %s OR post_content LIKE %s OR post_content LIKE %s) ORDER BY ID ASC LIMIT 100", '%[cmplz-document%', '%[cmplz-terms-conditions%', '%wp:complianz/%'));
+        $posts = $wpdb->get_results($wpdb->prepare("SELECT ID, post_title, post_content FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status NOT IN ('trash', 'auto-draft') AND (post_content LIKE %s OR post_content LIKE %s OR post_content LIKE %s) ORDER BY ID ASC LIMIT 100", '%[cmplz-%', '%wp:complianz/%', '%wp:complianztc/%'));
         $pages = array();
         foreach ($posts as $post) {
-            preg_match_all('/\[cmplz-document\b[^\]]*\]|\[cmplz-terms-conditions\b[^\]]*\]|<!-- wp:complianz\/[^>]*\/-->/i', $post->post_content, $matches);
+            // Serialized block attributes escape "<" and ">", so [^>]* cannot end inside JSON.
+            preg_match_all('/\[cmplz-[a-z-]+\b[^\]]*\]|<!-- wp:complianz(?:tc)?\/[^>]*\/-->/i', $post->post_content, $matches);
             if (empty($matches[0])) {
                 continue;
             }
             $tokens = array();
             $cookie = false;
             foreach (array_unique($matches[0]) as $token) {
-                $is_cookie = false !== strpos($token, 'cookie-statement') || false !== strpos($token, 'cookie-policy');
-                $tokens[] = array('token' => $token, 'cookie' => $is_cookie, 'renderable' => $is_cookie || $this->renderable($token));
-                $cookie = $cookie || $is_cookie;
+                $entry = $this->token($token);
+                $tokens[] = $entry;
+                $cookie = $cookie || $entry['cookie'];
             }
             $pages[] = array('id' => (int) $post->ID, 'title' => $post->post_title, 'cookie' => $cookie, 'tokens' => $tokens);
         }
         return $pages;
+    }
+
+    /**
+     * Classify one document token. Mirrors Complianz's block rendering:
+     * an "unlink"ed custom document renders its stored HTML, a block without
+     * a selected document renders nothing.
+     *
+     * @param string $token Shortcode or self-closing block.
+     * @return array
+     */
+    private function token($token) {
+        $entry = array('token' => $token, 'cookie' => false, 'renderable' => false, 'kind' => 'render');
+        if (0 === stripos($token, '[cmplz-manage-consent') || 0 === stripos($token, '[cmplz-revoke-link')) {
+            return array_merge($entry, array('renderable' => true, 'kind' => 'settings', 'replace' => '<!-- wp:seoprocookieconsent/cookie-settings /-->'));
+        }
+        if (0 === strpos($token, '[') && !preg_match('/^\[cmplz-(?:document|terms-conditions)\b/i', $token)) {
+            return array_merge($entry, array('kind' => 'manual')); // Forms and live lists have no static equivalent.
+        }
+        if (0 === strpos($token, '[')) {
+            $type = preg_match('/\btype=["\']?([a-z-]+)/i', $token, $match) ? strtolower($match[1]) : '';
+            $entry['cookie'] = 0 === strpos($type, 'cookie-statement') || 0 === strpos($type, 'cookie-policy');
+            $entry['kind'] = $entry['cookie'] ? 'cookie' : 'render';
+            $entry['renderable'] = $entry['cookie'] || $this->renderable($token);
+            return $entry;
+        }
+        $blocks = parse_blocks($token);
+        $attrs = (array) ($blocks[0]['attrs'] ?? array());
+        $name = (string) ($blocks[0]['blockName'] ?? '');
+        if ('complianz/document' === $name) {
+            $selected = (string) ($attrs['selectedDocument'] ?? '');
+            if ('' === $selected) {
+                return array_merge($entry, array('kind' => 'empty'));
+            }
+            if (0 === strpos($selected, 'cookie-statement')) {
+                return array_merge($entry, array('cookie' => true, 'renderable' => true, 'kind' => 'cookie'));
+            }
+        }
+        // Both Complianz plugins return an unlinked custom document verbatim.
+        if (in_array($name, array('complianz/document', 'complianztc/terms-conditions'), true) && 'unlink' === ($attrs['documentSyncStatus'] ?? '') && is_string($attrs['customDocument'] ?? null) && '' !== trim($attrs['customDocument'])) {
+            return array_merge($entry, array('renderable' => true, 'kind' => 'static', 'replace' => "<!-- wp:html -->\n" . wp_kses_post($attrs['customDocument']) . "\n<!-- /wp:html -->"));
+        }
+        $entry['renderable'] = $this->renderable($token);
+        return $entry;
     }
 
     /** @param string $token Document token. @return bool */

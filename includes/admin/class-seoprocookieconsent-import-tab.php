@@ -67,7 +67,15 @@ final class SEOProCookieConsent_Import_Tab {
             foreach ($plan['pages'] as $page) {
                 printf('<p><label><input type="checkbox" name="pages[]" value="%1$d"> %2$s</label></p><ul>', (int) $page['id'], esc_html($page['title']));
                 foreach ($page['tokens'] as $token) {
-                    $description = $token['cookie'] ? __('Replace with Cookie policy block. Turn on Cookie policy on the Policies tab.', 'seoprocookieconsent') : ($token['renderable'] ? __('Freeze the rendered document as editable HTML, with a revision.', 'seoprocookieconsent') : __('Cannot render while the source is inactive: rewrite this document or reactivate the source before importing.', 'seoprocookieconsent'));
+                    $descriptions = array(
+                        'cookie'   => __('Replace with Cookie policy block. Turn on Cookie policy on the Policies tab.', 'seoprocookieconsent'),
+                        'settings' => __('Replace with Cookie settings button block.', 'seoprocookieconsent'),
+                        'static'   => __('Keep your edited document as editable HTML, with a revision.', 'seoprocookieconsent'),
+                        'empty'    => __('No document is selected, so it shows nothing. Remove it yourself.', 'seoprocookieconsent'),
+                        'manual'   => __('Form or live list with no direct equivalent. Not changed: replace or remove it yourself.', 'seoprocookieconsent'),
+                    );
+                    $kind = (string) ($token['kind'] ?? ($token['cookie'] ? 'cookie' : 'render'));
+                    $description = $descriptions[$kind] ?? ($token['renderable'] ? __('Freeze the rendered document as editable HTML, with a revision.', 'seoprocookieconsent') : __('Cannot render while the source is inactive: rewrite this document or reactivate the source before importing.', 'seoprocookieconsent'));
                     printf('<li><code>%1$s</code> — %2$s</li>', esc_html($token['token']), esc_html($description));
                 }
                 echo '</ul>';

@@ -172,6 +172,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 }
                 if ($token['cookie']) {
                     $replacement = '<!-- wp:seoprocookieconsent/cookie-policy /-->';
+                } elseif (isset($token['replace']) && is_string($token['replace'])) {
+                    $replacement = $token['replace']; // Adapter-built markup, already sanitised.
                 } else {
                     $html = 0 === strpos($token['token'], '[') ? do_shortcode($token['token']) : do_blocks($token['token']);
                     if ('' === trim($html) || $html === $token['token']) {
