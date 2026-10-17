@@ -194,7 +194,7 @@ abstract class SEOProCookieConsent_Migrate_Source {
     protected function hosted_notes() {
         $notes = array(
             /* translators: %s: name of the old consent plugin. */
-            sprintf(__('%s keeps its banner, regions, categories, texts and cookie scan in its own dashboard, which this import never contacts, so they are not imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching.', 'seoprocookieconsent'), static::NAME),
+            sprintf(__('%s keeps its banner texts, categories and cookie scan in its own dashboard, which this import never contacts; only settings saved on this site are imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching.', 'seoprocookieconsent'), static::NAME),
             /* translators: %s: name of the old consent plugin. */
             sprintf(__('Visitors\' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once.', 'seoprocookieconsent'), static::NAME),
         );

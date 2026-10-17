@@ -111,20 +111,25 @@ final class SEOProCookieConsent_Migrate_Iubenda extends SEOProCookieConsent_Migr
 
     /**
      * Its custom script and iframe patterns (address => purpose) become
-     * hold-back rules by category; addresses in its content-blocking
-     * shortcodes are held back as Marketing. Wildcards other than a
-     * leading "*." are left to the owner.
+     * hold-back rules by category, or "Never hold back" lines when strictly
+     * necessary; addresses in its content-blocking shortcodes are held back
+     * as Marketing. Wildcards other than a leading "*." are left to the owner.
      *
      * @return array
      */
     public function scripts() {
         $options = $this->options();
         $lines = array();
+        $allow = array();
         foreach (array('custom_scripts', 'custom_iframes') as $key) {
             foreach ((array) ($options[$key] ?? array()) as $pattern => $purpose) {
                 $category = self::PURPOSES[(int) $purpose] ?? 'marketing';
                 $pattern = (string) preg_replace('/^\*\./', '', trim(stripslashes((string) $pattern)));
-                if ('' === $category || '' === $pattern || false !== strpos($pattern, '*')) {
+                if ('' === $pattern || false !== strpos($pattern, '*')) {
+                    continue;
+                }
+                if ('' === $category) {
+                    $allow[] = $pattern; // Strictly necessary: it always loaded.
                     continue;
                 }
                 $rule = self::script_rule($pattern);
@@ -147,7 +152,7 @@ final class SEOProCookieConsent_Migrate_Iubenda extends SEOProCookieConsent_Migr
                 }
             }
         }
-        return array('consent_block' => array_values(array_unique($lines)), 'consent_allow' => array());
+        return array('consent_block' => array_values(array_unique($lines)), 'consent_allow' => self::allow_rules($allow));
     }
 
     /** @return array */
