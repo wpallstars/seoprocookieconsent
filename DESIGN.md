@@ -42,6 +42,11 @@ palette of their own.
   (`--wp--preset--color--base`, `contrast`, `primary`), then neutral
   fallbacks. Borders and tints are translucent grey, so Kadence's dark
   mode needs no extra rules. Fonts inherit.
+- Button text keeps the theme's colour when it reaches 4.5:1 on the button
+  background (normal and hover). If not (Kadence dark mode puts palette 9
+  text on palette 1), `spcc.js` uses the theme's own background or strong
+  text colour, whichever reads better, then white or black, and checks
+  again when the theme switches mode.
 - Accept all and Reject all share one solid button style; Settings and
   Save choices are the quiet outline style. Buttons are at least 44px
   tall; radius 6px (boxes and dialog 12px).
