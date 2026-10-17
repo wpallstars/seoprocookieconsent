@@ -424,8 +424,13 @@
     text-align: center;
 }
 
-.spcc-embed iframe {
-    display: none;
+/*
+ * The held iframe is blank until released (which unwraps it). Themes and
+ * sites style "... iframe { display: block }", which would let it take the
+ * notice's space, so this wins on specificity and importance.
+ */
+.spcc-embed[data-spcc-embed] iframe {
+    display: none !important;
 }
 
 /* Core's responsive embeds size the wrapper; fill it. */
