@@ -46,7 +46,7 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **5 plugins**, some of them in part, with free and Pro editions counted separately. The 4 that can be downloaded come to 19.7 MB zipped; SEO Pro Cookie Consent is 341 KB.
+SEO Pro Cookie Consent replaces **8 plugins**, some of them in part, with free and Pro editions counted separately. The 7 that can be downloaded come to 22.4 MB zipped; SEO Pro Cookie Consent is 356 KB.
 
 It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance and WPConsent, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
