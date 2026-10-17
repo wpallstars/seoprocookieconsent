@@ -214,11 +214,21 @@ final class SEOProCookieConsent_Migrate_CookieYes extends SEOProCookieConsent_Mi
         }
         global $wpdb;
         $map = array();
-        if (in_array($wpdb->prefix . 'cky_cookie_categories', $this->tables(), true)) {
+        $tables = $this->tables();
+        if (in_array($wpdb->prefix . 'cky_cookie_categories', $tables, true)) {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source category table.
-            foreach ((array) $wpdb->get_col($wpdb->prepare('SELECT slug FROM %i ORDER BY category_id ASC LIMIT 100', $wpdb->prefix . 'cky_cookie_categories')) as $slug) {
-                if ('necessary' !== $slug && preg_match('/^[a-z0-9_-]+$/', $slug)) {
-                    $map[self::CATEGORIES[$slug] ?? 'marketing'][] = $slug;
+            $rows = $wpdb->get_results($wpdb->prepare('SELECT category_id, slug FROM %i ORDER BY category_id ASC LIMIT 100', $wpdb->prefix . 'cky_cookie_categories'), ARRAY_A);
+            // Its dialog has switches only for categories with listed cookies; the others always save "no".
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source cookie table: category IDs only.
+            $used = in_array($wpdb->prefix . 'cky_cookies', $tables, true) ? array_map('intval', $wpdb->get_col($wpdb->prepare('SELECT DISTINCT category FROM %i LIMIT 100', $wpdb->prefix . 'cky_cookies'))) : array();
+            foreach (array(true, false) as $offered) {
+                foreach ((array) $rows as $row) {
+                    if ('necessary' !== $row['slug'] && preg_match('/^[a-z0-9_-]+$/', $row['slug']) && (!$offered || in_array((int) $row['category_id'], $used, true))) {
+                        $map[self::CATEGORIES[$row['slug']] ?? 'marketing'][] = $row['slug'];
+                    }
+                }
+                if ($map) {
+                    break; // With no listed cookies at all, every category was all-or-nothing.
                 }
             }
         }
