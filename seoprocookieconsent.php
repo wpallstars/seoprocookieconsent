@@ -3,7 +3,7 @@
  * Plugin Name:       SEO Pro Cookie Consent
  * Plugin URI:        https://github.com/wpallstars/seoprocookieconsent
  * Description:       Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme.
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            Marcus Quinn
@@ -43,7 +43,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('SEOPROCOOKIECONSENT_VERSION', '0.1.1');
+define('SEOPROCOOKIECONSENT_VERSION', '0.1.2');
 define('SEOPROCOOKIECONSENT_FILE', __FILE__);
 define('SEOPROCOOKIECONSENT_DIR', plugin_dir_path(__FILE__));
 define('SEOPROCOOKIECONSENT_URL', plugin_dir_url(__FILE__));

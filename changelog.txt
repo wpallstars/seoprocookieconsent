@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 0.1.2 =
 * Menus: Appearance → Menus has a Cookie settings box that adds a custom link to #cookie-settings, in Title Case beside Title Case policy links; it is shown on a user's first visit. The automatic footer link goes just after the cookie policy page link, else just before the privacy policy link, in any footer menu (a footer theme location, or a menu named "footer", so widget and block menus count); otherwise at the end of the theme's footer menu, as before. Matched by page ID or address; an item with a submenu gets the link at the end instead. A published menu item linking to #cookie-settings anywhere means the owner placed it, so nothing is added.
 * Consent records: Keep records for (days), 0–3650, separates evidence retention from browser choice lifetime. Default 0 follows the current choice lifetime; positive values use the longer period for both cron cleanup and record exports. Records never expire sooner than choices, and snapshot retention is unchanged.
 * Consent records: private, canonical SHA-256 snapshots archive banner message templates and labels, category descriptions and service catalogue, local policy source, URL, modification time and revision ID, and plugin version. Settings/admin and policy saves deduplicate content, never visitor requests. Browser choices attach a known snapshot hash; missing, malformed and unknown hashes remain empty for old cached pages. Records CSV gains Snapshot and a second administrator-only, keyset-paged CSV exports archived content as JSON. Snapshot retention preserves every referenced archive; uninstall removes both per-site tables. Evidence of what was shown, not a compliance guarantee.
