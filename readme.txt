@@ -25,7 +25,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after the consent lifetime. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
-* **Replaces Complianz, CookieYes and Cookie Notice**: the Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup.
+* **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance and WPConsent**: the Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup.
 * **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
@@ -71,6 +71,10 @@ Open the Import tab and review its dry run. Import fills only default settings, 
 
 The same Import tab and steps work for both, in their local modes. Accept, reject and saved category choices carry over; closing either banner counts as reject. Sites connected to the CookieYes or Cookie Compliance web app, and CookieYes's legacy mode, are reported, and visitors are asked again. Cookie Notice's after-acceptance scripts stop when it is gone: copy them to your theme first, and they are held back here. See README.md.
 
+= How do I move from CookieAdmin, GDPR Cookie Compliance or WPConsent? =
+
+The same Import tab and steps work for all three. Accept, reject and saved category choices carry over where they were clear choices; closing a banner, accepting by default and partial single-service choices ask again. Scripts that GDPR Cookie Compliance added itself, and its built-in integrations, stop when it is gone: copy them to your theme first. Pro add-on features (geolocation, custom scripts, consent logs) are not imported. See README.md.
+
 = A script that sets cookies still loads =
 
 Add part of its address under Troubleshooting → Also hold back. The settings card lists other third-party scripts it saw.
@@ -105,6 +109,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 = Unreleased =
 * Import tab and WP-CLI command for moving from Complianz: dry run, settings, script rules, selected policy pages, visitors' explicit choices, undo and exact leftover cleanup.
 * Import from CookieYes and Cookie Notice & Compliance: banner settings, script rules, settings and policy shortcodes in selected pages, and visitors' explicit choices.
+* Import from CookieAdmin, GDPR Cookie Compliance (Moove) and WPConsent: banner settings, script rules, WPConsent's policy and preferences shortcodes, and visitors' explicit choices.
 * Move here notices on the Plugins and settings screens: the next step, from import to removing leftovers.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.

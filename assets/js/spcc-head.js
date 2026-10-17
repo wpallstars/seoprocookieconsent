@@ -64,12 +64,34 @@
     // A source may keep its values as key:value pairs in one cookie ("pairs"),
     // list several of its categories for one of ours (all must allow), and
     // name a "grant" value: unless it allows, every category must deny.
+    // Or one cookie may hold a JSON object ("json"): "all" and "none" are
+    // [key, value] flags that allow or deny every category, and "missing"
+    // denies absent categories once any category or flag is set.
     function pairs(value) {
         var jar = {};
         (typeof value === 'string' ? value.split(',') : []).forEach(function (pair) {
             var at = pair.indexOf(':');
             if (at > 0) { jar[pair.slice(0, at)] = pair.slice(at + 1); }
         });
+        return jar;
+    }
+
+    function json(source, value) {
+        var data;
+        try { data = JSON.parse(value); } catch (e) { return null; }
+        if (!data || typeof data !== 'object' || Array.isArray(data)) { return null; }
+        var jar = {};
+        Object.keys(data).forEach(function (key) { jar[key] = String(data[key]); });
+        var names = [];
+        Object.keys(source.categories || {}).forEach(function (category) { names = names.concat(source.categories[category]); });
+        var flag = function (pair) { return !!pair && jar[pair[0]] === pair[1]; };
+        var fill = flag(source.all) ? source.allow : (flag(source.none) ? source.deny : null);
+        if (null === fill && source.missing) {
+            if (!names.some(function (name) { return jar[name] === source.allow; })) { return null; }
+            fill = source.deny;
+            names = names.filter(function (name) { return !Object.prototype.hasOwnProperty.call(jar, name); });
+        }
+        if (null !== fill) { names.forEach(function (name) { jar[name] = fill; }); }
         return jar;
     }
 
@@ -87,8 +109,8 @@
         var keys = Object.keys(sources);
         for (var i = 0; i < keys.length; i++) {
             var source = sources[keys[i]];
-            var jar = source.pairs ? pairs(cookies[source.pairs]) : cookies;
-            if (!source.categories || (source.status && jar[source.status] !== source.value)) { continue; }
+            var jar = source.json ? json(source, cookies[source.json]) : (source.pairs ? pairs(cookies[source.pairs]) : cookies);
+            if (!jar || !source.categories || (source.status && jar[source.status] !== source.value)) { continue; }
             var granted = !source.grant || jar[source.grant] === source.allow;
             var cats = { preferences: 0, statistics: 0, embeds: 0, marketing: 0 };
             var valid = Object.keys(source.categories).every(function (category) {

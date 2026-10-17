@@ -72,10 +72,16 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-complianz.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieyes.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookie-notice.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieadmin.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-moove.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-wpconsent.php';
         $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
-            'complianz'     => new SEOProCookieConsent_Migrate_Complianz(),
-            'cookieyes'     => new SEOProCookieConsent_Migrate_CookieYes(),
-            'cookie-notice' => new SEOProCookieConsent_Migrate_Cookie_Notice(),
+            'complianz'              => new SEOProCookieConsent_Migrate_Complianz(),
+            'cookieyes'              => new SEOProCookieConsent_Migrate_CookieYes(),
+            'cookie-notice'          => new SEOProCookieConsent_Migrate_Cookie_Notice(),
+            'cookieadmin'            => new SEOProCookieConsent_Migrate_CookieAdmin(),
+            'gdpr-cookie-compliance' => new SEOProCookieConsent_Migrate_Moove(),
+            'wpconsent'              => new SEOProCookieConsent_Migrate_WPConsent(),
         ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;
@@ -310,9 +316,18 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         return $latest instanceof WP_Post && $latest->post_content === $post->post_content ? (int) $latest->ID : 0;
     }
 
-    /** Undo only imported values, never silently overwrite subsequent owner edits. @param string $id Import ID. @return array|WP_Error */
+    /** Undo only imported values, never silently overwrite subsequent owner edits. @param string $id Import ID, or a source key for its newest import. @return array|WP_Error */
     private static function undo($id) {
         $records = (array) get_option(self::IMPORTS, array());
+        if (!isset($records[$id])) {
+            // WP-CLI: `undo cookieyes` means that source's newest import still in place.
+            foreach ($records as $record_id => $record) {
+                if (is_array($record) && $id === ($record['source'] ?? '') && empty($record['undone'])) {
+                    $found = $record_id;
+                }
+            }
+            $id = $found ?? $id;
+        }
         if (!isset($records[$id]) || !empty($records[$id]['undone'])) {
             return new WP_Error('record', __('This import cannot be undone.', 'seoprocookieconsent'));
         }

@@ -46,9 +46,9 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **5 plugins**, some of them in part, with free and Pro editions counted separately. The 4 that can be downloaded come to 19.7 MB zipped; SEO Pro Cookie Consent is 341 KB.
+SEO Pro Cookie Consent replaces **8 plugins**, some of them in part, with free and Pro editions counted separately. The 7 that can be downloaded come to 22.4 MB zipped; SEO Pro Cookie Consent is 356 KB.
 
-It replaces the consent features of Complianz, CookieYes and Cookie Notice & Compliance, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
+It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance and WPConsent, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
@@ -63,7 +63,7 @@ It replaces the consent features of Complianz, CookieYes and Cookie Notice & Com
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
-- **Replaces Complianz, CookieYes and Cookie Notice.** The Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
+- **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance and WPConsent.** The Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
@@ -145,6 +145,32 @@ The same Import tab, WP-CLI command (`cookieyes`, `cookie-notice`), undo, Move h
 - **Not imported**: Cookie Compliance (hosted) mode, where the banner and choices live in its web app. The Import tab says so; visitors are asked again.
 
 A shortcode that sat inside a paragraph becomes `[spcc_cookie_settings]` or `[spcc_cookie_policy]`, so the paragraph stays valid; on its own it becomes the block.
+
+## Move from CookieAdmin, GDPR Cookie Compliance or WPConsent
+
+The same Import tab, WP-CLI command (`cookieadmin`, `gdpr-cookie-compliance`, `wpconsent`), undo, Move here steps and leftover cleanup work for CookieAdmin (`cookieadmin`, checked against 1.2.6), GDPR Cookie Compliance by Moove (`gdpr-cookie-compliance`, checked against 5.2.2) and WPConsent (`wpconsent-cookies-banner-privacy-suite`, checked against 1.2.0). Only data stored on your site is read. Their Pro add-ons were not checked: geolocation, custom scripts and consent logs from them are not imported.
+
+**CookieAdmin**
+
+- **Settings**: its GDPR law asks everyone first (unless Pro showed the banner only in some regions); consent lifetime, position (box bottom left/right, or footer bar), a changed message and the cookie policy link.
+- **Script rules**: each cookie in its list with a script pattern becomes an **Also hold back** line in its category (Functional → preferences, Analytics → statistics, Marketing and unclassified → marketing).
+- **Visitors' choices**: Accept all, Reject all and saved preferences carry over; embeds follow Marketing. Only its GDPR law carries choices over: with US state laws (opt-out) or a Pro law, visitors are asked again.
+- Scripts you marked for CookieAdmin in your theme (`type="text/plain"` with `data-cookieadmin-category`) stay off once it is gone: remove those two attributes so this plugin holds them back instead.
+
+**GDPR Cookie Compliance (Moove)**
+
+- **Settings** are read from its own settings table, even while it is inactive: everyone is asked first unless categories were on before visitors chose; consent lifetime, position (bottom bar, or bottom left/right box) and a changed message in the site's main language.
+- **Script rules**: addresses in the scripts of its enabled categories become **Also hold back** lines; inline scripts with no address are listed for you to add by hand. It added those scripts itself, so they stop when it is gone: add them to your theme or a header-code plugin, and this plugin holds them back. Its built-in integrations (Google Analytics 4, Tag Manager, Ads, Meta Pixel, Microsoft) are listed with their IDs to add back the same way.
+- **Visitors' choices**: its categories hold whatever you put in them, so a choice carries over only when every switchable category agrees; a mixed choice carries over as Reject all. When its close button accepted all cookies, or categories were on before visitors chose, only rejections carry over. If its add-on accepted on scroll or after a timer, choose **Stop carrying over old consent**: those look the same as Accept.
+- **Pages**: it has no page shortcodes to convert.
+
+**WPConsent**
+
+- **Settings**: its default opt-in banner asks everyone first; consent lifetime, bottom bar or bottom left/right box, a changed message and its cookie policy page.
+- **Script rules**: none to import; it blocked its own list of known services, which this plugin recognises too.
+- **Pages**: `[wpconsent_cookie_policy]` becomes the Cookie policy block and `[wpconsent_preferences_button]` the Cookie settings button. Links with its `wpconsent-open-preferences` class are listed: point them at `#cookie-settings` instead.
+- **Visitors' choices**: its Statistics and Marketing choices carry over; embeds follow Marketing, and preferences need both. A visitor who only pressed Load on one embed, or chose only some services, is asked again. Closing its banner saves nothing.
+- **Cleanup** keeps its consent logs and Do Not Track requests. Its cookie list (posts and categories) is not removed: WPConsent deletes it on uninstall when its own delete-data option is on.
 
 ## Where to find it
 
