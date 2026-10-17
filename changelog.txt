@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 0.1.1 =
 * Ask when a click needs consent: when a visitor's click or key press (a video lightbox, a map tab) makes the page load an Embeds service that is held back, Cookie settings opens with a note naming the service and category. Nothing is ticked for them; allowing it releases what was held, so a Kadence/GLightbox YouTube popup builds its player. Script players (YouTube's iframe API) had no placeholder, so the lightbox stayed blank. A second click on the same YouTube or Vimeo link asks again, since players cache their script. Loading a page on its own never opens it.
 
 = 0.1.0 =
