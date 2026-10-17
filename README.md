@@ -95,6 +95,10 @@ Snapshots describe the available wording and services, not the exact page-specif
 
 Reload the settings screen after enabling to see **Export consent records (CSV)** and **Export consent snapshots (CSV)**. Join the exports by their Snapshot column; snapshot content is JSON in one spreadsheet cell. Only site administrators can export. Record exports omit expired records and protect spreadsheet formula prefixes; snapshot text stays inside a JSON object, not an executable cell. Treat the ID and exports as potentially personal data and include this processing in your privacy policy. WordPress's hourly cron deletes expired records in batches of 1,000, even after recording is switched off; deletion depends on WP-Cron running and busy sites may take several batches. Archived snapshots are retained until uninstall, so cleanup can never remove content a kept record points to. Uninstall removes both tables and the cleanup event on every site in a network.
 
+With recording on, visitors who have made a choice can open **Cookie settings** to see **Your consent ID** and copy it with the keyboard-accessible **Copy** button. Copy success or failure is announced to screen readers; if the clipboard is unavailable, the ID can be selected and copied manually. The browser fills the ID from its consent cookie, never from server-rendered HTML. No ID appears before a recorded choice, with recording off or in the banner preview. Losing or expiring the cookie loses the link to that browser's ID; showing an ID does not prove a record reached the server.
+
+Use **Look up a consent ID** beside the exports to find one visitor's unexpired rows, newest first, in pages of 100. Enter the exact 32-character lowercase hexadecimal ID. The private administrator-only lookup shows receipt time, choice time (both UTC), choice JSON, policy version and snapshot hash. **Older records** continues the same lookup; the ID is posted, not put in the URL. There is no public read endpoint. These records are **pseudonymous**, not linked to a WordPress user or email address: WordPress's email-based personal data export and erase tools do not cover these IDs. Handle requests using the supplied consent ID and your site's privacy procedures.
+
 These are self-reported snapshots, not authenticated identity evidence or a guarantee of legal compliance. Delivery can fail (offline, blocked REST, unavailable storage or browser support); no retry or recording-success claim is made. Browsers without secure random generation or `sendBeacon` still save consent locally, but send no record. The write-only public route accepts bounded JSON from the site's origin; it is not protection against bots forging requests. Use your host's request limits for abuse protection. Each multisite site has separate storage and exports.
 
 ## Terms and conditions
@@ -329,6 +333,10 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- Visitors can view and copy their consent ID in Cookie settings when recording is on; administrators can look up that ID's unexpired history, including policy and snapshot references.
 
 ### 0.1.4
 

@@ -23,7 +23,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
 * **Cookie settings** link in the footer menu (beside your cookie or privacy policy link), a ready-made item in Appearance → Menus, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
-* **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after your chosen period, never shorter than the consent lifetime. Off by default; no IP addresses stored.
+* **Optional consent records**: pseudonymous choice history, visitor consent ID and copy button, administrator ID lookup and CSV export, automatic expiry. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
 * **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA**: the Import tab previews, then imports their settings, script rules, policy pages and, where their format is verified, visitors' explicit choices, with undo and leftover cleanup.
 * **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
@@ -83,6 +83,8 @@ With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cr
 
 = Can I keep consent records? =
 
+With recording on, visitors can see and copy their consent ID in Cookie settings after choosing. Administrators can look up its unexpired history beside the CSV exports, newest first in pages of 100, including choice, UTC times, policy version and snapshot hash. The ID is pseudonymous, not linked to an email or WordPress account: WordPress personal data export/erase tools do not cover these IDs. Use the supplied ID and your privacy procedures for requests. Losing the cookie loses the browser's link; an ID does not confirm successful delivery.
+
 Keep records for (days) accepts 0–3650: 0 (the default) follows the choice lifetime; a positive value keeps records for the longer of the two periods, without remembering browser choices for longer. Choose how long you need evidence and disclose the period in your privacy policy.
 
 Enable Keep consent records under Consent, then reload settings for records and snapshots CSV exports. Choices link by hash to archived banner wording, category/service details and local policy source/revision: evidence of what was shown, not a compliance guarantee. No IP addresses or browser details; ordinary page views send no record. Old cached pages without a known hash still record choices. Clear page caches after changes and disclose records in your privacy policy. WP-Cron expires records even with recording off; snapshots stay until uninstall, which removes both. External policies and dynamic content need separate copies. See README.md for limits.
@@ -101,6 +103,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 2. The Read Me tab, showing the plugin's README.md inside WordPress.
 
 == Changelog ==
+
+= Unreleased =
+* Visitors can view and copy their consent ID; administrators can look up its history, policy version and snapshot hash. Records are pseudonymous, outside WordPress's email-based privacy tools.
 
 = 0.1.4 =
 * Held-back embeds keep their notice readable when theme or site styles show every iframe.
