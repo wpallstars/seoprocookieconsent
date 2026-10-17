@@ -26,7 +26,7 @@ It is a tool, not legal advice: check its defaults and your policy text with who
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.1
+Version: 0.1.2
 
 <!-- github-only:start -->
 ## Screenshots
@@ -309,7 +309,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 0.1.2
 
 - Cookie settings in Appearance → Menus adds a ready-made `#cookie-settings` link. The automatic footer link now sits after the cookie policy link, or before the privacy policy link, and also reaches footer menus shown by widgets; it is skipped once a menu has a saved Cookie settings link.
 - Keep consent records for a separate period (up to 3,650 days), never shorter than visitors' choice lifetime. The default 0 keeps the existing retention behaviour.
