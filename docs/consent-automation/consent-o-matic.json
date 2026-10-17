@@ -1,0 +1,50 @@
+{
+    "SEO Pro Cookie Consent": {
+        "detectors": [{
+            "presentMatcher": [{ "type": "css", "target": { "selector": "#spcc-banner" } }],
+            "showingMatcher": [{ "type": "css", "target": { "selector": "#spcc-banner:not([hidden]), #spcc-dialog[open]", "displayFilter": true } }]
+        }],
+        "methods": [
+            {
+                "name": "OPEN_OPTIONS",
+                "action": {
+                    "type": "ifcss",
+                    "target": { "selector": "#spcc-dialog[open]" },
+                    "falseAction": { "type": "click", "target": { "selector": "#spcc-banner:not([hidden]) [data-spcc-action='settings']", "displayFilter": true } }
+                }
+            },
+            {
+                "name": "DO_CONSENT",
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "type": "A",
+                            "matcher": { "type": "checkbox", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='preferences']" } },
+                            "toggleAction": { "type": "click", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='preferences']" } }
+                        },
+                        {
+                            "type": "B",
+                            "matcher": { "type": "checkbox", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='statistics']" } },
+                            "toggleAction": { "type": "click", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='statistics']" } }
+                        },
+                        {
+                            "type": "F",
+                            "matcher": { "type": "checkbox", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='marketing']" } },
+                            "toggleAction": { "type": "click", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='marketing']" } }
+                        },
+                        {
+                            "type": "E",
+                            "matcher": { "type": "checkbox", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='embeds']" } },
+                            "toggleAction": { "type": "click", "target": { "selector": "#spcc-dialog[open] input[data-spcc-toggle='embeds']" } }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SAVE_CONSENT",
+                "action": { "type": "click", "target": { "selector": "#spcc-dialog[open] [data-spcc-action='save']" } }
+            }
+        ]
+    }
+}

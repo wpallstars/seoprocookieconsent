@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Consent automation: stable data-spcc-action hooks on dialog buttons and data-spcc-toggle category inputs, preserving the banner's existing action names and all behaviour. Document the DOM contract, normal explicit-choice recording and decision not to fingerprint automated answers. Local autoconsent and Consent-O-Matic drafts are development-only, not yet upstream support.
+
 = 0.1.3 =
 * Import: turn on Keep consent records when local consent rows exist in Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent tables, including when source settings are gone. Prepared SELECT 1 ... LIMIT 1 probes never read or copy record contents. Empty or missing tables, data requests, revisions alone and hosted providers leave recording unchanged. The normal dry run, import journal, changed-since checks and undo include the setting; repeated imports remain no-ops.
 * Import: a selected page whose newest revision is an old autosave no longer stops the import with "A page revision could not be saved". Like core, the page's newest saved revision is the undo point; autosaves are skipped.
