@@ -331,6 +331,34 @@
     // Cookie settings dialog ---------------------------------------------
 
     var askNote = dialog ? dialog.querySelector('[data-spcc-ask]') : null;
+    var record = dialog ? dialog.querySelector('[data-spcc-record]') : null;
+
+    function copyId() {
+        var input = record.querySelector('input');
+        var status = record.querySelector('[data-spcc-copy-status]');
+        status.textContent = '';
+        function fallback() {
+            input.focus();
+            input.select();
+            var copied = false;
+            try {
+                copied = d.execCommand('copy');
+            } catch (e) {
+                // Leave the ID selected for a manual copy.
+            }
+            status.textContent = status.getAttribute(copied ? 'data-copied' : 'data-failed');
+        }
+        if (w.navigator.clipboard && w.navigator.clipboard.writeText) {
+            w.navigator.clipboard.writeText(input.value).then(function () {
+                status.textContent = status.getAttribute('data-copied');
+            }, fallback);
+        } else {
+            fallback();
+        }
+    }
+    if (record) {
+        record.querySelector('[data-spcc-copy]').addEventListener('click', copyId);
+    }
 
     function open() {
         if (!dialog) {
@@ -338,6 +366,13 @@
         }
         if (askNote) {
             askNote.hidden = true;
+        }
+        if (record) {
+            var id = spcc.choice && spcc.choice.id;
+            var showId = c.records && !c.preview && typeof id === 'string' && /^[a-f0-9]{32}$/.test(id);
+            record.hidden = !showId;
+            record.querySelector('input').value = showId ? id : '';
+            record.querySelector('[data-spcc-copy-status]').textContent = '';
         }
         // Rows for categories used on the site or on this page.
         var used = {};
