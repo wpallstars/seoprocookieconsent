@@ -51,7 +51,8 @@
     border: 1px solid transparent;
     border-radius: var(--spcc-radius);
     background: var(--spcc-btn-bg);
-    color: var(--spcc-btn-text);
+    /* spcc.js sets --spcc-btn-ink when the theme's pair lacks contrast. */
+    color: var(--spcc-btn-ink, var(--spcc-btn-text));
     font: inherit;
     font-size: 0.9375rem;
     font-weight: 600;
@@ -71,7 +72,7 @@
 .spcc-embed__load:focus,
 .spcc-embed__load:active {
     background: var(--spcc-btn-bg-hover);
-    color: var(--spcc-btn-text-hover);
+    color: var(--spcc-btn-ink-hover, var(--spcc-btn-text-hover));
     box-shadow: none;
 }
 

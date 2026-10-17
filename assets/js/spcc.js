@@ -482,6 +482,104 @@
         }
     });
 
+    // Button text contrast ----------------------------------------------
+    // A theme palette can pair button text and background badly in one mode
+    // (Kadence dark mode: palette 9 text on palette 1). Keep the theme's
+    // text when it reads (4.5:1), else the theme's own light or dark text,
+    // else white or black. STYLING.md → Front-end styling and dark mode.
+
+    var paint = null;
+
+    // Any CSS colour as [r, g, b], or null if invalid or not opaque.
+    function rgb(value) {
+        value = (value || '').trim();
+        if (!value) {
+            return null;
+        }
+        try {
+            if (!paint) {
+                var canvas = d.createElement('canvas');
+                canvas.width = canvas.height = 1;
+                paint = canvas.getContext('2d', { willReadFrequently: true });
+            }
+            paint.clearRect(0, 0, 1, 1);
+            paint.fillStyle = 'rgba(0, 0, 0, 0)';
+            paint.fillStyle = value;
+            paint.fillRect(0, 0, 1, 1);
+            var px = paint.getImageData(0, 0, 1, 1).data;
+            return px[3] === 255 ? [px[0], px[1], px[2]] : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function luminance(c3) {
+        var l = c3.map(function (v) {
+            v /= 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * l[0] + 0.7152 * l[1] + 0.0722 * l[2];
+    }
+
+    function ratio(a, b) {
+        var x = luminance(a);
+        var y = luminance(b);
+        return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+    }
+
+    // The text colour to use on a button, or '' to keep the theme's.
+    function ink(s, text, bg) {
+        var back = rgb(s.getPropertyValue(bg));
+        var own = rgb(s.getPropertyValue(text));
+        if (!back || !own || ratio(own, back) >= 4.5) {
+            return '';
+        }
+        var best = '';
+        var most = 0;
+        [s.getPropertyValue('--spcc-bg'), s.getPropertyValue('--spcc-strong'), '#fff', '#000'].forEach(function (value, i) {
+            var col = rgb(value);
+            var r = col ? ratio(col, back) : 0;
+            // Theme colours first; white or black only if neither reads.
+            if (r > most && (i < 2 || most < 4.5)) {
+                best = value.trim();
+                most = r;
+            }
+        });
+        return best;
+    }
+
+    function contrast() {
+        var el = d.querySelector('.spcc, .spcc-reopen, .spcc-embed');
+        if (!el || !d.body) {
+            return;
+        }
+        var s = w.getComputedStyle(el);
+        [['--spcc-btn-ink', '--spcc-btn-text', '--spcc-btn-bg'], ['--spcc-btn-ink-hover', '--spcc-btn-text-hover', '--spcc-btn-bg-hover']].forEach(function (pair) {
+            var value = ink(s, pair[1], pair[2]);
+            if (value) {
+                d.body.style.setProperty(pair[0], value);
+            } else {
+                d.body.style.removeProperty(pair[0]);
+            }
+        });
+    }
+
+    contrast();
+    // Kadence's switcher swaps body classes; block themes may follow the OS.
+    if (w.MutationObserver && d.body) {
+        var watch = new MutationObserver(contrast);
+        watch.observe(d.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+        watch.observe(d.body, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+    }
+    if (w.matchMedia) {
+        var scheme = w.matchMedia('(prefers-color-scheme: dark)');
+        if (scheme.addEventListener) {
+            scheme.addEventListener('change', contrast);
+        } else if (scheme.addListener) {
+            scheme.addListener(contrast);
+        }
+    }
+
     // Start -------------------------------------------------------------
 
     if (c.preview) {
