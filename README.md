@@ -26,7 +26,7 @@ It is a tool, not legal advice: check its defaults and your policy text with who
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.2
+Version: 0.1.3
 
 <!-- github-only:start -->
 ## Screenshots
@@ -311,11 +311,13 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 0.1.3
 
 - Imports continue consent recording when local record rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; hosted providers and empty tables leave it unchanged.
 - A selected page whose newest revision is an old autosave no longer stops the import; the newest saved revision is the undo point.
 - An import that puts the Cookie policy block on a page also turns on Cookie policy, which the block needs to show anything; undo turns it off again.
+- Placeholders for held-back embeds sized in percentages, such as Kadence's Google Maps block (`width="100%" height="100%"`) or Google's embed code (`width="100%" height="450"`), fill their space instead of shrinking to 100px.
+- Google Maps placeholders show a generic map picture behind the notice. It ships with the plugin, so nothing reaches Google before consent.
 
 ### 0.1.2
 

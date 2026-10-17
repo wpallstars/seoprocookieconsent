@@ -1,6 +1,6 @@
 # SEO Pro Cookie Consent launch state
 
-Version: 0.1.2
+Version: 0.1.3
 
 First GitHub release: 0.1.0 (2026-10-17), a pre-1.0 beta; Before 1.0 below
 is still open. The repository is private, so sites get updates only with a
