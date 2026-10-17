@@ -116,7 +116,7 @@ Open **Settings → SEO Pro Cookie Consent → Import**. It finds Complianz data
 - **Pages**, each only when you select it, with a saved revision: cookie policies become the Cookie policy block, Manage consent and revoke links become the Cookie settings button, a document you unlinked and edited keeps your text as editable HTML, and generated documents are kept as rendered HTML. Generated documents need Complianz active to render; a blank document is never saved. Forms (data requests, Do Not Sell) and live lists are listed for you to replace.
 - **Visitors' choices**: a visitor who chose categories in Complianz keeps them; only dismissing the banner is not consent. Carry-over starts once Complianz is inactive.
 
-Each import can be undone while its values and pages are unchanged. After checking the banner and pages, deactivate and delete Complianz, then use **Remove leftover data** to delete exactly the listed options, tables and scheduled events, never while Complianz is active. Its records of consent and data requests are listed but kept; export them first if you must keep them. Check Complianz's own delete-data-on-uninstall setting first, and purge page caches after switching. The same steps run with WP-CLI: `wp seoprocookieconsent migrate plan|import|undo|cleanup complianz` (`--pages=ID,ID`, `--dry-run`).
+Each import can be undone while its values and pages are unchanged. After checking the banner and pages, deactivate and delete Complianz, then use **Remove leftover data** to delete exactly the listed options, tables, scheduled events, post meta (scan markers and the per-page hide-banner setting) and the folders it generates in `uploads/complianz` (vendor lists, banner CSS, placeholders, GeoLite database, PDF font cache), never while Complianz is active. Its records of consent and data requests, and any other `uploads/complianz` folder such as proof-of-consent snapshots, are listed but kept; export them first if you must keep them. Check Complianz's own delete-data-on-uninstall setting first, and purge page caches after switching. The same steps run with WP-CLI: `wp seoprocookieconsent migrate plan|import|undo|cleanup complianz` (`--pages=ID,ID`, `--dry-run`).
 
 Until Complianz and its data are gone, the Plugins screen (a notice at the top and a note under each Complianz row) and this plugin's settings screen show the next step, with a link:
 
@@ -313,6 +313,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 - Keep consent records for a separate period (up to 3,650 days), never shorter than visitors' choice lifetime. The default 0 keeps the existing retention behaviour.
 - Consent records link to deduplicated banner and local policy snapshots, with a separate administrator CSV export: evidence of what was shown. Old cached pages without a known hash still record choices.
+- Leftover cleanup after Complianz also removes its post meta and generated `uploads/complianz` folders (other folders are kept), and after Real Cookie Banner its update-checker option.
 
 ### 0.1.1
 

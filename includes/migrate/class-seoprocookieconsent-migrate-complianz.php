@@ -227,10 +227,49 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
                 }
             }
         }
+        // Scanner bookkeeping (_cmplz_scanned_post, _cmplz_remote_scanned_post) and the per-page cmplz_hide_cookiebanner toggle.
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- distinct key names only, of the source's own meta prefixes.
+        $meta = $wpdb->get_col($wpdb->prepare("SELECT DISTINCT meta_key FROM {$wpdb->postmeta} WHERE meta_key LIKE %s OR meta_key LIKE %s ORDER BY meta_key LIMIT 100", $wpdb->esc_like('_cmplz_') . '%', $wpdb->esc_like('cmplz_') . '%'));
         // Premium's records of consent (cmplz_statistics) and data requests (cmplz_dnsmpd) may need keeping: listed, never removed.
         $records = array($wpdb->prefix . 'cmplz_statistics', $wpdb->prefix . 'cmplz_dnsmpd');
         $tables = $this->tables();
-        return array('options' => array_values(array_unique($options)), 'tables' => array_values(array_diff($tables, $records)), 'cron' => array_values(array_unique($hooks)), 'kept' => array_values(array_intersect($tables, $records)));
+        list($uploads, $kept_files) = $this->upload_dirs();
+        return array(
+            'options' => array_values(array_unique($options)),
+            'tables'  => array_values(array_diff($tables, $records)),
+            'cron'    => array_values(array_unique($hooks)),
+            'meta'    => array_values($meta),
+            'uploads' => $uploads,
+            'kept'    => array_merge(array_values(array_intersect($tables, $records)), $kept_files),
+        );
+    }
+
+    /**
+     * Folders under uploads/complianz: the ones it generates (vendor lists, banner CSS and
+     * scripts, placeholders, GeoLite database, PDF font cache) are removable; anything else,
+     * such as Premium's proof-of-consent snapshots, is listed as kept.
+     *
+     * @return array{0:string[],1:string[]}
+     */
+    private function upload_dirs() {
+        $base = trailingslashit(wp_upload_dir(null, false)['basedir']) . 'complianz';
+        if (!is_dir($base)) {
+            return array(array(), array());
+        }
+        $generated = array('cmp', 'css', 'js', 'placeholders', 'maxmind', 'tmp');
+        $remove = array();
+        $keep = array();
+        foreach ((array) scandir($base) as $name) {
+            if ('.' === $name || '..' === $name || !is_string($name)) {
+                continue;
+            }
+            if (in_array($name, $generated, true) && is_dir($base . '/' . $name) && !is_link($base . '/' . $name)) {
+                $remove[] = 'complianz/' . $name;
+            } else {
+                $keep[] = 'uploads/complianz/' . $name;
+            }
+        }
+        return array($remove, $keep);
     }
 
     /** @return string */

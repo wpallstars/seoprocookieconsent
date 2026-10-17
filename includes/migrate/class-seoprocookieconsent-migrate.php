@@ -28,7 +28,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     }
 
     /** Leftover kinds cleanup removes; "kept" is listed only. */
-    const REMOVABLE = array('options', 'tables', 'cron', 'posts', 'terms');
+    const REMOVABLE = array('options', 'tables', 'cron', 'posts', 'terms', 'meta', 'uploads');
 
     /** Refresh once, at the end of a request that activates, deactivates or deletes a source. */
     public static function watch() {
@@ -433,11 +433,57 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 return new WP_Error('term', __('A source term could not be removed. Review a new dry run.', 'seoprocookieconsent'));
             }
         }
+        foreach ($items['meta'] ?? array() as $meta_key) {
+            delete_post_meta_by_key((string) $meta_key);
+        }
+        foreach ($items['uploads'] ?? array() as $folder) {
+            $removed = self::remove_upload_folder((string) $folder);
+            if (is_wp_error($removed)) {
+                return $removed;
+            }
+        }
         $config = (array) get_option(self::CONFIG, array());
         $config[$key] = array('off' => true);
         update_option(self::CONFIG, $config, true);
         self::refresh();
         return array('removed' => $items);
+    }
+
+    /**
+     * Remove a source's generated folder under uploads, then its parent if that is left empty.
+     *
+     * @param string $folder Path relative to the uploads folder, such as complianz/cmp.
+     * @return true|WP_Error
+     */
+    private static function remove_upload_folder($folder) {
+        $base = realpath(wp_upload_dir(null, false)['basedir']);
+        $folder = trim(wp_normalize_path($folder), '/');
+        $failed = new WP_Error('uploads', sprintf(
+            /* translators: %s: folder under uploads */
+            __('The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run.', 'seoprocookieconsent'),
+            $folder
+        ));
+        if (!$base || '' === $folder || false !== strpos($folder, '..') || false === strpos($folder, '/')) {
+            return $failed; // Only a source's own subfolder, never uploads itself or a top-level folder.
+        }
+        $path = $base . '/' . $folder;
+        if (!file_exists($path)) {
+            return true;
+        }
+        $real = realpath($path);
+        if (is_link($path) || !$real || 0 !== strpos(wp_normalize_path($real) . '/', wp_normalize_path($base) . '/' . strtok($folder, '/') . '/')) {
+            return $failed;
+        }
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        global $wp_filesystem;
+        if (!WP_Filesystem() || !$wp_filesystem || !$wp_filesystem->delete($real, true, 'd')) {
+            return $failed;
+        }
+        $parent = dirname($real);
+        if (wp_normalize_path($parent) !== wp_normalize_path($base) && array() === array_diff((array) scandir($parent), array('.', '..'))) {
+            $wp_filesystem->rmdir($parent);
+        }
+        return true;
     }
 
     /** Register the existing WP-CLI runtime, with explicit user/capability checks. */
