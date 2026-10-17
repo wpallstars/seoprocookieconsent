@@ -373,9 +373,15 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
         $records = array_values(array_filter($tables, function ($table) use ($wpdb) {
             return 0 === strpos($table, $wpdb->prefix . 'borlabs_cookie_consent_');
         }));
+        // Its foreign keys: cleanup drops in this order, so tables others refer to go last.
+        $parents = array($wpdb->prefix . 'borlabs_cookie_services' => 1, $wpdb->prefix . 'borlabs_cookie_providers' => 2, $wpdb->prefix . 'borlabs_cookie_service_groups' => 2);
+        $removable = array_values(array_diff($tables, $records));
+        usort($removable, function ($a, $b) use ($parents) {
+            return (($parents[$a] ?? 0) <=> ($parents[$b] ?? 0)) ?: strcmp($a, $b);
+        });
         return array(
             'options' => self::option_names(array(self::PREFIX)),
-            'tables'  => array_values(array_diff($tables, $records)),
+            'tables'  => $removable,
             'cron'    => self::cron_hooks(array(self::PREFIX)),
             'kept'    => $records,
         );
