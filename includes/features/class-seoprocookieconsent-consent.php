@@ -35,6 +35,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         'cookiebot'              => 'Cookiebot',
         'iubenda-cookie-law-solution' => 'iubenda',
         'uk-cookie-consent'      => 'Termly',
+        'borlabs-cookie'         => 'Borlabs Cookie',
+        'ct-ultimate-gdpr'       => 'Ultimate GDPR & CCPA',
     );
 
     /** Google services sent before consent with Consent Mode advanced. */

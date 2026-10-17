@@ -124,6 +124,30 @@ abstract class SEOProCookieConsent_Migrate_Source {
     }
 
     /**
+     * Unique "Also hold back" lines, dropping any a broader line of the
+     * same category already covers: rules match as "contains".
+     *
+     * @param string[] $lines Lines, optionally "category: rule".
+     * @return string[]
+     */
+    protected static function narrowest(array $lines) {
+        $lines = array_values(array_unique($lines));
+        $split = function ($line) {
+            return preg_match('/^(statistics|preferences|embeds): (.*)$/', $line, $m) ? array($m[1], $m[2]) : array('marketing', $line);
+        };
+        return array_values(array_filter($lines, function ($line) use ($lines, $split) {
+            list($category, $rule) = $split($line);
+            foreach ($lines as $other) {
+                list($their_category, $their_rule) = $split($other);
+                if ($other !== $line && $category === $their_category && false !== strpos($rule, $their_rule)) {
+                    return false;
+                }
+            }
+            return true;
+        }));
+    }
+
+    /**
      * Lines a source let load before consent, as "Never hold back" lines.
      * Recognised services, and anything not an address, are left out:
      * they would load Google or ad tags before consent here. A line is kept

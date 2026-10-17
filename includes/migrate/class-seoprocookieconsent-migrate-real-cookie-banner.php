@@ -178,21 +178,7 @@ final class SEOProCookieConsent_Migrate_Real_Cookie_Banner extends SEOProCookieC
                 }
             }
         }
-        $lines = array_values(array_unique($result['consent_block']));
-        // Rules match as "contains": drop one a broader rule of the same category already covers.
-        $split = function ($line) {
-            return preg_match('/^(statistics|preferences|embeds): (.*)$/', $line, $m) ? array($m[1], $m[2]) : array('marketing', $line);
-        };
-        $result['consent_block'] = array_values(array_filter($lines, function ($line) use ($lines, $split) {
-            list($category, $rule) = $split($line);
-            foreach ($lines as $other) {
-                list($their_category, $their_rule) = $split($other);
-                if ($other !== $line && $category === $their_category && false !== strpos($rule, $their_rule)) {
-                    return false;
-                }
-            }
-            return true;
-        }));
+        $result['consent_block'] = self::narrowest($result['consent_block']);
         return $result;
     }
 
