@@ -65,7 +65,9 @@ Under Policies, fill in Terms and conditions, switch it on and add its block or 
 
 = How do I move from another cookie plugin? =
 
-Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA: open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' clear choices carry over; anyone else is asked again, as are all visitors of hosted (web app) modes, Borlabs Cookie and Ultimate GDPR & CCPA. Scripts the old plugin ran itself stop when it is gone: the Import tab lists them to copy to your theme, where they are held back. Pro-only features are reported, not imported. Then deactivate and delete the old plugin, remove its leftover data (consent records are kept) and purge page caches. The Plugins and settings screens show each next step. WP-CLI: wp seoprocookieconsent migrate. See README.md.
+Imports turn on Keep consent records when local consent rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; old records are not read or copied. Empty tables and hosted providers leave it unchanged.
+
+Open Import and review the dry run. Only default settings, missing script rules and selected pages change, with revisions and undo. Hosted modes, Borlabs Cookie and Ultimate GDPR & CCPA ask visitors again. Copy scripts the old plugin ran to your theme before removing it. Then deactivate, delete, remove leftovers and purge caches. Records are kept. WP-CLI: wp seoprocookieconsent migrate. Supported sources, carry-over rules and Pro limits: README.md.
 
 = A script that sets cookies still loads =
 
@@ -99,6 +101,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 2. The Read Me tab, showing the plugin's README.md inside WordPress.
 
 == Changelog ==
+
+= Unreleased =
+* Imports continue recording when source plugins have local consent rows; dry run and undo include Keep consent records. Hosted providers and empty tables leave it unchanged.
 
 = 0.1.2 =
 * Appearance → Menus has a ready-made Cookie settings link. The automatic footer link sits after the cookie policy link, or before the privacy policy link, and reaches footer menus shown by widgets.

@@ -69,16 +69,27 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
                 $notes[] = sprintf(__('Add by hand to Also hold back (no address to recognise): %s', 'seoprocookieconsent'), mb_substr($pattern['pattern'], 0, 120));
             }
         }
+        if (!empty($this->settings()['consent_records'])) {
+            $notes[] = __('The import turns on Keep consent records to continue its records.', 'seoprocookieconsent');
+        }
         return array('present' => (bool) array_filter($left), 'state' => $this->state(), 'notes' => $notes);
     }
 
     /** @return array */
     public function settings() {
+        $result = array();
+        global $wpdb;
+        foreach ($this->leftovers()['kept'] as $table) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check of verified source record tables; never reads record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+                $result['consent_records'] = true;
+                break;
+            }
+        }
         if (!$this->installed()) {
-            return array();
+            return $result;
         }
         $policy = $this->policy();
-        $result = array();
         $geo = (string) ($policy['cookieadmin_geo_tgt'] ?? 'www');
         // Its GDPR banner asks everyone first, unless Pro limited it to some regions.
         if ('cookieadmin_gdpr' === $this->law() && ('' === $geo || 'www' === $geo)) {

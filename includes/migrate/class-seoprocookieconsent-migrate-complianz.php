@@ -51,6 +51,13 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
             $result['consent_google_advanced'] = 'yes' === $old['consent-mode'] && 'yes' !== $old['gtag-basic-consent-mode'];
         }
         global $wpdb;
+        $records = $wpdb->prefix . 'cmplz_statistics';
+        if (in_array($records, $this->tables(), true)) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $records))) {
+                $result['consent_records'] = true;
+            }
+        }
         if (in_array($wpdb->prefix . 'cmplz_cookiebanners', $this->tables(), true)) {
             // The default banner is the one visitors see; older rows often remain from A/B tests.
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source banner table.

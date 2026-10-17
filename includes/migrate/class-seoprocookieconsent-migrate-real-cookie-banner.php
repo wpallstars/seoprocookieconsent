@@ -95,17 +95,31 @@ final class SEOProCookieConsent_Migrate_Real_Cookie_Banner extends SEOProCookieC
             $notes[] = __('A menu has Real Cookie Banner privacy links (#consent-change, #consent-history or #consent-revoke). Replace them with a #cookie-settings link, or rely on the Cookie settings footer link.', 'seoprocookieconsent');
         }
         if ($this->configured()) {
-            $notes[] = __('Real Cookie Banner always kept consent records. Turn on Keep consent records if you need to go on documenting choices. Its banner texts are not imported: they describe its own dialog.', 'seoprocookieconsent');
+            $notes[] = __('Its banner texts are not imported: they describe its own dialog.', 'seoprocookieconsent');
+        }
+        if (!empty($this->settings()['consent_records'])) {
+            $notes[] = __('The import turns on Keep consent records to continue its records.', 'seoprocookieconsent');
         }
         return array('present' => (bool) array_filter($left) || (bool) $this->pages(), 'state' => $this->state(), 'notes' => $notes);
     }
 
     /** @return array */
     public function settings() {
-        if (!$this->configured()) {
-            return array();
-        }
         $result = array();
+        global $wpdb;
+        foreach ($this->tables() as $table) {
+            if (0 !== strpos($table, $wpdb->prefix . 'rcb_consent')) {
+                continue;
+            }
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check of verified source consent tables, not revisions; never reads record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+                $result['consent_records'] = true;
+                break;
+            }
+        }
+        if (!$this->configured()) {
+            return $result;
+        }
         if ($this->asked()) {
             $result['consent_regions'] = 'everywhere';
         }

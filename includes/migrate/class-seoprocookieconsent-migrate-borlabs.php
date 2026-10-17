@@ -132,7 +132,10 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
             $notes[] = sprintf(__('A menu link has the %s class. Point it at #cookie-settings instead, or rely on the Cookie settings footer link.', 'seoprocookieconsent'), self::OPEN_CLASS);
         }
         if ($this->configured()) {
-            $notes[] = __('Its dialog texts are not imported: they describe its own dialog. Borlabs Cookie kept consent records; turn on Keep consent records if you need to go on documenting choices.', 'seoprocookieconsent');
+            $notes[] = __('Its dialog texts are not imported: they describe its own dialog.', 'seoprocookieconsent');
+        }
+        if (!empty($this->settings()['consent_records'])) {
+            $notes[] = __('The import turns on Keep consent records to continue its records.', 'seoprocookieconsent');
         }
         return array('present' => (bool) array_filter($left) || (bool) $this->pages(), 'state' => $this->state(), 'notes' => $notes);
     }
@@ -141,10 +144,18 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
     public function settings() {
         $general = $this->config('GeneralConfig');
         $dialog = $this->config('DialogSettingsConfig');
-        if (!$general) {
-            return array();
-        }
         $result = array();
+        global $wpdb;
+        foreach ($this->leftovers()['kept'] as $table) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check of verified source record tables; never reads record contents.
+            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+                $result['consent_records'] = true;
+                break;
+            }
+        }
+        if (!$general) {
+            return $result;
+        }
         if ($this->asked()) {
             $result['consent_regions'] = 'everywhere';
         }
