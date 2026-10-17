@@ -271,9 +271,11 @@ final class SEOProCookieConsent_Records {
             : new WP_REST_Response(null, 204);
     }
 
-    /** @return int Oldest permitted server timestamp, following current lifetime. */
+    /** @return int Oldest permitted server timestamp, never shorter than choices. */
     private static function cutoff() {
-        return time() - max(30, min(395, (int) SEOProCookieConsent_Settings::get('consent_days'))) * DAY_IN_SECONDS;
+        $choice_days = max(30, min(395, (int) SEOProCookieConsent_Settings::get('consent_days')));
+        $record_days = max(0, min(3650, (int) SEOProCookieConsent_Settings::get('consent_records_days')));
+        return time() - max($choice_days, $record_days) * DAY_IN_SECONDS;
     }
 
     /** Delete at most 1,000 expired rows; continue later without long cron runs. */
