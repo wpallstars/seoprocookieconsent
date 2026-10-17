@@ -78,7 +78,7 @@ final class SEOProCookieConsent_Import_Tab {
                 printf('<p><label><input type="checkbox" name="pages[]" value="%1$d"> %2$s</label></p><ul>', (int) $page['id'], esc_html($page['title']));
                 foreach ($page['tokens'] as $token) {
                     $descriptions = array(
-                        'cookie'   => __('Replace with Cookie policy block. Turn on Cookie policy on the Policies tab.', 'seoprocookieconsent'),
+                        'cookie'   => __('Replace with Cookie policy block, and turn on Cookie policy (Policies tab) so it shows.', 'seoprocookieconsent'),
                         'settings' => __('Replace with Cookie settings button block.', 'seoprocookieconsent'),
                         'static'   => __('Keep your edited document as editable HTML, with a revision.', 'seoprocookieconsent'),
                         'empty'    => __('No document is selected, so it shows nothing. Remove it yourself.', 'seoprocookieconsent'),

@@ -113,7 +113,7 @@ Open **Settings → SEO Pro Cookie Consent → Import**. It finds Complianz data
 
 - **Settings**: region handling, consent lifetime, Google Consent Mode, the default banner's position and message, and the cookie policy link. Only settings still at their defaults are filled in. When Complianz asked visitors elsewhere with an opt-in banner (EU, UK, South Africa or Brazil), everyone is asked first here too.
 - **Script rules**: enabled custom blocked and allowed URLs are added to **Also hold back** and **Never hold back**. Inline "add script" entries are not imported.
-- **Pages**, each only when you select it, with a saved revision: cookie policies become the Cookie policy block, Manage consent and revoke links become the Cookie settings button, a document you unlinked and edited keeps your text as editable HTML, and generated documents are kept as rendered HTML. Generated documents need Complianz active to render; a blank document is never saved. Forms (data requests, Do Not Sell) and live lists are listed for you to replace.
+- **Pages**, each only when you select it, with a saved revision: cookie policies become the Cookie policy block (and Cookie policy is turned on, so it shows), Manage consent and revoke links become the Cookie settings button, a document you unlinked and edited keeps your text as editable HTML, and generated documents are kept as rendered HTML. Generated documents need Complianz active to render; a blank document is never saved. Forms (data requests, Do Not Sell) and live lists are listed for you to replace.
 - **Visitors' choices**: a visitor who chose categories in Complianz keeps them; only dismissing the banner is not consent. Carry-over starts once Complianz is inactive.
 
 **Continue consent records:** when Complianz Premium's local records table has rows, the dry run includes **Keep consent records: on**, and importing turns it on. The same applies to local consent tables left by Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin and WPConsent, even if their settings are gone. Only the existence of a row is checked; old records are never read or copied. Empty or missing tables, data requests and Real Cookie Banner's revisions alone do not enable recording. Hosted providers leave the setting unchanged. Undo restores the previous setting through the normal changed-since-import checks; importing again without changes does nothing. Review your privacy policy and purge page caches when switching.
@@ -314,6 +314,8 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Imports continue consent recording when local record rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; hosted providers and empty tables leave it unchanged.
+- A selected page whose newest revision is an old autosave no longer stops the import; the newest saved revision is the undo point.
+- An import that puts the Cookie policy block on a page also turns on Cookie policy, which the block needs to show anything; undo turns it off again.
 
 ### 0.1.2
 
