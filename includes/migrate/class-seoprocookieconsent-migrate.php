@@ -70,7 +70,13 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     public static function sources() {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-source.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-complianz.php';
-        $sources = apply_filters('seoprocookieconsent_migrate_sources', array('complianz' => new SEOProCookieConsent_Migrate_Complianz()));
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieyes.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookie-notice.php';
+        $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
+            'complianz'     => new SEOProCookieConsent_Migrate_Complianz(),
+            'cookieyes'     => new SEOProCookieConsent_Migrate_CookieYes(),
+            'cookie-notice' => new SEOProCookieConsent_Migrate_Cookie_Notice(),
+        ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;
         });
@@ -102,6 +108,10 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             );
             if (!isset($previous[$key]['off']) && ($detection['present'] || $imported)) {
                 $config[$key] = $source->consent_cookie();
+                // Once its settings are deleted a source cannot describe its cookie; keep what the import saw.
+                if (!$config[$key] && $imported && !empty($previous[$key]['categories'])) {
+                    $config[$key] = $previous[$key];
+                }
             } elseif (isset($previous[$key]['off'])) {
                 $config[$key] = array('off' => true);
             }
@@ -238,7 +248,10 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 }
                 // A shortcode in core/shortcode must not become a nested invalid block.
                 $wrapped = '<!-- wp:shortcode -->' . "\n" . $token['token'] . "\n" . '<!-- /wp:shortcode -->';
-                $content = str_replace(array($wrapped, $token['token']), $replacement, $content);
+                $content = str_replace($wrapped, $replacement, $content);
+                // Anywhere else, such as inside a paragraph, a shortcode becomes ours; a block comment there is invalid.
+                $inline = array('<!-- wp:seoprocookieconsent/cookie-policy /-->' => '[spcc_cookie_policy]', '<!-- wp:seoprocookieconsent/cookie-settings /-->' => '[spcc_cookie_settings]');
+                $content = str_replace($token['token'], 0 === strpos($token['token'], '[') && isset($inline[$replacement]) ? $inline[$replacement] : $replacement, $content);
             }
             if ($content !== $post->post_content) {
                 $revision = self::revision($post);

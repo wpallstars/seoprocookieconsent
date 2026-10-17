@@ -46,7 +46,9 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **3 plugins**, some of them in part, with free and Pro editions counted separately. It replaces Complianz's consent features and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
+SEO Pro Cookie Consent replaces **5 plugins**, some of them in part, with free and Pro editions counted separately. The 4 that can be downloaded come to 19.7 MB zipped; SEO Pro Cookie Consent is 341 KB.
+
+It replaces the consent features of Complianz, CookieYes and Cookie Notice & Compliance, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
@@ -61,7 +63,7 @@ SEO Pro Cookie Consent replaces **3 plugins**, some of them in part, with free a
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
-- **Replaces Complianz.** The Import tab previews, then imports its settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While Complianz is active this waits, so two banners never show.
+- **Replaces Complianz, CookieYes and Cookie Notice.** The Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
@@ -121,6 +123,28 @@ Until Complianz and its data are gone, the Plugins screen (a notice at the top a
 | Remove | Complianz is inactive or deleted and left data | **Delete Complianz** (single sites), **Remove leftover data** |
 
 Only people who can activate plugins see these. **Hide** hides the current step for you; it shows again at the next step. The Plugins screen then leaves out its usual "can do the job of these plugins" line for Complianz, so it never says to deactivate before importing.
+
+## Move from CookieYes or Cookie Notice
+
+The same Import tab, WP-CLI command (`cookieyes`, `cookie-notice`), undo, Move here steps and leftover cleanup work for CookieYes (`cookie-law-info`, checked against 3.5.7) and Cookie Notice & Compliance (`cookie-notice`, checked against 3.1.17). Only data stored on your site is read. Neither plugin keeps records of consent on the site, so cleanup has none to keep.
+
+**CookieYes**
+
+- **Settings** from its default banner: a GDPR banner asks everyone first; consent lifetime, position (box bottom left/right, or bar), a changed message and the Read more link. A CCPA banner is imported without carrying choices over.
+- **Script rules**: each cookie with a script URL pattern becomes an **Also hold back** line in its category (Functional → preferences, Analytics and Performance → statistics, Advertisement and custom categories → marketing).
+- **Pages**: `[cookie_audit]` becomes the Cookie policy block, `[cookie_settings]` and `[wt_cli_manage_consent]` the Cookie settings button. `[cookie_after_accept]` blocks, the CCPA opt-out link and other legacy shortcodes are listed for you to replace.
+- **Visitors' choices**: Accept all, Reject all and a saved selection carry over, by category. Its dialog has switches only for categories with listed cookies, so those decide; the others follow Accept all or Reject all. Closing the banner counts as Reject all, and a cookie that is neither a clear consent nor a full rejection is ignored, so that visitor is asked again.
+- **Not imported**: sites connected to the CookieYes web app (banner, categories and scripts live there) and its legacy version 2 mode. The Import tab says so; visitors are asked again. Scripts you marked for CookieYes in your theme (`data-cookieyes` with `type="text/plain"`) stay off once it is gone: remove those two attributes so this plugin holds them back instead.
+
+**Cookie Notice & Compliance**
+
+- **Settings**: consent lifetime (1, 3 or 6 months, or a year), a bottom bar, a changed message and the privacy policy link. Sites with "after acceptance" scripts ask everyone first.
+- **Script rules**: addresses in its after-acceptance scripts (head and body) become **Also hold back** lines. Inline scripts with no address are listed for you to add by hand. Cookie Notice ran those scripts itself, so they stop when it is gone: add them to your theme or a header-code plugin, and this plugin holds them back. Copy them before removing leftover data; if Cookie Notice's Deactivation option is on, it deletes them when deactivated.
+- **Pages**: `[cookies_revoke]` becomes the Cookie settings button. `[cookies_accepted]` blocks and `[cookies_policy_link]` are listed for you to replace.
+- **Visitors' choices**: Accept allows every category; Reject and its close button allow none. When it accepted on scroll or click, only rejections carry over.
+- **Not imported**: Cookie Compliance (hosted) mode, where the banner and choices live in its web app. The Import tab says so; visitors are asked again.
+
+A shortcode that sat inside a paragraph becomes `[spcc_cookie_settings]` or `[spcc_cookie_policy]`, so the paragraph stays valid; on its own it becomes the block.
 
 ## Where to find it
 
@@ -222,6 +246,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Import from Complianz on the Import tab or with WP-CLI: dry run, default-only settings, script rules, selected policy pages with revisions, visitors' explicit choices, undo and confirmed leftover cleanup that keeps records of consent.
+- Import from CookieYes and Cookie Notice & Compliance in their local modes: banner settings, script rules from CookieYes's cookie list and Cookie Notice's after-acceptance scripts, settings and policy shortcodes in selected pages, and visitors' explicit choices by category; hosted (web app) and legacy modes are reported, not guessed. Source shortcodes inside a paragraph become this plugin's shortcodes instead of invalid nested blocks.
 - Move here notices on the Plugins and settings screens: one next step per source, from import through switching to removing leftovers, with links and a per-person Hide.
 - Multilingual custom banner messages and policy links with WPML and Polylang, plus TranslatePress custom-text translation.
 - Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.

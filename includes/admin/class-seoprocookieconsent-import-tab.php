@@ -58,11 +58,19 @@ final class SEOProCookieConsent_Import_Tab {
             $found = true;
             // The Move here notices link to each source by this ID.
             printf('<h3 id="spcc-import-%3$s">%1$s — %2$s</h3>', esc_html($source::NAME), esc_html($plan['detection']['state']), esc_attr($key));
+            // Adapter notes: modes kept outside the site, and steps only the owner can take.
+            foreach ((array) ($plan['detection']['notes'] ?? array()) as $note) {
+                echo '<p class="description">' . esc_html((string) $note) . '</p>';
+            }
             echo '<details open><summary>' . esc_html__('Dry run: settings and script rules to add', 'seoprocookieconsent') . '</summary>';
             self::listing(array_merge($plan['settings'], $plan['scripts']));
             echo '</details><details><summary>' . esc_html__('Consent cookie mapping', 'seoprocookieconsent') . '</summary>';
-            self::listing($plan['consent']);
-            echo '<p>' . esc_html__('Only complete explicit category choices carry over; dismissing the banner does not count. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive.', 'seoprocookieconsent') . '</p></details>';
+            if ($plan['consent']) {
+                self::listing($plan['consent']);
+            } else {
+                echo '<p>' . esc_html__('No choices carry over: visitors are asked again.', 'seoprocookieconsent') . '</p>';
+            }
+            echo '<p>' . esc_html__('Only complete explicit choices carry over; dismissing the banner does not allow anything. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive.', 'seoprocookieconsent') . '</p></details>';
             echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
             self::fields('import', $key);
             echo '<fieldset><legend>' . esc_html__('Policy pages (select each page to confirm conversion)', 'seoprocookieconsent') . '</legend>';
@@ -75,6 +83,8 @@ final class SEOProCookieConsent_Import_Tab {
                         'static'   => __('Keep your edited document as editable HTML, with a revision.', 'seoprocookieconsent'),
                         'empty'    => __('No document is selected, so it shows nothing. Remove it yourself.', 'seoprocookieconsent'),
                         'manual'   => __('Form or live list with no direct equivalent. Not changed: replace or remove it yourself.', 'seoprocookieconsent'),
+                        'gate'     => __('Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back.', 'seoprocookieconsent'),
+                        'other'    => __('Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself.', 'seoprocookieconsent'),
                     );
                     $kind = (string) ($token['kind'] ?? ($token['cookie'] ? 'cookie' : 'render'));
                     $description = $descriptions[$kind] ?? ($token['renderable'] ? __('Freeze the rendered document as editable HTML, with a revision.', 'seoprocookieconsent') : __('Cannot render while the source is inactive: rewrite this document or reactivate the source before importing.', 'seoprocookieconsent'));
