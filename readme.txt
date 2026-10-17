@@ -25,7 +25,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Global Privacy Control**, **Google Consent Mode v2** and the **WP Consent API**.
 * **Optional consent records**: anonymous choice history on your site, administrator CSV export and automatic deletion after the consent lifetime. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
-* **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance and WPConsent**: the Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup.
+* **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent and Real Cookie Banner**: the Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup.
 * **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
@@ -63,17 +63,9 @@ From the time zone their browser reports. Nothing is looked up or sent anywhere,
 
 Under Policies, fill in Terms and conditions, switch it on and add its block or [spcc_terms] to a page. Suggested wording needs your business name and contact details. Optional answers cover country, offerings and returns; Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages change only when you select them on the Import tab; otherwise replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
 
-= How do I move from Complianz? =
+= How do I move from another cookie plugin? =
 
-Open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' explicit category choices carry over; a dismissed banner does not. Then deactivate and delete Complianz, remove its leftover data (records of consent and data requests are kept) and purge page caches. The Plugins screen and settings screen show the next step, with a link, until Complianz and its data are gone. WP-CLI: wp seoprocookieconsent migrate. See README.md.
-
-= How do I move from CookieYes or Cookie Notice? =
-
-The same Import tab and steps work for both, in their local modes. Accept, reject and saved category choices carry over; closing either banner counts as reject. Sites connected to the CookieYes or Cookie Compliance web app, and CookieYes's legacy mode, are reported, and visitors are asked again. Cookie Notice's after-acceptance scripts stop when it is gone: copy them to your theme first, and they are held back here. See README.md.
-
-= How do I move from CookieAdmin, GDPR Cookie Compliance or WPConsent? =
-
-The same Import tab and steps work for all three. Accept, reject and saved category choices carry over where they were clear choices; closing a banner, accepting by default and partial single-service choices ask again. Scripts that GDPR Cookie Compliance added itself, and its built-in integrations, stop when it is gone: copy them to your theme first. Pro add-on features (geolocation, custom scripts, consent logs) are not imported. See README.md.
+Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent and Real Cookie Banner: open the Import tab and review its dry run. Import fills only default settings, adds missing script rules and converts only the pages you select, with a revision and undo. Visitors' clear choices carry over; anyone else is asked again, as are all visitors of hosted (web app) modes. Scripts the old plugin ran itself stop when it is gone: the Import tab lists them to copy to your theme, where they are held back. Pro-only features are reported, not imported. Then deactivate and delete the old plugin, remove its leftover data (consent records are kept) and purge page caches. The Plugins and settings screens show each next step. WP-CLI: wp seoprocookieconsent migrate. See README.md.
 
 = A script that sets cookies still loads =
 
@@ -107,9 +99,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
-* Import tab and WP-CLI command for moving from Complianz: dry run, settings, script rules, selected policy pages, visitors' explicit choices, undo and exact leftover cleanup.
-* Import from CookieYes and Cookie Notice & Compliance: banner settings, script rules, settings and policy shortcodes in selected pages, and visitors' explicit choices.
-* Import from CookieAdmin, GDPR Cookie Compliance (Moove) and WPConsent: banner settings, script rules, WPConsent's policy and preferences shortcodes, and visitors' explicit choices.
+* Import tab and WP-CLI command for moving from Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance (Moove), WPConsent and Real Cookie Banner: dry run, banner settings, script rules, shortcodes in selected policy pages, visitors' explicit choices, undo and exact leftover cleanup that keeps consent records.
 * Move here notices on the Plugins and settings screens: the next step, from import to removing leftovers.
 * Multilingual custom banner messages and policy links with WPML/Polylang; TranslatePress custom-text translation.
 * Optional consent records, CSV export and automatic retention; off by default.

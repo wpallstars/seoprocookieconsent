@@ -106,7 +106,7 @@ final class SEOProCookieConsent_Import_Tab {
                 echo '<p>' . esc_html__('Kept: old consent records and data requests. Export them from the old plugin before deleting it if you must keep them, then remove these tables yourself after your retention period.', 'seoprocookieconsent') . '</p>';
             }
             $cleanup = SEOProCookieConsent_Migrate::cleanup($key, true);
-            $removable = array_filter(array_intersect_key($plan['leftovers'], array_flip(array('options', 'tables', 'cron'))));
+            $removable = array_filter(array_intersect_key($plan['leftovers'], array_flip(SEOProCookieConsent_Migrate::REMOVABLE)));
             if (!$removable) {
                 echo '<p>' . esc_html__('Nothing to remove.', 'seoprocookieconsent') . '</p>';
             } elseif (is_wp_error($cleanup)) {

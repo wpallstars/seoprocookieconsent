@@ -27,6 +27,9 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
     public static function boot() {
     }
 
+    /** Leftover kinds cleanup removes; "kept" is listed only. */
+    const REMOVABLE = array('options', 'tables', 'cron', 'posts', 'terms');
+
     /** Refresh once, at the end of a request that activates, deactivates or deletes a source. */
     public static function watch() {
         add_action('activated_plugin', array(__CLASS__, 'plugin_changed'));
@@ -75,6 +78,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-cookieadmin.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-moove.php';
         require_once __DIR__ . '/class-seoprocookieconsent-migrate-wpconsent.php';
+        require_once __DIR__ . '/class-seoprocookieconsent-migrate-real-cookie-banner.php';
         $sources = apply_filters('seoprocookieconsent_migrate_sources', array(
             'complianz'              => new SEOProCookieConsent_Migrate_Complianz(),
             'cookieyes'              => new SEOProCookieConsent_Migrate_CookieYes(),
@@ -82,6 +86,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             'cookieadmin'            => new SEOProCookieConsent_Migrate_CookieAdmin(),
             'gdpr-cookie-compliance' => new SEOProCookieConsent_Migrate_Moove(),
             'wpconsent'              => new SEOProCookieConsent_Migrate_WPConsent(),
+            'real-cookie-banner'     => new SEOProCookieConsent_Migrate_Real_Cookie_Banner(),
         ));
         return array_filter((array) $sources, function ($source) {
             return $source instanceof SEOProCookieConsent_Migrate_Source;
@@ -109,7 +114,7 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
             $left = $source->leftovers();
             $found[$key] = array(
                 'present' => !empty($detection['present']),
-                'data'    => (bool) array_filter(array_intersect_key($left, array_flip(array('options', 'tables', 'cron')))),
+                'data'    => (bool) array_filter(array_intersect_key($left, array_flip(self::REMOVABLE))),
                 'pages'   => (bool) $source->pages(),
             );
             if (!isset($previous[$key]['off']) && ($detection['present'] || $imported)) {
@@ -390,6 +395,33 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         }
         foreach ($items['cron'] ?? array() as $hook) {
             wp_clear_scheduled_hook($hook);
+        }
+        // Source posts and terms, with their meta and relationships; nothing goes to the trash.
+        foreach ($items['posts'] ?? array() as $post_id) {
+            if (get_post((int) $post_id) && !wp_delete_post((int) $post_id, true)) {
+                return new WP_Error('post', __('A source post could not be removed. Review a new dry run.', 'seoprocookieconsent'));
+            }
+        }
+        foreach ($items['terms'] ?? array() as $taxonomy => $term_ids) {
+            // An inactive source no longer registers its taxonomy, which core requires to delete terms.
+            $registered = taxonomy_exists($taxonomy);
+            if (!$registered) {
+                register_taxonomy($taxonomy, array(), array('public' => false, 'rewrite' => false));
+            }
+            $failed = false;
+            foreach ((array) $term_ids as $term_id) {
+                $deleted = wp_delete_term((int) $term_id, $taxonomy);
+                if (is_wp_error($deleted) || false === $deleted) {
+                    $failed = true;
+                    break;
+                }
+            }
+            if (!$registered) {
+                unregister_taxonomy($taxonomy);
+            }
+            if ($failed) {
+                return new WP_Error('term', __('A source term could not be removed. Review a new dry run.', 'seoprocookieconsent'));
+            }
         }
         $config = (array) get_option(self::CONFIG, array());
         $config[$key] = array('off' => true);

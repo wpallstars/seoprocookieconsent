@@ -30,6 +30,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         'cookieadmin'            => 'CookieAdmin',
         'gdpr-cookie-compliance' => 'GDPR Cookie Compliance',
         'wpconsent-cookies-banner-privacy-suite' => 'WPConsent',
+        'real-cookie-banner'     => 'Real Cookie Banner',
+        'real-cookie-banner-pro' => 'Real Cookie Banner Pro',
     );
 
     /** Google services sent before consent with Consent Mode advanced. */

@@ -46,9 +46,9 @@ Version: 0.1.0
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **8 plugins**, some of them in part, with free and Pro editions counted separately. The 7 that can be downloaded come to 22.4 MB zipped; SEO Pro Cookie Consent is 356 KB.
+SEO Pro Cookie Consent replaces **10 plugins**, some of them in part, with free and Pro editions counted separately. The 8 that can be downloaded come to 25.9 MB zipped; SEO Pro Cookie Consent is 364 KB.
 
-It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance and WPConsent, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
+It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance, WPConsent and Real Cookie Banner, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
 - **Holds back what sets cookies.** Scripts and embeds from Google Analytics, Google Tag Manager, Google Ads, Meta Pixel, TikTok, LinkedIn, Pinterest, Microsoft Clarity and Advertising, Hotjar, HubSpot, X, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram, Facebook and live chats (Tawk.to, Crisp, Intercom) wait until visitors allow them. Nothing to scan or list by hand: the plugin recognises them in each page as it is sent.
 - **Asks only where needed.** No banner on pages with nothing held back. Visitors in Europe (EU, EEA, UK, Switzerland), Quebec, or anywhere their browser does not make clear, are asked before anything loads; everyone else gets the site as usual with a short notice, or no notice at all if you prefer. The browser's time zone decides, so nothing is looked up, nothing is sent anywhere and page caches keep working.
@@ -63,7 +63,7 @@ It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compli
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
-- **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance and WPConsent.** The Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
+- **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent and Real Cookie Banner.** The Import tab previews, then imports their settings, script rules, policy pages and visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
@@ -172,6 +172,17 @@ The same Import tab, WP-CLI command (`cookieadmin`, `gdpr-cookie-compliance`, `w
 - **Visitors' choices**: its Statistics and Marketing choices carry over; embeds follow Marketing, and preferences need both. A visitor who only pressed Load on one embed, or chose only some services, is asked again. Closing its banner saves nothing.
 - **Cleanup** keeps its consent logs and Do Not Track requests. Its cookie list (posts and categories) is not removed: WPConsent deletes it on uninstall when its own delete-data option is on.
 
+## Move from Real Cookie Banner
+
+The same Import tab, WP-CLI command (`real-cookie-banner`), undo, Move here steps and leftover cleanup work for Real Cookie Banner and Real Cookie Banner Pro (`real-cookie-banner`, `real-cookie-banner-pro`, both checked against 5.4.0). Only data stored on your site is read.
+
+- **Settings**: an active banner asks everyone first; consent lifetime, a bottom bar or bottom left/right dialog, and its cookie policy page. Its banner texts are not imported: they describe its own dialog, and the message here names what each page uses.
+- **Script rules**: addresses that its services' opt-in code loads, and plain address rules of its content blockers, become **Also hold back** lines in the service's category (recognised services by template; otherwise Statistics, Marketing, or functional groups as preferences). Rules with inner wildcards and element selectors are left for you. It ran its services' code itself, so that code stops when it is gone: the Import tab lists those services; add any code you still need to your theme or a header-code plugin, and this plugin holds it back.
+- **Pages**: `[rcb-cookie-policy]` becomes the Cookie policy block, and `[rcb-consent]` change and revoke links the Cookie settings button. History links, `[rcb-consent-history-uuids]` and `#consent-…` links are listed for you to replace. Menu links to `#consent-change`, `#consent-history` or `#consent-revoke` are reported: point them at `#cookie-settings`.
+- **Visitors' choices**: Accept all, Continue without consent, saved individual choices, a content blocker's Load and a revoke carry over. Visitors could accept single services, so a category is allowed only when every Real Cookie Banner service in it was accepted; one with none of its own follows them all. Closing its banner with the close icon, country bypass and bot or Do Not Track choices are not carried over, so those visitors are asked again.
+- **Not imported**: Pro's TCF, Google Consent Mode, country bypass, consent forwarding and banner-less consent. The Import tab names any that were on; while country bypass or banner-less consent is on, visitors are asked again.
+- **Cleanup** removes its settings, services, content blockers, banner links, groups and its scan, template and statistics tables. Its consent records and the revisions they refer to are listed but kept. Deleting the plugin removes only its copied script files. Real Cookie Banner always kept consent records: turn on **Keep consent records** if you need to go on documenting choices.
+
 ## Where to find it
 
 Go to **Settings → SEO Pro Cookie Consent**. The screen has two groups of tabs:
@@ -273,6 +284,8 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 - Import from Complianz on the Import tab or with WP-CLI: dry run, default-only settings, script rules, selected policy pages with revisions, visitors' explicit choices, undo and confirmed leftover cleanup that keeps records of consent.
 - Import from CookieYes and Cookie Notice & Compliance in their local modes: banner settings, script rules from CookieYes's cookie list and Cookie Notice's after-acceptance scripts, settings and policy shortcodes in selected pages, and visitors' explicit choices by category; hosted (web app) and legacy modes are reported, not guessed. Source shortcodes inside a paragraph become this plugin's shortcodes instead of invalid nested blocks.
+- Import from CookieAdmin, GDPR Cookie Compliance (Moove) and WPConsent: banner settings, script rules, WPConsent's policy and preferences shortcodes, and visitors' explicit choices; Pro add-on behaviour is reported, not guessed.
+- Import from Real Cookie Banner and Real Cookie Banner Pro: banner settings, script rules from its services' opt-in code and content blockers, policy and privacy-settings shortcodes, and visitors' explicit service choices mapped to categories; Pro-only features are reported, and cleanup removes its services, blockers and groups but keeps its consent records.
 - Move here notices on the Plugins and settings screens: one next step per source, from import through switching to removing leftovers, with links and a per-person Hide.
 - Multilingual custom banner messages and policy links with WPML and Polylang, plus TranslatePress custom-text translation.
 - Optional consent records: anonymous choice snapshots, policy labels, administrator CSV export and automatic batched retention, with uninstall cleanup.
