@@ -58,7 +58,7 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
                 <?php $seoprocookieconsent_necessary = 'necessary' === $seoprocookieconsent_id; ?>
                 <li class="spcc-dialog__category" data-spcc-category-row="<?php echo esc_attr($seoprocookieconsent_id); ?>"<?php echo $seoprocookieconsent_necessary ? '' : ' hidden'; ?>>
                     <label class="spcc-toggle">
-                        <input type="checkbox" role="switch" name="<?php echo esc_attr($seoprocookieconsent_id); ?>" value="1" aria-describedby="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>"<?php echo $seoprocookieconsent_necessary ? ' checked disabled' : ''; ?> />
+                        <input type="checkbox" role="switch" name="<?php echo esc_attr($seoprocookieconsent_id); ?>" data-spcc-toggle="<?php echo esc_attr($seoprocookieconsent_id); ?>" value="1" aria-describedby="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>"<?php echo $seoprocookieconsent_necessary ? ' checked disabled' : ''; ?> />
                         <span class="spcc-toggle__label"><?php echo esc_html($seoprocookieconsent_category['label']); ?></span>
                     </label>
                     <p id="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>" class="spcc-dialog__desc">
@@ -69,9 +69,9 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
             <?php endforeach; ?>
         </ul>
         <div class="spcc-dialog__actions">
-            <button type="submit" value="reject" class="spcc-btn"><?php esc_html_e('Reject all', 'seoprocookieconsent'); ?></button>
-            <button type="submit" value="save" class="spcc-btn spcc-btn--quiet"><?php esc_html_e('Save choices', 'seoprocookieconsent'); ?></button>
-            <button type="submit" value="accept" class="spcc-btn"><?php esc_html_e('Accept all', 'seoprocookieconsent'); ?></button>
+            <button type="submit" value="reject" class="spcc-btn" data-spcc-action="reject"><?php esc_html_e('Reject all', 'seoprocookieconsent'); ?></button>
+            <button type="submit" value="save" class="spcc-btn spcc-btn--quiet" data-spcc-action="save"><?php esc_html_e('Save choices', 'seoprocookieconsent'); ?></button>
+            <button type="submit" value="accept" class="spcc-btn" data-spcc-action="accept"><?php esc_html_e('Accept all', 'seoprocookieconsent'); ?></button>
         </div>
     </form>
 </dialog>
