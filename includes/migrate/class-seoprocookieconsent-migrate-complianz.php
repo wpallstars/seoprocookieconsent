@@ -198,7 +198,10 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
 
     /** Require category decisions, not the ambiguous banner-status cookie alone. @return array */
     public function consent_cookie() {
-        return array('status' => 'cmplz_banner-status', 'value' => 'dismissed', 'categories' => array('preferences' => 'cmplz_preferences', 'statistics' => 'cmplz_statistics', 'marketing' => 'cmplz_marketing'), 'allow' => 'allow', 'deny' => 'deny');
+        // Mirrors Complianz's prefix rule: a multisite main site uses cmplz_rt_ unless set_cookies_on_root is on.
+        $old = get_option('cmplz_options', array());
+        $p = is_multisite() && is_main_site() && empty(is_array($old) ? ($old['set_cookies_on_root'] ?? '') : '') ? 'cmplz_rt_' : 'cmplz_';
+        return array('status' => $p . 'banner-status', 'value' => 'dismissed', 'categories' => array('preferences' => $p . 'preferences', 'statistics' => $p . 'statistics', 'marketing' => $p . 'marketing'), 'allow' => 'allow', 'deny' => 'deny');
     }
 
     /** @return string[] */
