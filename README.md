@@ -116,6 +116,8 @@ Open **Settings → SEO Pro Cookie Consent → Import**. It finds Complianz data
 - **Pages**, each only when you select it, with a saved revision: cookie policies become the Cookie policy block, Manage consent and revoke links become the Cookie settings button, a document you unlinked and edited keeps your text as editable HTML, and generated documents are kept as rendered HTML. Generated documents need Complianz active to render; a blank document is never saved. Forms (data requests, Do Not Sell) and live lists are listed for you to replace.
 - **Visitors' choices**: a visitor who chose categories in Complianz keeps them; only dismissing the banner is not consent. Carry-over starts once Complianz is inactive.
 
+**Continue consent records:** when Complianz Premium's local records table has rows, the dry run includes **Keep consent records: on**, and importing turns it on. The same applies to local consent tables left by Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin and WPConsent, even if their settings are gone. Only the existence of a row is checked; old records are never read or copied. Empty or missing tables, data requests and Real Cookie Banner's revisions alone do not enable recording. Hosted providers leave the setting unchanged. Undo restores the previous setting through the normal changed-since-import checks; importing again without changes does nothing. Review your privacy policy and purge page caches when switching.
+
 Each import can be undone while its values and pages are unchanged. After checking the banner and pages, deactivate and delete Complianz, then use **Remove leftover data** to delete exactly the listed options, tables, scheduled events, post meta (scan markers and the per-page hide-banner setting) and the folders it generates in `uploads/complianz` (vendor lists, banner CSS, placeholders, GeoLite database, PDF font cache), never while Complianz is active. Its records of consent and data requests, and any other `uploads/complianz` folder such as proof-of-consent snapshots, are listed but kept; export them first if you must keep them. Check Complianz's own delete-data-on-uninstall setting first, and purge page caches after switching. The same steps run with WP-CLI: `wp seoprocookieconsent migrate plan|import|undo|cleanup complianz` (`--pages=ID,ID`, `--dry-run`).
 
 Until Complianz and its data are gone, the Plugins screen (a notice at the top and a note under each Complianz row) and this plugin's settings screen show the next step, with a link:
@@ -185,7 +187,7 @@ The same Import tab, WP-CLI command (`real-cookie-banner`), undo, Move here step
 - **Pages**: `[rcb-cookie-policy]` becomes the Cookie policy block, and `[rcb-consent]` change and revoke links the Cookie settings button. History links, `[rcb-consent-history-uuids]` and `#consent-…` links are listed for you to replace. Menu links to `#consent-change`, `#consent-history` or `#consent-revoke` are reported: point them at `#cookie-settings`.
 - **Visitors' choices**: Accept all, Continue without consent, saved individual choices, a content blocker's Load and a revoke carry over. Visitors could accept single services, so a category is allowed only when every Real Cookie Banner service in it was accepted; one with none of its own follows them all. Closing its banner with the close icon, country bypass and bot or Do Not Track choices are not carried over, so those visitors are asked again.
 - **Not imported**: Pro's TCF, Google Consent Mode, country bypass, consent forwarding and banner-less consent. The Import tab names any that were on; while country bypass or banner-less consent is on, visitors are asked again.
-- **Cleanup** removes its settings, services, content blockers, banner links, groups and its scan, template and statistics tables. Its consent records and the revisions they refer to are listed but kept. Deleting the plugin removes only its copied script files. Real Cookie Banner always kept consent records: turn on **Keep consent records** if you need to go on documenting choices.
+- **Cleanup** removes its settings, services, content blockers, banner links, groups and its scan, template and statistics tables. Its consent records and the revisions they refer to are listed but kept. Deleting the plugin removes only its copied script files. When local consent rows exist, the import turns on **Keep consent records** to continue documenting choices.
 
 ## Move from Cookiebot, iubenda or Termly
 
@@ -308,6 +310,10 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- Imports continue consent recording when local record rows exist for Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent. Dry run and undo include the setting; hosted providers and empty tables leave it unchanged.
 
 ### 0.1.2
 

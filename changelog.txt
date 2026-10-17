@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Import: turn on Keep consent records when local consent rows exist in Complianz Premium, Borlabs Cookie, Ultimate GDPR & CCPA, Real Cookie Banner, CookieAdmin or WPConsent tables, including when source settings are gone. Prepared SELECT 1 ... LIMIT 1 probes never read or copy record contents. Empty or missing tables, data requests, revisions alone and hosted providers leave recording unchanged. The normal dry run, import journal, changed-since checks and undo include the setting; repeated imports remain no-ops.
+
 = 0.1.2 =
 * Menus: Appearance → Menus has a Cookie settings box that adds a custom link to #cookie-settings, in Title Case beside Title Case policy links; it is shown on a user's first visit. The automatic footer link goes just after the cookie policy page link, else just before the privacy policy link, in any footer menu (a footer theme location, or a menu named "footer", so widget and block menus count); otherwise at the end of the theme's footer menu, as before. Matched by page ID or address; an item with a submenu gets the link at the end instead. A published menu item linking to #cookie-settings anywhere means the owner placed it, so nothing is added.
 * Consent records: Keep records for (days), 0–3650, separates evidence retention from browser choice lifetime. Default 0 follows the current choice lifetime; positive values use the longer period for both cron cleanup and record exports. Records never expire sooner than choices, and snapshot retention is unchanged.
