@@ -104,7 +104,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 = Unreleased =
 * Imports continue recording when source plugins have local consent rows; dry run and undo include Keep consent records. Hosted providers and empty tables leave it unchanged.
-* A page with an old autosave no longer stops the import.
+* A page with an old autosave no longer stops the import. Importing a cookie policy turns on Cookie policy.
 
 = 0.1.2 =
 * Appearance → Menus has a ready-made Cookie settings link. The automatic footer link sits after the cookie policy link, or before the privacy policy link, and reaches footer menus shown by widgets.

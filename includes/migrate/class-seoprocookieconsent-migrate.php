@@ -282,6 +282,15 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 $pages[$post->ID] = array('revision' => $revision, 'before' => $post->post_content, 'after' => $content);
             }
         }
+        // The Cookie policy block renders nothing while Cookie policy is off: turn it on with the pages that use it, journaled for undo.
+        if (empty($before['policy']) && !isset($after['policy'])) {
+            foreach ($pages as $page) {
+                if (false !== strpos($page['after'], '<!-- wp:seoprocookieconsent/cookie-policy') || false !== strpos($page['after'], '[spcc_cookie_policy')) {
+                    $after['policy'] = true;
+                    break;
+                }
+            }
+        }
         $records = (array) get_option(self::IMPORTS, array());
         if (!$after && !$pages) {
             // Nothing left to bring across still counts as imported, so the notices move on to switching.
