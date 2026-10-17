@@ -123,6 +123,98 @@ abstract class SEOProCookieConsent_Migrate_Source {
         return self::known($rule) ? '' : $rule;
     }
 
+    /**
+     * Lines a source let load before consent, as "Never hold back" lines.
+     * Recognised services, and anything not an address, are left out:
+     * they would load Google or ad tags before consent here. A line is kept
+     * as written, never widened to its whole host.
+     *
+     * @param string[] $lines Address fragments.
+     * @return string[]
+     */
+    protected static function allow_rules(array $lines) {
+        $rules = array();
+        foreach ($lines as $line) {
+            $rule = self::script_rule($line);
+            if (is_string($rule) && '' !== $rule) {
+                $rules[] = strtolower(trim((string) $line));
+            }
+        }
+        return array_values(array_unique($rules));
+    }
+
+    /**
+     * A link or button that opened the source's own settings dialog, made
+     * to open Cookie settings: its link target and click code are replaced.
+     *
+     * @param string $element Whole <a> or <button> element.
+     * @return string|null Null when it is not one.
+     */
+    protected static function settings_link($element) {
+        if (!preg_match('/^<(a|button)\b([^>]*)>(.*)$/is', $element, $m)) {
+            return null;
+        }
+        $attributes = (string) preg_replace('/\s(?:href|onclick|data-spcc-action)\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]+)/i', '', $m[2]);
+        $target = 'a' === strtolower($m[1]) ? ' href="#cookie-settings"' : ' data-spcc-action="settings"';
+        return '<' . $m[1] . $target . $attributes . '>' . $m[3];
+    }
+
+    /** @param string[] $prefixes Source-owned option name prefixes. @return string[] Names only. */
+    protected static function option_names(array $prefixes) {
+        global $wpdb;
+        $options = array();
+        foreach ($prefixes as $prefix) {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- indexed, source-owned option prefixes; names only, never values.
+            $options = array_merge($options, $wpdb->get_col($wpdb->prepare("SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s ORDER BY option_name LIMIT 1000", $wpdb->esc_like($prefix) . '%')));
+        }
+        return array_values(array_unique($options));
+    }
+
+    /** @param string[] $prefixes Source-owned cron hook prefixes. @return string[] */
+    protected static function cron_hooks(array $prefixes) {
+        $hooks = array();
+        foreach (_get_cron_array() ?: array() as $events) {
+            foreach (array_keys($events) as $hook) {
+                foreach ($prefixes as $prefix) {
+                    if (0 === strpos($hook, $prefix)) {
+                        $hooks[] = $hook;
+                    }
+                }
+            }
+        }
+        return array_values(array_unique($hooks));
+    }
+
+    /**
+     * Notes every hosted (web app) source shares: what stays in its
+     * dashboard, why visitors are asked again, and what to compare.
+     *
+     * @return string[]
+     */
+    protected function hosted_notes() {
+        $notes = array(
+            /* translators: %s: name of the old consent plugin. */
+            sprintf(__('%s keeps its banner, regions, categories, texts and cookie scan in its own dashboard, which this import never contacts, so they are not imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching.', 'seoprocookieconsent'), static::NAME),
+            /* translators: %s: name of the old consent plugin. */
+            sprintf(__('Visitors\' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once.', 'seoprocookieconsent'), static::NAME),
+        );
+        $names = array();
+        foreach (SEOProCookieConsent_Services::seen_by_category() as $services) {
+            foreach ($services as $service) {
+                $names[] = $service['name'];
+            }
+        }
+        if ($names) {
+            /* translators: 1: name of the old consent plugin, 2: list of service names. */
+            $notes[] = sprintf(__('Compare %1$s\'s cookie scan with the services this plugin found on your pages: %2$s. Add anything missing under Troubleshooting → Also hold back.', 'seoprocookieconsent'), static::NAME, implode(', ', $names));
+        } else {
+            /* translators: %s: name of the old consent plugin. */
+            $notes[] = sprintf(__('This plugin has not found services on your pages yet. After switching, use Scan now on the Cookie consent tab and compare its list with %s\'s cookie scan; add anything missing under Troubleshooting → Also hold back.', 'seoprocookieconsent'), static::NAME);
+        }
+        $notes[] = __('Consent records it kept on its own servers stay there: export any you must keep before closing that account. Turn on Keep consent records here to go on documenting choices.', 'seoprocookieconsent');
+        return $notes;
+    }
+
     /** Whether a fragment is part of a recognised service pattern. @param string $fragment Fragment. @return bool */
     private static function known($fragment) {
         foreach (SEOProCookieConsent_Services::all() as $service) {
