@@ -176,7 +176,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                     $replacement = $token['replace']; // Adapter-built markup, already sanitised.
                 } else {
                     $html = 0 === strpos($token['token'], '[') ? do_shortcode($token['token']) : do_blocks($token['token']);
-                    if ('' === trim($html) || $html === $token['token']) {
+                    // An unfinished source wizard renders only a wrapper and comment: never freeze a blank document.
+                    if ('' === trim(wp_strip_all_tags($html)) || $html === $token['token']) {
                         return new WP_Error('render', __('A source document could not render. It was not replaced.', 'seoprocookieconsent'));
                     }
                     $replacement = "<!-- wp:html -->\n" . wp_kses_post($html) . "\n<!-- /wp:html -->";
@@ -186,8 +187,8 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
                 $content = str_replace(array($wrapped, $token['token']), $replacement, $content);
             }
             if ($content !== $post->post_content) {
-                $revision = wp_save_post_revision($post->ID);
-                if (!$revision || is_wp_error($revision)) {
+                $revision = self::revision($post);
+                if (!$revision) {
                     return new WP_Error('revision', __('A page revision could not be saved. Nothing was replaced.', 'seoprocookieconsent'));
                 }
                 $pages[$post->ID] = array('revision' => $revision, 'before' => $post->post_content, 'after' => $content);
@@ -218,6 +219,23 @@ final class SEOProCookieConsent_Migrate extends SEOProCookieConsent_Feature {
         update_option(self::IMPORTS, $records, false);
         self::refresh();
         return array('changed' => true, 'id' => $id);
+    }
+
+    /**
+     * A revision holding the current content. Core skips saving when the
+     * newest revision already matches, which is normal after an editor save.
+     *
+     * @param WP_Post $post Page.
+     * @return int Revision ID, or 0.
+     */
+    private static function revision($post) {
+        $revision = wp_save_post_revision($post->ID);
+        if ($revision && !is_wp_error($revision)) {
+            return (int) $revision;
+        }
+        $latest = wp_get_post_revisions($post->ID, array('numberposts' => 1, 'orderby' => 'ID', 'order' => 'DESC'));
+        $latest = $latest ? reset($latest) : null;
+        return $latest instanceof WP_Post && $latest->post_content === $post->post_content ? (int) $latest->ID : 0;
     }
 
     /** Undo only imported values, never silently overwrite subsequent owner edits. @param string $id Import ID. @return array|WP_Error */
