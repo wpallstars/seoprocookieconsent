@@ -14,7 +14,8 @@
  * activate plugins. Reads only stored plugin lists, the import records and
  * the detection SEOProCookieConsent_Migrate::refresh() cached: no source
  * table or page content is read on page load. For sources shown here, the
- * Plugins screen's "can do the job of these plugins" lines are left out, so
+ * Plugins screen's "can do the job of these plugins" lines are left out, and
+ * the Cookie consent card links to the import instead of Deactivate, so
  * nobody is told to deactivate before importing.
  *
  * "Hide" hides the steps listed at the time for that person; a source shows
@@ -49,6 +50,32 @@ final class SEOProCookieConsent_Migrate_Notices {
         add_action('load-plugins.php', array(__CLASS__, 'plugins_screen'), 20);
         add_action('current_screen', array(__CLASS__, 'settings_screen'));
         add_action('admin_post_' . self::HIDE, array(__CLASS__, 'hide'));
+        add_filter('seoprocookieconsent_replaces_link', array(__CLASS__, 'card_link'), 10, 2);
+    }
+
+    /**
+     * A setting card's link for an active plugin it replaces: while that
+     * plugin's data is not imported yet, the import comes first.
+     *
+     * @param mixed  $link Default Deactivate link: url and label.
+     * @param string $slug Plugin folder.
+     * @return mixed
+     */
+    public static function card_link($link, $slug) {
+        foreach (self::states() as $item) {
+            if ('import' !== $item['state'] || !in_array((string) $slug, $item['source']::SLUGS, true)) {
+                continue;
+            }
+            if (!current_user_can('manage_options')) {
+                return null;
+            }
+            return array(
+                'url'   => SEOProCookieConsent_Admin_Manager::tab_url('import', array('source' => $item['key'])) . '#spcc-import-' . $item['key'],
+                /* translators: %s: other cookie plugin's name */
+                'label' => sprintf(__('Import from %s first', 'seoprocookieconsent'), $item['name']),
+            );
+        }
+        return $link;
     }
 
     /** Whether this person and screen get the notices. @return bool */
