@@ -39,10 +39,7 @@ leftovers lists what is still the starter's).
   the plugin has them, are current.
 - [x] Version 1.0.0 everywhere: `Version:`, the version constant, `Stable tag:`,
   `README.md`'s Version line and the three changelogs.
-- [ ] `scripts/sync-core.sh --check` lists no differences from the starter.
-  At 1.0.0, three differ: `RELEASING.md` and `scripts/lib/deploy-remote.sh`
-  (GH#67) and `STYLING.md` (GH#68) changed here first; take them to the
-  starter.
+- [x] `scripts/sync-core.sh --check` lists no differences from the starter.
 - [x] Checks pass: `scripts/lint.sh`, `scripts/preflight-release.sh` (no
   errors; each warning understood), `scripts/smoke-test.sh`,
   `scripts/plugin-check.sh` (no errors on either zip).

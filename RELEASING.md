@@ -7,8 +7,7 @@ submission state and guideline review: `LAUNCH.md`.
 
 Releases on GitHub and the WordPress.org submission need the owner's say.
 None of the scripts below tags, publishes or commits anything, and only
-`scripts/deploy-sites.sh --apply` and `scripts/migrate-sites.sh --apply` change
-sites outside Docker. The
+`scripts/deploy-sites.sh --apply` changes a site outside Docker. The
 Release workflow (`.github/workflows/release.yml`) publishes a GitHub release
 only when someone pushes a version tag.
 
@@ -21,21 +20,35 @@ only when someone pushes a version tag.
 | `scripts/plugin-check.sh [--ref REF] [--zip FILE]` | Runs Plugin Check on both zips in a disposable WordPress in Docker, then removes it. |
 | `scripts/update-test.sh [--from X.Y.Z] [--to X.Y.Z] [--wp VERSION] [--php VERSION] [--keep-log FILE]` | After a release: installs the previous GitHub release (default: the one before the newest) on a disposable WordPress in Docker and checks that it is offered the new one from its asset (WP-CLI, **Check again** on the Updates screen, the Plugins screen), that the update installs and the plugin stays active, and that `debug.log` stays empty. Then removes the site. Reads releases with `gh`. |
 | `scripts/deploy-sites.sh --host SSH_HOST --tag vX.Y.Z [--parent PATTERN] [--skip NAME]... [--apply]` | After the update test: installs the release's zip, checked against GitHub's SHA-256 and its provenance bundle, on every install on one SSH host that already has the plugin (default `'~/domains/*/public_html'`). Without `--apply` it only lists them, with their version and whether each is a multisite network. With `--apply`: a backup of each plugin folder, `wp plugin install --force` (activation kept), one full load for the settings upgrade, and one line per install; fails on a version not reached, new lines in the site's PHP logs (`WP_DEBUG_LOG`, including a custom path, and PHP's `error_log`) or a failed home page, with the restore command. The remote part is `scripts/lib/deploy-remote.sh`. |
+
+The deploy runner snapshots the **stored**, unfiltered activation lists and
+their counts before the install and the settings-upgrade load, then requires
+exactly the intended difference (none: `install --force` keeps activation).
+On multisite it checks every blog and the network activation list too. A
+WP-CLI error (including `Error establishing a database connection` even with
+exit zero), an invalid snapshot or an unexpected difference prints FAIL and
+stops that install; the host run continues with the others. On a healthy
+readable single site, a strict-subset wipe is restored with an atomic
+compare-and-swap and rechecked, but the install still fails. Extra entries,
+concurrent changes and network state are **never** overwritten
+automatically: review the diff and restore command instead. A plugin's own
+fleet script can source `scripts/lib/deploy-remote.sh` with
+`DEPLOY_LIBRARY_ONLY=1` and wrap each change in `active_guard` for the same
+checks.
+
+<!-- spcc-own:start -->
+This plugin also has `scripts/migrate-sites.sh`, which with `--apply` also
+changes sites outside Docker:
+
+| Script | What it does |
+|--------|--------------|
 | `scripts/migrate-sites.sh --host SSH_HOST --tag vX.Y.Z --source SOURCE [--parent PATTERN] [--skip NAME]... [--user ID] [--apply] [--finish]` | Dry-run by default. Uses the repository migration adapter's source directories and the deploy script's release digest/provenance checks. On single sites only, `--apply` backs up the database with mysqldump (private temporary credentials file) and source/destination plugin folders, installs the destination if missing, activates, plans/imports renderable pages, enables consent, deactivates sources and checks HTTP 200 plus banner markup. The destination must match `--tag`; use deploy-sites first to update an existing copy. After reviewing the site, `--finish --apply` separately deletes inactive source plugins through core, cleans their data and purges active LiteSpeed. `--user` selects a WordPress administrator; otherwise the first administrator is used. The remote part is `scripts/lib/migrate-remote.sh`. |
 
-Both fleet runners snapshot the **stored**, unfiltered activation lists and
-their counts before each install/activate/deactivate/delete, then require exactly
-the intended difference. Deploy also checks every blog and the network activation
-list on multisite; migration refuses multisite before changing it. A WP-CLI error
-(including `Error establishing a database connection` even with exit zero), an
-invalid snapshot or an unexpected difference prints FAIL and stops that install;
-the host run continues with the others. No later import/deactivation/deletion is
-allowed after that FAIL. On a healthy readable single site, a strict-subset wipe
-is restored with an atomic compare-and-swap and rechecked, but the install still
-fails. Extra entries, concurrent changes and network state are **never**
-overwritten automatically: review the
-diff and restore command instead. An intended new activation alongside missing
-plugins also needs operator recovery, since that is not a strict subset.
+Migration wraps each install, activate, deactivate and delete in the same
+`active_guard`, and refuses multisite before changing it. No later
+import/deactivation/deletion is allowed after a FAIL. An intended new
+activation alongside missing plugins also needs operator recovery, since that
+is not a strict subset.
 
 Migration backups are outside the web root at
 `~/.seoprocookieconsent-deploy/migrate-NAME-STAMP` (directories 700, files 600).
@@ -53,6 +66,7 @@ when it replaces policy blocks. A completed import with source folders already
 gone is skipped on rerun; review an interrupted finish separately before cleaning
 remaining source data. Production apply/finish is an operator step, not a worker
 verification command. These scripts never ship in either release zip.
+<!-- spcc-own:end -->
 
 The two builds of each version:
 
