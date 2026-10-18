@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Consent records: Cookie settings shows the cookie's consent ID only with recording on and an existing choice, with a keyboard-accessible copy button and live success/failure feedback. Browser-only ID population keeps cached HTML visitor-independent. Administrator-only, nonce-protected POST lookup validates exact 32-character lowercase hexadecimal IDs and shows unexpired choices, UTC times, policy versions and snapshot hashes newest first in indexed pages of 100. Schema 3 adds a visitor-ID/record-ID index. No public read route. Document pseudonymous records and exclusion from WordPress's email-based personal data export/erase tools.
+
 = 0.1.4 =
 * Consent automation: stable data-spcc-action hooks on dialog buttons and data-spcc-toggle category inputs, preserving the banner's existing action names and all behaviour. Document the DOM contract, normal explicit-choice recording and decision not to fingerprint automated answers. Local autoconsent and Consent-O-Matic drafts are development-only, not yet upstream support.
 * Blocker: the held iframe inside a placeholder is hidden with .spcc-embed[data-spcc-embed] iframe { display: none !important }. Before, site or theme rules of equal specificity loaded later (such as .spd-listing-map iframe { display: block; width: 100% !important }) showed the blank iframe beside the notice, squeezing it to one word per line on phones. Releasing still unwraps the iframe, so loaded embeds are unaffected.

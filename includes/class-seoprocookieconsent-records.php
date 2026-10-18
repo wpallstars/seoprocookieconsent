@@ -18,6 +18,7 @@ final class SEOProCookieConsent_Records {
 
     const CRON = 'seoprocookieconsent_records_cleanup';
     const SCHEMA = 'seoprocookieconsent_records_schema';
+    const SCHEMA_VERSION = '3';
 
     /** Register narrow hooks, including retention when recording is disabled. */
     public static function boot() {
@@ -27,6 +28,8 @@ final class SEOProCookieConsent_Records {
         add_action(self::CRON, array(__CLASS__, 'cleanup'));
         add_action('rest_api_init', array(__CLASS__, 'routes'));
         add_action('admin_post_seoprocookieconsent_records_export', array(__CLASS__, 'export'));
+        add_action('admin_post_seoprocookieconsent_records_lookup', array(__CLASS__, 'lookup'));
+        add_action('admin_post_nopriv_seoprocookieconsent_records_lookup', array(__CLASS__, 'lookup'));
         add_action('admin_post_seoprocookieconsent_snapshots_export', array(__CLASS__, 'export_snapshots'));
     }
 
@@ -50,7 +53,7 @@ final class SEOProCookieConsent_Records {
     /** Lazily create storage only after opt-in, never on a visitor request. */
     public static function sync() {
         global $wpdb;
-        if (self::enabled() && '2' !== get_option(self::SCHEMA)) {
+        if ((self::enabled() || get_option(self::SCHEMA)) && self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             require_once ABSPATH . 'wp-admin/includes/upgrade.php';
             $table = self::table();
             $collate = $wpdb->get_charset_collate();
@@ -63,7 +66,8 @@ final class SEOProCookieConsent_Records {
                 snapshot char(64) NOT NULL DEFAULT '',
                 choice longtext NOT NULL,
                 PRIMARY KEY  (id),
-                KEY recorded_at (recorded_at)
+                KEY recorded_at (recorded_at),
+                KEY visitor_id (visitor_id,id)
             ) {$collate};");
             $snapshots = self::snapshots_table();
             dbDelta("CREATE TABLE {$snapshots} (
@@ -78,10 +82,13 @@ final class SEOProCookieConsent_Records {
             $column = $wpdb->get_var($wpdb->prepare('SHOW COLUMNS FROM %i LIKE %s', $table, 'snapshot'));
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify the second private table exists before accepting records.
             if ('snapshot' === $column && $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($snapshots))) === $snapshots) {
-                update_option(self::SCHEMA, '2', false);
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify our indexed lookup is ready before marking the migration complete.
+                if ($wpdb->get_var($wpdb->prepare('SHOW INDEX FROM %i WHERE Key_name = %s', $table, 'visitor_id'))) {
+                    update_option(self::SCHEMA, self::SCHEMA_VERSION, false);
+                }
             }
         }
-        if (self::enabled() && '2' === get_option(self::SCHEMA)) {
+        if (self::enabled() && self::SCHEMA_VERSION === get_option(self::SCHEMA)) {
             $content = self::snapshot_json(SEOProCookieConsent_Consent::config());
             $hash = hash('sha256', $content);
             if ('' === self::known_snapshot($hash)) {
@@ -184,7 +191,7 @@ final class SEOProCookieConsent_Records {
      */
     private static function known_snapshot($hash) {
         global $wpdb;
-        if ('2' !== get_option(self::SCHEMA) || !is_string($hash) || !preg_match('/^[a-f0-9]{64}$/D', $hash)) {
+        if (self::SCHEMA_VERSION !== get_option(self::SCHEMA) || !is_string($hash) || !preg_match('/^[a-f0-9]{64}$/D', $hash)) {
             return '';
         }
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- indexed existence check on immutable private content.
@@ -253,7 +260,7 @@ final class SEOProCookieConsent_Records {
                 return new WP_Error('spcc_record_services', __('Invalid services.', 'seoprocookieconsent'), array('status' => 400));
             }
         }
-        if ('2' !== get_option(self::SCHEMA)) {
+        if (self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             return new WP_Error('spcc_record_unavailable', __('Records are not ready yet.', 'seoprocookieconsent'), array('status' => 503));
         }
         $choice = array('v' => 1, 'c' => $cats, 's' => array_values(array_unique($data['s'])), 'm' => $data['m'], 'p' => empty($data['p']) ? 0 : 1);
@@ -291,15 +298,89 @@ final class SEOProCookieConsent_Records {
         }
     }
 
-    /** Export link lives inside the existing Consent card, not a nested form. */
+    /** Export links and a standalone lookup form inside the Consent card. */
     public static function panel() {
-        if (!current_user_can('manage_options') || '2' !== get_option(self::SCHEMA)) {
+        if (!current_user_can('manage_options') || self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             return;
         }
         $url = wp_nonce_url(admin_url('admin-post.php?action=seoprocookieconsent_records_export'), 'seoprocookieconsent_records_export');
         echo '<p><a class="button" href="' . esc_url($url) . '">' . esc_html__('Export consent records (CSV)', 'seoprocookieconsent') . '</a></p>';
         $snapshots = wp_nonce_url(admin_url('admin-post.php?action=seoprocookieconsent_snapshots_export'), 'seoprocookieconsent_snapshots_export');
         echo '<p><a class="button" href="' . esc_url($snapshots) . '">' . esc_html__('Export consent snapshots (CSV)', 'seoprocookieconsent') . '</a></p>';
+        self::lookup_form();
+    }
+
+    /**
+     * A separate POST form keeps IDs out of URLs, history and referrers.
+     *
+     * @param string $visitor Consent ID for another page.
+     * @param int    $before Exclusive record cursor.
+     */
+    private static function lookup_form($visitor = '', $before = 0) {
+        if ($before) {
+            echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+            echo '<input type="hidden" name="action" value="seoprocookieconsent_records_lookup" />';
+            wp_nonce_field('seoprocookieconsent_records_lookup', '_wpnonce', false);
+            echo '<input type="hidden" name="visitor_id" value="' . esc_attr($visitor) . '" />';
+            echo '<input type="hidden" name="before" value="' . esc_attr((string) $before) . '" />';
+            echo '<p><button type="submit" class="button">' . esc_html__('Older records', 'seoprocookieconsent') . '</button></p></form>';
+        }
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+        echo '<input type="hidden" name="action" value="seoprocookieconsent_records_lookup" />';
+        wp_nonce_field('seoprocookieconsent_records_lookup', '_wpnonce', false);
+        echo '<p><label for="spcc-records-lookup">' . esc_html__('Look up a consent ID', 'seoprocookieconsent') . '</label></p>';
+        echo '<p><input type="text" id="spcc-records-lookup" name="visitor_id" value="' . esc_attr($visitor) . '" pattern="[a-f0-9]{32}" minlength="32" maxlength="32" required dir="ltr" autocomplete="off" /> ';
+        echo '<button type="submit" class="button">' . esc_html__('Look up', 'seoprocookieconsent') . '</button></p></form>';
+    }
+
+    /** Show one bounded, indexed page of private records to site administrators. */
+    public static function lookup() {
+        global $wpdb;
+        if (!current_user_can('manage_options')) {
+            wp_die(esc_html__('You cannot look up consent records.', 'seoprocookieconsent'), '', array('response' => 403));
+        }
+        check_admin_referer('seoprocookieconsent_records_lookup');
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- validate the exact ID rather than silently changing it.
+        $visitor = isset($_POST['visitor_id']) && is_string($_POST['visitor_id']) ? wp_unslash($_POST['visitor_id']) : '';
+        if (!preg_match('/^[a-f0-9]{32}$/D', $visitor)) {
+            wp_die(esc_html__('Invalid consent ID. Enter 32 lowercase hexadecimal characters.', 'seoprocookieconsent'), '', array('response' => 400));
+        }
+        if (self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
+            wp_die(esc_html__('Consent records are not ready yet. Open settings with recording enabled first.', 'seoprocookieconsent'), '', array('response' => 503));
+        }
+        $before = isset($_POST['before']) ? absint($_POST['before']) : 0;
+        $before = $before ?: PHP_INT_MAX;
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- private, indexed keyset page; never cache personal data.
+        $rows = $wpdb->get_results($wpdb->prepare('SELECT id, recorded_at, choice_time, policy, snapshot, choice FROM %i WHERE visitor_id = %s AND id < %d AND recorded_at >= %d ORDER BY id DESC LIMIT 101', self::table(), $visitor, $before, self::cutoff()), ARRAY_A);
+        if (null === $rows || $wpdb->last_error) {
+            wp_die(esc_html__('Could not read consent records.', 'seoprocookieconsent'), '', array('response' => 503));
+        }
+        nocache_headers();
+        header('Referrer-Policy: no-referrer');
+        // Use WordPress's standalone response shell: admin-post has no menu/screen.
+        // No transient, public route or visitor ID in a redirect is needed.
+        ob_start();
+        echo '<div>';
+        echo '<h1>' . esc_html__('Consent records', 'seoprocookieconsent') . '</h1>';
+        echo '<p>' . esc_html__('Consent ID:', 'seoprocookieconsent') . ' <code>' . esc_html($visitor) . '</code></p>';
+        echo '<div style="overflow-x:auto"><table style="width:100%;min-width:600px;table-layout:fixed;overflow-wrap:anywhere;text-align:start"><thead><tr>';
+        foreach (array(__('Recorded (UTC)', 'seoprocookieconsent'), __('Choice time (UTC)', 'seoprocookieconsent'), __('Choice (JSON)', 'seoprocookieconsent'), __('Policy version', 'seoprocookieconsent'), __('Snapshot', 'seoprocookieconsent')) as $label) {
+            echo '<th scope="col">' . esc_html($label) . '</th>';
+        }
+        echo '</tr></thead><tbody>';
+        foreach (array_slice($rows, 0, 100) as $row) {
+            echo '<tr><td>' . esc_html(gmdate('c', (int) $row['recorded_at'])) . '</td><td>' . esc_html(gmdate('c', (int) $row['choice_time'])) . '</td>';
+            echo '<td><code>' . esc_html($row['choice']) . '</code></td><td>' . esc_html($row['policy']) . '</td><td><code>' . esc_html($row['snapshot']) . '</code></td></tr>';
+        }
+        if (!$rows) {
+            echo '<tr><td colspan="5">' . esc_html__('No unexpired records found for this consent ID.', 'seoprocookieconsent') . '</td></tr>';
+        }
+        echo '</tbody></table></div>';
+        self::lookup_form($visitor, count($rows) > 100 ? (int) $rows[99]['id'] : 0);
+        echo '<p><a href="' . esc_url(SEOProCookieConsent_Admin_Manager::page_url()) . '">' . esc_html__('Back to settings', 'seoprocookieconsent') . '</a></p></div>';
+        $html = (string) ob_get_clean();
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- the response HTML above escapes every dynamic value at output.
+        wp_die($html, esc_html__('Consent records', 'seoprocookieconsent'), array('response' => 200));
     }
 
     /** Stream a bounded-memory snapshot, with authorization and formula protection. */
@@ -321,7 +402,7 @@ final class SEOProCookieConsent_Records {
             wp_die(esc_html__('You cannot export consent records.', 'seoprocookieconsent'), '', array('response' => 403));
         }
         check_admin_referer($snapshots ? 'seoprocookieconsent_snapshots_export' : 'seoprocookieconsent_records_export');
-        if ('2' !== get_option(self::SCHEMA)) {
+        if (self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             wp_die(esc_html__('No consent records yet.', 'seoprocookieconsent'));
         }
         nocache_headers();

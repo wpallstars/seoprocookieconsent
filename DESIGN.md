@@ -13,6 +13,12 @@ Scanning. Findings update in place without reloading the settings or moving
 focus; failures keep the old list and explain the browse-pages fallback.
 All controls inherit the existing Light/Dark admin styling.
 
+Consent-ID lookup posts from the Consent card to a private standalone
+WordPress response, with a labelled field and nonce. Results use a semantic
+table, newest first in pages of 100, with Older records and a separate fresh
+lookup form. Long values wrap; the table scrolls horizontally on phones.
+No extra menu, visitor ID in a URL, new palette or animation is added.
+
 The Import tab uses native details, lists, page checkboxes and WordPress buttons
 instead of a new card or palette. Dry-run output precedes each action; pages
 require individual selection and irreversible cleanup has a required backup
@@ -57,6 +63,12 @@ palette of their own.
 - Dialog: native `<dialog>`, 560px wide, a sheet with 16px margins on
   phones, one switch row per kind of cookie with a top border, actions
   at the end (Reject all, Save choices, Accept all).
+- With recording enabled and an existing choice ID, a supplementary row
+  before the actions shows a labelled, read-only monospace ID and quiet
+  Copy button. Both controls retain 44px targets and theme colours. The
+  row wraps on phones without widening the dialog; copy feedback uses a
+  polite status on its own line. No new breakpoints or motion. Preview,
+  missing IDs and disabled recording keep the entire row hidden.
 - Placeholders keep the embed's size (its width and height, or core's
   responsive wrapper) with a translucent tint, centred text, a Load
   button and a Cookie settings text button. Pixel width and height keep

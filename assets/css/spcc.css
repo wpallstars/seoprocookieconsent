@@ -325,6 +325,42 @@
     opacity: 0.85;
 }
 
+.spcc-dialog__record {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+}
+
+.spcc-dialog__record label {
+    flex-basis: 100%;
+    margin: 0;
+}
+
+.spcc-dialog .spcc-dialog__id {
+    flex: 1 1 240px;
+    min-width: 0;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--spcc-border);
+    border-radius: var(--spcc-radius);
+    background: transparent;
+    color: var(--spcc-strong);
+    font: inherit;
+    font-family: monospace;
+}
+
+.spcc-dialog__copy-status {
+    flex-basis: 100%;
+}
+
+.spcc-dialog__copy-status:empty {
+    display: none;
+}
+
 .spcc-dialog__actions {
     display: flex;
     flex-wrap: wrap;
