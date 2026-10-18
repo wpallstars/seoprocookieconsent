@@ -18,7 +18,7 @@ Free cookie consent you switch on rather than set up. It finds the scripts and e
 * **Holds back** Google Analytics, Tag Manager and Ads, Meta, TikTok, LinkedIn, Pinterest, Microsoft, Hotjar, HubSpot and X tags, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram and Facebook embeds, and live chats. Nothing to scan.
 * **Asks only where needed**: Europe (EU, EEA, UK, Switzerland), Quebec and unclear locations are asked first; elsewhere a short notice, or none. Decided from the browser's time zone, so nothing is looked up and page caches keep working.
 * **A fair banner**: Accept all and Reject all look the same, Settings has one switch per kind of cookie, and the message names what is on the page. Preview it on your home page from the settings screen.
-* **Load buttons** on held-back videos, maps and posts, with locally cached YouTube and Vimeo thumbnails.
+* **Load buttons** on held-back videos, maps, players and posts, with locally cached YouTube and Vimeo thumbnails or a generic picture, sized to fit even compact players.
 * **Lightboxes too**: recognised script and iframe addresses added through common DOM APIs wait for consent. Exclude the consent head script from script-delay optimizers; inline-only code and unusual insertion APIs need integration.
 * **Fits your theme**: Kadence light and dark palettes or block theme colours, mobile friendly, keyboard and screen reader friendly.
 * **Cookie settings** link in the footer menu (beside your cookie or privacy policy link), a ready-made item in Appearance → Menus, a block or shortcode, or an optional floating button; taking consent back removes cookies and stops scripts.
@@ -93,7 +93,7 @@ GitHub releases are the stable beta channel: each version comes out there first.
 
 == External services ==
 
-With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube images from i.ytimg.com; Vimeo metadata from vimeo.com and images from i.vimeocdn.com. Requests send the video ID and server IP, not visitor data. Images stay in local uploads; failures retry after a day. Disabling Cookie consent stops new downloads. Unavailable thumbnails leave a plain placeholder. YouTube privacy: https://policies.google.com/privacy ; Vimeo privacy: https://vimeo.com/privacy
+With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube images from i.ytimg.com; Vimeo metadata from vimeo.com and images from i.vimeocdn.com. Requests send the video ID and server IP, not visitor data. Images stay in local uploads; failures retry after a day. Disabling Cookie consent stops new downloads. Unavailable thumbnails show a generic video picture. YouTube privacy: https://policies.google.com/privacy ; Vimeo privacy: https://vimeo.com/privacy
 
 == Screenshots ==
 

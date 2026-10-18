@@ -61,12 +61,21 @@ palette of their own.
   responsive wrapper) with a translucent tint, centred text, a Load
   button and a Cookie settings text button. Pixel width and height keep
   the shape; percentages fill the same container (Kadence's Maps block).
-- YouTube and Vimeo can show a decorative, locally cached thumbnail cropped
-  to fill the existing placeholder; maps show a bundled generic map
-  (`assets/images/map-placeholder.svg`). The notice has a 96%-opaque theme-surface
-  scrim behind it so text and buttons keep their light/dark contrast. Missing
-  images keep the plain tint; no new motion or breakpoints. Actions continue
-  wrapping on phones, with existing 44px touch targets.
+  A pixel height keeps compact players compact (64px floor, one button
+  row); unsized placeholders are at least 180px.
+- Every placeholder shows a decorative image cropped to fill it: a locally
+  cached YouTube or Vimeo thumbnail when ready, else a bundled generic
+  picture in `assets/images/`: `map`, `video` (dark frame, play button),
+  `audio` (play button and waveform; Spotify, SoundCloud), `post` (social
+  card; X, Instagram, Facebook) or `embed` (browser window; anything else).
+  Key shapes sit near the vertical middle, so thin crops still read. The
+  notice has a 96%-opaque theme-surface scrim behind it so text and
+  buttons keep their light/dark contrast; no new motion or breakpoints.
+  Actions continue wrapping on phones, with existing 44px touch targets.
+- Small placeholders step the notice down while it overflows: tighter
+  spacing and text, then the Load and Cookie settings buttons only (the
+  sentence stays for screen readers and in the Load button's title), then
+  the Load button only.
 - Focus outlines are 2px in the strong text colour. Only the switches
   animate, and only without reduced motion.
 

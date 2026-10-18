@@ -79,22 +79,32 @@ HTTP runs during rendering. Cron uses fixed provider endpoints, rejects
 redirects, limits response size, validates JPEG bytes and writes only under
 `uploads/seoprocookieconsent-thumbnails`. Vimeo metadata may point only to
 its HTTPS image CDN. Failed attempts are held for a day; unsupported/private
-videos retain the plain placeholder. Disabled consent stops downloads.
+videos show the bundled generic video image. Disabled consent stops downloads.
 
 The browser receives only a same-host uploads URL, never a provider or external
 CDN URL. Markup is visitor-independent, and existing page caches need their
 normal refresh before a newly downloaded image appears. Uninstall clears
 the event, all thumbnail options and cached JPEGs on every site.
 
-Maps (`SEOProCookieConsent_Thumbnails::MAPS`) skip all of this: they show the
-bundled generic `assets/images/map-placeholder.svg`, in server placeholders
-and, through the config's `images`, in ones `spcc-head.js` builds.
+Every other placeholder, and a video without a cached thumbnail, shows a
+bundled generic `assets/images/{kind}-placeholder.svg`: the kind comes from
+`SEOProCookieConsent_Thumbnails::KINDS` (map, video, audio, post), and
+services not listed, including custom ones, get `embed`. Server placeholders
+use `url()`; ones `spcc-head.js` builds read the config's `images` (service
+ID => URL, with `*` for the fallback). Nothing reaches a service before
+consent.
 
 The placeholder copies the iframe's width and height attributes: pixels on
 both set its aspect ratio and maximum width; otherwise each is copied alone
 (pixel width as a maximum, pixel height, or a percentage), so
 `width="100%" height="100%"` fills its container instead of reading as
-100px. The PHP `size()` and the head script's `size()` must match.
+100px. A pixel height (alone or in the ratio) also sets `min-height:64px`,
+so compact players keep their height instead of the stylesheet's 180px.
+The PHP `size()` and the head script's `size()` must match.
+
+`spcc.js` `fit()` watches placeholders with a `ResizeObserver` (and after
+web fonts load) and sets `data-spcc-fit` 1–3 while the notice overflows the
+box; `spcc.css` → Small embeds styles each level.
 
 ## Regions
 
