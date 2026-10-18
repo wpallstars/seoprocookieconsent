@@ -442,7 +442,8 @@
     };
 
     // The blocker's size(): pixels on both keep the shape; otherwise each
-    // dimension is copied on its own, so 100% fills the container.
+    // dimension is copied on its own, so 100% fills the container. A pixel
+    // height keeps compact players compact (one button row as the floor).
     function size(box, width, height) {
         var pixels = /^\s*(\d{1,5})(?:px)?\s*$/;
         var percent = /^\s*(\d{1,3}(?:\.\d{1,2})?)%\s*$/;
@@ -453,6 +454,7 @@
         if (w > 0 && h > 0) {
             box.style.aspectRatio = w + '/' + h;
             box.style.maxWidth = w + 'px';
+            box.style.minHeight = '64px';
             return;
         }
         if (w > 0) {
@@ -462,6 +464,7 @@
         }
         if (h > 0) {
             box.style.height = h + 'px';
+            box.style.minHeight = '64px';
         } else if ((hm = percent.exec(height || ''))) {
             box.style.height = hm[1] + '%';
         }
@@ -486,7 +489,8 @@
         set.call(box, 'data-spcc-embed', id);
         set.call(box, 'data-spcc-category', category);
         size(box, frame.getAttribute('width'), frame.getAttribute('height'));
-        var image = c.images && c.images[id];
+        // The service's bundled image, else the generic embed ('*').
+        var image = c.images && (c.images[id] || c.images['*']);
         if (image) {
             var img = d.createElement('img');
             img.className = 'spcc-embed__thumbnail';

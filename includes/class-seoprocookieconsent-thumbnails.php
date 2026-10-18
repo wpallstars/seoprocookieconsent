@@ -1,7 +1,7 @@
 <?php
 /**
  * Placeholder images: local video thumbnails, downloaded only by WP-Cron,
- * and a bundled generic map.
+ * and bundled generic images (map, video, audio, post, other embeds).
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
@@ -22,31 +22,85 @@ final class SEOProCookieConsent_Thumbnails {
     const DIRECTORY = 'seoprocookieconsent-thumbnails';
 
     /**
-     * Services shown with the bundled generic map image.
+     * Bundled image kind by service (assets/images/{kind}-placeholder.svg).
+     * Other held services, including custom ones, get the generic embed.
      */
-    const MAPS = array('google-maps');
+    const KINDS = array(
+        'google-maps'     => 'map',
+        'youtube'         => 'video',
+        'vimeo'           => 'video',
+        'spotify'         => 'audio',
+        'soundcloud'      => 'audio',
+        'x-embeds'        => 'post',
+        'instagram'       => 'post',
+        'facebook-embeds' => 'post',
+    );
+
+    /**
+     * Key in bundled() for services without their own kind.
+     */
+    const FALLBACK = '*';
 
     /**
      * Bundled placeholder images by service: generic pictures shipped with
      * the plugin, so nothing reaches the service before consent.
      *
-     * @return array<string, string> Service ID => image URL.
+     * @return array<string, string> Service ID (or FALLBACK) => image URL.
      */
     public static function bundled() {
-        return array_fill_keys(self::MAPS, SEOPROCOOKIECONSENT_URL . 'assets/images/map-placeholder.svg');
+        $images = array();
+        foreach (self::KINDS as $service => $kind) {
+            $images[$service] = self::image($kind);
+        }
+        $images[self::FALLBACK] = self::image('embed');
+        return $images;
     }
 
     /**
-     * Read a local thumbnail or queue it, never contacting a video service.
+     * URL of one bundled placeholder image.
+     *
+     * @param string $kind map, video, audio, post or embed.
+     * @return string
+     */
+    private static function image($kind) {
+        return SEOPROCOOKIECONSENT_URL . 'assets/images/' . $kind . '-placeholder.svg';
+    }
+
+    /**
+     * The image kind for a service.
+     *
+     * @param string $service Service ID.
+     * @return string
+     */
+    private static function kind($service) {
+        $kinds = self::KINDS;
+        return isset($kinds[$service]) ? $kinds[$service] : 'embed';
+    }
+
+    /**
+     * The placeholder image: a local video thumbnail if cached, else the
+     * bundled image for the service's kind.
      *
      * @param string $service Service ID.
      * @param string $src Embed URL.
      * @return string
      */
     public static function url($service, $src) {
-        $bundled = self::bundled();
-        if (isset($bundled[$service])) {
-            return $bundled[$service];
+        $cached = self::cached($service, $src);
+        return '' !== $cached ? $cached : self::image(self::kind($service));
+    }
+
+    /**
+     * Read a local video thumbnail or queue it, never contacting a video
+     * service.
+     *
+     * @param string $service Service ID.
+     * @param string $src Embed URL.
+     * @return string
+     */
+    private static function cached($service, $src) {
+        if ('video' !== self::kind($service)) {
+            return '';
         }
         $parts = wp_parse_url(0 === strpos($src, '//') ? 'https:' . $src : $src);
         if (!is_array($parts) || !isset($parts['host'], $parts['path'])) {

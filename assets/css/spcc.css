@@ -506,6 +506,50 @@
     box-shadow: none;
 }
 
+/*
+ * Small embeds (compact players, phones): spcc.js fit() steps the notice
+ * down while it overflows. 1: tighter spacing and text; 2: buttons only,
+ * the sentence kept for screen readers; 3: the Load button only. Buttons
+ * stay 44px tall; the 64px size floor fits one row.
+ */
+.spcc-embed[data-spcc-fit] {
+    padding: 8px;
+}
+
+.spcc-embed[data-spcc-fit] .spcc-embed__thumbnail ~ .spcc-embed__notice::before {
+    inset: -8px;
+}
+
+.spcc-embed[data-spcc-fit] .spcc-embed__notice p {
+    margin-bottom: 8px;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+}
+
+.spcc-embed[data-spcc-fit] .spcc-embed__notice .spcc-embed__actions {
+    margin: 0;
+    gap: 4px 8px;
+}
+
+.spcc-embed[data-spcc-fit] .spcc-embed__load {
+    padding: 8px 14px;
+    font-size: 0.875rem;
+}
+
+.spcc-embed[data-spcc-fit="2"] .spcc-embed__notice p:first-child,
+.spcc-embed[data-spcc-fit="3"] .spcc-embed__notice p:first-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.spcc-embed[data-spcc-fit="3"] .spcc-embed__settings {
+    display: none;
+}
+
 /* Floating Cookie settings button (optional) ----------------------------- */
 
 .spcc-reopen,
