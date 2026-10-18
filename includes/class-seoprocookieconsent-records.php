@@ -357,23 +357,13 @@ final class SEOProCookieConsent_Records {
         }
         nocache_headers();
         header('Referrer-Policy: no-referrer');
-        // admin-post does not initialize the menu, title or screen chrome.
-        global $title, $parent_file, $submenu_file;
-        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- admin-header requires the title of this authorized standalone admin response.
-        $title = __('Consent records', 'seoprocookieconsent');
-        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- select the existing Settings menu for this standalone admin response.
-        $parent_file = 'options-general.php';
-        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- retain the plugin's existing submenu selection without a new screen route.
-        $submenu_file = 'options-general.php?page=seoprocookieconsent';
-        require_once ABSPATH . 'wp-admin/menu.php';
-        set_current_screen('settings_page_seoprocookieconsent');
-        SEOProCookieConsent_Admin_Manager::enqueue_header();
-        require_once ABSPATH . 'wp-admin/admin-header.php';
-        echo '<div class="wrap">';
-        SEOProCookieConsent_Admin_Manager::render_header();
+        // Use WordPress's standalone response shell: admin-post has no menu/screen.
+        // No transient, public route or visitor ID in a redirect is needed.
+        ob_start();
+        echo '<div>';
         echo '<h1>' . esc_html__('Consent records', 'seoprocookieconsent') . '</h1>';
         echo '<p>' . esc_html__('Consent ID:', 'seoprocookieconsent') . ' <code>' . esc_html($visitor) . '</code></p>';
-        echo '<table class="widefat striped" style="table-layout:fixed;overflow-wrap:anywhere"><thead><tr>';
+        echo '<div style="overflow-x:auto"><table style="width:100%;min-width:600px;table-layout:fixed;overflow-wrap:anywhere;text-align:start"><thead><tr>';
         foreach (array(__('Recorded (UTC)', 'seoprocookieconsent'), __('Choice time (UTC)', 'seoprocookieconsent'), __('Choice (JSON)', 'seoprocookieconsent'), __('Policy version', 'seoprocookieconsent'), __('Snapshot', 'seoprocookieconsent')) as $label) {
             echo '<th scope="col">' . esc_html($label) . '</th>';
         }
@@ -385,11 +375,12 @@ final class SEOProCookieConsent_Records {
         if (!$rows) {
             echo '<tr><td colspan="5">' . esc_html__('No unexpired records found for this consent ID.', 'seoprocookieconsent') . '</td></tr>';
         }
-        echo '</tbody></table>';
+        echo '</tbody></table></div>';
         self::lookup_form($visitor, count($rows) > 100 ? (int) $rows[99]['id'] : 0);
         echo '<p><a href="' . esc_url(SEOProCookieConsent_Admin_Manager::page_url()) . '">' . esc_html__('Back to settings', 'seoprocookieconsent') . '</a></p></div>';
-        require_once ABSPATH . 'wp-admin/admin-footer.php';
-        exit;
+        $html = (string) ob_get_clean();
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- the response HTML above escapes every dynamic value at output.
+        wp_die($html, esc_html__('Consent records', 'seoprocookieconsent'), array('response' => 200));
     }
 
     /** Stream a bounded-memory snapshot, with authorization and formula protection. */
