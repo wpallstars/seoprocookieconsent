@@ -99,21 +99,7 @@ final class SEOProCookieConsent_Thumbnails {
      * @return string
      */
     private static function cached($service, $src) {
-        if ('video' !== self::kind($service)) {
-            return '';
-        }
-        $parts = wp_parse_url(0 === strpos($src, '//') ? 'https:' . $src : $src);
-        if (!is_array($parts) || !isset($parts['host'], $parts['path'])) {
-            return '';
-        }
-        $host = strtolower($parts['host']);
-        $id   = '';
-        if ('youtube' === $service && in_array($host, array('www.youtube.com', 'youtube.com', 'www.youtube-nocookie.com', 'youtube-nocookie.com'), true)
-            && preg_match('#^/embed/([A-Za-z0-9_-]{11})/?$#D', $parts['path'], $match)) {
-            $id = $match[1];
-        } elseif ('vimeo' === $service && 'player.vimeo.com' === $host && preg_match('#^/video/([0-9]{1,12})/?$#D', $parts['path'], $match)) {
-            $id = $match[1];
-        }
+        $id = 'video' === self::kind($service) ? self::video_id($service, $src) : '';
         if ('' === $id) {
             return '';
         }
@@ -133,6 +119,31 @@ final class SEOProCookieConsent_Thumbnails {
     }
 
     /**
+     * The video's ID in a YouTube or Vimeo player address.
+     *
+     * @param string $service Service ID.
+     * @param string $src Embed URL.
+     * @return string The ID, or "".
+     */
+    private static function video_id($service, $src) {
+        $hosts = array(
+            'youtube' => array('www.youtube.com', 'youtube.com', 'www.youtube-nocookie.com', 'youtube-nocookie.com'),
+            'vimeo'   => array('player.vimeo.com'),
+        );
+        $paths = array(
+            'youtube' => '#^/embed/([A-Za-z0-9_-]{11})/?$#D',
+            'vimeo'   => '#^/video/(\d{1,12})/?$#D',
+        );
+        $parts = wp_parse_url(0 === strpos($src, '//') ? 'https:' . $src : $src);
+        if (!isset($hosts[$service]) || !is_array($parts) || !isset($parts['host'], $parts['path'])
+            || !in_array(strtolower($parts['host']), $hosts[$service], true)
+            || !preg_match($paths[$service], $parts['path'], $match)) {
+            return '';
+        }
+        return $match[1];
+    }
+
+    /**
      * Download a bounded JPEG in cron; failures are retried after a day.
      *
      * @param string $service Service ID.
@@ -141,7 +152,7 @@ final class SEOProCookieConsent_Thumbnails {
     public static function fetch($service, $id) {
         if (!wp_doing_cron() || !SEOProCookieConsent_Consent::enabled()
             || !in_array($service, array('youtube', 'vimeo'), true)
-            || !preg_match('youtube' === $service ? '/^[A-Za-z0-9_-]{11}$/D' : '/^[0-9]{1,12}$/D', $id)) {
+            || !preg_match('youtube' === $service ? '/^[A-Za-z0-9_-]{11}$/D' : '/^\d{1,12}$/D', $id)) {
             return;
         }
         $key    = self::PREFIX . $service . '_' . $id;
@@ -151,15 +162,9 @@ final class SEOProCookieConsent_Thumbnails {
         }
         // Persist before I/O: concurrent requests and failures cannot hammer providers.
         update_option($key, array('retry' => time() + DAY_IN_SECONDS), false);
-        $url = 'https://i.ytimg.com/vi/' . $id . '/hqdefault.jpg';
-        if ('vimeo' === $service) {
-            $response = self::request('https://vimeo.com/api/v2/video/' . $id . '.json', 65536);
-            $data     = json_decode($response, true);
-            $url      = is_array($data) && isset($data[0]['thumbnail_large']) ? $data[0]['thumbnail_large'] : '';
-            // Only Vimeo's image CDN, never an arbitrary oEmbed/API-supplied host.
-            if (!is_string($url) || !preg_match('#^https://i\.vimeocdn\.com/video/[A-Za-z0-9_./-]+(?:\?[A-Za-z0-9_%=&.-]+)?$#D', $url)) {
-                return;
-            }
+        $url = 'vimeo' === $service ? self::vimeo_image($id) : 'https://i.ytimg.com/vi/' . $id . '/hqdefault.jpg';
+        if ('' === $url) {
+            return;
         }
         $body   = self::request($url, 2 * MB_IN_BYTES);
         $image  = '' !== $body ? @getimagesizefromstring($body) : false; // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- malformed remote images are an expected cache miss.
@@ -173,6 +178,22 @@ final class SEOProCookieConsent_Thumbnails {
         if (false !== file_put_contents($file, $body, LOCK_EX)) {
             update_option($key, array('ready' => true), false);
         }
+    }
+
+    /**
+     * A Vimeo video's thumbnail address, from its public API.
+     *
+     * @param string $id Video ID.
+     * @return string The address, or "".
+     */
+    private static function vimeo_image($id) {
+        $data = json_decode(self::request('https://vimeo.com/api/v2/video/' . $id . '.json', 65536), true);
+        $url  = is_array($data) && isset($data[0]['thumbnail_large']) ? $data[0]['thumbnail_large'] : '';
+        // Only Vimeo's image CDN, never an arbitrary oEmbed/API-supplied host.
+        if (!is_string($url) || !preg_match('#^https://i\.vimeocdn\.com/video/[A-Za-z0-9_./-]+(?:\?[A-Za-z0-9_%=&.-]+)?$#D', $url)) {
+            return '';
+        }
+        return $url;
     }
 
     /**

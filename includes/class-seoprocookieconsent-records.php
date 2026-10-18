@@ -80,12 +80,10 @@ final class SEOProCookieConsent_Records {
             ) {$collate};");
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify our own lazy schema migration succeeded.
             $column = $wpdb->get_var($wpdb->prepare('SHOW COLUMNS FROM %i LIKE %s', $table, 'snapshot'));
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify the second private table exists before accepting records.
-            if ('snapshot' === $column && $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($snapshots))) === $snapshots) {
-                // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify our indexed lookup is ready before marking the migration complete.
-                if ($wpdb->get_var($wpdb->prepare('SHOW INDEX FROM %i WHERE Key_name = %s', $table, 'visitor_id'))) {
-                    update_option(self::SCHEMA, self::SCHEMA_VERSION, false);
-                }
+            // The second private table and our indexed lookup must be ready before marking the migration complete.
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- verify our own lazy schema migration succeeded.
+            if ('snapshot' === $column && $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($snapshots))) === $snapshots && $wpdb->get_var($wpdb->prepare('SHOW INDEX FROM %i WHERE Key_name = %s', $table, 'visitor_id'))) {
+                update_option(self::SCHEMA, self::SCHEMA_VERSION, false);
             }
         }
         if (self::enabled() && self::SCHEMA_VERSION === get_option(self::SCHEMA)) {
@@ -425,19 +423,35 @@ final class SEOProCookieConsent_Records {
             $rows = $wpdb->get_results($wpdb->prepare('SELECT * FROM %i WHERE id > %d AND id <= %d ORDER BY id LIMIT 500', $table, $after, $last), ARRAY_A);
             foreach ($rows as $row) {
                 $after = (int) $row['id'];
-                if ($snapshots) {
-                    fputcsv($stream, array($row['hash'], gmdate('c', (int) $row['created_at']), $row['content']), ',', '"', '');
-                    continue;
+                $line  = self::csv_line($row, $snapshots, $cutoff);
+                if (null !== $line) {
+                    fputcsv($stream, $line, ',', '"', '');
                 }
-                if ((int) $row['recorded_at'] < $cutoff) {
-                    continue;
-                }
-                $policy = preg_match('/^[\s]*[=+@-]/', $row['policy']) ? "'" . $row['policy'] : $row['policy'];
-                fputcsv($stream, array($row['id'], $row['visitor_id'], gmdate('c', (int) $row['recorded_at']), gmdate('c', (int) $row['choice_time']), $policy, $row['snapshot'], $row['choice']), ',', '"', '');
             }
-        } while (count($rows) === 500 && $after < $last);
+            $full = 500 === count($rows);
+        } while ($full && $after < $last);
         // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- closes the output stream.
         fclose($stream);
         exit;
+    }
+
+    /**
+     * One export row: a snapshot, or a record still kept.
+     *
+     * @param array<string,string> $row       Database row.
+     * @param bool                 $snapshots Whether the row is a snapshot.
+     * @param int                  $cutoff    Oldest record time kept.
+     * @return array<int,string>|null CSV fields, or null to skip the row.
+     */
+    private static function csv_line(array $row, $snapshots, $cutoff) {
+        if ($snapshots) {
+            return array($row['hash'], gmdate('c', (int) $row['created_at']), $row['content']);
+        }
+        if ((int) $row['recorded_at'] < $cutoff) {
+            return null;
+        }
+        // A leading =, +, @ or - would run as a formula in spreadsheets.
+        $policy = preg_match('/^[\s]*[=+@-]/', $row['policy']) ? "'" . $row['policy'] : $row['policy'];
+        return array($row['id'], $row['visitor_id'], gmdate('c', (int) $row['recorded_at']), gmdate('c', (int) $row['choice_time']), $policy, $row['snapshot'], $row['choice']);
     }
 }

@@ -51,6 +51,12 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
     /** Query argument for the settings screen's banner preview: opt-in or opt-out. */
     const PREVIEW_ARG = 'spcc_preview';
 
+    /** WPML and Polylang string group of the banner's words (saved translations use it). */
+    const STRING_GROUP = 'SEO Pro Cookie Consent';
+
+    /** Splits a list setting into its lines. */
+    const LINES = '/[\r\n]+/';
+
     /** The banner preview's model, once worked out. @var string|null */
     private static $preview = null;
 
@@ -284,7 +290,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             return;
         }
         $skip = SEOProCookieConsent_Settings::get('consent_google_advanced') ? self::GOOGLE_SERVICES : array();
-        $allow = preg_split('/[\r\n]+/', (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array();
+        $allow = preg_split(self::LINES, (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array();
         self::$blocker = new SEOProCookieConsent_Blocker(
             $allow,
             SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
@@ -372,7 +378,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             'services'   => $services,
             'images'     => SEOProCookieConsent_Thumbnails::bundled(),
             'dynamic'    => null !== self::$blocker,
-            'allow'      => array_values(array_filter(array_map('trim', preg_split('/[\r\n]+/', strtolower((string) SEOProCookieConsent_Settings::get('consent_allow'))) ?: array()))),
+            'allow'      => array_values(array_filter(array_map('trim', preg_split(self::LINES, strtolower((string) SEOProCookieConsent_Settings::get('consent_allow'))) ?: array()))),
             'block'      => SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
             'skip'       => SEOProCookieConsent_Settings::get('consent_google_advanced') ? self::GOOGLE_SERVICES : array(),
             'seen'       => array_keys(SEOProCookieConsent_Services::seen()['services']),
@@ -470,7 +476,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             return;
         }
         self::$printed = true;
-        include SEOPROCOOKIECONSENT_DIR . 'includes/views/consent-banner.php';
+        include_once SEOPROCOOKIECONSENT_DIR . 'includes/views/consent-banner.php';
     }
 
     /**
@@ -505,9 +511,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             if ('' === $value) {
                 continue;
             }
-            do_action('wpml_register_single_string', 'SEO Pro Cookie Consent', $key, $value); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public registration API.
+            do_action('wpml_register_single_string', self::STRING_GROUP, $key, $value); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public registration API.
             if (function_exists('pll_register_string')) {
-                pll_register_string($key, $value, 'SEO Pro Cookie Consent', 'consent_message' === $key);
+                pll_register_string($key, $value, self::STRING_GROUP, 'consent_message' === $key);
             }
         }
     }
@@ -523,7 +529,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if ('' === $value) {
             return '';
         }
-        $translated = (string) apply_filters('wpml_translate_single_string', $value, 'SEO Pro Cookie Consent', $key); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public translation API.
+        $translated = (string) apply_filters('wpml_translate_single_string', $value, self::STRING_GROUP, $key); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML's public translation API.
         if (function_exists('pll__')) {
             $translated = (string) pll__($value);
         } elseif ('consent_message' === $key && function_exists('trp_translate')) {
@@ -1001,7 +1007,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      */
     private static function scan_page($html) {
         $blocker = new SEOProCookieConsent_Blocker(
-            preg_split('/[\r\n]+/', (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array(),
+            preg_split(self::LINES, (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array(),
             SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
             SEOProCookieConsent_Settings::get('consent_google_advanced') ? self::GOOGLE_SERVICES : array()
         );

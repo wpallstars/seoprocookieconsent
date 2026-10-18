@@ -390,11 +390,11 @@
         return hold(el, src);
     }
 
+    // Native setAttribute returns nothing, so neither does this.
     w.Element.prototype.setAttribute = function (name, value) {
-        if (String(name).toLowerCase() === 'src' && source(this, value)) {
-            return;
+        if (String(name).toLowerCase() !== 'src' || !source(this, value)) {
+            set.apply(this, arguments);
         }
-        return set.apply(this, arguments);
     };
     [w.HTMLScriptElement.prototype, w.HTMLIFrameElement.prototype].forEach(function (proto) {
         var descriptor = Object.getOwnPropertyDescriptor(proto, 'src');
@@ -457,16 +457,18 @@
             box.style.minHeight = '64px';
             return;
         }
+        var widthPercent = w > 0 ? null : percent.exec(width || '');
+        var heightPercent = h > 0 ? null : percent.exec(height || '');
         if (w > 0) {
             box.style.maxWidth = w + 'px';
-        } else if ((wm = percent.exec(width || ''))) {
-            box.style.width = wm[1] + '%';
+        } else if (widthPercent) {
+            box.style.width = widthPercent[1] + '%';
         }
         if (h > 0) {
             box.style.height = h + 'px';
             box.style.minHeight = '64px';
-        } else if ((hm = percent.exec(height || ''))) {
-            box.style.height = hm[1] + '%';
+        } else if (heightPercent) {
+            box.style.height = heightPercent[1] + '%';
         }
     }
 
