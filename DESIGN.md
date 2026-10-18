@@ -100,3 +100,19 @@ palette of their own.
 - Position the menu at the logical end of the button, below it, for LTR
   and RTL. Keep focus outlines visible. Arrows, Home, End and Escape move
   within or close the menu; Tab closes it without trapping focus.
+
+## Listing images
+
+- Banner and icon (`.wordpress-org/banner.svg`, `icon.svg`; rebuild with
+  `scripts/build-banner.sh`): the wpallstars red tile stack and five-star
+  arc, with this plugin's mark on the top tile, a bitten chocolate-chip
+  cookie (golden top `#f7d08a` to `#d6913d`, baked sides `#a3591d`, chips
+  `#4a230c`, cream edge), raised like SEO Pro Stack's bolt. Keep the
+  banner's and icon's cookie the same, and check it reads at 128 px.
+- Words: "SEO Pro Cookie Consent" (94, not the starter's 104, so the name
+  clears the stack), gold line "Switch on, not set up", tagline "Holds back
+  cookies until visitors agree, only where needed."
+- Screenshots: a disposable Kadence site with demo content (a bakery with
+  YouTube, Google Maps, Spotify and Google Analytics), 1280 x 800 desktop
+  and a 390 px phone at 2x. Show real plugin screens only, with no third-
+  party video frames or logos beyond the bundled placeholders.
