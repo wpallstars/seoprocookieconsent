@@ -6,7 +6,7 @@
 <!-- On GitHub only: the Read Me tab skips this block. scripts/rename-plugin.sh rewrites it. -->
 [![CI](https://github.com/wpallstars/seoprocookieconsent/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/wpallstars/seoprocookieconsent/actions/workflows/ci.yml)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.1-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -38,7 +38,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.0
+Version: 1.0.1
 
 <!-- github-only:start -->
 ## Screenshots
@@ -358,8 +358,9 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.1
 
+- No code changes to the plugin since 1.0.0.
 - New banner words: "Nicer notices. Faster setup." and "User-friendly notices & settings, only shown when needed."
 - The Read Me's intro explains why compliance notices shouldn't be a tax on your website: no spyware or phoning home, no slowdown, better for SEO and conversions, and every feature free for good.
 

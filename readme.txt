@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,7 +109,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= 1.0.0 =
-* First stable release: everything in 0.1.0 to 0.1.5, with the plugin's own banner, icon and screenshots.
+= 1.0.1 =
+* New banner words: "Nicer notices. Faster setup." No code changes.
 
 Every change: changelog.txt.
