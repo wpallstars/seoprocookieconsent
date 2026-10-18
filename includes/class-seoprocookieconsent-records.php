@@ -29,6 +29,7 @@ final class SEOProCookieConsent_Records {
         add_action('rest_api_init', array(__CLASS__, 'routes'));
         add_action('admin_post_seoprocookieconsent_records_export', array(__CLASS__, 'export'));
         add_action('admin_post_seoprocookieconsent_records_lookup', array(__CLASS__, 'lookup'));
+        add_action('admin_post_nopriv_seoprocookieconsent_records_lookup', array(__CLASS__, 'lookup'));
         add_action('admin_post_seoprocookieconsent_snapshots_export', array(__CLASS__, 'export_snapshots'));
     }
 
@@ -52,7 +53,7 @@ final class SEOProCookieConsent_Records {
     /** Lazily create storage only after opt-in, never on a visitor request. */
     public static function sync() {
         global $wpdb;
-        if (self::enabled() && self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
+        if ((self::enabled() || get_option(self::SCHEMA)) && self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             require_once ABSPATH . 'wp-admin/includes/upgrade.php';
             $table = self::table();
             $collate = $wpdb->get_charset_collate();
@@ -297,7 +298,7 @@ final class SEOProCookieConsent_Records {
         }
     }
 
-    /** Export link lives inside the existing Consent card, not a nested form. */
+    /** Export links and a standalone lookup form inside the Consent card. */
     public static function panel() {
         if (!current_user_can('manage_options') || self::SCHEMA_VERSION !== get_option(self::SCHEMA)) {
             return;
@@ -316,13 +317,20 @@ final class SEOProCookieConsent_Records {
      * @param int    $before Exclusive record cursor.
      */
     private static function lookup_form($visitor = '', $before = 0) {
+        if ($before) {
+            echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+            echo '<input type="hidden" name="action" value="seoprocookieconsent_records_lookup" />';
+            wp_nonce_field('seoprocookieconsent_records_lookup', '_wpnonce', false);
+            echo '<input type="hidden" name="visitor_id" value="' . esc_attr($visitor) . '" />';
+            echo '<input type="hidden" name="before" value="' . esc_attr((string) $before) . '" />';
+            echo '<p><button type="submit" class="button">' . esc_html__('Older records', 'seoprocookieconsent') . '</button></p></form>';
+        }
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         echo '<input type="hidden" name="action" value="seoprocookieconsent_records_lookup" />';
-        wp_nonce_field('seoprocookieconsent_records_lookup');
+        wp_nonce_field('seoprocookieconsent_records_lookup', '_wpnonce', false);
         echo '<p><label for="spcc-records-lookup">' . esc_html__('Look up a consent ID', 'seoprocookieconsent') . '</label></p>';
         echo '<p><input type="text" id="spcc-records-lookup" name="visitor_id" value="' . esc_attr($visitor) . '" pattern="[a-f0-9]{32}" minlength="32" maxlength="32" required dir="ltr" autocomplete="off" /> ';
-        echo '<input type="hidden" name="before" value="' . esc_attr((string) $before) . '" />';
-        echo '<button type="submit" class="button">' . esc_html($before ? __('Older records', 'seoprocookieconsent') : __('Look up', 'seoprocookieconsent')) . '</button></p></form>';
+        echo '<button type="submit" class="button">' . esc_html__('Look up', 'seoprocookieconsent') . '</button></p></form>';
     }
 
     /** Show one bounded, indexed page of private records to site administrators. */
@@ -352,7 +360,7 @@ final class SEOProCookieConsent_Records {
         require_once ABSPATH . 'wp-admin/admin-header.php';
         echo '<div class="wrap"><h1>' . esc_html__('Consent records', 'seoprocookieconsent') . '</h1>';
         echo '<p>' . esc_html__('Consent ID:', 'seoprocookieconsent') . ' <code>' . esc_html($visitor) . '</code></p>';
-        echo '<table class="widefat striped"><thead><tr>';
+        echo '<table class="widefat striped" style="table-layout:fixed;overflow-wrap:anywhere"><thead><tr>';
         foreach (array(__('Recorded (UTC)', 'seoprocookieconsent'), __('Choice time (UTC)', 'seoprocookieconsent'), __('Choice (JSON)', 'seoprocookieconsent'), __('Policy version', 'seoprocookieconsent'), __('Snapshot', 'seoprocookieconsent')) as $label) {
             echo '<th scope="col">' . esc_html($label) . '</th>';
         }
