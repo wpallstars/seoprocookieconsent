@@ -1,4 +1,4 @@
-![WPALLSTARS SEO Pro Cookie Consent: Built with AI](admin/images/banner.svg)
+![WPALLSTARS SEO Pro Cookie Consent: Switch on, not set up](admin/images/banner.svg)
 
 # SEO Pro Cookie Consent
 
@@ -20,33 +20,56 @@
 
 Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme.
 
-SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. It replaces Complianz, with nothing to scan, no wizard to finish and nothing sent to outside services.
+SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. There is nothing to scan, no wizard to finish, no account to open and no visitor data sent to outside services.
+
+**Who it is for:** site owners, agencies and developers who want consent done properly without a subscription, a cookie-scanning service or a long set-up: business sites, blogs, shops and multisite networks. It moves sites over from Complianz, CookieYes, Cookiebot and nine other consent plugins in a few clicks, with a dry run first and undo after.
+
+**Why it differs:**
+
+- **Light.** One script and one stylesheet with no libraries (about 65 KB in all before compression), no banner on pages with nothing to hold back, and page caches keep working: regions are told apart in the browser, never by looking up IP addresses.
+- **Fair.** Accept all and Reject all look the same, and the banner names what the page actually uses.
+- **Yours.** Optional consent records, the cookie policy and terms all stay on your own site; nothing depends on a third-party dashboard.
+- **Complete.** Placeholders with Load buttons for videos, maps, players and posts, Google Consent Mode v2, the WP Consent API, Global Privacy Control, a cookie policy that keeps itself current, and terms and conditions without a paid generator.
 
 It is a tool, not legal advice: check its defaults and your policy text with whoever advises you on privacy law.
 
+Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin Starter](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding) and at its best alongside [SEO Pro Stack](https://github.com/wpallstars/seoprostack): see **Built with AI** below.
+
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.5
+Version: 1.0.0
 
 <!-- github-only:start -->
 ## Screenshots
 
-**Settings → SEO Pro Cookie Consent**: the General tab, empty until features add settings, with search and the Source code, Support and Buy me a coffee links.
+**The banner** on a visitor's first page, naming what the page uses. The video and map wait behind placeholders with their own Load buttons; nothing reaches YouTube, Google or Spotify yet.
 
-![The SEO Pro Cookie Consent settings screen on the General tab](.wordpress-org/screenshot-1.png)
+![A bakery site's home page with the cookie banner along the bottom and held-back YouTube and Google Maps placeholders](.wordpress-org/screenshot-1.png)
 
-**The Read Me tab** shows this file inside WordPress, banner included.
+**Cookie settings**: one switch per kind of cookie, only for kinds the page uses, each naming its services. Reject all and Accept all look the same.
 
-![The Read Me tab showing README.md](.wordpress-org/screenshot-2.png)
+![The Cookie settings dialog with Necessary, Statistics and Embedded content switches](.wordpress-org/screenshot-2.png)
 
-**Updates from GitHub** (GitHub build): each GitHub release is offered on the Plugins screen as a normal WordPress update.
+**Settings → SEO Pro Cookie Consent → Consent**: one switch to turn it on, a live banner preview and the services found on your pages.
 
-![The Plugins screen offering SEO Pro Cookie Consent 1.0.12 from GitHub](docs/images/github-update.png)
+![The Consent tab with Cookie consent on, its options open, the banner preview and Found on your pages](.wordpress-org/screenshot-3.png)
+
+**The Cookie policy block** lists the cookies the site uses, by kind, with what each does, how long it is kept and a Cookie settings button. It updates itself.
+
+![A cookie policy page listing Google Analytics, YouTube, Google Maps and Spotify cookies](.wordpress-org/screenshot-4.png)
+
+**On a phone**: the banner's buttons stack and stay full width, and held-back embeds shrink their notice to fit.
+
+![The banner and a held-back video on a phone screen](.wordpress-org/screenshot-5.png)
+
+**Updates from GitHub** (GitHub build): each GitHub release is offered on the Plugins screen as a normal WordPress update. Shown here for WP Plugin Starter, whose updater this plugin shares.
+
+![The Plugins screen offering a WP Plugin Starter update from GitHub](docs/images/github-update.png)
 <!-- github-only:end -->
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **15 plugins**, some of them in part, with free and Pro editions counted separately. The 11 that can be downloaded come to 31.6 MB zipped; SEO Pro Cookie Consent is 389 KB.
+SEO Pro Cookie Consent replaces **15 plugins**, some of them in part, with free and Pro editions counted separately. The 11 that can be downloaded come to 31.6 MB zipped; SEO Pro Cookie Consent is under 300 KB (under 600 KB for the GitHub build, which adds its updater and screenshots).
 
 It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
@@ -222,7 +245,7 @@ The same Import tab, WP-CLI command (`borlabs-cookie`, `ct-ultimate-gdpr`), undo
 
 Go to **Settings → SEO Pro Cookie Consent**. The screen has two groups of tabs:
 
-- **Settings**: Consent and Policies. Changes save instantly; there is no Save button. **Search features** (next to the plugin name) finds settings on every tab.
+- **Settings**: Consent, Policies and Import. Changes save instantly; there is no Save button. **Search features** (next to the plugin name) finds settings on every tab.
 - **About**: this Read Me.
 
 On a multisite network, super admins also have **Network Admin → Settings → SEO Pro Cookie Consent** (Multisite below).
@@ -334,6 +357,12 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### 1.0.0
+
+- First stable release. Everything in 0.1.0 to 0.1.5, now with this plugin's own banner and icon (a cookie on the wpallstars tile stack) and screenshots of the banner, Cookie settings, the Consent tab, the cookie policy and a phone.
+- The Read Me opens with who the plugin is for and why it differs, and lists the Import tab with the other settings tabs.
+- Owner tooling (not in either zip): `scripts/migrate-sites.sh` moves the owner's own single sites from another consent plugin over SSH, with a database and plugin backup first. It and `scripts/deploy-sites.sh` check each site's stored active plugins before and after every change and stop that site on any unexpected difference.
+
 ### 0.1.5
 
 - Every held-back embed shows a generic picture behind its notice: video (until a YouTube or Vimeo thumbnail is cached), music player, social post, map, or a browser window for anything else. No request reaches the service before consent.
@@ -392,6 +421,8 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 SEO Pro Cookie Consent is built and maintained with [aidevops](https://aidevops.sh), the same developer's open-source AI harness for creating and managing anything online with AI, plugins like this one included. It is free on [GitHub](https://github.com/marcusquinn/aidevops).
 
 Questions about using, changing or building on SEO Pro Cookie Consent: ask aidevops. Open this repository, or the site it runs on, with aidevops and ask; it reads the plugin's docs and code to answer, and can report a problem for you.
+
+aidevops is also the recommended way to run the sites this plugin goes on: it releases, tests and rolls out updates across many WordPress sites, checks their logs afterwards, and keeps the work in Git, as it does for this plugin.
 
 Made from [WP Plugin Starter](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding), the wpallstars starter plugin. Its shared standards and the weekly Starter sync keep this plugin up to date.
 

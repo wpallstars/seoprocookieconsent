@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.5
+Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,6 +14,8 @@ Simple, light cookie consent: blocks scripts until consent, asks only where the 
 == Description ==
 
 Free cookie consent you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies, holds them back until visitors allow them, and shows a short banner that matches your theme, only on pages that have them and only as strictly as each visitor's region needs.
+
+For business sites, blogs, shops and multisite networks that want consent done properly without a subscription, a scanning service or a wizard.
 
 * **Holds back** Google Analytics, Tag Manager and Ads, Meta, TikTok, LinkedIn, Pinterest, Microsoft, Hotjar, HubSpot and X tags, YouTube, Vimeo, Google Maps, Spotify, SoundCloud, Instagram and Facebook embeds, and live chats. Nothing to scan.
 * **Asks only where needed**: Europe (EU, EEA, UK, Switzerland), Quebec and unclear locations are asked first; elsewhere a short notice, or none. Decided from the browser's time zone, so nothing is looked up and page caches keep working.
@@ -99,15 +101,15 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Screenshots ==
 
-1. The settings screen (Settings → SEO Pro Cookie Consent) on the General tab, empty until features add settings.
-2. The Read Me tab, showing the plugin's README.md inside WordPress.
+1. The banner names what the page uses; the video and map wait behind placeholders.
+2. Cookie settings: one switch per kind of cookie, naming its services.
+3. The Consent tab: one switch, a live banner preview and the services found.
+4. The Cookie policy block lists the site's cookies and updates itself.
+5. On a phone: stacked buttons and held-back embeds that fit.
 
 == Changelog ==
 
-= 0.1.5 =
-* Every held-back embed shows a generic picture (video, music player, post, map or web page) behind its notice.
-* The notice fits small embeds, such as compact music players and videos on phones, down to the Load button alone.
-* Consent buttons stay readable in Kadence's dark mode.
-* Visitors can view and copy their consent ID; administrators can look up its history, policy version and snapshot hash. Records are pseudonymous, outside WordPress's email-based privacy tools.
+= 1.0.0 =
+* First stable release: everything in 0.1.0 to 0.1.5, with the plugin's own banner, icon and screenshots.
 
 Every change: changelog.txt.
