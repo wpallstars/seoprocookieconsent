@@ -357,8 +357,21 @@ final class SEOProCookieConsent_Records {
         }
         nocache_headers();
         header('Referrer-Policy: no-referrer');
+        // admin-post does not initialize the menu, title or screen chrome.
+        global $title, $parent_file, $submenu_file;
+        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- admin-header requires the title of this authorized standalone admin response.
+        $title = __('Consent records', 'seoprocookieconsent');
+        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- select the existing Settings menu for this standalone admin response.
+        $parent_file = 'options-general.php';
+        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- retain the plugin's existing submenu selection without a new screen route.
+        $submenu_file = 'options-general.php?page=seoprocookieconsent';
+        require_once ABSPATH . 'wp-admin/menu.php';
+        set_current_screen('settings_page_seoprocookieconsent');
+        SEOProCookieConsent_Admin_Manager::enqueue_header();
         require_once ABSPATH . 'wp-admin/admin-header.php';
-        echo '<div class="wrap"><h1>' . esc_html__('Consent records', 'seoprocookieconsent') . '</h1>';
+        echo '<div class="wrap">';
+        SEOProCookieConsent_Admin_Manager::render_header();
+        echo '<h1>' . esc_html__('Consent records', 'seoprocookieconsent') . '</h1>';
         echo '<p>' . esc_html__('Consent ID:', 'seoprocookieconsent') . ' <code>' . esc_html($visitor) . '</code></p>';
         echo '<table class="widefat striped" style="table-layout:fixed;overflow-wrap:anywhere"><thead><tr>';
         foreach (array(__('Recorded (UTC)', 'seoprocookieconsent'), __('Choice time (UTC)', 'seoprocookieconsent'), __('Choice (JSON)', 'seoprocookieconsent'), __('Policy version', 'seoprocookieconsent'), __('Snapshot', 'seoprocookieconsent')) as $label) {
