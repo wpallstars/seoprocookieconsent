@@ -22,6 +22,8 @@ Simple, light cookie consent: blocks scripts until consent, asks only where the 
 
 SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. There is nothing to scan, no wizard to finish, no account to open and no visitor data sent to outside services.
 
+**Compliance notices shouldn't be a tax on your website.** So there is no spyware and no phoning home: the plugin never contacts our servers or any tracking service, and nothing about your visitors leaves your site (its only outside requests are video thumbnails, sending just the video ID, and, in the GitHub build, update checks with GitHub). There is no slowdown either: no third-party script for pages to wait on, and page caches keep working. That makes it much better for SEO and conversions than hosted consent platforms: no outside script dragging down Core Web Vitals, no banner at all on pages with nothing to hold back, and a slim bar at the foot of the screen in your theme's style instead of a pop-up wall over your content, so visitors keep reading and buying. And every feature is free, now and always: no paid tier, no locked features, no per-site or per-visit pricing.
+
 **Who it is for:** site owners, agencies and developers who want consent done properly without a subscription, a cookie-scanning service or a long set-up: business sites, blogs, shops and multisite networks. It moves sites over from Complianz, CookieYes, Cookiebot and nine other consent plugins in a few clicks, with a dry run first and undo after.
 
 **Why it differs:**
@@ -356,6 +358,11 @@ Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the opti
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- New banner words: "Nicer notices. Faster setup." and "User-friendly notices & settings, only shown when needed."
+- The Read Me's intro explains why compliance notices shouldn't be a tax on your website: no spyware or phoning home, no slowdown, better for SEO and conversions, and every feature free for good.
 
 ### 1.0.0
 
