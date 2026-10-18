@@ -32,8 +32,8 @@ invalid snapshot or an unexpected difference prints FAIL and stops that install;
 the host run continues with the others. No later import/deactivation/deletion is
 allowed after that FAIL. On a healthy readable single site, a strict-subset wipe
 is restored with an atomic compare-and-swap and rechecked, but the install still
-fails. Extra entries, concurrent
-changes and network state are **never** overwritten automatically: review the
+fails. Extra entries, concurrent changes and network state are **never**
+overwritten automatically: review the
 diff and restore command instead. An intended new activation alongside missing
 plugins also needs operator recovery, since that is not a strict subset.
 
@@ -42,8 +42,13 @@ Migration backups are outside the web root at
 Keep the database dump and plugin tar together; finish also backs up the source
 upload folders its cleanup inventory lists. Restore these together after reviewing
 the FAIL line and the printed upload restore command. No database import runs
-automatically. Unrenderable source documents
-stop the switch, leaving the source active. Policy is enabled by the importer
+automatically. Where PHP disables `proc_open`, the printed `wp db import` command
+also needs a native-client alternative: `mysql --defaults-extra-file=PRIVATE_CLIENT_CONFIG -- DATABASE < BACKUP/database.sql`.
+Use the matching site's database name and a mode-600 client config outside the
+web root, populated from its `wp-config.php`; remove that config afterwards.
+Never put the database password on the command line or into a report.
+Unrenderable source documents stop the switch, leaving the source active.
+Policy is enabled by the importer
 when it replaces policy blocks. A completed import with source folders already
 gone is skipped on rerun; review an interrupted finish separately before cleaning
 remaining source data. Production apply/finish is an operator step, not a worker
