@@ -20,13 +20,13 @@
 
 Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme.
 
-SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. There is nothing to scan, no wizard to finish, no account to open and nothing sent to outside services.
+SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you switch on rather than set up. It finds the scripts and embeds on your pages that set cookies (Google Analytics, ad pixels, YouTube, maps and more), holds them back until visitors allow them, and shows a short, theme-matched banner only on pages that have them, only as strictly as each visitor's region needs. There is nothing to scan, no wizard to finish, no account to open and no visitor data sent to outside services.
 
 **Who it is for:** site owners, agencies and developers who want consent done properly without a subscription, a cookie-scanning service or a long set-up: business sites, blogs, shops and multisite networks. It moves sites over from Complianz, CookieYes, Cookiebot and nine other consent plugins in a few clicks, with a dry run first and undo after.
 
 **Why it differs:**
 
-- **Light.** One small script and stylesheet, no banner on pages with nothing to hold back, and page caches keep working: regions are told apart in the browser, never by looking up IP addresses.
+- **Light.** One script and one stylesheet with no libraries (about 65 KB in all before compression), no banner on pages with nothing to hold back, and page caches keep working: regions are told apart in the browser, never by looking up IP addresses.
 - **Fair.** Accept all and Reject all look the same, and the banner names what the page actually uses.
 - **Yours.** Optional consent records, the cookie policy and terms all stay on your own site; nothing depends on a third-party dashboard.
 - **Complete.** Placeholders with Load buttons for videos, maps, players and posts, Google Consent Mode v2, the WP Consent API, Global Privacy Control, a cookie policy that keeps itself current, and terms and conditions without a paid generator.
@@ -62,14 +62,14 @@ Version: 1.0.0
 
 ![The banner and a held-back video on a phone screen](.wordpress-org/screenshot-5.png)
 
-**Updates from GitHub** (GitHub build): each GitHub release is offered on the Plugins screen as a normal WordPress update.
+**Updates from GitHub** (GitHub build): each GitHub release is offered on the Plugins screen as a normal WordPress update. Shown here for WP Plugin Starter, whose updater this plugin shares.
 
-![The Plugins screen offering SEO Pro Cookie Consent 1.0.12 from GitHub](docs/images/github-update.png)
+![The Plugins screen offering a WP Plugin Starter update from GitHub](docs/images/github-update.png)
 <!-- github-only:end -->
 
 ## What you get
 
-SEO Pro Cookie Consent replaces **15 plugins**, some of them in part, with free and Pro editions counted separately. The 11 that can be downloaded come to 31.6 MB zipped; SEO Pro Cookie Consent is 389 KB.
+SEO Pro Cookie Consent replaces **15 plugins**, some of them in part, with free and Pro editions counted separately. The 11 that can be downloaded come to 31.6 MB zipped; SEO Pro Cookie Consent is 293 KB (582 KB for the GitHub build, which adds its updater and screenshots).
 
 It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compliance, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA, and provides starting text in place of Complianz Terms & Conditions; review the limits below before switching.
 
