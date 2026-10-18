@@ -252,8 +252,8 @@ final class SEOProCookieConsent_Blocker {
      * @return string CSS declarations, or "".
      */
     private static function size($width, $height) {
-        $pixels  = '/^\s*([0-9]{1,5})(?:px)?\s*$/D';
-        $percent = '/^\s*([0-9]{1,3}(?:\.[0-9]{1,2})?)%\s*$/D';
+        $pixels  = '/^\s*(\d{1,5})(?:px)?\s*$/D';
+        $percent = '/^\s*(\d{1,3}(?:\.\d{1,2})?)%\s*$/D';
         $width   = is_string($width) ? $width : '';
         $height  = is_string($height) ? $height : '';
         $w       = preg_match($pixels, $width, $wm) ? (int) $wm[1] : 0;

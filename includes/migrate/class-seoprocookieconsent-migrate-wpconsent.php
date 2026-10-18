@@ -67,11 +67,9 @@ final class SEOProCookieConsent_Migrate_WPConsent extends SEOProCookieConsent_Mi
         $result = array();
         global $wpdb;
         $table = $wpdb->prefix . 'wpconsent_consent_logs';
-        if (in_array($table, $this->tables(), true)) {
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check, excluding Do Not Track requests; never reads record contents.
-            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
-                $result['consent_records'] = true;
-            }
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check, excluding Do Not Track requests; never reads record contents.
+        if (in_array($table, $this->tables(), true) && $wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+            $result['consent_records'] = true;
         }
         if (!$this->options()) {
             return $result;

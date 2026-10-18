@@ -113,11 +113,9 @@ final class SEOProCookieConsent_Migrate_CT_GDPR extends SEOProCookieConsent_Migr
         $result = array();
         global $wpdb;
         $table = $wpdb->prefix . 'ct_ugdpr_consent_log';
-        if (in_array($table, $this->tables(), true)) {
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
-            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
-                $result['consent_records'] = true;
-            }
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
+        if (in_array($table, $this->tables(), true) && $wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $table))) {
+            $result['consent_records'] = true;
         }
         if (!$options) {
             return $result;

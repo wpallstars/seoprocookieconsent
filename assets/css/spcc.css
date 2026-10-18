@@ -22,6 +22,7 @@
     --spcc-btn-bg-hover: var(--global-palette-btn-bg-hover, var(--global-palette2, var(--spcc-btn-bg)));
     --spcc-btn-text-hover: var(--global-palette-btn-hover, var(--spcc-btn-text));
     --spcc-radius: 6px;
+
     box-sizing: border-box;
     font-family: inherit;
     line-height: 1.5;
@@ -36,7 +37,7 @@
 .spcc [hidden],
 .spcc[hidden],
 .spcc-reopen[hidden] {
-    display: none !important;
+    display: none !important; /* Hidden wins over every display rule, the theme's too. */
 }
 
 /* Buttons: Accept and Reject look the same, so neither is the easy way. */
@@ -51,6 +52,7 @@
     border: 1px solid transparent;
     border-radius: var(--spcc-radius);
     background: var(--spcc-btn-bg);
+
     /* spcc.js sets --spcc-btn-ink when the theme's pair lacks contrast. */
     color: var(--spcc-btn-ink, var(--spcc-btn-text));
     font: inherit;
@@ -470,7 +472,10 @@
     display: none !important;
 }
 
-/* Core's responsive embeds size the wrapper; fill it. */
+/*
+ * Core's responsive embeds size the wrapper; fill it. !important beats the
+ * inline size the blocker and spcc-head.js put on the placeholder.
+ */
 .wp-embed-responsive .wp-has-aspect-ratio .spcc-embed {
     position: absolute;
     inset: 0;
@@ -653,6 +658,6 @@
 @media print {
     .spcc-banner,
     .spcc-reopen {
-        display: none !important;
+        display: none !important; /* Never printed, whatever the theme's print styles. */
     }
 }

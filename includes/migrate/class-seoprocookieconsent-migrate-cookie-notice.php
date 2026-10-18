@@ -103,14 +103,25 @@ final class SEOProCookieConsent_Migrate_Cookie_Notice extends SEOProCookieConsen
         if ('' !== $message && self::STOCK_MESSAGE !== $message) {
             $result['consent_message'] = $message;
         }
-        $more = (array) ($options['see_more_opt'] ?? array());
-        if (!empty($options['see_more'])) {
-            $link = 'custom' === ($more['link_type'] ?? '') ? esc_url_raw((string) ($more['link'] ?? '')) : ('publish' === get_post_status((int) ($more['id'] ?? 0)) ? (string) get_permalink((int) $more['id']) : '');
-            if ('' !== $link) {
-                $result['consent_policy_url'] = $link;
-            }
+        $link = empty($options['see_more']) ? '' : self::policy_link((array) ($options['see_more_opt'] ?? array()));
+        if ('' !== $link) {
+            $result['consent_policy_url'] = $link;
         }
         return $result;
+    }
+
+    /**
+     * Its "See more" link: a custom address or a published page.
+     *
+     * @param array $more Its see_more_opt setting.
+     * @return string The address, or "".
+     */
+    private static function policy_link(array $more) {
+        if ('custom' === ($more['link_type'] ?? '')) {
+            return esc_url_raw((string) ($more['link'] ?? ''));
+        }
+        $page = (int) ($more['id'] ?? 0);
+        return 'publish' === get_post_status($page) ? (string) get_permalink($page) : '';
     }
 
     /** @return array */

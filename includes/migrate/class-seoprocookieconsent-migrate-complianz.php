@@ -32,7 +32,9 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         foreach (array_keys(get_plugins()) as $file) {
             $installed = $installed || in_array(dirname($file), self::SLUGS, true);
         }
-        return array('present' => (bool) array_filter($left) || (bool) $this->pages(), 'state' => $this->active() ? 'active' : ($installed ? 'inactive' : 'not installed'));
+        $present = (bool) array_filter($left) || (bool) $this->pages();
+        $state   = $installed ? 'inactive' : 'not installed';
+        return array('present' => $present, 'state' => $this->active() ? 'active' : $state);
     }
 
     /** @return array */
@@ -52,31 +54,43 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         }
         global $wpdb;
         $records = $wpdb->prefix . 'cmplz_statistics';
-        if (in_array($records, $this->tables(), true)) {
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
-            if ($wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $records))) {
-                $result['consent_records'] = true;
-            }
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only existence check; never reads consent record contents.
+        if (in_array($records, $this->tables(), true) && $wpdb->get_var($wpdb->prepare('SELECT 1 FROM %i LIMIT 1', $records))) {
+            $result['consent_records'] = true;
         }
-        if (in_array($wpdb->prefix . 'cmplz_cookiebanners', $this->tables(), true)) {
-            // The default banner is the one visitors see; older rows often remain from A/B tests.
-            // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source banner table.
-            $banner = $wpdb->get_row($wpdb->prepare('SELECT * FROM %i ORDER BY %i DESC, ID ASC LIMIT 1', $wpdb->prefix . 'cmplz_cookiebanners', 'default'), ARRAY_A);
-            if (is_array($banner)) {
-                $positions = array('bottom' => 'bar', 'bottom-left' => 'left', 'bottom-right' => 'right');
-                if (isset($positions[$banner['position'] ?? ''])) {
-                    $result['consent_position'] = $positions[$banner['position']];
-                }
-                if (!empty($banner['message_optin'])) {
-                    $result['consent_message'] = wp_strip_all_tags($banner['message_optin']);
-                }
-            }
-        }
+        $result = array_merge($result, $this->banner_settings());
         foreach ($this->pages() as $page) {
             if (!empty($page['cookie'])) {
                 $result['consent_policy_url'] = get_permalink($page['id']);
                 break;
             }
+        }
+        return $result;
+    }
+
+    /**
+     * The position and message of the default banner, the one visitors see;
+     * older rows often remain from A/B tests.
+     *
+     * @return array
+     */
+    private function banner_settings() {
+        global $wpdb;
+        $result = array();
+        if (!in_array($wpdb->prefix . 'cmplz_cookiebanners', $this->tables(), true)) {
+            return $result;
+        }
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- bounded admin-only read of the verified source banner table.
+        $banner = $wpdb->get_row($wpdb->prepare('SELECT * FROM %i ORDER BY %i DESC, ID ASC LIMIT 1', $wpdb->prefix . 'cmplz_cookiebanners', 'default'), ARRAY_A);
+        if (!is_array($banner)) {
+            return $result;
+        }
+        $positions = array('bottom' => 'bar', 'bottom-left' => 'left', 'bottom-right' => 'right');
+        if (isset($positions[$banner['position'] ?? ''])) {
+            $result['consent_position'] = $positions[$banner['position']];
+        }
+        if (!empty($banner['message_optin'])) {
+            $result['consent_message'] = wp_strip_all_tags($banner['message_optin']);
         }
         return $result;
     }
@@ -87,21 +101,33 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
         $result = array('consent_block' => array(), 'consent_allow' => array());
         foreach (array('block_script' => 'consent_block', 'whitelist_script' => 'consent_allow') as $type => $key) {
             foreach ((array) ($data[$type] ?? array()) as $script) {
-                if (!is_array($script) || empty($script['enable'])) {
-                    continue;
-                }
-                $category = $script['category'] ?? 'marketing';
-                $category = in_array($category, array('preferences', 'statistics', 'embeds'), true) ? $category : 'marketing';
-                foreach ((array) ($script['urls'] ?? array()) as $url) {
-                    if (!is_string($url) || '' === trim($url)) {
-                        continue;
-                    }
-                    $fragment = preg_replace('~^https?://~i', '', trim($url));
-                    $result[$key][] = ('consent_block' === $key && 'marketing' !== $category ? $category . ': ' : '') . $fragment;
+                if (is_array($script) && !empty($script['enable'])) {
+                    $result[$key] = array_merge($result[$key], self::script_lines($script, $key));
                 }
             }
         }
         return $result;
+    }
+
+    /**
+     * One custom script's lines: its addresses without the scheme, with its
+     * category in front when it is held back and not marketing.
+     *
+     * @param array  $script Source script.
+     * @param string $key    consent_block or consent_allow.
+     * @return string[]
+     */
+    private static function script_lines(array $script, $key) {
+        $category = $script['category'] ?? 'marketing';
+        $category = in_array($category, array('preferences', 'statistics', 'embeds'), true) ? $category : 'marketing';
+        $prefix   = 'consent_block' === $key && 'marketing' !== $category ? $category . ': ' : '';
+        $lines    = array();
+        foreach ((array) ($script['urls'] ?? array()) as $url) {
+            if (is_string($url) && '' !== trim($url)) {
+                $lines[] = $prefix . preg_replace('~^https?://~i', '', trim($url));
+            }
+        }
+        return $lines;
     }
 
     /**
@@ -118,7 +144,10 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
             if ('' === $other) {
                 return '';
             }
-            return 'none' === $other ? 'region_quiet' : (in_array($other, $optin, true) ? 'everywhere' : 'region');
+            if ('none' === $other) {
+                return 'region_quiet';
+            }
+            return in_array($other, $optin, true) ? 'everywhere' : 'region';
         }
         if (!isset($old['use_country'])) {
             return '';
@@ -207,7 +236,8 @@ final class SEOProCookieConsent_Migrate_Complianz extends SEOProCookieConsent_Mi
     public function consent_cookie() {
         // Mirrors Complianz's prefix rule: a multisite main site uses cmplz_rt_ unless set_cookies_on_root is on.
         $old = get_option('cmplz_options', array());
-        $p = is_multisite() && is_main_site() && empty(is_array($old) ? ($old['set_cookies_on_root'] ?? '') : '') ? 'cmplz_rt_' : 'cmplz_';
+        $root = is_array($old) ? ($old['set_cookies_on_root'] ?? '') : '';
+        $p    = is_multisite() && is_main_site() && empty($root) ? 'cmplz_rt_' : 'cmplz_';
         return array('status' => $p . 'banner-status', 'value' => 'dismissed', 'categories' => array('preferences' => $p . 'preferences', 'statistics' => $p . 'statistics', 'marketing' => $p . 'marketing'), 'allow' => 'allow', 'deny' => 'deny');
     }
 

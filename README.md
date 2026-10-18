@@ -166,7 +166,9 @@ Only people who can activate plugins see these. **Hide** hides the current step 
 
 The same Import tab, WP-CLI command (`cookieyes`, `cookie-notice`), undo, Move here steps and leftover cleanup work for CookieYes (`cookie-law-info`, checked against 3.5.7) and Cookie Notice & Compliance (`cookie-notice`, checked against 3.1.17). Only data stored on your site is read. Neither plugin keeps records of consent on the site, so cleanup has none to keep.
 
-**CookieYes**
+A shortcode of either plugin that sat inside a paragraph becomes `[spcc_cookie_settings]` or `[spcc_cookie_policy]`, so the paragraph stays valid; on its own it becomes the block.
+
+### CookieYes
 
 - **Settings** from its default banner: a GDPR banner asks everyone first; consent lifetime, position (box bottom left/right, or bar), a changed message and the Read more link. A CCPA banner is imported without carrying choices over.
 - **Script rules**: each cookie with a script URL pattern becomes an **Also hold back** line in its category (Functional → preferences, Analytics and Performance → statistics, Advertisement and custom categories → marketing).
@@ -174,7 +176,7 @@ The same Import tab, WP-CLI command (`cookieyes`, `cookie-notice`), undo, Move h
 - **Visitors' choices**: Accept all, Reject all and a saved selection carry over, by category. Its dialog has switches only for categories with listed cookies, so those decide; the others follow Accept all or Reject all. Closing the banner counts as Reject all, and a cookie that is neither a clear consent nor a full rejection is ignored, so that visitor is asked again.
 - **Not imported**: sites connected to the CookieYes web app (banner, categories and scripts live there) and its legacy version 2 mode. The Import tab says so; visitors are asked again. Scripts you marked for CookieYes in your theme (`data-cookieyes` with `type="text/plain"`) stay off once it is gone: remove those two attributes so this plugin holds them back instead.
 
-**Cookie Notice & Compliance**
+### Cookie Notice & Compliance
 
 - **Settings**: consent lifetime (1, 3 or 6 months, or a year), a bottom bar, a changed message and the privacy policy link. Sites with "after acceptance" scripts ask everyone first.
 - **Script rules**: addresses in its after-acceptance scripts (head and body) become **Also hold back** lines. Inline scripts with no address are listed for you to add by hand. Cookie Notice ran those scripts itself, so they stop when it is gone: add them to your theme or a header-code plugin, and this plugin holds them back. Copy them before removing leftover data; if Cookie Notice's Deactivation option is on, it deletes them when deactivated.
@@ -182,27 +184,25 @@ The same Import tab, WP-CLI command (`cookieyes`, `cookie-notice`), undo, Move h
 - **Visitors' choices**: Accept allows every category; Reject and its close button allow none. When it accepted on scroll or click, only rejections carry over.
 - **Not imported**: Cookie Compliance (hosted) mode, where the banner and choices live in its web app. The Import tab says so; visitors are asked again.
 
-A shortcode that sat inside a paragraph becomes `[spcc_cookie_settings]` or `[spcc_cookie_policy]`, so the paragraph stays valid; on its own it becomes the block.
-
 ## Move from CookieAdmin, GDPR Cookie Compliance or WPConsent
 
 The same Import tab, WP-CLI command (`cookieadmin`, `gdpr-cookie-compliance`, `wpconsent`), undo, Move here steps and leftover cleanup work for CookieAdmin (`cookieadmin`, checked against 1.2.6), GDPR Cookie Compliance by Moove (`gdpr-cookie-compliance`, checked against 5.2.2) and WPConsent (`wpconsent-cookies-banner-privacy-suite`, checked against 1.2.0). Only data stored on your site is read. Their Pro add-ons were not checked: geolocation, custom scripts and consent logs from them are not imported.
 
-**CookieAdmin**
+### CookieAdmin
 
 - **Settings**: its GDPR law asks everyone first (unless Pro showed the banner only in some regions); consent lifetime, position (box bottom left/right, or footer bar), a changed message and the cookie policy link.
 - **Script rules**: each cookie in its list with a script pattern becomes an **Also hold back** line in its category (Functional → preferences, Analytics → statistics, Marketing and unclassified → marketing).
 - **Visitors' choices**: Accept all, Reject all and saved preferences carry over; embeds follow Marketing. Only its GDPR law carries choices over: with US state laws (opt-out) or a Pro law, visitors are asked again.
 - Scripts you marked for CookieAdmin in your theme (`type="text/plain"` with `data-cookieadmin-category`) stay off once it is gone: remove those two attributes so this plugin holds them back instead.
 
-**GDPR Cookie Compliance (Moove)**
+### GDPR Cookie Compliance (Moove)
 
 - **Settings** are read from its own settings table, even while it is inactive: everyone is asked first unless categories were on before visitors chose; consent lifetime, position (bottom bar, or bottom left/right box) and a changed message in the site's main language.
 - **Script rules**: addresses in the scripts of its enabled categories become **Also hold back** lines; inline scripts with no address are listed for you to add by hand. It added those scripts itself, so they stop when it is gone: add them to your theme or a header-code plugin, and this plugin holds them back. Its built-in integrations (Google Analytics 4, Tag Manager, Ads, Meta Pixel, Microsoft) are listed with their IDs to add back the same way.
 - **Visitors' choices**: its categories hold whatever you put in them, so a choice carries over only when every switchable category agrees; a mixed choice carries over as Reject all. When its close button accepted all cookies, or categories were on before visitors chose, only rejections carry over. If its add-on accepted on scroll or after a timer, choose **Stop carrying over old consent**: those look the same as Accept.
 - **Pages**: it has no page shortcodes to convert.
 
-**WPConsent**
+### WPConsent
 
 - **Settings**: its default opt-in banner asks everyone first; consent lifetime, bottom bar or bottom left/right box, a changed message and its cookie policy page.
 - **Script rules**: none to import; it blocked its own list of known services, which this plugin recognises too.
@@ -366,6 +366,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 - The repository is now public, so sites get updates from GitHub without a token.
 - Security review of the code-scanning findings: nothing exploitable; one name clash in the head script fixed, and each flagged line now explains why it is safe.
+- Maintainability review of the code-scanning findings: simpler code in places, with no change to what the plugin does.
 
 ### 1.0.1
 
