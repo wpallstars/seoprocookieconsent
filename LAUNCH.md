@@ -27,14 +27,14 @@ On now:
 - SonarCloud (public project `wpallstars_seoprocookieconsent`, `SONAR_TOKEN`
   set), Codacy (ESLint and PHP Mess Detector use the repository's files) and
   OpenSSF Scorecard, each with its README badge.
+- CodeFactor, with its README badge.
 
-Still to do (`DEVELOPMENT.md` → At public launch, Services setup):
+Still to do (`DEVELOPMENT.md` → At public launch: full sweep, step 2): fix or
+explain what the reviewers find, in small pull requests by area. Findings in
+core files (`scripts/core-files.txt`) go to the starter.
 
-- [ ] CodeFactor: add the repository on codefactor.io, then
-  `scripts/readme-badges.sh --add codefactor`.
-- [ ] CodeRabbit full review of the whole codebase.
-- [ ] Fix or explain what the reviewers find, in small pull requests by area
-  (security first).
+- [ ] Security findings: #79.
+- [ ] Maintainability findings, with a CodeRabbit full review: #80.
 
 ## Before 1.0
 

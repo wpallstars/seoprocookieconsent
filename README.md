@@ -7,6 +7,7 @@
 [![CI](https://github.com/wpallstars/seoprocookieconsent/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/wpallstars/seoprocookieconsent/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wpallstars_seoprocookieconsent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=wpallstars_seoprocookieconsent)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c086ddeb6e9e401a9e07e309b4ce88d9)](https://app.codacy.com/gh/wpallstars/seoprocookieconsent/dashboard)
+[![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
 [![Latest release](https://img.shields.io/badge/release-v1.0.1-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
