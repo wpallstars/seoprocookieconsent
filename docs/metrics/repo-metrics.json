@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-10-17T02:03:04Z",
+  "generated_at": "2026-10-18T12:28:41Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -11,85 +11,94 @@
     "slug": "wpallstars/seoprocookieconsent"
   },
   "summary": {
-    "source_files": 99,
-    "code": 19962,
-    "comments": 5625,
-    "blanks": 2102,
-    "languages": 9,
+    "source_files": 124,
+    "code": 25005,
+    "comments": 6731,
+    "blanks": 2548,
+    "languages": 10,
     "dependencies": 14
   },
   "languages": [
     {
       "name": "PHP",
-      "files": 35,
-      "code": 6961,
-      "comments": 4092,
-      "blanks": 747,
-      "percentage": 34.87,
+      "files": 47,
+      "code": 9927,
+      "comments": 5034,
+      "blanks": 1011,
+      "percentage": 39.7,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
-      "files": 18,
-      "code": 5514,
-      "comments": 1072,
-      "blanks": 476,
-      "percentage": 27.62,
+      "files": 21,
+      "code": 6066,
+      "comments": 1160,
+      "blanks": 507,
+      "percentage": 24.26,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
-      "files": 14,
-      "code": 2061,
+      "files": 15,
+      "code": 2507,
       "comments": 0,
-      "blanks": 376,
-      "percentage": 10.32,
+      "blanks": 479,
+      "percentage": 10.03,
       "color": "#083fa1"
     },
     {
       "name": "JavaScript",
       "files": 7,
-      "code": 1680,
-      "comments": 197,
-      "blanks": 125,
-      "percentage": 8.42,
+      "code": 1975,
+      "comments": 237,
+      "blanks": 148,
+      "percentage": 7.9,
       "color": "#f1e05a"
+    },
+    {
+      "name": "SVG",
+      "files": 10,
+      "code": 1952,
+      "comments": 48,
+      "blanks": 13,
+      "percentage": 7.81,
+      "color": "#6e7781"
     },
     {
       "name": "CSS",
       "files": 5,
-      "code": 1642,
-      "comments": 125,
-      "blanks": 302,
-      "percentage": 8.23,
+      "code": 1717,
+      "comments": 137,
+      "blanks": 316,
+      "percentage": 6.87,
       "color": "#563d7c"
-    },
-    {
-      "name": "SVG",
-      "files": 5,
-      "code": 1454,
-      "comments": 43,
-      "blanks": 12,
-      "percentage": 7.28,
-      "color": "#6e7781"
     },
     {
       "name": "YAML",
       "files": 11,
-      "code": 550,
-      "comments": 93,
-      "blanks": 62,
-      "percentage": 2.76,
+      "code": 578,
+      "comments": 96,
+      "blanks": 64,
+      "percentage": 2.31,
       "color": "#cb171e"
     },
     {
       "name": "JSON",
-      "files": 3,
-      "code": 92,
+      "files": 5,
+      "code": 172,
       "comments": 0,
       "blanks": 0,
-      "percentage": 0.46,
+      "percentage": 0.69,
       "color": "#292929"
+    },
+    {
+      "name": "TypeScript",
+      "files": 2,
+      "code": 103,
+      "comments": 16,
+      "blanks": 8,
+      "percentage": 0.41,
+      "color": "#3178c6"
     },
     {
       "name": "TOML",
@@ -97,7 +106,7 @@
       "code": 8,
       "comments": 3,
       "blanks": 2,
-      "percentage": 0.04,
+      "percentage": 0.03,
       "color": "#9c4221"
     }
   ],
