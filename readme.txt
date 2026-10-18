@@ -83,11 +83,11 @@ With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cr
 
 = Can I keep consent records? =
 
-With recording on, visitors can copy their consent ID in Cookie settings after choosing. Administrators can look it up beside the CSV exports: unexpired choices, UTC times, policy version and snapshot hash, newest first in pages of 100. Records are pseudonymous, not linked to email or WordPress accounts; WordPress personal data export/erase tools do not cover these IDs. Use the supplied ID for privacy requests. An ID does not confirm delivery; cookie loss loses the browser's link.
+With recording on, visitors can copy their consent ID in Cookie settings. Administrators can look up its unexpired history beside the exports, newest first in pages of 100. Records are pseudonymous, not linked to email or accounts: WordPress personal data export/erase tools do not cover these IDs. Use the supplied ID for privacy requests; see README.md for limits.
 
 Keep records for (days) accepts 0–3650: 0 (the default) follows the choice lifetime; a positive value keeps records for the longer of the two periods, without remembering browser choices for longer. Choose how long you need evidence and disclose the period in your privacy policy.
 
-Enable Keep consent records under Consent, then reload settings for records and snapshots CSV exports. Choices link by hash to archived banner wording, category/service details and local policy source/revision: evidence of what was shown, not a compliance guarantee. No IP addresses or browser details; ordinary page views send no record. Old cached pages without a known hash still record choices. Clear page caches after changes and disclose records in your privacy policy. WP-Cron expires records even with recording off; snapshots stay until uninstall, which removes both. External policies and dynamic content need separate copies. See README.md for limits.
+Enable Keep consent records under Consent, then reload settings for CSV exports. Choices link by hash to archived wording, services and local policy source/revision: evidence, not a compliance guarantee. No IP or browser details; ordinary page views send no record. Cached pages without a known hash still record choices. Clear page caches after changes and disclose records in your privacy policy. WP-Cron expires records even with recording off; snapshots stay until uninstall, which removes both. External policies and dynamic content need separate copies.
 
 = When do versions reach WordPress.org? =
 
