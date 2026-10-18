@@ -3,7 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
-* Banner: the gold line is now "Nicer notices. Faster setup." and the tagline "User-friendly notices & settings, only shown when needed." in both words groups of .wordpress-org/banner.svg; scripts/build-banner.sh rebuilt the PNGs, admin/images/banner.svg and banner-details.svg. DESIGN.md records the new words.
+* Banner: the gold line is now "Nicer notices. Faster setup." and the tagline "User-friendly notices & settings, only shown when needed." in both word groups of .wordpress-org/banner.svg; scripts/build-banner.sh rebuilt the PNGs, admin/images/banner.svg and banner-details.svg. DESIGN.md records the new words.
 * Docs: README.md's intro says compliance notices shouldn't be a tax on a website: no spyware or phoning home (naming the only outside requests: video thumbnails and, in the GitHub build, update checks with GitHub), no slowdown, why that is better for SEO and conversions than hosted consent platforms, and every feature free for good.
 * README badges: no SonarCloud badge (this repository has no SonarCloud project); the release badge comes from readme.txt's Stable tag, so it shows while the repository is private (WP Plugin Starter's readme-badges.sh).
 
