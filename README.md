@@ -26,7 +26,7 @@ It is a tool, not legal advice: check its defaults and your policy text with who
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 0.1.4
+Version: 0.1.5
 
 <!-- github-only:start -->
 ## Screenshots
@@ -334,8 +334,11 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 0.1.5
 
+- Every held-back embed shows a generic picture behind its notice: video (until a YouTube or Vimeo thumbnail is cached), music player, social post, map, or a browser window for anything else. No request reaches the service before consent.
+- The notice fits small embeds: compact music players keep their real height, and on phones or short embeds the notice shrinks step by step, down to the Load button alone, instead of being cut off.
+- Consent buttons keep readable text in Kadence's dark mode (and any theme whose button colours clash in one mode): the theme's colours are kept when they reach 4.5:1, otherwise the theme's own light or dark text is used.
 - Visitors can view and copy their consent ID in Cookie settings when recording is on; administrators can look up that ID's unexpired history, including policy and snapshot references.
 
 ### 0.1.4

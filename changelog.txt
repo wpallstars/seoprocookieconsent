@@ -2,7 +2,10 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 0.1.5 =
+* Placeholders: every held iframe shows a bundled decorative SVG (assets/images/{map,video,audio,post,embed}-placeholder.svg). SEOProCookieConsent_Thumbnails::KINDS maps services to kinds (YouTube/Vimeo video, Spotify/SoundCloud audio, X/Instagram/Facebook post, Google Maps map); other and custom services get embed. A cached YouTube/Vimeo thumbnail still wins. spcc-head.js reads the same images, with '*' as the fallback.
+* Placeholders: a pixel height (alone or with a pixel width) sets min-height:64px instead of the stylesheet's 180px, so compact players (Spotify 80/152px, SoundCloud 166px) keep their height. spcc.js fit() uses a ResizeObserver to set data-spcc-fit 1-3 while the notice overflows: tighter spacing, then buttons only (sentence kept for screen readers and as the Load button's title), then the Load button only. Before, core responsive embeds under about 180px tall (16:9 on phones) clipped the notice.
+* Front end: spcc.js checks the theme's button text against the button background (normal and hover) and, below 4.5:1, sets --spcc-btn-ink/--spcc-btn-ink-hover on body to the theme's background or strong text colour, then white or black. Rechecked on html/body class changes (Kadence dark mode switcher) and prefers-color-scheme changes. Before, Kadence dark mode gave palette 9 text on palette 1 (2.57:1).
 * Consent records: Cookie settings shows the cookie's consent ID only with recording on and an existing choice, with a keyboard-accessible copy button and live success/failure feedback. Browser-only ID population keeps cached HTML visitor-independent. Administrator-only, nonce-protected POST lookup validates exact 32-character lowercase hexadecimal IDs and shows unexpired choices, UTC times, policy versions and snapshot hashes newest first in indexed pages of 100. Schema 3 adds a visitor-ID/record-ID index. No public read route. Document pseudonymous records and exclusion from WordPress's email-based personal data export/erase tools.
 
 = 0.1.4 =

@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -104,11 +104,10 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= Unreleased =
+= 0.1.5 =
+* Every held-back embed shows a generic picture (video, music player, post, map or web page) behind its notice.
+* The notice fits small embeds, such as compact music players and videos on phones, down to the Load button alone.
+* Consent buttons stay readable in Kadence's dark mode.
 * Visitors can view and copy their consent ID; administrators can look up its history, policy version and snapshot hash. Records are pseudonymous, outside WordPress's email-based privacy tools.
-
-= 0.1.4 =
-* Held-back embeds keep their notice readable when theme or site styles show every iframe.
-* Stable consent-control hooks for banner-answering tools; autoconsent and Consent-O-Matic rule drafts are kept in the repository, pending upstream inclusion.
 
 Every change: changelog.txt.
