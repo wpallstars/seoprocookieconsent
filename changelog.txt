@@ -5,6 +5,7 @@ Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in s
 = Unreleased =
 * The repository is public: sites get updates from GitHub without a token. README.md shows SonarCloud, Codacy and OpenSSF Scorecard badges; LAUNCH.md records what was checked before the switch and what is on (branch ruleset with required checks, secret scanning with push protection, Dependabot alerts, private vulnerability reporting, CodeQL). docs/consent-automation/README.md no longer says the repository is private.
 * README.md shows the CodeFactor badge; LAUNCH.md links the review-findings sweep (#79 security, #80 maintainability).
+* Security review of Codacy, SonarCloud and CodeQL findings (#79): no exploitable issue found. The head script's service list no longer reuses the name of its cookie-import helper (`ids`), which a later change could have broken; the scan findings, page picker, Borlabs and Real Cookie Banner importers and the consent-automation harness say inline why each flagged line is safe.
 
 = 1.0.1 =
 * No code changes to the plugin since 1.0.0.

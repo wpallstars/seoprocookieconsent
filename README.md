@@ -365,6 +365,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - The repository is now public, so sites get updates from GitHub without a token.
+- Security review of the code-scanning findings: nothing exploitable; one name clash in the head script fixed, and each flagged line now explains why it is safe.
 
 ### 1.0.1
 

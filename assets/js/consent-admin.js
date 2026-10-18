@@ -24,6 +24,9 @@
 
     // Page picker ---------------------------------------------------------
 
+    // Turns the REST title's entities (&#8217;) into text. Safe: a detached
+    // <textarea> parses its content as text only, never as elements, and the
+    // result is shown with .text() (renderItem below).
     function decode(text) {
         var el = document.createElement('textarea');
         el.innerHTML = text || '';
@@ -53,6 +56,7 @@
             delay: 250,
             classes: { 'ui-autocomplete': 'spcc-page-suggest' },
             source: function (request, respond) {
+                // Anchored, no nested quantifiers: linear time, no ReDoS.
                 var term = /^(https?:|\/)/.test(request.term) ? '' : request.term;
                 var query = '?type=post&subtype=page&per_page=10&_fields=id,title,url&search=' + encodeURIComponent(term);
                 wp.apiFetch({ path: '/wp/v2/search' + query }).then(function (pages) {
@@ -76,6 +80,7 @@
                 return false;
             }
         });
+        // Elements from fixed markup; the page's title and path go in as text.
         $input.autocomplete('instance')._renderItem = function (ul, item) {
             var $row = $('<div>').append($('<span class="spcc-page-suggest__title">').text(item.label));
             if (item.path) {
@@ -188,6 +193,8 @@
                     $status.text(data.scanFailed);
                     return;
                 }
+                // Server markup from this site's own admin-only, nonce-checked
+                // scan: findings() escapes every value with esc_html().
                 $panel.find('[data-spcc-findings]').html(response.data.html);
                 $status.text(response.data.checked ? data.scanned.replace('%1$s', response.data.checked).replace('%2$s', response.data.failed) : data.scanFailed);
             }).fail(function (xhr) {
