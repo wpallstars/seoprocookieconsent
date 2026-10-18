@@ -13,6 +13,12 @@ Scanning. Findings update in place without reloading the settings or moving
 focus; failures keep the old list and explain the browse-pages fallback.
 All controls inherit the existing Light/Dark admin styling.
 
+Consent-ID lookup posts from the Consent card to a private standalone
+WordPress response, with a labelled field and nonce. Results use a semantic
+table, newest first in pages of 100, with Older records and a separate fresh
+lookup form. Long values wrap; the table scrolls horizontally on phones.
+No extra menu, visitor ID in a URL, new palette or animation is added.
+
 The Import tab uses native details, lists, page checkboxes and WordPress buttons
 instead of a new card or palette. Dry-run output precedes each action; pages
 require individual selection and irreversible cleanup has a required backup

@@ -83,7 +83,7 @@ With Cookie consent on, the server fetches YouTube and Vimeo thumbnails in WP-Cr
 
 = Can I keep consent records? =
 
-With recording on, visitors can see and copy their consent ID in Cookie settings after choosing. Administrators can look up its unexpired history beside the CSV exports, newest first in pages of 100, including choice, UTC times, policy version and snapshot hash. The ID is pseudonymous, not linked to an email or WordPress account: WordPress personal data export/erase tools do not cover these IDs. Use the supplied ID and your privacy procedures for requests. Losing the cookie loses the browser's link; an ID does not confirm successful delivery.
+With recording on, visitors can copy their consent ID in Cookie settings after choosing. Administrators can look it up beside the CSV exports: unexpired choices, UTC times, policy version and snapshot hash, newest first in pages of 100. Records are pseudonymous, not linked to email or WordPress accounts; WordPress personal data export/erase tools do not cover these IDs. Use the supplied ID for privacy requests. An ID does not confirm delivery; cookie loss loses the browser's link.
 
 Keep records for (days) accepts 0–3650: 0 (the default) follows the choice lifetime; a positive value keeps records for the longer of the two periods, without remembering browser choices for longer. Choose how long you need evidence and disclose the period in your privacy policy.
 
