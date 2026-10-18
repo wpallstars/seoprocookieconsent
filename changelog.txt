@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* The repository is public: sites get updates from GitHub without a token. README.md shows SonarCloud, Codacy and OpenSSF Scorecard badges; LAUNCH.md records what was checked before the switch and what is on (branch ruleset with required checks, secret scanning with push protection, Dependabot alerts, private vulnerability reporting, CodeQL). docs/consent-automation/README.md no longer says the repository is private.
+
 = 1.0.1 =
 * No code changes to the plugin since 1.0.0.
 * Banner: the gold line is now "Nicer notices. Faster setup." and the tagline "User-friendly notices & settings, only shown when needed." in both word groups of .wordpress-org/banner.svg; scripts/build-banner.sh rebuilt the PNGs, admin/images/banner.svg and banner-details.svg. DESIGN.md records the new words.

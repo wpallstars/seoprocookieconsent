@@ -2,18 +2,39 @@
 
 Version: 1.0.1
 
-First GitHub release: 0.1.0 (2026-10-17), a pre-1.0 beta; Before 1.0 below
-is still open. The repository is private, so sites get updates only with a
-read-only `WPALLSTARS_GITHUB_TOKEN` or by installing the release zip. Making
-it public needs the owner's say.
+First GitHub release: 0.1.0 (2026-10-17), a pre-1.0 beta; 1.0.0 on
+2026-10-18. The repository is public since 2026-10-18 (the owner's say), so
+sites get updates from GitHub without a token.
 
-## While private
+## Public since 2026-10-18
 
-Follow `DEVELOPMENT.md` → While private. No branch protection or repository
-rules, CodeQL, secret scanning or Scorecard are on: they need a public
-repository or a paid GitHub plan. Connect Codacy, CodeFactor and SonarCloud
-at public launch. `SYNC_PAT` is needed only once `main` is protected
-(`DEVELOPMENT.md` → Services setup, step 4).
+Before the switch: gitleaks over every ref (167 commits) found only expired
+aidevops dispatch-claim lease markers in the `aidevops/issues-archive`
+branch, no credentials; code, history, issues and pull requests name no
+private paths or client sites. The `CI_RUNNER` variable was removed (no
+self-hosted runner for a public repository; the runner groups refuse public
+repositories too).
+
+On now:
+
+- Branch ruleset `main`: no deletion or force push, squash merges through a
+  pull request, and Lint, Release build and both Smoke tests required (not
+  "up to date"); repository admins can bypass. `SYNC_PAT` is set, so
+  Repository metrics can still push `docs/metrics/`.
+- Secret scanning with push protection, Dependabot alerts, private
+  vulnerability reporting, CodeQL default setup (Actions, JavaScript), and
+  approval for workflows from first-time contributors' forks.
+- SonarCloud (public project `wpallstars_seoprocookieconsent`, `SONAR_TOKEN`
+  set), Codacy (ESLint and PHP Mess Detector use the repository's files) and
+  OpenSSF Scorecard, each with its README badge.
+
+Still to do (`DEVELOPMENT.md` → At public launch, Services setup):
+
+- [ ] CodeFactor: add the repository on codefactor.io, then
+  `scripts/readme-badges.sh --add codefactor`.
+- [ ] CodeRabbit full review of the whole codebase.
+- [ ] Fix or explain what the reviewers find, in small pull requests by area
+  (security first).
 
 ## Before 1.0
 
@@ -47,12 +68,7 @@ leftovers lists what is still the starter's).
   approved the banner, icon and screenshots.
 - [ ] WordPress.org: if the Plugin Name gives another slug, ask for this
   plugin's slug in the submission notes.
-- [ ] After the release: `scripts/update-test.sh`.
-
-## At public launch
-
-First follow `DEVELOPMENT.md` → Secrets in history, then
-`DEVELOPMENT.md` → At public launch. Update this file with what is on.
+- [x] After the release: `scripts/update-test.sh` (1.0.0 to 1.0.1 passed).
 
 ## WordPress.org
 
