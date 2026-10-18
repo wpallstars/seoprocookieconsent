@@ -1,4 +1,4 @@
-![WPALLSTARS SEO Pro Cookie Consent: Switch on, not set up](admin/images/banner.svg)
+![WPALLSTARS SEO Pro Cookie Consent: Nicer notices. Faster setup.](admin/images/banner.svg)
 
 # SEO Pro Cookie Consent
 

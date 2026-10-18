@@ -110,7 +110,7 @@ palette of their own.
   `#4a230c`, cream edge), raised like SEO Pro Stack's bolt. Keep the
   banner's and icon's cookie the same, and check it reads at 128 px.
 - Words: "SEO Pro Cookie Consent" (94, not the starter's 104, so the name
-  clears the stack), gold line "Switch on, not set up", tagline "Holds back
+  clears the stack), gold line "Nicer notices. Faster setup.", tagline "Holds back
   cookies until visitors agree, only where needed."
 - Screenshots: a disposable Kadence site with demo content (a bakery with
   YouTube, Google Maps, Spotify and Google Analytics), 1280 x 800 desktop
