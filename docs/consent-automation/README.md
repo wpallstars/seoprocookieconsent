@@ -147,9 +147,9 @@ notices on the host; the plugin lint and PHP 8.3 runtime checks pass.
 
 ## Upstream submission status
 
-Waiting deliberately: the plugin repository is still private (verified through
-the GitHub API), and no authorized public example site is supplied. Do not
-publish the plugin, expose a private test site or submit inaccessible examples.
+Waiting deliberately: the plugin repository is public since 2026-10-18, but no
+authorized public example site is supplied yet. Do not expose a private test
+site or submit inaccessible examples.
 This is a recorded submission deferral, not a claim that either upstream
 requires a public example under a written rule.
 
