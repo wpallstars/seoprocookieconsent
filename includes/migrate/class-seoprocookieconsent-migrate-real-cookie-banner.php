@@ -273,7 +273,8 @@ final class SEOProCookieConsent_Migrate_Real_Cookie_Banner extends SEOProCookieC
                     $domain = defined('COOKIE_DOMAIN') ? COOKIE_DOMAIN : false;
                     $address .= is_string($domain) && 0 === strpos($domain, '.') ? 'wildcard' : 'no-wildcard';
                 }
-                $context = 'v:' . $version . '_' . $context . '_path:' . substr(md5($address), 0, 7);
+                // Real Cookie Banner's own cookie-name scheme, rebuilt to find its cookie.
+                $context = 'v:' . $version . '_' . $context . '_path:' . substr(md5($address), 0, 7); // NOSONAR: a cookie name, not security.
             }
             $names[] = 'real_cookie_banner-' . $context;
         }

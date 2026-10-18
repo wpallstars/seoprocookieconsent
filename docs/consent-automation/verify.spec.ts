@@ -3,6 +3,9 @@
 // Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
 // Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
 // Run with the upstream autoconsent Playwright CLI; see README.md here.
+// Development only, never shipped (.distignore leaves out docs/). The
+// require() paths are the developer's own upstream checkouts, set in the
+// environment below, so the non-literal requires load no outside input.
 const path = require('node:path');
 const root = process.env.AUTOCONSENT_ROOT;
 const comRoot = process.env.CONSENTOMATIC_ROOT;

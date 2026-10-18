@@ -221,7 +221,7 @@
     }
 
     var services = c.services || {};
-    var ids = Object.keys(services);
+    var serviceIds = Object.keys(services);
     var set = w.Element.prototype.setAttribute;
     var remove = w.Element.prototype.removeAttribute;
     var insert = w.Node.prototype.insertBefore;
@@ -278,8 +278,8 @@
                 return 'custom:' + c.block[extra[i]];
             }
         }
-        for (var j = 0; j < ids.length; j++) {
-            var id = ids[j];
+        for (var j = 0; j < serviceIds.length; j++) {
+            var id = serviceIds[j];
             if (contains(text, services[id].patterns || [])) {
                 return (c.skip || []).indexOf(id) === -1 ? id : '';
             }

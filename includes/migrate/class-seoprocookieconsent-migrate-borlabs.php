@@ -69,6 +69,8 @@ final class SEOProCookieConsent_Migrate_Borlabs extends SEOProCookieConsent_Migr
         }
         $value = false;
         if ($row && is_serialized($row['option_value'])) {
+            // Not maybe_unserialize(): with allowed_classes => false objects
+            // become __PHP_Incomplete_Class, which runs no code (no object injection).
             // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.serialize_unserialize -- no classes are instantiated; its objects become incomplete-class arrays.
             $value = unserialize($row['option_value'], array('allowed_classes' => false));
         }

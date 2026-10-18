@@ -890,7 +890,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         }
     }
 
-    /** The findings, also returned after a scan without reloading controls. */
+    /**
+     * The findings, also returned after a scan without reloading controls.
+     * consent-admin.js inserts that copy as HTML, so escape every value here.
+     */
     private static function findings() {
         $seen       = SEOProCookieConsent_Services::seen();
         $categories = SEOProCookieConsent_Services::categories();
