@@ -1,6 +1,6 @@
 # SEO Pro Cookie Consent launch state
 
-Version: 1.0.1
+Version: 1.0.2
 
 First GitHub release: 0.1.0 (2026-10-17), a pre-1.0 beta; 1.0.0 on
 2026-10-18. The repository is public since 2026-10-18 (the owner's say), so
@@ -29,12 +29,16 @@ On now:
   OpenSSF Scorecard, each with its README badge.
 - CodeFactor, with its README badge.
 
-Still to do (`DEVELOPMENT.md` → At public launch: full sweep, step 2): fix or
-explain what the reviewers find, in small pull requests by area. Findings in
-core files (`scripts/core-files.txt`) go to the starter.
+Review-findings sweep (`DEVELOPMENT.md` → At public launch: full sweep,
+step 2), released in 1.0.2. Findings in core files (`scripts/core-files.txt`)
+go to the starter.
 
-- [ ] Security findings: #79.
-- [ ] Maintainability findings, with a CodeRabbit full review: #80.
+- [x] Security findings: #79 (PR #82). Nothing exploitable; Codacy's flagged
+  lines explain why inline and are marked false positives.
+- [x] Maintainability findings: #80 (PR #83). SonarCloud 72 → 12 open and
+  Codacy 197 → 40 open, all left in starter core files; the rest fixed or
+  accepted with a reason in each service. CodeRabbit's full review was rate
+  limited (advisory).
 
 ## Before 1.0
 
