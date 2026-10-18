@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect width="800" height="450" fill="#eceff3"/>
+<rect x="110" y="40" width="580" height="370" rx="12" fill="#fff" stroke="#d5dbe3" stroke-width="2"/>
+<path d="M111 52a11 11 0 0 1 11-11h556a11 11 0 0 1 11 11v26H111z" fill="#e2e6ec"/>
+<circle cx="134" cy="60" r="6" fill="#c3cad4"/>
+<circle cx="154" cy="60" r="6" fill="#c3cad4"/>
+<circle cx="174" cy="60" r="6" fill="#c3cad4"/>
+<rect x="200" y="53" width="300" height="14" rx="7" fill="#fff"/>
+<rect x="140" y="105" width="220" height="14" rx="7" fill="#a0aec0"/>
+<rect x="140" y="132" width="520" height="9" rx="4.5" fill="#cbd5e0"/>
+<rect x="140" y="150" width="460" height="9" rx="4.5" fill="#cbd5e0"/>
+<rect x="140" y="180" width="250" height="150" rx="8" fill="#dfe5ec"/>
+<rect x="410" y="180" width="250" height="150" rx="8" fill="#dfe5ec"/>
+<rect x="140" y="350" width="400" height="9" rx="4.5" fill="#cbd5e0"/>
+<rect x="140" y="368" width="300" height="9" rx="4.5" fill="#cbd5e0"/>
+</svg>

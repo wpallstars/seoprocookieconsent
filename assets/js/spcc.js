@@ -615,6 +615,59 @@
         }
     }
 
+    // Small embeds ------------------------------------------------------
+    // Step a placeholder's notice down while it overflows (spcc.css: Small
+    // embeds): 1 tighter, 2 buttons only, 3 the Load button only.
+
+    function overflows(box, notice) {
+        var s = w.getComputedStyle(box);
+        var room = box.clientHeight - parseFloat(s.paddingTop) - parseFloat(s.paddingBottom);
+        return notice.offsetHeight > room + 1;
+    }
+
+    function fit(box) {
+        var notice = box.querySelector('.spcc-embed__notice');
+        if (!notice || !box.isConnected) {
+            return;
+        }
+        var level = 0;
+        box.removeAttribute('data-spcc-fit');
+        while (level < 3 && overflows(box, notice)) {
+            level++;
+            box.setAttribute('data-spcc-fit', String(level));
+        }
+        // Without the sentence on screen, the Load button still tells it.
+        var load = notice.querySelector('.spcc-embed__load');
+        var text = notice.querySelector('p');
+        if (load && text && level > 1) {
+            load.setAttribute('title', text.textContent);
+        } else if (load) {
+            load.removeAttribute('title');
+        }
+    }
+
+    var sizes = w.ResizeObserver ? new w.ResizeObserver(function (entries) {
+        entries.forEach(function (entry) {
+            fit(entry.target);
+        });
+    }) : null;
+
+    function fitEmbeds() {
+        each(d.querySelectorAll('.spcc-embed'), function (box) {
+            if (sizes) {
+                sizes.observe(box);
+            } else {
+                fit(box);
+            }
+        });
+    }
+
+    if (d.fonts && d.fonts.ready) {
+        d.fonts.ready.then(function () {
+            each(d.querySelectorAll('.spcc-embed'), fit);
+        });
+    }
+
     // Start -------------------------------------------------------------
 
     if (c.preview) {
@@ -636,6 +689,7 @@
         });
         held = Object.keys(page).length > 0;
         release();
+        fitEmbeds();
         if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
             showBanner();
         } else {

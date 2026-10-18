@@ -243,7 +243,9 @@ final class SEOProCookieConsent_Blocker {
      * attributes. Pixels on both keep the embed's shape up to its width;
      * otherwise each is copied on its own, so `width="100%" height="100%"`
      * fills the same container (Kadence's Google Maps block) instead of
-     * reading as 100 pixels. Spcc-head.js size() does the same.
+     * reading as 100 pixels. A pixel height keeps compact players compact,
+     * with one button row (64px) as the floor instead of the stylesheet's
+     * 180px. Spcc-head.js size() does the same.
      *
      * @param mixed $width  Width attribute.
      * @param mixed $height Height attribute.
@@ -257,7 +259,7 @@ final class SEOProCookieConsent_Blocker {
         $w       = preg_match($pixels, $width, $wm) ? (int) $wm[1] : 0;
         $h       = preg_match($pixels, $height, $hm) ? (int) $hm[1] : 0;
         if ($w > 0 && $h > 0) {
-            return sprintf('aspect-ratio:%d/%d;max-width:%dpx', $w, $h, $w);
+            return sprintf('aspect-ratio:%d/%d;max-width:%dpx;min-height:64px', $w, $h, $w);
         }
         $style = array();
         if ($w > 0) {
@@ -266,7 +268,7 @@ final class SEOProCookieConsent_Blocker {
             $style[] = 'width:' . $wm[1] . '%';
         }
         if ($h > 0) {
-            $style[] = sprintf('height:%dpx', $h);
+            $style[] = sprintf('height:%dpx;min-height:64px', $h);
         } elseif (preg_match($percent, $height, $hm)) {
             $style[] = 'height:' . $hm[1] . '%';
         }
