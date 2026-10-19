@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Starter sync (#85): all 78 core files match WP Plugin Starter at 2f9dff4. Includes the public admin class list and sections navigation helper, core code-review cleanups, and deploy tooling's per-site multisite checks and LiteSpeed page-cache purge. Plugin-own styling and migration notes are preserved; no consent defaults change.
+
 = 1.0.2 =
 * The repository is public: sites get updates from GitHub without a token. README.md shows SonarCloud, Codacy and OpenSSF Scorecard badges; LAUNCH.md records what was checked before the switch and what is on (branch ruleset with required checks, secret scanning with push protection, Dependabot alerts, private vulnerability reporting, CodeQL). docs/consent-automation/README.md no longer says the repository is private.
 * README.md shows the CodeFactor badge; LAUNCH.md links the review-findings sweep (#79 security, #80 maintainability).

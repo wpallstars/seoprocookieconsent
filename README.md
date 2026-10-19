@@ -362,6 +362,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Sync the shared admin components and developer tooling with WP Plugin Starter, preserving this plugin's own styling and migration notes. Consent defaults are unchanged.
+
 ### 1.0.2
 
 - The repository is now public, so sites get updates from GitHub without a token.
