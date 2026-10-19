@@ -113,6 +113,6 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 * Shared admin components and developer tooling updated from WP Plugin Starter; consent defaults unchanged.
 
 = 1.0.2 =
-* Code review after going public: nothing exploitable found; a name clash in the head script fixed and simpler code in places, with no change to what the plugin does.
+* Public-launch review: no exploitable findings; a head-script name clash fixed and code simplified.
 
 Every change: changelog.txt.
