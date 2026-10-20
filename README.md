@@ -94,7 +94,7 @@ It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compli
 - **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA.** The Import tab previews, then imports their settings, script rules, policy pages and, where their format is verified, visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
-For statistics with no cookies and no banner at all, use SEO Pro Stats: it needs no consent, so pages that only use it show no banner.
+For statistics with no cookies and no banner at all, use SEO Pro Analytics: it needs no consent, so pages that only use it show no banner.
 
 ## Set it up
 
@@ -365,6 +365,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Sync the shared admin components and developer tooling with WP Plugin Starter, preserving this plugin's own styling and migration notes. Consent defaults are unchanged.
+- The cookie-free statistics plugin recommended for pages without a banner is named by its new name, SEO Pro Analytics (formerly SEO Pro Stats).
 
 ### 1.0.2
 
