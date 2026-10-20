@@ -365,6 +365,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Sync the shared admin components and developer tooling with WP Plugin Starter, preserving this plugin's own styling and migration notes. Consent defaults are unchanged.
+- The cookie-free statistics plugin recommended for pages without a banner is named by its new name, SEO Pro Analytics (formerly SEO Pro Stats).
 
 ### 1.0.2
 
