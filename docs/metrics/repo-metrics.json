@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-10-18T12:28:41Z",
+  "generated_at": "2026-10-20T05:59:06Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -12,9 +12,9 @@
   },
   "summary": {
     "source_files": 124,
-    "code": 25005,
-    "comments": 6731,
-    "blanks": 2548,
+    "code": 25342,
+    "comments": 6869,
+    "blanks": 2581,
     "languages": 10,
     "dependencies": 14
   },
@@ -22,37 +22,37 @@
     {
       "name": "PHP",
       "files": 47,
-      "code": 9927,
-      "comments": 5034,
-      "blanks": 1011,
-      "percentage": 39.7,
+      "code": 9982,
+      "comments": 5113,
+      "blanks": 1021,
+      "percentage": 39.39,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
       "files": 21,
-      "code": 6066,
-      "comments": 1160,
-      "blanks": 507,
-      "percentage": 24.26,
+      "code": 6239,
+      "comments": 1199,
+      "blanks": 512,
+      "percentage": 24.62,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 2507,
+      "code": 2604,
       "comments": 0,
-      "blanks": 479,
-      "percentage": 10.03,
+      "blanks": 495,
+      "percentage": 10.28,
       "color": "#083fa1"
     },
     {
       "name": "JavaScript",
       "files": 7,
-      "code": 1975,
-      "comments": 237,
+      "code": 1980,
+      "comments": 248,
       "blanks": 148,
-      "percentage": 7.9,
+      "percentage": 7.81,
       "color": "#f1e05a"
     },
     {
@@ -61,22 +61,22 @@
       "code": 1952,
       "comments": 48,
       "blanks": 13,
-      "percentage": 7.81,
+      "percentage": 7.7,
       "color": "#6e7781"
     },
     {
       "name": "CSS",
       "files": 5,
       "code": 1717,
-      "comments": 137,
-      "blanks": 316,
-      "percentage": 6.87,
+      "comments": 143,
+      "blanks": 318,
+      "percentage": 6.78,
       "color": "#563d7c"
     },
     {
       "name": "YAML",
       "files": 11,
-      "code": 578,
+      "code": 585,
       "comments": 96,
       "blanks": 64,
       "percentage": 2.31,
@@ -88,14 +88,14 @@
       "code": 172,
       "comments": 0,
       "blanks": 0,
-      "percentage": 0.69,
+      "percentage": 0.68,
       "color": "#292929"
     },
     {
       "name": "TypeScript",
       "files": 2,
       "code": 103,
-      "comments": 16,
+      "comments": 19,
       "blanks": 8,
       "percentage": 0.41,
       "color": "#3178c6"
