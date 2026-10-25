@@ -26,7 +26,7 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
         <p class="spcc-banner__text">
             <span data-spcc-message></span>
             <?php if ('' !== $seoprocookieconsent_policy) : ?>
-                <a class="spcc-banner__policy" href="<?php echo esc_url($seoprocookieconsent_policy); ?>"><?php esc_html_e('Cookie policy', 'seoprocookieconsent'); ?></a>
+                <a class="spcc-banner__policy spcc-new-tab" href="<?php echo esc_url($seoprocookieconsent_policy); ?>" target="_blank" rel="noopener"><?php esc_html_e('Cookie policy', 'seoprocookieconsent'); ?><span class="spcc-sr"> <?php esc_html_e('(opens in a new tab)', 'seoprocookieconsent'); ?></span></a>
             <?php endif; ?>
         </p>
         <div class="spcc-banner__actions" data-spcc-optin>
@@ -49,7 +49,7 @@ $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
         <p id="spcc-dialog-intro" class="spcc-dialog__intro">
             <?php esc_html_e('Choose which cookies to allow. You can change this at any time from the Cookie settings link.', 'seoprocookieconsent'); ?>
             <?php if ('' !== $seoprocookieconsent_policy) : ?>
-                <a href="<?php echo esc_url($seoprocookieconsent_policy); ?>"><?php esc_html_e('Cookie policy', 'seoprocookieconsent'); ?></a>
+                <a class="spcc-new-tab" href="<?php echo esc_url($seoprocookieconsent_policy); ?>" target="_blank" rel="noopener"><?php esc_html_e('Cookie policy', 'seoprocookieconsent'); ?><span class="spcc-sr"> <?php esc_html_e('(opens in a new tab)', 'seoprocookieconsent'); ?></span></a>
             <?php endif; ?>
         </p>
         <p id="spcc-dialog-ask" class="spcc-dialog__ask" role="status" data-spcc-ask hidden></p>
