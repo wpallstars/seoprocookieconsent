@@ -154,9 +154,10 @@
     width: 0.72em;
     height: 0.72em;
     margin-inline-start: 0.3em;
-    background-color: currentColor;
+    background-color: currentcolor;
     vertical-align: -0.02em;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M6.5 17.5l11-11M8.5 6.5h9v9'/%3E%3C/svg%3E") center / contain no-repeat;
+
+    /* Unprefixed mask: Safari 15.4+, Chrome 120+, Firefox 53+. */
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M6.5 17.5l11-11M8.5 6.5h9v9'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
