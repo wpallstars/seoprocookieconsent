@@ -2,7 +2,8 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.3 =
+* The Cookie policy links in the banner and the Cookie settings dialog open in a new tab (target="_blank", rel="noopener"), with an arrow after the text drawn in the link's colour (LinkText in forced colours) and "(opens in a new tab)" for screen readers, so reading the policy never loses the visitor's place or unsaved choices.
 * Starter sync (#85): all 78 core files match WP Plugin Starter at 2f9dff4. Includes the public admin class list and sections navigation helper, core code-review cleanups, and deploy tooling's per-site multisite checks and LiteSpeed page-cache purge. Plugin-own styling and migration notes are preserved; no consent defaults change.
 * README.md names the cookie-free statistics plugin it recommends for pages without a banner by its new name, SEO Pro Analytics (formerly SEO Pro Stats).
 
