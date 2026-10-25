@@ -364,7 +364,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### 1.0.3
 
-- The banner's and Cookie settings' Cookie policy link opens in a new tab, with an arrow after it (and "opens in a new tab" for screen readers), so reading it keeps the visitor's choices.
+- The Cookie policy links in the banner and Cookie settings open in a new tab, with an arrow after them (and "opens in a new tab" for screen readers), so reading the policy keeps the visitor's choices.
 - Sync the shared admin components and developer tooling with WP Plugin Starter, preserving this plugin's own styling and migration notes. Consent defaults are unchanged.
 - The cookie-free statistics plugin recommended for pages without a banner is named by its new name, SEO Pro Analytics (formerly SEO Pro Stats).
 
