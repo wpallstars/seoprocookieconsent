@@ -109,6 +109,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
+= Unreleased =
+* Shared starter update: optional ordered settings, admin layout helpers and developer-tool fixes; consent defaults unchanged.
+
 = 1.0.3 =
 * The Cookie policy links in the banner and Cookie settings open in a new tab, with an arrow after them.
 * Shared admin components and developer tooling updated from WP Plugin Starter; consent defaults unchanged.

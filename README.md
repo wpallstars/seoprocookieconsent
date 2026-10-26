@@ -356,11 +356,19 @@ Actions:
 
 Read a setting with `SEOProCookieConsent_Settings::get( 'key' )`, never the option itself: on multisite it includes the settings the network applies to every site. Code that runs before the plugin loads (a must-use file) reads the network option's `enforced` values (`seoprocookieconsent_network`: card => setting => value) over the site's own, as `SEOProCookieConsent_Settings::all()` does.
 
+A multi setting can also set `ordered` to true: chosen values keep their saved order, with drag handles and up/down arrow keys to reorder them. `SEOProCookieConsent_Settings::same()` takes the setting key as its third argument so ordered lists compare in order, including network differences and saving hooks. Existing fields remain unordered unless they opt in.
+
+Admin tabs can set `wide` to true to use the full available width. Own screens can use `spcc-main spcc-main--wide`, and copyable code blocks can use `<pre class="spcc-code">`; the public class list and usage rules are in `STYLING.md`.
+
 ## Uninstall
 
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- Sync 78 shared core files with WP Plugin Starter at `2817dd1`: optional ordered multi settings, order-aware network comparisons, public code-block and wide-layout classes, and deployment and preflight fixes. Plugin-own styling, migration notes and consent defaults are preserved.
 
 ### 1.0.3
 

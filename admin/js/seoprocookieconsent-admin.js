@@ -102,11 +102,51 @@
 				$(group).find(':checkbox').not(':disabled').prop('checked', all);
 				Settings.save($(group));
 			});
+			this.ordered();
 			// Forms that change data elsewhere ask first.
 			$(document).on('submit', 'form[data-spcc-confirm]', function (event) {
 				if (!window.confirm($(this).attr('data-spcc-confirm'))) {
 					event.preventDefault();
 				}
+			});
+		},
+
+		// Ordered checkbox lists (the `ordered` setting key): drag a row by
+		// its handle, or focus the handle and press the up or down arrow
+		// key. The checked boxes, top to bottom, are saved as the order.
+		ordered: function () {
+			if ($.fn.sortable) {
+				$('[data-spcc-ordered]').sortable({
+					items: '> .spcc-checkbox-row',
+					handle: '.spcc-checkbox__handle',
+					// The handle is a button (for the keyboard); jQuery UI skips buttons by default.
+					cancel: 'input, textarea, select, option, a',
+					axis: 'y',
+					cursor: 'grabbing',
+					update: function () {
+						Settings.save($(this));
+					}
+				});
+			}
+			$(document).on('keydown', '[data-spcc-ordered] .spcc-checkbox__handle', function (event) {
+				var up = event.key === 'ArrowUp';
+				if (!up && event.key !== 'ArrowDown') {
+					return;
+				}
+				event.preventDefault();
+				var $row = $(this).closest('.spcc-checkbox-row');
+				// The nearest movable row, past any locked choice between.
+				var $to = (up ? $row.prevAll('.spcc-checkbox-row') : $row.nextAll('.spcc-checkbox-row')).first();
+				if (!$to.length) {
+					return;
+				}
+				if (up) {
+					$row.insertBefore($to);
+				} else {
+					$row.insertAfter($to);
+				}
+				$(this).trigger('focus');
+				Settings.save($row.closest('[data-spcc-ordered]'));
 			});
 		},
 
