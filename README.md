@@ -366,6 +366,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Sync 78 shared core files with WP Plugin Starter at `d27c538`: `deploy-sites.sh --apply` says why a single-site install failed (#95).
+
 ### 1.0.4
 
 - Sync 78 shared core files with WP Plugin Starter at `211e389`: optional ordered multi settings, order-aware network comparisons, public code-block and wide-layout classes, and deployment and preflight fixes. Plugin-own styling, migration notes and consent defaults are preserved.
