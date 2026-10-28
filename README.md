@@ -369,6 +369,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 ### Unreleased
 
 - Sync 78 shared core files with WP Plugin Starter at `d27c538`: `deploy-sites.sh --apply` says why a single-site install failed (#95).
+- Sync 79 shared core files with WP Plugin Starter at `4fc5c4c`: the Read Me tab leaves out the managed README block, `preflight-release.sh` checks the README ending, long ordered lists stay one column, and the weekly `star-history.yml` is new. README.md now ends with the managed Star History and Built with aidevops block (#97).
 
 ### 1.0.4
 
@@ -472,3 +473,18 @@ Copying, renaming or adapting this plugin or part of it, by hand or with an AI a
 Copyright (C) 2026 Marcus Quinn
 
 Parts copyright (C) 2026 Marcus Quinn, from [WP Plugin Starter](https://github.com/wpallstars/wp-plugin-starter-template-for-ai-coding).
+
+<!-- aidevops:managed-readme:start -->
+<!-- managed by aidevops; refresh with managed-readme-helper.sh sync -->
+## Star History
+
+![wpallstars/seoprocookieconsent stars over time](docs/assets/star-history.svg)
+
+## Built with aidevops
+
+This project was created and is maintained with
+[aidevops.sh](https://aidevops.sh).
+
+[View wpallstars on GitHub](https://github.com/wpallstars) ·
+[aidevops repository](https://github.com/marcusquinn/aidevops)
+<!-- aidevops:managed-readme:end -->
