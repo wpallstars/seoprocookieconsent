@@ -2,8 +2,8 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
-* Starter sync (#93): all 78 core files match WP Plugin Starter at 2817dd1. Adds optional ordered multi settings with drag handles and keyboard reordering, order-aware network comparisons, and public code-block and wide-layout classes. Deployment tooling handles rotated PHP logs and allows longer LiteSpeed purge requests; release preflight avoids false class-name warnings. Plugin-own blocks and consent defaults are unchanged.
+= 1.0.4 =
+* Starter sync (#93): all 78 core files match WP Plugin Starter at 211e389. Adds optional ordered multi settings with drag handles and keyboard reordering, order-aware network comparisons, and public code-block and wide-layout classes. Deployment tooling handles rotated PHP logs and allows longer LiteSpeed purge requests; release preflight avoids false class-name warnings. Plugin-own blocks and consent defaults are unchanged.
 
 = 1.0.3 =
 * The Cookie policy links in the banner and the Cookie settings dialog open in a new tab (target="_blank", rel="noopener"), with an arrow after the text drawn in the link's colour (LinkText in forced colours) and "(opens in a new tab)" for screen readers, so reading the policy never loses the visitor's place or unsaved choices.
