@@ -18,6 +18,8 @@
 # Page shell of the plugin's own screens (render_header(), sections_nav()).
 spcc-wrap
 spcc-main
+# A tab or screen that needs the whole width (a tab: 'wide' => true).
+spcc-main--wide
 spcc-nav
 spcc-nav__group
 spcc-nav__tab
@@ -43,7 +45,10 @@ spcc-setting__desc
 # Feature output at the top of a setting's options panel.
 spcc-panel-note
 spcc-panel-note--warning
+# A block of code to copy, such as server rules: <pre class="spcc-code">.
+spcc-code
 
 # Colour mode: set on <html> by the header's Light / Dark / System button.
-# Use it only as an ancestor: html.spcc-dark .spcc-<screen>-card.
+# Use it as an ancestor: html.spcc-dark .spcc-<screen>-card. On <html> alone
+# it takes only a dark palette: custom properties, color-scheme, background.
 spcc-dark

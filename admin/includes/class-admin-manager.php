@@ -136,7 +136,7 @@ class SEOProCookieConsent_Admin_Manager {
      * settings the network can set (SEOProCookieConsent_Settings_Manager::fields_for_tab()),
      * and Read Me.
      *
-     * @return array<string,array{label:string,group:string,render:callable,preload?:bool,capability?:string,network?:bool,menu?:string}>
+     * @return array<string,array{label:string,group:string,render:callable,preload?:bool,capability?:string,network?:bool,menu?:string,wide?:bool}>
      */
     public static function get_tabs() {
         $tabs = array();
@@ -194,7 +194,9 @@ class SEOProCookieConsent_Admin_Manager {
          *                    is true), optional menu (a name: tabs of a group
          *                    with the same menu show as one tab with that
          *                    name and, while one of them is shown, as a
-         *                    second row of tabs; SEOProCookieConsent_Admin_Page::nav()).
+         *                    second row of tabs; SEOProCookieConsent_Admin_Page::nav()),
+         *                    optional wide (true: the tab uses the whole
+         *                    width of the screen, spcc-main--wide).
          */
         $tabs = (array) apply_filters('seoprocookieconsent_admin_tabs', $tabs);
 
@@ -368,7 +370,8 @@ class SEOProCookieConsent_Admin_Manager {
         self::enqueue_header();
         wp_enqueue_style('seoprocookieconsent-admin', SEOPROCOOKIECONSENT_URL . self::CSS_FILE, array('seoprocookieconsent-header'), self::asset_version(self::CSS_FILE));
 
-        $deps = array('jquery', 'wp-a11y', 'wp-i18n');
+        // jquery-ui-sortable: ordered checkbox lists (the `ordered` setting key).
+        $deps = array('jquery', 'jquery-ui-sortable', 'wp-a11y', 'wp-i18n');
         foreach ($page_tabs as $page_tab) {
             /**
              * Filter the admin script's dependencies; enqueue what a tab
@@ -493,7 +496,7 @@ class SEOProCookieConsent_Admin_Manager {
             } else {
                 foreach ($page_tabs as $slug) {
                     if (isset($tabs[$slug]['render']) && is_callable($tabs[$slug]['render'])) {
-                        SEOProCookieConsent_Admin_Page::panel($slug, $tabs[$slug]['render'], $slug === $active);
+                        SEOProCookieConsent_Admin_Page::panel($slug, $tabs[$slug]['render'], $slug === $active, !empty($tabs[$slug]['wide']));
                     }
                 }
             }
@@ -509,7 +512,8 @@ class SEOProCookieConsent_Admin_Manager {
      * it too: enqueue_header() on their admin_enqueue_scripts, then print
      * it first in `<div class="wrap spcc-wrap">`, followed by
      * `<hr class="wp-header-end">` so admin notices go below it, and their
-     * content in `<div class="spcc-main">`. A screen with sections puts them
+     * content in `<div class="spcc-main">` (`spcc-main spcc-main--wide` for the
+     * whole width). A screen with sections puts them
      * between the two as the settings screen's tabs with
      * SEOProCookieConsent_Admin_Page::sections_nav(), and names the one shown in the
      * browser title with SEOProCookieConsent_Admin_Page::title_section() on the

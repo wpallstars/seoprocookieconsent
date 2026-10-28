@@ -4,6 +4,11 @@ Shared styling rules and tokens live in `STYLING.md`. The starter uses
 WordPress admin components, its colour scheme and its existing header,
 tabs and cards; it adds no independent brand palette to Light mode.
 
+Starter sync #93 adds the optional public `spcc-code` and `spcc-main--wide`
+components and ordered multi-setting controls. Ordered fields show chosen
+values first with drag handles and up/down keyboard reordering; existing
+consent fields do not opt in, and the current screen widths stay unchanged.
+
 ## Admin colour mode
 
 The Consent card starts with a three-step guide, a standard WordPress **Scan
