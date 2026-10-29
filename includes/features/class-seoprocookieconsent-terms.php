@@ -145,7 +145,7 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
         }
         $wording = (string) SEOProCookieConsent_Settings::get('terms_wording');
         if ('' !== trim($wording)) {
-            return '<div class="spcc-terms">' . self::paragraphs($wording) . '</div>';
+            return '<div class="spcc-terms">' . self::paragraphs($wording) . self::added_sections(true) . '</div>';
         }
         $business = (string) SEOProCookieConsent_Settings::get('terms_business');
         $contact  = (string) SEOProCookieConsent_Settings::get('terms_contact');
@@ -179,11 +179,48 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
                 $html .= '<h2>' . esc_html($heading) . '</h2>' . self::paragraphs($text);
             }
         }
+        $html .= self::added_sections(false);
         $html .= '<h2>' . esc_html__('Your rights', 'seoprocookieconsent') . '</h2>';
         $html .= self::paragraphs(__('Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights.', 'seoprocookieconsent'));
         $html .= '<h2>' . esc_html__('Contact', 'seoprocookieconsent') . '</h2>';
         $html .= self::paragraphs($contact);
         return $html . '</div>';
+    }
+
+    /**
+     * Sections other plugins add for what they sell, such as a deposit and
+     * balance on delivery, from the seoprocookieconsent_terms_sections
+     * filter. Each section is a heading and plain text, one paragraph per
+     * line, escaped like the owner's answers. They follow the owner's
+     * offering and returns answers, before "Your rights", and also follow
+     * Your own wording ($own_wording true), so an add-on that the owner's
+     * wording already covers can leave its section out.
+     *
+     * @param bool $own_wording Whether Your own wording replaces the suggestions.
+     * @return string
+     */
+    private static function added_sections($own_wording) {
+        /**
+         * Sections an add-on adds to the Terms and conditions.
+         *
+         * @since 1.0.5
+         *
+         * @param array<int,array{heading:string,text:string}> $sections    Sections, in order.
+         * @param bool                                         $own_wording Whether Your own wording replaces the suggestions.
+         */
+        $sections = apply_filters('seoprocookieconsent_terms_sections', array(), (bool) $own_wording);
+        $html     = '';
+        foreach (is_array($sections) ? $sections : array() as $section) {
+            if (!is_array($section)) {
+                continue;
+            }
+            $heading = isset($section['heading']) && is_string($section['heading']) ? trim($section['heading']) : '';
+            $text    = isset($section['text']) && is_string($section['text']) ? $section['text'] : '';
+            if ('' !== $heading && '' !== trim($text)) {
+                $html .= '<h2>' . esc_html($heading) . '</h2>' . self::paragraphs($text);
+            }
+        }
+        return $html;
     }
 
     /**

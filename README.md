@@ -135,6 +135,18 @@ This feature is off by default and independent of Cookie consent. Fill in your l
 
 The block and shortcode read current settings on every render. After changing answers, clear any full-page cache to update cached copies. **Your own wording** replaces all suggested text with plain text, one paragraph per line; HTML and shortcodes are not executed. Normal blocks around it remain yours to edit.
 
+Other plugins can add sections for what they sell, such as a deposit with the balance due on delivery, with the `seoprocookieconsent_terms_sections` filter. Each section is an array with a `heading` and plain `text` (one paragraph per line), escaped like your answers. Added sections follow **What we offer** and **Returns, refunds and cancellations**, before **Your rights**, and also follow **Your own wording**; the filter's second argument is `true` then, so an add-on whose terms your wording already covers can leave its section out:
+
+```php
+add_filter('seoprocookieconsent_terms_sections', function ($sections, $own_wording) {
+    $sections[] = array(
+        'heading' => 'Deposits and delivery',
+        'text'    => "We take a 50% deposit when you order.\nThe balance is due when we deliver.",
+    );
+    return $sections;
+}, 10, 2);
+```
+
 On upgrade, the plugin imports only unset business name, country and the selected email/contact-page answer from Complianz Terms & Conditions. Review imported country codes and complete the other answers yourself. It never enables Terms for you, changes the old plugin's options, or converts its blocks, shortcodes, documents or withdrawal forms on its own. While that plugin is active, Terms waits. Review your replacement page and any required withdrawal process before deactivating it, then replace its block or shortcode with this one, or keep the old document as editable HTML from the Import tab.
 
 The wording is a starting point, **not legal advice** or a guarantee of compliance. Have someone qualified for your business and jurisdictions review it, including consumer rights, sales disclosures and any required online withdrawal process. This feature does not provide checkout acceptance or a withdrawal form.
@@ -368,6 +380,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Terms and conditions: other plugins can add sections for what they sell, such as a deposit with the balance due on delivery, with the `seoprocookieconsent_terms_sections` filter.
 - Sync 78 shared core files with WP Plugin Starter at `d27c538`: `deploy-sites.sh --apply` says why a single-site install failed (#95).
 - Sync 79 shared core files with WP Plugin Starter at `4fc5c4c`: the Read Me tab leaves out the managed README block, `preflight-release.sh` checks the README ending, long ordered lists stay one column, and the weekly `star-history.yml` is new. README.md now ends with the managed Star History and Built with aidevops block (#97).
 
