@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.5 =
 * Terms and conditions: other plugins can add sections for what they sell (for example a deposit with the balance due on delivery) with the seoprocookieconsent_terms_sections filter. Each section is a heading and plain text, escaped like the owner's answers; added sections come before "Your rights", and after Your own wording when it is used (the filter is told, so an add-on can leave its section out).
 * Starter sync (#95): all 78 core files match WP Plugin Starter at d27c538. deploy-sites.sh --apply says why a single-site install failed and keeps WP-CLI's exit code; RELEASING.md documents it. Plugin-own blocks and consent defaults are unchanged.
 * Starter sync (#97): all 79 core files match WP Plugin Starter at 4fc5c4c (1.0.43 and later). The Read Me tab leaves out the managed README block, preflight-release.sh checks the README ending, long ordered lists of choices stay one column, and sync-core.sh supports add-ons (scripts/core-skip.txt). New: the weekly .github/workflows/star-history.yml, pinned to aidevops v3.39.78, and the managed Star History and Built with aidevops block at the end of README.md, with docs/assets/star-history.svg (not in the zip).
