@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,8 +109,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= 1.0.5 =
-* Terms and conditions: other plugins can add sections for what they sell, with the seoprocookieconsent_terms_sections filter.
-* Starter updates: README and release tooling; consent defaults unchanged.
+= 1.0.6 =
+* Report a problem: Tools → Report a problem drafts a report or an improvement for the plugin's maker; you review it, then open it as a GitHub issue with the site's details left out. AI assistants can draft (wpallstars/report-problem ability, wp wpallstars report); only an administrator sends.
 
 Every change: changelog.txt.

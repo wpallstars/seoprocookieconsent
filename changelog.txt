@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.6 =
+* Report a problem (#106): the shared problem-report component (includes/wpallstars-reports/, 1.0.2) from WP Plugin Starter at d291165. Tools → Report a problem keeps drafts of problem reports and improvements for the plugin's maker; an administrator reviews the exact text and opens it as a prefilled GitHub issue, with the site address, email and IP addresses, server paths and key-like strings left out. AI assistants draft through the wpallstars/report-problem ability (WordPress 6.9+) or wp wpallstars report; nothing leaves the site until an administrator sends it. The settings header's Support button opens it for administrators. Consent defaults are unchanged.
+
 = 1.0.5 =
 * Terms and conditions: other plugins can add sections for what they sell (for example a deposit with the balance due on delivery) with the seoprocookieconsent_terms_sections filter. Each section is a heading and plain text, escaped like the owner's answers; added sections come before "Your rights", and after Your own wording when it is used (the filter is told, so an add-on can leave its section out).
 * Starter sync (#95): all 78 core files match WP Plugin Starter at d27c538. deploy-sites.sh --apply says why a single-site install failed and keeps WP-CLI's exit code; RELEASING.md documents it. Plugin-own blocks and consent defaults are unchanged.
