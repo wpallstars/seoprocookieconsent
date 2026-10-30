@@ -267,7 +267,24 @@ Go to **Settings → SEO Pro Cookie Consent**. The screen has two groups of tabs
 
 On a multisite network, super admins also have **Network Admin → Settings → SEO Pro Cookie Consent** (Multisite below).
 
-At the top right of the screen, **Source code** opens the plugin’s [GitHub repository](https://github.com/wpallstars/seoprocookieconsent) in a new tab, and **Support** opens its [GitHub issues](https://github.com/wpallstars/seoprocookieconsent/issues) in a new tab. Say what you did, what you expected and what happened, with the versions of WordPress, PHP and SEO Pro Cookie Consent. Leave out passwords, licence keys and personal data, since issues are public. For questions, ask [aidevops](https://aidevops.sh) (Built with AI below). **Buy me a coffee**, next to it, opens the maker’s [Buy Me a Coffee](https://buymeacoffee.com/marcusquinn) page in a new tab.
+At the top right of the screen, **Source code** opens the plugin’s [GitHub repository](https://github.com/wpallstars/seoprocookieconsent) in a new tab, and **Support** opens **Tools → Report a problem** for administrators (Report a problem below). For questions, ask [aidevops](https://aidevops.sh) (Built with AI below). **Buy me a coffee**, next to it, opens the maker’s [Buy Me a Coffee](https://buymeacoffee.com/marcusquinn) page in a new tab.
+
+## Report a problem
+
+Found a problem in SEO Pro Cookie Consent, or an improvement that would help? Tell the maker, so every site using it gets the fix. **Tools → Report a problem** (or **Support** in the settings screen's header) takes reports for every wpallstars plugin and theme on the site:
+
+1. Write what you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Save the draft.
+2. Check **What will be sent**, word for word, then send it. SEO Pro Cookie Consent's reports open a new issue on its [GitHub issues](https://github.com/wpallstars/seoprocookieconsent/issues), filled in, for you to submit with your GitHub account. Issues are public, so the site's address, email and IP addresses, server paths and anything that looks like a key are taken out first.
+
+**AI assistants:** when a problem or an improvement you find belongs to SEO Pro Cookie Consent's own code, not to the site's content or settings, draft a report for the site's administrator to review: the `wpallstars/report-problem` ability (WordPress 6.9 and later; `wpallstars/reports` lists the plugins and themes that take reports and the drafts), or WP-CLI:
+
+```bash
+wp wpallstars report products
+wp wpallstars report create --product=seoprocookieconsent --title="Short summary" --details="Steps, what was expected, what happened, versions, error messages"
+wp wpallstars report list
+```
+
+Drafts only: nothing leaves the site until an administrator sends it in Tools → Report a problem, so tell them it is waiting. Leave out passwords, keys and personal data.
 
 ## Multisite
 
