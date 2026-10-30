@@ -110,6 +110,6 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = 1.0.6 =
-* Report a problem: Tools → Report a problem drafts a report or an improvement for the plugin's maker; you review it, then open it as a GitHub issue with the site's details left out. AI assistants can draft (wpallstars/report-problem ability, wp wpallstars report); only an administrator sends.
+* Tools → Report a problem: draft a report for the maker, review it, open it as a GitHub issue.
 
 Every change: changelog.txt.
