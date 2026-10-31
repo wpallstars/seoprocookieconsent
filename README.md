@@ -395,6 +395,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Developers: all 82 starter core files match WP Plugin Starter `main` after 1.0.48. CI runs the release build and smoke tests when a commit is pushed as the pull request is marked ready for review, `deploy-sites.sh --apply` holds a per-plugin lock and refuses downgrades without `--allow-downgrade`, and the shared problem reports are 1.0.4 (#111).
+
 ### 1.0.6
 
 - Report a problem: Tools → Report a problem drafts problem reports and improvements for the plugin's maker; an administrator reviews them and opens a prefilled GitHub issue, with the site's details left out. AI assistants can draft (`wpallstars/report-problem` ability, `wp wpallstars report`); only an administrator sends (#106).
