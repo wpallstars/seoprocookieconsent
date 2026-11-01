@@ -94,14 +94,14 @@
 .spcc-btn--quiet,
 .spcc-btn--quiet:focus,
 .spcc-btn--quiet:active {
-    border-color: rgba(127, 127, 127, 0.6);
-    background: rgba(127, 127, 127, 0.16);
+    border-color: rgb(127 127 127 / 60%);
+    background: rgb(127 127 127 / 16%);
     color: var(--spcc-strong);
 }
 
 .spcc-btn--quiet:hover {
     border-color: currentColor;
-    background: rgba(127, 127, 127, 0.26);
+    background: rgb(127 127 127 / 26%);
     color: var(--spcc-strong);
 }
 
