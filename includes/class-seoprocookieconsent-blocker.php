@@ -29,6 +29,9 @@ final class SEOProCookieConsent_Blocker {
     /** Unrecognised third-party script hosts on the last page. @var string[] */
     private $hosts = array();
 
+    /** Necessary services (never held back) on the last page. @var string[] */
+    private $necessary = array();
+
     /** Text never held back (lower case). @var string[] */
     private $allow;
 
@@ -86,8 +89,9 @@ final class SEOProCookieConsent_Blocker {
      * @return string
      */
     public function process($html) {
-        $this->found = array();
-        $this->hosts = array();
+        $this->found     = array();
+        $this->hosts     = array();
+        $this->necessary = array();
         if (!is_string($html) || '' === $html || (false === stripos($html, '<script') && false === stripos($html, '<iframe'))) {
             return $html;
         }
@@ -121,6 +125,31 @@ final class SEOProCookieConsent_Blocker {
      */
     public function hosts() {
         return array_values(array_unique($this->hosts));
+    }
+
+    /**
+     * Necessary services (security, payments) on the last page: left to
+     * load, and listed in the cookie policy.
+     *
+     * @return string[]
+     */
+    public function necessary() {
+        return array_values(array_unique($this->necessary));
+    }
+
+    /**
+     * Note a necessary service in an address or inline script.
+     *
+     * @param string $text Address or inline code.
+     * @return bool Whether one was found.
+     */
+    private function note_necessary($text) {
+        $id = SEOProCookieConsent_Services::match_necessary($text);
+        if ('' === $id) {
+            return false;
+        }
+        $this->necessary[] = $id;
+        return true;
     }
 
     /**
@@ -181,7 +210,9 @@ final class SEOProCookieConsent_Blocker {
         $src     = is_string($src) ? $src : '';
         $service = $this->classify('' !== $src ? $src : $m[2]);
         if ('' === $service) {
-            $this->note_host($src);
+            if (!$this->note_necessary('' !== $src ? $src : $m[2])) {
+                $this->note_host($src);
+            }
             return $m[0];
         }
 
@@ -214,6 +245,7 @@ final class SEOProCookieConsent_Blocker {
         }
         $service = $this->classify($src);
         if ('' === $service) {
+            $this->note_necessary($src);
             return $m[0];
         }
         $this->found[] = $service;

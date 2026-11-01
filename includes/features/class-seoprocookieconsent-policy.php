@@ -92,13 +92,14 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
     }
 
     /**
-     * Rows for necessary cookies: the consent cookie and WordPress's own.
+     * Rows for necessary cookies: the consent cookie and WordPress's own,
+     * then the security and payment services the site was seen using.
      *
      * @return array<string,array>
      */
     private static function necessary() {
         $days = (int) SEOProCookieConsent_Settings::get('consent_days');
-        return array(
+        return array_merge(array(
             'seoprocookieconsent' => array(
                 'name'    => get_bloginfo('name'),
                 'privacy' => '',
@@ -118,7 +119,7 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
                     ),
                 ),
             ),
-        );
+        ), SEOProCookieConsent_Services::seen_necessary());
     }
 
     /**
@@ -187,7 +188,8 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
             }
             $cookies = (array) $service['cookies'];
             if (empty($cookies)) {
-                $html .= '<tr><td>' . $name . '</td><td colspan="3">' . esc_html__('Sets cookies on its own site when its content loads.', 'seoprocookieconsent') . '</td></tr>';
+                $about = !empty($service['about']) ? (string) $service['about'] : __('Sets cookies on its own site when its content loads.', 'seoprocookieconsent');
+                $html .= '<tr><td>' . $name . '</td><td colspan="3">' . esc_html($about) . '</td></tr>';
                 continue;
             }
             $first = true;
@@ -213,6 +215,14 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
         $text  = '<h2>' . esc_html__('Cookies', 'seoprocookieconsent') . '</h2>';
         $text .= '<p class="privacy-policy-tutorial">' . esc_html__('Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date.', 'seoprocookieconsent') . '</p>';
         $text .= '<p>' . esc_html__('We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page.', 'seoprocookieconsent') . '</p>';
+        $necessary = SEOProCookieConsent_Services::seen_necessary();
+        if (!empty($necessary)) {
+            $text .= '<p>' . esc_html(sprintf(
+                /* translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile". */
+                __('To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on.', 'seoprocookieconsent'),
+                implode(', ', wp_list_pluck($necessary, 'name'))
+            )) . '</p>';
+        }
         wp_add_privacy_policy_content('SEO Pro Cookie Consent', wp_kses_post($text));
     }
 }

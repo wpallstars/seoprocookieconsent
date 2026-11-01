@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.6-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.7-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.6
+Version: 1.0.7
 
 <!-- github-only:start -->
 ## Screenshots
@@ -84,12 +84,13 @@ It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compli
 - **Videos and maps with a Load button.** A held-back YouTube video, map, player or post shows a placeholder the same size, with a generic picture of what it is and a button that loads just that one. On small embeds, such as compact music players or videos on phones, the notice shrinks to fit, down to the Load button alone.
 - **Catches lightboxes too.** Recognised script and iframe addresses added after page load through common DOM APIs wait for the same consent choice. Keep the consent head script excluded from script-delay optimizers. This is not a network firewall: inline-only injected code, shadow roots and unusual parser APIs need integration with the browser consent API.
 - **Local video thumbnails.** YouTube and Vimeo placeholders show a locally stored thumbnail. WP-Cron fetches it once per video, not during a visitor's page request; until it is ready (or if unavailable), a generic video picture shows instead. Cached pages show it after their next refresh. No visitor data is sent to the video service for the thumbnail.
-- **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
+- **Fits your theme.** Colours, fonts and buttons come from Kadence's palette, light and dark mode included, or your block theme's colours. Text follows your theme's base font size, and buttons side by side share one size. Comfortable on phones, keyboard friendly, with real switches and a proper dialog for screen readers.
 - **Easy to change your mind.** A Cookie settings link joins your footer menu, just after your cookie policy link or before your privacy policy link, including footer menus shown by widgets. To place it yourself, tick Cookie settings in Appearance → Menus; the automatic link then steps aside. The Cookie settings button block or any link to `#cookie-settings` opens it too, and an optional floating button can show after visitors choose. Taking consent back removes those services' cookies and reloads the page so they stop.
 - **Global Privacy Control** turns marketing off where visitors are not asked first.
 - **Works with Google and WordPress.** Google Consent Mode v2 signals (denied by default where visitors are asked first) and the WP Consent API, so plugins that read it follow the visitor's choice.
 - **Optional consent records.** Keep anonymous choice snapshots on your own site, export them as CSV and delete them automatically after your chosen period, never shorter than the consent lifetime. Off by default; no requests on ordinary page views.
 - **A cookie policy that keeps itself current.** The Cookie policy block (or `[spcc_cookie_policy]`) lists the cookies your site uses, by kind, with what each does, how long it is kept and the service's privacy policy, plus the Cookie settings button. The block's settings turn the introduction, the button and the last-updated date on or off and choose the heading level. Write the rest of the page as you like; the list updates itself. Suggested text is added to Settings → Privacy → Policy guide.
+- **Security and payment services listed, never blocked.** Cloudflare Turnstile, Google reCAPTCHA, hCaptcha, Stripe and PayPal load as usual (blocking them breaks forms and checkouts). Once seen on your pages they are listed under Necessary in the cookie policy and the Cookie settings dialog, and named in the Policy guide's suggested privacy text. A site served through Cloudflare's network (its `CF-Ray` header) lists Cloudflare and the cookies its bot protection and security checks can set.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
 - **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA.** The Import tab previews, then imports their settings, script rules, policy pages and, where their format is verified, visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show. The Plugins screen's **Redundant** view (WordPress 6.3 or later) lists those installed, active or not.
 - **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
@@ -352,6 +353,7 @@ Draft rules for DuckDuckGo autoconsent and Consent-O-Matic, their category mappi
 Consent filters and browser API:
 
 - `seoprocookieconsent_services`: add or change the services held back and listed in the cookie policy (ID => `name`, `category` of preferences, statistics, embeds or marketing, `patterns` found in a script's or iframe's address or an inline script, `privacy` link, `cookies` as name => purpose and how long, and `embed`, a word for the Load button such as "video").
+- `seoprocookieconsent_necessary_services`: add or change the necessary services, never held back and listed under Necessary in the cookie policy once seen (ID => `name`, `patterns`, `privacy`, `cookies`, and `about`, a sentence shown instead when it lists no cookies).
 - `seoprocookieconsent_hold_back`: return false to leave a page's scripts alone (page builders' editing views are skipped already).
 - `seoprocookieconsent_front_config`: change what the browser reads; set `model` to `opt-in`, `opt-out` or `quiet` to decide on the server, only on sites without page caching.
 - Skip one tag with a `data-spcc-ignore` attribute.
@@ -396,8 +398,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.7
 
+- New: security and payment services the site uses (Cloudflare Turnstile, Google reCAPTCHA, hCaptcha, Stripe, PayPal, and Cloudflare's network on sites it serves) are listed under Necessary in the cookie policy, the Cookie settings dialog and the Policy guide's suggested privacy text. They still always load.
+- Fixed: the banner and Cookie settings dialog follow the theme's base font size (Kadence's included) instead of a fixed size, and buttons side by side share one width, so none looks bigger than another.
 - New: installed plugins SEO Pro Cookie Consent replaces (such as Complianz, CookieYes and Cookie Notice & Compliance) are listed under the Plugins screen's **Redundant** view (WordPress 6.3 or later), together with those SEO Pro Stack and our other plugins replace. The Starter sync runs daily (#115).
 - Developers: all 82 starter core files match WP Plugin Starter 1.0.49. `deploy-sites.sh --apply` refuses an installed version it cannot read without `--allow-downgrade`, and only one run at a time takes over a stale lock (#113).
 - Developers: all 82 starter core files match WP Plugin Starter `main` after 1.0.48. CI runs the release build and smoke tests when a commit is pushed as the pull request is marked ready for review, `deploy-sites.sh --apply` holds a per-plugin lock and refuses downgrades without `--allow-downgrade`, and the shared problem reports are 1.0.4 (#111).

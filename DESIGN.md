@@ -52,22 +52,32 @@ palette of their own.
   `--global-palette-btn*` button colours), then block theme presets
   (`--wp--preset--color--base`, `contrast`, `primary`), then neutral
   fallbacks. Borders and tints are translucent grey, so Kadence's dark
-  mode needs no extra rules. Fonts inherit.
+  mode needs no extra rules. Fonts inherit, and text sizes are in `em`, so
+  they follow the theme's base font size (Kadence sets it on `<body>`, so
+  `rem` would ignore it). Nested sizes never compound: a wrapper that is
+  also a paragraph (the placeholder's actions) inherits its size.
 - Button text keeps the theme's colour when it reaches 4.5:1 on the button
   background (normal and hover). If not (Kadence dark mode puts palette 9
   text on palette 1), `spcc.js` uses the theme's own background or strong
   text colour, whichever reads better, then white or black, and checks
   again when the theme switches mode.
 - Accept all and Reject all share one solid button style; Settings and
-  Save choices are the quiet outline style. Buttons are at least 44px
-  tall; radius 6px (boxes and dialog 12px).
+  Save choices are the quiet outline style. Every button has the same
+  text size (0.9375em) and is at least 44px tall; radius 6px (boxes and
+  dialog 12px). Buttons in a row (banner, dialog) share one width, the
+  widest label's (a grid of `1fr` columns sized to its content), so none
+  looks bigger than another at any font size or in any language.
 - Banner: a bar along the bottom by default, content up to the theme's
-  content width, or a 420px box at the bottom left or right. Under 600px
-  every position is a bottom sheet: message, then Reject all and Accept
-  all side by side, then Settings across the full width.
+  content width, or a 420px box at the bottom left or right (buttons
+  across its full width). Under 600px every position is a bottom sheet:
+  message, then Reject all and Accept all side by side, then Settings
+  across the full width (the opt-out notice: OK, then Settings).
 - Dialog: native `<dialog>`, 560px wide, a sheet with 16px margins on
   phones, one switch row per kind of cookie with a top border, actions
-  at the end (Reject all, Save choices, Accept all).
+  at the end (Reject all, Save choices, Accept all). Under 600px, as the
+  banner: Reject all and Accept all side by side, Save choices below.
+- The Necessary row ends "Used by:" with the security and payment
+  services the site was seen using, as the other rows do.
 - With recording enabled and an existing choice ID, a supplementary row
   before the actions shows a labelled, read-only monospace ID and quiet
   Copy button. Both controls retain 44px targets and theme colours. The

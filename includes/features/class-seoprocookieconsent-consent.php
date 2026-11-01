@@ -337,7 +337,11 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         $found = array_filter(self::$blocker->found(), function ($id) {
             return 0 !== strpos($id, 'custom:');
         });
-        SEOProCookieConsent_Services::record($found, self::$blocker->hosts());
+        $necessary = self::$blocker->necessary();
+        if (SEOProCookieConsent_Services::behind_cloudflare()) {
+            $necessary[] = SEOProCookieConsent_Services::CLOUDFLARE;
+        }
+        SEOProCookieConsent_Services::record($found, self::$blocker->hosts(), $necessary);
     }
 
     /**
@@ -914,6 +918,14 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
             }
             echo '</ul>';
         }
+        $necessary = SEOProCookieConsent_Services::seen_necessary();
+        if (!empty($necessary)) {
+            printf(
+                '<p>%1$s %2$s</p>',
+                esc_html__('Necessary, never held back, and listed in the cookie policy:', 'seoprocookieconsent'),
+                esc_html(implode(', ', wp_list_pluck($necessary, 'name')))
+            );
+        }
         if (!empty($seen['hosts'])) {
             printf(
                 '<p>%1$s <code>%2$s</code></p>',
@@ -990,7 +1002,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 wp_cache_set('notoptions', $notoptions, 'options');
             }
             wp_cache_delete(SEOProCookieConsent_Services::SEEN_OPTION, 'options');
-            self::scan_page(wp_remote_retrieve_body($response));
+            // A CF-Ray answer means Cloudflare's network serves the site.
+            $cf_ray = wp_remote_retrieve_header($response, 'cf-ray');
+            self::scan_page(wp_remote_retrieve_body($response), !empty($cf_ray));
             ++$checked;
         }
         ob_start();
@@ -1003,9 +1017,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      * Use the same blocker for cached raw HTML and already held-back markup.
      * Record here too: cached pages need not execute the front-end buffer.
      *
-     * @param string $html Public page HTML.
+     * @param string $html       Public page HTML.
+     * @param bool   $cloudflare Whether Cloudflare's network served it.
      */
-    private static function scan_page($html) {
+    private static function scan_page($html, $cloudflare = false) {
         $blocker = new SEOProCookieConsent_Blocker(
             preg_split(self::LINES, (string) SEOProCookieConsent_Settings::get('consent_allow')) ?: array(),
             SEOProCookieConsent_Blocker::parse_block_lines((string) SEOProCookieConsent_Settings::get('consent_block')),
@@ -1022,7 +1037,11 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 $services[] = $service;
             }
         }
-        SEOProCookieConsent_Services::record($services, $blocker->hosts());
+        $necessary = $blocker->necessary();
+        if ($cloudflare) {
+            $necessary[] = SEOProCookieConsent_Services::CLOUDFLARE;
+        }
+        SEOProCookieConsent_Services::record($services, $blocker->hosts(), $necessary);
     }
 
     /**
