@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.9 =
+* Changed: the Cookie settings dialog's Necessary row always says what the site's own necessary cookies are for, then the short names of the necessary services seen, Cloudflare first: for example "Used by: login, security, Cloudflare, Turnstile." instead of "Used by: Cloudflare Turnstile, Cloudflare." Necessary services take an optional short name (Turnstile, reCAPTCHA); the cookie policy keeps the full names and lists Cloudflare first.
+
 = 1.0.8 =
 * Fixed: the quiet buttons (Settings in the banner, Save choices in the dialog) have a light grey fill and a firmer grey edge instead of a faint outline only, so their whole shape shows and they look as big as Reject all and Accept all beside them, most of all in dark mode. Sizes were already equal; only the look changes. Hover darkens the fill.
 
