@@ -416,7 +416,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### 1.0.6
 
-- Report a problem: Tools → Report a problem drafts problem reports and improvements for the plugin's maker; an administrator reviews them and opens a prefilled GitHub issue, with the site's details left out. AI assistants can draft (`wpallstars/report-problem` ability, `wp wpallstars report`); only an administrator sends (#106).
+- Report a problem: Tools → Report a problem drafts problem reports and improvements for the plugin's maker; an administrator reviews them and opens a prefilled GitHub issue, with the site's details left out. AI assistants can draft (`wpallstars/report-problem` ability, `wp wpallstars report create`); only an administrator sends (#106).
 
 ### 1.0.5
 
