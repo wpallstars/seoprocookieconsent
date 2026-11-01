@@ -99,7 +99,9 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
      */
     private static function necessary() {
         $days = (int) SEOProCookieConsent_Settings::get('consent_days');
-        return array_merge(array(
+        // A union, so a filtered service with the same ID never replaces
+        // the site's own row.
+        return array(
             'seoprocookieconsent' => array(
                 'name'    => get_bloginfo('name'),
                 'privacy' => '',
@@ -119,7 +121,7 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
                     ),
                 ),
             ),
-        ), SEOProCookieConsent_Services::seen_necessary());
+        ) + SEOProCookieConsent_Services::seen_necessary();
     }
 
     /**

@@ -65,6 +65,9 @@
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
+
+    /* A long word breaks rather than push its button out of a narrow row. */
+    overflow-wrap: anywhere;
     cursor: pointer;
 }
 
