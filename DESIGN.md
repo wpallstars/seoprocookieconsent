@@ -62,7 +62,10 @@ palette of their own.
   text colour, whichever reads better, then white or black, and checks
   again when the theme switches mode.
 - Accept all and Reject all share one solid button style; Settings and
-  Save choices are the quiet outline style. Every button has the same
+  Save choices are the quiet style: a light grey fill and a grey edge
+  (60% mid-grey), so its whole shape shows and it looks as big as the
+  solid buttons; an outline alone reads smaller, most of all on dark
+  backgrounds. Every button has the same
   text size (0.9375em) and is at least 44px tall; radius 6px (boxes and
   dialog 12px). Buttons in a row (banner, dialog) share one width, the
   widest label's (a grid of `1fr` columns sized to its content), so none
