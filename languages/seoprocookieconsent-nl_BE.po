@@ -1,0 +1,2403 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText: 2026 Marcus Quinn
+# Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
+# Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEO Pro Cookie Consent 1.0.9\n"
+"Report-Msgid-Bugs-To: https://github.com/wpallstars/seoprocookieconsent/issues\n"
+"POT-Creation-Date: 2026-11-01 00:00+0000\n"
+"PO-Revision-Date: 2026-11-01 00:00+0000\n"
+"Last-Translator: Marcus Quinn\n"
+"Language-Team: nl_BE\n"
+"Language: nl_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: seoprocookieconsent\n"
+
+#. Plugin Name of the plugin
+#. translators: %s: the plugin's name.
+#: seoprocookieconsent.php
+#: admin/includes/class-admin-manager.php:293
+#: admin/includes/class-admin-manager.php:294
+#: admin/includes/class-admin-manager.php:303
+#: admin/includes/class-admin-page.php:36
+#: admin/includes/class-network-manager.php:62
+#: admin/includes/class-network-manager.php:63
+msgid "SEO Pro Cookie Consent"
+msgstr "SEO Pro Cookie Consent"
+
+#. Plugin URI of the plugin
+#: seoprocookieconsent.php
+msgid "https://github.com/wpallstars/seoprocookieconsent"
+msgstr "https://github.com/wpallstars/seoprocookieconsent"
+
+#. Description of the plugin
+#: seoprocookieconsent.php
+msgid "Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme."
+msgstr "Eenvoudige, lichte cookietoestemming: blokkeert scripts tot er toestemming is, vraagt het alleen waar de wet en de pagina het nodig maken en past bij uw thema."
+
+#. Author of the plugin
+#: seoprocookieconsent.php
+msgid "Marcus Quinn"
+msgstr "Marcus Quinn"
+
+#. Author URI of the plugin
+#: seoprocookieconsent.php
+msgid "https://www.wpallstars.com/"
+msgstr "https://www.wpallstars.com/"
+
+#: admin/data/readme.php:32
+#: admin/includes/class-admin-manager.php:175
+msgid "Read Me"
+msgstr "Lees mij"
+
+#: admin/includes/class-admin-manager.php:281
+#: admin/includes/class-admin-manager.php:304
+#: admin/includes/class-admin-page.php:238
+#: admin/includes/class-network-manager.php:102
+#: includes/class-seoprocookieconsent-records.php:156
+#: includes/class-seoprocookieconsent-setup.php:167
+#: includes/views/consent-banner.php:42
+#: includes/views/consent-banner.php:47
+msgid "Settings"
+msgstr "Instellingen"
+
+#. translators: %s: the plugin's name.
+#: admin/includes/class-admin-manager.php:303
+#, php-format
+msgid "%s settings"
+msgstr "Instellingen voor %s"
+
+#: admin/includes/class-admin-manager.php:417
+msgid "Saving…"
+msgstr "Opslaan…"
+
+#: admin/includes/class-admin-manager.php:418
+#: admin/includes/class-network-manager.php:321
+#: includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved"
+msgstr "Opgeslagen"
+
+#: admin/includes/class-admin-manager.php:419
+msgid "Could not save. Please try again."
+msgstr "Opslaan is niet gelukt. Probeer het opnieuw."
+
+#: admin/includes/class-admin-manager.php:420
+msgid "Choose a picture"
+msgstr "Kies een afbeelding"
+
+#: admin/includes/class-admin-manager.php:421
+msgid "Use this picture"
+msgstr "Deze afbeelding gebruiken"
+
+#: admin/includes/class-admin-manager.php:422
+msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
+msgstr "Deze instellingen naar de eigen instellingen van elke site kopiëren? Elke site kan ze nadien weer wijzigen, tenzij ze voor alle sites zijn vastgelegd."
+
+#: admin/includes/class-admin-page.php:39
+msgid "Network"
+msgstr "Netwerk"
+
+#: admin/includes/class-admin-page.php:62
+#: admin/includes/class-admin-page.php:71
+msgid "Search features"
+msgstr "Functies zoeken"
+
+#: admin/includes/class-admin-page.php:73
+msgid "Search"
+msgstr "Zoeken"
+
+#: admin/includes/class-admin-page.php:90
+msgid "Source code"
+msgstr "Broncode"
+
+#: admin/includes/class-admin-page.php:92
+msgid "Visit website"
+msgstr "Website bezoeken"
+
+#: admin/includes/class-admin-page.php:98
+msgid "Support"
+msgstr "Ondersteuning"
+
+#: admin/includes/class-admin-page.php:105
+msgid "Buy me a coffee"
+msgstr "Trakteer me op een koffie"
+
+#: admin/includes/class-admin-page.php:117
+#: includes/views/consent-banner.php:38
+#: includes/views/consent-banner.php:61
+msgid "(opens in a new tab)"
+msgstr "(opent in een nieuw tabblad)"
+
+#. translators: Browser title of a section of an admin screen. 1: the screen's name, 2: the section's name.
+#: admin/includes/class-admin-page.php:170
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: admin/includes/class-admin-page.php:182
+msgid "Search results"
+msgstr "Zoekresultaten"
+
+#: admin/includes/class-admin-page.php:239
+msgid "Discover"
+msgstr "Ontdekken"
+
+#: admin/includes/class-admin-page.php:240
+msgid "About"
+msgstr "Over"
+
+#: admin/includes/class-admin-page.php:243
+#: admin/includes/class-admin-page.php:274
+msgid "SEO Pro Cookie Consent sections"
+msgstr "Onderdelen van SEO Pro Cookie Consent"
+
+#: admin/includes/class-admin-theme.php:172
+msgid "You cannot change this."
+msgstr "U kunt dit niet wijzigen."
+
+#: admin/includes/class-admin-theme.php:176
+msgid "Unknown colour mode."
+msgstr "Onbekende kleurmodus."
+
+#: admin/includes/class-admin-theme.php:179
+msgid "The colour mode could not be saved."
+msgstr "De kleurmodus kon niet worden opgeslagen."
+
+#: admin/includes/class-network-manager.php:122
+msgid "Apply to every site"
+msgstr "Voor alle sites vastleggen"
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:175
+#, php-format
+msgid "This network has more than %d sites, so they are not compared here."
+msgstr "Dit netwerk heeft meer dan %d sites. Ze worden hier daarom niet vergeleken."
+
+#: admin/includes/class-network-manager.php:178
+msgid "No site has used SEO Pro Cookie Consent yet. Each starts with these settings."
+msgstr "Nog geen enkele site heeft SEO Pro Cookie Consent gebruikt. Elke site begint met deze instellingen."
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site uses these settings."
+msgstr "Elke site gebruikt deze instellingen."
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site has these settings."
+msgstr "Elke site heeft deze instellingen."
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:188
+#, php-format
+msgid "Every site uses these settings. When they stop applying, %1$d of %2$d sites goes back to different settings of its own: %3$s."
+msgid_plural "Every site uses these settings. When they stop applying, %1$d of %2$d sites go back to different settings of their own: %3$s."
+msgstr[0] "Elke site gebruikt deze instellingen. Zodra ze niet meer vastliggen, gebruikt %1$d van de %2$d sites weer andere eigen instellingen: %3$s."
+msgstr[1] "Elke site gebruikt deze instellingen. Zodra ze niet meer vastliggen, gebruiken %1$d van de %2$d sites weer andere eigen instellingen: %3$s."
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:190
+#, php-format
+msgid "%1$d of %2$d sites has different settings of its own: %3$s."
+msgid_plural "%1$d of %2$d sites have different settings of their own: %3$s."
+msgstr[0] "%1$d van de %2$d sites heeft andere eigen instellingen: %3$s."
+msgstr[1] "%1$d van de %2$d sites hebben andere eigen instellingen: %3$s."
+
+#: admin/includes/class-network-manager.php:193
+msgid "Make every site the same"
+msgstr "Alle sites gelijkmaken"
+
+#. translators: 1: list of sites, 2: number of other sites
+#: admin/includes/class-network-manager.php:247
+#, php-format
+msgid "%1$s and %2$d more"
+msgid_plural "%1$s and %2$d more"
+msgstr[0] "%1$s en nog %2$d"
+msgstr[1] "%1$s en nog %2$d"
+
+#: admin/includes/class-network-manager.php:297
+msgid "You are not allowed to change the network’s settings."
+msgstr "U mag de netwerkinstellingen niet wijzigen."
+
+#: admin/includes/class-network-manager.php:345
+msgid "Every site now uses these settings."
+msgstr "Elke site gebruikt nu deze instellingen."
+
+#: admin/includes/class-network-manager.php:346
+msgid "Each site uses its own settings again."
+msgstr "Elke site gebruikt weer zijn eigen instellingen."
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:366
+#, php-format
+msgid "%d site now has these settings."
+msgid_plural "%d sites now have these settings."
+msgstr[0] "%d site heeft nu deze instellingen."
+msgstr[1] "%d sites hebben nu deze instellingen."
+
+#: admin/includes/class-network-manager.php:367
+msgid "Every site already has these settings."
+msgstr "Elke site heeft deze instellingen al."
+
+#: admin/includes/class-replaced-plugins.php:157
+msgid "Redundant"
+msgstr "Overbodig"
+
+#: admin/includes/class-replaced-plugins.php:212
+msgid "You are not allowed to deactivate this plugin."
+msgstr "U mag deze plugin niet deactiveren."
+
+#: admin/includes/class-replaced-plugins.php:215
+msgid "SEO Pro Cookie Consent only deactivates plugins it replaces."
+msgstr "SEO Pro Cookie Consent deactiveert alleen plugins die het vervangt."
+
+#: admin/includes/class-replaced-plugins.php:308
+msgid "Plugin deactivated."
+msgstr "Plugin gedeactiveerd."
+
+#: admin/includes/class-replaced-plugins.php:329
+#: admin/includes/class-replaced-plugins.php:594
+#: admin/includes/class-replaced-plugins.php:611
+msgid "Show the setting"
+msgstr "Instelling tonen"
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:336
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: %s is on and takes over once you deactivate this plugin. Then you can delete it."
+msgstr "SEO Pro Cookie Consent maakt deze plugin overbodig: %s staat aan en neemt het over zodra u deze plugin deactiveert. Daarna kunt u hem verwijderen."
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:340
+#, php-format
+msgid "SEO Pro Cookie Consent can do this plugin's job: %1$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %2$s."
+msgstr "SEO Pro Cookie Consent kan deze plugin vervangen: %1$s staat aan en neemt het over zodra u de plugin deactiveert, behalve voor deze functies die SEO Pro Cookie Consent niet biedt: %2$s."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:344
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then deactivate and delete this plugin."
+msgstr "SEO Pro Cookie Consent maakt deze plugin overbodig: schakel %s in SEO Pro Cookie Consent in en deactiveer en verwijder daarna deze plugin."
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:348
+#, php-format
+msgid "SEO Pro Cookie Consent can do part of this plugin's job with %1$s. It does not do these, which this plugin has on: %2$s."
+msgstr "SEO Pro Cookie Consent kan met %1$s een deel van deze plugin vervangen. Deze ingeschakelde functies biedt het niet: %2$s."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:352
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then you can delete this plugin."
+msgstr "SEO Pro Cookie Consent maakt deze plugin overbodig: schakel %s in SEO Pro Cookie Consent in. Daarna kunt u deze plugin verwijderen."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:356
+#, php-format
+msgid "No longer needed: %s in SEO Pro Cookie Consent does this plugin's job. You can delete it."
+msgstr "Niet meer nodig: %s in SEO Pro Cookie Consent vervangt deze plugin. U kunt hem verwijderen."
+
+#: admin/includes/class-replaced-plugins.php:544
+msgid "SEO Pro Cookie Consent can do the job of these plugins:"
+msgstr "SEO Pro Cookie Consent kan deze plugins vervangen:"
+
+#: admin/includes/class-replaced-plugins.php:550
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:186
+msgid "Hide"
+msgstr "Verbergen"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:570
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it. Then you can delete it."
+msgstr "%1$s: %2$s staat aan en neemt het over na deactivering. Daarna kunt u de plugin verwijderen."
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:574
+#: admin/includes/class-replaced-plugins.php:587
+#: admin/includes/class-settings-manager.php:489
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:238
+#, php-format
+msgid "Deactivate %s"
+msgstr "%s deactiveren"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:583
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %3$s. Deactivate it only if you no longer need them."
+msgstr "%1$s: %2$s staat aan en neemt het over na deactivering, behalve voor deze functies die SEO Pro Cookie Consent niet biedt: %3$s. Deactiveer alleen als u die niet meer nodig hebt."
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:592
+#, php-format
+msgid "%1$s: %2$s can do part of its job. SEO Pro Cookie Consent does not do these, which it has on: %3$s."
+msgstr "%1$s: %2$s kan een deel vervangen. SEO Pro Cookie Consent biedt deze ingeschakelde functies niet: %3$s."
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:599
+#, php-format
+msgid "%1$s is inactive and no longer needed: %2$s does its job."
+msgstr "%1$s is inactief en niet meer nodig: %2$s vervangt het."
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:603
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:249
+#, php-format
+msgid "Delete %s"
+msgstr "%s verwijderen"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:609
+#, php-format
+msgid "%1$s: switch on %2$s, then deactivate and delete it."
+msgstr "%1$s: schakel %2$s in en deactiveer en verwijder daarna de plugin."
+
+#: admin/includes/class-replaced-plugins.php:620
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:346
+msgid "You are not allowed to manage plugins on this site."
+msgstr "U mag geen plugins beheren op deze site."
+
+#. translators: %s: search text
+#: admin/includes/class-settings-manager.php:104
+#, php-format
+msgid "Results for “%s”"
+msgstr "Resultaten voor “%s”"
+
+#. translators: %d: number of matching features
+#: admin/includes/class-settings-manager.php:112
+#, php-format
+msgid "%d feature found."
+msgid_plural "%d features found."
+msgstr[0] "%d functie gevonden."
+msgstr[1] "%d functies gevonden."
+
+#: admin/includes/class-settings-manager.php:113
+msgid "No features match. Try another word."
+msgstr "Geen functies gevonden. Probeer een ander woord."
+
+#: admin/includes/class-settings-manager.php:117
+#: admin/includes/class-settings-manager.php:158
+msgid "Changes are saved automatically."
+msgstr "Wijzigingen worden automatisch opgeslagen."
+
+#: admin/includes/class-settings-manager.php:156
+msgid "New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically."
+msgstr "Nieuwe sites beginnen met deze instellingen. Leg een kaart vast voor alle sites zodat zij die niet kunnen wijzigen. Wijzigingen worden automatisch opgeslagen."
+
+#: admin/includes/class-settings-manager.php:171
+msgid "No settings yet."
+msgstr "Nog geen instellingen."
+
+#: admin/includes/class-settings-manager.php:258
+msgid "Options"
+msgstr "Opties"
+
+#. translators: %s: setting name
+#: admin/includes/class-settings-manager.php:260
+#, php-format
+msgid "for %s"
+msgstr "voor %s"
+
+#: admin/includes/class-settings-manager.php:291
+msgid "The network administrator sets this for every site."
+msgstr "De netwerkbeheerder legt dit vast voor alle sites."
+
+#: admin/includes/class-settings-manager.php:293
+msgid "Change it for the network"
+msgstr "Wijzigen voor het netwerk"
+
+#: admin/includes/class-settings-manager.php:343
+msgid "Troubleshooting"
+msgstr "Problemen oplossen"
+
+#: admin/includes/class-settings-manager.php:344
+msgid "Leave these as they are unless something is missing or broken."
+msgstr "Laat deze instellingen ongewijzigd, tenzij iets ontbreekt of niet werkt."
+
+#: admin/includes/class-settings-manager.php:500
+msgid "Replaces:"
+msgstr "Vervangt:"
+
+#. translators: %s: plugin names
+#: admin/includes/class-settings-manager.php:507
+#, php-format
+msgid "%s is still active, so it does this job and this setting waits until it is deactivated."
+msgstr "%s is nog actief en voert deze taak uit. Deze instelling wacht tot de plugin gedeactiveerd is."
+
+#: admin/includes/class-settings-manager.php:586
+msgid "Tokens:"
+msgstr "Variabelen:"
+
+#: admin/includes/class-settings-manager.php:588
+msgid "Insert token"
+msgstr "Variabele invoegen"
+
+#: admin/includes/class-settings-manager.php:683
+msgid "Select all"
+msgstr "Alles selecteren"
+
+#: admin/includes/class-settings-manager.php:684
+msgid "Clear"
+msgstr "Wissen"
+
+#: admin/includes/class-settings-manager.php:701
+msgid "(always chosen)"
+msgstr "(altijd geselecteerd)"
+
+#. translators: %s: a choice, such as Facebook.
+#: admin/includes/class-settings-manager.php:710
+#, php-format
+msgid "Move %s: drag, or press the up or down arrow key"
+msgstr "%s verplaatsen: sleep of druk op de pijl omhoog of omlaag"
+
+#: admin/includes/class-settings-manager.php:726
+msgid "Drag the handles to change the order."
+msgstr "Sleep de handgrepen om de volgorde te wijzigen."
+
+#: admin/includes/class-settings-manager.php:729
+msgid "Choices with a lock are always chosen."
+msgstr "Keuzes met een slot zijn altijd geselecteerd."
+
+#: admin/includes/class-settings-manager.php:834
+msgid "Choose picture"
+msgstr "Afbeelding kiezen"
+
+#: admin/includes/class-settings-manager.php:839
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:28
+#: includes/admin/class-seoprocookieconsent-import-tab.php:101
+msgid "Import"
+msgstr "Importeren"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:50
+msgid "Move here"
+msgstr "Hierheen verhuizen"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:51
+msgid "Review the dry run below. Import fills only default settings and adds missing script rules. Pages change only when selected. Check the banner and pages, then deactivate and delete the old plugin. Purge page caches after switching."
+msgstr "Bekijk de simulatie hieronder. Importeren vult alleen standaardinstellingen aan en voegt ontbrekende scriptregels toe. Alleen geselecteerde pagina’s wijzigen. Controleer de banner en pagina’s, deactiveer en verwijder daarna de oude plugin. Wis paginacaches na de overstap."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:65
+msgid "Dry run: settings and script rules to add"
+msgstr "Simulatie: toe te voegen instellingen en scriptregels"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:67
+msgid "Consent cookie mapping"
+msgstr "Koppeling van toestemmingscookies"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:71
+msgid "No choices carry over: visitors are asked again."
+msgstr "Geen keuzes worden overgenomen: bezoekers krijgen de vraag opnieuw."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:73
+msgid "Only complete explicit choices carry over; dismissing the banner does not allow anything. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive."
+msgstr "Alleen volledige, uitdrukkelijke keuzes worden overgenomen. De banner sluiten staat niets toe. Ingesloten inhoud zonder overeenkomende categorie blijft uit. Overname begint pas wanneer de oude banner inactief is."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:76
+msgid "Policy pages (select each page to confirm conversion)"
+msgstr "Beleidspagina’s (selecteer elke pagina om de omzetting te bevestigen)"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:81
+msgid "Replace with Cookie policy block, and turn on Cookie policy (Policies tab) so it shows."
+msgstr "Vervangen door het blok Cookiebeleid en Cookiebeleid inschakelen (tabblad Beleid) om het te tonen."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:82
+msgid "Replace with Cookie settings button block."
+msgstr "Vervangen door het blok Cookie-instellingenknop."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:83
+msgid "Keep your edited document as editable HTML, with a revision."
+msgstr "Uw aangepaste document als bewerkbare HTML bewaren, met een revisie."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:84
+msgid "No document is selected, so it shows nothing. Remove it yourself."
+msgstr "Er is geen document geselecteerd, dus er wordt niets getoond. Verwijder dit zelf."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:85
+msgid "Form or live list with no direct equivalent. Not changed: replace or remove it yourself."
+msgstr "Formulier of live lijst zonder rechtstreeks equivalent. Ongewijzigd: vervang of verwijder dit zelf."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:86
+msgid "Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back."
+msgstr "Inhoud die pas na toestemming verschijnt. Ongewijzigd: haal de scripts zelf uit de shortcode; herkende diensten en uw scriptregels worden daarna tegengehouden."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:87
+msgid "Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself."
+msgstr "Bannerknop, link of status zonder equivalent hier. Ongewijzigd: vervang of verwijder dit zelf."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:88
+msgid "Make this link or button open Cookie settings, keeping its text."
+msgstr "Deze link of knop Cookie-instellingen laten openen, met behoud van de tekst."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:89
+msgid "Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognises them."
+msgstr "De inhoud behouden en de omringende tags verwijderen. Scripts worden toegevoegd aan Ook tegenhouden, tenzij deze plugin ze al herkent."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:90
+msgid "Keep the content and remove the tags around it."
+msgstr "De inhoud behouden en de omringende tags verwijderen."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:91
+msgid "Hosted document, button or widget that stops working when the old plugin or account goes. Not changed: replace it with your own page or link, or remove it yourself."
+msgstr "Gehost document, knop of widget die niet meer werkt wanneer de oude plugin of account verdwijnt. Ongewijzigd: vervang dit door een eigen pagina of link, of verwijder het zelf."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:92
+msgid "Marked to wait for the old banner, so it never loads without it. Not changed: make it a normal script or embed again yourself."
+msgstr "Ingesteld om op de oude banner te wachten en dus nooit zonder die banner te laden. Ongewijzigd: maak er zelf weer een gewoon script of gewone insluiting van."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Freeze the rendered document as editable HTML, with a revision."
+msgstr "Het weergegeven document vastleggen als bewerkbare HTML, met een revisie."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Cannot render while the source is inactive: rewrite this document or reactivate the source before importing."
+msgstr "Weergave is niet mogelijk zolang de bron inactief is. Herschrijf dit document of activeer de bron opnieuw vóór het importeren."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:105
+msgid "Stop carrying over old consent"
+msgstr "Oude toestemming niet meer overnemen"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:108
+#: includes/admin/class-seoprocookieconsent-import-tab.php:124
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:253
+msgid "Remove leftover data"
+msgstr "Achtergebleven gegevens verwijderen"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:111
+msgid "Kept: old consent records, data requests and anything not known to be generated. Export records from the old plugin before deleting it if you must keep them, then remove these tables or folders yourself after your retention period."
+msgstr "Bewaard: oude toestemmingsregistraties, gegevensverzoeken en alles waarvan niet vaststaat dat het gegenereerd is. Exporteer registraties uit de oude plugin vóór verwijdering als u ze moet bewaren. Verwijder deze tabellen of mappen daarna zelf na uw bewaartermijn."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:116
+msgid "Nothing to remove."
+msgstr "Niets te verwijderen."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:123
+msgid "Remove exactly the listed data from this site. This cannot be undone. Make a backup first. Network-wide data is not removed."
+msgstr "Verwijder precies de vermelde gegevens van deze site. Dit kan niet ongedaan worden gemaakt. Maak eerst een back-up. Netwerkbrede gegevens worden niet verwijderd."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:130
+msgid "No supported source data found."
+msgstr "Geen ondersteunde brongegevens gevonden."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:132
+msgid "Import history"
+msgstr "Importgeschiedenis"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:134
+msgid "Undone"
+msgstr "Ongedaan gemaakt"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:138
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:157
+msgid "You cannot import on this screen."
+msgstr "U kunt op dit scherm niet importeren."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:163
+msgid "Confirm the irreversible cleanup first."
+msgstr "Bevestig eerst de onomkeerbare opschoning."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:75
+#, php-format
+msgid "Import from %s first"
+msgstr "Importeer eerst uit %s"
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:182
+msgid "Move to SEO Pro Cookie Consent:"
+msgstr "Verhuis naar SEO Pro Cookie Consent:"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:204
+#, php-format
+msgid "%s is asking your visitors now. Bring its settings across, then switch."
+msgstr "%s vraagt uw bezoekers nu om toestemming. Neem de instellingen over en stap daarna over."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:207
+#, php-format
+msgid "%s is not active, but its settings are still here. Bring them across."
+msgstr "%s is niet actief, maar de instellingen zijn er nog. Neem ze over."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:209
+msgid "Pages that show its documents may already be blank."
+msgstr "Pagina’s met documenten van die plugin zijn mogelijk al leeg."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:214
+#, php-format
+msgid "Import from %s"
+msgstr "Importeren uit %s"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:220
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once and visitors keep their choices."
+msgstr "Controleer de import en deactiveer daarna %s: SEO Pro Cookie Consent neemt meteen over en bezoekers behouden hun keuzes."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:222
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Controleer de import en deactiveer daarna %s: SEO Pro Cookie Consent neemt meteen over."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:225
+#, php-format
+msgid "Check the import and turn on Cookie consent, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Controleer de import en schakel Cookietoestemming in. Deactiveer daarna %s: SEO Pro Cookie Consent neemt meteen over."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:227
+msgid "If it has a delete-data setting, turn that on first."
+msgstr "Schakel eerst de instelling voor gegevensverwijdering in als die er is."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:229
+msgid "Check the import"
+msgstr "Import controleren"
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:231
+msgid "Turn on Cookie consent"
+msgstr "Cookietoestemming inschakelen"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:244
+#, php-format
+msgid "%s left data on the site."
+msgstr "%s heeft gegevens achtergelaten op de site."
+
+#: includes/class-seoprocookieconsent-blocker.php:320
+#: includes/features/class-seoprocookieconsent-consent.php:402
+msgid "This content"
+msgstr "Deze inhoud"
+
+#: includes/class-seoprocookieconsent-blocker.php:321
+msgid "content"
+msgstr "inhoud"
+
+#. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
+#. translators: 1: service name; 2: cookie category.
+#: includes/class-seoprocookieconsent-blocker.php:325
+#: includes/features/class-seoprocookieconsent-consent.php:399
+#, php-format
+msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
+msgstr "%1$s kan cookies plaatsen. De inhoud laadt wanneer u dit toestaat of %2$s toestaat in Cookie-instellingen."
+
+#. translators: %s: what is embedded, such as video or map.
+#: includes/class-seoprocookieconsent-blocker.php:327
+#, php-format
+msgid "Load %s"
+msgstr "%s laden"
+
+#: includes/class-seoprocookieconsent-blocker.php:334
+#: includes/features/class-seoprocookieconsent-consent.php:404
+#: includes/features/class-seoprocookieconsent-consent.php:506
+#: includes/features/class-seoprocookieconsent-consent.php:763
+#: includes/features/class-seoprocookieconsent-consent.php:775
+#: includes/features/class-seoprocookieconsent-consent.php:834
+#: includes/features/class-seoprocookieconsent-consent.php:860
+#: includes/views/consent-banner.php:55
+msgid "Cookie settings"
+msgstr "Cookie-instellingen"
+
+#: includes/class-seoprocookieconsent-network-differences.php:183
+#: includes/class-seoprocookieconsent-network-settings.php:223
+#: includes/class-seoprocookieconsent-network-settings.php:244
+msgid "This setting is set on each site."
+msgstr "Deze instelling wordt per site bepaald."
+
+#. translators: %d: number of sites
+#: includes/class-seoprocookieconsent-network-differences.php:188
+#, php-format
+msgid "This network has more than %d sites, too many to change at once."
+msgstr "Dit netwerk heeft meer dan %d sites: te veel om tegelijk te wijzigen."
+
+#: includes/class-seoprocookieconsent-network-settings.php:231
+#: includes/class-seoprocookieconsent-network-settings.php:253
+#: includes/class-seoprocookieconsent-settings.php:392
+#: includes/class-seoprocookieconsent-settings.php:408
+msgid "The setting could not be saved. Please try again."
+msgstr "De instelling kon niet worden opgeslagen. Probeer het opnieuw."
+
+#: includes/class-seoprocookieconsent-records.php:157
+#: includes/views/consent-banner.php:43
+#: includes/views/consent-banner.php:92
+msgid "Reject all"
+msgstr "Alles weigeren"
+
+#: includes/class-seoprocookieconsent-records.php:158
+#: includes/views/consent-banner.php:44
+#: includes/views/consent-banner.php:94
+msgid "Accept all"
+msgstr "Alles aanvaarden"
+
+#: includes/class-seoprocookieconsent-records.php:159
+#: includes/views/consent-banner.php:48
+msgid "OK"
+msgstr "OK"
+
+#: includes/class-seoprocookieconsent-records.php:160
+#: includes/views/consent-banner.php:93
+msgid "Save choices"
+msgstr "Keuzes opslaan"
+
+#: includes/class-seoprocookieconsent-records.php:161
+#: includes/views/consent-banner.php:56
+msgid "Close"
+msgstr "Sluiten"
+
+#: includes/class-seoprocookieconsent-records.php:163
+#: includes/views/consent-banner.php:59
+msgid "Choose which cookies to allow. You can change this at any time from the Cookie settings link."
+msgstr "Kies welke cookies u toestaat. U kunt dit op elk moment wijzigen via de link Cookie-instellingen."
+
+#: includes/class-seoprocookieconsent-records.php:167
+#: includes/features/class-seoprocookieconsent-policy.php:42
+#: includes/features/class-seoprocookieconsent-policy.php:65
+#: includes/views/consent-banner.php:38
+#: includes/views/consent-banner.php:61
+msgid "Cookie policy"
+msgstr "Cookiebeleid"
+
+#: includes/class-seoprocookieconsent-records.php:238
+msgid "Choice is too large."
+msgstr "De keuze is te groot."
+
+#: includes/class-seoprocookieconsent-records.php:247
+msgid "Invalid choice."
+msgstr "Ongeldige keuze."
+
+#: includes/class-seoprocookieconsent-records.php:252
+msgid "Invalid categories."
+msgstr "Ongeldige categorieën."
+
+#: includes/class-seoprocookieconsent-records.php:258
+msgid "Invalid services."
+msgstr "Ongeldige diensten."
+
+#: includes/class-seoprocookieconsent-records.php:262
+msgid "Records are not ready yet."
+msgstr "Registraties zijn nog niet klaar."
+
+#: includes/class-seoprocookieconsent-records.php:275
+msgid "Could not store choice."
+msgstr "De keuze kon niet worden opgeslagen."
+
+#: includes/class-seoprocookieconsent-records.php:305
+msgid "Export consent records (CSV)"
+msgstr "Toestemmingsregistraties exporteren (CSV)"
+
+#: includes/class-seoprocookieconsent-records.php:307
+msgid "Export consent snapshots (CSV)"
+msgstr "Momentopnamen van toestemming exporteren (CSV)"
+
+#: includes/class-seoprocookieconsent-records.php:324
+msgid "Older records"
+msgstr "Oudere registraties"
+
+#: includes/class-seoprocookieconsent-records.php:329
+msgid "Look up a consent ID"
+msgstr "Een toestemmings-ID opzoeken"
+
+#: includes/class-seoprocookieconsent-records.php:331
+msgid "Look up"
+msgstr "Opzoeken"
+
+#: includes/class-seoprocookieconsent-records.php:338
+msgid "You cannot look up consent records."
+msgstr "U kunt geen toestemmingsregistraties opzoeken."
+
+#: includes/class-seoprocookieconsent-records.php:344
+msgid "Invalid consent ID. Enter 32 lowercase hexadecimal characters."
+msgstr "Ongeldige toestemmings-ID. Voer 32 kleine hexadecimale tekens in."
+
+#: includes/class-seoprocookieconsent-records.php:347
+msgid "Consent records are not ready yet. Open settings with recording enabled first."
+msgstr "Toestemmingsregistraties zijn nog niet klaar. Open eerst de instellingen met registratie ingeschakeld."
+
+#: includes/class-seoprocookieconsent-records.php:354
+msgid "Could not read consent records."
+msgstr "Toestemmingsregistraties konden niet worden gelezen."
+
+#: includes/class-seoprocookieconsent-records.php:362
+#: includes/class-seoprocookieconsent-records.php:381
+msgid "Consent records"
+msgstr "Toestemmingsregistraties"
+
+#: includes/class-seoprocookieconsent-records.php:363
+msgid "Consent ID:"
+msgstr "Toestemmings-ID:"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Recorded (UTC)"
+msgstr "Geregistreerd (UTC)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice time (UTC)"
+msgstr "Tijdstip keuze (UTC)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice (JSON)"
+msgstr "Keuze (JSON)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+#: includes/features/class-seoprocookieconsent-consent.php:184
+msgid "Policy version"
+msgstr "Beleidsversie"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Snapshot"
+msgstr "Momentopname"
+
+#: includes/class-seoprocookieconsent-records.php:374
+msgid "No unexpired records found for this consent ID."
+msgstr "Geen niet-vervallen registraties gevonden voor deze toestemmings-ID."
+
+#: includes/class-seoprocookieconsent-records.php:378
+msgid "Back to settings"
+msgstr "Terug naar instellingen"
+
+#: includes/class-seoprocookieconsent-records.php:400
+msgid "You cannot export consent records."
+msgstr "U kunt geen toestemmingsregistraties exporteren."
+
+#: includes/class-seoprocookieconsent-records.php:404
+msgid "No consent records yet."
+msgstr "Nog geen toestemmingsregistraties."
+
+#: includes/class-seoprocookieconsent-services.php:45
+msgid "Necessary"
+msgstr "Noodzakelijk"
+
+#: includes/class-seoprocookieconsent-services.php:46
+msgid "Needed for the site to work, such as remembering your cookie choices. Always on."
+msgstr "Nodig om de site te laten werken, zoals het onthouden van uw cookiekeuzes. Altijd aan."
+
+#: includes/class-seoprocookieconsent-services.php:49
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: includes/class-seoprocookieconsent-services.php:50
+msgid "Remember your choices and load extras such as live chat."
+msgstr "Onthouden uw keuzes en laden extra’s zoals livechat."
+
+#: includes/class-seoprocookieconsent-services.php:53
+msgid "Statistics"
+msgstr "Statistieken"
+
+#: includes/class-seoprocookieconsent-services.php:54
+msgid "Help us see how the site is used, so we can improve it."
+msgstr "Helpen ons te zien hoe de site wordt gebruikt, zodat we hem kunnen verbeteren."
+
+#: includes/class-seoprocookieconsent-services.php:57
+msgid "Embedded content"
+msgstr "Ingesloten inhoud"
+
+#: includes/class-seoprocookieconsent-services.php:58
+msgid "Videos, maps and posts from other sites, which may track you there."
+msgstr "Video’s, kaarten en berichten van andere sites, die u daar mogelijk volgen."
+
+#: includes/class-seoprocookieconsent-services.php:61
+msgid "Marketing"
+msgstr "Marketing"
+
+#: includes/class-seoprocookieconsent-services.php:62
+msgid "Measure and personalise ads, on this site and others."
+msgstr "Meten en personaliseren advertenties, op deze en andere sites."
+
+#: includes/class-seoprocookieconsent-services.php:157
+msgid "Tells people from bots, when bot protection is on"
+msgstr "Onderscheidt mensen van bots wanneer botbeveiliging aanstaat"
+
+#: includes/class-seoprocookieconsent-services.php:157
+#: includes/class-seoprocookieconsent-services.php:192
+#: includes/class-seoprocookieconsent-services.php:315
+msgid "30 minutes"
+msgstr "30 minuten"
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "Remembers that you passed a security check"
+msgstr "Onthoudt dat u een beveiligingscontrole hebt doorstaan"
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "30 minutes, unless the site sets another time"
+msgstr "30 minuten, tenzij de site een andere termijn instelt"
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Tells visitors who share an IP address apart, when rate limiting needs it"
+msgstr "Onderscheidt bezoekers met hetzelfde IP-adres wanneer snelheidsbeperking dat vereist"
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Varies"
+msgstr "Wisselend"
+
+#: includes/class-seoprocookieconsent-services.php:168
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser."
+msgstr "Controleert of formulieren door een persoon worden verstuurd, niet door een bot. Ontvangt uw IP-adres en browsergegevens."
+
+#: includes/class-seoprocookieconsent-services.php:176
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser, and may set cookies on Google's own sites."
+msgstr "Controleert of formulieren door een persoon worden verstuurd, niet door een bot. Ontvangt uw IP-adres en browsergegevens en kan cookies plaatsen op de eigen sites van Google."
+
+#: includes/class-seoprocookieconsent-services.php:183
+msgid "Tells people from bots"
+msgstr "Onderscheidt mensen van bots"
+
+#: includes/class-seoprocookieconsent-services.php:183
+#: includes/class-seoprocookieconsent-services.php:342
+msgid "30 days"
+msgstr "30 dagen"
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:192
+msgid "Helps prevent payment fraud"
+msgstr "Helpt betalingsfraude voorkomen"
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:351
+#: includes/features/class-seoprocookieconsent-policy.php:120
+msgid "1 year"
+msgstr "1 jaar"
+
+#: includes/class-seoprocookieconsent-services.php:200
+msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's own sites."
+msgstr "Verwerkt betalingen en helpt fraude voorkomen. Kan cookies plaatsen op de eigen sites van PayPal."
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:360
+msgid "Measures ad conversions"
+msgstr "Meet advertentieconversies"
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:324
+msgid "3 months"
+msgstr "3 maanden"
+
+#: includes/class-seoprocookieconsent-services.php:278
+msgid "Shows and measures ads"
+msgstr "Toont en meet advertenties"
+
+#: includes/class-seoprocookieconsent-services.php:278
+#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:360
+msgid "13 months"
+msgstr "13 maanden"
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:377
+msgid "Tells visitors apart"
+msgstr "Onderscheidt bezoekers"
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:398
+msgid "2 years"
+msgstr "2 jaar"
+
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:315
+#: includes/class-seoprocookieconsent-services.php:361
+msgid "Keeps the visit together"
+msgstr "Houdt het bezoek bijeen"
+
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:361
+msgid "1 day"
+msgstr "1 dag"
+
+#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:333
+msgid "Measures and personalises ads"
+msgstr "Meet en personaliseert advertenties"
+
+#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:466
+msgid "6 months"
+msgstr "6 maanden"
+
+#: includes/class-seoprocookieconsent-services.php:383
+#: includes/class-seoprocookieconsent-services.php:394
+msgid "video"
+msgstr "video"
+
+#: includes/class-seoprocookieconsent-services.php:387
+msgid "Remembers player settings"
+msgstr "Onthoudt spelerinstellingen"
+
+#: includes/class-seoprocookieconsent-services.php:388
+#: includes/class-seoprocookieconsent-services.php:398
+msgid "Counts views"
+msgstr "Telt weergaven"
+
+#: includes/class-seoprocookieconsent-services.php:388
+#: includes/class-seoprocookieconsent-services.php:457
+msgid "Session"
+msgstr "Sessie"
+
+#: includes/class-seoprocookieconsent-services.php:404
+msgid "map"
+msgstr "kaart"
+
+#: includes/class-seoprocookieconsent-services.php:408
+msgid "Remembers preferences"
+msgstr "Onthoudt voorkeuren"
+
+#: includes/class-seoprocookieconsent-services.php:414
+#: includes/class-seoprocookieconsent-services.php:422
+msgid "player"
+msgstr "speler"
+
+#: includes/class-seoprocookieconsent-services.php:430
+#: includes/class-seoprocookieconsent-services.php:438
+#: includes/class-seoprocookieconsent-services.php:446
+msgid "post"
+msgstr "bericht"
+
+#: includes/class-seoprocookieconsent-services.php:457
+msgid "Keeps the chat connected"
+msgstr "Houdt de chat verbonden"
+
+#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:475
+msgid "Keeps the chat going"
+msgstr "Houdt de chat gaande"
+
+#: includes/class-seoprocookieconsent-services.php:475
+msgid "9 months"
+msgstr "9 maanden"
+
+#: includes/class-seoprocookieconsent-settings.php:380
+msgid "Unknown setting."
+msgstr "Onbekende instelling."
+
+#: includes/class-seoprocookieconsent-settings.php:383
+msgid "The network administrator sets this for every site, so it cannot be changed here."
+msgstr "De netwerkbeheerder legt dit vast voor alle sites. U kunt het hier niet wijzigen."
+
+#: includes/class-seoprocookieconsent-settings.php:1054
+msgid "You are not allowed to change these settings."
+msgstr "U mag deze instellingen niet wijzigen."
+
+#: includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved. Reload the page to see the change."
+msgstr "Opgeslagen. Herlaad de pagina om de wijziging te zien."
+
+#: includes/class-seoprocookieconsent-setup.php:263
+msgid "Consent"
+msgstr "Toestemming"
+
+#: includes/class-seoprocookieconsent-setup.php:264
+msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
+msgstr "Houd cookies tegen tot bezoekers ze toestaan, met een korte banner waar nodig."
+
+#: includes/class-seoprocookieconsent-setup.php:267
+msgid "Policies"
+msgstr "Beleid"
+
+#: includes/class-seoprocookieconsent-setup.php:268
+msgid "Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
+msgstr "Cookiebeleid en algemene voorwaarden in pagina’s die u schrijft. Controleer vóór publicatie; geen juridisch advies."
+
+#: includes/features/class-seoprocookieconsent-consent.php:89
+#: includes/views/consent-banner.php:33
+msgid "Cookie consent"
+msgstr "Cookietoestemming"
+
+#: includes/features/class-seoprocookieconsent-consent.php:90
+msgid "Holds back scripts and embeds that set cookies, such as Google Analytics, ad pixels and YouTube videos, until visitors allow them. A short banner shows only on pages that have them."
+msgstr "Houdt scripts en insluitingen die cookies plaatsen, zoals Google Analytics, advertentiepixels en YouTube-video’s, tegen tot bezoekers ze toestaan. Een korte banner verschijnt alleen op pagina’s die ze bevatten."
+
+#: includes/features/class-seoprocookieconsent-consent.php:98
+msgid "Who is asked first"
+msgstr "Wie eerst toestemming moet geven"
+
+#: includes/features/class-seoprocookieconsent-consent.php:99
+msgid "Europe (EU, EEA, UK, Switzerland), Quebec and visitors whose location is unclear are always asked before anything loads. The browser's time zone tells them apart: nothing is looked up or sent anywhere."
+msgstr "Europa (EU, EER, VK, Zwitserland), Quebec en bezoekers met een onduidelijke locatie krijgen altijd eerst de vraag vóór iets laadt. De tijdzone van de browser maakt het onderscheid: er wordt niets opgezocht of verstuurd."
+
+#: includes/features/class-seoprocookieconsent-consent.php:101
+msgid "By region, with a notice elsewhere"
+msgstr "Per regio, met een melding elders"
+
+#: includes/features/class-seoprocookieconsent-consent.php:102
+msgid "By region, no notice elsewhere"
+msgstr "Per regio, zonder melding elders"
+
+#: includes/features/class-seoprocookieconsent-consent.php:103
+msgid "Everyone"
+msgstr "Iedereen"
+
+#: includes/features/class-seoprocookieconsent-consent.php:110
+msgid "Banner position"
+msgstr "Positie van de banner"
+
+#: includes/features/class-seoprocookieconsent-consent.php:112
+msgid "Bar along the bottom"
+msgstr "Balk onderaan"
+
+#: includes/features/class-seoprocookieconsent-consent.php:113
+msgid "Box at the bottom left"
+msgstr "Vak linksonder"
+
+#: includes/features/class-seoprocookieconsent-consent.php:114
+msgid "Box at the bottom right"
+msgstr "Vak rechtsonder"
+
+#: includes/features/class-seoprocookieconsent-consent.php:121
+msgid "Banner message"
+msgstr "Bannertekst"
+
+#: includes/features/class-seoprocookieconsent-consent.php:122
+msgid "Leave empty for a message that names what is on the page, such as \"This page uses YouTube and Google Analytics, which may set cookies.\""
+msgstr "Laat leeg voor een tekst die noemt wat op de pagina staat, zoals \"Deze pagina gebruikt YouTube en Google Analytics, die cookies kunnen plaatsen.\""
+
+#: includes/features/class-seoprocookieconsent-consent.php:123
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: includes/features/class-seoprocookieconsent-consent.php:130
+msgid "Cookie policy page"
+msgstr "Pagina met cookiebeleid"
+
+#: includes/features/class-seoprocookieconsent-consent.php:131
+msgid "Linked from the banner. Start typing to pick a page, or enter an address. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use."
+msgstr "Gelinkt vanuit de banner. Begin te typen om een pagina te kiezen of voer een adres in. Laat leeg voor uw privacybeleid (Instellingen → Privacy). Voeg het blok Cookiebeleid toe aan de gekozen pagina."
+
+#: includes/features/class-seoprocookieconsent-consent.php:132
+msgid "Your privacy policy page"
+msgstr "Uw privacybeleidspagina"
+
+#: includes/features/class-seoprocookieconsent-consent.php:138
+msgid "Cookie settings link in the footer menu"
+msgstr "Link naar Cookie-instellingen in het voettekstmenu"
+
+#: includes/features/class-seoprocookieconsent-consent.php:139
+msgid "Lets visitors change their mind at any time. It goes after your cookie policy link, or before your privacy policy link, in a footer menu; otherwise at the end of the theme's footer menu. To place it yourself, use the Cookie settings box in Appearance → Menus; then this adds nothing. No menu? Add the Cookie settings button block, or link to #cookie-settings anywhere."
+msgstr "Laat bezoekers op elk moment van gedachten veranderen. De link komt na uw cookiebeleid of vóór uw privacybeleid in een voettekstmenu, anders aan het einde van het voettekstmenu van het thema. Zelf plaatsen? Gebruik het vak Cookie-instellingen in Weergave → Menu’s; dan wordt niets toegevoegd. Geen menu? Voeg het blok Cookie-instellingenknop toe of link ergens naar #cookie-settings."
+
+#: includes/features/class-seoprocookieconsent-consent.php:145
+msgid "Floating Cookie settings button"
+msgstr "Zwevende Cookie-instellingenknop"
+
+#: includes/features/class-seoprocookieconsent-consent.php:146
+msgid "A small button in the bottom corner after visitors choose. It shows only on pages with no other Cookie settings link or button."
+msgstr "Een kleine knop in de benedenhoek nadat bezoekers gekozen hebben. Verschijnt alleen op pagina’s zonder andere link of knop naar Cookie-instellingen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:153
+msgid "Also hold back"
+msgstr "Ook tegenhouden"
+
+#: includes/features/class-seoprocookieconsent-consent.php:154
+msgid "Scripts or embeds the plugin does not know, one per line: part of their address or code. They count as Marketing; start a line with \"statistics:\", \"preferences:\" or \"embeds:\" for another category."
+msgstr "Onbekende scripts of insluitingen, één per regel: een deel van hun adres of code. Ze gelden als Marketing. Begin een regel met \"statistics:\", \"preferences:\" of \"embeds:\" voor een andere categorie."
+
+#: includes/features/class-seoprocookieconsent-consent.php:162
+msgid "Never hold back"
+msgstr "Nooit tegenhouden"
+
+#: includes/features/class-seoprocookieconsent-consent.php:163
+msgid "Scripts or embeds that must always load, one per line: part of their address or code. Use this only for something that does not set cookies or is needed for the site to work."
+msgstr "Scripts of insluitingen die altijd moeten laden, één per regel: een deel van hun adres of code. Gebruik dit alleen voor iets dat geen cookies plaatst of nodig is om de site te laten werken."
+
+#: includes/features/class-seoprocookieconsent-consent.php:170
+msgid "Load Google tags before consent (Consent Mode advanced)"
+msgstr "Google-tags laden vóór toestemming (geavanceerde Consent Mode)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:171
+msgid "Google Analytics, Ads and Tag Manager load straight away and are told consent is denied until visitors allow it, so Google sends cookieless pings. Leave off unless your Google set-up needs it."
+msgstr "Google Analytics, Ads en Tag Manager laden meteen en krijgen het signaal dat toestemming geweigerd is tot bezoekers die geven. Google verstuurt dan pings zonder cookies. Laat uit tenzij uw Google-configuratie dit nodig heeft."
+
+#: includes/features/class-seoprocookieconsent-consent.php:177
+msgid "Keep consent records"
+msgstr "Toestemmingsregistraties bewaren"
+
+#: includes/features/class-seoprocookieconsent-consent.php:178
+msgid "Optional anonymous choice history, stored on this site. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored."
+msgstr "Optionele anonieme keuzegeschiedenis, opgeslagen op deze site. Voegt één verzoek en databaseschrijving per keuze toe, niet per paginaweergave. Geen IP-adressen of browsergegevens worden opgeslagen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:185
+msgid "A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text."
+msgstr "Een label dat bij elke registratie wordt bewaard. Wijzig het wanneer uw beleid verandert. Dit vraagt bezoekers niet opnieuw om toestemming en bewaart geen kopie van de beleidstekst."
+
+#: includes/features/class-seoprocookieconsent-consent.php:193
+msgid "Keep records for (days)"
+msgstr "Registraties bewaren (dagen)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:194
+msgid "0 keeps them as long as visitors' choices. Set this to how long you need evidence of consent. Records older than this are deleted."
+msgstr "0 bewaart ze even lang als de keuzes van bezoekers. Stel in hoe lang u bewijs van toestemming nodig hebt. Oudere registraties worden verwijderd."
+
+#: includes/features/class-seoprocookieconsent-consent.php:203
+msgid "Remember choices for (days)"
+msgstr "Keuzes onthouden (dagen)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:204
+msgid "Visitors are asked again after this. 365 is usual; some regulators prefer 180."
+msgstr "Na deze termijn krijgen bezoekers de vraag opnieuw. 365 is gebruikelijk; sommige toezichthouders verkiezen 180."
+
+#. translators: %s: service names, such as "Google Analytics, Hotjar".
+#: includes/features/class-seoprocookieconsent-consent.php:391
+#: includes/views/consent-banner.php:78
+#, php-format
+msgid "Used by: %s."
+msgstr "Gebruikt door: %s."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:394
+#, php-format
+msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
+msgstr "Deze pagina gebruikt %s. Deze diensten kunnen cookies plaatsen en gegevens over uw bezoek delen. Kies wat u toestaat."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:396
+#, php-format
+msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
+msgstr "Deze pagina gebruikt %s. Deze diensten kunnen cookies plaatsen. U kunt ze uitschakelen in Cookie-instellingen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:397
+msgid "other services"
+msgstr "andere diensten"
+
+#. translators: 1: service name, such as "YouTube"; 2: cookie category.
+#: includes/features/class-seoprocookieconsent-consent.php:401
+#, php-format
+msgid "%1$s needs %2$s to show here. Allow it to see this content."
+msgstr "%1$s heeft %2$s nodig om hier te verschijnen. Sta dit toe om de inhoud te zien."
+
+#: includes/features/class-seoprocookieconsent-consent.php:403
+msgid "Load content"
+msgstr "Inhoud laden"
+
+#: includes/features/class-seoprocookieconsent-consent.php:789
+msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
+msgstr "Een link die Cookie-instellingen opent, zodat bezoekers hun keuzes kunnen wijzigen. Zodra een menu deze link heeft, wordt de automatische voettekstlink niet meer toegevoegd."
+
+#: includes/features/class-seoprocookieconsent-consent.php:805
+msgid "Add to Menu"
+msgstr "Aan menu toevoegen"
+
+#: includes/features/class-seoprocookieconsent-consent.php:852
+#: includes/features/class-seoprocookieconsent-policy.php:77
+msgid "Cookie settings button"
+msgstr "Cookie-instellingenknop"
+
+#: includes/features/class-seoprocookieconsent-consent.php:853
+msgid "Opens Cookie settings so visitors can change their choices."
+msgstr "Opent Cookie-instellingen zodat bezoekers hun keuzes kunnen wijzigen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:859
+msgid "Text"
+msgstr "Tekst"
+
+#: includes/features/class-seoprocookieconsent-consent.php:865
+msgid "Show as"
+msgstr "Tonen als"
+
+#: includes/features/class-seoprocookieconsent-consent.php:867
+msgid "Button"
+msgstr "Knop"
+
+#: includes/features/class-seoprocookieconsent-consent.php:868
+msgid "Link"
+msgstr "Link"
+
+#: includes/features/class-seoprocookieconsent-consent.php:885
+msgid "Get started"
+msgstr "Aan de slag"
+
+#: includes/features/class-seoprocookieconsent-consent.php:886
+msgid "Switch on Cookie consent."
+msgstr "Schakel Cookietoestemming in."
+
+#: includes/features/class-seoprocookieconsent-consent.php:887
+msgid "Choose Scan now, then check Found on your pages below."
+msgstr "Kies Nu scannen en bekijk daarna Gevonden op uw pagina’s hieronder."
+
+#: includes/features/class-seoprocookieconsent-consent.php:888
+msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
+msgstr "Schakel Cookiebeleid in op het tabblad Beleid en voeg het blok Cookiebeleid toe aan uw privacy- of cookiebeleidspagina."
+
+#: includes/features/class-seoprocookieconsent-consent.php:890
+msgid "Scan now"
+msgstr "Nu scannen"
+
+#: includes/features/class-seoprocookieconsent-consent.php:891
+msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
+msgstr "Controleert uw startpagina, privacypagina en maximaal drie recente berichten en drie pagina’s. Dit is een steekproef, geen volledige audit. Pagina’s worden ook gecontroleerd terwijl bezoekers surfen. Scripts worden niet uitgevoerd."
+
+#: includes/features/class-seoprocookieconsent-consent.php:912
+msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
+msgstr "Nog geen diensten gevonden die cookies plaatsen. Scan na het inschakelen of open enkele pagina’s van uw site."
+
+#: includes/features/class-seoprocookieconsent-consent.php:914
+msgid "Found on your pages and held back until allowed:"
+msgstr "Gevonden op uw pagina’s en tegengehouden tot toestemming:"
+
+#: includes/features/class-seoprocookieconsent-consent.php:925
+msgid "Necessary, never held back, and listed in the cookie policy:"
+msgstr "Noodzakelijk, nooit tegengehouden en vermeld in het cookiebeleid:"
+
+#: includes/features/class-seoprocookieconsent-consent.php:932
+msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
+msgstr "Andere scripts van deze sites laden zoals gewoonlijk. Plaatst er een cookies? Voeg het toe onder Problemen oplossen → Ook tegenhouden:"
+
+#: includes/features/class-seoprocookieconsent-consent.php:941
+msgid "You cannot scan this site."
+msgstr "U kunt deze site niet scannen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:945
+msgid "Switch on Cookie consent before scanning."
+msgstr "Schakel Cookietoestemming in vóór het scannen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1055
+msgid "Preview the banner"
+msgstr "Voorbeeld van de banner"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1059
+msgid "Visitor"
+msgstr "Bezoeker"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1061
+msgid "Asked first (Europe, Quebec)"
+msgstr "Eerst gevraagd (Europa, Quebec)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1062
+msgid "Shown a notice (elsewhere)"
+msgstr "Melding getoond (elders)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1066
+msgid "Screen"
+msgstr "Scherm"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1068
+msgid "Desktop"
+msgstr "Computer"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1069
+msgid "Phone"
+msgstr "Telefoon"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1072
+msgid "Reload"
+msgstr "Herladen"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1075
+msgid "Banner preview on your home page"
+msgstr "Bannervoorbeeld op uw startpagina"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1077
+msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
+msgstr "Uw startpagina met de banner zoals bezoekers die zien, ook als niets op de pagina wordt tegengehouden. Vernieuwt na elke wijziging. Keuzes in het voorbeeld worden niet opgeslagen."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1096
+msgid "No pages found."
+msgstr "Geen pagina’s gevonden."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1099
+msgid "Scanning…"
+msgstr "Scannen…"
+
+#. translators: 1: pages checked; 2: pages that could not be checked.
+#: includes/features/class-seoprocookieconsent-consent.php:1101
+#, php-format
+msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
+msgstr "Scan voltooid: %1$s pagina’s gecontroleerd; %2$s konden niet worden gecontroleerd. Bekijk de resultaten hieronder."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1102
+msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
+msgstr "De scan kon uw pagina’s niet controleren. Mogelijk worden loopbackverzoeken geblokkeerd. Probeer opnieuw of open pagina’s van uw site om de lijst tijdens het surfen aan te vullen."
+
+#: includes/features/class-seoprocookieconsent-policy.php:43
+msgid "Adds a Cookie policy block (and the [spcc_cookie_policy] shortcode) that lists the cookies your site uses, grouped and kept up to date from what Cookie consent finds. Put it in your privacy or cookie policy page and write the rest of the page as you like. It is a starting point, not legal advice."
+msgstr "Voegt een blok Cookiebeleid en de shortcode [spcc_cookie_policy] toe. Die geven een gegroepeerde, actuele lijst van cookies die Cookietoestemming op uw site vindt. Plaats het op uw privacy- of cookiebeleidspagina en schrijf de rest naar wens. Dit is een vertrekpunt, geen juridisch advies."
+
+#: includes/features/class-seoprocookieconsent-policy.php:66
+msgid "Lists the cookies this site uses, kept up to date."
+msgstr "Toont een actuele lijst van de cookies die deze site gebruikt."
+
+#: includes/features/class-seoprocookieconsent-policy.php:72
+msgid "Short introduction"
+msgstr "Korte inleiding"
+
+#: includes/features/class-seoprocookieconsent-policy.php:82
+msgid "Heading level for each kind of cookie"
+msgstr "Kopniveau voor elke soort cookie"
+
+#: includes/features/class-seoprocookieconsent-policy.php:88
+msgid "Date the list was last updated"
+msgstr "Datum van de laatste lijstwijziging"
+
+#: includes/features/class-seoprocookieconsent-policy.php:110
+msgid "Remembers your cookie choices"
+msgstr "Onthoudt uw cookiekeuzes"
+
+#. translators: %d: number of days.
+#: includes/features/class-seoprocookieconsent-policy.php:112
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dag"
+msgstr[1] "%d dagen"
+
+#: includes/features/class-seoprocookieconsent-policy.php:115
+msgid "Keeps you logged in, only if you log in"
+msgstr "Houdt u aangemeld, alleen als u zich aanmeldt"
+
+#: includes/features/class-seoprocookieconsent-policy.php:116
+msgid "Session, or 14 days with Remember me"
+msgstr "Sessie, of 14 dagen met Mij onthouden"
+
+#: includes/features/class-seoprocookieconsent-policy.php:119
+msgid "Fills in your name when you comment, only if you ask it to"
+msgstr "Vult uw naam in bij reacties, alleen als u daarom vraagt"
+
+#: includes/features/class-seoprocookieconsent-policy.php:152
+msgid "This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time."
+msgstr "Deze site gebruikt cookies: kleine bestanden die op uw toestel worden opgeslagen. Noodzakelijke cookies staan altijd aan. Andere worden alleen gebruikt als u ze toestaat waar de wet toestemming vereist. U kunt uw keuze op elk moment wijzigen."
+
+#. translators: %s: date.
+#: includes/features/class-seoprocookieconsent-policy.php:166
+#, php-format
+msgid "List last updated %s."
+msgstr "Lijst laatst bijgewerkt op %s."
+
+#: includes/features/class-seoprocookieconsent-policy.php:181
+msgid "Service"
+msgstr "Dienst"
+
+#: includes/features/class-seoprocookieconsent-policy.php:182
+msgid "Cookie"
+msgstr "Cookie"
+
+#: includes/features/class-seoprocookieconsent-policy.php:183
+msgid "What it does"
+msgstr "Wat het doet"
+
+#: includes/features/class-seoprocookieconsent-policy.php:184
+msgid "Kept for"
+msgstr "Bewaartermijn"
+
+#: includes/features/class-seoprocookieconsent-policy.php:189
+msgid "Privacy policy"
+msgstr "Privacybeleid"
+
+#: includes/features/class-seoprocookieconsent-policy.php:193
+msgid "Sets cookies on its own site when its content loads."
+msgstr "Plaatst cookies op de eigen site wanneer de inhoud laadt."
+
+#: includes/features/class-seoprocookieconsent-policy.php:217
+msgid "Cookies"
+msgstr "Cookies"
+
+#: includes/features/class-seoprocookieconsent-policy.php:218
+msgid "Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date."
+msgstr "Voeg het blok Cookiebeleid onder deze kop toe. Het toont de cookies die uw site gebruikt en blijft actueel."
+
+#: includes/features/class-seoprocookieconsent-policy.php:219
+msgid "We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page."
+msgstr "We gebruiken cookies en vergelijkbare technologieën. Noodzakelijke cookies laten de site werken en onthouden uw keuzes. Met uw toestemming waar de wet dit vereist, gebruiken we ook cookies voor voorkeuren, statistieken, ingesloten inhoud en marketing. U kunt uw toestemming op elk moment wijzigen of intrekken via de link Cookie-instellingen onderaan elke pagina."
+
+#. translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile".
+#: includes/features/class-seoprocookieconsent-policy.php:224
+#, php-format
+msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
+msgstr "Om de site, formulieren en betalingen tegen spam, fraude en aanvallen te beschermen, gebruiken we %s. Deze diensten ontvangen uw IP-adres en browsergegevens en kunnen de noodzakelijke cookies uit het cookiebeleid plaatsen. Ze zijn nodig voor de veilige werking van de site en staan daarom altijd aan."
+
+#: includes/features/class-seoprocookieconsent-terms.php:35
+#: includes/features/class-seoprocookieconsent-terms.php:131
+msgid "Terms and conditions"
+msgstr "Algemene voorwaarden"
+
+#: includes/features/class-seoprocookieconsent-terms.php:36
+msgid "Adds the Terms and conditions block and [spcc_terms] shortcode. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
+msgstr "Voegt het blok Algemene voorwaarden en de shortcode [spcc_terms] toe. Beantwoord de vragen en controleer de tekst vóór publicatie. Dit is een vertrekpunt, geen juridisch advies, en dekt mogelijk uw bedrijf of lokale wetgeving niet. Bestaande Complianz-pagina’s blijven ongewijzigd: vervang hun blok of shortcode zelf na controle."
+
+#: includes/features/class-seoprocookieconsent-terms.php:44
+msgid "Business or owner name"
+msgstr "Naam van bedrijf of eigenaar"
+
+#: includes/features/class-seoprocookieconsent-terms.php:45
+msgid "The legal name responsible for this site. Required for the suggested wording."
+msgstr "De wettelijke naam van wie voor deze site verantwoordelijk is. Vereist voor de voorgestelde tekst."
+
+#: includes/features/class-seoprocookieconsent-terms.php:51
+msgid "Country"
+msgstr "Land"
+
+#: includes/features/class-seoprocookieconsent-terms.php:52
+msgid "Where the business is based. This does not choose governing law or generate country-specific clauses."
+msgstr "Waar het bedrijf gevestigd is. Dit kiest geen toepasselijk recht en maakt geen landspecifieke bepalingen."
+
+#: includes/features/class-seoprocookieconsent-terms.php:58
+msgid "What the site offers or sells"
+msgstr "Wat de site aanbiedt of verkoopt"
+
+#: includes/features/class-seoprocookieconsent-terms.php:59
+msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed."
+msgstr "Beschrijf uw goederen, diensten, digitale inhoud of informatie, met betalings- en leveringsvoorwaarden waar nodig."
+
+#: includes/features/class-seoprocookieconsent-terms.php:65
+#: includes/features/class-seoprocookieconsent-terms.php:174
+msgid "Returns, refunds and cancellations"
+msgstr "Retouren, terugbetalingen en annuleringen"
+
+#: includes/features/class-seoprocookieconsent-terms.php:66
+msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
+msgstr "Uw beleid en hoe klanten het gebruiken. Vermeld herroepingsrechten en de vereiste contact- of onlineprocedure. Laat leeg als dit niet van toepassing is; er wordt geen retourtermijn verondersteld."
+
+#: includes/features/class-seoprocookieconsent-terms.php:72
+msgid "Contact details"
+msgstr "Contactgegevens"
+
+#: includes/features/class-seoprocookieconsent-terms.php:73
+msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
+msgstr "Openbaar e-mailadres, contactpagina, postadres of telefoonnummer voor vragen over deze voorwaarden. Vereist voor de voorgestelde tekst; wordt als gewone tekst getoond."
+
+#: includes/features/class-seoprocookieconsent-terms.php:79
+msgid "Your own wording"
+msgstr "Uw eigen tekst"
+
+#: includes/features/class-seoprocookieconsent-terms.php:80
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
+msgstr "Optioneel: vervangt alle voorgestelde tekst. Alleen gewone tekst, één alinea per regel. Laat leeg om de antwoorden hierboven te gebruiken. U kunt ook gewone blokken rond het blok Algemene voorwaarden schrijven; die blijven ongewijzigd."
+
+#: includes/features/class-seoprocookieconsent-terms.php:132
+msgid "Terms from your answers. Review before publishing; not legal advice."
+msgstr "Voorwaarden op basis van uw antwoorden. Controleer vóór publicatie; geen juridisch advies."
+
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-terms.php:159
+#, php-format
+msgid "This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order."
+msgstr "Deze website wordt beheerd door %s. Deze voorwaarden lichten het gebruik van deze website en het onderstaande aanbod toe. Lees ze vóór u de site gebruikt of een bestelling plaatst."
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:166
+#, php-format
+msgid "The business is based in %s."
+msgstr "Het bedrijf is gevestigd in %s."
+
+#: includes/features/class-seoprocookieconsent-terms.php:170
+msgid "Using this website"
+msgstr "Gebruik van deze website"
+
+#: includes/features/class-seoprocookieconsent-terms.php:171
+msgid "Please use this website lawfully and do not interfere with its security or other people’s use of it. Respect the rights of others when using or sharing content."
+msgstr "Gebruik deze website op een wettige manier en verstoor de beveiliging of het gebruik door anderen niet. Respecteer de rechten van anderen wanneer u inhoud gebruikt of deelt."
+
+#: includes/features/class-seoprocookieconsent-terms.php:173
+msgid "What we offer"
+msgstr "Wat we aanbieden"
+
+#: includes/features/class-seoprocookieconsent-terms.php:183
+msgid "Your rights"
+msgstr "Uw rechten"
+
+#: includes/features/class-seoprocookieconsent-terms.php:184
+msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
+msgstr "Niets in deze voorwaarden beperkt rechten die het toepasselijke recht u geeft en die niet kunnen worden uitgesloten, waaronder dwingende consumentenrechten."
+
+#: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "Contact"
+msgstr "Contact"
+
+#. translators: %d: HTTP status code
+#: includes/github-updater/class-wpallstars-github-updater.php:611
+#, php-format
+msgid "GitHub answered with status %d."
+msgstr "GitHub antwoordde met status %d."
+
+#. translators: 1: owner/repo in the plugin's header, 2: owner/repo GitHub points to
+#: includes/github-updater/class-wpallstars-github-updater.php:644
+#, php-format
+msgid "GitHub repository %1$s has moved to %2$s; change the plugin's GitHub Plugin URI header."
+msgstr "GitHub-repository %1$s is verhuisd naar %2$s. Wijzig de header GitHub Plugin URI van de plugin."
+
+#. translators: %s: time since the check, such as "5 mins"
+#: includes/github-updater/class-wpallstars-github-updater.php:1021
+#, php-format
+msgid "%s ago"
+msgstr "%s geleden"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1033
+msgid "Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:"
+msgstr "Updates voor deze plugins konden niet op GitHub worden gecontroleerd. Een nieuwere versie ontbreekt hier mogelijk tot een controle lukt:"
+
+#. translators: 1: time since the check, such as "5 mins ago", 2: error message
+#: includes/github-updater/class-wpallstars-github-updater.php:1087
+#, php-format
+msgid "Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour."
+msgstr "GitHub kon niet op updates worden gecontroleerd (%1$s): %2$s. Een nieuwere versie wordt mogelijk niet getoond tot een controle lukt. WordPress probeert binnen een uur opnieuw."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1092
+msgid "Check again now"
+msgstr "Nu opnieuw controleren"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1323
+msgid "Release notes on GitHub"
+msgstr "Versie-informatie op GitHub"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1578
+msgid "GitHub did not give a download address. Check the token’s access to the repository."
+msgstr "GitHub gaf geen downloadadres. Controleer de toegang van het token tot de repository."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1582
+msgid "GitHub sent the download to an unexpected address."
+msgstr "GitHub stuurde de download naar een onverwacht adres."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1616
+#: includes/github-updater/class-wpallstars-github-updater.php:1620
+msgid "The update could not be unpacked into the plugin’s folder."
+msgstr "De update kon niet in de pluginmap worden uitgepakt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:116
+msgid "Visitors' Borlabs Cookie choices are not carried over: its cookie version, which decides whether a saved choice is still valid, could not be checked, so visitors are asked again once."
+msgstr "Borlabs Cookie-keuzes worden niet overgenomen: de cookieversie, die bepaalt of een opgeslagen keuze nog geldig is, kon niet worden gecontroleerd. Bezoekers krijgen de vraag daarom één keer opnieuw."
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:125
+#, php-format
+msgid "Borlabs Cookie ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Borlabs Cookie voerde code uit voor deze diensten. Die stopt na verwijdering: %s. Voeg nog nodige code toe aan uw thema of een plugin voor headercode. Herkende diensten en de onderstaande scriptregels worden dan tegengehouden."
+
+#. translators: %s: list of script blocker names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:130
+#, php-format
+msgid "Borlabs Cookie script blockers match scripts by handle or code, which this import does not turn into rules: %s. Add anything this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Borlabs Cookie-scriptblokkeerders herkennen scripts op handle of code. Deze import zet dat niet om in regels: %s. Voeg niet-herkende scripts toe onder Problemen oplossen → Ook tegenhouden."
+
+#. translators: %s: CSS class name.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:134
+#, php-format
+msgid "A menu link has the %s class. Point it at #cookie-settings instead, or rely on the Cookie settings footer link."
+msgstr "Een menulink heeft de klasse %s. Laat die naar #cookie-settings verwijzen of gebruik de automatische voettekstlink Cookie-instellingen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:137
+msgid "Its dialog texts are not imported: they describe its own dialog."
+msgstr "De dialoogteksten worden niet geïmporteerd: die beschrijven de eigen dialoog."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:140
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:73
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:105
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:101
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:60
+msgid "The import turns on Keep consent records to continue its records."
+msgstr "De import schakelt Toestemmingsregistraties bewaren in om de registratie voort te zetten."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:405
+msgid "Deleting Borlabs Cookie runs its own uninstall, which removes all its data, including its consent log: export the consent records you must keep before deleting it. Remove leftover data removes its settings, services, content blockers and other tables after it is deactivated, keeps its consent log and statistics, and leaves its generated files in uploads/borlabs-cookie. Imports never change its settings."
+msgstr "Borlabs Cookie verwijderen voert de eigen deïnstallatie uit, die alle gegevens wist, ook het toestemmingslogboek. Exporteer eerst registraties die u moet bewaren. Achtergebleven gegevens verwijderen wist na deactivering instellingen, diensten, inhoudsblokkeerders en andere tabellen, maar bewaart het toestemmingslogboek en de statistieken. Gegenereerde bestanden in uploads/borlabs-cookie blijven staan. Importeren wijzigt nooit de broninstellingen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-complianz.php:314
+msgid "Check Complianz’s own delete-data-on-uninstall setting before deleting it. Imports never change its settings."
+msgstr "Controleer de eigen instelling van Complianz voor gegevensverwijdering bij deïnstallatie vóór u de plugin verwijdert. Importeren wijzigt die instellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:57
+msgid "Compliance (hosted) mode is on: the banner and visitors' choices live in the Cookie Compliance web app. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "De gehoste Compliance-modus staat aan: de banner en bezoekerskeuzes staan in de Cookie Compliance-webapp. Alleen gegevens op deze site worden geïmporteerd. Bezoekers krijgen de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:59
+msgid "Cookie Notice accepted on scroll or click, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Cookie Notice aanvaardde bij scrollen of klikken, wat geen duidelijke keuze is. Alleen weigeringen worden overgenomen. Wie aanvaardde, krijgt de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:63
+msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "Cookie Notice voerde uw scripts \"na aanvaarding\" zelf uit. Die stoppen na verwijdering. Voeg ze na de overstap toe aan uw thema of een plugin voor headercode. De onderstaande regels en herkende diensten worden dan tegengehouden tot toestemming. Kopieer ze vóór het verwijderen van achtergebleven gegevens."
+
+#. translators: %s: start of an inline script.
+#. translators: %s: a script pattern.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108
+#, php-format
+msgid "Add by hand to Also hold back (no address to recognise): %s"
+msgstr "Handmatig toevoegen aan Ook tegenhouden (geen herkenbaar adres): %s"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:197
+msgid "Cookie Notice deletes its settings when deactivated if its Deactivation option is on: copy your after-acceptance scripts first. Imports never change its settings."
+msgstr "Cookie Notice verwijdert zijn instellingen bij deactivering als de deactiveringsoptie aanstaat. Kopieer eerst uw scripts voor na aanvaarding. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:59
+msgid "CookieAdmin follows US state laws (opt-out) or a Pro law here, so visitors' choices are not carried over: they are asked again."
+msgstr "CookieAdmin volgt hier Amerikaanse staatswetten (opt-out) of een Pro-wet. Keuzes worden daarom niet overgenomen: bezoekers krijgen de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:63
+msgid "CookieAdmin Pro showed its banner only in some regions. That is not imported: check Who is asked first."
+msgstr "CookieAdmin Pro toonde de banner alleen in bepaalde regio’s. Dit wordt niet geïmporteerd. Controleer Wie eerst toestemming moet geven."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:65
+msgid "Scripts you marked for CookieAdmin in your theme (type=\"text/plain\" with data-cookieadmin-category) stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Scripts die u in uw thema voor CookieAdmin markeerde (type=\"text/plain\" met data-cookieadmin-category), blijven uit zodra de plugin weg is. Verwijder beide attributen zodat deze plugin ze tegenhoudt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:211
+msgid "Deleting CookieAdmin removes its settings but leaves its cookie list table; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "CookieAdmin verwijderen wist de instellingen, maar laat de cookielijsttabel staan. Gebruik daarna Achtergebleven gegevens verwijderen. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:47
+msgid "This site uses a Usercentrics account through Cookiebot, so its banner and choices are kept by Usercentrics."
+msgstr "Deze site gebruikt een Usercentrics-account via Cookiebot. Usercentrics bewaart de banner en keuzes."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:50
+msgid "The Cookiebot banner is switched off on this site."
+msgstr "De Cookiebot-banner staat uit op deze site."
+
+#. translators: %s: Google Tag Manager container ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:55
+#, php-format
+msgid "Cookiebot loaded Google Tag Manager (%s) itself, which stops when it is removed. Add the Tag Manager code to your theme or a header-code plugin; this plugin holds it back until allowed."
+msgstr "Cookiebot laadde Google Tag Manager (%s) zelf. Dat stopt na verwijdering. Voeg de Tag Manager-code toe aan uw thema of een plugin voor headercode. Deze plugin houdt hem tegen tot toestemming."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:43
+msgid "Google Consent Mode"
+msgstr "Google Consent Mode"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:42
+msgid "TCF"
+msgstr "TCF"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "US privacy (CCPA)"
+msgstr "Amerikaanse privacy (CCPA)"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "banners by region"
+msgstr "banners per regio"
+
+#. translators: %s: list of Cookiebot features.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:65
+#, php-format
+msgid "These Cookiebot settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching."
+msgstr "Deze Cookiebot-instellingen worden niet geïmporteerd en stoppen na verwijdering: %s. Controleer Wie eerst toestemming moet geven en uw Google-tags vóór de overstap."
+
+#. translators: %s: list of Cookiebot add-on keys.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:70
+#, php-format
+msgid "Cookiebot add-ons held back other plugins' scripts: %s. Services this plugin recognises are held back without them; check the rest after switching."
+msgstr "Cookiebot-add-ons hielden scripts van andere plugins tegen: %s. Herkende diensten worden ook zonder die add-ons tegengehouden. Controleer de rest na de overstap."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:73
+msgid "Its WPForms add-on switched off WPForms' own GDPR settings: check them in WPForms."
+msgstr "De WPForms-add-on schakelde de eigen AVG-instellingen van WPForms uit. Controleer ze in WPForms."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:76
+msgid "A Cookiebot cookie declaration widget is in a sidebar. Replace it with the Cookie policy block, or link to your cookie policy page."
+msgstr "Er staat een Cookiebot-cookieverklaringswidget in een zijbalk. Vervang die door het blok Cookiebeleid of een link naar uw cookiebeleid."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:79
+msgid "Scripts marked for Cookiebot with type=\"text/plain\" and data-cookieconsent never run without it: make them normal scripts again in your theme or pages; services this plugin recognises, and your script rules, are then held back."
+msgstr "Scripts met Cookiebot-markeringen type=\"text/plain\" en data-cookieconsent worden zonder Cookiebot nooit uitgevoerd. Maak er in uw thema of pagina’s weer gewone scripts van. Herkende diensten en uw scriptregels worden dan tegengehouden."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:156
+msgid "Deleting Cookiebot removes its main settings but leaves its add-on, widget and notice settings; Remove leftover data deletes those too. Imports never change its settings or contact Cookiebot."
+msgstr "Cookiebot verwijderen wist de hoofdinstellingen, maar laat add-on-, widget- en meldingsinstellingen staan. Achtergebleven gegevens verwijderen wist ook die. Importeren wijzigt de broninstellingen nooit en neemt geen contact op met Cookiebot."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:54
+msgid "This site is connected to the CookieYes web app, which keeps the banner, categories and scripts. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "Deze site is verbonden met de CookieYes-webapp, die de banner, categorieën en scripts bewaart. Alleen gegevens op deze site worden geïmporteerd. Bezoekers krijgen de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:56
+msgid "CookieYes is still in its legacy (version 2) mode. Its settings and visitors' choices are not imported: set the banner up here, and visitors are asked again."
+msgstr "CookieYes staat nog in de oude versie 2-modus. Instellingen en keuzes worden niet geïmporteerd. Stel de banner hier in; bezoekers krijgen de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:58
+msgid "The CookieYes banner follows CCPA (opt-out), so visitors' choices are not carried over: they are asked again."
+msgstr "De CookieYes-banner volgt CCPA (opt-out). Keuzes worden daarom niet overgenomen: bezoekers krijgen de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:60
+msgid "Scripts you marked for CookieYes in your theme (data-cookieyes, type=\"text/plain\") stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Scripts die u in uw thema voor CookieYes markeerde (data-cookieyes, type=\"text/plain\"), blijven uit zodra de plugin weg is. Verwijder beide attributen zodat deze plugin ze tegenhoudt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:283
+msgid "CookieYes keeps its data when deleted unless CKY_REMOVE_ALL_DATA is set; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "CookieYes bewaart gegevens bij verwijdering tenzij CKY_REMOVE_ALL_DATA ingesteld is. Gebruik daarna Achtergebleven gegevens verwijderen. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:64
+msgid "Visitors' Ultimate GDPR & CCPA choices are not carried over: its cookie format was not checked on a running site, so visitors are asked again once."
+msgstr "Keuzes van Ultimate GDPR & CCPA worden niet overgenomen: het cookieformaat is niet op een werkende site gecontroleerd. Bezoekers krijgen de vraag daarom één keer opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:68
+msgid "Ultimate GDPR & CCPA was not set to block cookies, so its banner did not hold anything back. This plugin holds back recognised services and the rules below until visitors agree."
+msgstr "Ultimate GDPR & CCPA was niet ingesteld om cookies te blokkeren. De banner hield dus niets tegen. Deze plugin houdt herkende diensten en de onderstaande regels tegen tot bezoekers toestemmen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:71
+msgid "Ultimate GDPR & CCPA showed its banner only on selected pages. Here the banner shows on every page, so Who is asked first is left as it is."
+msgstr "Ultimate GDPR & CCPA toonde de banner alleen op geselecteerde pagina’s. Hier verschijnt de banner op elke pagina, dus Wie eerst toestemming moet geven blijft ongewijzigd."
+
+#. translators: %s: list of service names with their script keywords.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:83
+#, php-format
+msgid "These Ultimate GDPR & CCPA script keywords are not addresses, so they are not imported: %s. Add any this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Deze scriptsleutelwoorden van Ultimate GDPR & CCPA zijn geen adressen en worden niet geïmporteerd: %s. Voeg niet-herkende scripts toe onder Problemen oplossen → Ook tegenhouden."
+
+#. translators: %s: list of shortcodes.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:95
+#, php-format
+msgid "Its privacy request forms, age gate and acceptance boxes are not cookie consent and are not replaced: %s. They stop working when it is removed; use WordPress's own export and erase personal data tools, or another forms plugin."
+msgstr "De privacyverzoekformulieren, leeftijdscontrole en aanvaardingsvakjes zijn geen cookietoestemming en worden niet vervangen: %s. Ze werken niet meer na verwijdering. Gebruik de WordPress-hulpmiddelen voor export en wissen van persoonsgegevens of een andere formulierenplugin."
+
+#. translators: %s: user name.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:99
+#, php-format
+msgid "Its cookie scanner left the user %s behind, which it hides from the Users screen while active. Delete that user after deactivating it."
+msgstr "De cookiescanner liet gebruiker %s achter. Die wordt verborgen op het scherm Gebruikers zolang de plugin actief is. Verwijder die gebruiker na deactivering."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:102
+msgid "Its banner texts are not imported: they describe its own banner."
+msgstr "De bannerteksten worden niet geïmporteerd: die beschrijven de eigen banner."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:260
+msgid "Deleting Ultimate GDPR & CCPA removes only its files: its settings, services and consent log stay. Remove leftover data deletes its settings and services after it is deactivated, and keeps its consent log and the consents saved on user accounts. Imports never change its settings."
+msgstr "Ultimate GDPR & CCPA verwijderen wist alleen bestanden. Instellingen, diensten en het toestemmingslogboek blijven staan. Achtergebleven gegevens verwijderen wist na deactivering instellingen en diensten, maar bewaart het logboek en toestemming op gebruikersaccounts. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:69
+msgid "Its TCF (IAB framework) setting is not imported and stops when it is removed."
+msgstr "De TCF-instelling (IAB-raamwerk) wordt niet geïmporteerd en stopt na verwijdering."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:72
+msgid "iubenda also handled US or Brazilian privacy laws, which have no equivalent here. Check Who is asked first before switching."
+msgstr "iubenda behandelde ook Amerikaanse of Braziliaanse privacywetten, zonder equivalent hier. Controleer Wie eerst toestemming moet geven vóór de overstap."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:75
+msgid "iubenda held back Google Tag Manager; this plugin recognises and holds it back too."
+msgstr "iubenda hield Google Tag Manager tegen. Deze plugin herkent en blokkeert die ook."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:78
+msgid "iubenda was set up with pasted code, so its banner position and who it asked are not imported."
+msgstr "iubenda was met geplakte code ingesteld. De bannerpositie en doelgroep worden daarom niet geïmporteerd."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:82
+msgid "A menu has an iubenda preferences link (class iubenda-cs-preferences-link). Replace it with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Een menu heeft een iubenda-voorkeurenlink (klasse iubenda-cs-preferences-link). Vervang die door een #cookie-settings-link of gebruik de automatische voettekstlink Cookie-instellingen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:85
+msgid "An iubenda legal widget is in a sidebar. It stops showing when iubenda is removed: link to your policies instead."
+msgstr "Er staat een juridische iubenda-widget in een zijbalk. Die verdwijnt na verwijdering van iubenda. Link in plaats daarvan naar uw beleidspagina’s."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:88
+msgid "iubenda sent form submissions to its hosted consent database. That stops when it is removed; its records stay with iubenda."
+msgstr "iubenda stuurde formulierinzendingen naar de gehoste toestemmingsdatabase. Dat stopt na verwijdering; de registraties blijven bij iubenda."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:228
+msgid "Deleting iubenda removes its settings only if its own delete-on-deactivation option is on; Remove leftover data deletes its settings, form mappings and scheduled checks. Imports never change its settings or contact iubenda."
+msgstr "iubenda verwijderen wist de instellingen alleen als de eigen verwijderoptie bij deactivering aanstaat. Achtergebleven gegevens verwijderen wist instellingen, formulierkoppelingen en geplande controles. Importeren wijzigt de broninstellingen nooit en neemt geen contact op met iubenda."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:98
+msgid "Some categories were on before visitors chose, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Sommige categorieën stonden aan vóór bezoekers kozen. Dat is geen duidelijke keuze. Alleen weigeringen worden overgenomen; wie aanvaardde, krijgt de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:100
+msgid "Its close button accepted all cookies, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "De sluitknop aanvaardde alle cookies. Dat is geen duidelijke keuze. Alleen weigeringen worden overgenomen; wie aanvaardde, krijgt de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:102
+msgid "If its add-on accepted cookies on scroll or after a timer, those look the same as Accept: choose Stop carrying over old consent so visitors are asked again."
+msgstr "Als de add-on cookies aanvaardde bij scrollen of na een timer, zien die keuzes er hetzelfde uit als Aanvaarden. Kies Oude toestemming niet meer overnemen zodat bezoekers de vraag opnieuw krijgen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:104
+msgid "GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "GDPR Cookie Compliance voegde uw categoriescripts zelf toe. Die stoppen na verwijdering. Voeg ze na de overstap toe aan uw thema of een plugin voor headercode. De onderstaande regels en herkende diensten worden dan tegengehouden tot toestemming. Kopieer ze vóór het verwijderen van achtergebleven gegevens."
+
+#. translators: 1: service name, 2: its tracking ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:114
+#, php-format
+msgid "GDPR Cookie Compliance loaded %1$s (%2$s) itself; it stops when the plugin is gone. Add it to your site another way, such as Site Kit or your theme: this plugin recognises it and holds it back."
+msgstr "GDPR Cookie Compliance laadde %1$s (%2$s) zelf. Dat stopt wanneer de plugin weg is. Voeg de dienst anders toe, bijvoorbeeld via Site Kit of uw thema. Deze plugin herkent en blokkeert hem."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:127
+msgid "no ID"
+msgstr "geen ID"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:238
+msgid "GDPR Cookie Compliance keeps its settings table when deleted; use Remove leftover data afterwards. Copy its category scripts first. Imports never change its settings."
+msgstr "GDPR Cookie Compliance bewaart zijn instellingentabel na verwijdering. Gebruik daarna Achtergebleven gegevens verwijderen. Kopieer eerst de categoriescripts. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:44
+msgid "country bypass"
+msgstr "uitzondering per land"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:45
+msgid "consent forwarding"
+msgstr "toestemming doorgeven"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:46
+msgid "banner-less consent"
+msgstr "toestemming zonder banner"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:71
+msgid "The Real Cookie Banner banner is switched off, so visitors' choices are not carried over."
+msgstr "De Real Cookie Banner-banner staat uit. Bezoekerskeuzes worden daarom niet overgenomen."
+
+#. translators: %s: list of Real Cookie Banner Pro features.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:81
+#, php-format
+msgid "Real Cookie Banner Pro settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching; visitors' choices are not carried over while country bypass or banner-less consent is on."
+msgstr "Real Cookie Banner Pro-instellingen worden niet geïmporteerd en stoppen na verwijdering: %s. Controleer Wie eerst toestemming moet geven en uw Google-tags vóór de overstap. Keuzes worden niet overgenomen zolang de landuitzondering of toestemming zonder banner aanstaat."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:83
+msgid "Real Cookie Banner let visitors choose single services. A category carries over as allowed only when every Real Cookie Banner service in it was accepted; otherwise it is refused. Closing its banner with the close icon is not carried over."
+msgstr "Real Cookie Banner liet bezoekers afzonderlijke diensten kiezen. Een categorie wordt alleen als toegestaan overgenomen als elke dienst erin aanvaard was; anders wordt ze geweigerd. Sluiten via het sluitpictogram wordt niet overgenomen."
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:92
+#, php-format
+msgid "Real Cookie Banner ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Real Cookie Banner voerde code uit voor deze diensten. Die stopt na verwijdering: %s. Voeg nog nodige code toe aan uw thema of een plugin voor headercode. Herkende diensten en de onderstaande scriptregels worden dan tegengehouden."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:95
+msgid "A menu has Real Cookie Banner privacy links (#consent-change, #consent-history or #consent-revoke). Replace them with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Een menu heeft Real Cookie Banner-privacylinks (#consent-change, #consent-history of #consent-revoke). Vervang ze door een #cookie-settings-link of gebruik de automatische voettekstlink Cookie-instellingen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:98
+msgid "Its banner texts are not imported: they describe its own dialog."
+msgstr "De bannerteksten worden niet geïmporteerd: die beschrijven de eigen dialoog."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:427
+msgid "Deleting Real Cookie Banner removes only its copied script files; its settings, services, content blockers and consent records stay. Remove leftover data deletes its settings, services, content blockers, groups and scan and statistics tables, but keeps consent records and the revisions they refer to. Imports never change its settings."
+msgstr "Real Cookie Banner verwijderen wist alleen gekopieerde scriptbestanden. Instellingen, diensten, inhoudsblokkeerders en registraties blijven staan. Achtergebleven gegevens verwijderen wist instellingen, diensten, blokkeerders, groepen en scan- en statistiektabellen, maar bewaart registraties en de bijbehorende revisies. Importeren wijzigt de broninstellingen nooit."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:221
+#, php-format
+msgid "%s keeps its banner texts, categories and cookie scan in its own dashboard, which this import never contacts; only settings saved on this site are imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching."
+msgstr "%s bewaart bannerteksten, categorieën en de cookiescan in het eigen dashboard. Deze import neemt daar nooit contact mee op; alleen lokale instellingen worden geïmporteerd. Controleer hier Wie eerst toestemming moet geven, Positie van de banner, Bannertekst en Keuzes onthouden vóór de overstap."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:223
+#, php-format
+msgid "Visitors' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once."
+msgstr "Keuzes van %s worden niet overgenomen: het gehoste script gebruikt een formaat dat niet met een live account is gecontroleerd. Bezoekers krijgen de vraag daarom één keer opnieuw."
+
+#. translators: 1: name of the old consent plugin, 2: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:233
+#, php-format
+msgid "Compare %1$s's cookie scan with the services this plugin found on your pages: %2$s. Add anything missing under Troubleshooting → Also hold back."
+msgstr "Vergelijk de cookiescan van %1$s met de diensten die deze plugin op uw pagina’s vond: %2$s. Voeg ontbrekende toe onder Problemen oplossen → Ook tegenhouden."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:236
+#, php-format
+msgid "This plugin has not found services on your pages yet. After switching, use Scan now on the Cookie consent tab and compare its list with %s's cookie scan; add anything missing under Troubleshooting → Also hold back."
+msgstr "Deze plugin heeft nog geen diensten op uw pagina’s gevonden. Gebruik na de overstap Nu scannen op het tabblad Cookietoestemming en vergelijk de lijst met de cookiescan van %s. Voeg ontbrekende toe onder Problemen oplossen → Ook tegenhouden."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:238
+msgid "Consent records it kept on its own servers stay there: export any you must keep before closing that account. Turn on Keep consent records here to go on documenting choices."
+msgstr "Toestemmingsregistraties op de eigen servers blijven daar staan. Exporteer wat u moet bewaren vóór u die account sluit. Schakel hier Toestemmingsregistraties bewaren in om keuzes te blijven registreren."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:42
+msgid "Termly's auto blocker held back scripts it recognised. This plugin holds back the services it recognises; compare the lists above."
+msgstr "De automatische blokkeerder van Termly hield herkende scripts tegen. Deze plugin houdt de diensten tegen die hij herkent. Vergelijk de lijsten hierboven."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:46
+msgid "Termly may have added a \"TermlyBot\" section to your robots.txt file. Remove it after switching, if it is there."
+msgstr "Termly heeft mogelijk een sectie \"TermlyBot\" aan uw robots.txt toegevoegd. Verwijder die na de overstap als ze er staat."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:128
+msgid "Deleting Termly leaves its settings and daily account check; Remove leftover data deletes them, including its saved API key. Imports never change its settings or contact Termly."
+msgstr "Termly verwijderen laat instellingen en de dagelijkse accountcontrole staan. Achtergebleven gegevens verwijderen wist die, inclusief de opgeslagen API-sleutel. Importeren wijzigt de broninstellingen nooit en neemt geen contact op met Termly."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:53
+msgid "The WPConsent banner is switched off, so visitors' choices are not carried over."
+msgstr "De WPConsent-banner staat uit. Bezoekerskeuzes worden daarom niet overgenomen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:56
+msgid "WPConsent let visitors choose single services. Only its Statistics and Marketing choices carry over; anyone who chose only some services in a category is asked again."
+msgstr "WPConsent liet bezoekers afzonderlijke diensten kiezen. Alleen keuzes voor Statistieken en Marketing worden overgenomen. Wie slechts enkele diensten in een categorie koos, krijgt de vraag opnieuw."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:58
+msgid "WPConsent Pro geolocation rules and custom scripts are not imported: check Who is asked first, and add any custom scripts to your theme or a header-code plugin before switching."
+msgstr "WPConsent Pro-locatieregels en aangepaste scripts worden niet geïmporteerd. Controleer Wie eerst toestemming moet geven en voeg aangepaste scripts vóór de overstap toe aan uw thema of een plugin voor headercode."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:180
+msgid "WPConsent removes its cookie list and settings when deleted only if its own delete-data option is on; Remove leftover data deletes its settings and scan tables but not that cookie list. Imports never change its settings."
+msgstr "WPConsent wist de cookielijst en instellingen bij verwijdering alleen als de eigen optie voor gegevensverwijdering aanstaat. Achtergebleven gegevens verwijderen wist instellingen en scantabellen, maar niet de cookielijst. Importeren wijzigt de broninstellingen nooit."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:109
+msgid "Unknown import source."
+msgstr "Onbekende importbron."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:168
+msgid "You cannot import settings."
+msgstr "U kunt geen instellingen importeren."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:204
+msgid "You do not have permission for this action."
+msgstr "U hebt geen toestemming voor deze actie."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:207
+msgid "Another import action is running. If an interrupted action left a lock, review its import record before removing the lock."
+msgstr "Er loopt al een importactie. Als een onderbroken actie een slot achterliet, controleer dan de importregistratie vóór u het slot verwijdert."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:225
+msgid "Unknown import action."
+msgstr "Onbekende importactie."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:251
+msgid "A selected page cannot be edited with a saved revision."
+msgstr "Een geselecteerde pagina kan niet met een opgeslagen revisie worden bewerkt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:266
+msgid "A source document could not render. It was not replaced."
+msgstr "Een brondocument kon niet worden weergegeven. Het werd niet vervangen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:280
+msgid "A page revision could not be saved. Nothing was replaced."
+msgstr "Een paginarevisie kon niet worden opgeslagen. Er is niets vervangen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:309
+msgid "The undo record could not be saved."
+msgstr "De herstelregistratie kon niet worden opgeslagen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:361
+msgid "This import cannot be undone."
+msgstr "Deze import kan niet ongedaan worden gemaakt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:367
+msgid "Settings changed after import. Restore the imported values before undoing, so later edits are not lost."
+msgstr "Instellingen zijn gewijzigd na de import. Herstel de geïmporteerde waarden vóór u de import ongedaan maakt, zodat latere wijzigingen niet verloren gaan."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:373
+msgid "A page changed after import or its revision is missing. Undo was stopped to protect later edits."
+msgstr "Een pagina is gewijzigd na de import of de revisie ontbreekt. Het ongedaan maken is gestopt om latere wijzigingen te beschermen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:378
+msgid "A page revision could not be restored. The undo record was kept."
+msgstr "Een paginarevisie kon niet worden hersteld. De herstelregistratie is bewaard."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:393
+msgid "Cleanup needs permission to manage options and delete plugins."
+msgstr "Opschonen vereist toestemming om opties te beheren en plugins te verwijderen."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:400
+msgid "Deactivate the source on this site and network before removing leftover data."
+msgstr "Deactiveer de bron op deze site en in het netwerk vóór u achtergebleven gegevens verwijdert."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:405
+msgid "Network-wide data is not deleted."
+msgstr "Netwerkbrede gegevens worden niet verwijderd."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:408
+msgid "The leftovers list changed. Review a fresh dry run before confirming."
+msgstr "De lijst met achtergebleven gegevens is gewijzigd. Bekijk een nieuwe simulatie vóór u bevestigt."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:414
+msgid "A source table could not be removed. Review a new dry run."
+msgstr "Een brontabel kon niet worden verwijderd. Bekijk een nieuwe simulatie."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:426
+msgid "A source post could not be removed. Review a new dry run."
+msgstr "Een bronbericht kon niet worden verwijderd. Bekijk een nieuwe simulatie."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:447
+msgid "A source term could not be removed. Review a new dry run."
+msgstr "Een bronterm kon niet worden verwijderd. Bekijk een nieuwe simulatie."
+
+#. translators: %s: folder under uploads
+#: includes/migrate/class-seoprocookieconsent-migrate.php:477
+#, php-format
+msgid "The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run."
+msgstr "De map uploads/%s kon niet worden verwijderd. Verwijder die zelf of bekijk een nieuwe simulatie."
+
+#: includes/views/consent-banner.php:27
+msgid "login"
+msgstr "aanmelden"
+
+#: includes/views/consent-banner.php:28
+msgid "security"
+msgstr "beveiliging"
+
+#: includes/views/consent-banner.php:86
+msgid "Your consent ID:"
+msgstr "Uw toestemmings-ID:"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy consent ID"
+msgstr "Toestemmings-ID kopiëren"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: includes/views/consent-banner.php:89
+msgid "Consent ID copied."
+msgstr "Toestemmings-ID gekopieerd."
+
+#: includes/views/consent-banner.php:89
+msgid "Could not copy. Select the consent ID and copy it manually."
+msgstr "Kopiëren is niet gelukt. Selecteer de toestemmings-ID en kopieer die handmatig."
+
+#. translators: %s: product slugs, comma-separated.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:270
+#, php-format
+msgid "Name the plugin or theme the report is about, one of: %s."
+msgstr "Vermeld over welke plugin of welk thema het rapport gaat. Kies uit: %s."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:279
+msgid "A report needs a title and details."
+msgstr "Een rapport heeft een titel en details nodig."
+
+#. translators: %d: number of drafts.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:307
+#, php-format
+msgid "There are already %d draft reports waiting for review. Send or delete some in Tools → Report a problem first."
+msgstr "Er wachten al %d conceptrapporten op controle. Verstuur of verwijder er eerst enkele via Gereedschap → Een probleem melden."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:341
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1034
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1205
+msgid "That report no longer exists."
+msgstr "Dat rapport bestaat niet meer."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:344
+msgid "That report has been sent already."
+msgstr "Dat rapport is al verstuurd."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Improvement"
+msgstr "Verbetering"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Problem"
+msgstr "Probleem"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:640
+msgid "That plugin or theme no longer takes reports here."
+msgstr "Die plugin of dat thema ontvangt hier geen rapporten meer."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:660
+msgid "The site could not send email."
+msgstr "De site kon geen e-mail versturen."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:710
+#: includes/wpallstars-reports/class-wpallstars-reports.php:711
+#: includes/wpallstars-reports/class-wpallstars-reports.php:769
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1112
+msgid "Report a problem"
+msgstr "Een probleem melden"
+
+#. translators: %d: number of draft reports.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:743
+#, php-format
+msgid "Your AI assistant drafted %d report about a wpallstars plugin or theme. Nothing is sent until you review it."
+msgid_plural "Your AI assistant drafted %d reports about wpallstars plugins or themes. Nothing is sent until you review them."
+msgstr[0] "Uw AI-assistent heeft %d conceptrapport over een wpallstars-plugin of -thema opgesteld. Er wordt niets verstuurd vóór u het controleert."
+msgstr[1] "Uw AI-assistent heeft %d conceptrapporten over wpallstars-plugins of -thema’s opgesteld. Er wordt niets verstuurd vóór u ze controleert."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:752
+msgid "Review reports"
+msgstr "Rapporten controleren"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:761
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1012
+msgid "Sorry, you are not allowed to review reports."
+msgstr "U mag geen rapporten controleren."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:772
+msgid "New report"
+msgstr "Nieuw rapport"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:793
+msgid "Draft saved. Check what will be sent below, then send it."
+msgstr "Concept opgeslagen. Controleer hieronder wat wordt verstuurd en verstuur het daarna."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:794
+msgid "Report sent. Thank you: the maker will look into it."
+msgstr "Rapport verstuurd. Bedankt: de maker zal het onderzoeken."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:795
+msgid "Report deleted."
+msgstr "Rapport verwijderd."
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:826
+#, php-format
+msgid "a public GitHub issue on %s"
+msgstr "een openbaar GitHub-issue in %s"
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:829
+#, php-format
+msgid "a private email to %s"
+msgstr "een privé-e-mail naar %s"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:839
+msgid "Tell the makers of the wpallstars plugins and themes on this site about a problem or an improvement, so every site using them gets the fix. Your AI assistant can draft reports too (the wpallstars/report-problem ability, or wp wpallstars report create); nothing leaves the site until an administrator sends it here."
+msgstr "Meld een probleem of verbetering aan de makers van de wpallstars-plugins en -thema’s op deze site, zodat elke site de oplossing krijgt. Uw AI-assistent kan ook concepten maken (wpallstars/report-problem of wp wpallstars report create). Niets verlaat de site tot een beheerder het hier verstuurt."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:852
+msgid "No reports yet."
+msgstr "Nog geen rapporten."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:937
+msgid "Title"
+msgstr "Titel"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:917
+msgid "Plugin or theme"
+msgstr "Plugin of thema"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:927
+msgid "Type"
+msgstr "Type"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Status"
+msgstr "Status"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Drafted by"
+msgstr "Opgesteld door"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Date"
+msgstr "Datum"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "Administrator"
+msgstr "Beheerder"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "AI assistant"
+msgstr "AI-assistent"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:882
+msgid "Draft, waiting for review"
+msgstr "Concept, wacht op controle"
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:887
+#, php-format
+msgid "Opened on GitHub %s"
+msgstr "Geopend op GitHub op %s"
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:890
+#, php-format
+msgid "Emailed %s"
+msgstr "Gemaild op %s"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:907
+msgid "All reports"
+msgstr "Alle rapporten"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:909
+msgid "Your AI assistant drafted this report. Check it says what you want the maker to know, change anything that is wrong, then send it."
+msgstr "Uw AI-assistent heeft dit rapport opgesteld. Controleer of het zegt wat u de maker wilt laten weten, verbeter fouten en verstuur het daarna."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:941
+msgid "Details"
+msgstr "Details"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:944
+msgid "What you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Leave out passwords and licence keys."
+msgstr "Wat u deed, wat u verwachtte en wat er gebeurde, met stappen om het te herhalen, of de verbetering en waarom ze zou helpen. Vermeld geen wachtwoorden of licentiesleutels."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:955
+msgid "Save draft"
+msgstr "Concept opslaan"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:960
+msgid "Open the issue on GitHub"
+msgstr "Issue openen op GitHub"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:962
+msgid "Send by email"
+msgstr "Per e-mail versturen"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:969
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:984
+msgid "What will be sent"
+msgstr "Wat wordt verstuurd"
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:988
+#, php-format
+msgid "Opens a new issue on GitHub (%s) with this text filled in, for you to submit with your own GitHub account. GitHub issues are public, so the site's address, email and IP addresses, server paths and anything that looks like a key are taken out. Check the text below before you submit it."
+msgstr "Opent een nieuw GitHub-issue (%s) met deze tekst, dat u met uw eigen GitHub-account indient. GitHub-issues zijn openbaar. Daarom worden het siteadres, e-mail- en IP-adressen, serverpaden en alles wat op een sleutel lijkt verwijderd. Controleer de tekst hieronder vóór u indient."
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:996
+#, php-format
+msgid "Sent privately by this site's email to %s, with your name and email address to reply to. Anything that looks like a password or key is taken out."
+msgstr "Privé verstuurd via de e-mail van deze site naar %s, met uw naam en e-mailadres voor het antwoord. Alles wat op een wachtwoord of sleutel lijkt, wordt verwijderd."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1003
+msgid "Changed the text or the plugin or theme? Save the draft to see the new version here."
+msgstr "Tekst, plugin of thema gewijzigd? Sla het concept op om hier de nieuwe versie te zien."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1098
+msgid "wpallstars plugins and themes"
+msgstr "wpallstars-plugins en -thema’s"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1099
+msgid "Problem reports and improvements for the makers of the wpallstars plugins and themes on this site."
+msgstr "Probleemmeldingen en verbeteringen voor de makers van de wpallstars-plugins en -thema’s op deze site."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1113
+msgid "Draft a problem report or an improvement for the maker of one of this site's wpallstars plugins or themes (list them with wpallstars/reports), so every site using it gets the fix. Use it when a problem or improvement belongs to that product's own code, not to this site's content or settings. It only saves a draft: nothing leaves the site until a site administrator reviews and sends it in Tools → Report a problem, so tell them to. Say what was done, what was expected and what happened, with steps, versions and error messages; leave out passwords, keys and personal data."
+msgstr "Stel een probleemmelding of verbetering op voor de maker van een wpallstars-plugin of -thema op deze site (lijst via wpallstars/reports), zodat elke site de oplossing krijgt. Gebruik dit voor de eigen code van het product, niet voor site-inhoud of instellingen. Alleen een concept wordt opgeslagen: niets verlaat de site tot een beheerder het controleert en verstuurt via Gereedschap → Een probleem melden. Vertel de beheerder dat. Beschrijf handelingen, verwachting en resultaat, met stappen, versies en foutmeldingen. Vermeld geen wachtwoorden, sleutels of persoonsgegevens."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1123
+msgid "The plugin folder or theme the report is about. May be left out when only one takes reports."
+msgstr "De pluginmap of het thema waarover het rapport gaat. Mag ontbreken als slechts één product rapporten ontvangt."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1151
+msgid "Problem reports"
+msgstr "Probleemmeldingen"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1152
+msgid "List the wpallstars plugins and themes that take problem reports, where each sends them, and this site's reports with their status; with an id, one report and exactly what would be sent."
+msgstr "Toon wpallstars-plugins en -thema’s die probleemmeldingen ontvangen, hun bestemming en de rapporten van deze site met hun status. Met een ID: één rapport en precies wat verstuurd zou worden."
+
+#. translators: %s: address of the Report a problem screen.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1188
+#, php-format
+msgid "Saved as a draft; nothing has been sent. Ask a site administrator to review and send it in Tools → Report a problem: %s"
+msgstr "Als concept opgeslagen; niets verstuurd. Vraag een sitebeheerder om het te controleren en te versturen via Gereedschap → Een probleem melden: %s"
+
+#: admin/js/seoprocookieconsent-theme.js:24
+msgid "Light"
+msgstr "Licht"
+
+#: admin/js/seoprocookieconsent-theme.js:28
+msgid "Dark"
+msgstr "Donker"
+
+#: admin/js/seoprocookieconsent-theme.js:32
+msgid "System"
+msgstr "Systeem"
+
+#. translators: %s: the colour mode, Light, Dark or System.
+#: admin/js/seoprocookieconsent-theme.js:63
+#, js-format
+msgid "Colour mode: %s"
+msgstr "Kleurmodus: %s"
+
+#: admin/js/seoprocookieconsent-theme.js:106
+msgid "The colour mode could not be saved. Please try again."
+msgstr "De kleurmodus kon niet worden opgeslagen. Probeer het opnieuw."
+
+#: admin/js/seoprocookieconsent-theme.js:185
+msgid "Colour mode"
+msgstr "Kleurmodus"

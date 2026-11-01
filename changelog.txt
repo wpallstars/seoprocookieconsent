@@ -2,6 +2,10 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Added: bundled Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) translations for the banner, preferences, placeholders, cookie policy, terms, editor controls and admin strings. Bundled PHP catalogs register on init (WordPress 6.2+), with just-in-time loading on modern WordPress; the admin colour-mode script gets its JSON catalog. Existing language packs keep precedence. Custom owner text stays untouched; English output and region defaults are unchanged.
+* Developers: the POT, PO, MO and script JSON catalogs ship in both release builds. Run bash scripts/update-translations.sh before a release; the plugin-specific release preflight hook rejects stale generated files, using WP-CLI locally or the WordPress CLI Docker image already used by CI. No starter core files changed.
+
 = 1.0.9 =
 * Changed: the Cookie settings dialog's Necessary row always says what the site's own necessary cookies are for, then the short names of the necessary services seen, Cloudflare first: for example "Used by: login, security, Cloudflare, Turnstile." instead of "Used by: Cloudflare Turnstile, Cloudflare." Necessary services take an optional short name (Turnstile, reCAPTCHA); the cookie policy keeps the full names and lists Cloudflare first.
 

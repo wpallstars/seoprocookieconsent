@@ -1,0 +1,2403 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText: 2026 Marcus Quinn
+# Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
+# Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEO Pro Cookie Consent 1.0.9\n"
+"Report-Msgid-Bugs-To: https://github.com/wpallstars/seoprocookieconsent/issues\n"
+"POT-Creation-Date: 2026-11-01 00:00+0000\n"
+"PO-Revision-Date: 2026-11-01 00:00+0000\n"
+"Last-Translator: Marcus Quinn\n"
+"Language-Team: fr_CA\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: seoprocookieconsent\n"
+
+#. Plugin Name of the plugin
+#. translators: %s: the plugin's name.
+#: seoprocookieconsent.php
+#: admin/includes/class-admin-manager.php:293
+#: admin/includes/class-admin-manager.php:294
+#: admin/includes/class-admin-manager.php:303
+#: admin/includes/class-admin-page.php:36
+#: admin/includes/class-network-manager.php:62
+#: admin/includes/class-network-manager.php:63
+msgid "SEO Pro Cookie Consent"
+msgstr "SEO Pro Cookie Consent"
+
+#. Plugin URI of the plugin
+#: seoprocookieconsent.php
+msgid "https://github.com/wpallstars/seoprocookieconsent"
+msgstr "https://github.com/wpallstars/seoprocookieconsent"
+
+#. Description of the plugin
+#: seoprocookieconsent.php
+msgid "Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme."
+msgstr "Consentement aux témoins simple et léger : bloque les scripts jusqu’au consentement, le demande seulement lorsque la loi et la page l’exigent et s’intègre à votre thème."
+
+#. Author of the plugin
+#: seoprocookieconsent.php
+msgid "Marcus Quinn"
+msgstr "Marcus Quinn"
+
+#. Author URI of the plugin
+#: seoprocookieconsent.php
+msgid "https://www.wpallstars.com/"
+msgstr "https://www.wpallstars.com/"
+
+#: admin/data/readme.php:32
+#: admin/includes/class-admin-manager.php:175
+msgid "Read Me"
+msgstr "Lisez-moi"
+
+#: admin/includes/class-admin-manager.php:281
+#: admin/includes/class-admin-manager.php:304
+#: admin/includes/class-admin-page.php:238
+#: admin/includes/class-network-manager.php:102
+#: includes/class-seoprocookieconsent-records.php:156
+#: includes/class-seoprocookieconsent-setup.php:167
+#: includes/views/consent-banner.php:42
+#: includes/views/consent-banner.php:47
+msgid "Settings"
+msgstr "Réglages"
+
+#. translators: %s: the plugin's name.
+#: admin/includes/class-admin-manager.php:303
+#, php-format
+msgid "%s settings"
+msgstr "Réglages de %s"
+
+#: admin/includes/class-admin-manager.php:417
+msgid "Saving…"
+msgstr "Enregistrement…"
+
+#: admin/includes/class-admin-manager.php:418
+#: admin/includes/class-network-manager.php:321
+#: includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved"
+msgstr "Enregistré"
+
+#: admin/includes/class-admin-manager.php:419
+msgid "Could not save. Please try again."
+msgstr "Impossible d’enregistrer. Veuillez réessayer."
+
+#: admin/includes/class-admin-manager.php:420
+msgid "Choose a picture"
+msgstr "Choisir une image"
+
+#: admin/includes/class-admin-manager.php:421
+msgid "Use this picture"
+msgstr "Utiliser cette image"
+
+#: admin/includes/class-admin-manager.php:422
+msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
+msgstr "Copier ces réglages dans les réglages propres à chaque site? Chaque site pourra les modifier ensuite, sauf s’ils sont imposés à tous les sites."
+
+#: admin/includes/class-admin-page.php:39
+msgid "Network"
+msgstr "Réseau"
+
+#: admin/includes/class-admin-page.php:62
+#: admin/includes/class-admin-page.php:71
+msgid "Search features"
+msgstr "Rechercher des fonctionnalités"
+
+#: admin/includes/class-admin-page.php:73
+msgid "Search"
+msgstr "Rechercher"
+
+#: admin/includes/class-admin-page.php:90
+msgid "Source code"
+msgstr "Code source"
+
+#: admin/includes/class-admin-page.php:92
+msgid "Visit website"
+msgstr "Visiter le site Web"
+
+#: admin/includes/class-admin-page.php:98
+msgid "Support"
+msgstr "Assistance"
+
+#: admin/includes/class-admin-page.php:105
+msgid "Buy me a coffee"
+msgstr "Offrez-moi un café"
+
+#: admin/includes/class-admin-page.php:117
+#: includes/views/consent-banner.php:38
+#: includes/views/consent-banner.php:61
+msgid "(opens in a new tab)"
+msgstr "(s’ouvre dans un nouvel onglet)"
+
+#. translators: Browser title of a section of an admin screen. 1: the screen's name, 2: the section's name.
+#: admin/includes/class-admin-page.php:170
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: admin/includes/class-admin-page.php:182
+msgid "Search results"
+msgstr "Résultats de recherche"
+
+#: admin/includes/class-admin-page.php:239
+msgid "Discover"
+msgstr "Découvrir"
+
+#: admin/includes/class-admin-page.php:240
+msgid "About"
+msgstr "À propos"
+
+#: admin/includes/class-admin-page.php:243
+#: admin/includes/class-admin-page.php:274
+msgid "SEO Pro Cookie Consent sections"
+msgstr "Sections de SEO Pro Cookie Consent"
+
+#: admin/includes/class-admin-theme.php:172
+msgid "You cannot change this."
+msgstr "Vous ne pouvez pas modifier ceci."
+
+#: admin/includes/class-admin-theme.php:176
+msgid "Unknown colour mode."
+msgstr "Mode de couleur inconnu."
+
+#: admin/includes/class-admin-theme.php:179
+msgid "The colour mode could not be saved."
+msgstr "Impossible d’enregistrer le mode de couleur."
+
+#: admin/includes/class-network-manager.php:122
+msgid "Apply to every site"
+msgstr "Appliquer à tous les sites"
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:175
+#, php-format
+msgid "This network has more than %d sites, so they are not compared here."
+msgstr "Ce réseau compte plus de %d sites; ils ne sont donc pas comparés ici."
+
+#: admin/includes/class-network-manager.php:178
+msgid "No site has used SEO Pro Cookie Consent yet. Each starts with these settings."
+msgstr "Aucun site n’a encore utilisé SEO Pro Cookie Consent. Chacun commence avec ces réglages."
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site uses these settings."
+msgstr "Tous les sites utilisent ces réglages."
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site has these settings."
+msgstr "Tous les sites ont ces réglages."
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:188
+#, php-format
+msgid "Every site uses these settings. When they stop applying, %1$d of %2$d sites goes back to different settings of its own: %3$s."
+msgid_plural "Every site uses these settings. When they stop applying, %1$d of %2$d sites go back to different settings of their own: %3$s."
+msgstr[0] "Tous les sites utilisent ces réglages. Lorsqu’ils ne seront plus imposés, %1$d site sur %2$d reprendra ses propres réglages différents : %3$s."
+msgstr[1] "Tous les sites utilisent ces réglages. Lorsqu’ils ne seront plus imposés, %1$d sites sur %2$d reprendront leurs propres réglages différents : %3$s."
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:190
+#, php-format
+msgid "%1$d of %2$d sites has different settings of its own: %3$s."
+msgid_plural "%1$d of %2$d sites have different settings of their own: %3$s."
+msgstr[0] "%1$d site sur %2$d a ses propres réglages différents : %3$s."
+msgstr[1] "%1$d sites sur %2$d ont leurs propres réglages différents : %3$s."
+
+#: admin/includes/class-network-manager.php:193
+msgid "Make every site the same"
+msgstr "Uniformiser tous les sites"
+
+#. translators: 1: list of sites, 2: number of other sites
+#: admin/includes/class-network-manager.php:247
+#, php-format
+msgid "%1$s and %2$d more"
+msgid_plural "%1$s and %2$d more"
+msgstr[0] "%1$s et %2$d autre"
+msgstr[1] "%1$s et %2$d autres"
+
+#: admin/includes/class-network-manager.php:297
+msgid "You are not allowed to change the network’s settings."
+msgstr "Vous n’avez pas l’autorisation de modifier les réglages du réseau."
+
+#: admin/includes/class-network-manager.php:345
+msgid "Every site now uses these settings."
+msgstr "Tous les sites utilisent maintenant ces réglages."
+
+#: admin/includes/class-network-manager.php:346
+msgid "Each site uses its own settings again."
+msgstr "Chaque site utilise de nouveau ses propres réglages."
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:366
+#, php-format
+msgid "%d site now has these settings."
+msgid_plural "%d sites now have these settings."
+msgstr[0] "%d site a maintenant ces réglages."
+msgstr[1] "%d sites ont maintenant ces réglages."
+
+#: admin/includes/class-network-manager.php:367
+msgid "Every site already has these settings."
+msgstr "Tous les sites ont déjà ces réglages."
+
+#: admin/includes/class-replaced-plugins.php:157
+msgid "Redundant"
+msgstr "Superflu"
+
+#: admin/includes/class-replaced-plugins.php:212
+msgid "You are not allowed to deactivate this plugin."
+msgstr "Vous n’avez pas l’autorisation de désactiver cette extension."
+
+#: admin/includes/class-replaced-plugins.php:215
+msgid "SEO Pro Cookie Consent only deactivates plugins it replaces."
+msgstr "SEO Pro Cookie Consent désactive seulement les extensions qu’il remplace."
+
+#: admin/includes/class-replaced-plugins.php:308
+msgid "Plugin deactivated."
+msgstr "Extension désactivée."
+
+#: admin/includes/class-replaced-plugins.php:329
+#: admin/includes/class-replaced-plugins.php:594
+#: admin/includes/class-replaced-plugins.php:611
+msgid "Show the setting"
+msgstr "Afficher le réglage"
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:336
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: %s is on and takes over once you deactivate this plugin. Then you can delete it."
+msgstr "SEO Pro Cookie Consent rend cette extension superflue : %s est activé et prend le relais dès que vous désactivez cette extension. Vous pourrez ensuite la supprimer."
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:340
+#, php-format
+msgid "SEO Pro Cookie Consent can do this plugin's job: %1$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %2$s."
+msgstr "SEO Pro Cookie Consent peut remplacer cette extension : %1$s est activé et prend le relais après sa désactivation, sauf pour ces fonctions que SEO Pro Cookie Consent n’offre pas : %2$s."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:344
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then deactivate and delete this plugin."
+msgstr "SEO Pro Cookie Consent rend cette extension superflue : activez %s dans SEO Pro Cookie Consent, puis désactivez et supprimez cette extension."
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:348
+#, php-format
+msgid "SEO Pro Cookie Consent can do part of this plugin's job with %1$s. It does not do these, which this plugin has on: %2$s."
+msgstr "SEO Pro Cookie Consent peut remplacer une partie de cette extension avec %1$s. Il n’offre pas ces fonctions qui y sont activées : %2$s."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:352
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then you can delete this plugin."
+msgstr "SEO Pro Cookie Consent rend cette extension superflue : activez %s dans SEO Pro Cookie Consent, puis supprimez cette extension."
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:356
+#, php-format
+msgid "No longer needed: %s in SEO Pro Cookie Consent does this plugin's job. You can delete it."
+msgstr "Plus nécessaire : %s dans SEO Pro Cookie Consent remplace cette extension. Vous pouvez la supprimer."
+
+#: admin/includes/class-replaced-plugins.php:544
+msgid "SEO Pro Cookie Consent can do the job of these plugins:"
+msgstr "SEO Pro Cookie Consent peut remplacer ces extensions :"
+
+#: admin/includes/class-replaced-plugins.php:550
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:186
+msgid "Hide"
+msgstr "Masquer"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:570
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it. Then you can delete it."
+msgstr "%1$s : %2$s est activé et prend le relais après la désactivation. Vous pourrez ensuite supprimer l’extension."
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:574
+#: admin/includes/class-replaced-plugins.php:587
+#: admin/includes/class-settings-manager.php:489
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:238
+#, php-format
+msgid "Deactivate %s"
+msgstr "Désactiver %s"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:583
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %3$s. Deactivate it only if you no longer need them."
+msgstr "%1$s : %2$s est activé et prend le relais après la désactivation, sauf pour ces fonctions que SEO Pro Cookie Consent n’offre pas : %3$s. Désactivez seulement si vous n’en avez plus besoin."
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:592
+#, php-format
+msgid "%1$s: %2$s can do part of its job. SEO Pro Cookie Consent does not do these, which it has on: %3$s."
+msgstr "%1$s : %2$s peut remplacer une partie des fonctions. SEO Pro Cookie Consent n’offre pas ces fonctions qui y sont activées : %3$s."
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:599
+#, php-format
+msgid "%1$s is inactive and no longer needed: %2$s does its job."
+msgstr "%1$s est inactive et n’est plus nécessaire : %2$s la remplace."
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:603
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:249
+#, php-format
+msgid "Delete %s"
+msgstr "Supprimer %s"
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:609
+#, php-format
+msgid "%1$s: switch on %2$s, then deactivate and delete it."
+msgstr "%1$s : activez %2$s, puis désactivez et supprimez l’extension."
+
+#: admin/includes/class-replaced-plugins.php:620
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:346
+msgid "You are not allowed to manage plugins on this site."
+msgstr "Vous n’avez pas l’autorisation de gérer les extensions de ce site."
+
+#. translators: %s: search text
+#: admin/includes/class-settings-manager.php:104
+#, php-format
+msgid "Results for “%s”"
+msgstr "Résultats pour « %s »"
+
+#. translators: %d: number of matching features
+#: admin/includes/class-settings-manager.php:112
+#, php-format
+msgid "%d feature found."
+msgid_plural "%d features found."
+msgstr[0] "%d fonctionnalité trouvée."
+msgstr[1] "%d fonctionnalités trouvées."
+
+#: admin/includes/class-settings-manager.php:113
+msgid "No features match. Try another word."
+msgstr "Aucune fonctionnalité correspondante. Essayez un autre mot."
+
+#: admin/includes/class-settings-manager.php:117
+#: admin/includes/class-settings-manager.php:158
+msgid "Changes are saved automatically."
+msgstr "Les modifications sont enregistrées automatiquement."
+
+#: admin/includes/class-settings-manager.php:156
+msgid "New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically."
+msgstr "Les nouveaux sites commencent avec ces réglages. Appliquez une fiche à tous les sites pour qu’ils ne puissent pas la modifier. Les modifications sont enregistrées automatiquement."
+
+#: admin/includes/class-settings-manager.php:171
+msgid "No settings yet."
+msgstr "Aucun réglage pour le moment."
+
+#: admin/includes/class-settings-manager.php:258
+msgid "Options"
+msgstr "Options"
+
+#. translators: %s: setting name
+#: admin/includes/class-settings-manager.php:260
+#, php-format
+msgid "for %s"
+msgstr "pour %s"
+
+#: admin/includes/class-settings-manager.php:291
+msgid "The network administrator sets this for every site."
+msgstr "L’administrateur du réseau impose ce réglage à tous les sites."
+
+#: admin/includes/class-settings-manager.php:293
+msgid "Change it for the network"
+msgstr "Modifier pour le réseau"
+
+#: admin/includes/class-settings-manager.php:343
+msgid "Troubleshooting"
+msgstr "Dépannage"
+
+#: admin/includes/class-settings-manager.php:344
+msgid "Leave these as they are unless something is missing or broken."
+msgstr "Laissez ces réglages tels quels, sauf si un élément manque ou ne fonctionne pas."
+
+#: admin/includes/class-settings-manager.php:500
+msgid "Replaces:"
+msgstr "Remplace :"
+
+#. translators: %s: plugin names
+#: admin/includes/class-settings-manager.php:507
+#, php-format
+msgid "%s is still active, so it does this job and this setting waits until it is deactivated."
+msgstr "%s est encore active et remplit cette fonction. Ce réglage attend sa désactivation."
+
+#: admin/includes/class-settings-manager.php:586
+msgid "Tokens:"
+msgstr "Variables :"
+
+#: admin/includes/class-settings-manager.php:588
+msgid "Insert token"
+msgstr "Insérer une variable"
+
+#: admin/includes/class-settings-manager.php:683
+msgid "Select all"
+msgstr "Tout sélectionner"
+
+#: admin/includes/class-settings-manager.php:684
+msgid "Clear"
+msgstr "Effacer"
+
+#: admin/includes/class-settings-manager.php:701
+msgid "(always chosen)"
+msgstr "(toujours sélectionné)"
+
+#. translators: %s: a choice, such as Facebook.
+#: admin/includes/class-settings-manager.php:710
+#, php-format
+msgid "Move %s: drag, or press the up or down arrow key"
+msgstr "Déplacer %s : glissez ou appuyez sur la flèche vers le haut ou le bas"
+
+#: admin/includes/class-settings-manager.php:726
+msgid "Drag the handles to change the order."
+msgstr "Faites glisser les poignées pour modifier l’ordre."
+
+#: admin/includes/class-settings-manager.php:729
+msgid "Choices with a lock are always chosen."
+msgstr "Les choix avec un cadenas sont toujours sélectionnés."
+
+#: admin/includes/class-settings-manager.php:834
+msgid "Choose picture"
+msgstr "Choisir une image"
+
+#: admin/includes/class-settings-manager.php:839
+msgid "Remove"
+msgstr "Retirer"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:28
+#: includes/admin/class-seoprocookieconsent-import-tab.php:101
+msgid "Import"
+msgstr "Importer"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:50
+msgid "Move here"
+msgstr "Migrer ici"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:51
+msgid "Review the dry run below. Import fills only default settings and adds missing script rules. Pages change only when selected. Check the banner and pages, then deactivate and delete the old plugin. Purge page caches after switching."
+msgstr "Vérifiez la simulation ci-dessous. L’importation remplit seulement les réglages par défaut et ajoute les règles de scripts manquantes. Seules les pages sélectionnées changent. Vérifiez la bannière et les pages, puis désactivez et supprimez l’ancienne extension. Videz les caches de pages après le changement."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:65
+msgid "Dry run: settings and script rules to add"
+msgstr "Simulation : réglages et règles de scripts à ajouter"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:67
+msgid "Consent cookie mapping"
+msgstr "Correspondance des témoins de consentement"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:71
+msgid "No choices carry over: visitors are asked again."
+msgstr "Aucun choix n’est transféré : le consentement sera demandé de nouveau."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:73
+msgid "Only complete explicit choices carry over; dismissing the banner does not allow anything. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive."
+msgstr "Seuls les choix explicites complets sont transférés; fermer la bannière n’autorise rien. Les contenus intégrés sans catégorie équivalente restent désactivés. Le transfert commence seulement lorsque l’ancienne bannière est inactive."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:76
+msgid "Policy pages (select each page to confirm conversion)"
+msgstr "Pages de politiques (sélectionnez chaque page pour confirmer sa conversion)"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:81
+msgid "Replace with Cookie policy block, and turn on Cookie policy (Policies tab) so it shows."
+msgstr "Remplacer par le bloc Politique de témoins et activer Politique de témoins (onglet Politiques) pour l’afficher."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:82
+msgid "Replace with Cookie settings button block."
+msgstr "Remplacer par le bloc Bouton des réglages des témoins."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:83
+msgid "Keep your edited document as editable HTML, with a revision."
+msgstr "Conserver votre document modifié en HTML modifiable, avec une révision."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:84
+msgid "No document is selected, so it shows nothing. Remove it yourself."
+msgstr "Aucun document n’est sélectionné; rien ne s’affiche. Supprimez-le vous-même."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:85
+msgid "Form or live list with no direct equivalent. Not changed: replace or remove it yourself."
+msgstr "Formulaire ou liste dynamique sans équivalent direct. Aucun changement : remplacez ou supprimez cet élément vous-même."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:86
+msgid "Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back."
+msgstr "Contenu affiché seulement après acceptation. Aucun changement : retirez vous-même ses scripts du code court; les services reconnus et vos règles de scripts seront ensuite bloqués."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:87
+msgid "Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself."
+msgstr "Bouton, lien ou état de bannière sans équivalent ici. Aucun changement : remplacez ou supprimez cet élément vous-même."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:88
+msgid "Make this link or button open Cookie settings, keeping its text."
+msgstr "Faire ouvrir les réglages des témoins par ce lien ou ce bouton, en conservant son texte."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:89
+msgid "Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognises them."
+msgstr "Conserver le contenu et retirer les balises qui l’entourent. Les scripts sont ajoutés à Bloquer aussi, sauf si cette extension les reconnaît déjà."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:90
+msgid "Keep the content and remove the tags around it."
+msgstr "Conserver le contenu et retirer les balises qui l’entourent."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:91
+msgid "Hosted document, button or widget that stops working when the old plugin or account goes. Not changed: replace it with your own page or link, or remove it yourself."
+msgstr "Document, bouton ou widget hébergé qui cesse de fonctionner sans l’ancienne extension ou le compte. Aucun changement : remplacez-le par votre propre page ou lien, ou supprimez-le vous-même."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:92
+msgid "Marked to wait for the old banner, so it never loads without it. Not changed: make it a normal script or embed again yourself."
+msgstr "Configuré pour attendre l’ancienne bannière, donc ne se charge jamais sans elle. Aucun changement : rétablissez vous-même un script ou un contenu intégré normal."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Freeze the rendered document as editable HTML, with a revision."
+msgstr "Figer le document affiché en HTML modifiable, avec une révision."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Cannot render while the source is inactive: rewrite this document or reactivate the source before importing."
+msgstr "Impossible d’afficher le document lorsque la source est inactive. Réécrivez-le ou réactivez la source avant l’importation."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:105
+msgid "Stop carrying over old consent"
+msgstr "Cesser de transférer l’ancien consentement"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:108
+#: includes/admin/class-seoprocookieconsent-import-tab.php:124
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:253
+msgid "Remove leftover data"
+msgstr "Supprimer les données restantes"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:111
+msgid "Kept: old consent records, data requests and anything not known to be generated. Export records from the old plugin before deleting it if you must keep them, then remove these tables or folders yourself after your retention period."
+msgstr "Conservés : anciens registres de consentement, demandes de données et tout élément dont la génération n’est pas certaine. Exportez les registres à conserver depuis l’ancienne extension avant de la supprimer, puis supprimez vous-même ces tables ou dossiers après votre période de conservation."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:116
+msgid "Nothing to remove."
+msgstr "Rien à supprimer."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:123
+msgid "Remove exactly the listed data from this site. This cannot be undone. Make a backup first. Network-wide data is not removed."
+msgstr "Supprimer exactement les données indiquées de ce site. Cette action est irréversible. Faites d’abord une sauvegarde. Les données du réseau ne sont pas supprimées."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:130
+msgid "No supported source data found."
+msgstr "Aucune donnée source prise en charge trouvée."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:132
+msgid "Import history"
+msgstr "Historique des importations"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:134
+msgid "Undone"
+msgstr "Annulé"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:138
+msgid "Undo"
+msgstr "Annuler"
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:157
+msgid "You cannot import on this screen."
+msgstr "Vous ne pouvez pas importer depuis cet écran."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:163
+msgid "Confirm the irreversible cleanup first."
+msgstr "Confirmez d’abord le nettoyage irréversible."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:75
+#, php-format
+msgid "Import from %s first"
+msgstr "Importer d’abord depuis %s"
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:182
+msgid "Move to SEO Pro Cookie Consent:"
+msgstr "Migrer vers SEO Pro Cookie Consent :"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:204
+#, php-format
+msgid "%s is asking your visitors now. Bring its settings across, then switch."
+msgstr "%s demande actuellement le consentement à vos visiteurs. Transférez ses réglages, puis effectuez le changement."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:207
+#, php-format
+msgid "%s is not active, but its settings are still here. Bring them across."
+msgstr "%s n’est pas active, mais ses réglages sont encore présents. Transférez-les."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:209
+msgid "Pages that show its documents may already be blank."
+msgstr "Les pages affichant ses documents sont peut-être déjà vides."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:214
+#, php-format
+msgid "Import from %s"
+msgstr "Importer depuis %s"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:220
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once and visitors keep their choices."
+msgstr "Vérifiez l’importation, puis désactivez %s : SEO Pro Cookie Consent prend immédiatement le relais et les visiteurs conservent leurs choix."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:222
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Vérifiez l’importation, puis désactivez %s : SEO Pro Cookie Consent prend immédiatement le relais."
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:225
+#, php-format
+msgid "Check the import and turn on Cookie consent, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Vérifiez l’importation et activez Consentement aux témoins, puis désactivez %s : SEO Pro Cookie Consent prend immédiatement le relais."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:227
+msgid "If it has a delete-data setting, turn that on first."
+msgstr "Si un réglage de suppression des données existe, activez-le d’abord."
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:229
+msgid "Check the import"
+msgstr "Vérifier l’importation"
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:231
+msgid "Turn on Cookie consent"
+msgstr "Activer le consentement aux témoins"
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:244
+#, php-format
+msgid "%s left data on the site."
+msgstr "%s a laissé des données sur le site."
+
+#: includes/class-seoprocookieconsent-blocker.php:320
+#: includes/features/class-seoprocookieconsent-consent.php:402
+msgid "This content"
+msgstr "Ce contenu"
+
+#: includes/class-seoprocookieconsent-blocker.php:321
+msgid "content"
+msgstr "contenu"
+
+#. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
+#. translators: 1: service name; 2: cookie category.
+#: includes/class-seoprocookieconsent-blocker.php:325
+#: includes/features/class-seoprocookieconsent-consent.php:399
+#, php-format
+msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
+msgstr "%1$s peut déposer des témoins. Le contenu se charge si vous l’autorisez ou si vous autorisez %2$s dans les réglages des témoins."
+
+#. translators: %s: what is embedded, such as video or map.
+#: includes/class-seoprocookieconsent-blocker.php:327
+#, php-format
+msgid "Load %s"
+msgstr "Charger %s"
+
+#: includes/class-seoprocookieconsent-blocker.php:334
+#: includes/features/class-seoprocookieconsent-consent.php:404
+#: includes/features/class-seoprocookieconsent-consent.php:506
+#: includes/features/class-seoprocookieconsent-consent.php:763
+#: includes/features/class-seoprocookieconsent-consent.php:775
+#: includes/features/class-seoprocookieconsent-consent.php:834
+#: includes/features/class-seoprocookieconsent-consent.php:860
+#: includes/views/consent-banner.php:55
+msgid "Cookie settings"
+msgstr "Réglages des témoins"
+
+#: includes/class-seoprocookieconsent-network-differences.php:183
+#: includes/class-seoprocookieconsent-network-settings.php:223
+#: includes/class-seoprocookieconsent-network-settings.php:244
+msgid "This setting is set on each site."
+msgstr "Ce réglage est défini sur chaque site."
+
+#. translators: %d: number of sites
+#: includes/class-seoprocookieconsent-network-differences.php:188
+#, php-format
+msgid "This network has more than %d sites, too many to change at once."
+msgstr "Ce réseau compte plus de %d sites, trop pour les modifier tous à la fois."
+
+#: includes/class-seoprocookieconsent-network-settings.php:231
+#: includes/class-seoprocookieconsent-network-settings.php:253
+#: includes/class-seoprocookieconsent-settings.php:392
+#: includes/class-seoprocookieconsent-settings.php:408
+msgid "The setting could not be saved. Please try again."
+msgstr "Impossible d’enregistrer le réglage. Veuillez réessayer."
+
+#: includes/class-seoprocookieconsent-records.php:157
+#: includes/views/consent-banner.php:43
+#: includes/views/consent-banner.php:92
+msgid "Reject all"
+msgstr "Tout refuser"
+
+#: includes/class-seoprocookieconsent-records.php:158
+#: includes/views/consent-banner.php:44
+#: includes/views/consent-banner.php:94
+msgid "Accept all"
+msgstr "Tout accepter"
+
+#: includes/class-seoprocookieconsent-records.php:159
+#: includes/views/consent-banner.php:48
+msgid "OK"
+msgstr "OK"
+
+#: includes/class-seoprocookieconsent-records.php:160
+#: includes/views/consent-banner.php:93
+msgid "Save choices"
+msgstr "Enregistrer mes choix"
+
+#: includes/class-seoprocookieconsent-records.php:161
+#: includes/views/consent-banner.php:56
+msgid "Close"
+msgstr "Fermer"
+
+#: includes/class-seoprocookieconsent-records.php:163
+#: includes/views/consent-banner.php:59
+msgid "Choose which cookies to allow. You can change this at any time from the Cookie settings link."
+msgstr "Choisissez les témoins à autoriser. Vous pouvez modifier votre choix en tout temps à partir du lien Réglages des témoins."
+
+#: includes/class-seoprocookieconsent-records.php:167
+#: includes/features/class-seoprocookieconsent-policy.php:42
+#: includes/features/class-seoprocookieconsent-policy.php:65
+#: includes/views/consent-banner.php:38
+#: includes/views/consent-banner.php:61
+msgid "Cookie policy"
+msgstr "Politique de témoins"
+
+#: includes/class-seoprocookieconsent-records.php:238
+msgid "Choice is too large."
+msgstr "Le choix est trop volumineux."
+
+#: includes/class-seoprocookieconsent-records.php:247
+msgid "Invalid choice."
+msgstr "Choix invalide."
+
+#: includes/class-seoprocookieconsent-records.php:252
+msgid "Invalid categories."
+msgstr "Catégories invalides."
+
+#: includes/class-seoprocookieconsent-records.php:258
+msgid "Invalid services."
+msgstr "Services invalides."
+
+#: includes/class-seoprocookieconsent-records.php:262
+msgid "Records are not ready yet."
+msgstr "Les registres ne sont pas encore prêts."
+
+#: includes/class-seoprocookieconsent-records.php:275
+msgid "Could not store choice."
+msgstr "Impossible d’enregistrer le choix."
+
+#: includes/class-seoprocookieconsent-records.php:305
+msgid "Export consent records (CSV)"
+msgstr "Exporter les registres de consentement (CSV)"
+
+#: includes/class-seoprocookieconsent-records.php:307
+msgid "Export consent snapshots (CSV)"
+msgstr "Exporter les instantanés de consentement (CSV)"
+
+#: includes/class-seoprocookieconsent-records.php:324
+msgid "Older records"
+msgstr "Registres plus anciens"
+
+#: includes/class-seoprocookieconsent-records.php:329
+msgid "Look up a consent ID"
+msgstr "Rechercher un identifiant de consentement"
+
+#: includes/class-seoprocookieconsent-records.php:331
+msgid "Look up"
+msgstr "Rechercher"
+
+#: includes/class-seoprocookieconsent-records.php:338
+msgid "You cannot look up consent records."
+msgstr "Vous ne pouvez pas rechercher des registres de consentement."
+
+#: includes/class-seoprocookieconsent-records.php:344
+msgid "Invalid consent ID. Enter 32 lowercase hexadecimal characters."
+msgstr "Identifiant de consentement invalide. Saisissez 32 caractères hexadécimaux en minuscules."
+
+#: includes/class-seoprocookieconsent-records.php:347
+msgid "Consent records are not ready yet. Open settings with recording enabled first."
+msgstr "Les registres de consentement ne sont pas encore prêts. Ouvrez d’abord les réglages avec l’enregistrement activé."
+
+#: includes/class-seoprocookieconsent-records.php:354
+msgid "Could not read consent records."
+msgstr "Impossible de lire les registres de consentement."
+
+#: includes/class-seoprocookieconsent-records.php:362
+#: includes/class-seoprocookieconsent-records.php:381
+msgid "Consent records"
+msgstr "Registres de consentement"
+
+#: includes/class-seoprocookieconsent-records.php:363
+msgid "Consent ID:"
+msgstr "Identifiant de consentement :"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Recorded (UTC)"
+msgstr "Enregistrement (UTC)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice time (UTC)"
+msgstr "Heure du choix (UTC)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice (JSON)"
+msgstr "Choix (JSON)"
+
+#: includes/class-seoprocookieconsent-records.php:365
+#: includes/features/class-seoprocookieconsent-consent.php:184
+msgid "Policy version"
+msgstr "Version de la politique"
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Snapshot"
+msgstr "Instantané"
+
+#: includes/class-seoprocookieconsent-records.php:374
+msgid "No unexpired records found for this consent ID."
+msgstr "Aucun registre non expiré trouvé pour cet identifiant de consentement."
+
+#: includes/class-seoprocookieconsent-records.php:378
+msgid "Back to settings"
+msgstr "Retour aux réglages"
+
+#: includes/class-seoprocookieconsent-records.php:400
+msgid "You cannot export consent records."
+msgstr "Vous ne pouvez pas exporter les registres de consentement."
+
+#: includes/class-seoprocookieconsent-records.php:404
+msgid "No consent records yet."
+msgstr "Aucun registre de consentement pour le moment."
+
+#: includes/class-seoprocookieconsent-services.php:45
+msgid "Necessary"
+msgstr "Nécessaires"
+
+#: includes/class-seoprocookieconsent-services.php:46
+msgid "Needed for the site to work, such as remembering your cookie choices. Always on."
+msgstr "Nécessaires au fonctionnement du site, par exemple pour mémoriser vos choix de témoins. Toujours activés."
+
+#: includes/class-seoprocookieconsent-services.php:49
+msgid "Preferences"
+msgstr "Préférences"
+
+#: includes/class-seoprocookieconsent-services.php:50
+msgid "Remember your choices and load extras such as live chat."
+msgstr "Mémorisent vos choix et chargent des fonctions comme le clavardage en direct."
+
+#: includes/class-seoprocookieconsent-services.php:53
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: includes/class-seoprocookieconsent-services.php:54
+msgid "Help us see how the site is used, so we can improve it."
+msgstr "Nous aident à comprendre l’utilisation du site afin de l’améliorer."
+
+#: includes/class-seoprocookieconsent-services.php:57
+msgid "Embedded content"
+msgstr "Contenu intégré"
+
+#: includes/class-seoprocookieconsent-services.php:58
+msgid "Videos, maps and posts from other sites, which may track you there."
+msgstr "Vidéos, cartes et publications d’autres sites, qui peuvent vous y suivre."
+
+#: includes/class-seoprocookieconsent-services.php:61
+msgid "Marketing"
+msgstr "Marketing"
+
+#: includes/class-seoprocookieconsent-services.php:62
+msgid "Measure and personalise ads, on this site and others."
+msgstr "Mesurent et personnalisent les publicités sur ce site et ailleurs."
+
+#: includes/class-seoprocookieconsent-services.php:157
+msgid "Tells people from bots, when bot protection is on"
+msgstr "Distingue les personnes des robots lorsque la protection est activée"
+
+#: includes/class-seoprocookieconsent-services.php:157
+#: includes/class-seoprocookieconsent-services.php:192
+#: includes/class-seoprocookieconsent-services.php:315
+msgid "30 minutes"
+msgstr "30 minutes"
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "Remembers that you passed a security check"
+msgstr "Mémorise que vous avez réussi une vérification de sécurité"
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "30 minutes, unless the site sets another time"
+msgstr "30 minutes, sauf si le site définit une autre durée"
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Tells visitors who share an IP address apart, when rate limiting needs it"
+msgstr "Distingue les visiteurs qui partagent une adresse IP lorsque la limitation du débit l’exige"
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Varies"
+msgstr "Variable"
+
+#: includes/class-seoprocookieconsent-services.php:168
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser."
+msgstr "Vérifie que les formulaires sont envoyés par une personne plutôt qu’un robot. Reçoit votre adresse IP et des renseignements sur votre navigateur."
+
+#: includes/class-seoprocookieconsent-services.php:176
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser, and may set cookies on Google's own sites."
+msgstr "Vérifie que les formulaires sont envoyés par une personne plutôt qu’un robot. Reçoit votre adresse IP et des renseignements sur votre navigateur et peut déposer des témoins sur les sites de Google."
+
+#: includes/class-seoprocookieconsent-services.php:183
+msgid "Tells people from bots"
+msgstr "Distingue les personnes des robots"
+
+#: includes/class-seoprocookieconsent-services.php:183
+#: includes/class-seoprocookieconsent-services.php:342
+msgid "30 days"
+msgstr "30 jours"
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:192
+msgid "Helps prevent payment fraud"
+msgstr "Aide à prévenir la fraude de paiement"
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:351
+#: includes/features/class-seoprocookieconsent-policy.php:120
+msgid "1 year"
+msgstr "1 an"
+
+#: includes/class-seoprocookieconsent-services.php:200
+msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's own sites."
+msgstr "Traite les paiements et aide à prévenir la fraude. Peut déposer des témoins sur les sites de PayPal."
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:360
+msgid "Measures ad conversions"
+msgstr "Mesure les conversions publicitaires"
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:324
+msgid "3 months"
+msgstr "3 mois"
+
+#: includes/class-seoprocookieconsent-services.php:278
+msgid "Shows and measures ads"
+msgstr "Affiche et mesure les publicités"
+
+#: includes/class-seoprocookieconsent-services.php:278
+#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:360
+msgid "13 months"
+msgstr "13 mois"
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:377
+msgid "Tells visitors apart"
+msgstr "Distingue les visiteurs"
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:398
+msgid "2 years"
+msgstr "2 ans"
+
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:315
+#: includes/class-seoprocookieconsent-services.php:361
+msgid "Keeps the visit together"
+msgstr "Regroupe les activités d’une visite"
+
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:361
+msgid "1 day"
+msgstr "1 jour"
+
+#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:333
+msgid "Measures and personalises ads"
+msgstr "Mesure et personnalise les publicités"
+
+#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:466
+msgid "6 months"
+msgstr "6 mois"
+
+#: includes/class-seoprocookieconsent-services.php:383
+#: includes/class-seoprocookieconsent-services.php:394
+msgid "video"
+msgstr "vidéo"
+
+#: includes/class-seoprocookieconsent-services.php:387
+msgid "Remembers player settings"
+msgstr "Mémorise les réglages du lecteur"
+
+#: includes/class-seoprocookieconsent-services.php:388
+#: includes/class-seoprocookieconsent-services.php:398
+msgid "Counts views"
+msgstr "Compte les visionnements"
+
+#: includes/class-seoprocookieconsent-services.php:388
+#: includes/class-seoprocookieconsent-services.php:457
+msgid "Session"
+msgstr "Session"
+
+#: includes/class-seoprocookieconsent-services.php:404
+msgid "map"
+msgstr "carte"
+
+#: includes/class-seoprocookieconsent-services.php:408
+msgid "Remembers preferences"
+msgstr "Mémorise les préférences"
+
+#: includes/class-seoprocookieconsent-services.php:414
+#: includes/class-seoprocookieconsent-services.php:422
+msgid "player"
+msgstr "lecteur"
+
+#: includes/class-seoprocookieconsent-services.php:430
+#: includes/class-seoprocookieconsent-services.php:438
+#: includes/class-seoprocookieconsent-services.php:446
+msgid "post"
+msgstr "publication"
+
+#: includes/class-seoprocookieconsent-services.php:457
+msgid "Keeps the chat connected"
+msgstr "Maintient la connexion du clavardage"
+
+#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:475
+msgid "Keeps the chat going"
+msgstr "Maintient le clavardage"
+
+#: includes/class-seoprocookieconsent-services.php:475
+msgid "9 months"
+msgstr "9 mois"
+
+#: includes/class-seoprocookieconsent-settings.php:380
+msgid "Unknown setting."
+msgstr "Réglage inconnu."
+
+#: includes/class-seoprocookieconsent-settings.php:383
+msgid "The network administrator sets this for every site, so it cannot be changed here."
+msgstr "L’administrateur du réseau impose ce réglage à tous les sites; il ne peut pas être modifié ici."
+
+#: includes/class-seoprocookieconsent-settings.php:1054
+msgid "You are not allowed to change these settings."
+msgstr "Vous n’avez pas l’autorisation de modifier ces réglages."
+
+#: includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved. Reload the page to see the change."
+msgstr "Enregistré. Rechargez la page pour voir la modification."
+
+#: includes/class-seoprocookieconsent-setup.php:263
+msgid "Consent"
+msgstr "Consentement"
+
+#: includes/class-seoprocookieconsent-setup.php:264
+msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
+msgstr "Bloquer les témoins jusqu’à ce que les visiteurs les autorisent, avec une courte bannière seulement au besoin."
+
+#: includes/class-seoprocookieconsent-setup.php:267
+msgid "Policies"
+msgstr "Politiques"
+
+#: includes/class-seoprocookieconsent-setup.php:268
+msgid "Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
+msgstr "Politique de témoins et conditions d’utilisation dans les pages que vous rédigez. À réviser avant publication; ne constitue pas un avis juridique."
+
+#: includes/features/class-seoprocookieconsent-consent.php:89
+#: includes/views/consent-banner.php:33
+msgid "Cookie consent"
+msgstr "Consentement aux témoins"
+
+#: includes/features/class-seoprocookieconsent-consent.php:90
+msgid "Holds back scripts and embeds that set cookies, such as Google Analytics, ad pixels and YouTube videos, until visitors allow them. A short banner shows only on pages that have them."
+msgstr "Bloque les scripts et contenus intégrés qui déposent des témoins, comme Google Analytics, les pixels publicitaires et les vidéos YouTube, jusqu’à ce que les visiteurs les autorisent. Une courte bannière s’affiche seulement sur les pages qui en contiennent."
+
+#: includes/features/class-seoprocookieconsent-consent.php:98
+msgid "Who is asked first"
+msgstr "À qui demander d’abord"
+
+#: includes/features/class-seoprocookieconsent-consent.php:99
+msgid "Europe (EU, EEA, UK, Switzerland), Quebec and visitors whose location is unclear are always asked before anything loads. The browser's time zone tells them apart: nothing is looked up or sent anywhere."
+msgstr "Le consentement est toujours demandé avant le chargement en Europe (UE, EEE, Royaume-Uni, Suisse), au Québec et aux visiteurs dont l’emplacement est incertain. Le fuseau horaire du navigateur sert à les distinguer : aucune recherche ni transmission n’est effectuée."
+
+#: includes/features/class-seoprocookieconsent-consent.php:101
+msgid "By region, with a notice elsewhere"
+msgstr "Selon la région, avec avis ailleurs"
+
+#: includes/features/class-seoprocookieconsent-consent.php:102
+msgid "By region, no notice elsewhere"
+msgstr "Selon la région, sans avis ailleurs"
+
+#: includes/features/class-seoprocookieconsent-consent.php:103
+msgid "Everyone"
+msgstr "Tout le monde"
+
+#: includes/features/class-seoprocookieconsent-consent.php:110
+msgid "Banner position"
+msgstr "Position de la bannière"
+
+#: includes/features/class-seoprocookieconsent-consent.php:112
+msgid "Bar along the bottom"
+msgstr "Barre en bas"
+
+#: includes/features/class-seoprocookieconsent-consent.php:113
+msgid "Box at the bottom left"
+msgstr "Encadré en bas à gauche"
+
+#: includes/features/class-seoprocookieconsent-consent.php:114
+msgid "Box at the bottom right"
+msgstr "Encadré en bas à droite"
+
+#: includes/features/class-seoprocookieconsent-consent.php:121
+msgid "Banner message"
+msgstr "Message de la bannière"
+
+#: includes/features/class-seoprocookieconsent-consent.php:122
+msgid "Leave empty for a message that names what is on the page, such as \"This page uses YouTube and Google Analytics, which may set cookies.\""
+msgstr "Laissez vide pour un message qui nomme les services de la page, comme « Cette page utilise YouTube et Google Analytics, qui peuvent déposer des témoins. »"
+
+#: includes/features/class-seoprocookieconsent-consent.php:123
+msgid "Automatic"
+msgstr "Automatique"
+
+#: includes/features/class-seoprocookieconsent-consent.php:130
+msgid "Cookie policy page"
+msgstr "Page de politique de témoins"
+
+#: includes/features/class-seoprocookieconsent-consent.php:131
+msgid "Linked from the banner. Start typing to pick a page, or enter an address. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use."
+msgstr "Accessible depuis la bannière. Commencez à saisir pour choisir une page ou entrez une adresse. Laissez vide pour utiliser votre politique de confidentialité (Réglages → Confidentialité). Ajoutez le bloc Politique de témoins à la page choisie."
+
+#: includes/features/class-seoprocookieconsent-consent.php:132
+msgid "Your privacy policy page"
+msgstr "Votre page de politique de confidentialité"
+
+#: includes/features/class-seoprocookieconsent-consent.php:138
+msgid "Cookie settings link in the footer menu"
+msgstr "Lien Réglages des témoins dans le menu de pied de page"
+
+#: includes/features/class-seoprocookieconsent-consent.php:139
+msgid "Lets visitors change their mind at any time. It goes after your cookie policy link, or before your privacy policy link, in a footer menu; otherwise at the end of the theme's footer menu. To place it yourself, use the Cookie settings box in Appearance → Menus; then this adds nothing. No menu? Add the Cookie settings button block, or link to #cookie-settings anywhere."
+msgstr "Permet aux visiteurs de changer d’avis en tout temps. Le lien est placé après la politique de témoins ou avant la politique de confidentialité dans un menu de pied de page, sinon à la fin de celui du thème. Pour le placer vous-même, utilisez Réglages des témoins dans Apparence → Menus; rien ne sera alors ajouté. Sans menu, ajoutez le bloc Bouton des réglages des témoins ou un lien vers #cookie-settings."
+
+#: includes/features/class-seoprocookieconsent-consent.php:145
+msgid "Floating Cookie settings button"
+msgstr "Bouton flottant des réglages des témoins"
+
+#: includes/features/class-seoprocookieconsent-consent.php:146
+msgid "A small button in the bottom corner after visitors choose. It shows only on pages with no other Cookie settings link or button."
+msgstr "Un petit bouton dans le coin inférieur après le choix des visiteurs. S’affiche seulement sur les pages sans autre lien ou bouton de réglages des témoins."
+
+#: includes/features/class-seoprocookieconsent-consent.php:153
+msgid "Also hold back"
+msgstr "Bloquer aussi"
+
+#: includes/features/class-seoprocookieconsent-consent.php:154
+msgid "Scripts or embeds the plugin does not know, one per line: part of their address or code. They count as Marketing; start a line with \"statistics:\", \"preferences:\" or \"embeds:\" for another category."
+msgstr "Scripts ou contenus intégrés inconnus, un par ligne : une partie de leur adresse ou de leur code. Ils comptent comme Marketing; commencez une ligne par « statistics: », « preferences: » ou « embeds: » pour une autre catégorie."
+
+#: includes/features/class-seoprocookieconsent-consent.php:162
+msgid "Never hold back"
+msgstr "Ne jamais bloquer"
+
+#: includes/features/class-seoprocookieconsent-consent.php:163
+msgid "Scripts or embeds that must always load, one per line: part of their address or code. Use this only for something that does not set cookies or is needed for the site to work."
+msgstr "Scripts ou contenus intégrés à toujours charger, un par ligne : une partie de leur adresse ou de leur code. À utiliser seulement pour ce qui ne dépose pas de témoins ou est nécessaire au fonctionnement du site."
+
+#: includes/features/class-seoprocookieconsent-consent.php:170
+msgid "Load Google tags before consent (Consent Mode advanced)"
+msgstr "Charger les balises Google avant le consentement (Consent Mode avancé)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:171
+msgid "Google Analytics, Ads and Tag Manager load straight away and are told consent is denied until visitors allow it, so Google sends cookieless pings. Leave off unless your Google set-up needs it."
+msgstr "Google Analytics, Ads et Tag Manager se chargent immédiatement et reçoivent un signal de refus jusqu’au consentement des visiteurs; Google envoie alors des signaux sans témoins. Laissez désactivé sauf si votre configuration Google l’exige."
+
+#: includes/features/class-seoprocookieconsent-consent.php:177
+msgid "Keep consent records"
+msgstr "Conserver les registres de consentement"
+
+#: includes/features/class-seoprocookieconsent-consent.php:178
+msgid "Optional anonymous choice history, stored on this site. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored."
+msgstr "Historique anonyme facultatif des choix, conservé sur ce site. Ajoute une requête et une écriture en base de données par choix, pas par page vue. Aucune adresse IP ni donnée de navigateur n’est conservée."
+
+#: includes/features/class-seoprocookieconsent-consent.php:185
+msgid "A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text."
+msgstr "Une étiquette enregistrée avec chaque entrée. Modifiez-la lorsque votre politique change. Cela ne redemande pas le consentement et ne conserve pas de copie du texte de la politique."
+
+#: includes/features/class-seoprocookieconsent-consent.php:193
+msgid "Keep records for (days)"
+msgstr "Conserver les registres (jours)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:194
+msgid "0 keeps them as long as visitors' choices. Set this to how long you need evidence of consent. Records older than this are deleted."
+msgstr "0 les conserve aussi longtemps que les choix des visiteurs. Indiquez la durée nécessaire pour prouver le consentement. Les registres plus anciens sont supprimés."
+
+#: includes/features/class-seoprocookieconsent-consent.php:203
+msgid "Remember choices for (days)"
+msgstr "Mémoriser les choix (jours)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:204
+msgid "Visitors are asked again after this. 365 is usual; some regulators prefer 180."
+msgstr "Le consentement sera demandé de nouveau après cette période. 365 jours est courant; certains organismes de réglementation préfèrent 180."
+
+#. translators: %s: service names, such as "Google Analytics, Hotjar".
+#: includes/features/class-seoprocookieconsent-consent.php:391
+#: includes/views/consent-banner.php:78
+#, php-format
+msgid "Used by: %s."
+msgstr "Utilisés par : %s."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:394
+#, php-format
+msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
+msgstr "Cette page utilise %s, qui peuvent déposer des témoins et partager des données sur votre visite. Choisissez ce que vous autorisez."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:396
+#, php-format
+msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
+msgstr "Cette page utilise %s, qui peuvent déposer des témoins. Vous pouvez les désactiver dans les réglages des témoins."
+
+#: includes/features/class-seoprocookieconsent-consent.php:397
+msgid "other services"
+msgstr "d’autres services"
+
+#. translators: 1: service name, such as "YouTube"; 2: cookie category.
+#: includes/features/class-seoprocookieconsent-consent.php:401
+#, php-format
+msgid "%1$s needs %2$s to show here. Allow it to see this content."
+msgstr "%1$s nécessite %2$s pour s’afficher ici. Autorisez cette catégorie pour voir le contenu."
+
+#: includes/features/class-seoprocookieconsent-consent.php:403
+msgid "Load content"
+msgstr "Charger le contenu"
+
+#: includes/features/class-seoprocookieconsent-consent.php:789
+msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
+msgstr "Un lien qui ouvre les réglages des témoins pour permettre aux visiteurs de modifier leurs choix. Dès qu’un menu le contient, le lien automatique du pied de page n’est plus ajouté."
+
+#: includes/features/class-seoprocookieconsent-consent.php:805
+msgid "Add to Menu"
+msgstr "Ajouter au menu"
+
+#: includes/features/class-seoprocookieconsent-consent.php:852
+#: includes/features/class-seoprocookieconsent-policy.php:77
+msgid "Cookie settings button"
+msgstr "Bouton des réglages des témoins"
+
+#: includes/features/class-seoprocookieconsent-consent.php:853
+msgid "Opens Cookie settings so visitors can change their choices."
+msgstr "Ouvre les réglages des témoins pour permettre aux visiteurs de modifier leurs choix."
+
+#: includes/features/class-seoprocookieconsent-consent.php:859
+msgid "Text"
+msgstr "Texte"
+
+#: includes/features/class-seoprocookieconsent-consent.php:865
+msgid "Show as"
+msgstr "Afficher comme"
+
+#: includes/features/class-seoprocookieconsent-consent.php:867
+msgid "Button"
+msgstr "Bouton"
+
+#: includes/features/class-seoprocookieconsent-consent.php:868
+msgid "Link"
+msgstr "Lien"
+
+#: includes/features/class-seoprocookieconsent-consent.php:885
+msgid "Get started"
+msgstr "Pour commencer"
+
+#: includes/features/class-seoprocookieconsent-consent.php:886
+msgid "Switch on Cookie consent."
+msgstr "Activez Consentement aux témoins."
+
+#: includes/features/class-seoprocookieconsent-consent.php:887
+msgid "Choose Scan now, then check Found on your pages below."
+msgstr "Choisissez Analyser maintenant, puis consultez les éléments trouvés sur vos pages ci-dessous."
+
+#: includes/features/class-seoprocookieconsent-consent.php:888
+msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
+msgstr "Activez Politique de témoins dans l’onglet Politiques et ajoutez le bloc Politique de témoins à votre page de confidentialité ou de témoins."
+
+#: includes/features/class-seoprocookieconsent-consent.php:890
+msgid "Scan now"
+msgstr "Analyser maintenant"
+
+#: includes/features/class-seoprocookieconsent-consent.php:891
+msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
+msgstr "Vérifie votre accueil, votre page de confidentialité et jusqu’à trois publications récentes et trois pages. Il s’agit d’un échantillon, pas d’un audit complet; les pages sont aussi vérifiées pendant la navigation. Les scripts ne sont pas exécutés."
+
+#: includes/features/class-seoprocookieconsent-consent.php:912
+msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
+msgstr "Aucun service déposant des témoins trouvé pour le moment. Lancez une analyse après l’activation ou ouvrez quelques pages de votre site."
+
+#: includes/features/class-seoprocookieconsent-consent.php:914
+msgid "Found on your pages and held back until allowed:"
+msgstr "Trouvés sur vos pages et bloqués jusqu’à autorisation :"
+
+#: includes/features/class-seoprocookieconsent-consent.php:925
+msgid "Necessary, never held back, and listed in the cookie policy:"
+msgstr "Nécessaires, jamais bloqués et indiqués dans la politique de témoins :"
+
+#: includes/features/class-seoprocookieconsent-consent.php:932
+msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
+msgstr "Les autres scripts de ces sites se chargent normalement. Si l’un dépose des témoins, ajoutez-le dans Dépannage → Bloquer aussi :"
+
+#: includes/features/class-seoprocookieconsent-consent.php:941
+msgid "You cannot scan this site."
+msgstr "Vous ne pouvez pas analyser ce site."
+
+#: includes/features/class-seoprocookieconsent-consent.php:945
+msgid "Switch on Cookie consent before scanning."
+msgstr "Activez Consentement aux témoins avant l’analyse."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1055
+msgid "Preview the banner"
+msgstr "Aperçu de la bannière"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1059
+msgid "Visitor"
+msgstr "Visiteur"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1061
+msgid "Asked first (Europe, Quebec)"
+msgstr "Consentement demandé d’abord (Europe, Québec)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1062
+msgid "Shown a notice (elsewhere)"
+msgstr "Avis affiché (ailleurs)"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1066
+msgid "Screen"
+msgstr "Écran"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1068
+msgid "Desktop"
+msgstr "Ordinateur"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1069
+msgid "Phone"
+msgstr "Téléphone"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1072
+msgid "Reload"
+msgstr "Recharger"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1075
+msgid "Banner preview on your home page"
+msgstr "Aperçu de la bannière sur votre accueil"
+
+#: includes/features/class-seoprocookieconsent-consent.php:1077
+msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
+msgstr "Votre accueil avec la bannière telle que les visiteurs la voient, même si rien ne doit être bloqué sur la page. L’aperçu est actualisé après chaque modification. Les choix dans l’aperçu ne sont pas enregistrés."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1096
+msgid "No pages found."
+msgstr "Aucune page trouvée."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1099
+msgid "Scanning…"
+msgstr "Analyse…"
+
+#. translators: 1: pages checked; 2: pages that could not be checked.
+#: includes/features/class-seoprocookieconsent-consent.php:1101
+#, php-format
+msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
+msgstr "Analyse terminée : %1$s pages vérifiées; %2$s n’ont pas pu l’être. Consultez les résultats ci-dessous."
+
+#: includes/features/class-seoprocookieconsent-consent.php:1102
+msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
+msgstr "L’analyse n’a pas pu vérifier vos pages. Les requêtes de bouclage sont peut-être bloquées. Réessayez ou ouvrez des pages de votre site pour compléter la liste en naviguant."
+
+#: includes/features/class-seoprocookieconsent-policy.php:43
+msgid "Adds a Cookie policy block (and the [spcc_cookie_policy] shortcode) that lists the cookies your site uses, grouped and kept up to date from what Cookie consent finds. Put it in your privacy or cookie policy page and write the rest of the page as you like. It is a starting point, not legal advice."
+msgstr "Ajoute un bloc Politique de témoins et le code court [spcc_cookie_policy] qui dressent une liste regroupée et actualisée des témoins trouvés par Consentement aux témoins. Placez-le dans votre page de confidentialité ou de témoins et rédigez le reste à votre guise. C’est un point de départ, pas un avis juridique."
+
+#: includes/features/class-seoprocookieconsent-policy.php:66
+msgid "Lists the cookies this site uses, kept up to date."
+msgstr "Dresse une liste actualisée des témoins utilisés par ce site."
+
+#: includes/features/class-seoprocookieconsent-policy.php:72
+msgid "Short introduction"
+msgstr "Courte introduction"
+
+#: includes/features/class-seoprocookieconsent-policy.php:82
+msgid "Heading level for each kind of cookie"
+msgstr "Niveau de titre pour chaque type de témoin"
+
+#: includes/features/class-seoprocookieconsent-policy.php:88
+msgid "Date the list was last updated"
+msgstr "Date de la dernière mise à jour de la liste"
+
+#: includes/features/class-seoprocookieconsent-policy.php:110
+msgid "Remembers your cookie choices"
+msgstr "Mémorise vos choix de témoins"
+
+#. translators: %d: number of days.
+#: includes/features/class-seoprocookieconsent-policy.php:112
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d jour"
+msgstr[1] "%d jours"
+
+#: includes/features/class-seoprocookieconsent-policy.php:115
+msgid "Keeps you logged in, only if you log in"
+msgstr "Vous garde connecté, seulement si vous vous connectez"
+
+#: includes/features/class-seoprocookieconsent-policy.php:116
+msgid "Session, or 14 days with Remember me"
+msgstr "Session, ou 14 jours avec Se souvenir de moi"
+
+#: includes/features/class-seoprocookieconsent-policy.php:119
+msgid "Fills in your name when you comment, only if you ask it to"
+msgstr "Remplit votre nom dans les commentaires, seulement si vous le demandez"
+
+#: includes/features/class-seoprocookieconsent-policy.php:152
+msgid "This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time."
+msgstr "Ce site utilise des témoins, de petits fichiers enregistrés sur votre appareil. Les témoins nécessaires sont toujours activés. Les autres sont utilisés seulement avec votre autorisation lorsque la loi exige le consentement. Vous pouvez modifier votre choix en tout temps."
+
+#. translators: %s: date.
+#: includes/features/class-seoprocookieconsent-policy.php:166
+#, php-format
+msgid "List last updated %s."
+msgstr "Dernière mise à jour de la liste : %s."
+
+#: includes/features/class-seoprocookieconsent-policy.php:181
+msgid "Service"
+msgstr "Service"
+
+#: includes/features/class-seoprocookieconsent-policy.php:182
+msgid "Cookie"
+msgstr "Témoin"
+
+#: includes/features/class-seoprocookieconsent-policy.php:183
+msgid "What it does"
+msgstr "Fonction"
+
+#: includes/features/class-seoprocookieconsent-policy.php:184
+msgid "Kept for"
+msgstr "Durée de conservation"
+
+#: includes/features/class-seoprocookieconsent-policy.php:189
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+#: includes/features/class-seoprocookieconsent-policy.php:193
+msgid "Sets cookies on its own site when its content loads."
+msgstr "Dépose des témoins sur son propre site lorsque son contenu se charge."
+
+#: includes/features/class-seoprocookieconsent-policy.php:217
+msgid "Cookies"
+msgstr "Témoins"
+
+#: includes/features/class-seoprocookieconsent-policy.php:218
+msgid "Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date."
+msgstr "Ajoutez le bloc Politique de témoins sous ce titre : il dresse la liste des témoins utilisés par votre site et reste à jour."
+
+#: includes/features/class-seoprocookieconsent-policy.php:219
+msgid "We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page."
+msgstr "Nous utilisons des témoins et des technologies similaires. Les témoins nécessaires assurent le fonctionnement du site et mémorisent vos choix. Avec votre consentement lorsque la loi l’exige, nous utilisons aussi des témoins pour les préférences, les statistiques, le contenu intégré et le marketing. Vous pouvez modifier ou retirer votre consentement en tout temps à partir du lien Réglages des témoins au bas de chaque page."
+
+#. translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile".
+#: includes/features/class-seoprocookieconsent-policy.php:224
+#, php-format
+msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
+msgstr "Pour protéger le site, ses formulaires et ses paiements contre les pourriels, la fraude et les attaques, nous utilisons %s. Ces services reçoivent votre adresse IP et des renseignements sur votre navigateur et peuvent déposer les témoins nécessaires indiqués dans la politique de témoins. Ils sont essentiels au fonctionnement sécuritaire du site et sont donc toujours activés."
+
+#: includes/features/class-seoprocookieconsent-terms.php:35
+#: includes/features/class-seoprocookieconsent-terms.php:131
+msgid "Terms and conditions"
+msgstr "Conditions d’utilisation"
+
+#: includes/features/class-seoprocookieconsent-terms.php:36
+msgid "Adds the Terms and conditions block and [spcc_terms] shortcode. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
+msgstr "Ajoute le bloc Conditions d’utilisation et le code court [spcc_terms]. Répondez aux questions, puis révisez le texte avant publication. C’est un point de départ, pas un avis juridique; il peut ne pas couvrir votre entreprise ou les lois locales. Les pages Complianz existantes restent inchangées : remplacez leur bloc ou code court vous-même après révision."
+
+#: includes/features/class-seoprocookieconsent-terms.php:44
+msgid "Business or owner name"
+msgstr "Nom de l’entreprise ou du propriétaire"
+
+#: includes/features/class-seoprocookieconsent-terms.php:45
+msgid "The legal name responsible for this site. Required for the suggested wording."
+msgstr "Le nom légal du responsable de ce site. Requis pour le texte proposé."
+
+#: includes/features/class-seoprocookieconsent-terms.php:51
+msgid "Country"
+msgstr "Pays"
+
+#: includes/features/class-seoprocookieconsent-terms.php:52
+msgid "Where the business is based. This does not choose governing law or generate country-specific clauses."
+msgstr "Le pays où l’entreprise est établie. Ne choisit pas le droit applicable et ne génère pas de clauses propres au pays."
+
+#: includes/features/class-seoprocookieconsent-terms.php:58
+msgid "What the site offers or sells"
+msgstr "Ce que le site offre ou vend"
+
+#: includes/features/class-seoprocookieconsent-terms.php:59
+msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed."
+msgstr "Décrivez vos biens, services, contenus numériques ou renseignements, avec les modalités de paiement et de livraison au besoin."
+
+#: includes/features/class-seoprocookieconsent-terms.php:65
+#: includes/features/class-seoprocookieconsent-terms.php:174
+msgid "Returns, refunds and cancellations"
+msgstr "Retours, remboursements et annulations"
+
+#: includes/features/class-seoprocookieconsent-terms.php:66
+msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
+msgstr "Votre politique et la façon dont les clients l’utilisent. Incluez les droits de rétractation et la procédure de contact ou de rétractation en ligne requise. Laissez vide si sans objet; aucune période de retour n’est présumée."
+
+#: includes/features/class-seoprocookieconsent-terms.php:72
+msgid "Contact details"
+msgstr "Coordonnées"
+
+#: includes/features/class-seoprocookieconsent-terms.php:73
+msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
+msgstr "Adresse courriel publique, page de contact, adresse postale ou numéro de téléphone pour les questions sur ces conditions. Requis pour le texte proposé; affiché en texte brut."
+
+#: includes/features/class-seoprocookieconsent-terms.php:79
+msgid "Your own wording"
+msgstr "Votre propre texte"
+
+#: includes/features/class-seoprocookieconsent-terms.php:80
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
+msgstr "Facultatif : remplace tout le texte proposé. Texte brut seulement, un paragraphe par ligne. Laissez vide pour utiliser les réponses ci-dessus. Vous pouvez aussi ajouter des blocs normaux autour du bloc Conditions d’utilisation; ils ne sont jamais modifiés."
+
+#: includes/features/class-seoprocookieconsent-terms.php:132
+msgid "Terms from your answers. Review before publishing; not legal advice."
+msgstr "Conditions tirées de vos réponses. À réviser avant publication; ne constitue pas un avis juridique."
+
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-terms.php:159
+#, php-format
+msgid "This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order."
+msgstr "Ce site Web est exploité par %s. Ces conditions expliquent l’utilisation du site et les offres décrites ci-dessous. Veuillez les lire avant d’utiliser le site ou de passer une commande."
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:166
+#, php-format
+msgid "The business is based in %s."
+msgstr "L’entreprise est établie en %s."
+
+#: includes/features/class-seoprocookieconsent-terms.php:170
+msgid "Using this website"
+msgstr "Utilisation de ce site Web"
+
+#: includes/features/class-seoprocookieconsent-terms.php:171
+msgid "Please use this website lawfully and do not interfere with its security or other people’s use of it. Respect the rights of others when using or sharing content."
+msgstr "Veuillez utiliser ce site Web légalement, sans compromettre sa sécurité ni l’utilisation par d’autres personnes. Respectez les droits d’autrui lorsque vous utilisez ou partagez du contenu."
+
+#: includes/features/class-seoprocookieconsent-terms.php:173
+msgid "What we offer"
+msgstr "Notre offre"
+
+#: includes/features/class-seoprocookieconsent-terms.php:183
+msgid "Your rights"
+msgstr "Vos droits"
+
+#: includes/features/class-seoprocookieconsent-terms.php:184
+msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
+msgstr "Aucune disposition de ces conditions ne retire les droits que la loi applicable vous accorde et qui ne peuvent être exclus, y compris les droits obligatoires des consommateurs."
+
+#: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "Contact"
+msgstr "Contact"
+
+#. translators: %d: HTTP status code
+#: includes/github-updater/class-wpallstars-github-updater.php:611
+#, php-format
+msgid "GitHub answered with status %d."
+msgstr "GitHub a répondu avec le code %d."
+
+#. translators: 1: owner/repo in the plugin's header, 2: owner/repo GitHub points to
+#: includes/github-updater/class-wpallstars-github-updater.php:644
+#, php-format
+msgid "GitHub repository %1$s has moved to %2$s; change the plugin's GitHub Plugin URI header."
+msgstr "Le dépôt GitHub %1$s a déménagé vers %2$s; modifiez l’en-tête GitHub Plugin URI de l’extension."
+
+#. translators: %s: time since the check, such as "5 mins"
+#: includes/github-updater/class-wpallstars-github-updater.php:1021
+#, php-format
+msgid "%s ago"
+msgstr "il y a %s"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1033
+msgid "Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:"
+msgstr "Impossible de vérifier les mises à jour de ces extensions sur GitHub; une version plus récente pourrait manquer jusqu’à ce qu’une vérification réussisse :"
+
+#. translators: 1: time since the check, such as "5 mins ago", 2: error message
+#: includes/github-updater/class-wpallstars-github-updater.php:1087
+#, php-format
+msgid "Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour."
+msgstr "Impossible de vérifier les mises à jour sur GitHub (%1$s) : %2$s. Une version plus récente pourrait ne pas s’afficher avant une vérification réussie; WordPress réessaiera dans l’heure."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1092
+msgid "Check again now"
+msgstr "Vérifier de nouveau maintenant"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1323
+msgid "Release notes on GitHub"
+msgstr "Notes de version sur GitHub"
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1578
+msgid "GitHub did not give a download address. Check the token’s access to the repository."
+msgstr "GitHub n’a pas fourni d’adresse de téléchargement. Vérifiez l’accès du jeton au dépôt."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1582
+msgid "GitHub sent the download to an unexpected address."
+msgstr "GitHub a redirigé le téléchargement vers une adresse inattendue."
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1616
+#: includes/github-updater/class-wpallstars-github-updater.php:1620
+msgid "The update could not be unpacked into the plugin’s folder."
+msgstr "Impossible de décompresser la mise à jour dans le dossier de l’extension."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:116
+msgid "Visitors' Borlabs Cookie choices are not carried over: its cookie version, which decides whether a saved choice is still valid, could not be checked, so visitors are asked again once."
+msgstr "Les choix Borlabs Cookie ne sont pas transférés : la version du témoin, qui détermine la validité d’un choix enregistré, n’a pas pu être vérifiée. Le consentement sera donc demandé de nouveau une fois."
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:125
+#, php-format
+msgid "Borlabs Cookie ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Borlabs Cookie exécutait du code pour ces services, qui s’arrête après sa suppression : %s. Ajoutez le code encore nécessaire à votre thème ou à une extension de code d’en-tête; les services reconnus et les règles de scripts ci-dessous seront alors bloqués."
+
+#. translators: %s: list of script blocker names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:130
+#, php-format
+msgid "Borlabs Cookie script blockers match scripts by handle or code, which this import does not turn into rules: %s. Add anything this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Les bloqueurs de scripts Borlabs Cookie utilisent l’identifiant ou le code des scripts, sans conversion en règles par cette importation : %s. Ajoutez les scripts non reconnus dans Dépannage → Bloquer aussi."
+
+#. translators: %s: CSS class name.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:134
+#, php-format
+msgid "A menu link has the %s class. Point it at #cookie-settings instead, or rely on the Cookie settings footer link."
+msgstr "Un lien de menu possède la classe %s. Faites-le pointer vers #cookie-settings ou utilisez le lien Réglages des témoins du pied de page."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:137
+msgid "Its dialog texts are not imported: they describe its own dialog."
+msgstr "Les textes de sa boîte de dialogue ne sont pas importés : ils décrivent sa propre interface."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:140
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:73
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:105
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:101
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:60
+msgid "The import turns on Keep consent records to continue its records."
+msgstr "L’importation active Conserver les registres de consentement pour poursuivre l’enregistrement."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:405
+msgid "Deleting Borlabs Cookie runs its own uninstall, which removes all its data, including its consent log: export the consent records you must keep before deleting it. Remove leftover data removes its settings, services, content blockers and other tables after it is deactivated, keeps its consent log and statistics, and leaves its generated files in uploads/borlabs-cookie. Imports never change its settings."
+msgstr "La suppression de Borlabs Cookie exécute sa désinstallation, qui efface toutes ses données, y compris le journal de consentement : exportez d’abord les registres à conserver. Supprimer les données restantes efface ses réglages, services, bloqueurs de contenu et autres tables après désactivation, mais conserve le journal, les statistiques et les fichiers générés dans uploads/borlabs-cookie. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-complianz.php:314
+msgid "Check Complianz’s own delete-data-on-uninstall setting before deleting it. Imports never change its settings."
+msgstr "Vérifiez le réglage de Complianz pour supprimer les données à la désinstallation avant de le supprimer. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:57
+msgid "Compliance (hosted) mode is on: the banner and visitors' choices live in the Cookie Compliance web app. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "Le mode Compliance hébergé est activé : la bannière et les choix sont dans l’application Web Cookie Compliance. Seules les données locales sont importées et le consentement sera demandé de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:59
+msgid "Cookie Notice accepted on scroll or click, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Cookie Notice acceptait lors du défilement ou d’un clic, ce qui n’est pas un choix clair : seuls les refus sont transférés et le consentement sera redemandé aux personnes ayant accepté."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:63
+msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "Cookie Notice exécutait lui-même vos scripts « après acceptation »; ils s’arrêtent sans lui. Ajoutez-les à votre thème ou à une extension de code d’en-tête après le changement : les règles ci-dessous et les services reconnus seront alors bloqués jusqu’à autorisation. Copiez-les avant de supprimer les données restantes."
+
+#. translators: %s: start of an inline script.
+#. translators: %s: a script pattern.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108
+#, php-format
+msgid "Add by hand to Also hold back (no address to recognise): %s"
+msgstr "Ajouter manuellement à Bloquer aussi (aucune adresse à reconnaître) : %s"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:197
+msgid "Cookie Notice deletes its settings when deactivated if its Deactivation option is on: copy your after-acceptance scripts first. Imports never change its settings."
+msgstr "Cookie Notice supprime ses réglages à la désactivation si son option de désactivation est active : copiez d’abord vos scripts après acceptation. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:59
+msgid "CookieAdmin follows US state laws (opt-out) or a Pro law here, so visitors' choices are not carried over: they are asked again."
+msgstr "CookieAdmin suit ici les lois des États américains (retrait) ou une loi Pro; les choix ne sont donc pas transférés et le consentement sera demandé de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:63
+msgid "CookieAdmin Pro showed its banner only in some regions. That is not imported: check Who is asked first."
+msgstr "CookieAdmin Pro affichait la bannière seulement dans certaines régions. Ce réglage n’est pas importé : vérifiez À qui demander d’abord."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:65
+msgid "Scripts you marked for CookieAdmin in your theme (type=\"text/plain\" with data-cookieadmin-category) stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Les scripts marqués pour CookieAdmin dans votre thème (type=\"text/plain\" avec data-cookieadmin-category) restent désactivés sans lui : retirez ces deux attributs pour que cette extension les bloque à sa place."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:211
+msgid "Deleting CookieAdmin removes its settings but leaves its cookie list table; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "La suppression de CookieAdmin efface ses réglages, mais conserve sa table de témoins; utilisez ensuite Supprimer les données restantes. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:47
+msgid "This site uses a Usercentrics account through Cookiebot, so its banner and choices are kept by Usercentrics."
+msgstr "Ce site utilise un compte Usercentrics via Cookiebot; Usercentrics conserve sa bannière et ses choix."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:50
+msgid "The Cookiebot banner is switched off on this site."
+msgstr "La bannière Cookiebot est désactivée sur ce site."
+
+#. translators: %s: Google Tag Manager container ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:55
+#, php-format
+msgid "Cookiebot loaded Google Tag Manager (%s) itself, which stops when it is removed. Add the Tag Manager code to your theme or a header-code plugin; this plugin holds it back until allowed."
+msgstr "Cookiebot chargeait lui-même Google Tag Manager (%s), ce qui cesse après sa suppression. Ajoutez son code à votre thème ou à une extension de code d’en-tête; cette extension le bloque jusqu’à autorisation."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:43
+msgid "Google Consent Mode"
+msgstr "Google Consent Mode"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:42
+msgid "TCF"
+msgstr "TCF"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "US privacy (CCPA)"
+msgstr "Confidentialité aux États-Unis (CCPA)"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "banners by region"
+msgstr "bannières par région"
+
+#. translators: %s: list of Cookiebot features.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:65
+#, php-format
+msgid "These Cookiebot settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching."
+msgstr "Ces réglages Cookiebot ne sont pas importés et cessent après sa suppression : %s. Vérifiez À qui demander d’abord et vos balises Google avant le changement."
+
+#. translators: %s: list of Cookiebot add-on keys.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:70
+#, php-format
+msgid "Cookiebot add-ons held back other plugins' scripts: %s. Services this plugin recognises are held back without them; check the rest after switching."
+msgstr "Les modules Cookiebot bloquaient des scripts d’autres extensions : %s. Les services reconnus sont bloqués sans ces modules; vérifiez le reste après le changement."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:73
+msgid "Its WPForms add-on switched off WPForms' own GDPR settings: check them in WPForms."
+msgstr "Son module WPForms a désactivé les réglages RGPD de WPForms : vérifiez-les dans WPForms."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:76
+msgid "A Cookiebot cookie declaration widget is in a sidebar. Replace it with the Cookie policy block, or link to your cookie policy page."
+msgstr "Un widget de déclaration de témoins Cookiebot est dans une barre latérale. Remplacez-le par le bloc Politique de témoins ou un lien vers votre politique."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:79
+msgid "Scripts marked for Cookiebot with type=\"text/plain\" and data-cookieconsent never run without it: make them normal scripts again in your theme or pages; services this plugin recognises, and your script rules, are then held back."
+msgstr "Les scripts marqués pour Cookiebot avec type=\"text/plain\" et data-cookieconsent ne fonctionnent jamais sans lui : rétablissez des scripts normaux dans votre thème ou vos pages; les services reconnus et vos règles seront alors bloqués."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:156
+msgid "Deleting Cookiebot removes its main settings but leaves its add-on, widget and notice settings; Remove leftover data deletes those too. Imports never change its settings or contact Cookiebot."
+msgstr "La suppression de Cookiebot efface ses réglages principaux, mais conserve ceux des modules, widgets et avis; Supprimer les données restantes les efface aussi. Les importations ne modifient jamais ses réglages et ne contactent pas Cookiebot."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:54
+msgid "This site is connected to the CookieYes web app, which keeps the banner, categories and scripts. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "Ce site est connecté à l’application Web CookieYes, qui conserve la bannière, les catégories et les scripts. Seules les données locales sont importées et le consentement sera demandé de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:56
+msgid "CookieYes is still in its legacy (version 2) mode. Its settings and visitors' choices are not imported: set the banner up here, and visitors are asked again."
+msgstr "CookieYes utilise encore son ancien mode (version 2). Ses réglages et choix ne sont pas importés : configurez la bannière ici; le consentement sera demandé de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:58
+msgid "The CookieYes banner follows CCPA (opt-out), so visitors' choices are not carried over: they are asked again."
+msgstr "La bannière CookieYes suit la CCPA (retrait); les choix ne sont donc pas transférés et le consentement sera demandé de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:60
+msgid "Scripts you marked for CookieYes in your theme (data-cookieyes, type=\"text/plain\") stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Les scripts marqués pour CookieYes dans votre thème (data-cookieyes, type=\"text/plain\") restent désactivés sans lui : retirez ces deux attributs pour que cette extension les bloque à sa place."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:283
+msgid "CookieYes keeps its data when deleted unless CKY_REMOVE_ALL_DATA is set; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "CookieYes conserve ses données à la suppression sauf si CKY_REMOVE_ALL_DATA est défini; utilisez ensuite Supprimer les données restantes. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:64
+msgid "Visitors' Ultimate GDPR & CCPA choices are not carried over: its cookie format was not checked on a running site, so visitors are asked again once."
+msgstr "Les choix Ultimate GDPR & CCPA ne sont pas transférés : le format du témoin n’a pas été vérifié sur un site actif; le consentement sera demandé de nouveau une fois."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:68
+msgid "Ultimate GDPR & CCPA was not set to block cookies, so its banner did not hold anything back. This plugin holds back recognised services and the rules below until visitors agree."
+msgstr "Ultimate GDPR & CCPA n’était pas configuré pour bloquer les témoins; sa bannière ne bloquait donc rien. Cette extension bloque les services reconnus et les règles ci-dessous jusqu’au consentement."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:71
+msgid "Ultimate GDPR & CCPA showed its banner only on selected pages. Here the banner shows on every page, so Who is asked first is left as it is."
+msgstr "Ultimate GDPR & CCPA affichait sa bannière seulement sur certaines pages. Ici, elle s’affiche sur chaque page; À qui demander d’abord reste donc inchangé."
+
+#. translators: %s: list of service names with their script keywords.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:83
+#, php-format
+msgid "These Ultimate GDPR & CCPA script keywords are not addresses, so they are not imported: %s. Add any this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Ces mots-clés de scripts Ultimate GDPR & CCPA ne sont pas des adresses et ne sont pas importés : %s. Ajoutez les scripts non reconnus dans Dépannage → Bloquer aussi."
+
+#. translators: %s: list of shortcodes.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:95
+#, php-format
+msgid "Its privacy request forms, age gate and acceptance boxes are not cookie consent and are not replaced: %s. They stop working when it is removed; use WordPress's own export and erase personal data tools, or another forms plugin."
+msgstr "Ses formulaires de demandes de confidentialité, sa vérification d’âge et ses cases d’acceptation ne sont pas du consentement aux témoins et ne sont pas remplacés : %s. Ils cessent de fonctionner après sa suppression; utilisez les outils WordPress d’exportation et d’effacement des données personnelles ou une autre extension de formulaires."
+
+#. translators: %s: user name.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:99
+#, php-format
+msgid "Its cookie scanner left the user %s behind, which it hides from the Users screen while active. Delete that user after deactivating it."
+msgstr "Son analyseur de témoins a laissé l’utilisateur %s, qu’il masque dans l’écran des utilisateurs lorsqu’il est actif. Supprimez cet utilisateur après la désactivation."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:102
+msgid "Its banner texts are not imported: they describe its own banner."
+msgstr "Les textes de sa bannière ne sont pas importés : ils décrivent sa propre bannière."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:260
+msgid "Deleting Ultimate GDPR & CCPA removes only its files: its settings, services and consent log stay. Remove leftover data deletes its settings and services after it is deactivated, and keeps its consent log and the consents saved on user accounts. Imports never change its settings."
+msgstr "La suppression d’Ultimate GDPR & CCPA efface seulement ses fichiers : réglages, services et journal restent. Supprimer les données restantes efface les réglages et services après désactivation, mais conserve le journal et les consentements des comptes utilisateurs. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:69
+msgid "Its TCF (IAB framework) setting is not imported and stops when it is removed."
+msgstr "Son réglage TCF (cadre IAB) n’est pas importé et cesse après sa suppression."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:72
+msgid "iubenda also handled US or Brazilian privacy laws, which have no equivalent here. Check Who is asked first before switching."
+msgstr "iubenda gérait aussi les lois américaines ou brésiliennes sur la confidentialité, sans équivalent ici. Vérifiez À qui demander d’abord avant le changement."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:75
+msgid "iubenda held back Google Tag Manager; this plugin recognises and holds it back too."
+msgstr "iubenda bloquait Google Tag Manager; cette extension le reconnaît et le bloque aussi."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:78
+msgid "iubenda was set up with pasted code, so its banner position and who it asked are not imported."
+msgstr "iubenda était configuré avec du code collé; la position de sa bannière et les personnes visées ne sont donc pas importées."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:82
+msgid "A menu has an iubenda preferences link (class iubenda-cs-preferences-link). Replace it with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Un menu contient un lien de préférences iubenda (classe iubenda-cs-preferences-link). Remplacez-le par un lien #cookie-settings ou utilisez le lien Réglages des témoins du pied de page."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:85
+msgid "An iubenda legal widget is in a sidebar. It stops showing when iubenda is removed: link to your policies instead."
+msgstr "Un widget juridique iubenda est dans une barre latérale. Il disparaît après la suppression d’iubenda : liez plutôt vos propres politiques."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:88
+msgid "iubenda sent form submissions to its hosted consent database. That stops when it is removed; its records stay with iubenda."
+msgstr "iubenda envoyait les formulaires à sa base de consentement hébergée. Cela cesse après sa suppression; les registres restent chez iubenda."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:228
+msgid "Deleting iubenda removes its settings only if its own delete-on-deactivation option is on; Remove leftover data deletes its settings, form mappings and scheduled checks. Imports never change its settings or contact iubenda."
+msgstr "La suppression d’iubenda efface ses réglages seulement si son option de suppression à la désactivation est active; Supprimer les données restantes efface ses réglages, correspondances de formulaires et vérifications planifiées. Les importations ne modifient jamais ses réglages et ne contactent pas iubenda."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:98
+msgid "Some categories were on before visitors chose, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Certaines catégories étaient activées avant le choix des visiteurs, ce qui n’est pas un choix clair : seuls les refus sont transférés; le consentement sera redemandé aux personnes ayant accepté."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:100
+msgid "Its close button accepted all cookies, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Son bouton de fermeture acceptait tous les témoins, ce qui n’est pas un choix clair : seuls les refus sont transférés; le consentement sera redemandé aux personnes ayant accepté."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:102
+msgid "If its add-on accepted cookies on scroll or after a timer, those look the same as Accept: choose Stop carrying over old consent so visitors are asked again."
+msgstr "Si son module acceptait les témoins au défilement ou après un délai, ces choix ressemblent à Accepter : choisissez Cesser de transférer l’ancien consentement pour le demander de nouveau."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:104
+msgid "GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "GDPR Cookie Compliance ajoutait lui-même vos scripts de catégories; ils s’arrêtent sans lui. Ajoutez-les à votre thème ou à une extension de code d’en-tête après le changement : les règles ci-dessous et les services reconnus seront alors bloqués jusqu’à autorisation. Copiez-les avant de supprimer les données restantes."
+
+#. translators: 1: service name, 2: its tracking ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:114
+#, php-format
+msgid "GDPR Cookie Compliance loaded %1$s (%2$s) itself; it stops when the plugin is gone. Add it to your site another way, such as Site Kit or your theme: this plugin recognises it and holds it back."
+msgstr "GDPR Cookie Compliance chargeait lui-même %1$s (%2$s); cela cesse sans lui. Ajoutez ce service autrement, par exemple avec Site Kit ou votre thème : cette extension le reconnaît et le bloque."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:127
+msgid "no ID"
+msgstr "aucun identifiant"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:238
+msgid "GDPR Cookie Compliance keeps its settings table when deleted; use Remove leftover data afterwards. Copy its category scripts first. Imports never change its settings."
+msgstr "GDPR Cookie Compliance conserve sa table de réglages après suppression; utilisez ensuite Supprimer les données restantes. Copiez d’abord ses scripts de catégories. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:44
+msgid "country bypass"
+msgstr "exception par pays"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:45
+msgid "consent forwarding"
+msgstr "transfert du consentement"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:46
+msgid "banner-less consent"
+msgstr "consentement sans bannière"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:71
+msgid "The Real Cookie Banner banner is switched off, so visitors' choices are not carried over."
+msgstr "La bannière Real Cookie Banner est désactivée; les choix des visiteurs ne sont donc pas transférés."
+
+#. translators: %s: list of Real Cookie Banner Pro features.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:81
+#, php-format
+msgid "Real Cookie Banner Pro settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching; visitors' choices are not carried over while country bypass or banner-less consent is on."
+msgstr "Les réglages Real Cookie Banner Pro ne sont pas importés et cessent après sa suppression : %s. Vérifiez À qui demander d’abord et vos balises Google avant le changement; les choix ne sont pas transférés si l’exception par pays ou le consentement sans bannière est activé."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:83
+msgid "Real Cookie Banner let visitors choose single services. A category carries over as allowed only when every Real Cookie Banner service in it was accepted; otherwise it is refused. Closing its banner with the close icon is not carried over."
+msgstr "Real Cookie Banner permettait de choisir des services individuels. Une catégorie est transférée comme autorisée seulement si tous ses services ont été acceptés; sinon elle est refusée. La fermeture par l’icône n’est pas transférée."
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:92
+#, php-format
+msgid "Real Cookie Banner ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Real Cookie Banner exécutait du code pour ces services, qui s’arrête après sa suppression : %s. Ajoutez le code encore nécessaire à votre thème ou à une extension de code d’en-tête; les services reconnus et les règles ci-dessous seront alors bloqués."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:95
+msgid "A menu has Real Cookie Banner privacy links (#consent-change, #consent-history or #consent-revoke). Replace them with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Un menu contient des liens de confidentialité Real Cookie Banner (#consent-change, #consent-history ou #consent-revoke). Remplacez-les par un lien #cookie-settings ou utilisez le lien Réglages des témoins du pied de page."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:98
+msgid "Its banner texts are not imported: they describe its own dialog."
+msgstr "Les textes de sa bannière ne sont pas importés : ils décrivent sa propre boîte de dialogue."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:427
+msgid "Deleting Real Cookie Banner removes only its copied script files; its settings, services, content blockers and consent records stay. Remove leftover data deletes its settings, services, content blockers, groups and scan and statistics tables, but keeps consent records and the revisions they refer to. Imports never change its settings."
+msgstr "La suppression de Real Cookie Banner efface seulement ses fichiers de scripts copiés; réglages, services, bloqueurs et registres restent. Supprimer les données restantes efface les réglages, services, bloqueurs, groupes et tables d’analyse et de statistiques, mais conserve les registres et les révisions associées. Les importations ne modifient jamais ses réglages."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:221
+#, php-format
+msgid "%s keeps its banner texts, categories and cookie scan in its own dashboard, which this import never contacts; only settings saved on this site are imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching."
+msgstr "%s conserve ses textes, catégories et analyse de témoins dans son tableau de bord, que cette importation ne contacte jamais; seuls les réglages locaux sont importés. Vérifiez ici À qui demander d’abord, Position de la bannière, Message de la bannière et Mémoriser les choix avant le changement."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:223
+#, php-format
+msgid "Visitors' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once."
+msgstr "Les choix %s ne sont pas transférés : son script hébergé utilise un format non vérifié avec un compte actif; le consentement sera demandé de nouveau une fois."
+
+#. translators: 1: name of the old consent plugin, 2: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:233
+#, php-format
+msgid "Compare %1$s's cookie scan with the services this plugin found on your pages: %2$s. Add anything missing under Troubleshooting → Also hold back."
+msgstr "Comparez l’analyse de témoins de %1$s aux services trouvés sur vos pages : %2$s. Ajoutez les éléments manquants dans Dépannage → Bloquer aussi."
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:236
+#, php-format
+msgid "This plugin has not found services on your pages yet. After switching, use Scan now on the Cookie consent tab and compare its list with %s's cookie scan; add anything missing under Troubleshooting → Also hold back."
+msgstr "Cette extension n’a pas encore trouvé de services sur vos pages. Après le changement, utilisez Analyser maintenant dans Consentement aux témoins et comparez la liste à l’analyse de %s; ajoutez les éléments manquants dans Dépannage → Bloquer aussi."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:238
+msgid "Consent records it kept on its own servers stay there: export any you must keep before closing that account. Turn on Keep consent records here to go on documenting choices."
+msgstr "Les registres de consentement hébergés sur ses serveurs y restent : exportez ceux à conserver avant de fermer le compte. Activez ici Conserver les registres de consentement pour continuer à documenter les choix."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:42
+msgid "Termly's auto blocker held back scripts it recognised. This plugin holds back the services it recognises; compare the lists above."
+msgstr "Le bloqueur automatique de Termly bloquait les scripts reconnus. Cette extension bloque les services qu’elle reconnaît; comparez les listes ci-dessus."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:46
+msgid "Termly may have added a \"TermlyBot\" section to your robots.txt file. Remove it after switching, if it is there."
+msgstr "Termly a peut-être ajouté une section « TermlyBot » à votre fichier robots.txt. Retirez-la après le changement si elle existe."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:128
+msgid "Deleting Termly leaves its settings and daily account check; Remove leftover data deletes them, including its saved API key. Imports never change its settings or contact Termly."
+msgstr "La suppression de Termly conserve ses réglages et sa vérification quotidienne du compte; Supprimer les données restantes les efface, y compris la clé API enregistrée. Les importations ne modifient jamais ses réglages et ne contactent pas Termly."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:53
+msgid "The WPConsent banner is switched off, so visitors' choices are not carried over."
+msgstr "La bannière WPConsent est désactivée; les choix des visiteurs ne sont donc pas transférés."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:56
+msgid "WPConsent let visitors choose single services. Only its Statistics and Marketing choices carry over; anyone who chose only some services in a category is asked again."
+msgstr "WPConsent permettait de choisir des services individuels. Seuls les choix Statistiques et Marketing sont transférés; le consentement est redemandé aux personnes ayant choisi certains services seulement dans une catégorie."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:58
+msgid "WPConsent Pro geolocation rules and custom scripts are not imported: check Who is asked first, and add any custom scripts to your theme or a header-code plugin before switching."
+msgstr "Les règles de géolocalisation et scripts personnalisés de WPConsent Pro ne sont pas importés : vérifiez À qui demander d’abord et ajoutez vos scripts à votre thème ou à une extension de code d’en-tête avant le changement."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:180
+msgid "WPConsent removes its cookie list and settings when deleted only if its own delete-data option is on; Remove leftover data deletes its settings and scan tables but not that cookie list. Imports never change its settings."
+msgstr "WPConsent efface sa liste de témoins et ses réglages à la suppression seulement si son option de suppression des données est active; Supprimer les données restantes efface les réglages et tables d’analyse, mais pas cette liste. Les importations ne modifient jamais ses réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:109
+msgid "Unknown import source."
+msgstr "Source d’importation inconnue."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:168
+msgid "You cannot import settings."
+msgstr "Vous ne pouvez pas importer de réglages."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:204
+msgid "You do not have permission for this action."
+msgstr "Vous n’avez pas l’autorisation d’effectuer cette action."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:207
+msgid "Another import action is running. If an interrupted action left a lock, review its import record before removing the lock."
+msgstr "Une autre action d’importation est en cours. Si une action interrompue a laissé un verrou, vérifiez son registre avant de retirer le verrou."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:225
+msgid "Unknown import action."
+msgstr "Action d’importation inconnue."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:251
+msgid "A selected page cannot be edited with a saved revision."
+msgstr "Une page sélectionnée ne peut pas être modifiée avec une révision enregistrée."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:266
+msgid "A source document could not render. It was not replaced."
+msgstr "Impossible d’afficher un document source. Il n’a pas été remplacé."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:280
+msgid "A page revision could not be saved. Nothing was replaced."
+msgstr "Impossible d’enregistrer une révision de page. Rien n’a été remplacé."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:309
+msgid "The undo record could not be saved."
+msgstr "Impossible d’enregistrer les données d’annulation."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:361
+msgid "This import cannot be undone."
+msgstr "Cette importation ne peut pas être annulée."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:367
+msgid "Settings changed after import. Restore the imported values before undoing, so later edits are not lost."
+msgstr "Les réglages ont changé depuis l’importation. Rétablissez les valeurs importées avant d’annuler pour ne pas perdre les modifications ultérieures."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:373
+msgid "A page changed after import or its revision is missing. Undo was stopped to protect later edits."
+msgstr "Une page a changé depuis l’importation ou sa révision manque. L’annulation a été arrêtée pour protéger les modifications ultérieures."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:378
+msgid "A page revision could not be restored. The undo record was kept."
+msgstr "Impossible de rétablir une révision de page. Les données d’annulation ont été conservées."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:393
+msgid "Cleanup needs permission to manage options and delete plugins."
+msgstr "Le nettoyage nécessite l’autorisation de gérer les options et de supprimer des extensions."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:400
+msgid "Deactivate the source on this site and network before removing leftover data."
+msgstr "Désactivez la source sur ce site et le réseau avant de supprimer les données restantes."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:405
+msgid "Network-wide data is not deleted."
+msgstr "Les données du réseau ne sont pas supprimées."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:408
+msgid "The leftovers list changed. Review a fresh dry run before confirming."
+msgstr "La liste des données restantes a changé. Vérifiez une nouvelle simulation avant de confirmer."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:414
+msgid "A source table could not be removed. Review a new dry run."
+msgstr "Impossible de supprimer une table source. Vérifiez une nouvelle simulation."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:426
+msgid "A source post could not be removed. Review a new dry run."
+msgstr "Impossible de supprimer une publication source. Vérifiez une nouvelle simulation."
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:447
+msgid "A source term could not be removed. Review a new dry run."
+msgstr "Impossible de supprimer un terme source. Vérifiez une nouvelle simulation."
+
+#. translators: %s: folder under uploads
+#: includes/migrate/class-seoprocookieconsent-migrate.php:477
+#, php-format
+msgid "The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run."
+msgstr "Impossible de supprimer le dossier uploads/%s. Supprimez-le vous-même ou vérifiez une nouvelle simulation."
+
+#: includes/views/consent-banner.php:27
+msgid "login"
+msgstr "connexion"
+
+#: includes/views/consent-banner.php:28
+msgid "security"
+msgstr "sécurité"
+
+#: includes/views/consent-banner.php:86
+msgid "Your consent ID:"
+msgstr "Votre identifiant de consentement :"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy consent ID"
+msgstr "Copier l’identifiant de consentement"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy"
+msgstr "Copier"
+
+#: includes/views/consent-banner.php:89
+msgid "Consent ID copied."
+msgstr "Identifiant de consentement copié."
+
+#: includes/views/consent-banner.php:89
+msgid "Could not copy. Select the consent ID and copy it manually."
+msgstr "Impossible de copier. Sélectionnez l’identifiant de consentement et copiez-le manuellement."
+
+#. translators: %s: product slugs, comma-separated.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:270
+#, php-format
+msgid "Name the plugin or theme the report is about, one of: %s."
+msgstr "Nommez l’extension ou le thème concerné, parmi : %s."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:279
+msgid "A report needs a title and details."
+msgstr "Un rapport nécessite un titre et des détails."
+
+#. translators: %d: number of drafts.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:307
+#, php-format
+msgid "There are already %d draft reports waiting for review. Send or delete some in Tools → Report a problem first."
+msgstr "Il y a déjà %d brouillons de rapports à réviser. Envoyez-en ou supprimez-en d’abord dans Outils → Signaler un problème."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:341
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1034
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1205
+msgid "That report no longer exists."
+msgstr "Ce rapport n’existe plus."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:344
+msgid "That report has been sent already."
+msgstr "Ce rapport a déjà été envoyé."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Improvement"
+msgstr "Amélioration"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Problem"
+msgstr "Problème"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:640
+msgid "That plugin or theme no longer takes reports here."
+msgstr "Cette extension ou ce thème n’accepte plus de rapports ici."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:660
+msgid "The site could not send email."
+msgstr "Le site n’a pas pu envoyer de courriel."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:710
+#: includes/wpallstars-reports/class-wpallstars-reports.php:711
+#: includes/wpallstars-reports/class-wpallstars-reports.php:769
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1112
+msgid "Report a problem"
+msgstr "Signaler un problème"
+
+#. translators: %d: number of draft reports.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:743
+#, php-format
+msgid "Your AI assistant drafted %d report about a wpallstars plugin or theme. Nothing is sent until you review it."
+msgid_plural "Your AI assistant drafted %d reports about wpallstars plugins or themes. Nothing is sent until you review them."
+msgstr[0] "Votre assistant IA a rédigé %d brouillon de rapport sur une extension ou un thème wpallstars. Rien n’est envoyé avant votre révision."
+msgstr[1] "Votre assistant IA a rédigé %d brouillons de rapports sur des extensions ou thèmes wpallstars. Rien n’est envoyé avant votre révision."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:752
+msgid "Review reports"
+msgstr "Réviser les rapports"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:761
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1012
+msgid "Sorry, you are not allowed to review reports."
+msgstr "Vous n’avez pas l’autorisation de réviser les rapports."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:772
+msgid "New report"
+msgstr "Nouveau rapport"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:793
+msgid "Draft saved. Check what will be sent below, then send it."
+msgstr "Brouillon enregistré. Vérifiez ci-dessous ce qui sera envoyé, puis envoyez-le."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:794
+msgid "Report sent. Thank you: the maker will look into it."
+msgstr "Rapport envoyé. Merci : le développeur l’examinera."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:795
+msgid "Report deleted."
+msgstr "Rapport supprimé."
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:826
+#, php-format
+msgid "a public GitHub issue on %s"
+msgstr "un ticket GitHub public dans %s"
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:829
+#, php-format
+msgid "a private email to %s"
+msgstr "un courriel privé à %s"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:839
+msgid "Tell the makers of the wpallstars plugins and themes on this site about a problem or an improvement, so every site using them gets the fix. Your AI assistant can draft reports too (the wpallstars/report-problem ability, or wp wpallstars report create); nothing leaves the site until an administrator sends it here."
+msgstr "Signalez un problème ou une amélioration aux développeurs des extensions et thèmes wpallstars de ce site pour que tous les sites profitent du correctif. Votre assistant IA peut aussi rédiger des brouillons (wpallstars/report-problem ou wp wpallstars report create); rien ne quitte le site avant l’envoi ici par un administrateur."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:852
+msgid "No reports yet."
+msgstr "Aucun rapport pour le moment."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:937
+msgid "Title"
+msgstr "Titre"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:917
+msgid "Plugin or theme"
+msgstr "Extension ou thème"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:927
+msgid "Type"
+msgstr "Type"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Status"
+msgstr "État"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Drafted by"
+msgstr "Rédigé par"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Date"
+msgstr "Date"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "Administrator"
+msgstr "Administrateur"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "AI assistant"
+msgstr "Assistant IA"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:882
+msgid "Draft, waiting for review"
+msgstr "Brouillon, en attente de révision"
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:887
+#, php-format
+msgid "Opened on GitHub %s"
+msgstr "Ouvert sur GitHub le %s"
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:890
+#, php-format
+msgid "Emailed %s"
+msgstr "Envoyé par courriel le %s"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:907
+msgid "All reports"
+msgstr "Tous les rapports"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:909
+msgid "Your AI assistant drafted this report. Check it says what you want the maker to know, change anything that is wrong, then send it."
+msgstr "Votre assistant IA a rédigé ce rapport. Vérifiez qu’il dit ce que vous voulez transmettre au développeur, corrigez les erreurs, puis envoyez-le."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:941
+msgid "Details"
+msgstr "Détails"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:944
+msgid "What you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Leave out passwords and licence keys."
+msgstr "Ce que vous avez fait, le résultat attendu et ce qui s’est produit, avec les étapes pour le reproduire, ou l’amélioration souhaitée et son utilité. N’incluez pas de mots de passe ni de clés de licence."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:955
+msgid "Save draft"
+msgstr "Enregistrer le brouillon"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:960
+msgid "Open the issue on GitHub"
+msgstr "Ouvrir le ticket sur GitHub"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:962
+msgid "Send by email"
+msgstr "Envoyer par courriel"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:969
+msgid "Delete"
+msgstr "Supprimer"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:984
+msgid "What will be sent"
+msgstr "Ce qui sera envoyé"
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:988
+#, php-format
+msgid "Opens a new issue on GitHub (%s) with this text filled in, for you to submit with your own GitHub account. GitHub issues are public, so the site's address, email and IP addresses, server paths and anything that looks like a key are taken out. Check the text below before you submit it."
+msgstr "Ouvre un nouveau ticket GitHub (%s) prérempli avec ce texte, à soumettre avec votre propre compte. Les tickets GitHub sont publics : l’adresse du site, les adresses courriel et IP, les chemins du serveur et tout ce qui ressemble à une clé sont retirés. Vérifiez le texte ci-dessous avant de le soumettre."
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:996
+#, php-format
+msgid "Sent privately by this site's email to %s, with your name and email address to reply to. Anything that looks like a password or key is taken out."
+msgstr "Envoyé en privé par le courriel de ce site à %s, avec votre nom et votre adresse courriel pour la réponse. Tout ce qui ressemble à un mot de passe ou à une clé est retiré."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1003
+msgid "Changed the text or the plugin or theme? Save the draft to see the new version here."
+msgstr "Texte, extension ou thème modifié? Enregistrez le brouillon pour voir la nouvelle version ici."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1098
+msgid "wpallstars plugins and themes"
+msgstr "Extensions et thèmes wpallstars"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1099
+msgid "Problem reports and improvements for the makers of the wpallstars plugins and themes on this site."
+msgstr "Rapports de problèmes et améliorations pour les développeurs des extensions et thèmes wpallstars de ce site."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1113
+msgid "Draft a problem report or an improvement for the maker of one of this site's wpallstars plugins or themes (list them with wpallstars/reports), so every site using it gets the fix. Use it when a problem or improvement belongs to that product's own code, not to this site's content or settings. It only saves a draft: nothing leaves the site until a site administrator reviews and sends it in Tools → Report a problem, so tell them to. Say what was done, what was expected and what happened, with steps, versions and error messages; leave out passwords, keys and personal data."
+msgstr "Rédigez un rapport de problème ou d’amélioration pour le développeur d’une extension ou d’un thème wpallstars de ce site (liste avec wpallstars/reports), pour que tous les sites profitent du correctif. À utiliser pour le code du produit, pas le contenu ou les réglages du site. Seul un brouillon est enregistré : rien ne quitte le site avant sa révision et son envoi par un administrateur dans Outils → Signaler un problème; prévenez-le. Indiquez les actions, le résultat attendu et obtenu, les étapes, versions et messages d’erreur; omettez mots de passe, clés et données personnelles."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1123
+msgid "The plugin folder or theme the report is about. May be left out when only one takes reports."
+msgstr "Le dossier de l’extension ou le thème concerné. Peut être omis si un seul produit accepte les rapports."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1151
+msgid "Problem reports"
+msgstr "Rapports de problèmes"
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1152
+msgid "List the wpallstars plugins and themes that take problem reports, where each sends them, and this site's reports with their status; with an id, one report and exactly what would be sent."
+msgstr "Liste les extensions et thèmes wpallstars acceptant les rapports, leur destination et les rapports du site avec leur état; avec un identifiant, un rapport et exactement ce qui serait envoyé."
+
+#. translators: %s: address of the Report a problem screen.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1188
+#, php-format
+msgid "Saved as a draft; nothing has been sent. Ask a site administrator to review and send it in Tools → Report a problem: %s"
+msgstr "Enregistré comme brouillon; rien n’a été envoyé. Demandez à un administrateur de le réviser et de l’envoyer dans Outils → Signaler un problème : %s"
+
+#: admin/js/seoprocookieconsent-theme.js:24
+msgid "Light"
+msgstr "Clair"
+
+#: admin/js/seoprocookieconsent-theme.js:28
+msgid "Dark"
+msgstr "Sombre"
+
+#: admin/js/seoprocookieconsent-theme.js:32
+msgid "System"
+msgstr "Système"
+
+#. translators: %s: the colour mode, Light, Dark or System.
+#: admin/js/seoprocookieconsent-theme.js:63
+#, js-format
+msgid "Colour mode: %s"
+msgstr "Mode de couleur : %s"
+
+#: admin/js/seoprocookieconsent-theme.js:106
+msgid "The colour mode could not be saved. Please try again."
+msgstr "Impossible d’enregistrer le mode de couleur. Veuillez réessayer."
+
+#: admin/js/seoprocookieconsent-theme.js:185
+msgid "Colour mode"
+msgstr "Mode de couleur"
