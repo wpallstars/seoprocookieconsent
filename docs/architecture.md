@@ -43,9 +43,18 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
   that one service. Releasing unwraps it, restoring the original markup.
 - Never held back: JSON and template script types, scripts with
   `data-spcc-ignore`, the plugin's own, and anything in Troubleshooting →
-  Never hold back. Security and payment scripts (reCAPTCHA, Turnstile,
-  Stripe, PayPal) are not in the list on purpose: blocking them breaks
-  forms and checkouts, and they are necessary.
+  Never hold back. Security and payment scripts (Turnstile, reCAPTCHA,
+  hCaptcha, Stripe, PayPal) are not in `all()` on purpose: blocking them
+  breaks forms and checkouts, and they are necessary.
+- Necessary services (`SEOProCookieConsent_Services::necessary()`, filter
+  `seoprocookieconsent_necessary_services`) are matched only after a
+  script or iframe is left to load, recorded under `necessary` in the seen
+  option (`record()`'s third argument) and listed under Necessary in the
+  cookie policy, the dialog's Necessary row (server-rendered, the same
+  for every visitor), the findings and the Policy guide. Cloudflare's
+  network has no pattern: it is recorded when a front-end request carries
+  `CF-Ray`, or a Scan now response does. That only adds to the list; it
+  never changes a page.
 - Other third-party script hosts are recorded (up to 20) and listed on the
   settings card, so the owner can add any that set cookies to Also hold
   back. Records are written only when something new is seen, never on

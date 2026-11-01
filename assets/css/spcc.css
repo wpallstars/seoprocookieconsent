@@ -40,6 +40,11 @@
     display: none !important; /* Hidden wins over every display rule, the theme's too. */
 }
 
+/*
+ * Text sizes are in em, so they follow the theme's base font size (Kadence
+ * sets it on <body>, not <html>), and every button has the same size.
+ */
+
 /* Buttons: Accept and Reject look the same, so neither is the easy way. */
 .spcc-btn,
 .spcc-embed__load {
@@ -56,10 +61,13 @@
     /* spcc.js sets --spcc-btn-ink when the theme's pair lacks contrast. */
     color: var(--spcc-btn-ink, var(--spcc-btn-text));
     font: inherit;
-    font-size: 0.9375rem;
+    font-size: 0.9375em;
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
+
+    /* A long word breaks rather than push its button out of a narrow row. */
+    overflow-wrap: anywhere;
     cursor: pointer;
 }
 
@@ -133,7 +141,7 @@
 .spcc-banner__text {
     flex: 1 1 320px;
     margin: 0;
-    font-size: 0.9375rem;
+    font-size: 0.9375em;
 }
 
 .spcc-banner__policy,
@@ -180,9 +188,15 @@
     border: 0;
 }
 
-.spcc-banner__actions {
-    display: flex;
-    flex-wrap: wrap;
+/*
+ * A row of buttons shares one width, the widest label's, so no button
+ * looks bigger than another at any font size or in any language.
+ */
+.spcc-banner__actions,
+.spcc-dialog__actions {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
     gap: 8px;
 }
 
@@ -215,11 +229,6 @@
     flex: none;
 }
 
-.spcc-banner--left .spcc-btn,
-.spcc-banner--right .spcc-btn {
-    flex: 1 1 auto;
-}
-
 @media (max-width: 599px) {
     .spcc-banner,
     .spcc-banner--left,
@@ -234,17 +243,25 @@
         padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
     }
 
-    .spcc-banner__actions {
+    /*
+     * Reject and Accept side by side, Settings across the full width
+     * below; the opt-out notice's OK also takes the full width.
+     */
+    .spcc-banner__actions,
+    .spcc-dialog__actions {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
         width: 100%;
     }
 
-    .spcc-banner .spcc-btn {
-        flex: 1 1 auto;
+    .spcc-banner .spcc-btn--quiet,
+    .spcc-banner [data-spcc-action="ok"],
+    .spcc-dialog__actions .spcc-btn--quiet {
+        grid-column: 1 / -1;
     }
 
-    /* Settings on its own row, Reject and Accept side by side below. */
-    .spcc-banner .spcc-btn--quiet {
-        flex-basis: 100%;
+    .spcc-banner .spcc-btn--quiet,
+    .spcc-dialog__actions .spcc-btn--quiet {
         order: 2;
     }
 }
@@ -292,7 +309,7 @@
 .spcc-dialog__title {
     margin: 0;
     color: var(--spcc-strong);
-    font-size: 1.25rem;
+    font-size: 1.25em;
     line-height: 1.3;
 }
 
@@ -305,7 +322,7 @@
     border-radius: var(--spcc-radius);
     background: transparent;
     color: var(--spcc-strong);
-    font-size: 1.75rem;
+    font-size: 1.75em;
     line-height: 1;
     cursor: pointer;
 }
@@ -326,7 +343,7 @@
 .spcc-dialog__intro,
 .spcc-dialog__desc {
     margin: 0;
-    font-size: 0.9375rem;
+    font-size: 0.9375em;
 }
 
 .spcc-dialog__ask {
@@ -334,7 +351,7 @@
     padding: 10px 12px;
     border-inline-start: 3px solid currentColor;
     background: rgba(127, 127, 127, 0.1);
-    font-size: 0.9375rem;
+    font-size: 0.9375em;
     font-weight: 600;
 }
 
@@ -360,21 +377,26 @@
 
 .spcc-dialog__desc {
     padding-inline-start: 52px;
-    font-size: 0.875rem;
+    font-size: 0.875em;
     opacity: 0.85;
 }
 
+/* Smaller text here, but the Copy button keeps every button's size. */
 .spcc-dialog__record {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    font-size: 0.875rem;
 }
 
 .spcc-dialog__record label {
     flex-basis: 100%;
     margin: 0;
+}
+
+.spcc-dialog__record label,
+.spcc-dialog__copy-status {
+    font-size: 0.875em;
 }
 
 .spcc-dialog .spcc-dialog__id {
@@ -390,6 +412,7 @@
     color: var(--spcc-strong);
     font: inherit;
     font-family: monospace;
+    font-size: 0.875em;
 }
 
 .spcc-dialog__copy-status {
@@ -400,18 +423,10 @@
     display: none;
 }
 
+/* Shrinks to its buttons at the end of the row (grid above, phones too). */
 .spcc-dialog__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: flex-end;
+    justify-self: end;
     padding-top: 4px;
-}
-
-@media (max-width: 599px) {
-    .spcc-dialog__actions .spcc-btn {
-        flex: 1 1 auto;
-    }
 }
 
 /* Switches: real checkboxes, drawn as switches. */
@@ -550,7 +565,7 @@
 
 .spcc-embed__notice p {
     margin: 0 0 12px;
-    font-size: 0.9375rem;
+    font-size: 0.9375em;
 }
 
 .spcc-embed__actions {
@@ -561,8 +576,10 @@
     gap: 8px 16px;
 }
 
+/* A paragraph too, but its buttons size themselves (no compounding em). */
 .spcc-embed__notice .spcc-embed__actions {
     margin: 0;
+    font-size: inherit;
 }
 
 .spcc-embed__settings {
@@ -571,7 +588,7 @@
     background: none;
     color: inherit;
     font: inherit;
-    font-size: 0.875rem;
+    font-size: 0.875em;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -600,18 +617,19 @@
 
 .spcc-embed[data-spcc-fit] .spcc-embed__notice p {
     margin-bottom: 8px;
-    font-size: 0.8125rem;
+    font-size: 0.8125em;
     line-height: 1.35;
 }
 
 .spcc-embed[data-spcc-fit] .spcc-embed__notice .spcc-embed__actions {
     margin: 0;
     gap: 4px 8px;
+    font-size: inherit;
 }
 
 .spcc-embed[data-spcc-fit] .spcc-embed__load {
     padding: 8px 14px;
-    font-size: 0.875rem;
+    font-size: 0.875em;
 }
 
 .spcc-embed[data-spcc-fit="2"] .spcc-embed__notice p:first-child,
@@ -644,7 +662,7 @@
     color: var(--spcc-strong);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     font: inherit;
-    font-size: 0.8125rem;
+    font-size: 0.8125em;
     cursor: pointer;
 }
 

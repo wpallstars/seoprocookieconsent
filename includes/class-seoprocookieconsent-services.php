@@ -27,6 +27,12 @@ final class SEOProCookieConsent_Services {
     /** Resolved services. @var array<string,array>|null */
     private static $services = null;
 
+    /** Resolved necessary services. @var array<string,array>|null */
+    private static $necessary = null;
+
+    /** Service ID for Cloudflare's network, found from its CF-Ray header. */
+    const CLOUDFLARE = 'cloudflare';
+
     /**
      * Consent categories, in the order they are shown. Necessary is always
      * on and never held back.
@@ -118,6 +124,133 @@ final class SEOProCookieConsent_Services {
     public static function get($id) {
         $all = self::all();
         return isset($all[$id]) ? $all[$id] : null;
+    }
+
+    /**
+     * Necessary services: security and payment services the site needs,
+     * never held back (blocking them breaks forms and checkouts), and
+     * listed under Necessary in the cookie policy once seen.
+     *
+     * Each has `name`, `patterns` (as in all(); may be empty for a service
+     * found another way, such as Cloudflare's network from its header),
+     * `privacy`, `cookies` (name => purpose and how long it is kept) and
+     * `about` (what it does, shown when it lists no cookies).
+     *
+     * @return array<string,array>
+     */
+    public static function necessary() {
+        if (null !== self::$necessary) {
+            return self::$necessary;
+        }
+        $google = 'https://policies.google.com/privacy';
+        // Privacy policy links, never loaded. Plugin Check reports any text
+        // with Cloudflare's domain as offloaded content, so it is joined.
+        $cloudflare = 'https://www.cloudflare' . '.com/';
+        $services   = array(
+            'cloudflare-turnstile' => array(
+                'name'     => 'Cloudflare Turnstile',
+                'patterns' => array('/turnstile/v0/api.js'),
+                'privacy'  => $cloudflare . 'turnstile-privacy-policy/',
+                'cookies'  => array(),
+                'about'    => __('Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser.', 'seoprocookieconsent'),
+            ),
+            'google-recaptcha'     => array(
+                'name'     => 'Google reCAPTCHA',
+                'patterns' => array('google.com/recaptcha', 'recaptcha.net/recaptcha'),
+                'privacy'  => $google,
+                'cookies'  => array(),
+                'about'    => __('Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser, and may set cookies on Google\'s own sites.', 'seoprocookieconsent'),
+            ),
+            'hcaptcha'             => array(
+                'name'     => 'hCaptcha',
+                'patterns' => array('js.hcaptcha.com', 'hcaptcha.com/1/api.js'),
+                'privacy'  => 'https://www.hcaptcha.com/privacy',
+                'cookies'  => array(
+                    'hmt_id' => array(__('Tells people from bots', 'seoprocookieconsent'), __('30 days', 'seoprocookieconsent')),
+                ),
+            ),
+            'stripe'               => array(
+                'name'     => 'Stripe',
+                'patterns' => array('js.stripe.com'),
+                'privacy'  => 'https://stripe.com/privacy',
+                'cookies'  => array(
+                    '__stripe_mid' => array(__('Helps prevent payment fraud', 'seoprocookieconsent'), __('1 year', 'seoprocookieconsent')),
+                    '__stripe_sid' => array(__('Helps prevent payment fraud', 'seoprocookieconsent'), __('30 minutes', 'seoprocookieconsent')),
+                ),
+            ),
+            'paypal'               => array(
+                'name'     => 'PayPal',
+                'patterns' => array('paypal.com/sdk/js', 'paypalobjects.com'),
+                'privacy'  => 'https://www.paypal.com/legalhub/paypal/privacy-full',
+                'cookies'  => array(),
+                'about'    => __('Takes payments and helps prevent fraud. It may set cookies on PayPal\'s own sites.', 'seoprocookieconsent'),
+            ),
+            self::CLOUDFLARE       => array(
+                'name'     => 'Cloudflare',
+                'patterns' => array(),
+                'privacy'  => $cloudflare . 'privacypolicy/',
+                'cookies'  => array(
+                    '__cf_bm'      => array(__('Tells people from bots, when bot protection is on', 'seoprocookieconsent'), __('30 minutes', 'seoprocookieconsent')),
+                    'cf_clearance' => array(__('Remembers that you passed a security check', 'seoprocookieconsent'), __('30 minutes, unless the site sets another time', 'seoprocookieconsent')),
+                    '_cfuvid'      => array(__('Tells visitors who share an IP address apart, when rate limiting needs it', 'seoprocookieconsent'), __('Varies', 'seoprocookieconsent')),
+                ),
+            ),
+        );
+
+        /**
+         * Filter the necessary services: never held back, listed under
+         * Necessary in the cookie policy once seen. Keys as in
+         * SEOProCookieConsent_Services::necessary().
+         *
+         * @param array<string,array> $services Services keyed by ID.
+         */
+        $services = (array) apply_filters('seoprocookieconsent_necessary_services', $services);
+
+        self::$necessary = array();
+        foreach ($services as $id => $service) {
+            if (!is_array($service) || empty($service['name'])) {
+                continue;
+            }
+            $service['patterns']           = array_values(array_filter(array_map('strtolower', array_map('strval', isset($service['patterns']) ? (array) $service['patterns'] : array()))));
+            $service['cookies']            = isset($service['cookies']) ? (array) $service['cookies'] : array();
+            $service['privacy']            = isset($service['privacy']) ? (string) $service['privacy'] : '';
+            $service['about']              = isset($service['about']) ? (string) $service['about'] : '';
+            self::$necessary[(string) $id] = $service;
+        }
+        return self::$necessary;
+    }
+
+    /**
+     * The necessary service whose pattern is in the text, or ''.
+     *
+     * @param string $text Address or inline script, any case.
+     * @return string Service ID.
+     */
+    public static function match_necessary($text) {
+        $text = strtolower((string) $text);
+        if ('' === $text) {
+            return '';
+        }
+        foreach (self::necessary() as $id => $service) {
+            foreach ($service['patterns'] as $pattern) {
+                if (false !== strpos($text, $pattern)) {
+                    return $id;
+                }
+            }
+        }
+        return '';
+    }
+
+    /**
+     * Whether this request came through Cloudflare's network, which can set
+     * its own cookies (bot protection, challenges). Cloudflare adds the
+     * CF-Ray header to every request it passes on. A site-wide fact, used
+     * only to list Cloudflare in the cookie policy, never to change a page.
+     *
+     * @return bool
+     */
+    public static function behind_cloudflare() {
+        return !empty($_SERVER['HTTP_CF_RAY']); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- only checked for presence.
     }
 
     /**
@@ -362,18 +495,20 @@ final class SEOProCookieConsent_Services {
     }
 
     /**
-     * What the site was seen using: service ID => first seen, and
-     * unrecognised third-party host => first seen.
+     * What the site was seen using: service ID => first seen, necessary
+     * service ID => first seen, and unrecognised third-party host => first
+     * seen.
      *
-     * @return array{services:array<string,int>,hosts:array<string,int>,updated:int}
+     * @return array{services:array<string,int>,necessary:array<string,int>,hosts:array<string,int>,updated:int}
      */
     public static function seen() {
         $seen = get_option(self::SEEN_OPTION, array());
         $seen = is_array($seen) ? $seen : array();
         return array(
-            'services' => isset($seen['services']) && is_array($seen['services']) ? $seen['services'] : array(),
-            'hosts'    => isset($seen['hosts']) && is_array($seen['hosts']) ? $seen['hosts'] : array(),
-            'updated'  => isset($seen['updated']) ? (int) $seen['updated'] : 0,
+            'services'  => isset($seen['services']) && is_array($seen['services']) ? $seen['services'] : array(),
+            'necessary' => isset($seen['necessary']) && is_array($seen['necessary']) ? $seen['necessary'] : array(),
+            'hosts'     => isset($seen['hosts']) && is_array($seen['hosts']) ? $seen['hosts'] : array(),
+            'updated'   => isset($seen['updated']) ? (int) $seen['updated'] : 0,
         );
     }
 
@@ -381,10 +516,11 @@ final class SEOProCookieConsent_Services {
      * Remember services and hosts found on a page. Writes only when one
      * is new, so a normal page view writes nothing.
      *
-     * @param string[] $services Service IDs.
-     * @param string[] $hosts    Unrecognised third-party hosts.
+     * @param string[] $services  Service IDs.
+     * @param string[] $hosts     Unrecognised third-party hosts.
+     * @param string[] $necessary Necessary service IDs.
      */
-    public static function record(array $services, array $hosts) {
+    public static function record(array $services, array $hosts, array $necessary = array()) {
         $seen = self::seen();
         // Store it even when empty, once: a missing option costs a query
         // on every page (no row to autoload).
@@ -394,6 +530,13 @@ final class SEOProCookieConsent_Services {
             if (!isset($seen['services'][$id]) && null !== self::get($id)) {
                 $seen['services'][$id] = $now;
                 $changed               = true;
+            }
+        }
+        $known = self::necessary();
+        foreach (array_unique($necessary) as $id) {
+            if (!isset($seen['necessary'][$id]) && isset($known[$id])) {
+                $seen['necessary'][$id] = $now;
+                $changed                = true;
             }
         }
         foreach (array_unique($hosts) as $host) {
@@ -433,5 +576,14 @@ final class SEOProCookieConsent_Services {
             }
         }
         return array_filter($groups);
+    }
+
+    /**
+     * Necessary services the site was seen using, in list order.
+     *
+     * @return array<string,array> id => service
+     */
+    public static function seen_necessary() {
+        return array_intersect_key(self::necessary(), self::seen()['necessary']);
     }
 }
