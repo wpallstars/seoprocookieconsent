@@ -86,17 +86,22 @@
     box-shadow: none;
 }
 
+/*
+ * The quiet button has a light grey fill and a firm edge, so its whole
+ * shape shows and it looks as big as the solid ones beside it (an outline
+ * alone reads smaller, most of all on dark backgrounds).
+ */
 .spcc-btn--quiet,
 .spcc-btn--quiet:focus,
 .spcc-btn--quiet:active {
-    border-color: var(--spcc-border);
-    background: transparent;
+    border-color: rgba(127, 127, 127, 0.6);
+    background: rgba(127, 127, 127, 0.16);
     color: var(--spcc-strong);
 }
 
 .spcc-btn--quiet:hover {
     border-color: currentColor;
-    background: rgba(127, 127, 127, 0.12);
+    background: rgba(127, 127, 127, 0.26);
     color: var(--spcc-strong);
 }
 

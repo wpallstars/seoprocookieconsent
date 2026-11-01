@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.8 =
+* Fixed: the quiet buttons (Settings in the banner, Save choices in the dialog) have a light grey fill and a firmer grey edge instead of a faint outline only, so their whole shape shows and they look as big as Reject all and Accept all beside them, most of all in dark mode. Sizes were already equal; only the look changes. Hover darkens the fill.
+
 = 1.0.7 =
 * New: necessary services. Cloudflare Turnstile, Google reCAPTCHA, hCaptcha, Stripe and PayPal are recognised in pages as they are sent (and by Scan now), still never held back, and once seen are listed under Necessary in the Cookie policy block (with their cookies, or what they do when they list none), in the Cookie settings dialog's Necessary row ("Used by"), on the Consent card's findings and in the Policy guide's suggested privacy text. A site served through Cloudflare's network (CF-Ray request or scan response header) lists Cloudflare with __cf_bm, cf_clearance and _cfuvid. New seoprocookieconsent_necessary_services filter. Recorded in the existing seoprocookieconsent_seen option.
 * Fixed: front-end text sizes are in em instead of rem, so the banner, dialog, placeholders and floating button follow the theme's base font size (Kadence sets it on body, not html). Buttons side by side in the banner and dialog share one width, the widest label's; on phones Reject all and Accept all sit side by side with the quiet button across the full width below, in the dialog as in the banner. The Copy and Load buttons keep the same size as the others.
