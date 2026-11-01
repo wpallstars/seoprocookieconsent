@@ -54,7 +54,9 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
   for every visitor), the findings and the Policy guide. Cloudflare's
   network has no pattern: it is recorded when a front-end request carries
   `CF-Ray`, or a Scan now response does. That only adds to the list; it
-  never changes a page.
+  never changes a page. The dialog's Necessary row always reads "Used
+  by: login, security," then each seen service's `short` name (Cloudflare
+  first, then Turnstile and the rest); the policy keeps the full `name`.
 - Other third-party script hosts are recorded (up to 20) and listed on the
   settings card, so the owner can add any that set cookies to Also hold
   back. Records are written only when something new is seen, never on

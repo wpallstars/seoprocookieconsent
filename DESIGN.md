@@ -79,8 +79,10 @@ palette of their own.
   phones, one switch row per kind of cookie with a top border, actions
   at the end (Reject all, Save choices, Accept all). Under 600px, as the
   banner: Reject all and Accept all side by side, Save choices below.
-- The Necessary row ends "Used by:" with the security and payment
-  services the site was seen using, as the other rows do.
+- The Necessary row ends "Used by: login, security," then the short
+  names of the security and payment services the site was seen using
+  (Cloudflare first, then Turnstile, reCAPTCHA and the rest), for
+  example "Used by: login, security, Cloudflare, Turnstile."
 - With recording enabled and an existing choice ID, a supplementary row
   before the actions shows a labelled, read-only monospace ID and quiet
   Copy button. Both controls retain 44px targets and theme colours. The

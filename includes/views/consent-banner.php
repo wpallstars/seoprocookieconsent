@@ -20,8 +20,15 @@ if (!defined('ABSPATH')) {
 
 $seoprocookieconsent_categories = SEOProCookieConsent_Services::categories();
 $seoprocookieconsent_policy     = SEOProCookieConsent_Consent::policy_url();
-// Site-wide, the same for every visitor: the necessary services seen.
-$seoprocookieconsent_necessary_names = wp_list_pluck(SEOProCookieConsent_Services::seen_necessary(), 'name');
+// Site-wide, the same for every visitor: what the site's own necessary
+// cookies are for, then the short names of the necessary services seen.
+$seoprocookieconsent_necessary_names = array_merge(
+    array(
+        __('login', 'seoprocookieconsent'),
+        __('security', 'seoprocookieconsent'),
+    ),
+    wp_list_pluck(SEOProCookieConsent_Services::seen_necessary(), 'short')
+);
 ?>
 <section id="spcc-banner" class="spcc spcc-banner spcc-banner--<?php echo esc_attr(SEOProCookieConsent_Consent::position()); ?>" aria-label="<?php esc_attr_e('Cookie consent', 'seoprocookieconsent'); ?>" hidden>
     <div class="spcc-banner__inner">
@@ -66,7 +73,7 @@ $seoprocookieconsent_necessary_names = wp_list_pluck(SEOProCookieConsent_Service
                     <p id="spcc-desc-<?php echo esc_attr($seoprocookieconsent_id); ?>" class="spcc-dialog__desc">
                         <?php echo esc_html($seoprocookieconsent_category['description']); ?>
                         <span class="spcc-dialog__services" data-spcc-services="<?php echo esc_attr($seoprocookieconsent_id); ?>"><?php
-                        if ($seoprocookieconsent_necessary && !empty($seoprocookieconsent_necessary_names)) {
+                        if ($seoprocookieconsent_necessary) {
                             /* translators: %s: service names, such as "Google Analytics, Hotjar". */
                             echo esc_html(' ' . sprintf(__('Used by: %s.', 'seoprocookieconsent'), implode(', ', $seoprocookieconsent_necessary_names)));
                         }

@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,7 +109,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= 1.0.8 =
-* Settings and Save choices have a light grey fill, so they look as big as the buttons beside them.
+= 1.0.9 =
+* The Necessary row in Cookie settings reads, for example, "Used by: login, security, Cloudflare, Turnstile."
 
 Every change: changelog.txt.

@@ -133,8 +133,10 @@ final class SEOProCookieConsent_Services {
      *
      * Each has `name`, `patterns` (as in all(); may be empty for a service
      * found another way, such as Cloudflare's network from its header),
-     * `privacy`, `cookies` (name => purpose and how long it is kept) and
-     * `about` (what it does, shown when it lists no cookies).
+     * `privacy`, `cookies` (name => purpose and how long it is kept),
+     * `about` (what it does, shown when it lists no cookies) and `short`
+     * (the name in the Cookie settings dialog's Necessary row; defaults to
+     * `name`).
      *
      * @return array<string,array>
      */
@@ -147,8 +149,19 @@ final class SEOProCookieConsent_Services {
         // with Cloudflare's domain as offloaded content, so it is joined.
         $cloudflare = 'https://www.cloudflare' . '.com/';
         $services   = array(
+            self::CLOUDFLARE       => array(
+                'name'     => 'Cloudflare',
+                'patterns' => array(),
+                'privacy'  => $cloudflare . 'privacypolicy/',
+                'cookies'  => array(
+                    '__cf_bm'      => array(__('Tells people from bots, when bot protection is on', 'seoprocookieconsent'), __('30 minutes', 'seoprocookieconsent')),
+                    'cf_clearance' => array(__('Remembers that you passed a security check', 'seoprocookieconsent'), __('30 minutes, unless the site sets another time', 'seoprocookieconsent')),
+                    '_cfuvid'      => array(__('Tells visitors who share an IP address apart, when rate limiting needs it', 'seoprocookieconsent'), __('Varies', 'seoprocookieconsent')),
+                ),
+            ),
             'cloudflare-turnstile' => array(
                 'name'     => 'Cloudflare Turnstile',
+                'short'    => 'Turnstile',
                 'patterns' => array('/turnstile/v0/api.js'),
                 'privacy'  => $cloudflare . 'turnstile-privacy-policy/',
                 'cookies'  => array(),
@@ -156,6 +169,7 @@ final class SEOProCookieConsent_Services {
             ),
             'google-recaptcha'     => array(
                 'name'     => 'Google reCAPTCHA',
+                'short'    => 'reCAPTCHA',
                 'patterns' => array('google.com/recaptcha', 'recaptcha.net/recaptcha'),
                 'privacy'  => $google,
                 'cookies'  => array(),
@@ -185,16 +199,6 @@ final class SEOProCookieConsent_Services {
                 'cookies'  => array(),
                 'about'    => __('Takes payments and helps prevent fraud. It may set cookies on PayPal\'s own sites.', 'seoprocookieconsent'),
             ),
-            self::CLOUDFLARE       => array(
-                'name'     => 'Cloudflare',
-                'patterns' => array(),
-                'privacy'  => $cloudflare . 'privacypolicy/',
-                'cookies'  => array(
-                    '__cf_bm'      => array(__('Tells people from bots, when bot protection is on', 'seoprocookieconsent'), __('30 minutes', 'seoprocookieconsent')),
-                    'cf_clearance' => array(__('Remembers that you passed a security check', 'seoprocookieconsent'), __('30 minutes, unless the site sets another time', 'seoprocookieconsent')),
-                    '_cfuvid'      => array(__('Tells visitors who share an IP address apart, when rate limiting needs it', 'seoprocookieconsent'), __('Varies', 'seoprocookieconsent')),
-                ),
-            ),
         );
 
         /**
@@ -215,6 +219,7 @@ final class SEOProCookieConsent_Services {
             $service['cookies']            = isset($service['cookies']) ? (array) $service['cookies'] : array();
             $service['privacy']            = isset($service['privacy']) ? (string) $service['privacy'] : '';
             $service['about']              = isset($service['about']) ? (string) $service['about'] : '';
+            $service['short']              = !empty($service['short']) ? (string) $service['short'] : (string) $service['name'];
             self::$necessary[(string) $id] = $service;
         }
         return self::$necessary;
