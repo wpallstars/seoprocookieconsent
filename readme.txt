@@ -55,9 +55,9 @@ Not until you switch on Cookie consent, so nothing changes on a live site before
 
 = Does it work on multilingual sites? =
 
-Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) translations are bundled for the banner, dialog, policy, terms and settings. Choose Settings → General → Site Language; administrators can choose their profile Language separately. English is the fallback. Your own messages and page text still need your translations. Clear page caches after language changes.
+Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) are bundled. Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
 
-With WPML String Translation or Polylang, translate consent_message and consent_policy_url in the SEO Pro Cookie Consent string group after opening admin with consent enabled. Published policy-page translations are linked automatically. TranslatePress uses its string API for custom banner text and translates ordinary page output. Default labels need available WordPress/plugin translations. Clear language page caches after changes; without a multilingual plugin the original text and links stay unchanged.
+WPML/Polylang: translate consent_message and consent_policy_url in the SEO Pro Cookie Consent group. Policy links follow published translations. TranslatePress handles banner text and pages. Clear language page caches after changes. Details: README.md.
 
 = How does it know where visitors are? =
 
