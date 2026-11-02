@@ -55,7 +55,9 @@ Not until you switch on Cookie consent, so nothing changes on a live site before
 
 = Does it work on multilingual sites? =
 
-With WPML String Translation or Polylang, translate consent_message and consent_policy_url in the SEO Pro Cookie Consent string group after opening admin with consent enabled. Published policy-page translations are linked automatically. TranslatePress uses its string API for custom banner text and translates ordinary page output. Default labels need available WordPress/plugin translations. Clear language page caches after changes; without a multilingual plugin the original text and links stay unchanged.
+Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) are bundled. Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
+
+WPML/Polylang: translate consent_message and consent_policy_url in the SEO Pro Cookie Consent group. Policy links follow published translations. TranslatePress handles banner text and pages. Clear language page caches after changes. Details: README.md.
 
 = How does it know where visitors are? =
 
@@ -108,6 +110,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 5. On a phone: stacked buttons and held-back embeds that fit.
 
 == Changelog ==
+
+= Unreleased =
+* Bundled Belgian Dutch, German and Canadian French translations for visitor output, blocks and settings; no language-pack download needed.
 
 = 1.0.9 =
 * The Necessary row in Cookie settings reads, for example, "Used by: login, security, Cloudflare, Turnstile."

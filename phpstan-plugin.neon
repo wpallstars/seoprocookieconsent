@@ -16,7 +16,6 @@ parameters:
 		-
 			identifiers:
 				- foreach.emptyArray
-				- staticMethod.resultUnused
 			path: includes/class-seoprocookieconsent.php
 		-
 			identifier: function.impossibleType

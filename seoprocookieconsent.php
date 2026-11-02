@@ -11,6 +11,7 @@
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       seoprocookieconsent
+ * Domain Path:       /languages
  * GitHub Plugin URI: wpallstars/seoprocookieconsent
  * Primary Branch:    main
  * Release Asset:     true
@@ -52,4 +53,4 @@ require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent.php';
 SEOProCookieConsent::load();
 register_deactivation_hook(__FILE__, array('SEOProCookieConsent', 'deactivate'));
 
-// Translations load just-in-time from WordPress.org language packs (WP 4.6+).
+// Setup registers bundled translations on init, before features read their labels.

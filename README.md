@@ -108,9 +108,13 @@ That is all. **Preview the banner**, at the top of the card's options, shows you
 
 ## Multilingual sites
 
+Bundled translations cover Belgian Dutch (`nl_BE`), German (`de_DE`) and Canadian French (`fr_CA`): the banner, preferences, placeholders, policy and terms blocks, editor controls and settings. Choose **Settings → General → Site Language**; administrators can use a different **Language** in their profile. English stays the fallback. Your own messages, business answers and page content are not translated automatically. Clear page caches after changing language.
+
 The banner, dialog and placeholders use the page's WordPress translations. With WPML String Translation or Polylang, open the site's admin after enabling consent, then translate `consent_message` and, if needed, `consent_policy_url` in the **SEO Pro Cookie Consent** string group. Saving settings refreshes the registered source strings. An empty message keeps the automatic translated message.
 
-Policy links use the current language's published policy-page translation when available, including the default privacy policy page; otherwise they keep the original link. TranslatePress translates ordinary page output and uses its string translation API for a custom banner message. Supply translations in your multilingual plugin; this plugin does not translate text automatically or bundle language packs. Clear each language's page cache after changing text or translations. Language follows the page, not browser preferences, cookies or IP. Without a multilingual plugin, the saved message and policy link work as before.
+Policy links use the current language's published policy-page translation when available, including the default privacy policy page; otherwise they keep the original link. TranslatePress translates ordinary page output and uses its string translation API for a custom banner message. Supply your own text and other languages in your multilingual plugin; this plugin does not translate text automatically. Clear each language's page cache after changing text or translations. Language follows the page, not browser preferences, cookies or IP. Without a multilingual plugin, the saved message and policy link work as before.
+
+Developers: `languages/seoprocookieconsent.pot` is the source template. Run `bash scripts/update-translations.sh` before each release to refresh it and compile the PO sources into MO and script JSON catalogs; commit all generated files. It uses WP-CLI (`wp i18n make-pot`, `make-mo`, `make-json`), or the repository's WordPress CLI Docker image when WP-CLI is unavailable. With GNU gettext installed, it also runs `msgfmt --check --check-format`. Release preflight runs the same script with `--check` against the actual packaged source and fails on stale or missing catalogs. Editor and front-end scripts receive translated labels from PHP; only the admin colour-mode script needs a JavaScript catalog.
 
 ## Consent records
 
@@ -397,6 +401,11 @@ Admin tabs can set `wide` to true to use the full available width. Own screens c
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- Added: bundled Belgian Dutch (`nl_BE`), German (`de_DE`) and Canadian French (`fr_CA`) for the banner, preferences, policy and terms, blocks and settings. No language-pack download needed; English and owner-written text stay unchanged.
+- Developers: refresh catalogs with `bash scripts/update-translations.sh`; release preflight rejects stale POT, MO and JavaScript JSON files without changing shared starter core files.
 
 ### 1.0.9
 

@@ -214,6 +214,27 @@ final class SEOProCookieConsent_Setup {
      * Register the helpers' hooks, after the settings store's.
      */
     public static function init() {
+        add_action('init', array(__CLASS__, 'translations'), -1);
+        add_action('admin_enqueue_scripts', array(__CLASS__, 'script_translations'), 100);
+    }
+
+    /**
+     * Register the bundled fallback after WordPress has resolved the locale.
+     * WordPress 6.7+ loads it just in time; older supported versions load it here.
+     * Installed WordPress language packs retain precedence over the bundle.
+     */
+    public static function translations() {
+        load_plugin_textdomain('seoprocookieconsent', false, dirname(plugin_basename(SEOPROCOOKIECONSENT_FILE)) . '/languages');
+    }
+
+    /**
+     * The other scripts receive already translated PHP labels and block metadata.
+     * Only the shared theme script contains JavaScript gettext calls.
+     */
+    public static function script_translations() {
+        if (wp_script_is('seoprocookieconsent-theme', 'registered')) {
+            wp_set_script_translations('seoprocookieconsent-theme', 'seoprocookieconsent', SEOPROCOOKIECONSENT_DIR . 'languages');
+        }
     }
 
     /**
