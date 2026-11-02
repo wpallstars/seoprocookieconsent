@@ -34,13 +34,16 @@ drop_urls() {
 	return 0
 }
 drop_urls "$WORK/$DOMAIN.pot"
-for locale in nl_BE de_DE fr_CA; do
-	cp "$SOURCE/languages/$DOMAIN-$locale.po" "$WORK/"
-	drop_urls "$WORK/$DOMAIN-$locale.po"
+# Every bundled locale: each PO the plugin ships (wpallstars/seoprocookieconsent#130).
+shopt -s nullglob
+for po in "$SOURCE/languages/$DOMAIN-"*.po; do
+	cp "$po" "$WORK/"
+	drop_urls "$WORK/${po##*/}"
 	if command -v msgfmt >/dev/null 2>&1; then
-		msgfmt --check --check-format "$WORK/$DOMAIN-$locale.po" -o /dev/null
+		msgfmt --check --check-format "$WORK/${po##*/}" -o /dev/null
 	fi
 done
+shopt -u nullglob
 "${WP[@]}" i18n make-mo "$OUTPUT_PATH"
 "${WP[@]}" i18n make-json "$OUTPUT_PATH" --no-purge --pretty-print
 # A removed locale or script must not leave a compiled catalogue in the build.

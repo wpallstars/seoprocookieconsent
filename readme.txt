@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -55,7 +55,7 @@ Not until you switch on Cookie consent, so nothing changes on a live site before
 
 = Does it work on multilingual sites? =
 
-Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) are bundled. Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
+Dutch, German, French, Spanish, Italian, Portuguese, Polish, Romanian, Latvian and Estonian are bundled, with country variants (list: README.md). Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
 
 WPML/Polylang: translate consent_message and consent_policy_url in the SEO Pro Cookie Consent group. Policy links follow published translations. TranslatePress handles banner text and pages. Clear language page caches after changes. Details: README.md.
 
@@ -111,7 +111,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= 1.0.10 =
-* Bundled Belgian Dutch, German and Canadian French translations for visitor output, blocks and settings; no language-pack download needed.
+= 1.0.11 =
+* Bundled French, Spanish, Italian, Portuguese, Polish, Romanian, Latvian and Estonian translations, plus more Dutch and German variants; the banner follows the page's language on multilingual sites.
 
 Every change: changelog.txt.
