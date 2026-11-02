@@ -1,0 +1,2768 @@
+# Copyright (C) 2026 Marcus Quinn
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SEO Pro Cookie Consent 1.0.10\n"
+"Report-Msgid-Bugs-To: https://github.com/wpallstars/seoprocookieconsent/issues\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"X-Domain: seoprocookieconsent\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Machine-Translation: Google Cloud Translation v2; entries with the translator comment 'machine translation' are machine translations: a reviewer removes the comment\n"
+
+# machine translation
+#. Plugin Name of the plugin
+#. translators: %s: the plugin's name.
+#: seoprocookieconsent.php admin/includes/class-admin-manager.php:293 admin/includes/class-admin-manager.php:294 admin/includes/class-admin-manager.php:303 admin/includes/class-admin-page.php:36 admin/includes/class-network-manager.php:62 admin/includes/class-network-manager.php:63
+msgid "SEO Pro Cookie Consent"
+msgstr "SEO Pro Cookie Consent"
+
+# machine translation
+#. Description of the plugin
+#: seoprocookieconsent.php
+msgid "Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme."
+msgstr "Vienkārša, viegla sīkfailu piekrišana: bloķē skriptus līdz piekrišanas saņemšanai, jautā tikai tad, ja to pieprasa likums un lapa, un atbilst jūsu tēmai."
+
+# machine translation
+#. Author of the plugin
+#: seoprocookieconsent.php
+msgid "Marcus Quinn"
+msgstr "Markuss Kvins"
+
+# machine translation
+#: admin/data/readme.php:32 admin/includes/class-admin-manager.php:175
+msgid "Read Me"
+msgstr "Izlasi mani"
+
+#: admin/includes/class-admin-manager.php:281 admin/includes/class-admin-manager.php:304 admin/includes/class-admin-page.php:238 admin/includes/class-network-manager.php:102 includes/class-seoprocookieconsent-records.php:156 includes/class-seoprocookieconsent-setup.php:167 includes/views/consent-banner.php:42 includes/views/consent-banner.php:47
+msgid "Settings"
+msgstr "Iestatījumi"
+
+# machine translation
+#. translators: %s: the plugin's name.
+#: admin/includes/class-admin-manager.php:303
+#, php-format
+msgid "%s settings"
+msgstr "%s iestatījumi"
+
+# machine translation
+#: admin/includes/class-admin-manager.php:417
+msgid "Saving…"
+msgstr "Saglabāšana…"
+
+# machine translation
+#: admin/includes/class-admin-manager.php:418 admin/includes/class-network-manager.php:321 includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved"
+msgstr "Saglabāts"
+
+# machine translation
+#: admin/includes/class-admin-manager.php:419
+msgid "Could not save. Please try again."
+msgstr "Nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz."
+
+# machine translation
+#: admin/includes/class-admin-manager.php:420
+msgid "Choose a picture"
+msgstr "Izvēlieties attēlu"
+
+# machine translation
+#: admin/includes/class-admin-manager.php:421
+msgid "Use this picture"
+msgstr "Izmantojiet šo attēlu"
+
+# machine translation
+#: admin/includes/class-admin-manager.php:422
+msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
+msgstr "Vai kopēt šos iestatījumus katras vietnes iestatījumos? Katra vietne tos var mainīt vēlāk, ja vien tie netiek lietoti visām vietnēm."
+
+# machine translation
+#: admin/includes/class-admin-page.php:39
+msgid "Network"
+msgstr "Tīkls"
+
+# machine translation
+#: admin/includes/class-admin-page.php:62 admin/includes/class-admin-page.php:71
+msgid "Search features"
+msgstr "Meklēšanas funkcijas"
+
+# machine translation
+#: admin/includes/class-admin-page.php:73
+msgid "Search"
+msgstr "Meklēt"
+
+# machine translation
+#: admin/includes/class-admin-page.php:90
+msgid "Source code"
+msgstr "Avota kods"
+
+# machine translation
+#: admin/includes/class-admin-page.php:92
+msgid "Visit website"
+msgstr "Apmeklēt tīmekļa vietni"
+
+# machine translation
+#: admin/includes/class-admin-page.php:98
+msgid "Support"
+msgstr "Atbalsts"
+
+# machine translation
+#: admin/includes/class-admin-page.php:105
+msgid "Buy me a coffee"
+msgstr "Nopērc man kafiju"
+
+#: admin/includes/class-admin-page.php:117 includes/views/consent-banner.php:38 includes/views/consent-banner.php:61
+msgid "(opens in a new tab)"
+msgstr "(atveras jaunā cilnē)"
+
+# machine translation
+#. translators: Browser title of a section of an admin screen. 1: the screen's name, 2: the section's name.
+#: admin/includes/class-admin-page.php:170
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+# machine translation
+#: admin/includes/class-admin-page.php:182
+msgid "Search results"
+msgstr "Meklēšanas rezultāti"
+
+# machine translation
+#: admin/includes/class-admin-page.php:239
+msgid "Discover"
+msgstr "Atklājiet"
+
+# machine translation
+#: admin/includes/class-admin-page.php:240
+msgid "About"
+msgstr "Par mums"
+
+# machine translation
+#: admin/includes/class-admin-page.php:243 admin/includes/class-admin-page.php:274
+msgid "SEO Pro Cookie Consent sections"
+msgstr "SEO Pro Cookie Consent sadaļas"
+
+# machine translation
+#: admin/includes/class-admin-theme.php:172
+msgid "You cannot change this."
+msgstr "Jūs to nevarat mainīt."
+
+# machine translation
+#: admin/includes/class-admin-theme.php:176
+msgid "Unknown colour mode."
+msgstr "Nezināms krāsu režīms."
+
+# machine translation
+#: admin/includes/class-admin-theme.php:179
+msgid "The colour mode could not be saved."
+msgstr "Krāsu režīmu nevarēja saglabāt."
+
+# machine translation
+#: admin/includes/class-network-manager.php:122
+msgid "Apply to every site"
+msgstr "Lietot katrā vietnē"
+
+# machine translation
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:175
+#, php-format
+msgid "This network has more than %d sites, so they are not compared here."
+msgstr "Šajā tīklā ir vairāk nekā %d vietņu, tāpēc tās šeit netiek salīdzinātas."
+
+# machine translation
+#: admin/includes/class-network-manager.php:178
+msgid "No site has used SEO Pro Cookie Consent yet. Each starts with these settings."
+msgstr "Neviena vietne vēl nav izmantojusi SEO Pro Cookie Consent. Katra vietne sākas ar šiem iestatījumiem."
+
+# machine translation
+#: admin/includes/class-network-manager.php:182
+msgid "Every site uses these settings."
+msgstr "Katrā vietnē tiek izmantoti šie iestatījumi."
+
+# machine translation
+#: admin/includes/class-network-manager.php:182
+msgid "Every site has these settings."
+msgstr "Katrā vietnē ir šādi iestatījumi."
+
+# machine translation
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:188
+#, php-format
+msgid "Every site uses these settings. When they stop applying, %1$d of %2$d sites goes back to different settings of its own: %3$s."
+msgid_plural "Every site uses these settings. When they stop applying, %1$d of %2$d sites go back to different settings of their own: %3$s."
+msgstr[0] "Katra vietne izmanto šos iestatījumus. Kad tie vairs netiek piemēroti, %1$d no %2$d vietnēm atgriežas pie saviem citiem iestatījumiem: %3$s."
+msgstr[1] "Katrā vietnē tiek izmantoti šie iestatījumi. Kad tie vairs netiek piemēroti, %1$d no %2$d vietnēm atgriežas pie saviem atšķirīgajiem iestatījumiem: %3$s."
+msgstr[2] "Katrā vietnē tiek izmantoti šie iestatījumi. Kad tie vairs netiek piemēroti, %1$d no %2$d vietnēm atgriežas pie saviem atšķirīgajiem iestatījumiem: %3$s."
+
+# machine translation
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:190
+#, php-format
+msgid "%1$d of %2$d sites has different settings of its own: %3$s."
+msgid_plural "%1$d of %2$d sites have different settings of their own: %3$s."
+msgstr[0] "%1$d no %2$d vietnēm ir atšķirīgi iestatījumi: %3$s."
+msgstr[1] "%1$d no %2$d vietnēm ir atšķirīgi iestatījumi: %3$s."
+msgstr[2] "%1$d no %2$d vietnēm ir atšķirīgi iestatījumi: %3$s."
+
+# machine translation
+#: admin/includes/class-network-manager.php:193
+msgid "Make every site the same"
+msgstr "Padarīt katru vietni vienādu"
+
+# machine translation
+#. translators: 1: list of sites, 2: number of other sites
+#: admin/includes/class-network-manager.php:247
+#, php-format
+msgid "%1$s and %2$d more"
+msgid_plural "%1$s and %2$d more"
+msgstr[0] "%1$s un vēl %2$d"
+msgstr[1] "%1$s un vēl %2$d"
+msgstr[2] "%1$s un vēl %2$d"
+
+# machine translation
+#: admin/includes/class-network-manager.php:297
+msgid "You are not allowed to change the network’s settings."
+msgstr "Jums nav atļauts mainīt tīkla iestatījumus."
+
+# machine translation
+#: admin/includes/class-network-manager.php:345
+msgid "Every site now uses these settings."
+msgstr "Tagad katrā vietnē tiek izmantoti šie iestatījumi."
+
+# machine translation
+#: admin/includes/class-network-manager.php:346
+msgid "Each site uses its own settings again."
+msgstr "Katra vietne atkal izmanto savus iestatījumus."
+
+# machine translation
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:366
+#, php-format
+msgid "%d site now has these settings."
+msgid_plural "%d sites now have these settings."
+msgstr[0] "%d vietnei tagad ir šie iestatījumi."
+msgstr[1] "%d vietnēm tagad ir šie iestatījumi."
+msgstr[2] "%d vietnēm tagad ir šie iestatījumi."
+
+# machine translation
+#: admin/includes/class-network-manager.php:367
+msgid "Every site already has these settings."
+msgstr "Katrā vietnē jau ir šie iestatījumi."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:157
+msgid "Redundant"
+msgstr "Lieks"
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:212
+msgid "You are not allowed to deactivate this plugin."
+msgstr "Jums nav atļauts deaktivizēt šo spraudni."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:215
+msgid "SEO Pro Cookie Consent only deactivates plugins it replaces."
+msgstr "SEO Pro Cookie Consent deaktivizē tikai tos spraudņus, kurus tas aizstāj."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:308
+msgid "Plugin deactivated."
+msgstr "Spraudnis deaktivizēts."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:329 admin/includes/class-replaced-plugins.php:594 admin/includes/class-replaced-plugins.php:611
+msgid "Show the setting"
+msgstr "Rādīt iestatījumu"
+
+# machine translation
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:336
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: %s is on and takes over once you deactivate this plugin. Then you can delete it."
+msgstr "SEO Pro Cookie Consent padara šo spraudni lieku: %s ir ieslēgts un pārņem darbību, tiklīdz deaktivizējat šo spraudni. Pēc tam to var izdzēst."
+
+# machine translation
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:340
+#, php-format
+msgid "SEO Pro Cookie Consent can do this plugin's job: %1$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %2$s."
+msgstr "SEO Pro Cookie Consent var veikt šī spraudņa uzdevumu: %1$s ir ieslēgts un pārņem darbību, kad to deaktivizējat, izņemot šīs, ko SEO Pro Cookie Consent nedara: %2$s."
+
+# machine translation
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:344
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then deactivate and delete this plugin."
+msgstr "SEO Pro Cookie Consent padara šo spraudni lieku: ieslēdziet %s iekš SEO Pro Cookie Consent, pēc tam deaktivizējiet un izdzēsiet šo spraudni."
+
+# machine translation
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:348
+#, php-format
+msgid "SEO Pro Cookie Consent can do part of this plugin's job with %1$s. It does not do these, which this plugin has on: %2$s."
+msgstr "SEO Pro Cookie Consent var veikt daļu šī spraudņa uzdevuma ar %1$s. Tas nedara šādas darbības, kas šim spraudnim ir: %2$s."
+
+# machine translation
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:352
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then you can delete this plugin."
+msgstr "SEO Pro Cookie Consent padara šo spraudni lieku: ieslēdziet %s iekš SEO Pro Cookie Consent, pēc tam varēsiet dzēst šo spraudni."
+
+# machine translation
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:356
+#, php-format
+msgid "No longer needed: %s in SEO Pro Cookie Consent does this plugin's job. You can delete it."
+msgstr "Vairs nav nepieciešams: šī spraudņa darbu veic %s iekš SEO Pro Cookie Consent. To var izdzēst."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:544
+msgid "SEO Pro Cookie Consent can do the job of these plugins:"
+msgstr "SEO Pro Cookie Consent var veikt šo spraudņu darbu:"
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:550 includes/admin/class-seoprocookieconsent-migrate-notices.php:186
+msgid "Hide"
+msgstr "Slēpt"
+
+# machine translation
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:570
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it. Then you can delete it."
+msgstr "%1$s: %2$s ir ieslēgts un pārņem darbību, tiklīdz to deaktivizējat. Pēc tam to var izdzēst."
+
+# machine translation
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:574 admin/includes/class-replaced-plugins.php:587 admin/includes/class-settings-manager.php:489 includes/admin/class-seoprocookieconsent-migrate-notices.php:238
+#, php-format
+msgid "Deactivate %s"
+msgstr "Deaktivizēt %s"
+
+# machine translation
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:583
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %3$s. Deactivate it only if you no longer need them."
+msgstr "%1$s: %2$s ir ieslēgts un pārņem darbību pēc deaktivizēšanas, izņemot šīs, ko SEO Pro Cookie Consent nedara: %3$s. Deaktivizējiet to tikai tad, ja tas vairs nav nepieciešams."
+
+# machine translation
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:592
+#, php-format
+msgid "%1$s: %2$s can do part of its job. SEO Pro Cookie Consent does not do these, which it has on: %3$s."
+msgstr "%1$s: %2$s var veikt daļu no sava uzdevuma. SEO Pro Cookie Consent nedara šīs darbības, kas tai ir uz: %3$s."
+
+# machine translation
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:599
+#, php-format
+msgid "%1$s is inactive and no longer needed: %2$s does its job."
+msgstr "%1$s ir neaktīvs un vairs nav nepieciešams: %2$s veic savu darbu."
+
+# machine translation
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:603 includes/admin/class-seoprocookieconsent-migrate-notices.php:249
+#, php-format
+msgid "Delete %s"
+msgstr "Dzēst %s"
+
+# machine translation
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:609
+#, php-format
+msgid "%1$s: switch on %2$s, then deactivate and delete it."
+msgstr "%1$s: ieslēdziet %2$s, pēc tam deaktivizējiet un izdzēsiet to."
+
+# machine translation
+#: admin/includes/class-replaced-plugins.php:620 includes/admin/class-seoprocookieconsent-migrate-notices.php:346
+msgid "You are not allowed to manage plugins on this site."
+msgstr "Jums nav atļauts pārvaldīt spraudņus šajā vietnē."
+
+# machine translation
+#. translators: %s: search text
+#: admin/includes/class-settings-manager.php:104
+#, php-format
+msgid "Results for “%s”"
+msgstr "Rezultāti vaicājumam “%s”"
+
+# machine translation
+#. translators: %d: number of matching features
+#: admin/includes/class-settings-manager.php:112
+#, php-format
+msgid "%d feature found."
+msgid_plural "%d features found."
+msgstr[0] "Atrasta %d funkcija."
+msgstr[1] "Atrastas %d funkcijas."
+msgstr[2] "Atrastas %d funkcijas."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:113
+msgid "No features match. Try another word."
+msgstr "Nav atbilstošu funkciju. Izmēģiniet citu vārdu."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:117 admin/includes/class-settings-manager.php:158
+msgid "Changes are saved automatically."
+msgstr "Izmaiņas tiek saglabātas automātiski."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:156
+msgid "New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically."
+msgstr "Jaunas vietnes sākotnēji tiek veidotas ar šiem iestatījumiem. Lai iestatītu to katrai vietnei atsevišķi, lietojiet karti, lai vietnes to nevarētu mainīt. Izmaiņas tiek saglabātas automātiski."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:171
+msgid "No settings yet."
+msgstr "Vēl nav iestatījumu."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:258
+msgid "Options"
+msgstr "Iespējas"
+
+# machine translation
+#. translators: %s: setting name
+#: admin/includes/class-settings-manager.php:260
+#, php-format
+msgid "for %s"
+msgstr "priekš %s"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:291
+msgid "The network administrator sets this for every site."
+msgstr "Tīkla administrators to iestata katrai vietnei."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:293
+msgid "Change it for the network"
+msgstr "Mainiet to tīklam"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:343
+msgid "Troubleshooting"
+msgstr "Problēmu novēršana"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:344
+msgid "Leave these as they are unless something is missing or broken."
+msgstr "Atstājiet tos tādus, kādi tie ir, ja vien kaut kas netrūkst vai nav salūzis."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:500
+msgid "Replaces:"
+msgstr "Aizstāj:"
+
+# machine translation
+#. translators: %s: plugin names
+#: admin/includes/class-settings-manager.php:507
+#, php-format
+msgid "%s is still active, so it does this job and this setting waits until it is deactivated."
+msgstr "%s joprojām ir aktīvs, tāpēc tas veic šo uzdevumu, un šis iestatījums gaida, līdz tas tiek deaktivizēts."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:586
+msgid "Tokens:"
+msgstr "Žetoni:"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:588
+msgid "Insert token"
+msgstr "Ievietot žetonu"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:683
+msgid "Select all"
+msgstr "Atlasīt visu"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:684
+msgid "Clear"
+msgstr "Skaidrs"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:701
+msgid "(always chosen)"
+msgstr "(vienmēr izvēlēts)"
+
+# machine translation
+#. translators: %s: a choice, such as Facebook.
+#: admin/includes/class-settings-manager.php:710
+#, php-format
+msgid "Move %s: drag, or press the up or down arrow key"
+msgstr "Pārvietot %s: velciet vai nospiediet augšupvērsto vai lejupvērsto bultiņu taustiņu"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:726
+msgid "Drag the handles to change the order."
+msgstr "Velciet rokturus, lai mainītu secību."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:729
+msgid "Choices with a lock are always chosen."
+msgstr "Izvēles ar slēdzeni vienmēr tiek izvēlētas."
+
+# machine translation
+#: admin/includes/class-settings-manager.php:834
+msgid "Choose picture"
+msgstr "Izvēlieties attēlu"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:839
+msgid "Remove"
+msgstr "Noņemt"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:28 includes/admin/class-seoprocookieconsent-import-tab.php:101
+msgid "Import"
+msgstr "Importēt"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:50
+msgid "Move here"
+msgstr "Pārvietot šeit"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:51
+msgid "Review the dry run below. Import fills only default settings and adds missing script rules. Pages change only when selected. Check the banner and pages, then deactivate and delete the old plugin. Purge page caches after switching."
+msgstr "Pārskatiet tālāk norādīto izmēģinājuma versiju. Importēšana aizpilda tikai noklusējuma iestatījumus un pievieno trūkstošos skripta noteikumus. Lapas mainās tikai tad, kad tās ir atlasītas. Pārbaudiet reklāmkarogu un lapas, pēc tam deaktivizējiet un izdzēsiet veco spraudni. Pēc pārslēgšanas notīriet lapu kešatmiņu."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:65
+msgid "Dry run: settings and script rules to add"
+msgstr "Sagatavošana: pievienojamie iestatījumi un skripta noteikumi"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:67
+msgid "Consent cookie mapping"
+msgstr "Piekrišanas sīkfailu kartēšana"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:71
+msgid "No choices carry over: visitors are asked again."
+msgstr "Izvēles iespējas netiek saglabātas: apmeklētājiem tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:73
+msgid "Only complete explicit choices carry over; dismissing the banner does not allow anything. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive."
+msgstr "Pārnestas tiek tikai pilnīgi skaidri izteiktas izvēles; reklāmkaroga aizvēršana neko neļauj. Iegultie elementi bez līdzvērtīgas kategorijas paliek neaktīvi. Pārnešana sākas tikai pēc tam, kad vecais reklāmkarogs ir neaktīvs."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:76
+msgid "Policy pages (select each page to confirm conversion)"
+msgstr "Politikas lapas (atlasiet katru lapu, lai apstiprinātu konvertēšanu)"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:81
+msgid "Replace with Cookie policy block, and turn on Cookie policy (Policies tab) so it shows."
+msgstr "Aizstājiet ar Sīkfailu politikas bloķēšanu un ieslēdziet Sīkfailu politiku (Politikas cilnē), lai tā būtu redzama."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:82
+msgid "Replace with Cookie settings button block."
+msgstr "Aizstāt ar sīkfailu iestatījumu pogas bloku."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:83
+msgid "Keep your edited document as editable HTML, with a revision."
+msgstr "Saglabājiet rediģēto dokumentu kā rediģējamu HTML ar pārskatīšanu."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:84
+msgid "No document is selected, so it shows nothing. Remove it yourself."
+msgstr "Nav atlasīts neviens dokuments, tāpēc tajā nekas netiek rādīts. Noņemiet to pats."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:85
+msgid "Form or live list with no direct equivalent. Not changed: replace or remove it yourself."
+msgstr "Veidlapa vai tiešs saraksts bez tieša ekvivalenta. Nav mainīts: nomainiet vai noņemiet to pats."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:86
+msgid "Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back."
+msgstr "Saturs tiek rādīts tikai pēc apstiprināšanas. Nav mainīts: pats izņemiet tā skriptus no īskoda; pakalpojumi, ko šis spraudnis atpazīst, un jūsu skriptu noteikumi pēc tam tiek aizturēti."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:87
+msgid "Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself."
+msgstr "Reklamkaroga poga, saite vai statuss bez ekvivalenta šeit. Nav mainīts: nomainiet vai noņemiet to pats."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:88
+msgid "Make this link or button open Cookie settings, keeping its text."
+msgstr "Atvērt šo saiti vai pogu Sīkfailu iestatījumos, saglabājot tās tekstu."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:89
+msgid "Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognises them."
+msgstr "Saglabājiet saturu un noņemiet tam apkārt esošās atzīmes. Tā skripti tiek pievienoti arī mapei “Aizsargāt”, ja vien šis spraudnis tos jau neatpazīst."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:90
+msgid "Keep the content and remove the tags around it."
+msgstr "Saglabājiet saturu un noņemiet apkārt esošās atzīmes."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:91
+msgid "Hosted document, button or widget that stops working when the old plugin or account goes. Not changed: replace it with your own page or link, or remove it yourself."
+msgstr "Mitināts dokuments, poga vai logrīks, kas pārstāj darboties, kad vecais spraudnis vai konts tiek noņemts. Nav mainīts: aizstājiet to ar savu lapu vai saiti vai noņemiet to pats."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:92
+msgid "Marked to wait for the old banner, so it never loads without it. Not changed: make it a normal script or embed again yourself."
+msgstr "Atzīmēts, lai gaidītu veco reklāmkarogu, lai tas nekad neielādētos bez tā. Nav mainīts: padariet to par parastu skriptu vai ieguldiet to vēlreiz pats."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Freeze the rendered document as editable HTML, with a revision."
+msgstr "Iesaldēt atveidoto dokumentu kā rediģējamu HTML ar pārskatīšanu."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Cannot render while the source is inactive: rewrite this document or reactivate the source before importing."
+msgstr "Nevar renderēt, kamēr avots ir neaktīvs: pārrakstiet šo dokumentu vai atkārtoti aktivizējiet avotu pirms importēšanas."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:105
+msgid "Stop carrying over old consent"
+msgstr "Beidziet pārnest veco piekrišanu"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:108 includes/admin/class-seoprocookieconsent-import-tab.php:124 includes/admin/class-seoprocookieconsent-migrate-notices.php:253
+msgid "Remove leftover data"
+msgstr "Noņemiet atlikušos datus"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:111
+msgid "Kept: old consent records, data requests and anything not known to be generated. Export records from the old plugin before deleting it if you must keep them, then remove these tables or folders yourself after your retention period."
+msgstr "Saglabāti: vecie piekrišanas ieraksti, datu pieprasījumi un viss, kas, kā zināms, nav ģenerēts. Eksportējiet ierakstus no vecā spraudņa pirms tā dzēšanas, ja tie ir jāpatur, un pēc saglabāšanas perioda beigām pats noņemiet šīs tabulas vai mapes."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:116
+msgid "Nothing to remove."
+msgstr "Nekas nav jānoņem."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:123
+msgid "Remove exactly the listed data from this site. This cannot be undone. Make a backup first. Network-wide data is not removed."
+msgstr "No šīs vietnes noņemiet tieši norādītos datus. Šo darbību nevar atsaukt. Vispirms izveidojiet dublējumu. Tīkla mēroga dati netiks noņemti."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:130
+msgid "No supported source data found."
+msgstr "Nav atrasti atbalstīti avota dati."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:132
+msgid "Import history"
+msgstr "Importēšanas vēsture"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:134
+msgid "Undone"
+msgstr "Atsaukts"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:138
+msgid "Undo"
+msgstr "Atsaukt"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:157
+msgid "You cannot import on this screen."
+msgstr "Šajā ekrānā importēt nevar."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-import-tab.php:163
+msgid "Confirm the irreversible cleanup first."
+msgstr "Vispirms apstipriniet neatgriezenisko tīrīšanu."
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:75
+#, php-format
+msgid "Import from %s first"
+msgstr "Vispirms importēt no %s"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:182
+msgid "Move to SEO Pro Cookie Consent:"
+msgstr "Pārvietot uz SEO Pro Cookie Consent:"
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:204
+#, php-format
+msgid "%s is asking your visitors now. Bring its settings across, then switch."
+msgstr "%s tagad jautā jūsu apmeklētājiem. Pārnesiet tā iestatījumus un pēc tam pārslēdziet."
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:207
+#, php-format
+msgid "%s is not active, but its settings are still here. Bring them across."
+msgstr "%s nav aktīvs, bet tā iestatījumi joprojām ir šeit. Atnesiet tos šeit."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:209
+msgid "Pages that show its documents may already be blank."
+msgstr "Lapas, kurās redzami tā dokumenti, iespējams, jau ir tukšas."
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:214
+#, php-format
+msgid "Import from %s"
+msgstr "Importēt no %s"
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:220
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once and visitors keep their choices."
+msgstr "Pārbaudiet importēšanu un pēc tam deaktivizējiet %s: SEO Pro Cookie Consent pārņem vadību uzreiz, un apmeklētāji saglabā savas izvēles."
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:222
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Pārbaudiet importēšanu un pēc tam deaktivizējiet %s: SEO Pro Cookie Consent pārņems vadību nekavējoties."
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:225
+#, php-format
+msgid "Check the import and turn on Cookie consent, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr "Pārbaudiet importēšanu un ieslēdziet sīkfailu piekrišanu, pēc tam deaktivizējiet %s: SEO Pro Cookie Consent nekavējoties pārņems vadību."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:227
+msgid "If it has a delete-data setting, turn that on first."
+msgstr "Ja ir datu dzēšanas iestatījums, vispirms ieslēdziet to."
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:229
+msgid "Check the import"
+msgstr "Pārbaudiet importu"
+
+# machine translation
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:231
+msgid "Turn on Cookie consent"
+msgstr "Ieslēgt sīkfailu piekrišanu"
+
+# machine translation
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:244
+#, php-format
+msgid "%s left data on the site."
+msgstr "%s atstāja datus vietnē."
+
+#: includes/class-seoprocookieconsent-blocker.php:320 includes/features/class-seoprocookieconsent-consent.php:402
+msgid "This content"
+msgstr "Šis saturs"
+
+# machine translation
+#: includes/class-seoprocookieconsent-blocker.php:321
+msgid "content"
+msgstr "saturs"
+
+#. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
+#. translators: 1: service name; 2: cookie category.
+#: includes/class-seoprocookieconsent-blocker.php:325 includes/features/class-seoprocookieconsent-consent.php:399
+#, php-format
+msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
+msgstr "%1$s var iestatīt sīkfailus. Tas tiek ielādēts, kad to atļaujat vai kad atļaujat %2$s sīkfailu iestatījumos."
+
+# machine translation
+#. translators: %s: what is embedded, such as video or map.
+#: includes/class-seoprocookieconsent-blocker.php:327
+#, php-format
+msgid "Load %s"
+msgstr "Ielādēt %s"
+
+#: includes/class-seoprocookieconsent-blocker.php:334 includes/features/class-seoprocookieconsent-consent.php:404 includes/features/class-seoprocookieconsent-consent.php:506 includes/features/class-seoprocookieconsent-consent.php:763 includes/features/class-seoprocookieconsent-consent.php:775 includes/features/class-seoprocookieconsent-consent.php:834 includes/features/class-seoprocookieconsent-consent.php:860 includes/views/consent-banner.php:55
+msgid "Cookie settings"
+msgstr "Sīkfailu iestatījumi"
+
+# machine translation
+#: includes/class-seoprocookieconsent-network-differences.php:183 includes/class-seoprocookieconsent-network-settings.php:223 includes/class-seoprocookieconsent-network-settings.php:244
+msgid "This setting is set on each site."
+msgstr "Šis iestatījums ir iestatīts katrā vietnē."
+
+# machine translation
+#. translators: %d: number of sites
+#: includes/class-seoprocookieconsent-network-differences.php:188
+#, php-format
+msgid "This network has more than %d sites, too many to change at once."
+msgstr "Šajā tīklā ir vairāk nekā %d vietņu — pārāk daudz, lai tās mainītu vienlaikus."
+
+# machine translation
+#: includes/class-seoprocookieconsent-network-settings.php:231 includes/class-seoprocookieconsent-network-settings.php:253 includes/class-seoprocookieconsent-settings.php:392 includes/class-seoprocookieconsent-settings.php:408
+msgid "The setting could not be saved. Please try again."
+msgstr "Iestatījumu nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz."
+
+#: includes/class-seoprocookieconsent-records.php:157 includes/views/consent-banner.php:43 includes/views/consent-banner.php:92
+msgid "Reject all"
+msgstr "Noraidīt visus"
+
+#: includes/class-seoprocookieconsent-records.php:158 includes/views/consent-banner.php:44 includes/views/consent-banner.php:94
+msgid "Accept all"
+msgstr "Pieņemt visus"
+
+#: includes/class-seoprocookieconsent-records.php:159 includes/views/consent-banner.php:48
+msgid "OK"
+msgstr "Labi"
+
+#: includes/class-seoprocookieconsent-records.php:160 includes/views/consent-banner.php:93
+msgid "Save choices"
+msgstr "Saglabāt izvēles"
+
+#: includes/class-seoprocookieconsent-records.php:161 includes/views/consent-banner.php:56
+msgid "Close"
+msgstr "Aizvērt"
+
+#: includes/class-seoprocookieconsent-records.php:163 includes/views/consent-banner.php:59
+msgid "Choose which cookies to allow. You can change this at any time from the Cookie settings link."
+msgstr "Izvēlieties, kurus sīkfailus atļaut. To var mainīt jebkurā laikā, izmantojot saiti Sīkfailu iestatījumi."
+
+#: includes/class-seoprocookieconsent-records.php:167 includes/features/class-seoprocookieconsent-policy.php:42 includes/features/class-seoprocookieconsent-policy.php:65 includes/views/consent-banner.php:38 includes/views/consent-banner.php:61
+msgid "Cookie policy"
+msgstr "Sīkfailu politika"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:238
+msgid "Choice is too large."
+msgstr "Izvēle ir pārāk liela."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:247
+msgid "Invalid choice."
+msgstr "Nederīga izvēle."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:252
+msgid "Invalid categories."
+msgstr "Nederīgas kategorijas."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:258
+msgid "Invalid services."
+msgstr "Nederīgi pakalpojumi."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:262
+msgid "Records are not ready yet."
+msgstr "Ieraksti vēl nav gatavi."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:275
+msgid "Could not store choice."
+msgstr "Nevarēja saglabāt izvēli."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:305
+msgid "Export consent records (CSV)"
+msgstr "Eksportēt piekrišanas ierakstus (CSV)"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:307
+msgid "Export consent snapshots (CSV)"
+msgstr "Eksportēt piekrišanas momentuzņēmumus (CSV)"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:324
+msgid "Older records"
+msgstr "Vecāki ieraksti"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:329
+msgid "Look up a consent ID"
+msgstr "Meklējiet piekrišanas ID"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:331
+msgid "Look up"
+msgstr "Paskaties augšup"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:338
+msgid "You cannot look up consent records."
+msgstr "Jūs nevarat meklēt piekrišanas ierakstus."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:344
+msgid "Invalid consent ID. Enter 32 lowercase hexadecimal characters."
+msgstr "Nederīgs piekrišanas ID. Ievadiet 32 mazās heksadecimālās rakstzīmes."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:347
+msgid "Consent records are not ready yet. Open settings with recording enabled first."
+msgstr "Piekrišanas ieraksti vēl nav gatavi. Vispirms atveriet iestatījumus, iespējojot ierakstīšanu."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:354
+msgid "Could not read consent records."
+msgstr "Nevarēja nolasīt piekrišanas ierakstus."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:362 includes/class-seoprocookieconsent-records.php:381
+msgid "Consent records"
+msgstr "Piekrišanas ieraksti"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:363
+msgid "Consent ID:"
+msgstr "Piekrišanas ID:"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Recorded (UTC)"
+msgstr "Reģistrēts (UTC)"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice time (UTC)"
+msgstr "Izvēles laiks (UTC)"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice (JSON)"
+msgstr "Izvēle (JSON)"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:365 includes/features/class-seoprocookieconsent-consent.php:184
+msgid "Policy version"
+msgstr "Politikas versija"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Snapshot"
+msgstr "Momentuzņēmums"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:374
+msgid "No unexpired records found for this consent ID."
+msgstr "Šim piekrišanas ID nav atrasti derīgi ieraksti."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:378
+msgid "Back to settings"
+msgstr "Atpakaļ uz iestatījumiem"
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:400
+msgid "You cannot export consent records."
+msgstr "Jūs nevarat eksportēt piekrišanas ierakstus."
+
+# machine translation
+#: includes/class-seoprocookieconsent-records.php:404
+msgid "No consent records yet."
+msgstr "Vēl nav piekrišanas ierakstu."
+
+#: includes/class-seoprocookieconsent-services.php:45
+msgid "Necessary"
+msgstr "Nepieciešams"
+
+#: includes/class-seoprocookieconsent-services.php:46
+msgid "Needed for the site to work, such as remembering your cookie choices. Always on."
+msgstr "Nepieciešams vietnes darbībai, piemēram, lai atcerētos jūsu sīkfailu izvēles. Vienmēr ieslēgts."
+
+#: includes/class-seoprocookieconsent-services.php:49
+msgid "Preferences"
+msgstr "Preferences"
+
+#: includes/class-seoprocookieconsent-services.php:50
+msgid "Remember your choices and load extras such as live chat."
+msgstr "Atceras jūsu izvēles un ielādē papildu funkcijas, piemēram, tiešsaistes tērzēšanu."
+
+#: includes/class-seoprocookieconsent-services.php:53
+msgid "Statistics"
+msgstr "Statistika"
+
+#: includes/class-seoprocookieconsent-services.php:54
+msgid "Help us see how the site is used, so we can improve it."
+msgstr "Palīdz mums redzēt, kā vietne tiek izmantota, lai mēs to varētu uzlabot."
+
+#: includes/class-seoprocookieconsent-services.php:57
+msgid "Embedded content"
+msgstr "Iegults saturs"
+
+#: includes/class-seoprocookieconsent-services.php:58
+msgid "Videos, maps and posts from other sites, which may track you there."
+msgstr "Video, kartes un ieraksti no citām vietnēm, kas var jūs tur izsekot."
+
+#: includes/class-seoprocookieconsent-services.php:61
+msgid "Marketing"
+msgstr "Mārketings"
+
+#: includes/class-seoprocookieconsent-services.php:62
+msgid "Measure and personalise ads, on this site and others."
+msgstr "Mēra un personalizē reklāmas šajā un citās vietnēs."
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:157
+msgid "Tells people from bots, when bot protection is on"
+msgstr "Informē cilvēkus no robotiem, kad ir ieslēgta robotu aizsardzība"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:157 includes/class-seoprocookieconsent-services.php:192 includes/class-seoprocookieconsent-services.php:315
+msgid "30 minutes"
+msgstr "30 minūtes"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "Remembers that you passed a security check"
+msgstr "Atceras, ka esat izgājis drošības pārbaudi"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "30 minutes, unless the site sets another time"
+msgstr "30 minūtes, ja vien vietne nenosaka citu laiku"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Tells visitors who share an IP address apart, when rate limiting needs it"
+msgstr "Norāda apmeklētājiem, kuriem ir viena un tā pati IP adrese, kad ir nepieciešama ātruma ierobežošana"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Varies"
+msgstr "Atšķiras"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:168
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser."
+msgstr "Pārbauda, vai veidlapas ir nosūtījusi persona, nevis robots. Tas saņem jūsu IP adresi un informāciju par jūsu pārlūkprogrammu."
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:176
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser, and may set cookies on Google's own sites."
+msgstr "Pārbauda, vai veidlapas nosūta persona, nevis robots. Tas saņem jūsu IP adresi un informāciju par jūsu pārlūkprogrammu un var iestatīt sīkfailus Google vietnēs."
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:183
+msgid "Tells people from bots"
+msgstr "Atšķir cilvēkus no robotiem"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:183 includes/class-seoprocookieconsent-services.php:342
+msgid "30 days"
+msgstr "30 dienas"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:191 includes/class-seoprocookieconsent-services.php:192
+msgid "Helps prevent payment fraud"
+msgstr "Palīdz novērst krāpšanu ar maksājumiem"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:191 includes/class-seoprocookieconsent-services.php:304 includes/class-seoprocookieconsent-services.php:314 includes/class-seoprocookieconsent-services.php:351 includes/features/class-seoprocookieconsent-policy.php:120
+msgid "1 year"
+msgstr "1 gads"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:200
+msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's own sites."
+msgstr "Pieņem maksājumus un palīdz novērst krāpšanu. Tas var iestatīt sīkfailus PayPal vietnēs."
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:277 includes/class-seoprocookieconsent-services.php:342 includes/class-seoprocookieconsent-services.php:351 includes/class-seoprocookieconsent-services.php:360
+msgid "Measures ad conversions"
+msgstr "Mēra reklāmu konversijas"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:277 includes/class-seoprocookieconsent-services.php:324
+msgid "3 months"
+msgstr "3 mēneši"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:278
+msgid "Shows and measures ads"
+msgstr "Rāda un mēra reklāmas"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:278 includes/class-seoprocookieconsent-services.php:333 includes/class-seoprocookieconsent-services.php:360
+msgid "13 months"
+msgstr "13 mēneši"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:294 includes/class-seoprocookieconsent-services.php:304 includes/class-seoprocookieconsent-services.php:314 includes/class-seoprocookieconsent-services.php:377
+msgid "Tells visitors apart"
+msgstr "Atšķir apmeklētājus"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:294 includes/class-seoprocookieconsent-services.php:295 includes/class-seoprocookieconsent-services.php:398
+msgid "2 years"
+msgstr "2 gadi"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:295 includes/class-seoprocookieconsent-services.php:305 includes/class-seoprocookieconsent-services.php:315 includes/class-seoprocookieconsent-services.php:361
+msgid "Keeps the visit together"
+msgstr "Saglabā vizīti kopā"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:305 includes/class-seoprocookieconsent-services.php:361
+msgid "1 day"
+msgstr "1 diena"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:324 includes/class-seoprocookieconsent-services.php:333
+msgid "Measures and personalises ads"
+msgstr "Mēra un personalizē reklāmas"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:377 includes/class-seoprocookieconsent-services.php:387 includes/class-seoprocookieconsent-services.php:408 includes/class-seoprocookieconsent-services.php:466
+msgid "6 months"
+msgstr "6 mēneši"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:383 includes/class-seoprocookieconsent-services.php:394
+msgid "video"
+msgstr "video"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:387
+msgid "Remembers player settings"
+msgstr "Atceras spēlētāja iestatījumus"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:388 includes/class-seoprocookieconsent-services.php:398
+msgid "Counts views"
+msgstr "Skatījumu skaits"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:388 includes/class-seoprocookieconsent-services.php:457
+msgid "Session"
+msgstr "Sesija"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:404
+msgid "map"
+msgstr "karte"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:408
+msgid "Remembers preferences"
+msgstr "Atceras preferences"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:414 includes/class-seoprocookieconsent-services.php:422
+msgid "player"
+msgstr "spēlētājs"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:430 includes/class-seoprocookieconsent-services.php:438 includes/class-seoprocookieconsent-services.php:446
+msgid "post"
+msgstr "pasts"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:457
+msgid "Keeps the chat connected"
+msgstr "Uztur tērzēšanu savienotu"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:466 includes/class-seoprocookieconsent-services.php:475
+msgid "Keeps the chat going"
+msgstr "Turpina sarunu"
+
+# machine translation
+#: includes/class-seoprocookieconsent-services.php:475
+msgid "9 months"
+msgstr "9 mēneši"
+
+# machine translation
+#: includes/class-seoprocookieconsent-settings.php:380
+msgid "Unknown setting."
+msgstr "Nezināms iestatījums."
+
+# machine translation
+#: includes/class-seoprocookieconsent-settings.php:383
+msgid "The network administrator sets this for every site, so it cannot be changed here."
+msgstr "Tīkla administrators to iestata katrai vietnei, tāpēc to šeit nevar mainīt."
+
+# machine translation
+#: includes/class-seoprocookieconsent-settings.php:1054
+msgid "You are not allowed to change these settings."
+msgstr "Jums nav atļauts mainīt šos iestatījumus."
+
+# machine translation
+#: includes/class-seoprocookieconsent-settings.php:1079
+msgid "Saved. Reload the page to see the change."
+msgstr "Saglabāts. Lai redzētu izmaiņas, ielādējiet lapu atkārtoti."
+
+# machine translation
+#: includes/class-seoprocookieconsent-setup.php:263
+msgid "Consent"
+msgstr "Piekrišana"
+
+# machine translation
+#: includes/class-seoprocookieconsent-setup.php:264
+msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
+msgstr "Aizturēt sīkfailus, līdz apmeklētāji tos atļauj, ar īsu reklāmkarogu tikai tur, kur tas nepieciešams."
+
+# machine translation
+#: includes/class-seoprocookieconsent-setup.php:267
+msgid "Policies"
+msgstr "Politikas"
+
+# machine translation
+#: includes/class-seoprocookieconsent-setup.php:268
+msgid "Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
+msgstr "Sīkfailu politika un noteikumi un nosacījumi jūsu rakstītajās lapās. Izskatiet pirms publicēšanas; tā nav juridiska konsultācija."
+
+#: includes/features/class-seoprocookieconsent-consent.php:89 includes/views/consent-banner.php:33
+msgid "Cookie consent"
+msgstr "Sīkfailu piekrišana"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:90
+msgid "Holds back scripts and embeds that set cookies, such as Google Analytics, ad pixels and YouTube videos, until visitors allow them. A short banner shows only on pages that have them."
+msgstr "Aiztur skriptus un iegultos failus, kas iestata sīkfailus, piemēram Google Analytics, reklāmu pikseļus un YouTube videoklipus, līdz apmeklētāji tos atļauj. Īss reklāmkarogs tiek rādīts tikai lapās, kurās tie ir."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:98
+msgid "Who is asked first"
+msgstr "Kam tiek jautāts pirmajam"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:99
+msgid "Europe (EU, EEA, UK, Switzerland), Quebec and visitors whose location is unclear are always asked before anything loads. The browser's time zone tells them apart: nothing is looked up or sent anywhere."
+msgstr "Pirms ielādes vienmēr tiek jautāts par Eiropu (ES, EEZ, Apvienotā Karaliste, Šveice), Kvebeku un apmeklētājiem, kuru atrašanās vieta nav skaidra. Tos atšķir pārlūkprogrammas laika josla: nekas netiek meklēts vai nekur nosūtīts."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:101
+msgid "By region, with a notice elsewhere"
+msgstr "Pēc reģiona, ar paziņojumu citur"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:102
+msgid "By region, no notice elsewhere"
+msgstr "Pēc reģiona, citur nav paziņojuma"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:103
+msgid "Everyone"
+msgstr "Ikviens"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:110
+msgid "Banner position"
+msgstr "Reklāmkaroga pozīcija"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:112
+msgid "Bar along the bottom"
+msgstr "Josla apakšā"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:113
+msgid "Box at the bottom left"
+msgstr "Lodziņš apakšējā kreisajā stūrī"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:114
+msgid "Box at the bottom right"
+msgstr "Lodziņš apakšējā labajā stūrī"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:121
+msgid "Banner message"
+msgstr "Reklāmkaroga ziņojums"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:122
+msgid "Leave empty for a message that names what is on the page, such as \"This page uses YouTube and Google Analytics, which may set cookies.\""
+msgstr "Atstājiet tukšu ziņojumam, kurā norādīts lapas saturs, piemēram, \"Šī lapa izmanto YouTube un Google Analytics, kas var iestatīt sīkfailus\"."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:123
+msgid "Automatic"
+msgstr "Automātiska"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:130
+msgid "Cookie policy page"
+msgstr "Sīkfailu politikas lapa"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:131
+msgid "Linked from the banner. Start typing to pick a page, or enter an address. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use."
+msgstr "Saite no banera. Sāciet rakstīt, lai izvēlētos lapu, vai ievadiet adresi. Atstājiet tukšu savas privātuma politikas lapai (Iestatījumi → Privātums). Pievienojiet sīkfailu politikas bloku jebkurai lapai, kuru izmantojat."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:132
+msgid "Your privacy policy page"
+msgstr "Jūsu konfidencialitātes politikas lapa"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:138
+msgid "Cookie settings link in the footer menu"
+msgstr "Sīkfailu iestatījumu saite kājenes izvēlnē"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:139
+msgid "Lets visitors change their mind at any time. It goes after your cookie policy link, or before your privacy policy link, in a footer menu; otherwise at the end of the theme's footer menu. To place it yourself, use the Cookie settings box in Appearance → Menus; then this adds nothing. No menu? Add the Cookie settings button block, or link to #cookie-settings anywhere."
+msgstr "Ļauj apmeklētājiem jebkurā laikā mainīt savas domas. Tas atrodas kājenes izvēlnē pēc jūsu sīkfailu politikas saites vai pirms jūsu privātuma politikas saites; pretējā gadījumā tas atrodas motīva kājenes izvēlnes beigās. Lai to ievietotu pats, izmantojiet sīkfailu iestatījumu lodziņu sadaļā Izskats → Izvēlnes; tad tas neko nepievienos. Nav izvēlnes? Pievienojiet sīkfailu iestatījumu pogas bloku vai saiti uz #cookie-settings jebkur."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:145
+msgid "Floating Cookie settings button"
+msgstr "Peldošā sīkfailu iestatījumu poga"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:146
+msgid "A small button in the bottom corner after visitors choose. It shows only on pages with no other Cookie settings link or button."
+msgstr "Maza poga apakšējā stūrī pēc apmeklētāju izvēles. Tā tiek rādīta tikai lapās, kurās nav citu sīkfailu iestatījumu saišu vai pogu."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:153
+msgid "Also hold back"
+msgstr "Arī atturieties"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:154
+msgid "Scripts or embeds the plugin does not know, one per line: part of their address or code. They count as Marketing; start a line with \"statistics:\", \"preferences:\" or \"embeds:\" for another category."
+msgstr "Skripti vai iegultie elementi, ko spraudnis neatpazīst, pa vienam katrā rindā: daļa no to adreses vai koda. Tie tiek uzskatīti par mārketingu; sāciet rindu ar \"statistics:\", \"preferences:\" vai \"embeds:\", lai norādītu citu kategoriju."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:162
+msgid "Never hold back"
+msgstr "Nekad nevaldies"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:163
+msgid "Scripts or embeds that must always load, one per line: part of their address or code. Use this only for something that does not set cookies or is needed for the site to work."
+msgstr "Skripti vai iegultie elementi, kas vienmēr jāielādē, pa vienam katrā rindā: daļa no to adreses vai koda. Izmantojiet to tikai kaut kam tādam, kas neiestata sīkfailus vai ir nepieciešams vietnes darbībai."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:170
+msgid "Load Google tags before consent (Consent Mode advanced)"
+msgstr "Ielādēt Google tagus pirms piekrišanas (piekrišanas režīma paplašinātais režīms)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:171
+msgid "Google Analytics, Ads and Tag Manager load straight away and are told consent is denied until visitors allow it, so Google sends cookieless pings. Leave off unless your Google set-up needs it."
+msgstr "Google Analytics, Ads un Tag Manager tiek ielādēti nekavējoties un tiek informēti, ka piekrišana ir liegta, līdz apmeklētāji to atļauj, tāpēc Google sūta ping pieprasījumus bez sīkfailiem. Izslēdziet šo opciju, ja vien jūsu Google iestatījumi to neprasa."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:177
+msgid "Keep consent records"
+msgstr "Saglabājiet piekrišanas ierakstus"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:178
+msgid "Optional anonymous choice history, stored on this site. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored."
+msgstr "Neobligāta anonīma izvēles vēsture, kas tiek glabāta šajā vietnē. Pievieno pieprasījumu un datu bāzes ierakstīšanu katrai izvēlei, nevis katram lapas skatījumam. Netiek saglabātas IP adreses vai pārlūkprogrammas dati."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:185
+msgid "A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text."
+msgstr "Katram ierakstam tiek saglabāta etiķete. Mainiet to, mainoties politikai. Apmeklētājiem netiek atkārtoti jautāts un politikas teksta kopija netiek saglabāta."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:193
+msgid "Keep records for (days)"
+msgstr "Saglabāt ierakstus (dienas)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:194
+msgid "0 keeps them as long as visitors' choices. Set this to how long you need evidence of consent. Records older than this are deleted."
+msgstr "0 saglabā tos tik ilgi, cik veic apmeklētāju izvēles. Iestatiet šo vērtību uz to, cik ilgi nepieciešams piekrišanas apliecinājums. Vecāki ieraksti tiek dzēsti."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:203
+msgid "Remember choices for (days)"
+msgstr "Atcerēties izvēles (dienas)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:204
+msgid "Visitors are asked again after this. 365 is usual; some regulators prefer 180."
+msgstr "Pēc tam apmeklētājiem tiek jautāts vēlreiz. Parasti tiek izmantota 365 sekundes; daži regulatori dod priekšroku 180 sekundēm."
+
+#. translators: %s: service names, such as "Google Analytics, Hotjar".
+#: includes/features/class-seoprocookieconsent-consent.php:391 includes/views/consent-banner.php:78
+#, php-format
+msgid "Used by: %s."
+msgstr "Izmanto: %s."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:394
+#, php-format
+msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
+msgstr "Šī lapa izmanto %s, kas var iestatīt sīkfailus un kopīgot datus par jūsu apmeklējumu. Izvēlieties, ko atļaut."
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:396
+#, php-format
+msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
+msgstr "Šī lapa izmanto %s, kas var iestatīt sīkfailus. Jūs varat tos atspējot sīkfailu iestatījumos."
+
+#: includes/features/class-seoprocookieconsent-consent.php:397
+msgid "other services"
+msgstr "citi pakalpojumi"
+
+#. translators: 1: service name, such as "YouTube"; 2: cookie category.
+#: includes/features/class-seoprocookieconsent-consent.php:401
+#, php-format
+msgid "%1$s needs %2$s to show here. Allow it to see this content."
+msgstr "Lai %1$s tiktu rādīts šeit, jāatļauj %2$s. Atļaujiet to, lai redzētu šo saturu."
+
+#: includes/features/class-seoprocookieconsent-consent.php:403
+msgid "Load content"
+msgstr "Ielādēt saturu"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:789
+msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
+msgstr "Saite, kas atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles. Kad izvēlnei ir šāda saite, automātiskā kājenes saite netiek pievienota."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:805
+msgid "Add to Menu"
+msgstr "Pievienot izvēlnei"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:852 includes/features/class-seoprocookieconsent-policy.php:77
+msgid "Cookie settings button"
+msgstr "Sīkfailu iestatījumu poga"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:853
+msgid "Opens Cookie settings so visitors can change their choices."
+msgstr "Atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:859
+msgid "Text"
+msgstr "Teksts"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:865
+msgid "Show as"
+msgstr "Rādīt kā"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:867
+msgid "Button"
+msgstr "Poga"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:868
+msgid "Link"
+msgstr "Saite"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:885
+msgid "Get started"
+msgstr "Sākt darbu"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:886
+msgid "Switch on Cookie consent."
+msgstr "Ieslēdziet sīkfailu piekrišanu."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:887
+msgid "Choose Scan now, then check Found on your pages below."
+msgstr "Izvēlieties Skenēt tūlīt un pēc tam atzīmējiet Atrasts jūsu lapās zemāk."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:888
+msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
+msgstr "Cilnē Politikas ieslēdziet sīkfailu politiku un pievienojiet sīkfailu politikas bloku savai privātuma vai sīkfailu politikas lapai."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:890
+msgid "Scan now"
+msgstr "Skenēt tūlīt"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:891
+msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
+msgstr "Pārbauda jūsu sākumlapu, privātuma lapu un līdz trim nesenajiem ierakstiem un trim lapām. Šis ir paraugs, nevis pilnīgs audits; lapas tiek pārbaudītas arī apmeklētāju pārlūkošanas laikā. Skripti netiek palaisti."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:912
+msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
+msgstr "Vēl nav atrasts neviens pakalpojums, kas iestatītu sīkfailus. Skenējiet tūlīt pēc šīs opcijas ieslēgšanas vai atveriet dažas savas vietnes lapas."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:914
+msgid "Found on your pages and held back until allowed:"
+msgstr "Atrasts jūsu lapās un glabāts, līdz atļaus:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:925
+msgid "Necessary, never held back, and listed in the cookie policy:"
+msgstr "Nepieciešams, nekad netiek slēpts un norādīts sīkfailu politikā:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:932
+msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
+msgstr "Citi skripti no šīm vietnēm tiek ielādēti kā parasti. Ja kāds no tiem iestata sīkfailus, pievienojiet to sadaļā Problēmu novēršana → Arī aizturēt:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:941
+msgid "You cannot scan this site."
+msgstr "Jūs nevarat skenēt šo vietni."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:945
+msgid "Switch on Cookie consent before scanning."
+msgstr "Pirms skenēšanas ieslēdziet sīkfailu piekrišanas opciju."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1055
+msgid "Preview the banner"
+msgstr "Priekšskatīt reklāmkarogu"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1059
+msgid "Visitor"
+msgstr "Apmeklētājs"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1061
+msgid "Asked first (Europe, Quebec)"
+msgstr "Vispirms jautāts (Eiropa, Kvebeka)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1062
+msgid "Shown a notice (elsewhere)"
+msgstr "Parādīja paziņojumu (citur)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1066
+msgid "Screen"
+msgstr "Ekrāns"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1068
+msgid "Desktop"
+msgstr "Darbvirsma"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1069
+msgid "Phone"
+msgstr "Tālrunis"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1072
+msgid "Reload"
+msgstr "Pārlādēt"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1075
+msgid "Banner preview on your home page"
+msgstr "Banera priekšskatījums jūsu sākumlapā"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1077
+msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
+msgstr "Jūsu sākumlapa ar reklāmkarogu tā, kā to redz apmeklētāji, pat ja lapai nav ko slēpt. Tas tiek atjaunināts pēc katrām izmaiņām. Priekšskatījumā veiktās izvēles netiek saglabātas."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1096
+msgid "No pages found."
+msgstr "Nav atrasta neviena lapa."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1099
+msgid "Scanning…"
+msgstr "Skenēšana…"
+
+# machine translation
+#. translators: 1: pages checked; 2: pages that could not be checked.
+#: includes/features/class-seoprocookieconsent-consent.php:1101
+#, php-format
+msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
+msgstr "Skenēšana pabeigta: pārbaudītas %1$s lapas; %2$s nevarēja pārbaudīt. Pārskatiet tālāk sniegtos rezultātus."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-consent.php:1102
+msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
+msgstr "Skenēšanas laikā neizdevās pārbaudīt jūsu lapas. Atgriezeniskās saites pieprasījumi var būt bloķēti. Mēģiniet vēlreiz vai atveriet savas vietnes lapas, lai aizpildītu sarakstu pārlūkošanas laikā."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:43
+msgid "Adds a Cookie policy block (and the [spcc_cookie_policy] shortcode) that lists the cookies your site uses, grouped and kept up to date from what Cookie consent finds. Put it in your privacy or cookie policy page and write the rest of the page as you like. It is a starting point, not legal advice."
+msgstr "Pievieno sīkfailu politikas bloku (un īskodu [spcc_cookie_policy] ), kurā ir uzskaitīti jūsu vietnes izmantotie sīkfaili, grupēti un atjaunināti, pamatojoties uz sīkfailu piekrišanas datiem. Ievietojiet to savā privātuma vai sīkfailu politikas lapā un pārējo lapu rakstiet, kā vēlaties. Tas ir sākumpunkts, nevis juridisks padoms."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:66
+msgid "Lists the cookies this site uses, kept up to date."
+msgstr "Uzskaita šīs vietnes izmantotās sīkdatnes, un to atjaunina."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:72
+msgid "Short introduction"
+msgstr "Īss ievads"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:82
+msgid "Heading level for each kind of cookie"
+msgstr "Katra sīkfaila veida virsraksta līmenis"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:88
+msgid "Date the list was last updated"
+msgstr "Saraksta pēdējās atjaunināšanas datums"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:110
+msgid "Remembers your cookie choices"
+msgstr "Atceras jūsu sīkfailu izvēles"
+
+# machine translation
+#. translators: %d: number of days.
+#: includes/features/class-seoprocookieconsent-policy.php:112
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d diena"
+msgstr[1] "%d dienas"
+msgstr[2] "%d dienas"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:115
+msgid "Keeps you logged in, only if you log in"
+msgstr "Saglabā jūs pieteikušos tikai tad, ja piesakāties"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:116
+msgid "Session, or 14 days with Remember me"
+msgstr "Sesija jeb 14 dienas ar funkciju “Atcerēties mani”"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:119
+msgid "Fills in your name when you comment, only if you ask it to"
+msgstr "Aizpildiet savu vārdu, komentējot, tikai tad, ja jūs to lūdzat"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:152
+msgid "This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time."
+msgstr "Šī vietne izmanto sīkfailus: mazus failus, kas tiek glabāti jūsu ierīcē. Nepieciešamie sīkfaili vienmēr ir ieslēgti. Citi sīkfaili tiek izmantoti tikai tad, ja jūs tos atļaujat, ja likums pieprasa jūsu piekrišanu, un jūs varat mainīt savu izvēli jebkurā laikā."
+
+# machine translation
+#. translators: %s: date.
+#: includes/features/class-seoprocookieconsent-policy.php:166
+#, php-format
+msgid "List last updated %s."
+msgstr "Saraksts pēdējo reizi atjaunināts %s."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:181
+msgid "Service"
+msgstr "Pakalpojums"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:182
+msgid "Cookie"
+msgstr "Sīkfails"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:183
+msgid "What it does"
+msgstr "Ko tas dara"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:184
+msgid "Kept for"
+msgstr "Saglabāts priekš"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:189
+msgid "Privacy policy"
+msgstr "Privātuma politika"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:193
+msgid "Sets cookies on its own site when its content loads."
+msgstr "Iestata sīkfailus savā vietnē, kad tiek ielādēts tās saturs."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:217
+msgid "Cookies"
+msgstr "Sīkfaili"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:218
+msgid "Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date."
+msgstr "Pievienojiet sīkfailu politikas bloku zem šī virsraksta: tajā ir uzskaitītas jūsu vietnes izmantotās sīkdatnes un tās tiek atjauninātas."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-policy.php:219
+msgid "We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page."
+msgstr "Mēs izmantojam sīkfailus un līdzīgas tehnoloģijas. Nepieciešamās sīkdatnes nodrošina vietnes darbību un atceras jūsu izvēles. Ar jūsu piekrišanu, ja to pieprasa likums, mēs izmantojam sīkdatnes arī preferenču, statistikas, iegultā satura un mārketinga vajadzībām. Jūs varat jebkurā laikā mainīt vai atsaukt savu piekrišanu, izmantojot sīkfailu iestatījumu saiti katras lapas apakšdaļā."
+
+# machine translation
+#. translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile".
+#: includes/features/class-seoprocookieconsent-policy.php:224
+#, php-format
+msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
+msgstr "Lai aizsargātu vietni, tās veidlapas un maksājumus no surogātpasta, krāpšanas un uzbrukumiem, mēs izmantojam %s. Šie pakalpojumi saņem jūsu IP adresi un jūsu pārlūkprogrammas informāciju un var iestatīt nepieciešamās sīkdatnes, kas uzskaitītas sīkdatņu politikā. Tās ir nepieciešamas vietnes drošai darbībai, tāpēc tās vienmēr ir ieslēgtas."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:35 includes/features/class-seoprocookieconsent-terms.php:131
+msgid "Terms and conditions"
+msgstr "Noteikumi un nosacījumi"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:36
+msgid "Adds the Terms and conditions block and [spcc_terms] shortcode. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
+msgstr "Pievieno noteikumu un nosacījumu bloku un īskodu [spcc_terms]. Atbildiet uz jautājumiem un pēc tam pārskatiet formulējumu pirms publicēšanas. Šis ir sākumpunkts, nevis juridisks padoms, un tas var neattiekties uz jūsu uzņēmumu vai vietējiem likumiem. Esošās Complianz lapas netiek mainītas: pēc pārskatīšanas nomainiet to bloku vai īskodu pats."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:44
+msgid "Business or owner name"
+msgstr "Uzņēmuma vai īpašnieka vārds"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:45
+msgid "The legal name responsible for this site. Required for the suggested wording."
+msgstr "Šīs vietnes juridiskais nosaukums. Obligāti jānorāda ieteiktajā formulējumā."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:51
+msgid "Country"
+msgstr "Valsts"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:52
+msgid "Where the business is based. This does not choose governing law or generate country-specific clauses."
+msgstr "Uzņēmuma atrašanās vieta. Tas neizvēlas piemērojamos tiesību aktus un nerada konkrētai valstij paredzētas klauzulas."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:58
+msgid "What the site offers or sells"
+msgstr "Ko vietne piedāvā vai pārdod"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:59
+msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed."
+msgstr "Aprakstiet savas preces, pakalpojumus, digitālo saturu vai informāciju, tostarp nepieciešamības gadījumā norādot apmaksas un piegādes noteikumus."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:65 includes/features/class-seoprocookieconsent-terms.php:174
+msgid "Returns, refunds and cancellations"
+msgstr "Atgriešana, atmaksas un pasūtījumu atcelšana"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:66
+msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
+msgstr "Jūsu politika un kā klienti to izmanto. Iekļaujiet visas atteikuma tiesības un nepieciešamo kontaktinformāciju vai tiešsaistes izmaksas procesu. Atstājiet tukšu, ja tas nav piemērojams; netiek pieņemts, ka atgriešanas periods ir spēkā."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:72
+msgid "Contact details"
+msgstr "Kontaktinformācija"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:73
+msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
+msgstr "Publiska e-pasta adrese, kontaktinformācijas lapa, pasta adrese vai tālruņa numurs jautājumiem par šiem terminiem. Obligāti jānorāda ieteiktais formulējums; tas tiek parādīts kā vienkāršs teksts."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:79
+msgid "Your own wording"
+msgstr "Jūsu pašu formulējums"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:80
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
+msgstr "Pēc izvēles: aizstāj visu ieteikto formulējumu. Tikai vienkāršs teksts, viena rindkopa katrā rindā. Atstājiet tukšu, lai izmantotu iepriekš minētās atbildes. Varat arī rakstīt parastus blokus ap bloku \"Noteikumi un nosacījumi\"; tie nekad netiek mainīti."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:132
+msgid "Terms from your answers. Review before publishing; not legal advice."
+msgstr "Jūsu atbildēs minētie termini. Pārskatiet tos pirms publicēšanas; tie nav juridisks padoms."
+
+# machine translation
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-terms.php:159
+#, php-format
+msgid "This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order."
+msgstr "Šo vietni pārvalda %s. Šie noteikumi izskaidro šīs vietnes lietošanu un tālāk aprakstītos piedāvājumus. Lūdzu, izlasiet tos pirms vietnes izmantošanas vai pasūtījuma veikšanas."
+
+# machine translation
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:166
+#, php-format
+msgid "The business is based in %s."
+msgstr "Uzņēmums atrodas %s."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:170
+msgid "Using this website"
+msgstr "Izmantojot šo tīmekļa vietni"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:171
+msgid "Please use this website lawfully and do not interfere with its security or other people’s use of it. Respect the rights of others when using or sharing content."
+msgstr "Lūdzu, izmantojiet šo tīmekļa vietni likumīgi un netraucējiet tās drošību vai citu cilvēku tās lietošanu. Izmantojot vai kopīgojot saturu, ievērojiet citu personu tiesības."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:173
+msgid "What we offer"
+msgstr "Ko mēs piedāvājam"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:183
+msgid "Your rights"
+msgstr "Jūsu tiesības"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:184
+msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
+msgstr "Nekas šajos noteikumos neatņem jums tiesības, ko piešķir piemērojamie tiesību akti un no kurām nevar atteikties, tostarp obligātās patērētāja tiesības."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "Contact"
+msgstr "Kontaktinformācija"
+
+# machine translation
+#. translators: %d: HTTP status code
+#: includes/github-updater/class-wpallstars-github-updater.php:611
+#, php-format
+msgid "GitHub answered with status %d."
+msgstr "GitHub atbildēja ar statusu %d."
+
+# machine translation
+#. translators: 1: owner/repo in the plugin's header, 2: owner/repo GitHub points to
+#: includes/github-updater/class-wpallstars-github-updater.php:644
+#, php-format
+msgid "GitHub repository %1$s has moved to %2$s; change the plugin's GitHub Plugin URI header."
+msgstr "GitHub repozitorijs %1$s ir pārvietots uz %2$s; mainiet spraudņa GitHub spraudņa URI galveni."
+
+# machine translation
+#. translators: %s: time since the check, such as "5 mins"
+#: includes/github-updater/class-wpallstars-github-updater.php:1021
+#, php-format
+msgid "%s ago"
+msgstr "pirms %s"
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1033
+msgid "Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:"
+msgstr "Nevarēja pārbaudīt GitHub, vai nav atjauninājumu šiem spraudņiem, tāpēc, iespējams, šeit trūkst jaunākas versijas, līdz pārbaude būs veiksmīga:"
+
+# machine translation
+#. translators: 1: time since the check, such as "5 mins ago", 2: error message
+#: includes/github-updater/class-wpallstars-github-updater.php:1087
+#, php-format
+msgid "Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour."
+msgstr "Nevarēja pārbaudīt GitHub atjauninājumus (%1$s): %2$s. Jaunāka versija var netikt parādīta, kamēr pārbaude nebūs veiksmīga; WordPress mēģina vēlreiz stundas laikā."
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1092
+msgid "Check again now"
+msgstr "Pārbaudiet vēlreiz tagad"
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1323
+msgid "Release notes on GitHub"
+msgstr "GitHub izlaiduma piezīmes"
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1578
+msgid "GitHub did not give a download address. Check the token’s access to the repository."
+msgstr "GitHub nenorādīja lejupielādes adresi. Pārbaudiet tokena piekļuvi repozitorijam."
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1582
+msgid "GitHub sent the download to an unexpected address."
+msgstr "GitHub nosūtīja lejupielādi uz negaidītu adresi."
+
+# machine translation
+#: includes/github-updater/class-wpallstars-github-updater.php:1616 includes/github-updater/class-wpallstars-github-updater.php:1620
+msgid "The update could not be unpacked into the plugin’s folder."
+msgstr "Atjauninājumu nevarēja izpakot spraudņa mapē."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:116
+msgid "Visitors' Borlabs Cookie choices are not carried over: its cookie version, which decides whether a saved choice is still valid, could not be checked, so visitors are asked again once."
+msgstr "Apmeklētāju Borlabs sīkfailu izvēles netiek pārnestas: sīkfaila versiju, kas nosaka, vai saglabātā izvēle joprojām ir derīga, nevarēja pārbaudīt, tāpēc apmeklētājiem tas tiek jautāts vēlreiz."
+
+# machine translation
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:125
+#, php-format
+msgid "Borlabs Cookie ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Borlabs sīkfails palaida kodu šiem pakalpojumiem, kas apstājas, kad tas tiek noņemts: %s. Pievienojiet jebkādu kodu, kas jums joprojām ir nepieciešams jūsu tēmai vai galvenes koda spraudnim; pakalpojumi, ko šis spraudnis atpazīst, un tālāk norādītie skripta noteikumi pēc tam tiek aizturēti."
+
+# machine translation
+#. translators: %s: list of script blocker names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:130
+#, php-format
+msgid "Borlabs Cookie script blockers match scripts by handle or code, which this import does not turn into rules: %s. Add anything this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Borlabs sīkfailu skriptu bloķētāji saskaņo skriptus pēc turi vai koda, ko šī importēšana nepārvērš par noteikumiem: %s. Pievienojiet visu, ko šis spraudnis neatpazīst, sadaļā Problēmu novēršana → Arī aizturēt."
+
+# machine translation
+#. translators: %s: CSS class name.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:134
+#, php-format
+msgid "A menu link has the %s class. Point it at #cookie-settings instead, or rely on the Cookie settings footer link."
+msgstr "Izvēlnes saitei ir klase %s. Tā vietā norādiet uz #cookie-settings vai izmantojiet sīkfailu iestatījumu kājenes saiti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:137
+msgid "Its dialog texts are not imported: they describe its own dialog."
+msgstr "Tās dialoglodziņu teksti netiek importēti: tie apraksta pašu dialoglodziņu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:140 includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:73 includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:105 includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:101 includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:60
+msgid "The import turns on Keep consent records to continue its records."
+msgstr "Importēšana ieslēdz opciju Saglabāt piekrišanas ierakstus, lai turpinātu ierakstus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:405
+msgid "Deleting Borlabs Cookie runs its own uninstall, which removes all its data, including its consent log: export the consent records you must keep before deleting it. Remove leftover data removes its settings, services, content blockers and other tables after it is deactivated, keeps its consent log and statistics, and leaves its generated files in uploads/borlabs-cookie. Imports never change its settings."
+msgstr "Dzēšot Borlabs sīkfailu, tiek veikta atsevišķa atinstalēšana, kuras laikā tiek dzēsti visi tā dati, tostarp piekrišanas žurnāls: eksportējiet piekrišanas ierakstus, kas jāsaglabā pirms sīkfaila dzēšanas. Noņemot atlikušos datus, pēc deaktivizēšanas tiek dzēsti tā iestatījumi, pakalpojumi, satura bloķētāji un citas tabulas, tiek saglabāts tā piekrišanas žurnāls un statistika, kā arī ģenerētie faili tiek atstāti mapē uploads/borlabs-cookie. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-complianz.php:314
+msgid "Check Complianz’s own delete-data-on-uninstall setting before deleting it. Imports never change its settings."
+msgstr "Pirms dzēšanas pārbaudiet Complianz iestatījumu “dzēst datus atinstalēšanas laikā”. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:57
+msgid "Compliance (hosted) mode is on: the banner and visitors' choices live in the Cookie Compliance web app. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "Atbilstības (mitinātais) režīms ir ieslēgts: reklāmkarogs un apmeklētāju izvēles tiek rādītas sīkfailu atbilstības tīmekļa lietotnē. Tiek importēts tikai tas, kas tiek glabāts šajā vietnē, un apmeklētājiem tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:59
+msgid "Cookie Notice accepted on scroll or click, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Sīkfailu paziņojums tiek pieņemts ritinot vai noklikšķinot, kas nav skaidra izvēle: tiek saglabātas tikai noraidīšanas, un apmeklētājiem, kuri to pieņēma, tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:63
+msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "Sīkfailu paziņojums pats palaidīs jūsu \"pēc pieņemšanas\" skriptus; tie apstājas, kad tas ir pazudis. Pievienojiet tos savai tēmai vai galvenes koda spraudnim pēc pārslēgšanas: tālāk norādītie skripta noteikumi un pakalpojumi, ko šis spraudnis atpazīst, tiek aizturēti, līdz apmeklētāji tos atļauj. Pirms atlikušo datu noņemšanas nokopējiet tos."
+
+# machine translation
+#. translators: %s: start of an inline script.
+#. translators: %s: a script pattern.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67 includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69 includes/migrate/class-seoprocookieconsent-migrate-moove.php:108
+#, php-format
+msgid "Add by hand to Also hold back (no address to recognise): %s"
+msgstr "Pievienot ar roku arī slēptajai adresei (nav atpazīstamas adreses): %s"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:197
+msgid "Cookie Notice deletes its settings when deactivated if its Deactivation option is on: copy your after-acceptance scripts first. Imports never change its settings."
+msgstr "Sīkfailu paziņojums dzēš savus iestatījumus, ja tie tiek deaktivizēti, ja ir ieslēgta deaktivizācijas opcija: vispirms nokopējiet savus pēcapstiprināšanas skriptus. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:59
+msgid "CookieAdmin follows US state laws (opt-out) or a Pro law here, so visitors' choices are not carried over: they are asked again."
+msgstr "CookieAdmin šeit ievēro ASV štatu likumus (atteikšanās) vai Pro likumu, tāpēc apmeklētāju izvēles netiek pārņemtas: tām tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:63
+msgid "CookieAdmin Pro showed its banner only in some regions. That is not imported: check Who is asked first."
+msgstr "CookieAdmin Pro reklāmkarogu rādīja tikai dažos reģionos. Tas nav importēts: pārbaudiet, kam tiek jautāts vispirms."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:65
+msgid "Scripts you marked for CookieAdmin in your theme (type=\"text/plain\" with data-cookieadmin-category) stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Skripti, kurus savā tēmā atzīmējāt kā CookieAdmin (type=\"text/plain\" ar data-cookieadmin-category), paliek izslēgti, kad tas ir noņemts: noņemiet šos divus atribūtus, lai šis spraudnis tos ierobežotu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:211
+msgid "Deleting CookieAdmin removes its settings but leaves its cookie list table; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "Dzēšot CookieAdmin, tā iestatījumi tiek noņemti, bet sīkfailu saraksta tabula tiek atstāta; pēc tam izmantojiet funkciju “Noņemt atlikušos datus”. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:47
+msgid "This site uses a Usercentrics account through Cookiebot, so its banner and choices are kept by Usercentrics."
+msgstr "Šī vietne izmanto Usercentrics kontu, izmantojot Cookiebot, tāpēc tās reklāmkarogu un izvēles saglabā Usercentrics."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:50
+msgid "The Cookiebot banner is switched off on this site."
+msgstr "Šajā vietnē Cookiebot reklāmkarogs ir izslēgts."
+
+# machine translation
+#. translators: %s: Google Tag Manager container ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:55
+#, php-format
+msgid "Cookiebot loaded Google Tag Manager (%s) itself, which stops when it is removed. Add the Tag Manager code to your theme or a header-code plugin; this plugin holds it back until allowed."
+msgstr "Cookiebot pats ielādēja Google Tag Manager (%s), kas apstājas, kad tas tiek noņemts. Pievienojiet Tag Manager kodu savai tēmai vai galvenes koda spraudnim; šis spraudnis to aiztur, līdz tas tiek atļauts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58 includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:43
+msgid "Google Consent Mode"
+msgstr "Google piekrišanas režīms"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58 includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:42
+msgid "TCF"
+msgstr "Noteikumu un nosacījumu kopums (TCP)"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "US privacy (CCPA)"
+msgstr "ASV privātuma politika (CCPA)"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "banners by region"
+msgstr "baneri pa reģioniem"
+
+# machine translation
+#. translators: %s: list of Cookiebot features.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:65
+#, php-format
+msgid "These Cookiebot settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching."
+msgstr "Šie Cookiebot iestatījumi netiek importēti un tiek apturēti, kad tas tiek noņemts: %s. Pirms pārslēgšanas pārbaudiet, kam tiek jautāts vispirms, un savas Google atzīmes."
+
+# machine translation
+#. translators: %s: list of Cookiebot add-on keys.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:70
+#, php-format
+msgid "Cookiebot add-ons held back other plugins' scripts: %s. Services this plugin recognises are held back without them; check the rest after switching."
+msgstr "Cookiebot pievienojumprogrammas bloķēja citu spraudņu skriptus: %s. Pakalpojumi, ko šis spraudnis atpazīst, bez tiem nedarbojas; pārbaudiet pārējos pēc pārslēgšanas."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:73
+msgid "Its WPForms add-on switched off WPForms' own GDPR settings: check them in WPForms."
+msgstr "Tās WPForms pievienojumprogramma izslēdza WPForms pašu GDPR iestatījumus: pārbaudiet tos WPForms."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:76
+msgid "A Cookiebot cookie declaration widget is in a sidebar. Replace it with the Cookie policy block, or link to your cookie policy page."
+msgstr "Cookiebot sīkfailu deklarācijas logrīks atrodas sānjoslā. Aizvietojiet to ar sīkfailu politikas bloku vai saiti uz savu sīkfailu politikas lapu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:79
+msgid "Scripts marked for Cookiebot with type=\"text/plain\" and data-cookieconsent never run without it: make them normal scripts again in your theme or pages; services this plugin recognises, and your script rules, are then held back."
+msgstr "Skripti, kas atzīmēti Cookiebot lietošanai ar type=\"text/plain\" un data-cookieconsent, nekad nedarbojas bez tā: padariet tos atkal par parastiem skriptiem savā tēmā vai lapās; pakalpojumi, ko šis spraudnis atpazīst, un jūsu skriptu noteikumi pēc tam tiek aizturēti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:156
+msgid "Deleting Cookiebot removes its main settings but leaves its add-on, widget and notice settings; Remove leftover data deletes those too. Imports never change its settings or contact Cookiebot."
+msgstr "Dzēšot Cookiebot, tiek noņemti tā galvenie iestatījumi, bet tiek saglabāti tā papildinājuma, logrīka un paziņojumu iestatījumi; noņemot atlikušos datus, tiek dzēsti arī tie. Importēšana nekad nemaina tā iestatījumus un nesazinās ar Cookiebot."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:54
+msgid "This site is connected to the CookieYes web app, which keeps the banner, categories and scripts. Only what is stored on this site is imported, and visitors are asked again."
+msgstr "Šī vietne ir savienota ar tīmekļa lietotni CookieYes, kas saglabā reklāmkarogu, kategorijas un skriptus. Tiek importēts tikai tas, kas tiek saglabāts šajā vietnē, un apmeklētājiem tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:56
+msgid "CookieYes is still in its legacy (version 2) mode. Its settings and visitors' choices are not imported: set the banner up here, and visitors are asked again."
+msgstr "CookieYes joprojām darbojas mantotajā (2. versijas) režīmā. Tā iestatījumi un apmeklētāju izvēles netiek importētas: iestatiet reklāmkarogu šeit, un apmeklētājiem tiks jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:58
+msgid "The CookieYes banner follows CCPA (opt-out), so visitors' choices are not carried over: they are asked again."
+msgstr "CookieYes reklāmkarogs atbilst CCPA (atteikšanās) noteikumiem, tāpēc apmeklētāju izvēles netiek saglabātas: tām tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:60
+msgid "Scripts you marked for CookieYes in your theme (data-cookieyes, type=\"text/plain\") stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr "Skripti, kurus savā tēmā (data-cookieyes, type=\"text/plain\") atzīmējāt kā CookieYes, paliek izslēgti, kad tas ir noņemts: noņemiet šos divus atribūtus, lai šis spraudnis tos ierobežotu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:283
+msgid "CookieYes keeps its data when deleted unless CKY_REMOVE_ALL_DATA is set; use Remove leftover data afterwards. Imports never change its settings."
+msgstr "CookieYes saglabā savus datus pēc dzēšanas, ja vien nav iestatīta opcija CKY_REMOVE_ALL_DATA; pēc tam izmantojiet opciju Noņemt atlikušos datus. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:64
+msgid "Visitors' Ultimate GDPR & CCPA choices are not carried over: its cookie format was not checked on a running site, so visitors are asked again once."
+msgstr "Apmeklētāju galīgās GDPR un CCPA izvēles netiek pārņemtas: sīkfailu formāts netika pārbaudīts darbojošās vietnēs, tāpēc apmeklētājiem tas tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:68
+msgid "Ultimate GDPR & CCPA was not set to block cookies, so its banner did not hold anything back. This plugin holds back recognised services and the rules below until visitors agree."
+msgstr "GDPR un CCPA nebija iestatīti tā, lai bloķētu sīkfailus, tāpēc tā reklāmkarogs neko neslēpa. Šis spraudnis slēpj atpazītus pakalpojumus un tālāk norādītos noteikumus, līdz apmeklētāji tam piekrīt."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:71
+msgid "Ultimate GDPR & CCPA showed its banner only on selected pages. Here the banner shows on every page, so Who is asked first is left as it is."
+msgstr "Galīgais GDPR un CCPA reklāmkarogs tika rādīts tikai atsevišķās lapās. Šeit reklāmkarogs tiek rādīts katrā lapā, tāpēc jautājums \"Kam tiek jautāts vispirms\" ir atstāts nemainīgs."
+
+# machine translation
+#. translators: %s: list of service names with their script keywords.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:83
+#, php-format
+msgid "These Ultimate GDPR & CCPA script keywords are not addresses, so they are not imported: %s. Add any this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Šie galīgie GDPR un CCPA skriptu atslēgvārdi nav adreses, tāpēc tie netiek importēti: %s. Pievienojiet visus atslēgvārdus, ko šis spraudnis neatpazīst, sadaļā Problēmu novēršana → Arī atlieciet malā."
+
+# machine translation
+#. translators: %s: list of shortcodes.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:95
+#, php-format
+msgid "Its privacy request forms, age gate and acceptance boxes are not cookie consent and are not replaced: %s. They stop working when it is removed; use WordPress's own export and erase personal data tools, or another forms plugin."
+msgstr "Tās privātuma pieprasījuma veidlapas, vecuma ierobežojums un pieņemšanas lodziņi nav sīkfailu piekrišana un netiek aizstāti: %s. Tie pārstāj darboties, kad tie tiek noņemti; izmantojiet WordPress paša izstrādātos personas datu eksportēšanas un dzēšanas rīkus vai citu veidlapu spraudni."
+
+# machine translation
+#. translators: %s: user name.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:99
+#, php-format
+msgid "Its cookie scanner left the user %s behind, which it hides from the Users screen while active. Delete that user after deactivating it."
+msgstr "Tās sīkfailu skeneris atstāja lietotāju %s, kuru tas paslēpj no lietotāju ekrāna, kamēr tas ir aktīvs. Izdzēsiet šo lietotāju pēc tā deaktivizēšanas."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:102
+msgid "Its banner texts are not imported: they describe its own banner."
+msgstr "Tā reklāmkarogu teksti netiek importēti: tie apraksta tā paša reklāmkarogu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:260
+msgid "Deleting Ultimate GDPR & CCPA removes only its files: its settings, services and consent log stay. Remove leftover data deletes its settings and services after it is deactivated, and keeps its consent log and the consents saved on user accounts. Imports never change its settings."
+msgstr "Dzēšot galīgo GDPR un CCPA, tiek noņemti tikai tā faili: tā iestatījumi, pakalpojumi un piekrišanas žurnāls paliek. Noņemot atlikušos datus, pēc deaktivizēšanas tiek noņemti tā iestatījumi un pakalpojumi, taču tiek saglabāts tā piekrišanas žurnāls un lietotāju kontos saglabātās piekrišanas. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:69
+msgid "Its TCF (IAB framework) setting is not imported and stops when it is removed."
+msgstr "Tā TCF (IAB ietvara) iestatījums netiek importēts un apstājas, kad tas tiek noņemts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:72
+msgid "iubenda also handled US or Brazilian privacy laws, which have no equivalent here. Check Who is asked first before switching."
+msgstr "iubenda arī nodarbojās ar ASV vai Brazīlijas privātuma likumiem, kuriem šeit nav līdzvērtīgu tiesību aktu. Pirms pārslēgšanās pārbaudiet, kam tiek jautāts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:75
+msgid "iubenda held back Google Tag Manager; this plugin recognises and holds it back too."
+msgstr "iubenda aizkavēja Google Tag Manager; šis spraudnis to atpazīst un arī aizkavē."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:78
+msgid "iubenda was set up with pasted code, so its banner position and who it asked are not imported."
+msgstr "iubenda tika iestatīta ar ielīmētu kodu, tāpēc tās banera pozīcija un tas, kam tā jautāja, netiek importēti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:82
+msgid "A menu has an iubenda preferences link (class iubenda-cs-preferences-link). Replace it with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Izvēlnē ir saite uz iubenda preferencēm (klase iubenda-cs-preferences-link). Aizvietojiet to ar saiti #cookie-settings vai izmantojiet sīkfailu iestatījumu kājenes saiti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:85
+msgid "An iubenda legal widget is in a sidebar. It stops showing when iubenda is removed: link to your policies instead."
+msgstr "Iubenda juridiskais logrīks atrodas sānjoslā. Tas vairs netiek rādīts, kad iubenda tiek noņemta: tā vietā ievietojiet saiti uz jūsu politikām."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:88
+msgid "iubenda sent form submissions to its hosted consent database. That stops when it is removed; its records stay with iubenda."
+msgstr "iubenda nosūtīja veidlapu iesniegumus uz savu mitināto piekrišanas datubāzi. Tas tiek pārtraukts, kad tā tiek noņemta; tās ieraksti paliek iubenda rīcībā."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:228
+msgid "Deleting iubenda removes its settings only if its own delete-on-deactivation option is on; Remove leftover data deletes its settings, form mappings and scheduled checks. Imports never change its settings or contact iubenda."
+msgstr "Dzēšot iubenda, tās iestatījumi tiek dzēsti tikai tad, ja ir ieslēgta tās dzēšanas deaktivizēšanas opcija; noņemot atlikušos datus, tiek dzēsti tās iestatījumi, veidlapu kartējumi un plānotās pārbaudes. Importēšana nekad nemaina tās iestatījumus un nesazinās ar iubenda."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:98
+msgid "Some categories were on before visitors chose, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Dažas kategorijas bija ieslēgtas pirms apmeklētāju izvēles, kas nav skaidra izvēle: tiek pārņemti tikai noraidījumi, un apmeklētājiem, kuri pieņēma, tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:100
+msgid "Its close button accepted all cookies, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr "Tā aizvēršanas poga pieņēma visus sīkfailus, kas nav skaidra izvēle: tiek saglabātas tikai noraidītās versijas, un apmeklētājiem, kas pieņēma sīkfailus, tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:102
+msgid "If its add-on accepted cookies on scroll or after a timer, those look the same as Accept: choose Stop carrying over old consent so visitors are asked again."
+msgstr "Ja tā pievienojumprogramma akceptēja sīkfailus ritināšanas laikā vai pēc taimera, tie izskatās tāpat kā “Pieņemt”: izvēlieties “Pārtraukt vecās piekrišanas pārnešanu”, lai apmeklētājiem tiktu jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:104
+msgid "GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "GDPR sīkfailu atbilstības skripti ir pievienoti jūsu kategoriju ietvaros; tie apstājas, kad kategorijas vairs nav. Pievienojiet tos savai tēmai vai galvenes koda spraudnim pēc pārslēgšanas: tālāk norādītie skriptu noteikumi un pakalpojumi, ko atpazīst šis spraudnis, tiek aizturēti, līdz apmeklētāji tos atļauj. Pirms atlikušo datu noņemšanas nokopējiet tos."
+
+# machine translation
+#. translators: 1: service name, 2: its tracking ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:114
+#, php-format
+msgid "GDPR Cookie Compliance loaded %1$s (%2$s) itself; it stops when the plugin is gone. Add it to your site another way, such as Site Kit or your theme: this plugin recognises it and holds it back."
+msgstr "GDPR sīkfailu atbilstības sistēma pati ielādēja %1$s (%2$s); tā apstājas, kad spraudnis ir pazudis. Pievienojiet to savai vietnei citā veidā, piemēram, izmantojot Site Kit vai savu tēmu: šis spraudnis to atpazīst un neļauj to ielādēt."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:127
+msgid "no ID"
+msgstr "bez personas apliecības"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:238
+msgid "GDPR Cookie Compliance keeps its settings table when deleted; use Remove leftover data afterwards. Copy its category scripts first. Imports never change its settings."
+msgstr "GDPR sīkfailu atbilstība saglabā savu iestatījumu tabulu pēc dzēšanas; pēc tam izmantojiet opciju “Noņemt atlikušos datus”. Vispirms nokopējiet tās kategoriju skriptus. Importēšana nekad nemaina tās iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:44
+msgid "country bypass"
+msgstr "valsts apvedceļš"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:45
+msgid "consent forwarding"
+msgstr "piekrišanas pārsūtīšana"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:46
+msgid "banner-less consent"
+msgstr "piekrišana bez reklāmkarogiem"
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:71
+msgid "The Real Cookie Banner banner is switched off, so visitors' choices are not carried over."
+msgstr "Īstā sīkfaila reklāmkaroga reklāmkarogs ir izslēgts, tāpēc apmeklētāju izvēles netiek saglabātas."
+
+# machine translation
+#. translators: %s: list of Real Cookie Banner Pro features.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:81
+#, php-format
+msgid "Real Cookie Banner Pro settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching; visitors' choices are not carried over while country bypass or banner-less consent is on."
+msgstr "Īstie sīkfailu banneru Pro iestatījumi netiek importēti un tiek apturēti, kad tie tiek noņemti: %s. Pirms pārslēgšanas pārbaudiet, kam tiek jautāts vispirms, un savas Google atzīmes; apmeklētāju izvēles netiek pārņemtas, kamēr ir ieslēgta valsts apiešana vai piekrišana bez baneriem."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:83
+msgid "Real Cookie Banner let visitors choose single services. A category carries over as allowed only when every Real Cookie Banner service in it was accepted; otherwise it is refused. Closing its banner with the close icon is not carried over."
+msgstr "Īsts sīkfailu reklāmkarogs ļauj apmeklētājiem izvēlēties atsevišķus pakalpojumus. Kategorija tiek pārnesta kā atļauta tikai tad, ja visi tajā esošie īstā sīkfailu reklāmkaroga pakalpojumi ir pieņemti; pretējā gadījumā tā tiek noraidīta. Reklāmkaroga aizvēršana ar aizvēršanas ikonu netiek pārnesta."
+
+# machine translation
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:92
+#, php-format
+msgid "Real Cookie Banner ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Real Cookie Banner palaida kodu šiem pakalpojumiem, kas apstājas, kad tas tiek noņemts: %s. Pievienojiet jebkādu kodu, kas jums joprojām ir nepieciešams jūsu tēmai vai galvenes koda spraudnim; pakalpojumi, ko šis spraudnis atpazīst, un tālāk norādītie skripta noteikumi pēc tam tiek aizturēti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:95
+msgid "A menu has Real Cookie Banner privacy links (#consent-change, #consent-history or #consent-revoke). Replace them with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr "Izvēlnē ir īstas sīkdatņu joslas privātuma saites (#piekrišanas-mainīšana, #piekrišanas-vēsture vai #piekrišanas-atsaukšana). Aizvietojiet tās ar saiti #sīkdatņu-iestatījumi vai izmantojiet sīkdatņu iestatījumu apakšdaļas saiti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:98
+msgid "Its banner texts are not imported: they describe its own dialog."
+msgstr "Tās reklāmkarogu teksti netiek importēti: tie apraksta tās paša dialoglodziņu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:427
+msgid "Deleting Real Cookie Banner removes only its copied script files; its settings, services, content blockers and consent records stay. Remove leftover data deletes its settings, services, content blockers, groups and scan and statistics tables, but keeps consent records and the revisions they refer to. Imports never change its settings."
+msgstr "Dzēšot īsto sīkfailu baneri, tiek noņemti tikai tā kopētie skriptu faili; tā iestatījumi, pakalpojumi, satura bloķētāji un piekrišanas ieraksti paliek. Noņemot atlikušos datus, tiek noņemti tā iestatījumi, pakalpojumi, satura bloķētāji, grupas, kā arī skenēšanas un statistikas tabulas, bet tiek saglabāti piekrišanas ieraksti un ar tiem saistītās pārskatīšanas. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:221
+#, php-format
+msgid "%s keeps its banner texts, categories and cookie scan in its own dashboard, which this import never contacts; only settings saved on this site are imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching."
+msgstr "%s saglabā reklāmkarogu tekstus, kategorijas un sīkfailu skenēšanu savā informācijas panelī, ar kuru šī importēšana nekad nesazinās; tiek importēti tikai šajā vietnē saglabātie iestatījumi. Pirms pārslēgšanas atzīmējiet “Kam tiek jautāts vispirms”, “Reklāmkaroga pozīcija”, “Reklāmkaroga ziņojums” un “Atcerēties izvēles šeit”."
+
+# machine translation
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:223
+#, php-format
+msgid "Visitors' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once."
+msgstr "Apmeklētāju %s izvēles netiek pārnestas: tā mitinātais skripts tās saglabā formātā, kas netiek pārbaudīts ar tiešraides kontu, tāpēc apmeklētājiem tiek jautāts vēlreiz."
+
+# machine translation
+#. translators: 1: name of the old consent plugin, 2: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:233
+#, php-format
+msgid "Compare %1$s's cookie scan with the services this plugin found on your pages: %2$s. Add anything missing under Troubleshooting → Also hold back."
+msgstr "Salīdziniet %1$s sīkfailu skenēšanu ar pakalpojumiem, ko šis spraudnis atrada jūsu lapās: %2$s. Pievienojiet visu trūkstošo sadaļā Problēmu novēršana → Arī negaidiet."
+
+# machine translation
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:236
+#, php-format
+msgid "This plugin has not found services on your pages yet. After switching, use Scan now on the Cookie consent tab and compare its list with %s's cookie scan; add anything missing under Troubleshooting → Also hold back."
+msgstr "Šis spraudnis jūsu lapās vēl nav atradis pakalpojumus. Pēc pārslēgšanas sīkfailu piekrišanas cilnē izmantojiet opciju “Skenēt tūlīt” un salīdziniet tās sarakstu ar %s sīkfailu skenēšanu; pievienojiet visu trūkstošo sadaļā Problēmu novēršana → Arī atturēties."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:238
+msgid "Consent records it kept on its own servers stay there: export any you must keep before closing that account. Turn on Keep consent records here to go on documenting choices."
+msgstr "Piekrišanas ieraksti, kas tika glabāti tā serveros, paliek tur: eksportējiet visus nepieciešamos ierakstus pirms šī konta slēgšanas. Ieslēdziet opciju “Saglabāt piekrišanas ierakstus šeit”, lai turpinātu dokumentēt izvēles."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:42
+msgid "Termly's auto blocker held back scripts it recognised. This plugin holds back the services it recognises; compare the lists above."
+msgstr "Termly automātiskais bloķētājs bloķēja skriptus, ko tas atpazīst. Šis spraudnis bloķē pakalpojumus, ko tas atpazīst; salīdziniet iepriekš minētos sarakstus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:46
+msgid "Termly may have added a \"TermlyBot\" section to your robots.txt file. Remove it after switching, if it is there."
+msgstr "Iespējams, ka Termly ir pievienojis jūsu robots.txt failam sadaļu “TermlyBot”. Ja tāda ir, noņemiet to pēc pārslēgšanas."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:128
+msgid "Deleting Termly leaves its settings and daily account check; Remove leftover data deletes them, including its saved API key. Imports never change its settings or contact Termly."
+msgstr "Dzēšot Termly, tiek saglabāti tā iestatījumi un ikdienas konta pārbaude; noņemot atlikušos datus, tie tiek dzēsti, tostarp saglabātā atslēga API. Importējot datus, nekad netiek mainīti tā iestatījumi vai izveidots savienojums ar Termly."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:53
+msgid "The WPConsent banner is switched off, so visitors' choices are not carried over."
+msgstr "WPConsent reklāmkarogs ir izslēgts, tāpēc apmeklētāju izvēles netiek saglabātas."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:56
+msgid "WPConsent let visitors choose single services. Only its Statistics and Marketing choices carry over; anyone who chose only some services in a category is asked again."
+msgstr "WPConsent ļāva apmeklētājiem izvēlēties atsevišķus pakalpojumus. Tiek saglabātas tikai statistikas un mārketinga izvēles; ikvienam, kurš izvēlējās tikai dažus pakalpojumus noteiktā kategorijā, tiek jautāts vēlreiz."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:58
+msgid "WPConsent Pro geolocation rules and custom scripts are not imported: check Who is asked first, and add any custom scripts to your theme or a header-code plugin before switching."
+msgstr "WPConsent Pro ģeolokācijas noteikumi un pielāgotie skripti netiek importēti: pirms pārslēgšanas atzīmējiet “Kam tiek jautāts vispirms” un pievienojiet tēmai vai galvenes koda spraudnim visus pielāgotos skriptus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:180
+msgid "WPConsent removes its cookie list and settings when deleted only if its own delete-data option is on; Remove leftover data deletes its settings and scan tables but not that cookie list. Imports never change its settings."
+msgstr "WPConsent dzēš savu sīkfailu sarakstu un iestatījumus tikai tad, ja ir ieslēgta tā datu dzēšanas opcija; Atlikušo datu dzēšana dzēš tā iestatījumus un skenēšanas tabulas, bet ne pašu sīkfailu sarakstu. Importēšana nekad nemaina tā iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:109
+msgid "Unknown import source."
+msgstr "Nezināms importa avots."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:168
+msgid "You cannot import settings."
+msgstr "Jūs nevarat importēt iestatījumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:204
+msgid "You do not have permission for this action."
+msgstr "Jums nav atļaujas veikt šo darbību."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:207
+msgid "Another import action is running. If an interrupted action left a lock, review its import record before removing the lock."
+msgstr "Notiek cita importēšanas darbība. Ja pārtraukta darbība atstāja bloķējumu, pirms bloķējuma noņemšanas pārskatiet tās importēšanas ierakstu."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:225
+msgid "Unknown import action."
+msgstr "Nezināma importēšanas darbība."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:251
+msgid "A selected page cannot be edited with a saved revision."
+msgstr "Atlasīto lapu nevar rediģēt ar saglabātu versiju."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:266
+msgid "A source document could not render. It was not replaced."
+msgstr "Avota dokumentu nevarēja atveidot. Tas netika aizstāts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:280
+msgid "A page revision could not be saved. Nothing was replaced."
+msgstr "Lapas labojumu nevarēja saglabāt. Nekas netika aizstāts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:309
+msgid "The undo record could not be saved."
+msgstr "Atsaukšanas ierakstu nevarēja saglabāt."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:361
+msgid "This import cannot be undone."
+msgstr "Šo importēšanu nevar atsaukt."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:367
+msgid "Settings changed after import. Restore the imported values before undoing, so later edits are not lost."
+msgstr "Iestatījumi mainīti pēc importēšanas. Pirms atsaukšanas atjaunojiet importētās vērtības, lai vēlāk veiktās izmaiņas netiktu zaudētas."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:373
+msgid "A page changed after import or its revision is missing. Undo was stopped to protect later edits."
+msgstr "Pēc importēšanas mainīta lapa vai trūkst tās versijas. Atsaukšana tika apturēta, lai aizsargātu vēlākus labojumus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:378
+msgid "A page revision could not be restored. The undo record was kept."
+msgstr "Lapas labojumu nevarēja atjaunot. Atsaukšanas ieraksts tika saglabāts."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:393
+msgid "Cleanup needs permission to manage options and delete plugins."
+msgstr "Tīrīšanai ir nepieciešama atļauja, lai pārvaldītu opcijas un dzēstu spraudņus."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:400
+msgid "Deactivate the source on this site and network before removing leftover data."
+msgstr "Pirms atlikušo datu noņemšanas deaktivizējiet avotu šajā vietnē un tīklā."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:405
+msgid "Network-wide data is not deleted."
+msgstr "Tīkla mēroga dati netiek dzēsti."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:408
+msgid "The leftovers list changed. Review a fresh dry run before confirming."
+msgstr "Pārpalikumu saraksts ir mainīts. Pirms apstiprināšanas pārskatiet jaunu izmēģinājuma versiju."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:414
+msgid "A source table could not be removed. Review a new dry run."
+msgstr "Avota tabulu nevarēja noņemt. Pārskatiet jaunu izmēģinājuma versiju."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:426
+msgid "A source post could not be removed. Review a new dry run."
+msgstr "Nevarēja noņemt avota ierakstu. Apskatiet jaunu izmēģinājuma versiju."
+
+# machine translation
+#: includes/migrate/class-seoprocookieconsent-migrate.php:447
+msgid "A source term could not be removed. Review a new dry run."
+msgstr "Avota terminu nevarēja noņemt. Izskatiet jaunu izmēģinājuma versiju."
+
+# machine translation
+#. translators: %s: folder under uploads
+#: includes/migrate/class-seoprocookieconsent-migrate.php:477
+#, php-format
+msgid "The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run."
+msgstr "Mapi “uploads/ %s nevarēja noņemt. Izdzēsiet to pats vai pārskatiet jaunu izmēģinājuma versiju."
+
+# machine translation
+#: includes/views/consent-banner.php:27
+msgid "login"
+msgstr "pieteikšanās"
+
+# machine translation
+#: includes/views/consent-banner.php:28
+msgid "security"
+msgstr "drošība"
+
+#: includes/views/consent-banner.php:86
+msgid "Your consent ID:"
+msgstr "Jūsu piekrišanas ID:"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy consent ID"
+msgstr "Kopēt piekrišanas ID"
+
+#: includes/views/consent-banner.php:88
+msgid "Copy"
+msgstr "Kopēt"
+
+#: includes/views/consent-banner.php:89
+msgid "Consent ID copied."
+msgstr "Piekrišanas ID ir nokopēts."
+
+#: includes/views/consent-banner.php:89
+msgid "Could not copy. Select the consent ID and copy it manually."
+msgstr "Nevarēja kopēt. Atlasiet piekrišanas ID un nokopējiet to manuāli."
+
+# machine translation
+#. translators: %s: product slugs, comma-separated.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:270
+#, php-format
+msgid "Name the plugin or theme the report is about, one of: %s."
+msgstr "Nosauciet spraudni vai tēmu, par kuru ir ziņojums, vienu no šiem: %s."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:279
+msgid "A report needs a title and details."
+msgstr "Ziņojumam ir nepieciešams nosaukums un detalizēta informācija."
+
+# machine translation
+#. translators: %d: number of drafts.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:307
+#, php-format
+msgid "There are already %d draft reports waiting for review. Send or delete some in Tools → Report a problem first."
+msgstr "Jau ir %d melnrakstu ziņojumu, kas gaida pārskatīšanu. Vispirms nosūtiet vai izdzēsiet dažus sadaļā Rīki → Ziņot par problēmu."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:341 includes/wpallstars-reports/class-wpallstars-reports.php:1034 includes/wpallstars-reports/class-wpallstars-reports.php:1205
+msgid "That report no longer exists."
+msgstr "Šis ziņojums vairs nepastāv."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:344
+msgid "That report has been sent already."
+msgstr "Tas ziņojums jau ir nosūtīts."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Improvement"
+msgstr "Uzlabošana"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Problem"
+msgstr "Problēma"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:640
+msgid "That plugin or theme no longer takes reports here."
+msgstr "Šis spraudnis vai tēma vairs nepieņem šeit atskaites."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:660
+msgid "The site could not send email."
+msgstr "Vietne nevarēja nosūtīt e-pastu."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:710 includes/wpallstars-reports/class-wpallstars-reports.php:711 includes/wpallstars-reports/class-wpallstars-reports.php:769 includes/wpallstars-reports/class-wpallstars-reports.php:1112
+msgid "Report a problem"
+msgstr "Ziņot par problēmu"
+
+# machine translation
+#. translators: %d: number of draft reports.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:743
+#, php-format
+msgid "Your AI assistant drafted %d report about a wpallstars plugin or theme. Nothing is sent until you review it."
+msgid_plural "Your AI assistant drafted %d reports about wpallstars plugins or themes. Nothing is sent until you review them."
+msgstr[0] "Jūsu mākslīgā intelekta asistents sagatavoja %d ziņojumu par wpallstars spraudni vai tēmu. Nekas netiek nosūtīts, kamēr to nepārskatāt."
+msgstr[1] "Jūsu mākslīgā intelekta asistents ir sagatavojis %d ziņojumus par wpallstars spraudņiem vai tēmām. Nekas netiek nosūtīts, kamēr jūs tos nepārskatāt."
+msgstr[2] "Jūsu mākslīgā intelekta asistents ir sagatavojis %d ziņojumus par wpallstars spraudņiem vai tēmām. Nekas netiek nosūtīts, kamēr jūs tos nepārskatāt."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:752
+msgid "Review reports"
+msgstr "Pārskatu pārskati"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:761 includes/wpallstars-reports/class-wpallstars-reports.php:1012
+msgid "Sorry, you are not allowed to review reports."
+msgstr "Atvainojiet, jums nav atļauts pārskatīt ziņojumus."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:772
+msgid "New report"
+msgstr "Jauns ziņojums"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:793
+msgid "Draft saved. Check what will be sent below, then send it."
+msgstr "Melnraksts saglabāts. Zemāk pārbaudiet, kas tiks nosūtīts, un pēc tam nosūtiet to."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:794
+msgid "Report sent. Thank you: the maker will look into it."
+msgstr "Ziņojums nosūtīts. Paldies: ražotājs to izskatīs."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:795
+msgid "Report deleted."
+msgstr "Ziņojums ir dzēsts."
+
+# machine translation
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:826
+#, php-format
+msgid "a public GitHub issue on %s"
+msgstr "publiska GitHub problēma vietnē %s"
+
+# machine translation
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:829
+#, php-format
+msgid "a private email to %s"
+msgstr "privāts e-pasts lietotājam %s"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:839
+msgid "Tell the makers of the wpallstars plugins and themes on this site about a problem or an improvement, so every site using them gets the fix. Your AI assistant can draft reports too (the wpallstars/report-problem ability, or wp wpallstars report create); nothing leaves the site until an administrator sends it here."
+msgstr "Pastāstiet šīs vietnes wpallstars spraudņu un tēmu veidotājiem par problēmu vai uzlabojumu, lai katra vietne, kas tos izmanto, saņemtu labojumu. Jūsu mākslīgā intelekta asistents var arī veidot pārskatu melnrakstus (wpallstars/report-problem iespēja vai wp wpallstars report create); nekas nepamet vietni, kamēr administrators to šeit nenosūta."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:852
+msgid "No reports yet."
+msgstr "Vēl nav ziņojumu."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856 includes/wpallstars-reports/class-wpallstars-reports.php:937
+msgid "Title"
+msgstr "Nosaukums"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856 includes/wpallstars-reports/class-wpallstars-reports.php:917
+msgid "Plugin or theme"
+msgstr "Spraudnis vai tēma"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856 includes/wpallstars-reports/class-wpallstars-reports.php:927
+msgid "Type"
+msgstr "Tips"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Status"
+msgstr "Statuss"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Drafted by"
+msgstr "Sagatavojis"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Date"
+msgstr "Datums"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "Administrator"
+msgstr "Administrators"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "AI assistant"
+msgstr "Mākslīgā intelekta palīgs"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:882
+msgid "Draft, waiting for review"
+msgstr "Melnraksts, gaida pārskatīšanu"
+
+# machine translation
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:887
+#, php-format
+msgid "Opened on GitHub %s"
+msgstr "Atvērts GitHub %s"
+
+# machine translation
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:890
+#, php-format
+msgid "Emailed %s"
+msgstr "E-pasts nosūtīts %s"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:907
+msgid "All reports"
+msgstr "Visi ziņojumi"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:909
+msgid "Your AI assistant drafted this report. Check it says what you want the maker to know, change anything that is wrong, then send it."
+msgstr "Jūsu mākslīgā intelekta asistents ir izstrādājis šo ziņojumu. Pārbaudiet, vai tajā ir teikts viss, ko vēlaties, lai ražotājs zinātu, izlabojiet visu, kas nav kārtībā, un pēc tam nosūtiet to."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:941
+msgid "Details"
+msgstr "Sīkāka informācija"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:944
+msgid "What you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Leave out passwords and licence keys."
+msgstr "Ko jūs darījāt, ko gaidījāt un kas notika, norādot darbības, lai to vēlreiz apskatītu, vai uzlabojumus un to, kāpēc tie palīdzētu. Neiekļaujiet paroles un licences atslēgas."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:955
+msgid "Save draft"
+msgstr "Saglabāt melnrakstu"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:960
+msgid "Open the issue on GitHub"
+msgstr "Atvērt problēmu vietnē GitHub"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:962
+msgid "Send by email"
+msgstr "Sūtīt pa e-pastu"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:969
+msgid "Delete"
+msgstr "Dzēst"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:984
+msgid "What will be sent"
+msgstr "Kas tiks nosūtīts"
+
+# machine translation
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:988
+#, php-format
+msgid "Opens a new issue on GitHub (%s) with this text filled in, for you to submit with your own GitHub account. GitHub issues are public, so the site's address, email and IP addresses, server paths and anything that looks like a key are taken out. Check the text below before you submit it."
+msgstr "Atver jaunu problēmu vietnē GitHub (%s) ar šo aizpildīto tekstu, ko varat iesniegt, izmantojot savu GitHub kontu. GitHub problēmas ir publiskas, tāpēc vietnes adrese, e-pasta un IP adreses, servera ceļi un viss, kas izskatās pēc atslēgas, tiek izņemts. Pirms iesniegšanas pārbaudiet tālāk redzamo tekstu."
+
+# machine translation
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:996
+#, php-format
+msgid "Sent privately by this site's email to %s, with your name and email address to reply to. Anything that looks like a password or key is taken out."
+msgstr "Nosūtīts privāti no šīs vietnes e-pasta uz %s, norādot savu vārdu un e-pasta adresi, uz kuru atbildēt. Viss, kas izskatās pēc paroles vai atslēgas, ir izņemts."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1003
+msgid "Changed the text or the plugin or theme? Save the draft to see the new version here."
+msgstr "Vai mainījāt tekstu, spraudni vai tēmu? Saglabājiet melnrakstu, lai šeit redzētu jauno versiju."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1098
+msgid "wpallstars plugins and themes"
+msgstr "wpallstars spraudņi un tēmas"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1099
+msgid "Problem reports and improvements for the makers of the wpallstars plugins and themes on this site."
+msgstr "Problēmu ziņojumi un uzlabojumi šīs vietnes wpallstars spraudņu un tēmu veidotājiem."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1113
+msgid "Draft a problem report or an improvement for the maker of one of this site's wpallstars plugins or themes (list them with wpallstars/reports), so every site using it gets the fix. Use it when a problem or improvement belongs to that product's own code, not to this site's content or settings. It only saves a draft: nothing leaves the site until a site administrator reviews and sends it in Tools → Report a problem, so tell them to. Say what was done, what was expected and what happened, with steps, versions and error messages; leave out passwords, keys and personal data."
+msgstr "Sagatavojiet problēmas ziņojumu vai uzlabojumu šīs vietnes wpallstars spraudņu vai tēmu veidotājam (uzskaitiet tos ar wpallstars/reports), lai katra vietne, kas to izmanto, saņemtu labojumu. Izmantojiet to, ja problēma vai uzlabojums attiecas uz šī produkta kodu, nevis uz šīs vietnes saturu vai iestatījumiem. Tas saglabā tikai melnrakstu: nekas nepamet vietni, kamēr vietnes administrators to nepārskata un nenosūta sadaļā Rīki → Ziņot par problēmu, tāpēc pasakiet viņiem, lai viņi to dara. Pastāstiet, kas tika izdarīts, kas tika gaidīts un kas notika, norādot darbības, versijas un kļūdu ziņojumus; neminiet paroles, atslēgas un personas datus."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1123
+msgid "The plugin folder or theme the report is about. May be left out when only one takes reports."
+msgstr "Spraudņa mape vai tēma, par kuru ir ziņojums. Var izlaist, ja ziņojumus pieņem tikai viens."
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1151
+msgid "Problem reports"
+msgstr "Problēmu ziņojumi"
+
+# machine translation
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1152
+msgid "List the wpallstars plugins and themes that take problem reports, where each sends them, and this site's reports with their status; with an id, one report and exactly what would be sent."
+msgstr "Uzskaitiet wpallstars spraudņus un tēmas, kas pieņem problēmu ziņojumus, uz kurieni katrs tos nosūta, kā arī šīs vietnes ziņojumus ar to statusu; ar ID, vienu ziņojumu un tieši to, kas tiktu nosūtīts."
+
+# machine translation
+#. translators: %s: address of the Report a problem screen.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1188
+#, php-format
+msgid "Saved as a draft; nothing has been sent. Ask a site administrator to review and send it in Tools → Report a problem: %s"
+msgstr "Saglabāts kā melnraksts; nekas nav nosūtīts. Lūdziet vietnes administratoram to pārskatīt un nosūtīt sadaļā Rīki → Ziņot par problēmu: %s"
+
+# machine translation
+#: admin/js/seoprocookieconsent-theme.js:24
+msgid "Light"
+msgstr "Gaisma"
+
+# machine translation
+#: admin/js/seoprocookieconsent-theme.js:28
+msgid "Dark"
+msgstr "Tumšs"
+
+# machine translation
+#: admin/js/seoprocookieconsent-theme.js:32
+msgid "System"
+msgstr "Sistēma"
+
+# machine translation
+#. translators: %s: the colour mode, Light, Dark or System.
+#: admin/js/seoprocookieconsent-theme.js:63
+msgid "Colour mode: %s"
+msgstr "Krāsu režīms: %s"
+
+# machine translation
+#: admin/js/seoprocookieconsent-theme.js:106
+msgid "The colour mode could not be saved. Please try again."
+msgstr "Krāsu režīmu nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz."
+
+# machine translation
+#: admin/js/seoprocookieconsent-theme.js:185
+msgid "Colour mode"
+msgstr "Krāsu režīms"

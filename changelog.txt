@@ -2,6 +2,10 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.11 =
+* Added: bundled translations for every language a multilingual site in the fleet publishes (#130): French (fr_FR, fr_BE), Spanish (es_ES, es_MX), Italian (it_IT), Portuguese (pt_PT, pt_BR), Polish (pl_PL), Romanian (ro_RO), Latvian (lv), Estonian (et), Dutch (nl_NL) and German (de_AT, de_CH), beside the existing nl_BE, de_DE and fr_CA. With TranslatePress, the banner on /fr/ and the other language pages now follows the page's language instead of staying English. The visitor-facing strings (banner, buttons, Cookie settings dialog, categories, placeholders) were reviewed by hand; admin strings are machine translations marked for review with a "machine translation" translator comment. English and owner-written text are unchanged.
+* Developers: scripts/update-translations.sh compiles every bundled PO instead of a fixed list of three.
+
 = 1.0.10 =
 * Developers: sync all 82 core files with WP Plugin Starter at 199ccac (#123). Plugin Check and smoke tests share the Docker image pull helper; in GitHub Actions it tries Google's official-image mirror explicitly before falling back to Docker Hub. CI optionally uses Docker Hub credentials in an isolated temporary configuration. Local pulls, custom image overrides and consent defaults are unchanged.
 * Added: bundled Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) translations for the banner, preferences, placeholders, cookie policy, terms, editor controls and admin strings. Bundled PHP catalogs register on init (WordPress 6.2+), with just-in-time loading on modern WordPress; the admin colour-mode script gets its JSON catalog. Existing language packs keep precedence. Custom owner text stays untouched; English output and region defaults are unchanged.

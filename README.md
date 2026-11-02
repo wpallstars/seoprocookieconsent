@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.10-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.11-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.10
+Version: 1.0.11
 
 <!-- github-only:start -->
 ## Screenshots
@@ -108,7 +108,7 @@ That is all. **Preview the banner**, at the top of the card's options, shows you
 
 ## Multilingual sites
 
-Bundled translations cover Belgian Dutch (`nl_BE`), German (`de_DE`) and Canadian French (`fr_CA`): the banner, preferences, placeholders, policy and terms blocks, editor controls and settings. Choose **Settings → General → Site Language**; administrators can use a different **Language** in their profile. English stays the fallback. Your own messages, business answers and page content are not translated automatically. Clear page caches after changing language.
+Bundled translations cover Dutch (`nl_BE`, `nl_NL`), German (`de_DE`, `de_AT`, `de_CH`), French (`fr_FR`, `fr_BE`, `fr_CA`), Spanish (`es_ES`, `es_MX`), Italian (`it_IT`), Portuguese (`pt_PT`, `pt_BR`), Polish (`pl_PL`), Romanian (`ro_RO`), Latvian (`lv`) and Estonian (`et`): the banner, preferences, placeholders, policy and terms blocks, editor controls and settings. Choose **Settings → General → Site Language**; administrators can use a different **Language** in their profile. English stays the fallback. Your own messages, business answers and page content are not translated automatically. Clear page caches after changing language.
 
 The banner, dialog and placeholders use the page's WordPress translations. With WPML String Translation or Polylang, open the site's admin after enabling consent, then translate `consent_message` and, if needed, `consent_policy_url` in the **SEO Pro Cookie Consent** string group. Saving settings refreshes the registered source strings. An empty message keeps the automatic translated message.
 
@@ -401,6 +401,11 @@ Admin tabs can set `wide` to true to use the full available width. Own screens c
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### 1.0.11
+
+- Added: bundled translations for every language a multilingual site in the fleet publishes (#130): French (`fr_FR`, `fr_BE`), Spanish (`es_ES`, `es_MX`), Italian, Portuguese (`pt_PT`, `pt_BR`), Polish, Romanian, Latvian, Estonian, Dutch (`nl_NL`) and German (`de_AT`, `de_CH`), beside the existing `nl_BE`, `de_DE` and `fr_CA`. With TranslatePress, the banner on `/fr/` and the other language pages now follows the page's language instead of staying English. The visitor-facing strings (banner, buttons, Cookie settings dialog, categories, placeholders) were reviewed by hand; admin strings are machine translations marked for review. English and owner-written text are unchanged.
+- Developers: `scripts/update-translations.sh` compiles every bundled PO instead of a fixed list.
 
 ### 1.0.10
 
