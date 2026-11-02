@@ -43,6 +43,22 @@ for locale in nl_BE de_DE fr_CA; do
 done
 "${WP[@]}" i18n make-mo "$OUTPUT_PATH"
 "${WP[@]}" i18n make-json "$OUTPUT_PATH" --no-purge --pretty-print
+# A removed locale or script must not leave a compiled catalogue in the build.
+# Keep PO sources and files belonging to other domains untouched.
+shopt -s nullglob
+CATALOG_DIR="$ROOT/languages"
+if [[ "${1:-}" == --check ]]; then
+	CATALOG_DIR="$SOURCE/languages"
+fi
+for file in "$CATALOG_DIR/$DOMAIN-"*.mo "$CATALOG_DIR/$DOMAIN-"*.json; do
+	if [[ ! -f "$WORK/${file##*/}" ]]; then
+		if [[ "${1:-}" == --check ]]; then
+			printf 'Superseded translation: %s; run scripts/update-translations.sh\n' "${file##*/}" >&2
+			exit 1
+		fi
+		rm -- "$file"
+	fi
+done
 if [[ "${1:-}" == --check ]]; then
 	for file in "$WORK/"*.pot "$WORK/"*.po "$WORK/"*.mo "$WORK/"*.json; do
 		cmp "$file" "$SOURCE/languages/${file##*/}" || {
