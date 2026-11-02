@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.10 =
 * Developers: sync all 82 core files with WP Plugin Starter at 199ccac (#123). Plugin Check and smoke tests share the Docker image pull helper; in GitHub Actions it tries Google's official-image mirror explicitly before falling back to Docker Hub. CI optionally uses Docker Hub credentials in an isolated temporary configuration. Local pulls, custom image overrides and consent defaults are unchanged.
 * Added: bundled Belgian Dutch (nl_BE), German (de_DE) and Canadian French (fr_CA) translations for the banner, preferences, placeholders, cookie policy, terms, editor controls and admin strings. Bundled PHP catalogs register on init (WordPress 6.2+), with just-in-time loading on modern WordPress; the admin colour-mode script gets its JSON catalog. Existing language packs keep precedence. Custom owner text stays untouched; English output and region defaults are unchanged.
 * Developers: the POT, PO, MO and script JSON catalogs ship in both release builds. Run bash scripts/update-translations.sh before a release; the plugin-specific release preflight hook rejects stale generated files, using WP-CLI locally or the WordPress CLI Docker image already used by CI. No starter core files changed.
