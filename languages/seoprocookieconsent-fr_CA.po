@@ -29,11 +29,6 @@ msgstr ""
 msgid "SEO Pro Cookie Consent"
 msgstr "SEO Pro Cookie Consent"
 
-#. Plugin URI of the plugin
-#: seoprocookieconsent.php
-msgid "https://github.com/wpallstars/seoprocookieconsent"
-msgstr "https://github.com/wpallstars/seoprocookieconsent"
-
 #. Description of the plugin
 #: seoprocookieconsent.php
 msgid "Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme."
@@ -43,11 +38,6 @@ msgstr "Consentement aux témoins simple et léger : bloque les scripts jusqu’
 #: seoprocookieconsent.php
 msgid "Marcus Quinn"
 msgstr "Marcus Quinn"
-
-#. Author URI of the plugin
-#: seoprocookieconsent.php
-msgid "https://www.wpallstars.com/"
-msgstr "https://www.wpallstars.com/"
 
 #: admin/data/readme.php:32
 #: admin/includes/class-admin-manager.php:175

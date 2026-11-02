@@ -22,8 +22,21 @@ if ! command -v wp >/dev/null 2>&1; then
 fi
 "${WP[@]}" i18n make-pot "$SOURCE_PATH" "$OUTPUT_PATH/$DOMAIN.pot" --slug="$DOMAIN" --exclude=dist,scripts,languages \
 	--headers='{"POT-Creation-Date":"","Report-Msgid-Bugs-To":"https://github.com/wpallstars/seoprocookieconsent/issues"}'
+# Drop messages that are only a URL (the header's Plugin URI and Author URI):
+# nobody translates them, as in SEO Pro Stack's scripts/translations.sh.
+# Plain awk, so CI needs no gettext tools for it.
+drop_urls() {
+	local file="$1"
+	awk 'BEGIN { RS = ""; ORS = "\n\n" } !/(^|\n)msgid "https?:\/\/[^" ]*"\nmsgstr/' "$file" >"$file.tmp"
+	# Paragraph mode leaves one extra blank line at the end of the file.
+	sed -e '$ { /^$/ d; }' "$file.tmp" >"$file"
+	rm -f "$file.tmp"
+	return 0
+}
+drop_urls "$WORK/$DOMAIN.pot"
 for locale in nl_BE de_DE fr_CA; do
 	cp "$SOURCE/languages/$DOMAIN-$locale.po" "$WORK/"
+	drop_urls "$WORK/$DOMAIN-$locale.po"
 	if command -v msgfmt >/dev/null 2>&1; then
 		msgfmt --check --check-format "$WORK/$DOMAIN-$locale.po" -o /dev/null
 	fi
@@ -31,12 +44,12 @@ done
 "${WP[@]}" i18n make-mo "$OUTPUT_PATH"
 "${WP[@]}" i18n make-json "$OUTPUT_PATH" --no-purge --pretty-print
 if [[ "${1:-}" == --check ]]; then
-	for file in "$WORK/"*.pot "$WORK/"*.mo "$WORK/"*.json; do
+	for file in "$WORK/"*.pot "$WORK/"*.po "$WORK/"*.mo "$WORK/"*.json; do
 		cmp "$file" "$SOURCE/languages/${file##*/}" || {
 			printf 'Stale translation: %s; run scripts/update-translations.sh\n' "${file##*/}" >&2
 			exit 1
 		}
 	done
 else
-	cp "$WORK/"*.pot "$WORK/"*.mo "$WORK/"*.json "$ROOT/languages/"
+	cp "$WORK/"*.pot "$WORK/"*.po "$WORK/"*.mo "$WORK/"*.json "$ROOT/languages/"
 fi
