@@ -2732,7 +2732,7 @@ msgstr "Enregistré comme brouillon ; aucun envoi n'a été effectué. Veuillez
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Lumière"
+msgstr "Clair"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28

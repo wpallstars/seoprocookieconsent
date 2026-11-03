@@ -2732,7 +2732,7 @@ msgstr "Salvo como rascunho; nada foi enviado. Peça a um administrador do site 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Luz"
+msgstr "Claro"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28
