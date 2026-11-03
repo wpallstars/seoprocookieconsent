@@ -2739,7 +2739,7 @@ msgstr "Zapisano jako szkic; nic nie zostało wysłane. Poproś administratora w
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Światło"
+msgstr "Jasny"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28
