@@ -711,10 +711,11 @@ lock_holder() {
 	return 0
 }
 
-# Whether the lock's run is still going: its PID runs deploy-remote.sh (ps
-# also rules out a reused PID), or, where ps -p fails (no ps, BusyBox ps,
-# no readable process table), kill -0 finds it. A lock with no owner file
-# yet is being taken: live for its first two minutes.
+# Whether the lock's run is still going: its PID runs a command line that
+# contains deploy-remote (so a PID reused by another command does not keep
+# the lock; one reused by another deploy-remote run would), or, where ps -p
+# fails (no ps, BusyBox ps, no readable process table), kill -0 finds it. A
+# lock with no owner file yet is being taken: live for its first two minutes.
 lock_live() {
 	local dir="$1"
 	local pid args
@@ -783,14 +784,18 @@ lock_take() {
 		if mkdir "$dir" 2>/dev/null; then
 			if ! printf 'pid=%s\ntag=%s\nstarted=%s\nparent=%s\n' "$$" "$tag" \
 				"$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$(printf '%s' "$parent" | tr '\n' ' ')" >"$dir/owner" 2>/dev/null; then
-				# The redirect may have made an empty or partial owner file (a full
-				# disk): remove it only while it is empty or this run's, then the
-				# folder with rmdir, which leaves another run's owner file alone.
-				case "$(lock_field "$dir" pid)" in
-				"" | "$$") rm -f "$dir/owner" ;;
-				esac
-				rmdir "$dir" 2>/dev/null || true
-				say "deploy-remote: cannot write the deploy lock's owner file $dir/owner; nothing installed"
+				# The redirect may have made a partial owner file (a full disk).
+				# Remove the lock only while its owner file names this run: an
+				# empty or missing one may already be a replacement run's lock
+				# (this run's was taken over as stale while it was paused), so it
+				# is left to be taken over once two minutes old.
+				if [[ "$(lock_field "$dir" pid)" == "$$" ]]; then
+					rm -f "$dir/owner"
+					rmdir "$dir" 2>/dev/null || true
+					say "deploy-remote: cannot write the deploy lock's owner file $dir/owner; nothing installed"
+				else
+					say "deploy-remote: cannot write the deploy lock's owner file $dir/owner; nothing installed. The lock is left in place; a run in two minutes takes it over if it is not another run's."
+				fi
 				return 2
 			fi
 			if [[ "$(lock_field "$dir" pid)" != "$$" ]]; then
@@ -807,7 +812,11 @@ lock_take() {
 		# Gone since mkdir failed: another run's takeover; try again.
 		[[ -d "$dir" ]] || continue
 		if lock_live "$dir"; then
-			say "deploy-remote: another deploy of $SLUG is running on this host ($(lock_holder "$dir")); nothing installed. Wait for it to finish, then run again."
+			if [[ -z "$(lock_field "$dir" pid)" ]]; then
+				say "deploy-remote: the deploy lock $dir has no owner yet: another run is taking it, or one could not write its owner file; nothing installed. Run again in two minutes, when a lock with no owner is taken over."
+			else
+				say "deploy-remote: another deploy of $SLUG is running on this host ($(lock_holder "$dir")); nothing installed. Wait for it to finish, then run again."
+			fi
 			return 3
 		fi
 		pid="$(lock_field "$dir" pid)"
@@ -836,7 +845,9 @@ lock_report() {
 	local dir
 	dir="$(lock_path)"
 	[[ -d "$dir" ]] || return 0
-	if lock_live "$dir"; then
+	if lock_live "$dir" && [[ -z "$(lock_field "$dir" pid)" ]]; then
+		say "A deploy lock of $SLUG with no owner yet is on this host ($dir): another run is taking it, or one could not write its owner file. --apply stops until it is two minutes old, then takes it over."
+	elif lock_live "$dir"; then
 		say "A deploy of $SLUG is running on this host ($(lock_holder "$dir")); --apply stops until it ends."
 	else
 		say "A stale deploy lock of $SLUG is on this host ($(lock_holder "$dir")); --apply will take it over."

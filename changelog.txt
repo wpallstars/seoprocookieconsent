@@ -2,6 +2,10 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.12 =
+* Fixed: the "Light" appearance label in the French, Italian, Portuguese (Brazil), Polish, Romanian and Estonian translations reads as the colour mode (Clair, Chiaro, Claro, Jasny, Lumină, Hele) instead of the word for light as in lamp light (#134).
+* Developers: sync all 83 core files with WP Plugin Starter at 9f8f3f8 (#132). CI's optional Docker Hub login preserves runner context and proxy settings without using its credential helpers, uses an isolated config only after a successful login, and removes it afterward. Deploy-lock owner-write failure no longer removes a replacement run's lock, and scripts/deploy-sites.sh says when the host's deploy lock has no owner file yet instead of naming a running deploy with "PID ?". In GitHub Actions, the mirror.gcr.io image pull gives up after DOCKER_MIRROR_TIMEOUT seconds (default 180) and falls back to Docker Hub instead of stalling until the job's time limit. Plugin-own blocks and consent defaults are unchanged.
+
 = 1.0.11 =
 * Added: bundled translations for every language a multilingual site in the fleet publishes (#130): French (fr_FR, fr_BE), Spanish (es_ES, es_MX), Italian (it_IT), Portuguese (pt_PT, pt_BR), Polish (pl_PL), Romanian (ro_RO), Latvian (lv), Estonian (et), Dutch (nl_NL) and German (de_AT, de_CH), beside the existing nl_BE, de_DE and fr_CA. With TranslatePress, the banner on /fr/ and the other language pages now follows the page's language instead of staying English. The visitor-facing strings (banner, buttons, Cookie settings dialog, categories, placeholders) were reviewed by hand; admin strings are machine translations marked for review with a "machine translation" translator comment. English and owner-written text are unchanged.
 * Developers: scripts/update-translations.sh compiles every bundled PO instead of a fixed list of three.
