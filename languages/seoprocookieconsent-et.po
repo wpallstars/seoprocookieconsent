@@ -2732,7 +2732,7 @@ msgstr "Salvestatud mustandina; midagi pole saadetud. Paluge saidi administraato
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Valgus"
+msgstr "Hele"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28

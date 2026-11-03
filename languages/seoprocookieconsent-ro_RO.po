@@ -2739,7 +2739,7 @@ msgstr "Salvat ca schiță; nimic nu a fost trimis. Rugați un administrator al 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Aprinde"
+msgstr "Lumină"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28

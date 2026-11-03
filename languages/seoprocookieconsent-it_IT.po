@@ -2732,7 +2732,7 @@ msgstr "Salvato come bozza; non è stato inviato nulla. Chiedi a un amministrato
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:24
 msgid "Light"
-msgstr "Leggero"
+msgstr "Chiaro"
 
 # machine translation
 #: admin/js/seoprocookieconsent-theme.js:28
