@@ -466,7 +466,9 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      * Styles and the main script.
      */
     public static function enqueue() {
-        wp_enqueue_style('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . 'assets/css/spcc.css', array(), SEOProCookieConsent_Setup::asset_version('assets/css/spcc.css'));
+        $stylesheet = 'assets/css/spcc.css';
+        wp_enqueue_style('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . $stylesheet, array(), SEOProCookieConsent_Setup::asset_version($stylesheet));
+        wp_style_add_data('seoprocookieconsent', 'path', SEOPROCOOKIECONSENT_DIR . $stylesheet);
         // In the footer on WordPress 6.2; deferred from 6.3.
         wp_enqueue_script('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . 'assets/js/spcc.js', array(), SEOProCookieConsent_Setup::asset_version('assets/js/spcc.js'), array('in_footer' => true, 'strategy' => 'defer'));
     }
