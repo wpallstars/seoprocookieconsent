@@ -3,7 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
-* Improved: WordPress can inline the small front-end stylesheet when its available inline-style budget permits, so it does not delay the first paint. It still loads normally when the budget is unavailable.
+* Improved: the front-end stylesheet (5 KB) no longer holds up the first paint: WordPress prints it in the page, in a style tag with the id seoprocookieconsent-inline-css, while its inline-style budget allows (#137). When the budget is used up it loads as a normal link, as before. Sites whose Content-Security-Policy style-src allows no inline styles can keep the link with add_filter('styles_inline_size_limit', '__return_zero').
 
 = 1.0.12 =
 * Fixed: the "Light" appearance label in the French, Italian, Portuguese (Brazil), Polish, Romanian and Estonian translations reads as the colour mode (Clair, Chiaro, Claro, Jasny, Lumină, Hele) instead of the word for light as in lamp light (#134).
