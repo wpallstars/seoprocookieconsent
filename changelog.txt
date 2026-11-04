@@ -2,8 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.13 =
 * Improved: the front-end stylesheet (5 KB) no longer holds up the first paint: WordPress prints it in the page, in a style tag with the id seoprocookieconsent-inline-css, while its inline-style budget allows (#137). When the budget is used up it loads as a normal link, as before. Sites whose Content-Security-Policy style-src allows no inline styles can keep the link with add_filter('styles_inline_size_limit', '__return_zero').
+* Developers: sync all 83 core files with WP Plugin Starter at 8a43928 (#136). scripts/replaced-plugins.php keeps only one file's tokens at a time, so the release preflight's replaced plugins check runs within PHP's default 128 MB. scripts/deploy-sites.sh reports cache=redirected:HOST, instead of a cache hit, when a redirect drops the home check's unique query string. Plugin-own blocks and consent defaults are unchanged.
 
 = 1.0.12 =
 * Fixed: the "Light" appearance label in the French, Italian, Portuguese (Brazil), Polish, Romanian and Estonian translations reads as the colour mode (Clair, Chiaro, Claro, Jasny, Lumină, Hele) instead of the word for light as in lamp light (#134).

@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -111,10 +111,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= Unreleased =
-* WordPress can inline the small front-end stylesheet when its available inline-style budget permits, so it does not delay the first paint.
-
-= 1.0.12 =
-* Corrected the "Light" appearance label in the French, Italian, Portuguese (Brazil), Polish, Romanian and Estonian translations; developer tooling updated from the starter.
+= 1.0.13 =
+* The small front-end stylesheet is printed in the page where WordPress's inline-style budget allows, so it no longer holds up the first paint; developer tooling updated from the starter.
 
 Every change: changelog.txt.
