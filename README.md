@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.12-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.13-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.12
+Version: 1.0.13
 
 <!-- github-only:start -->
 ## Screenshots
@@ -401,6 +401,11 @@ Admin tabs can set `wide` to true to use the full available width. Own screens c
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### 1.0.13
+
+- Improved: the front-end stylesheet (5 KB) no longer holds up the first paint: WordPress prints it in the page (`<style id="seoprocookieconsent-inline-css">`) while its inline-style budget allows, and loads it as a normal link when the budget is used up (#137). Sites whose Content-Security-Policy `style-src` allows no inline styles can keep the link with `add_filter('styles_inline_size_limit', '__return_zero')`.
+- Developers: all 83 starter core files match WP Plugin Starter at 8a43928 (#136): `scripts/replaced-plugins.php` runs within PHP's default 128 MB, and `scripts/deploy-sites.sh` reports `cache=redirected:HOST` instead of a cache hit when a redirect drops the home check's unique query string.
 
 ### 1.0.12
 
