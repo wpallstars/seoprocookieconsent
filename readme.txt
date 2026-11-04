@@ -111,6 +111,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
+= Unreleased =
+* WordPress can inline the small front-end stylesheet when its available inline-style budget permits, so it does not delay the first paint.
+
 = 1.0.12 =
 * Corrected the "Light" appearance label in the French, Italian, Portuguese (Brazil), Polish, Romanian and Estonian translations; developer tooling updated from the starter.
 

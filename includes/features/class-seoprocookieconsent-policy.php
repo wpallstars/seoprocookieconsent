@@ -133,6 +133,7 @@ final class SEOProCookieConsent_Policy extends SEOProCookieConsent_Feature {
      */
     public static function render($atts = array()) {
         wp_enqueue_style('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . 'assets/css/spcc.css', array(), SEOProCookieConsent_Setup::asset_version('assets/css/spcc.css'));
+        wp_style_add_data('seoprocookieconsent', 'path', SEOPROCOOKIECONSENT_DIR . 'assets/css/spcc.css');
 
         $atts    = shortcode_atts(array(
             'intro'   => true,
