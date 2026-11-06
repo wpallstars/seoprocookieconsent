@@ -204,6 +204,79 @@
         };
     };
 
+    // Banner --------------------------------------------------------------
+    // Shared with spcc.js, so the banner shown at the first paint and the
+    // one spcc.js keeps up to date read the same.
+
+    /** A service's name, or "This content" for one the site added. */
+    spcc.serviceName = function (id) {
+        return c.services && c.services[id] ? c.services[id].name : c.text.content;
+    };
+
+    function list(names) {
+        var lang = d.documentElement.lang || undefined;
+        if (names.length > 4) {
+            names = names.slice(0, 3).concat([c.text.other]);
+        }
+        try {
+            return new Intl.ListFormat(lang, { style: 'long', type: 'conjunction' }).format(names);
+        } catch (e) {
+            return names.join(', ');
+        }
+    }
+
+    /** Show the banner for these service names, with the model's buttons. */
+    spcc.showBanner = function (banner, names) {
+        var optIn = spcc.model === 'opt-in';
+        var text = c.text.message || (names.length ? (optIn ? c.text.optIn : c.text.optOut).replace('%s', list(names)) : '');
+        banner.querySelector('[data-spcc-message]').textContent = text;
+        banner.querySelector('[data-spcc-optin]').hidden = !optIn;
+        banner.querySelector('[data-spcc-optout]').hidden = optIn;
+        banner.hidden = false;
+        d.documentElement.classList.add('spcc-banner-open');
+    };
+
+    /**
+     * What the server held back on this page (service => category), from
+     * the banner's data-spcc-held, or null when the page was not processed.
+     */
+    spcc.held = function (banner) {
+        var value = banner ? banner.getAttribute('data-spcc-held') : null;
+        var held = null;
+        try {
+            held = value ? JSON.parse(value) : null;
+        } catch (e) {
+            return null;
+        }
+        return held && typeof held === 'object' && !Array.isArray(held) ? held : null;
+    };
+
+    /** Whether the banner asks, with services held on the page. */
+    spcc.asks = function () {
+        return (!spcc.choice || !!spcc.choice.p) && spcc.model !== 'quiet';
+    };
+
+    // Run by the script straight after the banner, before the rest of the
+    // page: the banner is part of the first paint, not shown after spcc.js
+    // (deferred, in the footer). spcc.js then keeps it.
+    spcc.early = function () {
+        var banner = d.getElementById('spcc-banner');
+        var held = spcc.held(banner);
+        if (!held || c.preview || !spcc.asks()) {
+            return;
+        }
+        var page = {};
+        [held, spcc.dynamicPage || {}].forEach(function (from) {
+            Object.keys(from).forEach(function (id) {
+                page[id] = from[id];
+            });
+        });
+        var ids = Object.keys(page);
+        if (ids.length) {
+            spcc.showBanner(banner, ids.map(spcc.serviceName).filter(Boolean));
+        }
+    };
+
     w.dataLayer = w.dataLayer || [];
     var gtag = function () {
         w.dataLayer.push(arguments);

@@ -119,6 +119,20 @@ final class SEOProCookieConsent_Blocker {
     }
 
     /**
+     * Services held back on the last page processed, with the category
+     * each was held under (as in data-spcc-category), in the order found.
+     *
+     * @return array<string, string> Service ID (or "custom:category") => category.
+     */
+    public function held() {
+        $held = array();
+        foreach ($this->found() as $service) {
+            $held[$service] = self::category_of($service);
+        }
+        return $held;
+    }
+
+    /**
      * Unrecognised third-party script hosts on the last page.
      *
      * @return string[]

@@ -309,7 +309,32 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (null === self::$blocker || !self::is_html_response()) {
             return $html;
         }
-        return self::$blocker->process($html);
+        return self::mark_banner(self::$blocker->process($html), self::$blocker->held());
+    }
+
+    /**
+     * Write what the page holds back onto the banner (data-spcc-held, a
+     * JSON object of service => category), so the script printed straight
+     * after it (spcc.early() in spcc-head.js) can show it at the first
+     * paint instead of after spcc.js. The same for every visitor: the
+     * browser still decides whether to ask. A page without the banner's
+     * markup is left alone, and the banner then waits for spcc.js.
+     *
+     * @param string                $html Page, after holding back.
+     * @param array<string, string> $held Service => category.
+     * @return string
+     */
+    private static function mark_banner($html, array $held) {
+        $tag = '<section id="spcc-banner"';
+        $at  = is_string($html) ? strpos($html, $tag) : false;
+        if (false === $at) {
+            return $html;
+        }
+        $json = wp_json_encode((object) $held, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        if (false === $json) {
+            return $html;
+        }
+        return substr_replace($html, ' data-spcc-held="' . esc_attr($json) . '"', $at + strlen('<section'), 0);
     }
 
     /**
