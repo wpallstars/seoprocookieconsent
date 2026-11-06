@@ -658,30 +658,30 @@ msgstr ""
 msgid "%s left data on the site."
 msgstr ""
 
-#: includes/class-seoprocookieconsent-blocker.php:334
+#: includes/class-seoprocookieconsent-blocker.php:345
 #: includes/features/class-seoprocookieconsent-consent.php:427
 msgid "This content"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-blocker.php:335
+#: includes/class-seoprocookieconsent-blocker.php:346
 msgid "content"
 msgstr ""
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
-#: includes/class-seoprocookieconsent-blocker.php:339
+#: includes/class-seoprocookieconsent-blocker.php:350
 #: includes/features/class-seoprocookieconsent-consent.php:424
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr ""
 
 #. translators: %s: what is embedded, such as video or map.
-#: includes/class-seoprocookieconsent-blocker.php:341
+#: includes/class-seoprocookieconsent-blocker.php:352
 #, php-format
 msgid "Load %s"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-blocker.php:348
+#: includes/class-seoprocookieconsent-blocker.php:359
 #: includes/features/class-seoprocookieconsent-consent.php:429
 #: includes/features/class-seoprocookieconsent-consent.php:533
 #: includes/features/class-seoprocookieconsent-consent.php:790
