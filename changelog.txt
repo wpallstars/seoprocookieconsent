@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Developers: sync 3 core files with WP Plugin Starter at b7d27fa (#147): scripts/lib/deploy-remote.sh, scripts/sync-core.sh and RELEASING.md. Plugin-own blocks and consent defaults are unchanged.
+
 = 1.0.15 =
 * Improved: the banner shows at the first paint, instead of after the plugin's script loads at the end of the page (#150). On phones the banner text is often the page's Largest Contentful Paint, which came late because of it. The page now notes on the banner what it held back, and a one-line script straight after the banner shows it for visitors who are asked; the buttons work once the main script has loaded, as before. Visitors with a stored choice, pages with nothing held back and the settings preview are unchanged. The main script lists only services still held in the page, and hides the early banner again if it then does not ask; the server lists only services from processing stages whose output was kept. Test site, 412x823 Chromium, Google Analytics held, the main script delayed 2.5 s: the banner showed at 88 ms (LCP 100 ms) against 2,933 ms (LCP 2,940 ms) in 1.0.14, CLS 0.
 * Developers: PHPStan 2.3.4 and updated GitHub Actions (#146, #148).
