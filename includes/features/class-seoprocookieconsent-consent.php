@@ -325,16 +325,16 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      * @return string
      */
     private static function mark_banner($html, array $held) {
-        $tag = '<section id="spcc-banner"';
-        $at  = is_string($html) ? strpos($html, $tag) : false;
-        if (false === $at) {
+        // The banner's opening tag, whatever the order or quoting of its
+        // attributes (an optimiser may have rewritten it).
+        if (!is_string($html) || 1 !== preg_match('#<section(?=[^>]*?\sid=(["\']?)spcc-banner\1[\s>/])#i', $html, $m, PREG_OFFSET_CAPTURE)) {
             return $html;
         }
         $json = wp_json_encode((object) $held, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         if (false === $json) {
             return $html;
         }
-        return substr_replace($html, ' data-spcc-held="' . esc_attr($json) . '"', $at + strlen('<section'), 0);
+        return substr_replace($html, ' data-spcc-held="' . esc_attr($json) . '"', $m[0][1] + strlen('<section'), 0);
     }
 
     /**

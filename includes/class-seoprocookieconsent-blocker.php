@@ -26,6 +26,9 @@ final class SEOProCookieConsent_Blocker {
     /** Services found on the last page processed. @var string[] */
     private $found = array();
 
+    /** How many of $found came from stages whose output was kept (held()). @var int */
+    private $kept = 0;
+
     /** Unrecognised third-party script hosts on the last page. @var string[] */
     private $hosts = array();
 
@@ -90,6 +93,7 @@ final class SEOProCookieConsent_Blocker {
      */
     public function process($html) {
         $this->found     = array();
+        $this->kept      = 0;
         $this->hosts     = array();
         $this->necessary = array();
         if (!is_string($html) || '' === $html || (false === stripos($html, '<script') && false === stripos($html, '<iframe'))) {
@@ -104,9 +108,14 @@ final class SEOProCookieConsent_Blocker {
         if (null === $out) {
             return $html; // Backtrack limit on a huge page: leave it as it was.
         }
-        $html = $out;
-        $out  = preg_replace_callback('#<iframe\b[^>]*>.*?</iframe\s*>#is', array($this, 'iframe'), $html);
-        return null === $out ? $html : $out;
+        $html       = $out;
+        $this->kept = count($this->found);
+        $out        = preg_replace_callback('#<iframe\b[^>]*>.*?</iframe\s*>#is', array($this, 'iframe'), $html);
+        if (null === $out) {
+            return $html;
+        }
+        $this->kept = count($this->found);
+        return $out;
     }
 
     /**
@@ -121,12 +130,14 @@ final class SEOProCookieConsent_Blocker {
     /**
      * Services held back on the last page processed, with the category
      * each was held under (as in data-spcc-category), in the order found.
+     * Only from the stages whose output was kept: a stage that hit the
+     * backtrack limit left its scripts or iframes as they were.
      *
      * @return array<string, string> Service ID (or "custom:category") => category.
      */
     public function held() {
         $held = array();
-        foreach ($this->found() as $service) {
+        foreach (array_unique(array_slice($this->found, 0, $this->kept)) as $service) {
             $held[$service] = self::category_of($service);
         }
         return $held;
