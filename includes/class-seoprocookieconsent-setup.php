@@ -97,6 +97,7 @@ final class SEOProCookieConsent_Setup {
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-services.php';
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-blocker.php';
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-records.php';
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-document.php';
         SEOProCookieConsent_Records::boot();
         require_once SEOPROCOOKIECONSENT_DIR . 'includes/migrate/class-seoprocookieconsent-migrate.php';
         SEOProCookieConsent_Migrate::cli();

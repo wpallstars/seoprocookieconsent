@@ -15,9 +15,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
+final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Document {
 
     const KEY = 'terms';
+
+    const SHORTCODE = 'spcc_terms';
+
+    const BLOCK = 'terms';
 
     const REPLACES = array('complianz-terms-conditions' => 'Complianz Terms & Conditions');
 
@@ -27,8 +31,8 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
      * @return array<string,array>
      */
     public static function settings() {
-        return array(
-            self::KEY        => array(
+        return self::with_questions(
+            array(
                 'type'        => 'bool',
                 'default'     => false,
                 'tab'         => 'policies',
@@ -37,55 +41,15 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
                 'replaces'    => self::REPLACES,
                 'reload'      => true,
             ),
-            'terms_business' => array(
-                'type'        => 'text',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Business or owner name', 'seoprocookieconsent'),
-                'description' => __('The legal name responsible for this site. Required for the suggested wording.', 'seoprocookieconsent'),
-            ),
-            'terms_country'  => array(
-                'type'        => 'text',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Country', 'seoprocookieconsent'),
-                'description' => __('Where the business is based. This does not choose governing law or generate country-specific clauses.', 'seoprocookieconsent'),
-            ),
-            'terms_sells'    => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('What the site offers or sells', 'seoprocookieconsent'),
-                'description' => __('Describe your goods, services, digital content or information, including payment and delivery terms where needed.', 'seoprocookieconsent'),
-            ),
-            'terms_returns'  => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Returns, refunds and cancellations', 'seoprocookieconsent'),
-                'description' => __('Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed.', 'seoprocookieconsent'),
-            ),
-            'terms_ai'       => array(
-                'type'        => 'bool',
-                'default'     => true,
-                'parent'      => self::KEY,
-                'label'       => __('Section on AI-assisted services', 'seoprocookieconsent'),
-                'description' => __('Says that the site and your services are provided with the help of AI from several providers, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI.', 'seoprocookieconsent'),
-            ),
-            'terms_contact'  => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Contact details', 'seoprocookieconsent'),
-                'description' => __('Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text.', 'seoprocookieconsent'),
-            ),
-            'terms_wording'  => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Your own wording', 'seoprocookieconsent'),
-                'description' => __('Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed.', 'seoprocookieconsent'),
-            ),
+            array(
+                'terms_business' => array('type' => 'text', 'label' => __('Business or owner name', 'seoprocookieconsent'), 'description' => __('The legal name responsible for this site. Required for the suggested wording.', 'seoprocookieconsent')),
+                'terms_country'  => array('type' => 'text', 'label' => __('Country', 'seoprocookieconsent'), 'description' => __('Where the business is based. This does not choose governing law or generate country-specific clauses.', 'seoprocookieconsent')),
+                'terms_sells'    => array('type' => 'lines', 'label' => __('What the site offers or sells', 'seoprocookieconsent'), 'description' => __('Describe your goods, services, digital content or information, including payment and delivery terms where needed.', 'seoprocookieconsent')),
+                'terms_returns'  => array('type' => 'lines', 'label' => __('Returns, refunds and cancellations', 'seoprocookieconsent'), 'description' => __('Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed.', 'seoprocookieconsent')),
+                'terms_ai'       => array('type' => 'bool', 'default' => true, 'label' => __('Section on AI-assisted services', 'seoprocookieconsent'), 'description' => __('Says that the site and your services are provided with the help of AI from several providers, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI.', 'seoprocookieconsent')),
+                'terms_contact'  => array('type' => 'lines', 'label' => __('Contact details', 'seoprocookieconsent'), 'description' => __('Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text.', 'seoprocookieconsent')),
+                'terms_wording'  => array('type' => 'lines', 'label' => __('Your own wording', 'seoprocookieconsent'), 'description' => __('Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed.', 'seoprocookieconsent')),
+            )
         );
     }
 
@@ -123,45 +87,33 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
         return $options;
     }
 
-    /** Register hooks only when enabled and the replaced plugin is inactive. */
-    public static function boot() {
-        if (!self::enabled()) {
-            return;
-        }
-        add_shortcode('spcc_terms', array(__CLASS__, 'render'));
-        add_action('init', array(__CLASS__, 'register_block'), 20);
-    }
-
-    /** Register the dynamic block using the shared editor preview. */
-    public static function register_block() {
-        SEOProCookieConsent_Setup::register_block('terms', array(
+    /**
+     * Block title, description and icon.
+     *
+     * @return array<string,string>
+     */
+    protected static function block() {
+        return array(
             'title'       => __('Terms and conditions', 'seoprocookieconsent'),
             'description' => __('Terms from your answers. Review before publishing; not legal advice.', 'seoprocookieconsent'),
             'icon'        => 'media-text',
-        ), array(__CLASS__, 'render'));
+        );
     }
 
     /**
-     * Render fresh from settings; no visitor-specific data or extra assets.
+     * The suggested terms, or '' until a business name and contact details
+     * are given.
      *
      * @return string
      */
-    public static function render() {
-        if (!self::enabled()) {
-            return '';
-        }
-        $wording = (string) SEOProCookieConsent_Settings::get('terms_wording');
-        if ('' !== trim($wording)) {
-            return '<div class="spcc-terms">' . self::paragraphs($wording) . self::added_sections(true) . '</div>';
-        }
+    protected static function suggested() {
         $business = (string) SEOProCookieConsent_Settings::get('terms_business');
         $contact  = (string) SEOProCookieConsent_Settings::get('terms_contact');
         if ('' === trim($business) || '' === trim($contact)) {
             return '';
         }
 
-        $html  = '<div class="spcc-terms">';
-        $html .= self::paragraphs(sprintf(
+        $html = self::paragraphs(sprintf(
             /* translators: %s: legal business or owner name. */
             __('This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order.', 'seoprocookieconsent'),
             $business
@@ -195,24 +147,21 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
         $html .= '<h2>' . esc_html__('Your rights', 'seoprocookieconsent') . '</h2>';
         $html .= self::paragraphs(__('Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights.', 'seoprocookieconsent'));
         $html .= '<h2>' . esc_html__('Contact', 'seoprocookieconsent') . '</h2>';
-        $html .= self::paragraphs($contact);
-        return $html . '</div>';
+        return $html . self::paragraphs($contact);
     }
 
     /**
      * Sections other plugins add for what they sell, such as a deposit and
      * balance on delivery, from the seoprocookieconsent_terms_sections
-     * filter. Each section is a heading and plain text, one paragraph per
-     * line, escaped like the owner's answers. They follow the owner's
-     * offering and returns answers, before "AI-assisted services" (when
-     * that section is on) and "Your rights", and also follow
-     * Your own wording ($own_wording true), so an add-on that the owner's
-     * wording already covers can leave its section out.
+     * filter. They follow the owner's offering and returns answers, before
+     * "AI-assisted services" (when that section is on) and "Your rights",
+     * and also follow Your own wording ($own_wording true), so an add-on
+     * that the owner's wording already covers can leave its section out.
      *
      * @param bool $own_wording Whether Your own wording replaces the suggestions.
      * @return string
      */
-    private static function added_sections($own_wording) {
+    protected static function added_sections($own_wording) {
         /**
          * Sections an add-on adds to the Terms and conditions.
          *
@@ -221,34 +170,6 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
          * @param array<int,array{heading:string,text:string}> $sections    Sections, in order.
          * @param bool                                         $own_wording Whether Your own wording replaces the suggestions.
          */
-        $sections = apply_filters('seoprocookieconsent_terms_sections', array(), (bool) $own_wording);
-        $html     = '';
-        foreach (is_array($sections) ? $sections : array() as $section) {
-            if (!is_array($section)) {
-                continue;
-            }
-            $heading = isset($section['heading']) && is_string($section['heading']) ? trim($section['heading']) : '';
-            $text    = isset($section['text']) && is_string($section['text']) ? $section['text'] : '';
-            if ('' !== $heading && '' !== trim($text)) {
-                $html .= '<h2>' . esc_html($heading) . '</h2>' . self::paragraphs($text);
-            }
-        }
-        return $html;
-    }
-
-    /**
-     * Escape each nonempty line as a paragraph, never executing HTML or shortcodes.
-     *
-     * @param string $text Plain text.
-     * @return string
-     */
-    private static function paragraphs($text) {
-        $html = '';
-        foreach (preg_split('/\r\n|\r|\n/', $text) ?: array() as $line) {
-            if ('' !== trim($line)) {
-                $html .= '<p>' . esc_html($line) . '</p>';
-            }
-        }
-        return $html;
+        return self::sections(apply_filters('seoprocookieconsent_terms_sections', array(), (bool) $own_wording));
     }
 }

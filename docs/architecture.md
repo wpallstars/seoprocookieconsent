@@ -26,7 +26,9 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 | Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs; maps get a bundled generic image. |
 | Consent | `includes/features/class-seoprocookieconsent-consent.php` | The feature: settings, buffer start, head config, banner and dialog markup, footer menu link (placed beside the policy links) and the Appearance → Menus box, Cookie settings shortcode and block. |
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
+| Documents | `includes/class-seoprocookieconsent-document.php` | Shared base of Terms and Privacy: questions under the switch, shortcode and block, Your own wording, add-on sections, plain-text escaping. |
 | Privacy | `includes/features/class-seoprocookieconsent-privacy.php` | Privacy policy shortcode and block from the owner's answers, with the AI section. |
+| Terms | `includes/features/class-seoprocookieconsent-terms.php` | Terms and conditions shortcode and block from the owner's answers, with the AI section. |
 | Front end | `assets/js/spcc.js`, `assets/css/spcc.css` | Region decision, consent cookie, banner and dialog, releasing held-back tags, Google Consent Mode and WP Consent API signals. |
 
 ## Banner at the first paint
@@ -241,6 +243,14 @@ button. Owners write the rest of the page as normal blocks, so their own
 text is never overwritten and the list stays current. The privacy
 policy guide (Settings → Privacy) gets suggested text too. Text is a
 starting point, not legal advice: the README says so.
+
+Privacy and Terms extend `SEOProCookieConsent_Document`
+(`includes/class-seoprocookieconsent-document.php`), which registers the
+shortcode (`SHORTCODE`) and block (`BLOCK`) while the feature is on,
+renders Your own wording (`{KEY}_wording`) or the feature's `suggested()`
+text inside `<div class="spcc-{KEY}">`, renders sections from the
+feature's own filter, and escapes answers as paragraphs or list items. A
+new document of this kind extends it rather than copying either feature.
 
 Privacy (`includes/features/class-seoprocookieconsent-privacy.php`) is a
 separate, off-by-default feature on Policies, built like Terms below.

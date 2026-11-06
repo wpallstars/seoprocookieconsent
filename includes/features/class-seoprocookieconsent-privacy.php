@@ -16,9 +16,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
+final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
 
     const KEY = 'privacy';
+
+    const SHORTCODE = 'spcc_privacy_policy';
+
+    const BLOCK = 'privacy-policy';
 
     /**
      * Settings rendered and saved by the shared settings screen.
@@ -26,8 +30,8 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
      * @return array<string,array>
      */
     public static function settings() {
-        return array(
-            self::KEY              => array(
+        return self::with_questions(
+            array(
                 'type'        => 'bool',
                 'default'     => false,
                 'tab'         => 'policies',
@@ -35,97 +39,45 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
                 'description' => __('Adds the Privacy policy block and [spcc_privacy_policy] shortcode: a general privacy policy from your answers, covering what you collect and why, AI, cookies, sharing, retention, security, rights and complaints. Review the wording before publishing and add anything your site does that it does not cover. This is a starting point, not legal advice, and may not cover your business or local law. Existing privacy pages are not changed.', 'seoprocookieconsent'),
                 'reload'      => true,
             ),
-            'privacy_business'     => array(
-                'type'        => 'text',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Business or owner name', 'seoprocookieconsent'),
-                'description' => __('The legal name responsible for personal information collected through this site. Leave empty to use the Terms and conditions answer. Required for the suggested wording.', 'seoprocookieconsent'),
-            ),
-            'privacy_country'      => array(
-                'type'        => 'text',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Country', 'seoprocookieconsent'),
-                'description' => __('Where the business is based. Leave empty to use the Terms and conditions answer.', 'seoprocookieconsent'),
-            ),
-            'privacy_registration' => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Data protection registration', 'seoprocookieconsent'),
-                'description' => __('Optional: your registration with a data protection authority, where the law asks for one, such as the authority\'s name and your registration number.', 'seoprocookieconsent'),
-            ),
-            'privacy_contact'      => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Contact details', 'seoprocookieconsent'),
-                'description' => __('Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text.', 'seoprocookieconsent'),
-            ),
-            'privacy_providers'    => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Main service providers', 'seoprocookieconsent'),
-                'description' => __('Optional: services that handle personal information for you, one per line with their country and what they do, such as "Web host, Germany: hosting and backups". Listed where the policy explains sharing.', 'seoprocookieconsent'),
-            ),
-            'privacy_ai'           => array(
-                'type'        => 'bool',
-                'default'     => true,
-                'parent'      => self::KEY,
-                'label'       => __('Section on the use of AI', 'seoprocookieconsent'),
-                'description' => __('Says that you use AI services from several providers to develop the site and your services and to help answer questions and support requests, and that you endeavour to remove personal information before anything is processed by AI. Turn it off if that is not true for this site.', 'seoprocookieconsent'),
-            ),
-            'privacy_wording'      => array(
-                'type'        => 'lines',
-                'default'     => '',
-                'parent'      => self::KEY,
-                'label'       => __('Your own wording', 'seoprocookieconsent'),
-                'description' => __('Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed.', 'seoprocookieconsent'),
-            ),
+            array(
+                'privacy_business'     => array('type' => 'text', 'label' => __('Business or owner name', 'seoprocookieconsent'), 'description' => __('The legal name responsible for personal information collected through this site. Leave empty to use the Terms and conditions answer. Required for the suggested wording.', 'seoprocookieconsent')),
+                'privacy_country'      => array('type' => 'text', 'label' => __('Country', 'seoprocookieconsent'), 'description' => __('Where the business is based. Leave empty to use the Terms and conditions answer.', 'seoprocookieconsent')),
+                'privacy_registration' => array('type' => 'lines', 'label' => __('Data protection registration', 'seoprocookieconsent'), 'description' => __('Optional: your registration with a data protection authority, where the law asks for one, such as the authority\'s name and your registration number.', 'seoprocookieconsent')),
+                'privacy_contact'      => array('type' => 'lines', 'label' => __('Contact details', 'seoprocookieconsent'), 'description' => __('Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text.', 'seoprocookieconsent')),
+                'privacy_providers'    => array('type' => 'lines', 'label' => __('Main service providers', 'seoprocookieconsent'), 'description' => __('Optional: services that handle personal information for you, one per line with their country and what they do, such as "Web host, Germany: hosting and backups". Listed where the policy explains sharing.', 'seoprocookieconsent')),
+                'privacy_ai'           => array('type' => 'bool', 'default' => true, 'label' => __('Section on the use of AI', 'seoprocookieconsent'), 'description' => __('Says that you use AI services from several providers to develop the site and your services and to help answer questions and support requests, and that you endeavour to remove personal information before anything is processed by AI. Turn it off if that is not true for this site.', 'seoprocookieconsent')),
+                'privacy_wording'      => array('type' => 'lines', 'label' => __('Your own wording', 'seoprocookieconsent'), 'description' => __('Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed.', 'seoprocookieconsent')),
+            )
         );
     }
 
-    /** Register hooks only when enabled. */
-    public static function boot() {
-        if (!self::enabled()) {
-            return;
-        }
-        add_shortcode('spcc_privacy_policy', array(__CLASS__, 'render'));
-        add_action('init', array(__CLASS__, 'register_block'), 20);
-    }
-
-    /** Register the dynamic block using the shared editor preview. */
-    public static function register_block() {
-        SEOProCookieConsent_Setup::register_block('privacy-policy', array(
+    /**
+     * Block title, description and icon.
+     *
+     * @return array<string,string>
+     */
+    protected static function block() {
+        return array(
             'title'       => __('Privacy policy', 'seoprocookieconsent'),
             'description' => __('Privacy policy from your answers. Review before publishing; not legal advice.', 'seoprocookieconsent'),
             'icon'        => 'shield',
-        ), array(__CLASS__, 'render'));
+        );
     }
 
     /**
-     * Render fresh from settings; no visitor-specific data or extra assets.
+     * The suggested policy, or '' until a business name and contact
+     * details are given (here or in Terms and conditions).
      *
      * @return string
      */
-    public static function render() {
-        if (!self::enabled()) {
-            return '';
-        }
-        $wording = (string) SEOProCookieConsent_Settings::get('privacy_wording');
-        if ('' !== trim($wording)) {
-            return '<div class="spcc-privacy">' . self::paragraphs($wording) . self::added_sections(true) . '</div>';
-        }
+    protected static function suggested() {
         $business = self::answer('privacy_business', 'terms_business');
         $contact  = self::answer('privacy_contact', 'terms_contact');
         if ('' === trim($business) || '' === trim($contact)) {
             return '';
         }
 
-        $html  = '<div class="spcc-privacy">';
-        $html .= self::paragraphs(sprintf(
+        $html = self::paragraphs(sprintf(
             /* translators: %s: legal business or owner name. */
             __('This privacy policy explains how %s ("we") collects, uses and protects personal information through this website and our services, and the choices and rights you have. We are responsible for that information (its controller, in data protection law).', 'seoprocookieconsent'),
             $business
@@ -220,8 +172,7 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
         $html .= self::paragraphs(__('We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can.', 'seoprocookieconsent'));
 
         $html .= self::heading(__('Contact', 'seoprocookieconsent'));
-        $html .= self::paragraphs($contact);
-        return $html . '</div>';
+        return $html . self::paragraphs($contact);
     }
 
     /**
@@ -275,16 +226,15 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
     /**
      * Sections other plugins add for what they do with personal
      * information, such as the Google data an analytics plugin reads, from
-     * the seoprocookieconsent_privacy_sections filter. Each section is a
-     * heading and plain text, one paragraph per line, escaped like the
-     * owner's answers. They come before "Your rights", and also follow
-     * Your own wording ($own_wording true), so an add-on that the owner's
-     * wording already covers can leave its section out.
+     * the seoprocookieconsent_privacy_sections filter. They come before
+     * "Your rights", and also follow Your own wording ($own_wording true),
+     * so an add-on that the owner's wording already covers can leave its
+     * section out.
      *
      * @param bool $own_wording Whether Your own wording replaces the suggestions.
      * @return string
      */
-    private static function added_sections($own_wording) {
+    protected static function added_sections($own_wording) {
         /**
          * Sections an add-on adds to the Privacy policy.
          *
@@ -293,60 +243,6 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Feature {
          * @param array<int,array{heading:string,text:string}> $sections    Sections, in order.
          * @param bool                                         $own_wording Whether Your own wording replaces the suggestions.
          */
-        $sections = apply_filters('seoprocookieconsent_privacy_sections', array(), (bool) $own_wording);
-        $html     = '';
-        foreach (is_array($sections) ? $sections : array() as $section) {
-            if (!is_array($section)) {
-                continue;
-            }
-            $heading = isset($section['heading']) && is_string($section['heading']) ? trim($section['heading']) : '';
-            $text    = isset($section['text']) && is_string($section['text']) ? $section['text'] : '';
-            if ('' !== $heading && '' !== trim($text)) {
-                $html .= self::heading($heading) . self::paragraphs($text);
-            }
-        }
-        return $html;
-    }
-
-    /**
-     * A section heading.
-     *
-     * @param string $text Plain text.
-     * @return string
-     */
-    private static function heading($text) {
-        return '<h2>' . esc_html($text) . '</h2>';
-    }
-
-    /**
-     * Escape each nonempty item as a list item.
-     *
-     * @param string[] $items Plain text.
-     * @return string
-     */
-    private static function items(array $items) {
-        $html = '';
-        foreach ($items as $item) {
-            if ('' !== trim((string) $item)) {
-                $html .= '<li>' . esc_html(trim((string) $item)) . '</li>';
-            }
-        }
-        return '' !== $html ? '<ul>' . $html . '</ul>' : '';
-    }
-
-    /**
-     * Escape each nonempty line as a paragraph, never executing HTML or shortcodes.
-     *
-     * @param string $text Plain text.
-     * @return string
-     */
-    private static function paragraphs($text) {
-        $html = '';
-        foreach (preg_split('/\r\n|\r|\n/', $text) ?: array() as $line) {
-            if ('' !== trim($line)) {
-                $html .= '<p>' . esc_html($line) . '</p>';
-            }
-        }
-        return $html;
+        return self::sections(apply_filters('seoprocookieconsent_privacy_sections', array(), (bool) $own_wording));
     }
 }

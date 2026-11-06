@@ -46,7 +46,7 @@ msgstr ""
 #: admin/includes/class-admin-page.php:238
 #: admin/includes/class-network-manager.php:102
 #: includes/class-seoprocookieconsent-records.php:156
-#: includes/class-seoprocookieconsent-setup.php:168
+#: includes/class-seoprocookieconsent-setup.php:169
 #: includes/views/consent-banner.php:43
 #: includes/views/consent-banner.php:48
 msgid "Settings"
@@ -1083,19 +1083,19 @@ msgstr ""
 msgid "Saved. Reload the page to see the change."
 msgstr ""
 
-#: includes/class-seoprocookieconsent-setup.php:264
+#: includes/class-seoprocookieconsent-setup.php:265
 msgid "Consent"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-setup.php:265
+#: includes/class-seoprocookieconsent-setup.php:266
 msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
 msgstr ""
 
-#: includes/class-seoprocookieconsent-setup.php:268
+#: includes/class-seoprocookieconsent-setup.php:269
 msgid "Policies"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-setup.php:269
+#: includes/class-seoprocookieconsent-setup.php:270
 msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
 msgstr ""
 
@@ -1479,8 +1479,8 @@ msgid "Kept for"
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-policy.php:191
-#: includes/features/class-seoprocookieconsent-privacy.php:34
-#: includes/features/class-seoprocookieconsent-privacy.php:102
+#: includes/features/class-seoprocookieconsent-privacy.php:38
+#: includes/features/class-seoprocookieconsent-privacy.php:61
 msgid "Privacy policy"
 msgstr ""
 
@@ -1489,7 +1489,7 @@ msgid "Sets cookies on its own site when its content loads."
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-policy.php:219
-#: includes/features/class-seoprocookieconsent-privacy.php:169
+#: includes/features/class-seoprocookieconsent-privacy.php:121
 msgid "Cookies"
 msgstr ""
 
@@ -1507,12 +1507,12 @@ msgstr ""
 msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:35
+#: includes/features/class-seoprocookieconsent-privacy.php:39
 msgid "Adds the Privacy policy block and [spcc_privacy_policy] shortcode: a general privacy policy from your answers, covering what you collect and why, AI, cookies, sharing, retention, security, rights and complaints. Review the wording before publishing and add anything your site does that it does not cover. This is a starting point, not legal advice, and may not cover your business or local law. Existing privacy pages are not changed."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:42
-#: includes/features/class-seoprocookieconsent-terms.php:44
+#: includes/features/class-seoprocookieconsent-privacy.php:43
+#: includes/features/class-seoprocookieconsent-terms.php:45
 msgid "Business or owner name"
 msgstr ""
 
@@ -1520,293 +1520,293 @@ msgstr ""
 msgid "The legal name responsible for personal information collected through this site. Leave empty to use the Terms and conditions answer. Required for the suggested wording."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:49
-#: includes/features/class-seoprocookieconsent-terms.php:51
+#: includes/features/class-seoprocookieconsent-privacy.php:44
+#: includes/features/class-seoprocookieconsent-terms.php:46
 msgid "Country"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:50
+#: includes/features/class-seoprocookieconsent-privacy.php:44
 msgid "Where the business is based. Leave empty to use the Terms and conditions answer."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:56
+#: includes/features/class-seoprocookieconsent-privacy.php:45
 msgid "Data protection registration"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:57
+#: includes/features/class-seoprocookieconsent-privacy.php:45
 msgid "Optional: your registration with a data protection authority, where the law asks for one, such as the authority's name and your registration number."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:63
-#: includes/features/class-seoprocookieconsent-terms.php:79
+#: includes/features/class-seoprocookieconsent-privacy.php:46
+#: includes/features/class-seoprocookieconsent-terms.php:50
 msgid "Contact details"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:64
+#: includes/features/class-seoprocookieconsent-privacy.php:46
 msgid "Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:70
+#: includes/features/class-seoprocookieconsent-privacy.php:47
 msgid "Main service providers"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:71
+#: includes/features/class-seoprocookieconsent-privacy.php:47
 msgid "Optional: services that handle personal information for you, one per line with their country and what they do, such as \"Web host, Germany: hosting and backups\". Listed where the policy explains sharing."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:77
+#: includes/features/class-seoprocookieconsent-privacy.php:48
 msgid "Section on the use of AI"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:78
+#: includes/features/class-seoprocookieconsent-privacy.php:48
 msgid "Says that you use AI services from several providers to develop the site and your services and to help answer questions and support requests, and that you endeavour to remove personal information before anything is processed by AI. Turn it off if that is not true for this site."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:84
-#: includes/features/class-seoprocookieconsent-terms.php:86
+#: includes/features/class-seoprocookieconsent-privacy.php:49
+#: includes/features/class-seoprocookieconsent-terms.php:51
 msgid "Your own wording"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:85
+#: includes/features/class-seoprocookieconsent-privacy.php:49
 msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:103
+#: includes/features/class-seoprocookieconsent-privacy.php:62
 msgid "Privacy policy from your answers. Review before publishing; not legal advice."
 msgstr ""
 
 #. translators: %s: legal business or owner name.
-#: includes/features/class-seoprocookieconsent-privacy.php:130
+#: includes/features/class-seoprocookieconsent-privacy.php:82
 #, php-format
 msgid "This privacy policy explains how %s (\"we\") collects, uses and protects personal information through this website and our services, and the choices and rights you have. We are responsible for that information (its controller, in data protection law)."
 msgstr ""
 
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-privacy.php:137
+#: includes/features/class-seoprocookieconsent-privacy.php:89
 #, php-format
 msgid "We are based in %s."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:143
+#: includes/features/class-seoprocookieconsent-privacy.php:95
 msgid "What we collect"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:145
+#: includes/features/class-seoprocookieconsent-privacy.php:97
 msgid "Information you give us: for example your name, email address, phone number, postal address and what you write, when you contact us, comment, create an account, subscribe to updates or buy from us."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:146
+#: includes/features/class-seoprocookieconsent-privacy.php:98
 msgid "Information collected automatically: your IP address, browser and device details and the pages you visit, which our hosting and security services record to deliver and protect the site, and information from cookies and similar technologies, as explained under Cookies."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:147
+#: includes/features/class-seoprocookieconsent-privacy.php:99
 msgid "Information from others: for example confirmation of a payment from a payment provider, or details from a service you choose to sign in with."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:149
+#: includes/features/class-seoprocookieconsent-privacy.php:101
 msgid "We do not ask for sensitive information, such as about your health, religious beliefs or ethnic origin. Please do not send it to us unless we have agreed how it will be handled."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:151
+#: includes/features/class-seoprocookieconsent-privacy.php:103
 msgid "How we use it and why"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:152
+#: includes/features/class-seoprocookieconsent-privacy.php:104
 msgid "We use personal information only for these purposes. Where data protection law asks for a legal basis, we rely on the one given for each:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:154
+#: includes/features/class-seoprocookieconsent-privacy.php:106
 msgid "To reply to you and provide what you ask for, including orders and support: to take steps at your request or to perform a contract with you."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:155
+#: includes/features/class-seoprocookieconsent-privacy.php:107
 msgid "To run, secure and improve the website and our services, and to prevent fraud and abuse: our legitimate interests, balanced against your rights."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:156
+#: includes/features/class-seoprocookieconsent-privacy.php:108
 msgid "To send newsletters or marketing you asked for: your consent, which you can withdraw at any time with the unsubscribe link or by contacting us."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:157
+#: includes/features/class-seoprocookieconsent-privacy.php:109
 msgid "To use optional cookies, such as for statistics or marketing: your consent, where the law requires it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:158
+#: includes/features/class-seoprocookieconsent-privacy.php:110
 msgid "To keep records and meet our legal, tax and accounting obligations: legal obligation."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:160
+#: includes/features/class-seoprocookieconsent-privacy.php:112
 msgid "We do not use personal information for an unrelated purpose without telling you first."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:163
+#: includes/features/class-seoprocookieconsent-privacy.php:115
 msgid "Artificial intelligence (AI)"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:164
+#: includes/features/class-seoprocookieconsent-privacy.php:116
 msgid "We use AI services from several providers to help develop and maintain this website and our services, and to help us answer questions and support requests."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:165
+#: includes/features/class-seoprocookieconsent-privacy.php:117
 msgid "We endeavour to remove personal information, such as names, contact details and account or order details, from anything we send to an AI service, so that only the general content of a message is processed to help prepare an answer."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:166
+#: includes/features/class-seoprocookieconsent-privacy.php:118
 msgid "Where we can, we choose AI services and settings that do not use what we send to train their models. AI helps us prepare answers; it does not make decisions about you that have legal or similarly significant effects."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:170
+#: includes/features/class-seoprocookieconsent-privacy.php:122
 msgid "We use cookies and similar technologies. Necessary ones make the site work and are always on. Others, such as for statistics, embedded content or marketing, are used only with your consent where the law requires it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:173
+#: includes/features/class-seoprocookieconsent-privacy.php:125
 msgid "Who we share it with"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:174
+#: includes/features/class-seoprocookieconsent-privacy.php:126
 msgid "We share personal information only when needed:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:176
+#: includes/features/class-seoprocookieconsent-privacy.php:128
 msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, email, payments and support, and who may use it only to provide their services to us;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:177
+#: includes/features/class-seoprocookieconsent-privacy.php:129
 msgid "with professional advisers, such as accountants and lawyers, and with authorities when the law requires it;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:178
+#: includes/features/class-seoprocookieconsent-privacy.php:130
 msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:179
+#: includes/features/class-seoprocookieconsent-privacy.php:131
 msgid "with others when you ask us to or agree to it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:183
+#: includes/features/class-seoprocookieconsent-privacy.php:135
 msgid "Our main service providers are:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:187
+#: includes/features/class-seoprocookieconsent-privacy.php:139
 msgid "International transfers"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:188
+#: includes/features/class-seoprocookieconsent-privacy.php:140
 msgid "Some of our service providers store or process information in other countries. Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision or standard contractual clauses."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:190
+#: includes/features/class-seoprocookieconsent-privacy.php:142
 msgid "How long we keep it"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:191
+#: includes/features/class-seoprocookieconsent-privacy.php:143
 msgid "We keep personal information only as long as we need it for the purposes above, then delete or anonymise it. For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires. Copies in backups are deleted as the backups are replaced."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:193
+#: includes/features/class-seoprocookieconsent-privacy.php:145
 msgid "Security"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:194
+#: includes/features/class-seoprocookieconsent-privacy.php:146
 msgid "We protect personal information with appropriate technical and organisational measures, such as encrypted connections, access controls, and regular updates and backups. If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it. No website or email is completely secure, so please think carefully before sending sensitive information by email."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:198
-#: includes/features/class-seoprocookieconsent-terms.php:195
+#: includes/features/class-seoprocookieconsent-privacy.php:150
+#: includes/features/class-seoprocookieconsent-terms.php:147
 msgid "Your rights"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:199
+#: includes/features/class-seoprocookieconsent-privacy.php:151
 msgid "Depending on where you live, you may have the right to:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:201
+#: includes/features/class-seoprocookieconsent-privacy.php:153
 msgid "ask for a copy of the personal information we hold about you;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:202
+#: includes/features/class-seoprocookieconsent-privacy.php:154
 msgid "have it corrected if it is wrong or incomplete;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:203
+#: includes/features/class-seoprocookieconsent-privacy.php:155
 msgid "have it deleted, or its use restricted;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:204
+#: includes/features/class-seoprocookieconsent-privacy.php:156
 msgid "object to how we use it, including to direct marketing at any time;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:205
+#: includes/features/class-seoprocookieconsent-privacy.php:157
 msgid "receive it in a commonly used format, or have it sent to another organisation;"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:206
+#: includes/features/class-seoprocookieconsent-privacy.php:158
 msgid "withdraw your consent at any time, without affecting what we did before."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:208
+#: includes/features/class-seoprocookieconsent-privacy.php:160
 msgid "To use these rights, contact us using the details below. We may need to confirm your identity first. We reply as soon as we can and within the time the law sets, and do not charge unless a request is clearly unfounded or excessive."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:210
+#: includes/features/class-seoprocookieconsent-privacy.php:162
 msgid "Complaints"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:211
+#: includes/features/class-seoprocookieconsent-privacy.php:163
 msgid "If you are unhappy with how we handle your personal information, please contact us first so we can try to put it right. You also have the right to complain to the data protection authority where you live or work, or where we are based."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:213
+#: includes/features/class-seoprocookieconsent-privacy.php:165
 msgid "Children"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:214
+#: includes/features/class-seoprocookieconsent-privacy.php:166
 msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live. If you think a child has given us personal information, please contact us and we will delete it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:216
+#: includes/features/class-seoprocookieconsent-privacy.php:168
 msgid "Other websites"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:217
+#: includes/features/class-seoprocookieconsent-privacy.php:169
 msgid "Other websites that we link to, or whose content we embed, have their own privacy policies; this policy does not cover them."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:219
+#: includes/features/class-seoprocookieconsent-privacy.php:171
 msgid "Changes to this policy"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:220
+#: includes/features/class-seoprocookieconsent-privacy.php:172
 msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:222
-#: includes/features/class-seoprocookieconsent-terms.php:197
+#: includes/features/class-seoprocookieconsent-privacy.php:174
+#: includes/features/class-seoprocookieconsent-terms.php:149
 msgid "Contact"
 msgstr ""
 
 #. translators: %s: "Cookie settings" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:253
+#: includes/features/class-seoprocookieconsent-privacy.php:204
 #, php-format
 msgid "You can change or withdraw your consent at any time in %s."
 msgstr ""
 
 #. translators: %s: "Our cookie policy" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:270
+#: includes/features/class-seoprocookieconsent-privacy.php:221
 #, php-format
 msgid "%s lists the cookies we use, what each does and how long it is kept."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-privacy.php:271
+#: includes/features/class-seoprocookieconsent-privacy.php:222
 msgid "Our cookie policy"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:35
-#: includes/features/class-seoprocookieconsent-terms.php:138
+#: includes/features/class-seoprocookieconsent-terms.php:39
+#: includes/features/class-seoprocookieconsent-terms.php:97
 msgid "Terms and conditions"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:36
+#: includes/features/class-seoprocookieconsent-terms.php:40
 msgid "Adds the Terms and conditions block and [spcc_terms] shortcode. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
 msgstr ""
 
@@ -1814,84 +1814,84 @@ msgstr ""
 msgid "The legal name responsible for this site. Required for the suggested wording."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:52
+#: includes/features/class-seoprocookieconsent-terms.php:46
 msgid "Where the business is based. This does not choose governing law or generate country-specific clauses."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:58
+#: includes/features/class-seoprocookieconsent-terms.php:47
 msgid "What the site offers or sells"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:59
+#: includes/features/class-seoprocookieconsent-terms.php:47
 msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:65
-#: includes/features/class-seoprocookieconsent-terms.php:181
+#: includes/features/class-seoprocookieconsent-terms.php:48
+#: includes/features/class-seoprocookieconsent-terms.php:133
 msgid "Returns, refunds and cancellations"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:66
+#: includes/features/class-seoprocookieconsent-terms.php:48
 msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:72
+#: includes/features/class-seoprocookieconsent-terms.php:49
 msgid "Section on AI-assisted services"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:73
+#: includes/features/class-seoprocookieconsent-terms.php:49
 msgid "Says that the site and your services are provided with the help of AI from several providers, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:80
+#: includes/features/class-seoprocookieconsent-terms.php:50
 msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:87
+#: includes/features/class-seoprocookieconsent-terms.php:51
 msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:139
+#: includes/features/class-seoprocookieconsent-terms.php:98
 msgid "Terms from your answers. Review before publishing; not legal advice."
 msgstr ""
 
 #. translators: %s: legal business or owner name.
-#: includes/features/class-seoprocookieconsent-terms.php:166
+#: includes/features/class-seoprocookieconsent-terms.php:118
 #, php-format
 msgid "This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order."
 msgstr ""
 
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-terms.php:173
+#: includes/features/class-seoprocookieconsent-terms.php:125
 #, php-format
 msgid "The business is based in %s."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:177
+#: includes/features/class-seoprocookieconsent-terms.php:129
 msgid "Using this website"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:178
+#: includes/features/class-seoprocookieconsent-terms.php:130
 msgid "Please use this website lawfully and do not interfere with its security or other people’s use of it. Respect the rights of others when using or sharing content."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:180
+#: includes/features/class-seoprocookieconsent-terms.php:132
 msgid "What we offer"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:191
+#: includes/features/class-seoprocookieconsent-terms.php:143
 msgid "AI-assisted services"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:192
+#: includes/features/class-seoprocookieconsent-terms.php:144
 msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:193
+#: includes/features/class-seoprocookieconsent-terms.php:145
 msgid "AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:196
+#: includes/features/class-seoprocookieconsent-terms.php:148
 msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
 msgstr ""
 
