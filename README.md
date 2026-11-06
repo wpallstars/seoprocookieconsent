@@ -402,6 +402,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Improved: the banner shows at the first paint, instead of after `spcc.js` loads at the end of the page (#150). On phones the banner text is often the page's Largest Contentful Paint, which came late because of it. The page now notes on the banner what it held back (`data-spcc-held`), and a one-line script straight after the banner (`spcc.early()`) shows it for visitors who are asked; the buttons work once `spcc.js` has loaded, as before. Visitors with a stored choice, pages with nothing held back and the settings preview are unchanged.
+
 ### 1.0.14
 
 - Developers: all 83 starter core files match WP Plugin Starter at 2580267 (#140). `scripts/deploy-sites.sh --apply` runs the plugin's own WP-Cron events (the hourly consent records cleanup, and any pending embed thumbnail fetch) once on each site after its full load, shown as `cron=N/M`, and fails the install on a PHP fatal error in one; it fetches a home page that gave 5xx or no answer once more before failing, and counts an unfinished fetch as no answer. `scripts/update-test.sh` run straight after a release waits for GitHub to list the new release before failing. Plugin-own blocks and consent defaults are unchanged.

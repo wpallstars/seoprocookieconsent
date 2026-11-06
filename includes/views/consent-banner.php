@@ -1,7 +1,8 @@
 <?php
 /**
  * Consent banner and Cookie settings dialog. Hidden until the browser
- * script decides to show them (assets/js/spcc.js).
+ * decides to show them: the banner from the script straight after it
+ * (spcc.early() in assets/js/spcc-head.js), else from assets/js/spcc.js.
  *
  * Printed by SEOProCookieConsent_Consent::banner().
  *
@@ -49,6 +50,18 @@ $seoprocookieconsent_necessary_names = array_merge(
         </div>
     </div>
 </section>
+<?php
+// Shows the banner at the first paint when the page holds something back
+// (data-spcc-held, written by SEOProCookieConsent_Consent::process()).
+// Optimisers leave it in place; without the head script it does nothing.
+wp_print_inline_script_tag('window.spcc&&window.spcc.early&&window.spcc.early();', array(
+    'id'               => 'spcc-early',
+    'data-spcc-ignore' => true,
+    'data-cfasync'     => 'false',
+    'data-no-optimize' => '1',
+    'data-no-defer'    => '1',
+));
+?>
 <dialog id="spcc-dialog" class="spcc spcc-dialog" aria-labelledby="spcc-dialog-title" aria-describedby="spcc-dialog-intro">
     <form method="dialog" class="spcc-dialog__form">
         <div class="spcc-dialog__head">

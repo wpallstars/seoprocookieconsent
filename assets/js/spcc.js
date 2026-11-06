@@ -27,17 +27,34 @@
         Array.prototype.forEach.call(list, fn);
     }
 
-    // Services held back on this page: id => category.
+    // Services held back on this page: id => category, from what is still
+    // held in the page. Those the server listed (the banner's data-spcc-held)
+    // come first, in its order, so the banner reads as the one spcc.early()
+    // showed at the first paint; one no longer in the page is left out.
     var page = {};
+    var inPage = {};
     each(d.querySelectorAll('script[type="text/plain"][data-spcc-service], .spcc-embed[data-spcc-embed]'), function (el) {
-        page[el.getAttribute('data-spcc-service') || el.getAttribute('data-spcc-embed')] = el.getAttribute('data-spcc-category');
+        inPage[el.getAttribute('data-spcc-service') || el.getAttribute('data-spcc-embed')] = el.getAttribute('data-spcc-category');
+    });
+    var early = !c.preview && typeof spcc.held === 'function' ? spcc.held(banner) : null;
+    Object.keys(early || {}).forEach(function (id) {
+        if (Object.prototype.hasOwnProperty.call(inPage, id) || Object.prototype.hasOwnProperty.call(spcc.dynamicPage || {}, id)) {
+            page[id] = early[id];
+        }
+    });
+    Object.keys(inPage).forEach(function (id) {
+        page[id] = inPage[id];
     });
     var held = Object.keys(page).length > 0;
+    // Shown by spcc.early() before this script ran: hidden again if the
+    // first refresh() does not ask after all.
+    var shownEarly = !!banner && !banner.hidden;
 
-    function serviceName(id) {
+    var serviceName = typeof spcc.serviceName === 'function' ? spcc.serviceName : function (id) {
         return c.services && c.services[id] ? c.services[id].name : c.text.content;
-    }
+    };
 
+    // Only for a page cached with an older head script (no spcc.showBanner).
     function list(names) {
         var lang = d.documentElement.lang || undefined;
         if (names.length > 4) {
@@ -291,18 +308,22 @@
         if (!banner) {
             return;
         }
-        var optIn = spcc.model === 'opt-in';
         var names = Object.keys(page).map(serviceName).filter(Boolean);
         if (!names.length && c.preview) {
             names = (c.seen || []).map(serviceName).filter(Boolean);
             names = names.length ? names : (c.previewNames || []);
         }
-        var text = c.text.message || (names.length ? (optIn ? c.text.optIn : c.text.optOut).replace('%s', list(names)) : '');
-        banner.querySelector('[data-spcc-message]').textContent = text;
-        banner.querySelector('[data-spcc-optin]').hidden = !optIn;
-        banner.querySelector('[data-spcc-optout]').hidden = optIn;
-        banner.hidden = false;
-        d.documentElement.classList.add('spcc-banner-open');
+        if (typeof spcc.showBanner === 'function') {
+            spcc.showBanner(banner, names);
+        } else {
+            var optIn = spcc.model === 'opt-in';
+            var text = c.text.message || (names.length ? (optIn ? c.text.optIn : c.text.optOut).replace('%s', list(names)) : '');
+            banner.querySelector('[data-spcc-message]').textContent = text;
+            banner.querySelector('[data-spcc-optin]').hidden = !optIn;
+            banner.querySelector('[data-spcc-optout]').hidden = optIn;
+            banner.hidden = false;
+            d.documentElement.classList.add('spcc-banner-open');
+        }
         if (reopen) {
             reopen.hidden = true;
         }
@@ -693,8 +714,12 @@
         if ((!spcc.choice || spcc.choice.p) && held && spcc.model !== 'quiet') {
             showBanner();
         } else {
+            if (shownEarly) {
+                hideBanner();
+            }
             showReopen();
         }
+        shownEarly = false;
     };
 
     if (w.location.hash === '#cookie-settings') {

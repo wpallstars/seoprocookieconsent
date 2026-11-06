@@ -28,6 +28,31 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
 | Front end | `assets/js/spcc.js`, `assets/css/spcc.css` | Region decision, consent cookie, banner and dialog, releasing held-back tags, Google Consent Mode and WP Consent API signals. |
 
+## Banner at the first paint
+
+The buffer callback (`SEOProCookieConsent_Consent::process()`) writes what
+the page held back onto the banner as `data-spcc-held` (JSON, service =>
+category, in the order found), the same for every visitor. The banner view
+prints a one-line script straight after `</section>` that calls
+`spcc.early()` (`spcc-head.js`): when the visitor has no stored choice (or
+only Load answers), the model is not quiet and something is held, it shows
+the banner then, so it is part of the first paint instead of waiting for
+`spcc.js` (deferred, in the footer). On phones the banner text is often the
+page's Largest Contentful Paint. The banner text, the service names and
+`showBanner()` live in the head script so both read the same; `spcc.js`
+lists the services still held in the page (the DOM and the head observer),
+those in `data-spcc-held` first in the server's order, keeps the banner up
+to date, and hides an early banner again when its first `refresh()` does
+not ask. Its buttons work once `spcc.js` has loaded. `held()` lists only
+services from blocker stages whose output was kept (a stage that hits the
+backtrack limit leaves its tags running), and the banner's opening tag is
+found by its `id` whatever the attribute order or quoting. Without the attribute (page not processed, or the
+`seoprocookieconsent_hold_back` filter off) the banner waits for `spcc.js`,
+as do the settings preview, pages cached with an older head script and
+sites whose Content-Security-Policy blocks inline scripts without a nonce
+(`wp_print_inline_script_tag()` passes the `wp_inline_script_attributes`
+filter, so a CSP plugin can add one).
+
 ## Holding back
 
 - Matching is plain substring matching (lower case) against a script's
