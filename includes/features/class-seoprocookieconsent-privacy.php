@@ -76,7 +76,22 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
         if ('' === trim($business) || '' === trim($contact)) {
             return '';
         }
+        return self::introduction($business)
+            . self::ai_use()
+            . self::sharing()
+            . self::added_sections(false)
+            . self::rights()
+            . self::heading(__('Contact', 'seoprocookieconsent'))
+            . self::paragraphs($contact);
+    }
 
+    /**
+     * Who is responsible, what we collect and how we use it.
+     *
+     * @param string $business Business or owner name.
+     * @return string
+     */
+    private static function introduction($business) {
         $html = self::paragraphs(sprintf(
             /* translators: %s: legal business or owner name. */
             __('This privacy policy explains how %s ("we") collects, uses and protects personal information through this website and our services, and the choices and rights you have. We are responsible for that information (its controller, in data protection law).', 'seoprocookieconsent'),
@@ -109,16 +124,32 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
             __('To use optional cookies, such as for statistics or marketing: your consent, where the law requires it.', 'seoprocookieconsent'),
             __('To keep records and meet our legal, tax and accounting obligations: legal obligation.', 'seoprocookieconsent'),
         ));
-        $html .= self::paragraphs(__('We do not use personal information for an unrelated purpose without telling you first.', 'seoprocookieconsent'));
+        return $html . self::paragraphs(__('We do not use personal information for an unrelated purpose without telling you first.', 'seoprocookieconsent'));
+    }
 
-        if ((bool) SEOProCookieConsent_Settings::get('privacy_ai')) {
-            $html .= self::heading(__('Artificial intelligence (AI)', 'seoprocookieconsent'));
-            $html .= self::paragraphs(__('We use AI services from several providers to help develop and maintain this website and our services, and to help us answer questions and support requests.', 'seoprocookieconsent'));
-            $html .= self::paragraphs(__('We endeavour to remove personal information, such as names, contact details and account or order details, from anything we send to an AI service, so that only the general content of a message is processed to help prepare an answer.', 'seoprocookieconsent'));
-            $html .= self::paragraphs(__('Where we can, we choose AI services and settings that do not use what we send to train their models. AI helps us prepare answers; it does not make decisions about you that have legal or similarly significant effects.', 'seoprocookieconsent'));
+    /**
+     * The section on the use of AI, or '' while it is switched off.
+     *
+     * @return string
+     */
+    private static function ai_use() {
+        if (!(bool) SEOProCookieConsent_Settings::get('privacy_ai')) {
+            return '';
         }
+        return self::heading(__('Artificial intelligence (AI)', 'seoprocookieconsent'))
+            . self::paragraphs(__('We use AI services from several providers to help develop and maintain this website and our services, and to help us answer questions and support requests.', 'seoprocookieconsent'))
+            . self::paragraphs(__('We endeavour to remove personal information, such as names, contact details and account or order details, from anything we send to an AI service, so that only the general content of a message is processed to help prepare an answer.', 'seoprocookieconsent'))
+            . self::paragraphs(__('Where we can, we choose AI services and settings that do not use what we send to train their models. AI helps us prepare answers; it does not make decisions about you that have legal or similarly significant effects.', 'seoprocookieconsent'));
+    }
 
-        $html .= self::heading(__('Cookies', 'seoprocookieconsent'));
+    /**
+     * Cookies, who we share information with, transfers, retention and
+     * security.
+     *
+     * @return string
+     */
+    private static function sharing() {
+        $html  = self::heading(__('Cookies', 'seoprocookieconsent'));
         $html .= self::paragraphs(__('We use cookies and similar technologies. Necessary ones make the site work and are always on. Others, such as for statistics, embedded content or marketing, are used only with your consent where the law requires it.', 'seoprocookieconsent'));
         $html .= self::cookie_choices();
 
@@ -143,11 +174,16 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
         $html .= self::paragraphs(__('We keep personal information only as long as we need it for the purposes above, then delete or anonymise it. For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires. Copies in backups are deleted as the backups are replaced.', 'seoprocookieconsent'));
 
         $html .= self::heading(__('Security', 'seoprocookieconsent'));
-        $html .= self::paragraphs(__('We protect personal information with appropriate technical and organisational measures, such as encrypted connections, access controls, and regular updates and backups. If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it. No website or email is completely secure, so please think carefully before sending sensitive information by email.', 'seoprocookieconsent'));
+        return $html . self::paragraphs(__('We protect personal information with appropriate technical and organisational measures, such as encrypted connections, access controls, and regular updates and backups. If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it. No website or email is completely secure, so please think carefully before sending sensitive information by email.', 'seoprocookieconsent'));
+    }
 
-        $html .= self::added_sections(false);
-
-        $html .= self::heading(__('Your rights', 'seoprocookieconsent'));
+    /**
+     * Your rights, complaints, children, other websites and changes.
+     *
+     * @return string
+     */
+    private static function rights() {
+        $html  = self::heading(__('Your rights', 'seoprocookieconsent'));
         $html .= self::paragraphs(__('Depending on where you live, you may have the right to:', 'seoprocookieconsent'));
         $html .= self::items(array(
             __('ask for a copy of the personal information we hold about you;', 'seoprocookieconsent'),
@@ -169,10 +205,7 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
         $html .= self::paragraphs(__('Other websites that we link to, or whose content we embed, have their own privacy policies; this policy does not cover them.', 'seoprocookieconsent'));
 
         $html .= self::heading(__('Changes to this policy', 'seoprocookieconsent'));
-        $html .= self::paragraphs(__('We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can.', 'seoprocookieconsent'));
-
-        $html .= self::heading(__('Contact', 'seoprocookieconsent'));
-        return $html . self::paragraphs($contact);
+        return $html . self::paragraphs(__('We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can.', 'seoprocookieconsent'));
     }
 
     /**

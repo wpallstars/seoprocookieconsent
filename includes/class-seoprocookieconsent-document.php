@@ -110,16 +110,23 @@ abstract class SEOProCookieConsent_Document extends SEOProCookieConsent_Feature 
     protected static function sections($sections) {
         $html = '';
         foreach (is_array($sections) ? $sections : array() as $section) {
-            if (!is_array($section)) {
-                continue;
-            }
-            $heading = isset($section['heading']) && is_string($section['heading']) ? trim($section['heading']) : '';
-            $text    = isset($section['text']) && is_string($section['text']) ? $section['text'] : '';
-            if ('' !== $heading && '' !== trim($text)) {
-                $html .= self::heading($heading) . self::paragraphs($text);
-            }
+            $html .= self::section($section);
         }
         return $html;
+    }
+
+    /**
+     * One section from a filter, or '' unless it has a heading and text.
+     *
+     * @param mixed $section A filtered section.
+     * @return string
+     */
+    private static function section($section) {
+        if (!is_array($section) || !isset($section['heading'], $section['text']) || !is_string($section['heading']) || !is_string($section['text'])) {
+            return '';
+        }
+        $heading = trim($section['heading']);
+        return '' !== $heading && '' !== trim($section['text']) ? self::heading($heading) . self::paragraphs($section['text']) : '';
     }
 
     /**
