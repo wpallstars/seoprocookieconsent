@@ -40,9 +40,13 @@ the banner then, so it is part of the first paint instead of waiting for
 `spcc.js` (deferred, in the footer). On phones the banner text is often the
 page's Largest Contentful Paint. The banner text, the service names and
 `showBanner()` live in the head script so both read the same; `spcc.js`
-starts its page list from `data-spcc-held`, adds what the DOM and the head
-observer hold, and keeps the banner up to date. Its buttons work once
-`spcc.js` has loaded. Without the attribute (page not processed, or the
+lists the services still held in the page (the DOM and the head observer),
+those in `data-spcc-held` first in the server's order, keeps the banner up
+to date, and hides an early banner again when its first `refresh()` does
+not ask. Its buttons work once `spcc.js` has loaded. `held()` lists only
+services from blocker stages whose output was kept (a stage that hits the
+backtrack limit leaves its tags running), and the banner's opening tag is
+found by its `id` whatever the attribute order or quoting. Without the attribute (page not processed, or the
 `seoprocookieconsent_hold_back` filter off) the banner waits for `spcc.js`,
 as do the settings preview, pages cached with an older head script and
 sites whose Content-Security-Policy blocks inline scripts without a nonce
