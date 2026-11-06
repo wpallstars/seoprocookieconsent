@@ -33,8 +33,8 @@ SEO Pro Cookie Consent is a free cookie consent plugin for WordPress that you sw
 
 - **Light.** One script and one stylesheet with no libraries (about 65 KB in all before compression), no banner on pages with nothing to hold back, and page caches keep working: regions are told apart in the browser, never by looking up IP addresses.
 - **Fair.** Accept all and Reject all look the same, and the banner names what the page actually uses.
-- **Yours.** Optional consent records, the cookie policy and terms all stay on your own site; nothing depends on a third-party dashboard.
-- **Complete.** Placeholders with Load buttons for videos, maps, players and posts, Google Consent Mode v2, the WP Consent API, Global Privacy Control, a cookie policy that keeps itself current, and terms and conditions without a paid generator.
+- **Yours.** Optional consent records, the cookie policy, privacy policy and terms all stay on your own site; nothing depends on a third-party dashboard.
+- **Complete.** Placeholders with Load buttons for videos, maps, players and posts, Google Consent Mode v2, the WP Consent API, Global Privacy Control, a cookie policy that keeps itself current, and a privacy policy and terms and conditions without a paid generator.
 
 It is a tool, not legal advice: check its defaults and your policy text with whoever advises you on privacy law.
 
@@ -93,7 +93,8 @@ It replaces the consent features of Complianz, CookieYes, Cookie Notice & Compli
 - **Security and payment services listed, never blocked.** Cloudflare Turnstile, Google reCAPTCHA, hCaptcha, Stripe and PayPal load as usual (blocking them breaks forms and checkouts). Once seen on your pages they are listed under Necessary in the cookie policy and the Cookie settings dialog, and named in the Policy guide's suggested privacy text. A site served through Cloudflare's network (its `CF-Ray` header) lists Cloudflare and the cookies its bot protection and security checks can set.
 - **Shows what it found.** The settings card lists the services found on your pages, and any other third-party scripts that load as usual, so you can hold back one it does not know.
 - **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA.** The Import tab previews, then imports their settings, script rules, policy pages and, where their format is verified, visitors' explicit choices, with undo and leftover cleanup. While one of them is active this waits, so two banners never show. The Plugins screen's **Redundant** view (WordPress 6.3 or later) lists those installed, active or not.
-- **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
+- **A privacy policy without a paid generator.** An optional block or `[spcc_privacy_policy]` shortcode turns your business name and contact details into a general plain-English privacy policy: what you collect and why, the use of AI, cookies, sharing, transfers, retention, security, rights, complaints and children. Optional answers add your data protection registration and main service providers. Use your own wording instead if needed.
+- **Terms and conditions without a paid generator.** An optional block or `[spcc_terms]` shortcode turns your business name, country, offering, returns policy and contact details into plain-English starting text, with a section on AI-assisted services. Use your own wording instead if needed. Imports matching identity/contact answers from Complianz Terms & Conditions once, without changing its options or your pages.
 
 For statistics with no cookies and no banner at all, use SEO Pro Analytics: it needs no consent, so pages that only use it show no banner.
 
@@ -102,7 +103,8 @@ For statistics with no cookies and no banner at all, use SEO Pro Analytics: it n
 1. Go to **Settings → SEO Pro Cookie Consent → Consent** and switch on **Cookie consent**.
 2. Choose **Scan now** and check **Found on your pages** on the card. It checks the home page, privacy page and up to three recent posts and three pages, without running scripts or contacting the embedded services. This is a sample, not a full audit or a browser scan: services inserted only by JavaScript are not discovered. Pages are also checked as visitors browse. If loopback requests are blocked, open a few pages yourself instead.
 3. Optional: switch on **Cookie policy** (Policies tab) and add the Cookie policy block to your privacy policy page, under a "Cookies" heading.
-4. Optional: under **Policies → Terms and conditions**, enter your answers, switch the feature on and add the Terms and conditions block (or `[spcc_terms]`) to a page. Review the whole page before publishing.
+4. Optional: under **Policies → Privacy policy**, enter your answers, switch the feature on and add the Privacy policy block (or `[spcc_privacy_policy]`) to your privacy policy page (Settings → Privacy). Review the whole page before publishing.
+5. Optional: under **Policies → Terms and conditions**, enter your answers, switch the feature on and add the Terms and conditions block (or `[spcc_terms]`) to a page. Review the whole page before publishing.
 
 That is all. **Preview the banner**, at the top of the card's options, shows your home page with the banner as a visitor who is asked first, or one shown a notice, sees it, on a desktop or phone screen; it updates after each change, and choices made in it are not saved. Under Options you can choose who is asked first, where the banner sits, its message, the policy page it links to (start typing a page title to pick one), and whether a floating Cookie settings button shows (off by default; the footer menu link is usually enough). The banner sits above other floating bars; to change its layer, set `--spcc-z` on `:root` in your theme's CSS. Troubleshooting has **Also hold back** (for a script the plugin does not know: part of its address, with `statistics:`, `preferences:` or `embeds:` in front for another kind), **Never hold back**, Google Consent Mode advanced, and how long choices are remembered.
 
@@ -134,13 +136,29 @@ Use **Look up a consent ID** beside the exports to find one visitor's unexpired 
 
 These are self-reported snapshots, not authenticated identity evidence or a guarantee of legal compliance. Delivery can fail (offline, blocked REST, unavailable storage or browser support); no retry or recording-success claim is made. Browsers without secure random generation or `sendBeacon` still save consent locally, but send no record. The write-only public route accepts bounded JSON from the site's origin; it is not protection against bots forging requests. Use your host's request limits for abuse protection. Each multisite site has separate storage and exports.
 
+## Privacy policy
+
+This feature is off by default and independent of Cookie consent. It suits most small business sites, blogs and shops: one general policy you can seed every site with, then adjust. Fill in your legal business or owner name and public contact details, or leave them empty to use the Terms and conditions answers; the suggested wording stays empty for visitors until both are present. Country, **Data protection registration** (the authority and your number, where your law asks for one) and **Main service providers** (one per line, such as "Web host, Germany: hosting and backups") are optional and omitted when empty.
+
+The suggested wording covers who is responsible, what you collect (given, automatic and from others), how you use it and the legal basis for each purpose, cookies, who you share it with, international transfers, how long you keep it, security, rights, complaints, children, other websites, changes and contact. With Cookie consent on, the Cookies section links to Cookie settings; with Cookie policy on, it links to your cookie policy page unless that is the same page.
+
+**Section on the use of AI** (on by default) says that you use AI services from several providers to help develop the site and your services and to help answer questions and support requests; that you endeavour to remove personal information, such as names, contact details and account or order details, before anything is sent to an AI service, so only the general content of a message is processed; that, where you can, you choose services and settings that do not train on what you send; and that AI does not make decisions with legal or similarly significant effects about anyone. Turn it off, or use your own wording, if that is not true for your site.
+
+The block and shortcode read current settings on every render. After changing answers, clear any full-page cache to update cached copies. **Your own wording** replaces all suggested text with plain text, one paragraph per line; HTML and shortcodes are not executed. Normal blocks around it remain yours to edit, so put the Cookie policy block after it on the same page if you like.
+
+Other plugins can add sections for what they do with personal information, such as the Google data an analytics plugin reads, with the `seoprocookieconsent_privacy_sections` filter. It works like `seoprocookieconsent_terms_sections` below: added sections come before **Your rights**, and also follow **Your own wording**, with `true` as the filter's second argument.
+
+The wording is a starting point, **not legal advice** or a guarantee of compliance. It does not cover special cases such as health data, children's services, profiling, selling data or region-specific notices (for example California's). Check it describes what your site really does, and have someone qualified for your business and jurisdictions review it. Existing privacy pages are not changed.
+
 ## Terms and conditions
 
 This feature is off by default and independent of Cookie consent. Fill in your legal business or owner name and public contact details before using the suggested wording; it stays empty for visitors until both are present. Country identifies where you are based, not a choice of governing law. Describe what you offer, payment and delivery terms where relevant, and your returns, refunds and cancellation process. No return period or country-specific legal clause is assumed. Empty optional answers omit their sections.
 
+**Section on AI-assisted services** (on by default) says that you use AI services from several providers to help develop the site and your services and to help answer questions and support requests, that visitors accept the services are provided with AI support, and that they should check what you provide for correctness, themselves or with their own AI tools, before relying on it. It comes before **Your rights**, which keeps rights the law does not let terms remove. Turn it off if you do not use AI.
+
 The block and shortcode read current settings on every render. After changing answers, clear any full-page cache to update cached copies. **Your own wording** replaces all suggested text with plain text, one paragraph per line; HTML and shortcodes are not executed. Normal blocks around it remain yours to edit.
 
-Other plugins can add sections for what they sell, such as a deposit with the balance due on delivery, with the `seoprocookieconsent_terms_sections` filter. Each section is an array with a `heading` and plain `text` (one paragraph per line), escaped like your answers. Added sections follow **What we offer** and **Returns, refunds and cancellations**, before **Your rights**, and also follow **Your own wording**; the filter's second argument is `true` then, so an add-on whose terms your wording already covers can leave its section out:
+Other plugins can add sections for what they sell, such as a deposit with the balance due on delivery, with the `seoprocookieconsent_terms_sections` filter. Each section is an array with a `heading` and plain `text` (one paragraph per line), escaped like your answers. Added sections follow **What we offer** and **Returns, refunds and cancellations**, before **AI-assisted services** and **Your rights**, and also follow **Your own wording**; the filter's second argument is `true` then, so an add-on whose terms your wording already covers can leave its section out:
 
 ```php
 add_filter('seoprocookieconsent_terms_sections', function ($sections, $own_wording) {
@@ -362,7 +380,7 @@ Consent filters and browser API:
 - `seoprocookieconsent_front_config`: change what the browser reads; set `model` to `opt-in`, `opt-out` or `quiet` to decide on the server, only on sites without page caching.
 - Skip one tag with a `data-spcc-ignore` attribute.
 - In the browser: `spcc.has('statistics')`, `spcc.open()` and the `spcc:consent` event on `document` (detail: `categories`, `services`, `model`); Google Tag Manager gets a `spcc_consent_update` event.
-- Shortcodes: `[spcc_cookie_policy intro="yes" button="yes" heading="h3" updated="yes"]` (intro, Cookie settings button and last-updated date on unless `no`; heading `h2`, `h3` or `h4`) and `[spcc_cookie_settings label="Cookie settings" style="button"]` (`style="link"` for a plain link); blocks: Cookie policy and Cookie settings button, with the same settings in the block sidebar.
+- Shortcodes: `[spcc_cookie_policy intro="yes" button="yes" heading="h3" updated="yes"]` (intro, Cookie settings button and last-updated date on unless `no`; heading `h2`, `h3` or `h4`) and `[spcc_cookie_settings label="Cookie settings" style="button"]` (`style="link"` for a plain link); blocks: Cookie policy and Cookie settings button, with the same settings in the block sidebar. With their features on, `[spcc_privacy_policy]` and `[spcc_terms]` (no attributes) and the Privacy policy and Terms and conditions blocks render the owner's answers.
 - Blocks with settings: `SEOProCookieConsent_Setup::register_block()` takes `attributes` (each with `type` boolean or string, `default`, `label`, and `options` for a choice or `placeholder` for text); the editor shows them in the block sidebar and the render callback gets them.
 - `?spcc_preview=opt-in` or `opt-out` on a front-end page shows the banner as for a first visit to someone who can manage options (the settings screen's preview): nothing is saved or loaded, and links do not navigate.
 
@@ -401,6 +419,11 @@ Admin tabs can set `wide` to true to use the full available width. Own screens c
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- New: Privacy policy, an optional block and `[spcc_privacy_policy]` shortcode on the Policies tab that turns your business name and contact details into a general plain-English privacy policy, with a section on the use of AI (on by default): AI services from several providers help develop the site and answer questions, and personal information is removed, as far as you can, before anything is processed by AI. Optional registration and service provider answers; name, country and contact fall back to the Terms and conditions answers. Other plugins can add sections with the `seoprocookieconsent_privacy_sections` filter.
+- New: Terms and conditions has a section on AI-assisted services (on by default): visitors accept that the site and services are provided with AI support and should check what you provide for correctness, themselves or with their own AI tools, before relying on it. Sites with Terms on show it after updating; turn it off under Policies → Terms and conditions if you do not use AI.
 
 ### 1.0.15
 

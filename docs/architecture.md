@@ -26,6 +26,7 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 | Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs; maps get a bundled generic image. |
 | Consent | `includes/features/class-seoprocookieconsent-consent.php` | The feature: settings, buffer start, head config, banner and dialog markup, footer menu link (placed beside the policy links) and the Appearance → Menus box, Cookie settings shortcode and block. |
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
+| Privacy | `includes/features/class-seoprocookieconsent-privacy.php` | Privacy policy shortcode and block from the owner's answers, with the AI section. |
 | Front end | `assets/js/spcc.js`, `assets/css/spcc.css` | Region decision, consent cookie, banner and dialog, releasing held-back tags, Google Consent Mode and WP Consent API signals. |
 
 ## Banner at the first paint
@@ -241,10 +242,26 @@ text is never overwritten and the list stays current. The privacy
 policy guide (Settings → Privacy) gets suggested text too. Text is a
 starting point, not legal advice: the README says so.
 
+Privacy (`includes/features/class-seoprocookieconsent-privacy.php`) is a
+separate, off-by-default feature on Policies, built like Terms below.
+`seoprocookieconsent/privacy-policy` and `[spcc_privacy_policy]` render a
+general policy from live settings: business, country and contact (each
+falling back to the matching `terms_*` answer when empty), optional
+registration and service provider lines, the `privacy_ai` section (on by
+default) and a full plain-text override. Fixed sections are translatable
+strings; owner answers are escaped as paragraphs or list items. The
+Cookies section adds a Cookie settings link while Cookie consent is on,
+and a cookie policy link while Cookie policy is on, unless
+`SEOProCookieConsent_Consent::policy_url()` is the page being viewed.
+`seoprocookieconsent_privacy_sections` adds plain-text sections before
+"Your rights". Nothing is imported: Complianz privacy statements are kept
+as HTML by the Import tab, and no page is changed.
+
 Terms (`includes/features/class-seoprocookieconsent-terms.php`) is a separate,
 off-by-default feature on Policies. `seoprocookieconsent/terms` and
 `[spcc_terms]` use the same live settings: business, country, offerings,
-returns and contact, or a full plain-text override. Every line is escaped
+returns, the `terms_ai` section (on by default) and contact, or a full
+plain-text override. Every line is escaped
 as a paragraph; there are no extra front-end assets, HTML execution or
 visitor-dependent responses. Incomplete suggested wording is hidden from
 everyone until business and contact are filled; the settings explain this.

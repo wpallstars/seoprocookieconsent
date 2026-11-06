@@ -28,7 +28,7 @@ For business sites, blogs, shops and multisite networks that want consent done p
 * **Optional consent records**: pseudonymous choice history, visitor consent ID and copy button, administrator ID lookup and CSV export, automatic expiry. Off by default; no IP addresses stored.
 * **Cookie policy block** that lists your site's cookies and keeps itself up to date, with settings for what it shows, plus suggested privacy policy text.
 * **Replaces Complianz, CookieYes, Cookie Notice, CookieAdmin, GDPR Cookie Compliance, WPConsent, Real Cookie Banner, Cookiebot, iubenda, Termly, Borlabs Cookie and Ultimate GDPR & CCPA**: the Import tab previews, then imports their settings, script rules, policy pages and, where their format is verified, visitors' explicit choices, with undo and leftover cleanup.
-* **Terms and conditions** block and [spcc_terms] shortcode from a few answers, or your own plain-text wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
+* **Privacy policy** and **Terms and conditions** blocks and shortcodes from a few answers, with AI sections, or your own wording; off by default. Imports matching Complianz Terms & Conditions identity/contact answers once.
 
 It is a tool, not legal advice: check the defaults and your policy text with whoever advises you.
 
@@ -63,9 +63,9 @@ WPML/Polylang: translate consent_message and consent_policy_url in the SEO Pro C
 
 From the time zone their browser reports. Nothing is looked up or sent anywhere, and cached pages work. When the time zone is unclear (UTC, or none), visitors are asked first.
 
-= How do I add terms and conditions? =
+= How do I add a privacy policy or terms? =
 
-Under Policies, fill in Terms and conditions, switch it on and add its block or [spcc_terms] to a page. Suggested wording needs your business name and contact details. Optional answers cover country, offerings and returns; Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages change only when you select them on the Import tab; otherwise replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
+Under Policies, fill in Privacy policy or Terms and conditions, switch it on and add its block, [spcc_privacy_policy] or [spcc_terms] to a page. Suggested wording needs your business name and contact details; turn off the AI sections if you do not use AI. Your own wording replaces the suggestions with plain text. Review before publishing: it is a starting point, not legal advice or country-specific compliance. No checkout acceptance or withdrawal form is provided. Old Complianz pages change only when you select them on the Import tab; otherwise replace their block or shortcode after review and deactivation. Clear page caches after changing answers.
 
 = How do I move from another cookie plugin? =
 

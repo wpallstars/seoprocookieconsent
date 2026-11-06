@@ -65,6 +65,13 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
                 'label'       => __('Returns, refunds and cancellations', 'seoprocookieconsent'),
                 'description' => __('Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed.', 'seoprocookieconsent'),
             ),
+            'terms_ai'       => array(
+                'type'        => 'bool',
+                'default'     => true,
+                'parent'      => self::KEY,
+                'label'       => __('Section on AI-assisted services', 'seoprocookieconsent'),
+                'description' => __('Says that the site and your services are provided with the help of AI from several providers, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI.', 'seoprocookieconsent'),
+            ),
             'terms_contact'  => array(
                 'type'        => 'lines',
                 'default'     => '',
@@ -180,6 +187,11 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
             }
         }
         $html .= self::added_sections(false);
+        if ((bool) SEOProCookieConsent_Settings::get('terms_ai')) {
+            $html .= '<h2>' . esc_html__('AI-assisted services', 'seoprocookieconsent') . '</h2>';
+            $html .= self::paragraphs(__('We use artificial intelligence (AI) services from several providers to help develop this website and our services, and to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support.', 'seoprocookieconsent'));
+            $html .= self::paragraphs(__('AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions.', 'seoprocookieconsent'));
+        }
         $html .= '<h2>' . esc_html__('Your rights', 'seoprocookieconsent') . '</h2>';
         $html .= self::paragraphs(__('Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights.', 'seoprocookieconsent'));
         $html .= '<h2>' . esc_html__('Contact', 'seoprocookieconsent') . '</h2>';
@@ -192,7 +204,8 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Feature {
      * balance on delivery, from the seoprocookieconsent_terms_sections
      * filter. Each section is a heading and plain text, one paragraph per
      * line, escaped like the owner's answers. They follow the owner's
-     * offering and returns answers, before "Your rights", and also follow
+     * offering and returns answers, before "AI-assisted services" (when
+     * that section is on) and "Your rights", and also follow
      * Your own wording ($own_wording true), so an add-on that the owner's
      * wording already covers can leave its section out.
      *

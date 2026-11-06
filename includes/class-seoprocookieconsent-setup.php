@@ -36,6 +36,7 @@ final class SEOProCookieConsent_Setup {
     const FEATURES = array(
         'SEOProCookieConsent_Consent',
         'SEOProCookieConsent_Policy',
+        'SEOProCookieConsent_Privacy',
         'SEOProCookieConsent_Terms',
     );
 
@@ -265,7 +266,7 @@ final class SEOProCookieConsent_Setup {
             ),
             'policies' => array(
                 'label'       => __('Policies', 'seoprocookieconsent'),
-                'description' => __('Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice.', 'seoprocookieconsent'),
+                'description' => __('Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice.', 'seoprocookieconsent'),
             ),
         );
     }

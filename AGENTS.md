@@ -37,8 +37,8 @@ User docs: `README.md` (developers, and the Read Me tab) and `readme.txt`.
 Keep this file a short map: guidance for one kind of task goes in `docs/`
 (`STANDARDS.md` → Agent docs).
 
-- Changing the banner, blocker, services, regions, consent cookie or
-  cookie policy: read `docs/architecture.md` first.
+- Changing the banner, blocker, services, regions, consent cookie, cookie
+  policy, privacy policy or terms: read `docs/architecture.md` first.
 - Front-end look (banner, dialog, placeholders): `DESIGN.md` → Front end.
 - The HTML never varies by visitor (page caches): decide per visitor in
   the browser, never from cookies or IP on the server.
