@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.14-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.15-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.14
+Version: 1.0.15
 
 <!-- github-only:start -->
 ## Screenshots
@@ -402,9 +402,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.15
 
 - Improved: the banner shows at the first paint, instead of after `spcc.js` loads at the end of the page (#150). On phones the banner text is often the page's Largest Contentful Paint, which came late because of it. The page now notes on the banner what it held back (`data-spcc-held`), and a one-line script straight after the banner (`spcc.early()`) shows it for visitors who are asked; the buttons work once `spcc.js` has loaded, as before. Visitors with a stored choice, pages with nothing held back and the settings preview are unchanged.
+- Developers: PHPStan 2.3.4 and updated GitHub Actions (#146, #148).
 
 ### 1.0.14
 
