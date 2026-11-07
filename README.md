@@ -116,7 +116,7 @@ The banner, dialog and placeholders use the page's WordPress translations. With 
 
 Policy links use the current language's published policy-page translation when available, including the default privacy policy page; otherwise they keep the original link. TranslatePress translates ordinary page output and uses its string translation API for a custom banner message. Supply your own text and other languages in your multilingual plugin; this plugin does not translate text automatically. Clear each language's page cache after changing text or translations. Language follows the page, not browser preferences, cookies or IP. Without a multilingual plugin, the saved message and policy link work as before.
 
-Developers: `languages/seoprocookieconsent.pot` is the source template. Run `bash scripts/update-translations.sh` before each release to refresh it and compile the PO sources into MO and script JSON catalogs; commit all generated files. It uses WP-CLI (`wp i18n make-pot`, `make-mo`, `make-json`), or the repository's WordPress CLI Docker image when WP-CLI is unavailable. With GNU gettext installed, it also runs `msgfmt --check --check-format`. Release preflight runs the same script with `--check` against the actual packaged source and fails on stale or missing catalogs. Editor and front-end scripts receive translated labels from PHP; only the admin colour-mode script needs a JavaScript catalog.
+Developers: `languages/seoprocookieconsent.pot` is the source template. Run `bash scripts/update-translations.sh` before each release to refresh it, merge its new strings into every PO, and compile the PO sources into MO and script JSON catalogs; commit all generated files. It uses WP-CLI (`wp i18n make-pot`, `update-po`, `make-mo`, `make-json`), or the repository's WordPress CLI Docker image when WP-CLI is unavailable. With GNU gettext installed, it also runs `msgfmt --check --check-format`. Release preflight runs the same script with `--check` against the actual packaged source: it fails on stale or missing catalogs, including a PO that lacks a string in the POT, and prints each locale's untranslated count as a warning, so translation gaps show without blocking a release. New machine translations carry a `# machine translation` comment. Editor and front-end scripts receive translated labels from PHP; only the admin colour-mode script needs a JavaScript catalog.
 
 ## Consent records
 
@@ -423,6 +423,11 @@ Admin tabs can set `wide` to true to use the full available width. Own screens c
 Deleting the plugin removes its settings (on multisite, every site's and the network's), the list of services it found, its cached data, who hid lines of the Plugins screen notice about replaced plugins or Move here steps, its import history, and the cached GitHub releases. It never removes another plugin's data.
 
 ## Changelog
+
+### Unreleased
+
+- Fixed: the Terms and conditions and Privacy policy wording added in 1.0.16 (196 strings) is now translated in all 17 bundled languages; before, sites in those languages showed those sections in English (#157). The new translations are machine translations marked `# machine translation`; review them before relying on the legal wording.
+- Developers: `scripts/update-translations.sh` merges the POT into every bundled PO (`wp i18n update-po`), keeps the machine translation comments, and with `--check` prints each locale's untranslated count as a warning.
 
 ### 1.0.16
 
