@@ -374,18 +374,18 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
         $notes = array(
             __('Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them.', 'seoprocookieconsent'),
             sprintf(
-                /* translators: %d: number of days. */
-                _n('We remember your choice in a necessary cookie in your browser for %d day, then ask again.', 'We remember your choice in a necessary cookie in your browser for %d days, then ask again.', $days, 'seoprocookieconsent'),
-                $days
+                /* translators: %s: number of days. */
+                _n('We remember your choice in a necessary cookie in your browser for %s day, then ask again.', 'We remember your choice in a necessary cookie in your browser for %s days, then ask again.', $days, 'seoprocookieconsent'),
+                number_format_i18n($days)
             ),
             __('If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise.', 'seoprocookieconsent'),
         );
         if ((bool) SEOProCookieConsent_Settings::get('consent_records')) {
             $keep    = max($days, min(3650, (int) SEOProCookieConsent_Settings::get('consent_records_days')));
             $notes[] = sprintf(
-                /* translators: %d: number of days. */
-                _n('To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %d day, relying on our legal obligation to show consent and our legitimate interests.', 'To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %d days, relying on our legal obligation to show consent and our legitimate interests.', $keep, 'seoprocookieconsent'),
-                $keep
+                /* translators: %s: number of days. */
+                _n('To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests.', 'To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests.', $keep, 'seoprocookieconsent'),
+                number_format_i18n($keep)
             );
         }
         return $notes;

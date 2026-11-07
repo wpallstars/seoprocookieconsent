@@ -259,10 +259,18 @@ general policy from live settings: business, country and contact (each
 falling back to the matching `terms_*` answer when empty), optional
 registration and service provider lines, the `privacy_ai` section (on by
 default) and a full plain-text override. Fixed sections are translatable
-strings; owner answers are escaped as paragraphs or list items. The
-Cookies section adds a Cookie settings link while Cookie consent is on,
-and a cookie policy link while Cookie policy is on, unless
-`SEOProCookieConsent_Consent::policy_url()` is the page being viewed.
+strings, built with the base's `part()` (a heading, then paragraphs and
+lists); owner answers are escaped as paragraphs or list items. Country is
+named in the introduction and under Complaints. The Cookies section lists
+`SEOProCookieConsent_Services::categories()`. While Cookie consent is on it
+adds a Cookie settings link and what the banner does, from settings:
+holding back, `consent_days`, Global Privacy Control (as `spcc-head.js`
+treats it), and, with `consent_records`, what a record holds and the
+retention `SEOProCookieConsent_Records` applies (the longer of
+`consent_days` and `consent_records_days`). While Cookie policy is on it
+links the cookie policy, unless `SEOProCookieConsent_Consent::policy_url()`
+is the page being viewed. Keep these sentences in step with those
+settings and scripts.
 `seoprocookieconsent_privacy_sections` adds plain-text sections before
 "Your rights". Nothing is imported: Complianz privacy statements are kept
 as HTML by the Import tab, and no page is changed.
@@ -271,7 +279,12 @@ Terms (`includes/features/class-seoprocookieconsent-terms.php`) is a separate,
 off-by-default feature on Policies. `seoprocookieconsent/terms` and
 `[spcc_terms]` use the same live settings: business, country, offerings,
 returns, the `terms_ai` section (on by default) and contact, or a full
-plain-text override. Every line is escaped
+plain-text override. General sections are always shown; "Orders and
+payment" follows "What we offer" only when `terms_sells` is answered, and
+"Governing law" (the place's law and courts, keeping consumers' mandatory
+local protection) only when `terms_country` is. Filtered sections come
+after the offering and returns, before "Information on this website".
+Every line is escaped
 as a paragraph; there are no extra front-end assets, HTML execution or
 visitor-dependent responses. Incomplete suggested wording is hidden from
 everyone until business and contact are filled; the settings explain this.
