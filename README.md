@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.15-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.16-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.15
+Version: 1.0.16
 
 <!-- github-only:start -->
 ## Screenshots
@@ -424,7 +424,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.16
 
 - New: Privacy policy, an optional block and `[spcc_privacy_policy]` shortcode on the Policies tab that turns your business name and contact details into a general plain-English privacy policy, with a section on the use of AI (on by default): AI services from several providers help develop the site and may also help answer questions, and personal information is removed, as far as you can, from what you send to AI. **AI features on this website** (off by default) adds, for chat assistants, AI search and other AI visitors use on the site, that what they submit is sent in full to the AI provider, so they should leave out personal information. It covers what you collect by category, the legal basis for each use, marketing (no selling; advertising services whose cookies a visitor allows may use what they collect for their own purposes), cookies (and, with Cookie consent on, what the banner does with choices and any consent records), sharing, transfers, retention, security, each right and how to use it with a reply within four weeks, complaints (naming your country), children, other websites and changes. Optional registration and service provider answers; name, country and contact fall back to the Terms and conditions answers. Other plugins can add sections with the `seoprocookieconsent_privacy_sections` filter.
 - New: Terms and conditions has a section on AI-assisted services (on by default): AI helps develop the site and services and may also help answer questions; visitors accept that the site and services are provided with AI support and should check what you provide for correctness, themselves or with their own AI tools, before relying on it. Turn it off under Policies → Terms and conditions if you do not use AI.
