@@ -49,7 +49,13 @@ final class SEOProCookieConsent_Meta {
         }
         add_filter('before_conversions_api_event_sent', array(__CLASS__, 'server_events'), 99);
         add_filter('seoprocookieconsent_front_config', array(__CLASS__, 'config'));
+        // Never render Meta's held HTML (it varies by visitor); its JS reads
+        // the state cookie itself.
+        add_filter('facebook_signals_held', '__return_false', 99);
         self::drop_cookies();
+        // Meta can set "held" again later in the request: strip it once
+        // WordPress sends its headers, even for an "active" visitor.
+        add_action('send_headers', array(__CLASS__, 'drop_cookies'), 99);
     }
 
     /**
@@ -98,17 +104,21 @@ final class SEOProCookieConsent_Meta {
      * who has not allowed Meta Pixel: it sets them from PHP when its own
      * file loads, before this plugin loads.
      */
-    private static function drop_cookies() {
-        if (self::released() || headers_sent()) {
+    public static function drop_cookies() {
+        if (headers_sent()) {
             return;
         }
+        $released = self::released();
         $keep    = array();
         $dropped = false;
         foreach (headers_list() as $header) {
             if (0 !== stripos($header, 'set-cookie:')) {
                 continue;
             }
-            if (preg_match('/^set-cookie:\s*(' . implode('|', self::COOKIES) . ')=/i', $header)) {
+            if (
+                (!$released && preg_match('/^set-cookie:\s*(' . implode('|', self::COOKIES) . ')=/i', $header))
+                || preg_match('/^set-cookie:\s*' . self::COOKIE . '=held(;|\s|$)/i', $header)
+            ) {
                 $dropped = true;
                 continue;
             }
