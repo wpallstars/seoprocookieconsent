@@ -284,7 +284,9 @@ before sending, and `privacy_ai_features` (off by default) for AI visitors
 use on the site, whose input goes to the provider in full; with both off
 the section is omitted. Keep "removed" wording out of the second part.
 Rights promise a reply within four weeks, which never exceeds a one-month
-limit. Marketing says nothing is sold, but allowed marketing cookies let
+limit. "Who we share it with" adds an analytics and advertising providers
+bullet only when `SEOProCookieConsent_Services::seen_by_category()` has a
+Statistics or Marketing service. Marketing says nothing is sold, but allowed marketing cookies let
 advertisers use data for their own purposes. Fixed sections are translatable
 strings, built with the base's `part()` (a heading, then paragraphs and
 lists); owner answers are escaped as paragraphs or list items. Country is
