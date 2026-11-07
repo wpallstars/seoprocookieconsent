@@ -38,12 +38,16 @@ drop_urls "$WORK/$DOMAIN.pot"
 # so a reviewer can tell them apart. WP-CLI's update-po drops translator
 # comments; these two helpers list those entries (by their msgctxt/msgid text)
 # before the merge and put the comment back after it. Plain awk, no gettext.
-MACHINE_AWK='function key(rec, n, i, l, k, on) {
-	n = split(rec, l, "\n"); k = ""; on = 0
+MACHINE_AWK='function key(rec, n, i, l, k, t, v) {
+	n = split(rec, l, "\n"); k = ""; t = ""
 	for (i = 1; i <= n; i++) {
 		if (l[i] ~ /^msgstr/) break
-		if (l[i] ~ /^(msgctxt|msgid)/) on = 1
-		if (on) k = k l[i] "\001"
+		if (l[i] ~ /^(msgctxt|msgid_plural|msgid) /) {
+			t = l[i]; sub(/ .*/, "", t); k = k "\001" t "="
+			v = l[i]; sub(/^[a-z_]+ "/, "", v); sub(/"$/, "", v); k = k v
+		} else if (t != "" && l[i] ~ /^"/) {
+			v = l[i]; sub(/^"/, "", v); sub(/"$/, "", v); k = k v
+		}
 	}
 	return k
 }'
@@ -90,8 +94,8 @@ count_untranslated() {
 		/^#~/ { next }
 		/(^|\n)#, [^\n]*fuzzy/ { n++; next }
 		{
-			s = substr($0, index($0, "\nmsgstr") + 7)
-			gsub(/msgstr/, "", s); gsub(/\[[0-9]+\]/, "", s)
+			s = substr($0, index($0, "\nmsgstr") + 1)
+			gsub(/(^|\n)msgstr(\[[0-9]+\])?/, "\n", s)
 			gsub(/[ \n]|""/, "", s)
 			if (s == "") n++
 		}

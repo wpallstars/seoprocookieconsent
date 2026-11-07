@@ -112,9 +112,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
-* Fixed: Terms and Privacy text now in all bundled languages.
+* Fixed: Terms and Privacy translated in all languages.
 
 = 1.0.16 =
-* New: Privacy policy block; fuller Terms: review them.
+* New: Privacy policy block. Existing Terms pages change: review them.
 
 Every change: changelog.txt.
