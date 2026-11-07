@@ -1,19 +1,15 @@
-# SPDX-License-Identifier: GPL-3.0-or-later
-# SPDX-FileCopyrightText: 2026 Marcus Quinn
-# Additional terms (GPL-3.0 section 7(b)): ATTRIBUTION.txt
-# Provenance: wpas-647035161c3dc0ef. Copies, even of part, keep these lines.
 msgid ""
 msgstr ""
 "Project-Id-Version: SEO Pro Cookie Consent 1.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/wpallstars/seoprocookieconsent/issues\n"
-"POT-Creation-Date: 2026-11-01 00:00+0000\n"
-"PO-Revision-Date: 2026-11-01 00:00+0000\n"
 "Last-Translator: Marcus Quinn\n"
 "Language-Team: nl_BE\n"
-"Language: nl_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-01 00:00+0000\n"
+"PO-Revision-Date: 2026-11-01 00:00+0000\n"
+"Language: nl_BE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: seoprocookieconsent\n"
 
@@ -49,9 +45,9 @@ msgstr "Lees mij"
 #: admin/includes/class-admin-page.php:238
 #: admin/includes/class-network-manager.php:102
 #: includes/class-seoprocookieconsent-records.php:156
-#: includes/class-seoprocookieconsent-setup.php:167
-#: includes/views/consent-banner.php:42
-#: includes/views/consent-banner.php:47
+#: includes/class-seoprocookieconsent-setup.php:169
+#: includes/views/consent-banner.php:43
+#: includes/views/consent-banner.php:48
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -117,8 +113,8 @@ msgid "Buy me a coffee"
 msgstr "Trakteer me op een koffie"
 
 #: admin/includes/class-admin-page.php:117
-#: includes/views/consent-banner.php:38
-#: includes/views/consent-banner.php:61
+#: includes/views/consent-banner.php:39
+#: includes/views/consent-banner.php:74
 msgid "(opens in a new tab)"
 msgstr "(opent in een nieuw tabblad)"
 
@@ -661,37 +657,37 @@ msgstr "Cookietoestemming inschakelen"
 msgid "%s left data on the site."
 msgstr "%s heeft gegevens achtergelaten op de site."
 
-#: includes/class-seoprocookieconsent-blocker.php:320
-#: includes/features/class-seoprocookieconsent-consent.php:402
+#: includes/class-seoprocookieconsent-blocker.php:345
+#: includes/features/class-seoprocookieconsent-consent.php:427
 msgid "This content"
 msgstr "Deze inhoud"
 
-#: includes/class-seoprocookieconsent-blocker.php:321
+#: includes/class-seoprocookieconsent-blocker.php:346
 msgid "content"
 msgstr "inhoud"
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
-#: includes/class-seoprocookieconsent-blocker.php:325
-#: includes/features/class-seoprocookieconsent-consent.php:399
+#: includes/class-seoprocookieconsent-blocker.php:350
+#: includes/features/class-seoprocookieconsent-consent.php:424
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr "%1$s kan cookies plaatsen. De inhoud laadt wanneer u dit toestaat of %2$s toestaat in Cookie-instellingen."
 
 #. translators: %s: what is embedded, such as video or map.
-#: includes/class-seoprocookieconsent-blocker.php:327
+#: includes/class-seoprocookieconsent-blocker.php:352
 #, php-format
 msgid "Load %s"
 msgstr "%s laden"
 
-#: includes/class-seoprocookieconsent-blocker.php:334
-#: includes/features/class-seoprocookieconsent-consent.php:404
-#: includes/features/class-seoprocookieconsent-consent.php:506
-#: includes/features/class-seoprocookieconsent-consent.php:763
-#: includes/features/class-seoprocookieconsent-consent.php:775
-#: includes/features/class-seoprocookieconsent-consent.php:834
-#: includes/features/class-seoprocookieconsent-consent.php:860
-#: includes/views/consent-banner.php:55
+#: includes/class-seoprocookieconsent-blocker.php:359
+#: includes/features/class-seoprocookieconsent-consent.php:429
+#: includes/features/class-seoprocookieconsent-consent.php:533
+#: includes/features/class-seoprocookieconsent-consent.php:790
+#: includes/features/class-seoprocookieconsent-consent.php:802
+#: includes/features/class-seoprocookieconsent-consent.php:861
+#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Cookie-instellingen"
 
@@ -715,42 +711,42 @@ msgid "The setting could not be saved. Please try again."
 msgstr "De instelling kon niet worden opgeslagen. Probeer het opnieuw."
 
 #: includes/class-seoprocookieconsent-records.php:157
-#: includes/views/consent-banner.php:43
-#: includes/views/consent-banner.php:92
+#: includes/views/consent-banner.php:44
+#: includes/views/consent-banner.php:105
 msgid "Reject all"
 msgstr "Alles weigeren"
 
 #: includes/class-seoprocookieconsent-records.php:158
-#: includes/views/consent-banner.php:44
-#: includes/views/consent-banner.php:94
+#: includes/views/consent-banner.php:45
+#: includes/views/consent-banner.php:107
 msgid "Accept all"
 msgstr "Alles aanvaarden"
 
 #: includes/class-seoprocookieconsent-records.php:159
-#: includes/views/consent-banner.php:48
+#: includes/views/consent-banner.php:49
 msgid "OK"
 msgstr "OK"
 
 #: includes/class-seoprocookieconsent-records.php:160
-#: includes/views/consent-banner.php:93
+#: includes/views/consent-banner.php:106
 msgid "Save choices"
 msgstr "Keuzes opslaan"
 
 #: includes/class-seoprocookieconsent-records.php:161
-#: includes/views/consent-banner.php:56
+#: includes/views/consent-banner.php:69
 msgid "Close"
 msgstr "Sluiten"
 
 #: includes/class-seoprocookieconsent-records.php:163
-#: includes/views/consent-banner.php:59
+#: includes/views/consent-banner.php:72
 msgid "Choose which cookies to allow. You can change this at any time from the Cookie settings link."
 msgstr "Kies welke cookies u toestaat. U kunt dit op elk moment wijzigen via de link Cookie-instellingen."
 
 #: includes/class-seoprocookieconsent-records.php:167
 #: includes/features/class-seoprocookieconsent-policy.php:42
 #: includes/features/class-seoprocookieconsent-policy.php:65
-#: includes/views/consent-banner.php:38
-#: includes/views/consent-banner.php:61
+#: includes/views/consent-banner.php:39
+#: includes/views/consent-banner.php:74
 msgid "Cookie policy"
 msgstr "Cookiebeleid"
 
@@ -1086,24 +1082,20 @@ msgstr "U mag deze instellingen niet wijzigen."
 msgid "Saved. Reload the page to see the change."
 msgstr "Opgeslagen. Herlaad de pagina om de wijziging te zien."
 
-#: includes/class-seoprocookieconsent-setup.php:263
+#: includes/class-seoprocookieconsent-setup.php:265
 msgid "Consent"
 msgstr "Toestemming"
 
-#: includes/class-seoprocookieconsent-setup.php:264
+#: includes/class-seoprocookieconsent-setup.php:266
 msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
 msgstr "Houd cookies tegen tot bezoekers ze toestaan, met een korte banner waar nodig."
 
-#: includes/class-seoprocookieconsent-setup.php:267
+#: includes/class-seoprocookieconsent-setup.php:269
 msgid "Policies"
 msgstr "Beleid"
 
-#: includes/class-seoprocookieconsent-setup.php:268
-msgid "Cookie policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
-msgstr "Cookiebeleid en algemene voorwaarden in pagina’s die u schrijft. Controleer vóór publicatie; geen juridisch advies."
-
 #: includes/features/class-seoprocookieconsent-consent.php:89
-#: includes/views/consent-banner.php:33
+#: includes/views/consent-banner.php:34
 msgid "Cookie consent"
 msgstr "Cookietoestemming"
 
@@ -1240,174 +1232,174 @@ msgid "Visitors are asked again after this. 365 is usual; some regulators prefer
 msgstr "Na deze termijn krijgen bezoekers de vraag opnieuw. 365 is gebruikelijk; sommige toezichthouders verkiezen 180."
 
 #. translators: %s: service names, such as "Google Analytics, Hotjar".
-#: includes/features/class-seoprocookieconsent-consent.php:391
-#: includes/views/consent-banner.php:78
+#: includes/features/class-seoprocookieconsent-consent.php:416
+#: includes/views/consent-banner.php:91
 #, php-format
 msgid "Used by: %s."
 msgstr "Gebruikt door: %s."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:394
+#: includes/features/class-seoprocookieconsent-consent.php:419
 #, php-format
 msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
 msgstr "Deze pagina gebruikt %s. Deze diensten kunnen cookies plaatsen en gegevens over uw bezoek delen. Kies wat u toestaat."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:396
+#: includes/features/class-seoprocookieconsent-consent.php:421
 #, php-format
 msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
 msgstr "Deze pagina gebruikt %s. Deze diensten kunnen cookies plaatsen. U kunt ze uitschakelen in Cookie-instellingen."
 
-#: includes/features/class-seoprocookieconsent-consent.php:397
+#: includes/features/class-seoprocookieconsent-consent.php:422
 msgid "other services"
 msgstr "andere diensten"
 
 #. translators: 1: service name, such as "YouTube"; 2: cookie category.
-#: includes/features/class-seoprocookieconsent-consent.php:401
+#: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s needs %2$s to show here. Allow it to see this content."
 msgstr "%1$s heeft %2$s nodig om hier te verschijnen. Sta dit toe om de inhoud te zien."
 
-#: includes/features/class-seoprocookieconsent-consent.php:403
+#: includes/features/class-seoprocookieconsent-consent.php:428
 msgid "Load content"
 msgstr "Inhoud laden"
 
-#: includes/features/class-seoprocookieconsent-consent.php:789
+#: includes/features/class-seoprocookieconsent-consent.php:816
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Een link die Cookie-instellingen opent, zodat bezoekers hun keuzes kunnen wijzigen. Zodra een menu deze link heeft, wordt de automatische voettekstlink niet meer toegevoegd."
 
-#: includes/features/class-seoprocookieconsent-consent.php:805
+#: includes/features/class-seoprocookieconsent-consent.php:832
 msgid "Add to Menu"
 msgstr "Aan menu toevoegen"
 
-#: includes/features/class-seoprocookieconsent-consent.php:852
+#: includes/features/class-seoprocookieconsent-consent.php:879
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Cookie-instellingenknop"
 
-#: includes/features/class-seoprocookieconsent-consent.php:853
+#: includes/features/class-seoprocookieconsent-consent.php:880
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Opent Cookie-instellingen zodat bezoekers hun keuzes kunnen wijzigen."
 
-#: includes/features/class-seoprocookieconsent-consent.php:859
+#: includes/features/class-seoprocookieconsent-consent.php:886
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/features/class-seoprocookieconsent-consent.php:865
+#: includes/features/class-seoprocookieconsent-consent.php:892
 msgid "Show as"
 msgstr "Tonen als"
 
-#: includes/features/class-seoprocookieconsent-consent.php:867
+#: includes/features/class-seoprocookieconsent-consent.php:894
 msgid "Button"
 msgstr "Knop"
 
-#: includes/features/class-seoprocookieconsent-consent.php:868
+#: includes/features/class-seoprocookieconsent-consent.php:895
 msgid "Link"
 msgstr "Link"
 
-#: includes/features/class-seoprocookieconsent-consent.php:885
+#: includes/features/class-seoprocookieconsent-consent.php:912
 msgid "Get started"
 msgstr "Aan de slag"
 
-#: includes/features/class-seoprocookieconsent-consent.php:886
+#: includes/features/class-seoprocookieconsent-consent.php:913
 msgid "Switch on Cookie consent."
 msgstr "Schakel Cookietoestemming in."
 
-#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/features/class-seoprocookieconsent-consent.php:914
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Kies Nu scannen en bekijk daarna Gevonden op uw pagina’s hieronder."
 
-#: includes/features/class-seoprocookieconsent-consent.php:888
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Schakel Cookiebeleid in op het tabblad Beleid en voeg het blok Cookiebeleid toe aan uw privacy- of cookiebeleidspagina."
 
-#: includes/features/class-seoprocookieconsent-consent.php:890
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Scan now"
 msgstr "Nu scannen"
 
-#: includes/features/class-seoprocookieconsent-consent.php:891
+#: includes/features/class-seoprocookieconsent-consent.php:918
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Controleert uw startpagina, privacypagina en maximaal drie recente berichten en drie pagina’s. Dit is een steekproef, geen volledige audit. Pagina’s worden ook gecontroleerd terwijl bezoekers surfen. Scripts worden niet uitgevoerd."
 
-#: includes/features/class-seoprocookieconsent-consent.php:912
+#: includes/features/class-seoprocookieconsent-consent.php:939
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Nog geen diensten gevonden die cookies plaatsen. Scan na het inschakelen of open enkele pagina’s van uw site."
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:941
 msgid "Found on your pages and held back until allowed:"
 msgstr "Gevonden op uw pagina’s en tegengehouden tot toestemming:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:925
+#: includes/features/class-seoprocookieconsent-consent.php:952
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Noodzakelijk, nooit tegengehouden en vermeld in het cookiebeleid:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:932
+#: includes/features/class-seoprocookieconsent-consent.php:959
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Andere scripts van deze sites laden zoals gewoonlijk. Plaatst er een cookies? Voeg het toe onder Problemen oplossen → Ook tegenhouden:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:968
 msgid "You cannot scan this site."
 msgstr "U kunt deze site niet scannen."
 
-#: includes/features/class-seoprocookieconsent-consent.php:945
+#: includes/features/class-seoprocookieconsent-consent.php:972
 msgid "Switch on Cookie consent before scanning."
 msgstr "Schakel Cookietoestemming in vóór het scannen."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1055
+#: includes/features/class-seoprocookieconsent-consent.php:1082
 msgid "Preview the banner"
 msgstr "Voorbeeld van de banner"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1059
+#: includes/features/class-seoprocookieconsent-consent.php:1086
 msgid "Visitor"
 msgstr "Bezoeker"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1061
+#: includes/features/class-seoprocookieconsent-consent.php:1088
 msgid "Asked first (Europe, Quebec)"
 msgstr "Eerst gevraagd (Europa, Quebec)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1062
+#: includes/features/class-seoprocookieconsent-consent.php:1089
 msgid "Shown a notice (elsewhere)"
 msgstr "Melding getoond (elders)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1066
+#: includes/features/class-seoprocookieconsent-consent.php:1093
 msgid "Screen"
 msgstr "Scherm"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1068
+#: includes/features/class-seoprocookieconsent-consent.php:1095
 msgid "Desktop"
 msgstr "Computer"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1069
+#: includes/features/class-seoprocookieconsent-consent.php:1096
 msgid "Phone"
 msgstr "Telefoon"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1072
+#: includes/features/class-seoprocookieconsent-consent.php:1099
 msgid "Reload"
 msgstr "Herladen"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1075
+#: includes/features/class-seoprocookieconsent-consent.php:1102
 msgid "Banner preview on your home page"
 msgstr "Bannervoorbeeld op uw startpagina"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1077
+#: includes/features/class-seoprocookieconsent-consent.php:1104
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Uw startpagina met de banner zoals bezoekers die zien, ook als niets op de pagina wordt tegengehouden. Vernieuwt na elke wijziging. Keuzes in het voorbeeld worden niet opgeslagen."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1096
+#: includes/features/class-seoprocookieconsent-consent.php:1123
 msgid "No pages found."
 msgstr "Geen pagina’s gevonden."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1099
+#: includes/features/class-seoprocookieconsent-consent.php:1126
 msgid "Scanning…"
 msgstr "Scannen…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1101
+#: includes/features/class-seoprocookieconsent-consent.php:1128
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Scan voltooid: %1$s pagina’s gecontroleerd; %2$s konden niet worden gecontroleerd. Bekijk de resultaten hieronder."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1102
+#: includes/features/class-seoprocookieconsent-consent.php:1129
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "De scan kon uw pagina’s niet controleren. Mogelijk worden loopbackverzoeken geblokkeerd. Probeer opnieuw of open pagina’s van uw site om de lijst tijdens het surfen aan te vullen."
 
@@ -1455,68 +1447,68 @@ msgstr "Sessie, of 14 dagen met Mij onthouden"
 msgid "Fills in your name when you comment, only if you ask it to"
 msgstr "Vult uw naam in bij reacties, alleen als u daarom vraagt"
 
-#: includes/features/class-seoprocookieconsent-policy.php:152
+#: includes/features/class-seoprocookieconsent-policy.php:154
 msgid "This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time."
 msgstr "Deze site gebruikt cookies: kleine bestanden die op uw toestel worden opgeslagen. Noodzakelijke cookies staan altijd aan. Andere worden alleen gebruikt als u ze toestaat waar de wet toestemming vereist. U kunt uw keuze op elk moment wijzigen."
 
 #. translators: %s: date.
-#: includes/features/class-seoprocookieconsent-policy.php:166
+#: includes/features/class-seoprocookieconsent-policy.php:168
 #, php-format
 msgid "List last updated %s."
 msgstr "Lijst laatst bijgewerkt op %s."
 
-#: includes/features/class-seoprocookieconsent-policy.php:181
+#: includes/features/class-seoprocookieconsent-policy.php:183
 msgid "Service"
 msgstr "Dienst"
 
-#: includes/features/class-seoprocookieconsent-policy.php:182
+#: includes/features/class-seoprocookieconsent-policy.php:184
 msgid "Cookie"
 msgstr "Cookie"
 
-#: includes/features/class-seoprocookieconsent-policy.php:183
+#: includes/features/class-seoprocookieconsent-policy.php:185
 msgid "What it does"
 msgstr "Wat het doet"
 
-#: includes/features/class-seoprocookieconsent-policy.php:184
+#: includes/features/class-seoprocookieconsent-policy.php:186
 msgid "Kept for"
 msgstr "Bewaartermijn"
 
-#: includes/features/class-seoprocookieconsent-policy.php:189
+#: includes/features/class-seoprocookieconsent-policy.php:191
+#: includes/features/class-seoprocookieconsent-privacy.php:38
+#: includes/features/class-seoprocookieconsent-privacy.php:62
 msgid "Privacy policy"
 msgstr "Privacybeleid"
 
-#: includes/features/class-seoprocookieconsent-policy.php:193
+#: includes/features/class-seoprocookieconsent-policy.php:195
 msgid "Sets cookies on its own site when its content loads."
 msgstr "Plaatst cookies op de eigen site wanneer de inhoud laadt."
 
-#: includes/features/class-seoprocookieconsent-policy.php:217
+#: includes/features/class-seoprocookieconsent-policy.php:219
+#: includes/features/class-seoprocookieconsent-privacy.php:210
 msgid "Cookies"
 msgstr "Cookies"
 
-#: includes/features/class-seoprocookieconsent-policy.php:218
+#: includes/features/class-seoprocookieconsent-policy.php:220
 msgid "Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date."
 msgstr "Voeg het blok Cookiebeleid onder deze kop toe. Het toont de cookies die uw site gebruikt en blijft actueel."
 
-#: includes/features/class-seoprocookieconsent-policy.php:219
+#: includes/features/class-seoprocookieconsent-policy.php:221
 msgid "We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page."
 msgstr "We gebruiken cookies en vergelijkbare technologieën. Noodzakelijke cookies laten de site werken en onthouden uw keuzes. Met uw toestemming waar de wet dit vereist, gebruiken we ook cookies voor voorkeuren, statistieken, ingesloten inhoud en marketing. U kunt uw toestemming op elk moment wijzigen of intrekken via de link Cookie-instellingen onderaan elke pagina."
 
 #. translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile".
-#: includes/features/class-seoprocookieconsent-policy.php:224
+#: includes/features/class-seoprocookieconsent-policy.php:226
 #, php-format
 msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
 msgstr "Om de site, formulieren en betalingen tegen spam, fraude en aanvallen te beschermen, gebruiken we %s. Deze diensten ontvangen uw IP-adres en browsergegevens en kunnen de noodzakelijke cookies uit het cookiebeleid plaatsen. Ze zijn nodig voor de veilige werking van de site en staan daarom altijd aan."
 
-#: includes/features/class-seoprocookieconsent-terms.php:35
-#: includes/features/class-seoprocookieconsent-terms.php:131
+#: includes/features/class-seoprocookieconsent-terms.php:39
+#: includes/features/class-seoprocookieconsent-terms.php:97
 msgid "Terms and conditions"
 msgstr "Algemene voorwaarden"
 
-#: includes/features/class-seoprocookieconsent-terms.php:36
-msgid "Adds the Terms and conditions block and [spcc_terms] shortcode. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
-msgstr "Voegt het blok Algemene voorwaarden en de shortcode [spcc_terms] toe. Beantwoord de vragen en controleer de tekst vóór publicatie. Dit is een vertrekpunt, geen juridisch advies, en dekt mogelijk uw bedrijf of lokale wetgeving niet. Bestaande Complianz-pagina’s blijven ongewijzigd: vervang hun blok of shortcode zelf na controle."
-
-#: includes/features/class-seoprocookieconsent-terms.php:44
+#: includes/features/class-seoprocookieconsent-privacy.php:43
+#: includes/features/class-seoprocookieconsent-terms.php:45
 msgid "Business or owner name"
 msgstr "Naam van bedrijf of eigenaar"
 
@@ -1524,84 +1516,71 @@ msgstr "Naam van bedrijf of eigenaar"
 msgid "The legal name responsible for this site. Required for the suggested wording."
 msgstr "De wettelijke naam van wie voor deze site verantwoordelijk is. Vereist voor de voorgestelde tekst."
 
-#: includes/features/class-seoprocookieconsent-terms.php:51
+#: includes/features/class-seoprocookieconsent-privacy.php:44
+#: includes/features/class-seoprocookieconsent-terms.php:46
 msgid "Country"
 msgstr "Land"
 
-#: includes/features/class-seoprocookieconsent-terms.php:52
-msgid "Where the business is based. This does not choose governing law or generate country-specific clauses."
-msgstr "Waar het bedrijf gevestigd is. Dit kiest geen toepasselijk recht en maakt geen landspecifieke bepalingen."
-
-#: includes/features/class-seoprocookieconsent-terms.php:58
+#: includes/features/class-seoprocookieconsent-terms.php:47
 msgid "What the site offers or sells"
 msgstr "Wat de site aanbiedt of verkoopt"
 
-#: includes/features/class-seoprocookieconsent-terms.php:59
-msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed."
-msgstr "Beschrijf uw goederen, diensten, digitale inhoud of informatie, met betalings- en leveringsvoorwaarden waar nodig."
-
-#: includes/features/class-seoprocookieconsent-terms.php:65
-#: includes/features/class-seoprocookieconsent-terms.php:174
+#: includes/features/class-seoprocookieconsent-terms.php:48
+#: includes/features/class-seoprocookieconsent-terms.php:238
 msgid "Returns, refunds and cancellations"
 msgstr "Retouren, terugbetalingen en annuleringen"
 
-#: includes/features/class-seoprocookieconsent-terms.php:66
+#: includes/features/class-seoprocookieconsent-terms.php:48
 msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
 msgstr "Uw beleid en hoe klanten het gebruiken. Vermeld herroepingsrechten en de vereiste contact- of onlineprocedure. Laat leeg als dit niet van toepassing is; er wordt geen retourtermijn verondersteld."
 
-#: includes/features/class-seoprocookieconsent-terms.php:72
+#: includes/features/class-seoprocookieconsent-privacy.php:46
+#: includes/features/class-seoprocookieconsent-terms.php:50
 msgid "Contact details"
 msgstr "Contactgegevens"
 
-#: includes/features/class-seoprocookieconsent-terms.php:73
+#: includes/features/class-seoprocookieconsent-terms.php:50
 msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
 msgstr "Openbaar e-mailadres, contactpagina, postadres of telefoonnummer voor vragen over deze voorwaarden. Vereist voor de voorgestelde tekst; wordt als gewone tekst getoond."
 
-#: includes/features/class-seoprocookieconsent-terms.php:79
+#: includes/features/class-seoprocookieconsent-privacy.php:50
+#: includes/features/class-seoprocookieconsent-terms.php:51
 msgid "Your own wording"
 msgstr "Uw eigen tekst"
 
-#: includes/features/class-seoprocookieconsent-terms.php:80
+#: includes/features/class-seoprocookieconsent-terms.php:51
 msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
 msgstr "Optioneel: vervangt alle voorgestelde tekst. Alleen gewone tekst, één alinea per regel. Laat leeg om de antwoorden hierboven te gebruiken. U kunt ook gewone blokken rond het blok Algemene voorwaarden schrijven; die blijven ongewijzigd."
 
-#: includes/features/class-seoprocookieconsent-terms.php:132
+#: includes/features/class-seoprocookieconsent-terms.php:98
 msgid "Terms from your answers. Review before publishing; not legal advice."
 msgstr "Voorwaarden op basis van uw antwoorden. Controleer vóór publicatie; geen juridisch advies."
 
-#. translators: %s: legal business or owner name.
-#: includes/features/class-seoprocookieconsent-terms.php:159
-#, php-format
-msgid "This website is operated by %s. These terms explain the use of this website and the offerings described below. Please read them before using the site or placing an order."
-msgstr "Deze website wordt beheerd door %s. Deze voorwaarden lichten het gebruik van deze website en het onderstaande aanbod toe. Lees ze vóór u de site gebruikt of een bestelling plaatst."
-
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-terms.php:166
+#: includes/features/class-seoprocookieconsent-terms.php:149
 #, php-format
 msgid "The business is based in %s."
 msgstr "Het bedrijf is gevestigd in %s."
 
-#: includes/features/class-seoprocookieconsent-terms.php:170
+#: includes/features/class-seoprocookieconsent-terms.php:169
 msgid "Using this website"
 msgstr "Gebruik van deze website"
 
-#: includes/features/class-seoprocookieconsent-terms.php:171
-msgid "Please use this website lawfully and do not interfere with its security or other people’s use of it. Respect the rights of others when using or sharing content."
-msgstr "Gebruik deze website op een wettige manier en verstoor de beveiliging of het gebruik door anderen niet. Respecteer de rechten van anderen wanneer u inhoud gebruikt of deelt."
-
-#: includes/features/class-seoprocookieconsent-terms.php:173
+#: includes/features/class-seoprocookieconsent-terms.php:234
 msgid "What we offer"
 msgstr "Wat we aanbieden"
 
-#: includes/features/class-seoprocookieconsent-terms.php:183
+#: includes/features/class-seoprocookieconsent-privacy.php:280
+#: includes/features/class-seoprocookieconsent-terms.php:329
 msgid "Your rights"
 msgstr "Uw rechten"
 
-#: includes/features/class-seoprocookieconsent-terms.php:184
+#: includes/features/class-seoprocookieconsent-terms.php:330
 msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
 msgstr "Niets in deze voorwaarden beperkt rechten die het toepasselijke recht u geeft en die niet kunnen worden uitgesloten, waaronder dwingende consumentenrechten."
 
-#: includes/features/class-seoprocookieconsent-terms.php:185
+#: includes/features/class-seoprocookieconsent-privacy.php:90
+#: includes/features/class-seoprocookieconsent-terms.php:126
 msgid "Contact"
 msgstr "Contact"
 
@@ -2103,31 +2082,31 @@ msgstr "Een bronterm kon niet worden verwijderd. Bekijk een nieuwe simulatie."
 msgid "The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run."
 msgstr "De map uploads/%s kon niet worden verwijderd. Verwijder die zelf of bekijk een nieuwe simulatie."
 
-#: includes/views/consent-banner.php:27
+#: includes/views/consent-banner.php:28
 msgid "login"
 msgstr "aanmelden"
 
-#: includes/views/consent-banner.php:28
+#: includes/views/consent-banner.php:29
 msgid "security"
 msgstr "beveiliging"
 
-#: includes/views/consent-banner.php:86
+#: includes/views/consent-banner.php:99
 msgid "Your consent ID:"
 msgstr "Uw toestemmings-ID:"
 
-#: includes/views/consent-banner.php:88
+#: includes/views/consent-banner.php:101
 msgid "Copy consent ID"
 msgstr "Toestemmings-ID kopiëren"
 
-#: includes/views/consent-banner.php:88
+#: includes/views/consent-banner.php:101
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: includes/views/consent-banner.php:89
+#: includes/views/consent-banner.php:102
 msgid "Consent ID copied."
 msgstr "Toestemmings-ID gekopieerd."
 
-#: includes/views/consent-banner.php:89
+#: includes/views/consent-banner.php:102
 msgid "Could not copy. Select the consent ID and copy it manually."
 msgstr "Kopiëren is niet gelukt. Selecteer de toestemmings-ID en kopieer die handmatig."
 
@@ -2391,3 +2370,1005 @@ msgstr "De kleurmodus kon niet worden opgeslagen. Probeer het opnieuw."
 #: admin/js/seoprocookieconsent-theme.js:185
 msgid "Colour mode"
 msgstr "Kleurmodus"
+
+# machine translation
+#: includes/class-seoprocookieconsent-setup.php:270
+msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
+msgstr "Cookiebeleid, privacybeleid en algemene voorwaarden, binnen pagina's die u zelf schrijft. Controleer ze vóór publicatie; dit is geen juridisch advies."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:39
+msgid "Adds the Privacy policy block and [spcc_privacy_policy] shortcode: a general privacy policy from your answers, covering who is responsible, what you collect and why, AI, cookies, sharing, transfers, retention, security, rights, complaints, children and changes. Review the wording before publishing and add anything your site does that it does not cover. This is a starting point, not legal advice, and may not cover your business or local law. Existing privacy pages are not changed."
+msgstr "Voegt het blok Privacybeleid en de shortcode [spcc_privacy_policy] toe: een algemeen privacybeleid op basis van uw antwoorden, met wie verantwoordelijk is, wat u verzamelt en waarom, AI, cookies, delen, doorgiften, bewaartermijnen, beveiliging, rechten, klachten, kinderen en wijzigingen. Controleer de tekst vóór publicatie en vul aan wat uw site doet maar hier niet is gedekt. Dit is een startpunt, geen juridisch advies, en dekt mogelijk uw bedrijf of de lokale wetgeving niet. Bestaande privacypagina's worden niet gewijzigd."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:43
+msgid "The legal name responsible for personal information collected through this site. Leave empty to use the Terms and conditions answer. Required for the suggested wording."
+msgstr "De juridische naam van de verantwoordelijke voor persoonsgegevens die via deze site worden verzameld. Laat leeg om het antwoord bij Algemene voorwaarden te gebruiken. Vereist voor de voorgestelde tekst."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:44
+msgid "Where the business is based, named in the introduction and under Complaints. Leave empty to use the Terms and conditions answer."
+msgstr "Waar het bedrijf is gevestigd, genoemd in de inleiding en onder Klachten. Laat leeg om het antwoord bij Algemene voorwaarden te gebruiken."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:45
+msgid "Data protection registration"
+msgstr "Registratie voor gegevensbescherming"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:45
+msgid "Optional: your registration with a data protection authority, where the law asks for one, such as the authority's name and your registration number."
+msgstr "Optioneel: uw registratie bij een toezichthouder voor gegevensbescherming, waar de wet die vraagt, zoals de naam van de toezichthouder en uw registratienummer."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:46
+msgid "Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text."
+msgstr "Openbaar e-mailadres, contactpagina of postadres voor privacyvragen en -verzoeken. Laat leeg om het antwoord bij Algemene voorwaarden te gebruiken. Vereist voor de voorgestelde tekst; dit wordt als gewone tekst getoond."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:47
+msgid "Main service providers"
+msgstr "Belangrijkste dienstverleners"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:47
+msgid "Optional: services that handle personal information for you, one per line with their country and what they do, such as \"Web host, Germany: hosting and backups\". Listed where the policy explains sharing."
+msgstr "Optioneel: diensten die namens u persoonsgegevens verwerken, één per regel met hun land en wat ze doen, zoals \"Webhost, Duitsland: hosting en back-ups\". Vermeld waar het beleid uitlegt met wie gegevens worden gedeeld."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:48
+msgid "Section on the use of AI"
+msgstr "Sectie over het gebruik van AI"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:48
+msgid "Says that you use AI services from several providers to develop the site and your services, and may also use them to help answer questions and support requests, and that you endeavour to remove personal information from what you send to AI. Turn it off if that is not true for this site."
+msgstr "Vermeldt dat u AI-diensten van verschillende aanbieders gebruikt om de site en uw diensten te ontwikkelen, dat u ze ook kunt gebruiken om vragen en ondersteuningsverzoeken te helpen beantwoorden, en dat u uw best doet om persoonsgegevens te verwijderen uit wat u naar AI verstuurt. Schakel dit uit als dat niet geldt voor deze site."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:49
+msgid "AI features on this website"
+msgstr "AI-functies op deze website"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:49
+msgid "Turn on if visitors can use AI through this site, such as a chat assistant, AI search, or forms and tools that use AI. Adds to the section on AI that what they type, upload or submit is sent in full to the AI provider, without personal information removed, and asks them not to include personal or confidential information. Say so where they use the feature too."
+msgstr "Schakel in als bezoekers via deze site AI kunnen gebruiken, zoals een chatassistent, AI-zoekfunctie of formulieren en hulpmiddelen die AI gebruiken. Voegt aan de sectie over AI toe dat wat zij typen, uploaden of indienen volledig naar de AI-aanbieder wordt gestuurd, zonder dat persoonsgegevens worden verwijderd, en vraagt hen geen persoonlijke of vertrouwelijke gegevens op te nemen. Vermeld dit ook op de plek waar zij de functie gebruiken."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:50
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed."
+msgstr "Optioneel: vervangt alle voorgestelde tekst. Alleen gewone tekst, één alinea per regel. Laat leeg om de antwoorden hierboven te gebruiken. U kunt ook gewone blokken rond het blok Privacybeleid schrijven; die worden nooit gewijzigd."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:63
+msgid "Privacy policy from your answers. Review before publishing; not legal advice."
+msgstr "Privacybeleid op basis van uw antwoorden. Controleer vóór publicatie; dit is geen juridisch advies."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:91
+msgid "If you have any questions about this policy or how we handle your personal information, or want to use your rights, please contact us:"
+msgstr "Als u vragen hebt over dit beleid of over hoe wij met uw persoonsgegevens omgaan, of als u uw rechten wilt uitoefenen, neem dan contact met ons op:"
+
+# machine translation
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-privacy.php:106
+#, php-format
+msgid "This privacy policy explains how %s (\"we\") collects, uses and protects personal information through this website and our services, and the choices and rights you have. We are responsible for that information (its controller, in data protection law)."
+msgstr "Dit privacybeleid legt uit hoe %s (\"wij\") via deze website en onze diensten persoonsgegevens verzamelt, gebruikt en beschermt, en welke keuzes en rechten u hebt. Wij zijn verantwoordelijk voor die gegevens (in de wetgeving voor gegevensbescherming: de verwerkingsverantwoordelijke)."
+
+# machine translation
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-privacy.php:113
+#, php-format
+msgid "We are based in %s."
+msgstr "Wij zijn gevestigd in %s."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:118
+msgid "This policy applies wherever you visit from. Please read it with any more specific notice we give you when we collect information, such as on a form; those notices add to this policy."
+msgstr "Dit beleid geldt ongeacht vanwaar u onze website bezoekt. Lees het samen met elke specifiekere mededeling die wij u geven wanneer wij gegevens verzamelen, bijvoorbeeld bij een formulier; die mededelingen vullen dit beleid aan."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:119
+msgid "If we handle personal information for a customer as part of a service we provide to them, we do so on their instructions, and their privacy notice explains how it is used."
+msgstr "Als wij persoonsgegevens verwerken voor een klant als onderdeel van een dienst die wij aan die klant verlenen, doen wij dat op diens instructies, en de privacyverklaring van die klant legt uit hoe ze worden gebruikt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:128
+msgid "What we collect"
+msgstr "Wat wij verzamelen"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:129
+msgid "Personal information means any information about a person who can be identified from it. Depending on how you use this website and our services, we may collect:"
+msgstr "Persoonsgegevens zijn alle gegevens over een persoon die daaruit kan worden geïdentificeerd. Afhankelijk van hoe u deze website en onze diensten gebruikt, kunnen wij verzamelen:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:131
+msgid "identity details, such as your name or username;"
+msgstr "identiteitsgegevens, zoals uw naam of gebruikersnaam;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:132
+msgid "contact details, such as your email address, phone number and postal or delivery address;"
+msgstr "contactgegevens, zoals uw e-mailadres, telefoonnummer en post- of bezorgadres;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:133
+msgid "order and payment details, such as what you buy from us and confirmation of payment; when a payment provider handles a card payment, we do not receive your full card number;"
+msgstr "bestel- en betaalgegevens, zoals wat u bij ons koopt en de bevestiging van betaling; wanneer een betaaldienstverlener een kaartbetaling afhandelt, ontvangen wij uw volledige kaartnummer niet;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:134
+msgid "account and profile details, such as your login, preferences, interests, feedback and survey answers;"
+msgstr "account- en profielgegevens, zoals uw inloggegevens, voorkeuren, interesses, feedback en antwoorden op enquêtes;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:135
+msgid "what you write to us or post, such as messages, comments, reviews and attachments;"
+msgstr "wat u ons schrijft of plaatst, zoals berichten, reacties, beoordelingen en bijlagen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:136
+msgid "technical details, such as your IP address, browser and device type, operating system and an approximate location based on your IP address;"
+msgstr "technische gegevens, zoals uw IP-adres, browser- en apparaattype, besturingssysteem en een geschatte locatie op basis van uw IP-adres;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:137
+msgid "usage details, such as the pages you visit, how you reached them and how you use the site;"
+msgstr "gebruiksgegevens, zoals de pagina's die u bezoekt, hoe u daar bent gekomen en hoe u de site gebruikt;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:138
+msgid "your marketing preferences and cookie choices."
+msgstr "uw marketingvoorkeuren en cookiekeuzes."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:140
+msgid "We collect it in these ways:"
+msgstr "Wij verzamelen ze op deze manieren:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:142
+msgid "Information you give us: when you contact us, comment, create an account, subscribe to updates, take part in a survey or buy from us."
+msgstr "Gegevens die u ons geeft: wanneer u contact met ons opneemt, een reactie plaatst, een account aanmaakt, zich abonneert op updates, deelneemt aan een enquête of bij ons koopt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:143
+msgid "Information collected automatically: your IP address, browser and device details and the pages you visit, which our hosting and security services record to deliver and protect the site, and information from cookies and similar technologies, as explained under Cookies."
+msgstr "Automatisch verzamelde gegevens: uw IP-adres, browser- en apparaatgegevens en de pagina's die u bezoekt, die onze hosting- en beveiligingsdiensten vastleggen om de site te leveren en te beschermen, en gegevens uit cookies en vergelijkbare technologieën, zoals uitgelegd onder Cookies."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:144
+msgid "Information from others: for example confirmation of a payment from a payment provider, or details from a service you choose to sign in with."
+msgstr "Gegevens van anderen: bijvoorbeeld de bevestiging van een betaling door een betaaldienstverlener, of gegevens van een dienst waarmee u ervoor kiest in te loggen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:146
+msgid "We may also use aggregated or anonymised information, such as how many people visit a page, which does not identify you. If we combine it with other information so that it can identify you, we treat it as personal information."
+msgstr "Wij kunnen ook geaggregeerde of geanonimiseerde gegevens gebruiken, zoals hoeveel mensen een pagina bezoeken, waarmee u niet wordt geïdentificeerd. Als wij die combineren met andere gegevens zodat ze u kunnen identificeren, behandelen wij ze als persoonsgegevens."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:147
+msgid "We do not ask for sensitive information, such as about your health, religious beliefs or ethnic origin. Please do not send it to us unless we have agreed how it will be handled."
+msgstr "Wij vragen niet om gevoelige gegevens, zoals over uw gezondheid, religieuze overtuiging of etnische afkomst. Stuur ze ons alstublieft niet, tenzij wij hebben afgesproken hoe ze worden verwerkt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:148
+msgid "Where we need information to provide what you ask for, or because the law requires it, we say so when we ask. Without it, we may not be able to provide what you asked for, such as an order or a reply."
+msgstr "Als wij gegevens nodig hebben om te leveren wat u vraagt, of omdat de wet het verplicht, zeggen wij dat wanneer wij erom vragen. Zonder die gegevens kunnen wij mogelijk niet leveren wat u vroeg, zoals een bestelling of een antwoord."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:149
+msgid "If you post a comment, review or other content on this website, other people can see it. We will consider reasonable requests to remove it, but copies may already be held by search engines or archives that we do not control."
+msgstr "Als u op deze website een reactie, beoordeling of andere inhoud plaatst, kunnen andere mensen die zien. Wij overwegen redelijke verzoeken om die te verwijderen, maar kopieën kunnen al worden bewaard door zoekmachines of archieven waarover wij geen controle hebben."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:159
+msgid "How we use it and why"
+msgstr "Hoe en waarom wij ze gebruiken"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:160
+msgid "We use personal information only for these purposes. Where data protection law asks for a legal basis, we rely on the one given for each:"
+msgstr "Wij gebruiken persoonsgegevens alleen voor deze doeleinden. Waar de wetgeving voor gegevensbescherming een rechtsgrond vraagt, baseren wij ons op de rechtsgrond die bij elk doel is vermeld:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:162
+msgid "To reply to you and provide what you ask for, including orders and support: to take steps at your request or to perform a contract with you."
+msgstr "Om u te antwoorden en te leveren wat u vraagt, waaronder bestellingen en ondersteuning: om op uw verzoek stappen te zetten of een overeenkomst met u uit te voeren."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:163
+msgid "To tell you about changes to our terms, this policy or a service you use: to perform a contract with you, or legal obligation."
+msgstr "Om u te informeren over wijzigingen in onze voorwaarden, dit beleid of een dienst die u gebruikt: om een overeenkomst met u uit te voeren, of een wettelijke verplichting."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:164
+msgid "To run, secure and improve the website and our services, and to prevent fraud and abuse: our legitimate interests, balanced against your rights."
+msgstr "Om de website en onze diensten te beheren, te beveiligen en te verbeteren, en om fraude en misbruik te voorkomen: onze gerechtvaardigde belangen, afgewogen tegen uw rechten."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:165
+msgid "To send newsletters or marketing you asked for: your consent, which you can withdraw at any time with the unsubscribe link or by contacting us."
+msgstr "Om nieuwsbrieven of marketing te sturen waar u om hebt gevraagd: uw toestemming, die u op elk moment kunt intrekken via de uitschrijflink of door contact met ons op te nemen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:166
+msgid "To use optional cookies, such as for statistics or marketing: your consent, where the law requires it."
+msgstr "Om optionele cookies te gebruiken, zoals voor statistieken of marketing: uw toestemming, waar de wet die vereist."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:167
+msgid "To keep records and meet our legal, tax and accounting obligations: legal obligation."
+msgstr "Om gegevens te bewaren en te voldoen aan onze wettelijke, fiscale en boekhoudkundige verplichtingen: wettelijke verplichting."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:168
+msgid "To establish, exercise or defend legal claims: our legitimate interests."
+msgstr "Om rechtsvorderingen vast te stellen, uit te oefenen of te verdedigen: onze gerechtvaardigde belangen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:170
+msgid "More than one legal basis may apply, and you can ask us which one we rely on for a particular use. When we rely on legitimate interests, we weigh them against the effect on you and your rights, and do not rely on them where your interests override ours. You can ask us how we made that assessment."
+msgstr "Er kan meer dan één rechtsgrond van toepassing zijn, en u kunt ons vragen op welke wij ons voor een bepaald gebruik baseren. Wanneer wij ons baseren op gerechtvaardigde belangen, wegen wij die af tegen het effect op u en uw rechten, en doen wij dat niet als uw belangen zwaarder wegen dan de onze. U kunt ons vragen hoe wij die afweging hebben gemaakt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:171
+msgid "We send marketing only if you ask for it or, where the law allows, about similar products and services after you buy from us. Every message explains how to stop. Stopping marketing does not stop messages we need to send about an order, account or service."
+msgstr "Wij sturen alleen marketing als u daarom vraagt of, waar de wet dat toestaat, over soortgelijke producten en diensten nadat u bij ons hebt gekocht. Elk bericht legt uit hoe u zich kunt afmelden. Stoppen met marketing betekent niet dat wij geen berichten meer sturen die wij nodig hebben over een bestelling, account of dienst."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:172
+msgid "We do not sell your personal information or give it to others for their own marketing. If you allow marketing cookies, however, the advertising services that set them may also use what they collect for their own purposes, as their privacy policies explain."
+msgstr "Wij verkopen uw persoonsgegevens niet en geven ze niet aan anderen voor hun eigen marketing. Als u marketingcookies toestaat, kunnen de advertentiediensten die ze plaatsen wat zij verzamelen echter ook voor eigen doeleinden gebruiken, zoals hun privacybeleid uitlegt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:173
+msgid "We do not use personal information for an unrelated purpose without telling you first."
+msgstr "Wij gebruiken persoonsgegevens niet voor een niet-gerelateerd doel zonder u dat eerst te vertellen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:186
+msgid "We use AI services from several providers to help develop and maintain this website and our services, and may also use them to help us answer questions and support requests."
+msgstr "Wij gebruiken AI-diensten van verschillende aanbieders om deze website en onze diensten te helpen ontwikkelen en onderhouden, en kunnen ze ook gebruiken om ons te helpen vragen en ondersteuningsverzoeken te beantwoorden."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:187
+msgid "When we use AI to help with a message or request you send us, we endeavour to remove personal information, such as names, contact details and account or order details, from what we send to the AI service, so that only the general content of the message is processed to help prepare an answer."
+msgstr "Wanneer wij AI gebruiken om te helpen met een bericht of verzoek dat u ons stuurt, doen wij ons best om persoonsgegevens, zoals namen, contactgegevens en account- of bestelgegevens, te verwijderen uit wat wij naar de AI-dienst sturen, zodat alleen de algemene inhoud van het bericht wordt verwerkt om een antwoord voor te bereiden."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:190
+msgid "Some features on this website use AI directly, such as a chat assistant, AI search, or forms and tools that use AI. When you use one, what you type, upload or submit is sent in full to the AI provider that runs it, to produce a response. We do not remove personal information from it first, so please do not include personal, sensitive or confidential information that you do not want the provider to receive."
+msgstr "Sommige functies op deze website gebruiken rechtstreeks AI, zoals een chatassistent, AI-zoekfunctie of formulieren en hulpmiddelen die AI gebruiken. Wanneer u er een gebruikt, wordt wat u typt, uploadt of indient volledig verstuurd naar de AI-aanbieder die de functie uitvoert, om een antwoord te genereren. Wij verwijderen er niet eerst persoonsgegevens uit; neem daarom geen persoonlijke, gevoelige of vertrouwelijke gegevens op die de aanbieder niet mag ontvangen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:191
+msgid "The provider handles what you send under its own terms and privacy policy, and may process it in other countries, as explained under International transfers. Where we keep a copy, such as a chat history, we handle it as this policy describes."
+msgstr "De aanbieder verwerkt wat u verstuurt volgens zijn eigen voorwaarden en privacybeleid, en kan het in andere landen verwerken, zoals uitgelegd onder Internationale doorgiften. Waar wij een kopie bewaren, zoals een chatgeschiedenis, behandelen wij die zoals dit beleid beschrijft."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:196
+msgid "Where we can, we choose AI services and settings that do not use what is sent to them to train their models. AI does not make decisions about you that have legal or similarly significant effects."
+msgstr "Waar mogelijk kiezen wij AI-diensten en instellingen die wat naar hen wordt gestuurd niet gebruiken om hun modellen te trainen. AI neemt geen beslissingen over u die rechtsgevolgen hebben of u op vergelijkbare wijze significant treffen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:197
+msgid "Artificial intelligence (AI)"
+msgstr "Kunstmatige intelligentie (AI)"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:211
+msgid "Cookies are small text files that a website stores in your browser. Similar technologies, such as local storage and tracking pixels, work in a similar way, so we call them all cookies here."
+msgstr "Cookies zijn kleine tekstbestanden die een website in uw browser opslaat. Vergelijkbare technologieën, zoals lokale opslag en trackingpixels, werken op een vergelijkbare manier; wij noemen ze hier daarom allemaal cookies."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:212
+msgid "We use cookies and similar technologies. Necessary ones make the site work and are always on. Others, such as for statistics, embedded content or marketing, are used only with your consent where the law requires it. The kinds we may use are:"
+msgstr "Wij gebruiken cookies en vergelijkbare technologieën. Noodzakelijke cookies laten de site werken en staan altijd aan. Andere, zoals voor statistieken, ingesloten inhoud of marketing, worden alleen met uw toestemming gebruikt waar de wet die vereist. De soorten die wij kunnen gebruiken zijn:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:214
+msgid "Embedded content, such as videos, maps and social media posts, and sharing buttons from other websites can set their own cookies and work as if you visited those websites."
+msgstr "Ingesloten inhoud, zoals video's, kaarten en berichten van sociale media, en deelknoppen van andere websites kunnen hun eigen cookies plaatsen en werken alsof u die websites bezoekt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:215
+msgid "You can also set your browser to refuse or delete cookies. Some parts of this website may not work without them."
+msgstr "U kunt uw browser ook instellen om cookies te weigeren of te verwijderen. Sommige onderdelen van deze website werken dan mogelijk niet."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:225
+msgid "Who we share it with"
+msgstr "Met wie wij gegevens delen"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:226
+msgid "We share personal information only when needed:"
+msgstr "Wij delen persoonsgegevens alleen wanneer dat nodig is:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:228
+msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;"
+msgstr "met dienstverleners die ze voor ons verwerken op onze instructies, zoals voor hosting, back-ups, IT-ondersteuning, e-mail, betalingen en klantenservice. Zij mogen ze alleen gebruiken om hun diensten aan ons te leveren, moeten ze veilig houden en mogen alleen andere aanbieders inschakelen onder dezelfde voorwaarden;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:229
+msgid "with professional advisers, such as accountants, auditors, lawyers, banks and insurers;"
+msgstr "met professionele adviseurs, zoals accountants, auditors, juristen, banken en verzekeraars;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:230
+msgid "with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;"
+msgstr "met belastingdiensten, toezichthouders, rechtbanken, de politie en anderen wanneer de wet dat vereist, of om de rechten, eigendommen of veiligheid van onze klanten, anderen of onszelf te beschermen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:231
+msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
+msgstr "met een koper of opvolger als ons bedrijf of deze website wordt verkocht of gefuseerd, die de gegevens mag gebruiken zoals dit beleid beschrijft;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:232
+msgid "with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice."
+msgstr "met anderen wanneer u ons daarom vraagt of daarmee instemt, zoals een bedrijf met wie u ons vraagt u in contact te brengen, dat ze vervolgens gebruikt volgens zijn eigen privacyverklaring."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:234
+msgid "If you pay on a payment provider's page, the provider handles your payment details under its own terms and privacy notice."
+msgstr "Als u betaalt op de pagina van een betaaldienstverlener, verwerkt die aanbieder uw betaalgegevens volgens zijn eigen voorwaarden en privacyverklaring."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:238
+msgid "Our main service providers are:"
+msgstr "Onze belangrijkste dienstverleners zijn:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:241
+msgid "International transfers"
+msgstr "Internationale doorgiften"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:242
+msgid "Some of our service providers store or process information in other countries, depending on their settings, where their systems are and where their support teams work. Where practical, we choose providers and settings that keep information in our own region."
+msgstr "Sommige van onze dienstverleners slaan gegevens op of verwerken ze in andere landen, afhankelijk van hun instellingen, waar hun systemen staan en waar hun ondersteuningsteams werken. Waar praktisch mogelijk kiezen wij aanbieders en instellingen die gegevens in onze eigen regio houden."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:243
+msgid "Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision, standard contractual clauses or an equivalent agreement, together with measures such as encryption and access controls. You can ask us for more information about them."
+msgstr "Waar de wetgeving voor gegevensbescherming dat vereist, zorgen wij voor passende waarborgen, zoals een adequaatheidsbesluit, modelcontractbepalingen of een gelijkwaardige overeenkomst, samen met maatregelen zoals versleuteling en toegangscontroles. U kunt ons om meer informatie hierover vragen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:253
+msgid "How long we keep it"
+msgstr "Hoe lang wij ze bewaren"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:254
+msgid "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymise it."
+msgstr "Wij bewaren persoonsgegevens alleen zo lang als nodig is voor de bovenstaande doeleinden, waaronder om te voldoen aan wettelijke, boekhoudkundige of rapportagevereisten, en verwijderen of anonimiseren ze daarna."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:255
+msgid "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorised use, why we hold it and whether we can achieve that another way, and what the law requires."
+msgstr "Om te bepalen hoe lang, kijken wij naar de hoeveelheid, aard en gevoeligheid van de gegevens, het risico op schade door onbevoegd gebruik, waarom wij ze bewaren en of wij dat doel op een andere manier kunnen bereiken, en wat de wet vereist."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:256
+msgid "For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires, which can be several years. If you ask us to delete information, we keep a short record of the request to show we dealt with it. Copies in backups are deleted as the backups are replaced."
+msgstr "Wij bewaren bijvoorbeeld berichten zolang als nodig is om ze en eventuele vervolgacties af te handelen, accountgegevens zolang uw account open is, en bestel- en boekhoudgegevens zolang de fiscale en boekhoudkundige wetgeving dat vereist, wat meerdere jaren kan zijn. Als u ons vraagt gegevens te verwijderen, bewaren wij een kort verslag van het verzoek om aan te tonen dat wij het hebben afgehandeld. Kopieën in back-ups worden verwijderd naarmate de back-ups worden vervangen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:257
+msgid "Security"
+msgstr "Beveiliging"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:258
+msgid "We protect personal information with appropriate technical and organisational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
+msgstr "Wij beschermen persoonsgegevens met passende technische en organisatorische maatregelen. Afhankelijk van de dienst kunnen die bestaan uit versleutelde verbindingen, beveiligde logins met sterke wachtwoorden en meerfactorauthenticatie, toegang alleen voor mensen die die nodig hebben en die de gegevens vertrouwelijk moeten houden, regelmatige updates, firewalls en monitoring, en back-ups. Wij verwachten dat onze dienstverleners ze op dezelfde manier beschermen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:259
+msgid "If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it."
+msgstr "Als een datalek uw rechten in gevaar brengt, informeren wij u en de autoriteiten waar de wet dat vereist."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:260
+msgid "No website or email is completely secure, so please think carefully before sending sensitive information by email, or ask us for a more secure way to send it."
+msgstr "Geen enkele website of e-mail is volledig veilig. Denk daarom goed na voordat u gevoelige gegevens per e-mail verstuurt, of vraag ons om een veiligere manier om ze te sturen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:271
+msgid "be told how we use your personal information, as this policy does;"
+msgstr "te worden geïnformeerd over hoe wij uw persoonsgegevens gebruiken, zoals dit beleid doet;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:272
+msgid "ask for a copy of the personal information we hold about you;"
+msgstr "een kopie te vragen van de persoonsgegevens die wij over u bewaren;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:273
+msgid "have it corrected if it is wrong or incomplete;"
+msgstr "ze te laten corrigeren als ze onjuist of onvolledig zijn;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:274
+msgid "have it deleted, or its use restricted;"
+msgstr "ze te laten verwijderen, of het gebruik ervan te laten beperken;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:275
+msgid "object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;"
+msgstr "bezwaar te maken tegen hoe wij ze gebruiken, waaronder te allen tijde tegen direct marketing en tegen gebruik op basis van onze gerechtvaardigde belangen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:276
+msgid "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;"
+msgstr "de gegevens die u ons hebt gegeven te ontvangen in een algemeen gebruikt, machineleesbaar formaat, of ze naar een andere organisatie te laten sturen, wanneer wij ze gebruiken met uw toestemming of voor een overeenkomst;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:277
+msgid "not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;"
+msgstr "niet te worden onderworpen aan besluiten die uitsluitend op geautomatiseerde verwerking zijn gebaseerd en die rechtsgevolgen hebben of u op vergelijkbare wijze significant treffen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:278
+msgid "withdraw your consent at any time, without affecting what we did before."
+msgstr "uw toestemming te allen tijde in te trekken, zonder dat dit gevolgen heeft voor wat wij eerder hebben gedaan."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:281
+msgid "Depending on where you live, you may have the right to:"
+msgstr "Afhankelijk van waar u woont, hebt u mogelijk het recht om:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:283
+msgid "Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you."
+msgstr "Sommige rechten gelden alleen in bepaalde omstandigheden of kunnen door de wet worden beperkt, bijvoorbeeld wanneer wij gegevens moeten bewaren. Als dat zo is, laten wij het u weten."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:284
+msgid "To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else's information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission."
+msgstr "Om deze rechten uit te oefenen, neemt u contact met ons op via de onderstaande gegevens en vertelt u ons wat u wilt. Wij moeten mogelijk eerst uw identiteit controleren, zodat wij geen gegevens van iemand anders verstrekken, wijzigen of verwijderen, en kunnen vragen om gegevens die ons helpen te vinden wat u nodig hebt. Als iemand namens u een verzoek doet, hebben wij uw schriftelijke toestemming nodig."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:285
+msgid "We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it."
+msgstr "Wij antwoorden zonder onredelijke vertraging en binnen vier weken. Als een verzoek complex is of u er meerdere indient, kunnen wij er langer over doen waar de wet dat toestaat, en laten wij u weten waarom. Wij brengen niets in rekening, tenzij een verzoek kennelijk ongegrond, repetitief of buitensporig is; dan kunnen wij een redelijke vergoeding vragen of het verzoek weigeren."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:286
+msgid "Please tell us if your personal information changes, so we can keep it accurate."
+msgstr "Laat ons alstublieft weten als uw persoonsgegevens wijzigen, zodat wij ze juist kunnen houden."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:299
+msgid "You also have the right to complain at any time to the data protection authority where you live or work, or where we are based."
+msgstr "U hebt ook het recht om te allen tijde een klacht in te dienen bij de toezichthouder voor gegevensbescherming van de plaats waar u woont of werkt, of waar wij gevestigd zijn."
+
+# machine translation
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-privacy.php:302
+#, php-format
+msgid "You also have the right to complain at any time to the data protection authority where you live or work, or in %s, where we are based."
+msgstr "U hebt ook het recht om te allen tijde een klacht in te dienen bij de toezichthouder voor gegevensbescherming van de plaats waar u woont of werkt, of in %s, waar wij gevestigd zijn."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:305
+msgid "Complaints"
+msgstr "Klachten"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:306
+msgid "If you are unhappy with how we handle your personal information, including our use of automated tools such as AI, please contact us first so we can try to put it right. Tell us what happened and what you would like us to do. We will acknowledge your complaint, look into it promptly and fairly, and tell you the outcome and what we will do about it."
+msgstr "Als u ontevreden bent over hoe wij met uw persoonsgegevens omgaan, waaronder ons gebruik van geautomatiseerde hulpmiddelen zoals AI, neem dan eerst contact met ons op zodat wij kunnen proberen het recht te zetten. Vertel ons wat er is gebeurd en wat u wilt dat wij doen. Wij bevestigen de ontvangst van uw klacht, onderzoeken die snel en eerlijk, en laten u de uitkomst weten en wat wij eraan zullen doen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:308
+msgid "Children"
+msgstr "Kinderen"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:309
+msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live, and ask them not to send it without a parent's or guardian's permission. If you think a child has given us personal information, please contact us and we will delete it."
+msgstr "Deze website is niet bedoeld voor kinderen. Wij verzamelen niet bewust persoonsgegevens van kinderen onder de leeftijd waarop zij daar waar zij wonen zelf toestemming voor kunnen geven, en vragen hen die niet te sturen zonder toestemming van een ouder of voogd. Als u denkt dat een kind ons persoonsgegevens heeft gegeven, neem dan contact met ons op, dan verwijderen wij die."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:310
+msgid "Other websites"
+msgstr "Andere websites"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:311
+msgid "This website may link to other websites, or include content, plug-ins or applications from them, such as videos, maps and social media posts. Following those links or allowing those connections may let the other websites collect information about you. We do not control them and are not responsible for their privacy practices, and this policy does not cover them; please read their own privacy policies."
+msgstr "Deze website kan linken naar andere websites, of inhoud, plug-ins of applicaties daarvan bevatten, zoals video's, kaarten en berichten van sociale media. Door die links te volgen of die verbindingen toe te staan kunnen de andere websites mogelijk gegevens over u verzamelen. Wij hebben daar geen controle over en zijn niet verantwoordelijk voor hun privacypraktijken, en dit beleid is daarop niet van toepassing; lees hun eigen privacybeleid."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:312
+msgid "Changes to this policy"
+msgstr "Wijzigingen in dit beleid"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:313
+msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can. Please check this page from time to time."
+msgstr "Wij kunnen dit beleid bijwerken wanneer onze diensten of de wetgeving veranderen. De actuele versie staat altijd op deze pagina en wij informeren u over belangrijke wijzigingen waar wij dat kunnen. Controleer deze pagina af en toe."
+
+# machine translation
+#. translators: %s: "Cookie settings" link.
+#: includes/features/class-seoprocookieconsent-privacy.php:352
+#, php-format
+msgid "You can change or withdraw your consent at any time in %s."
+msgstr "U kunt uw toestemming op elk moment wijzigen of intrekken via %s."
+
+# machine translation
+#. translators: %s: "Our cookie policy" link.
+#: includes/features/class-seoprocookieconsent-privacy.php:370
+#, php-format
+msgid "%s lists the cookies we use, what each does and how long it is kept."
+msgstr "%s toont de cookies die wij gebruiken, wat elke cookie doet en hoe lang die wordt bewaard."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:371
+msgid "Our cookie policy"
+msgstr "Ons cookiebeleid"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:385
+msgid "Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them."
+msgstr "Waar de wet toestemming vereist, houden wij optionele cookies, en de scripts en ingesloten inhoud die ze plaatsen, tegen totdat u ze toestaat."
+
+# machine translation
+#. translators: %s: number of days.
+#: includes/features/class-seoprocookieconsent-privacy.php:388
+#, php-format
+msgid "We remember your choice in a necessary cookie in your browser for %s day, then ask again."
+msgid_plural "We remember your choice in a necessary cookie in your browser for %s days, then ask again."
+msgstr[0] "Wij onthouden uw keuze %s dag in een noodzakelijke cookie in uw browser en vragen het daarna opnieuw."
+msgstr[1] "Wij onthouden uw keuze %s dagen in een noodzakelijke cookie in uw browser en vragen het daarna opnieuw."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:391
+msgid "If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise."
+msgstr "Als uw browser een Global Privacy Control-signaal verstuurt, behandelen wij dat als een weigering van marketingcookies, tenzij u anders kiest."
+
+# machine translation
+#. translators: %s: number of days.
+#: includes/features/class-seoprocookieconsent-privacy.php:397
+#, php-format
+msgid "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests."
+msgid_plural "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests."
+msgstr[0] "Om aan te tonen wat is overeengekomen, bewaren wij ook een registratie van elke keuze op deze website: de keuze, wanneer die is gemaakt, de getoonde tekst en een willekeurig ID dat bij uw keuze wordt bewaard en in Cookie-instellingen wordt getoond, maar niet uw IP-adres of browsergegevens. Wij bewaren deze registraties %s dag, op grond van onze wettelijke verplichting om toestemming aan te tonen en onze gerechtvaardigde belangen."
+msgstr[1] "Om aan te tonen wat is overeengekomen, bewaren wij ook een registratie van elke keuze op deze website: de keuze, wanneer die is gemaakt, de getoonde tekst en een willekeurig ID dat bij uw keuze wordt bewaard en in Cookie-instellingen wordt getoond, maar niet uw IP-adres of browsergegevens. Wij bewaren deze registraties %s dagen, op grond van onze wettelijke verplichting om toestemming aan te tonen en onze gerechtvaardigde belangen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:40
+msgid "Adds the Terms and conditions block and [spcc_terms] shortcode: general terms from your answers, covering acceptance and changes, use of the site, accounts, content, intellectual property, links, orders, information, AI, liability, ending access, privacy, complaints, your rights and, with a country, governing law. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
+msgstr "Voegt het blok Algemene voorwaarden en de shortcode [spcc_terms] toe: algemene voorwaarden op basis van uw antwoorden, met aanvaarding en wijzigingen, gebruik van de site, accounts, inhoud, intellectueel eigendom, links, bestellingen, informatie, AI, aansprakelijkheid, beëindiging van toegang, privacy, klachten, uw rechten en, bij opgave van een land, toepasselijk recht. Beantwoord de vragen en controleer de tekst vóór publicatie. Dit is een startpunt, geen juridisch advies, en dekt mogelijk uw bedrijf of de lokale wetgeving niet. Bestaande Complianz-pagina's worden niet gewijzigd: vervang hun blok of shortcode na controle zelf."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:46
+msgid "Where the business is based, named as it should be for its law and courts, such as \"England and Wales\" or \"Jersey\". Adds a Governing law section, which also keeps consumers' protection where they live; leave empty to leave that section out."
+msgstr "Waar het bedrijf is gevestigd, vermeld zoals dat voor zijn recht en rechtbanken hoort, zoals \"Engeland en Wales\" of \"Jersey\". Voegt een sectie Toepasselijk recht toe, die ook de bescherming van consumenten behoudt waar zij wonen; laat leeg om die sectie weg te laten."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:47
+msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed. When this is answered, general wording on orders and payment follows it."
+msgstr "Beschrijf uw goederen, diensten, digitale inhoud of informatie, inclusief betaal- en leveringsvoorwaarden waar nodig. Als dit is ingevuld, volgt daarna algemene tekst over bestellingen en betaling."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:49
+msgid "Section on AI-assisted services"
+msgstr "Sectie over met AI ondersteunde diensten"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:49
+msgid "Says that the site and your services are developed with the help of AI from several providers, which may also help answer questions and support requests, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI."
+msgstr "Vermeldt dat de site en uw diensten worden ontwikkeld met hulp van AI van verschillende aanbieders, die ook kan helpen vragen en ondersteuningsverzoeken te beantwoorden, en dat bezoekers dit aanvaarden en wat u verstrekt zelf of met hun eigen AI op juistheid moeten controleren voordat zij erop vertrouwen. Schakel dit uit als u geen AI gebruikt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:127
+msgid "If you have any questions about these terms, please contact us:"
+msgstr "Als u vragen hebt over deze voorwaarden, neem dan contact met ons op:"
+
+# machine translation
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-terms.php:142
+#, php-format
+msgid "This website is operated by %s (\"we\", \"us\" or \"our\"). These terms apply to anyone using it (\"you\") and to the offerings described below. Please read them before using the site or placing an order."
+msgstr "Deze website wordt beheerd door %s (\"wij\", \"ons\" of \"onze\"). Deze voorwaarden gelden voor iedereen die de website gebruikt (\"u\") en voor het hieronder beschreven aanbod. Lees ze voordat u de site gebruikt of een bestelling plaatst."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:153
+msgid "Accepting these terms"
+msgstr "Aanvaarding van deze voorwaarden"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:154
+msgid "By using this website, you agree to these terms. If you do not agree, please do not use it. Where we ask you to accept these or other terms, such as when you create an account or place an order, those apply too."
+msgstr "Door deze website te gebruiken, gaat u akkoord met deze voorwaarden. Als u niet akkoord gaat, gebruik de website dan niet. Waar wij u vragen deze of andere voorwaarden te aanvaarden, zoals wanneer u een account aanmaakt of een bestelling plaatst, zijn die ook van toepassing."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:155
+msgid "These terms work together with our privacy policy and any other agreement we make with you, such as an order confirmation or a contract for services. If another agreement with you conflicts with these terms, that agreement applies."
+msgstr "Deze voorwaarden werken samen met ons privacybeleid en elke andere overeenkomst die wij met u sluiten, zoals een orderbevestiging of een overeenkomst voor diensten. Als een andere overeenkomst met u in strijd is met deze voorwaarden, gaat die overeenkomst voor."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:156
+msgid "Changes to these terms"
+msgstr "Wijzigingen in deze voorwaarden"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:157
+msgid "We may update these terms from time to time, for example when our services or the law change. The current version is always on this page, and changes apply from when they are posted, so please check it from time to time. If you pay us for an ongoing service, we will give you reasonable notice of significant changes to it or its price, and you can end it before they apply."
+msgstr "Wij kunnen deze voorwaarden van tijd tot tijd bijwerken, bijvoorbeeld wanneer onze diensten of de wetgeving veranderen. De actuele versie staat altijd op deze pagina en wijzigingen gelden vanaf het moment dat ze worden geplaatst; controleer de pagina daarom af en toe. Als u ons betaalt voor een doorlopende dienst, geven wij u redelijke kennisgeving van belangrijke wijzigingen daarin of in de prijs, en kunt u de dienst beëindigen voordat ze ingaan."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:158
+msgid "Who can use this website"
+msgstr "Wie deze website mag gebruiken"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:159
+msgid "This website is not aimed at children. If you are under the age at which you can make a contract where you live, please ask a parent or guardian to use it with you and to agree to these terms and place any order for you."
+msgstr "Deze website richt zich niet op kinderen. Als u jonger bent dan de leeftijd waarop u waar u woont een overeenkomst kunt sluiten, vraag dan een ouder of voogd om de website samen met u te gebruiken, om met deze voorwaarden akkoord te gaan en om een bestelling voor u te plaatsen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:170
+msgid "Please use this website only for its intended purposes, lawfully, in line with these terms and generally accepted online practice, and with respect for the rights of others. You must not:"
+msgstr "Gebruik deze website alleen voor de beoogde doeleinden, op wettige wijze, in overeenstemming met deze voorwaarden en algemeen aanvaarde online gebruiken, en met respect voor de rechten van anderen. U mag niet:"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:172
+msgid "post or send anything unlawful, harmful, threatening, abusive, harassing, defamatory, obscene or hateful, or that invades someone's privacy or breaks a confidence;"
+msgstr "iets plaatsen of versturen dat onwettig, schadelijk, bedreigend, beledigend, intimiderend, lasterlijk, obsceen of haatdragend is, of dat de privacy van iemand schendt of een vertrouwelijkheid schaadt;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:173
+msgid "infringe anyone's intellectual property or other rights, or post anything without the permission it needs;"
+msgstr "inbreuk maken op het intellectuele eigendom of andere rechten van anderen, of iets plaatsen zonder de daarvoor benodigde toestemming;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:174
+msgid "upload or spread viruses, malware or other harmful code;"
+msgstr "virussen, malware of andere schadelijke code uploaden of verspreiden;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:175
+msgid "try to gain unauthorised access to the website, its servers or other people's accounts, or get around any restriction on access;"
+msgstr "proberen onbevoegd toegang te krijgen tot de website, de servers of de accounts van anderen, of beperkingen op toegang omzeilen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:176
+msgid "interfere with or disrupt the website, its security or other people's use of it, for example by overloading it;"
+msgstr "de website, de beveiliging ervan of het gebruik door anderen verstoren of hinderen, bijvoorbeeld door overbelasting;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:177
+msgid "collect information from the website by automated means, such as scraping or harvesting email addresses, without our written permission, or use information from it for unsolicited marketing;"
+msgstr "zonder onze schriftelijke toestemming met geautomatiseerde middelen gegevens van de website verzamelen, zoals scraping of het oogsten van e-mailadressen, of informatie daarvan gebruiken voor ongevraagde marketing;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:178
+msgid "pretend to be someone else, or misrepresent your connection with anyone;"
+msgstr "zich voordoen als iemand anders, of uw verband met iemand onjuist voorstellen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:179
+msgid "send spam, chain letters or unsolicited advertising through the website;"
+msgstr "via de website spam, kettingbrieven of ongevraagde reclame versturen;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:180
+msgid "show the website in a frame on another website, or present it as part of another website;"
+msgstr "de website in een frame op een andere website tonen, of presenteren als onderdeel van een andere website;"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:181
+msgid "use the website where its content or our offerings are illegal, or in breach of export or sanctions laws."
+msgstr "de website gebruiken waar de inhoud ervan of ons aanbod onwettig is, of in strijd met export- of sanctiewetgeving."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:183
+msgid "To protect this website and its content, we may use measures that detect and block automated access. We may also mark our content and data in ways unique to us (data fingerprinting) and include decoy details that appear nowhere else (canary tokens), so that we can recognise copies and trace who made them. We may keep what these measures record and use it as evidence, including in legal action against unauthorised copying, and to recover our costs where the law allows."
+msgstr "Om deze website en de inhoud ervan te beschermen, kunnen wij maatregelen gebruiken die geautomatiseerde toegang detecteren en blokkeren. Wij kunnen onze inhoud en gegevens ook markeren op manieren die uniek voor ons zijn (data fingerprinting) en lokgegevens opnemen die nergens anders voorkomen (canary tokens), zodat wij kopieën kunnen herkennen en kunnen nagaan wie ze heeft gemaakt. Wij kunnen bewaren wat deze maatregelen registreren en het als bewijs gebruiken, ook bij juridische stappen tegen onbevoegd kopiëren, en om onze kosten te verhalen waar de wet dat toestaat."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:184
+msgid "Accounts and passwords"
+msgstr "Accounts en wachtwoorden"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "If you create an account, please give accurate information and keep it up to date. Keep your password secure and do not share your account; you are responsible for what happens under it, unless that is our fault. Tell us straight away if you think someone else has used it."
+msgstr "Als u een account aanmaakt, geef dan juiste gegevens op en houd ze actueel. Houd uw wachtwoord veilig en deel uw account niet; u bent verantwoordelijk voor wat er onder uw account gebeurt, tenzij dat onze schuld is. Laat het ons direct weten als u denkt dat iemand anders uw account heeft gebruikt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:186
+msgid "If we close your account because you broke these terms, please do not open another one without our permission."
+msgstr "Als wij uw account sluiten omdat u deze voorwaarden hebt geschonden, open dan geen nieuwe zonder onze toestemming."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:196
+msgid "Content you send or post"
+msgstr "Inhoud die u verstuurt of plaatst"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:197
+msgid "Where this website lets you post comments, reviews or other content, you keep ownership of it, and you give us a non-exclusive, royalty-free permission to publish, display, store and adapt it for format or length in connection with this website and our services. You are responsible for what you post and confirm that you have the right to post it."
+msgstr "Waar u op deze website reacties, beoordelingen of andere inhoud kunt plaatsen, blijft u daarvan eigenaar en geeft u ons een niet-exclusieve, royaltyvrije toestemming om die te publiceren, weer te geven, op te slaan en qua opmaak of lengte aan te passen in verband met deze website en onze diensten. U bent verantwoordelijk voor wat u plaatst en bevestigt dat u het recht hebt om het te plaatsen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:198
+msgid "What you post may be public. We will consider reasonable requests to remove it, but copies may remain with search engines or archives that we do not control."
+msgstr "Wat u plaatst kan openbaar zijn. Wij overwegen redelijke verzoeken om het te verwijderen, maar kopieën kunnen blijven bestaan bij zoekmachines of archieven waarover wij geen controle hebben."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:199
+msgid "We cannot check everything posted, but we may review, edit, refuse or remove any content at our discretion, for example if it breaks these terms. Where the law requires it, such as under a court order, we will cooperate with the authorities, including by disclosing who posted unlawful content."
+msgstr "Wij kunnen niet alles controleren wat wordt geplaatst, maar wij kunnen naar eigen inzicht inhoud beoordelen, bewerken, weigeren of verwijderen, bijvoorbeeld als die in strijd is met deze voorwaarden. Waar de wet het vereist, zoals bij een gerechtelijk bevel, werken wij mee met de autoriteiten, onder meer door bekend te maken wie onwettige inhoud heeft geplaatst."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:200
+msgid "If you send us ideas, suggestions or feedback, we may use them freely without paying you. Please do not send us anything you consider confidential or your own invention unless we have agreed in writing how it will be handled. Personal information you send is handled as our privacy policy explains."
+msgstr "Als u ons ideeën, suggesties of feedback stuurt, mogen wij die vrij gebruiken zonder u te betalen. Stuur ons niets wat u als vertrouwelijk of als uw eigen uitvinding beschouwt, tenzij wij schriftelijk hebben afgesproken hoe het wordt behandeld. Persoonsgegevens die u stuurt, worden behandeld zoals ons privacybeleid uitlegt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:210
+msgid "Intellectual property"
+msgstr "Intellectueel eigendom"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:211
+msgid "This website and its content, such as text, images, graphics, logos and software, and its design and arrangement, belong to us or to those who license them to us, and are protected by copyright and other laws. All rights are reserved except as these terms allow."
+msgstr "Deze website en de inhoud ervan, zoals teksten, afbeeldingen, grafische elementen, logo's en software, en het ontwerp en de opmaak ervan, zijn eigendom van ons of van degenen die ze aan ons in licentie geven, en worden beschermd door auteursrecht en andere wetgeving. Alle rechten zijn voorbehouden, behalve voor zover deze voorwaarden ze toestaan."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:212
+msgid "You may view, download and print pages for your own personal, non-commercial use, and share links to them. Unless we agree in writing or the law allows it, such as quoting a short extract with acknowledgement, you must not copy, republish, sell, adapt or otherwise use our content commercially, or remove copyright or other notices."
+msgstr "U mag pagina's bekijken, downloaden en printen voor uw eigen persoonlijke, niet-commerciële gebruik, en links ernaar delen. Tenzij wij schriftelijk anders overeenkomen of de wet het toestaat, zoals het citeren van een kort fragment met bronvermelding, mag u onze inhoud niet kopiëren, opnieuw publiceren, verkopen, aanpassen of anderszins commercieel gebruiken, noch auteursrechtelijke of andere vermeldingen verwijderen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:213
+msgid "Names, logos and trade marks on this website belong to us or their owners. Please do not use them without permission."
+msgstr "Namen, logo's en handelsmerken op deze website zijn eigendom van ons of van hun eigenaren. Gebruik ze niet zonder toestemming."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:214
+msgid "Where we provide software, files or other downloads, they are licensed, not sold, and any licence that comes with them applies. Unless that licence or the law allows it, do not share, resell, reverse engineer or decompile them."
+msgstr "Waar wij software, bestanden of andere downloads aanbieden, worden die in licentie gegeven, niet verkocht, en is elke licentie die erbij hoort van toepassing. Tenzij die licentie of de wet het toestaat, mag u ze niet delen, doorverkopen, reverse-engineeren of decompileren."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:215
+msgid "If we send you a newsletter, you are welcome to forward it to people who may be interested."
+msgstr "Als wij u een nieuwsbrief sturen, mag u die gerust doorsturen naar mensen die er interesse in kunnen hebben."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:216
+msgid "Links and other websites"
+msgstr "Links en andere websites"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:217
+msgid "Links to other websites, and content from them, are provided for convenience. We do not control or endorse them and are not responsible for their content, products or privacy practices; their own terms and policies apply, and you use them at your own risk. Where we list or link to other businesses, any arrangement you make with them is between you and them."
+msgstr "Links naar andere websites, en inhoud daarvan, worden voor het gemak aangeboden. Wij hebben er geen controle over en onderschrijven ze niet, en zijn niet verantwoordelijk voor hun inhoud, producten of privacypraktijken; hun eigen voorwaarden en beleid zijn van toepassing en u gebruikt ze op eigen risico. Waar wij andere bedrijven vermelden of ernaar linken, is elke afspraak die u met hen maakt een zaak tussen u en hen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:218
+msgid "Some links may be affiliate or sponsored links, which means we may earn a commission or payment if you buy. We say so where the law requires it."
+msgstr "Sommige links kunnen affiliate- of gesponsorde links zijn, wat betekent dat wij een commissie of betaling kunnen ontvangen als u iets koopt. Wij vermelden dat waar de wet het vereist."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:219
+msgid "If you pay on a payment provider's page, its own terms and privacy policy also apply."
+msgstr "Als u betaalt op de pagina van een betaaldienstverlener, zijn ook diens eigen voorwaarden en privacybeleid van toepassing."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:220
+msgid "You may link to this website fairly and lawfully, as long as you do not suggest a connection with us, or approval or endorsement from us, that does not exist, and do not link from a website with unlawful or offensive content. We may ask you to remove a link."
+msgstr "U mag op een eerlijke en wettige manier naar deze website linken, zolang u geen verband met ons, of goedkeuring of ondersteuning door ons, suggereert dat niet bestaat, en niet linkt vanaf een website met onwettige of aanstootgevende inhoud. Wij kunnen u vragen een link te verwijderen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:249
+msgid "Orders and payment"
+msgstr "Bestellingen en betaling"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:250
+msgid "If you buy from us, prices are as shown on the website or in our quote, with any taxes and delivery charges shown before you order. Quotes are valid for the period they state."
+msgstr "Als u bij ons koopt, gelden de prijzen zoals getoond op de website of in onze offerte, met eventuele belastingen en verzendkosten die vóór uw bestelling worden getoond. Offertes zijn geldig voor de periode die zij vermelden."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:251
+msgid "Your order is an offer to buy. A contract is made when we confirm that we have accepted it, for example by email or by providing what you ordered. We may decline an order, for example if something is unavailable, and will refund anything you have paid for it."
+msgstr "Uw bestelling is een aanbod om te kopen. Een overeenkomst komt tot stand wanneer wij bevestigen dat wij die hebben aanvaard, bijvoorbeeld per e-mail of door te leveren wat u hebt besteld. Wij kunnen een bestelling weigeren, bijvoorbeeld als iets niet beschikbaar is, en betalen alles terug wat u ervoor hebt betaald."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:252
+msgid "If we find a mistake in a price or description before we accept your order, we will tell you, and you can go ahead at the correct price or cancel."
+msgstr "Als wij een fout in een prijs of beschrijving ontdekken voordat wij uw bestelling aanvaarden, laten wij het u weten en kunt u doorgaan tegen de juiste prijs of annuleren."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:253
+msgid "Delivery and completion dates are estimates unless we agree a fixed date. We will tell you if there is a delay."
+msgstr "Leverings- en voltooiingsdata zijn schattingen, tenzij wij een vaste datum overeenkomen. Wij laten het u weten als er vertraging is."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:254
+msgid "If you subscribe or pay regularly, you can cancel as explained when you sign up, and keep access until the end of the period you have paid for."
+msgstr "Als u zich abonneert of regelmatig betaalt, kunt u opzeggen zoals bij de aanmelding is uitgelegd en houdt u toegang tot het einde van de periode die u hebt betaald."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:264
+msgid "Information on this website"
+msgstr "Informatie op deze website"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:265
+msgid "We take reasonable care to keep this website accurate and up to date, but its content is for general information only. It may contain errors or be out of date, and we may change it at any time without notice."
+msgstr "Wij besteden redelijke zorg aan het juist en actueel houden van deze website, maar de inhoud is uitsluitend bedoeld als algemene informatie. Ze kan fouten bevatten of verouderd zijn, en wij kunnen ze te allen tijde zonder kennisgeving wijzigen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:266
+msgid "Nothing on this website is legal, financial, medical or other professional advice. Please get advice from a suitably qualified professional before acting on it. Examples and case studies are illustrations; we cannot promise any particular result."
+msgstr "Niets op deze website is juridisch, financieel, medisch of ander professioneel advies. Win advies in bij een voldoende gekwalificeerde professional voordat u erop handelt. Voorbeelden en casestudy's zijn illustraties; wij kunnen geen enkel bepaald resultaat beloven."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:267
+msgid "Availability and security"
+msgstr "Beschikbaarheid en beveiliging"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:268
+msgid "We aim to keep this website available, but it may sometimes be unavailable because of maintenance, technical problems or other things outside our control, and we will warn you in advance where we reasonably can. We may change, suspend or withdraw the website or any part of it. If this affects something you have paid for, we will tell you and refund what you paid for anything you do not receive."
+msgstr "Wij streven ernaar deze website beschikbaar te houden, maar soms kan ze niet beschikbaar zijn vanwege onderhoud, technische problemen of andere zaken buiten onze controle, en wij waarschuwen u vooraf waar wij dat redelijkerwijs kunnen. Wij kunnen de website of een deel ervan wijzigen, opschorten of intrekken. Als dit iets treft waarvoor u hebt betaald, laten wij het u weten en betalen wij terug wat u hebt betaald voor wat u niet ontvangt."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:269
+msgid "We take reasonable steps to keep this website secure, but cannot promise that it, or anything you download from it, is free from viruses or other harmful code. Please use your own virus protection and backups, and make sure your device and connection are suitable; we are not responsible for problems caused by them."
+msgstr "Wij nemen redelijke maatregelen om deze website veilig te houden, maar kunnen niet beloven dat ze, of iets wat u ervan downloadt, vrij is van virussen of andere schadelijke code. Gebruik uw eigen virusbescherming en back-ups, en zorg dat uw apparaat en verbinding geschikt zijn; wij zijn niet verantwoordelijk voor problemen die daardoor ontstaan."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:282
+msgid "AI-assisted services"
+msgstr "Met AI ondersteunde diensten"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:283
+msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support."
+msgstr "Wij gebruiken diensten voor kunstmatige intelligentie (AI) van verschillende aanbieders om deze website en onze diensten te helpen ontwikkelen, en kunnen ze ook gebruiken om vragen en ondersteuningsverzoeken te helpen beantwoorden. Door deze website en onze diensten te gebruiken, aanvaardt u dat ze met AI-ondersteuning worden geleverd."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:284
+msgid "AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions."
+msgstr "AI kan fouten maken. Controleer informatie, antwoorden en andere inhoud die wij verstrekken op juistheid, zelf of met uw eigen AI-hulpmiddelen, voordat u erop vertrouwt, vooral bij belangrijke beslissingen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:295
+msgid "Our responsibility for loss or damage"
+msgstr "Onze verantwoordelijkheid voor verlies of schade"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:296
+msgid "Nothing in these terms limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for anything else that the law does not allow us to limit or exclude."
+msgstr "Niets in deze voorwaarden beperkt of sluit onze aansprakelijkheid uit voor overlijden of letsel veroorzaakt door onze nalatigheid, voor fraude of bedrieglijke voorstelling van zaken, of voor al het andere waarvoor de wet ons niet toestaat de aansprakelijkheid te beperken of uit te sluiten."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:297
+msgid "If you are a consumer, we are responsible for loss or damage you suffer that is a foreseeable result of our breaking these terms or failing to use reasonable care and skill, but not for loss or damage that is not foreseeable. We provide this website for domestic and private use, so we are not responsible to consumers for business losses, such as loss of profit, revenue, business or opportunity."
+msgstr "Als u consument bent, zijn wij verantwoordelijk voor verlies of schade die u lijdt als voorzienbaar gevolg van het feit dat wij deze voorwaarden schenden of niet de redelijke zorg en vaardigheid betrachten, maar niet voor verlies of schade die niet voorzienbaar is. Wij bieden deze website aan voor huishoudelijk en privégebruik, dus wij zijn tegenover consumenten niet verantwoordelijk voor zakelijke verliezen, zoals gederfde winst, omzet, zaken of kansen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:298
+msgid "If you use this website or buy from us for business purposes, then, as far as the law allows: the website and its content are provided \"as is\" and \"as available\", without any promise not set out in these terms; we are not responsible for indirect or consequential loss, or for loss of profit, revenue, data, business or opportunity; and our total liability to you is limited to the price you paid for the product or service concerned."
+msgstr "Als u deze website gebruikt of bij ons koopt voor zakelijke doeleinden, dan geldt, voor zover de wet het toestaat: de website en de inhoud ervan worden geleverd \"as is\" en \"as available\", zonder enige belofte die niet in deze voorwaarden is vermeld; wij zijn niet verantwoordelijk voor indirect verlies of gevolgschade, of voor gederfde winst, omzet, gegevens, zaken of kansen; en onze totale aansprakelijkheid jegens u is beperkt tot de prijs die u hebt betaald voor het betreffende product of de betreffende dienst."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:299
+msgid "If you use this website in breach of these terms or the law, you are responsible for any reasonable, foreseeable loss or claim that results, as far as the law allows."
+msgstr "Als u deze website gebruikt in strijd met deze voorwaarden of de wet, bent u, voor zover de wet het toestaat, verantwoordelijk voor elk redelijk, voorzienbaar verlies of elke vordering die daaruit voortvloeit."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:300
+msgid "Neither of us is responsible for delays or failures caused by events outside our reasonable control, for as long as they last, except for payments due. If such an event affects something you have ordered, we will tell you and do what we reasonably can to limit the effect."
+msgstr "Geen van beide partijen is verantwoordelijk voor vertragingen of tekortkomingen veroorzaakt door gebeurtenissen buiten onze redelijke controle, zolang ze duren, behalve voor verschuldigde betalingen. Als zo'n gebeurtenis iets treft wat u hebt besteld, laten wij het u weten en doen wij wat redelijkerwijs mogelijk is om het effect te beperken."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:301
+msgid "Suspending or ending access"
+msgstr "Toegang opschorten of beëindigen"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:302
+msgid "If you break these terms, we may take the action we think appropriate, such as removing content, suspending or closing your account, blocking your access, or taking legal action. We may also restrict or end access to the website or any part of it for other good reasons, such as security. If this affects a service you have paid for, we will give you reasonable notice where we can."
+msgstr "Als u deze voorwaarden schendt, kunnen wij de maatregelen nemen die wij passend vinden, zoals inhoud verwijderen, uw account opschorten of sluiten, uw toegang blokkeren of juridische stappen ondernemen. Wij kunnen de toegang tot de website of een deel ervan ook beperken of beëindigen om andere goede redenen, zoals beveiliging. Als dit een dienst treft waarvoor u hebt betaald, geven wij u redelijke kennisgeving waar wij dat kunnen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:312
+msgid "Privacy and communications"
+msgstr "Privacy en communicatie"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:313
+msgid "Our privacy policy explains how we handle personal information and use cookies."
+msgstr "Ons privacybeleid legt uit hoe wij met persoonsgegevens omgaan en cookies gebruiken."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:314
+msgid "When you use this website or contact us electronically, you agree that we may reply and send you notices electronically, such as by email or on the website, and that these meet any legal requirement for them to be in writing, except where the law requires another form."
+msgstr "Wanneer u deze website gebruikt of elektronisch contact met ons opneemt, stemt u ermee in dat wij u elektronisch kunnen antwoorden en kennisgevingen kunnen sturen, zoals per e-mail of op de website, en dat dit voldoet aan elke wettelijke eis dat ze schriftelijk moeten zijn, behalve waar de wet een andere vorm vereist."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:315
+msgid "Accessibility and complaints"
+msgstr "Toegankelijkheid en klachten"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:316
+msgid "We want everyone to be able to use this website. If something stops you using part of it, such as an accessibility problem, please tell us what happened, and we will try to fix it or provide the information another way."
+msgstr "Wij willen dat iedereen deze website kan gebruiken. Als iets u belemmert een deel ervan te gebruiken, zoals een toegankelijkheidsprobleem, vertel ons dan wat er is gebeurd; wij proberen het op te lossen of de informatie op een andere manier te verstrekken."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:317
+msgid "If you have a complaint or concern, please contact us first so we can try to put things right. Tell us what happened and what you would like us to do, and we will reply as soon as we can."
+msgstr "Als u een klacht of zorg hebt, neem dan eerst contact met ons op zodat wij kunnen proberen het recht te zetten. Vertel ons wat er is gebeurd en wat u wilt dat wij doen, dan antwoorden wij zo snel wij kunnen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:318
+msgid "If we cannot resolve it between us and you choose to try mediation, we will endeavour to take part in good faith where the concern is legitimate. Mediation is voluntary and does not affect your legal rights, including your right to go to a regulator or the courts."
+msgstr "Als wij het onderling niet kunnen oplossen en u ervoor kiest mediation te proberen, doen wij ons best om te goeder trouw deel te nemen wanneer de zorg gegrond is. Mediation is vrijwillig en laat uw wettelijke rechten onverlet, waaronder uw recht om naar een toezichthouder of de rechtbank te stappen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:331
+msgid "These include rights about faulty goods, services and digital content, and any right to cancel an online purchase. Some places do not allow certain promises to be excluded or liability to be limited, so some of these terms may not apply to you."
+msgstr "Hieronder vallen rechten over gebrekkige goederen, diensten en digitale inhoud, en elk recht om een online aankoop te herroepen. Sommige rechtsgebieden staan niet toe dat bepaalde beloften worden uitgesloten of aansprakelijkheid wordt beperkt, dus sommige van deze voorwaarden zijn mogelijk niet op u van toepassing."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:332
+msgid "General"
+msgstr "Algemeen"
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:333
+msgid "These terms, with the policies and any other agreement they refer to, are the whole agreement between you and us about their subject, and replace any earlier understanding about it."
+msgstr "Deze voorwaarden vormen, samen met het beleid en elke andere overeenkomst waarnaar zij verwijzen, de volledige overeenkomst tussen u en ons over hun onderwerp, en vervangen elke eerdere afspraak daarover."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:334
+msgid "If a court or authority decides that part of these terms is invalid or unenforceable, that part is changed or removed only as far as needed, and the rest stays in force."
+msgstr "Als een rechtbank of autoriteit beslist dat een deel van deze voorwaarden ongeldig of niet afdwingbaar is, wordt dat deel alleen gewijzigd of verwijderd voor zover nodig, en blijft de rest van kracht."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:335
+msgid "If we do not enforce a term straight away, we can still enforce it later."
+msgstr "Als wij een bepaling niet meteen afdwingen, kunnen wij dat later nog steeds doen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:336
+msgid "You may not transfer your rights or obligations under these terms to anyone else without our written agreement. We may transfer ours to another organisation, such as a buyer of our business; we will tell you if this happens and make sure it does not reduce your rights."
+msgstr "U mag uw rechten of verplichtingen onder deze voorwaarden niet zonder onze schriftelijke instemming aan iemand anders overdragen. Wij mogen de onze overdragen aan een andere organisatie, zoals een koper van ons bedrijf; wij laten het u weten als dit gebeurt en zorgen dat het uw rechten niet vermindert."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:337
+msgid "Only you and we have rights under these terms, unless they say otherwise."
+msgstr "Alleen u en wij hebben rechten onder deze voorwaarden, tenzij ze anders bepalen."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:343
+msgid "Governing law"
+msgstr "Toepasselijk recht"
+
+# machine translation
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:346
+#, php-format
+msgid "These terms are governed by the law of the place where the business is based (%s), and its courts can hear any dispute about them."
+msgstr "Op deze voorwaarden is het recht van toepassing van de plaats waar het bedrijf is gevestigd (%s), en de rechtbanken daar kunnen kennisnemen van elk geschil erover."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-terms.php:349
+msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
+msgstr "Als u consument bent, behoudt u ook de bescherming van de dwingende wetgeving van het land waar u woont, en kunt u een geschil voorleggen aan uw lokale rechtbanken waar die wetgeving dat toestaat."
