@@ -222,15 +222,20 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
      * @return string
      */
     private static function sharing() {
+        $recipients = array(
+            __('with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;', 'seoprocookieconsent'),
+            __('with professional advisers, such as accountants, auditors, lawyers, banks and insurers;', 'seoprocookieconsent'),
+            __('with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;', 'seoprocookieconsent'),
+            __('with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;', 'seoprocookieconsent'),
+        );
+        $groups = SEOProCookieConsent_Services::seen_by_category();
+        if (!empty($groups['statistics']) || !empty($groups['marketing'])) {
+            $recipients[] = __('with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;', 'seoprocookieconsent');
+        }
+        $recipients[] = __('with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice.', 'seoprocookieconsent');
         $html = self::part(__('Who we share it with', 'seoprocookieconsent'), array(
             __('We share personal information only when needed:', 'seoprocookieconsent'),
-            array(
-                __('with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;', 'seoprocookieconsent'),
-                __('with professional advisers, such as accountants, auditors, lawyers, banks and insurers;', 'seoprocookieconsent'),
-                __('with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;', 'seoprocookieconsent'),
-                __('with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;', 'seoprocookieconsent'),
-                __('with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice.', 'seoprocookieconsent'),
-            ),
+            $recipients,
             __('If you pay on a payment provider\'s page, the provider handles your payment details under its own terms and privacy notice.', 'seoprocookieconsent'),
         ));
         $providers = (string) SEOProCookieConsent_Settings::get('privacy_providers');

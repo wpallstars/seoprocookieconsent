@@ -426,6 +426,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- New: The Privacy policy's "Who we share it with" list adds analytics and advertising providers (#162). When the site was seen using a Statistics or Marketing service, it says data goes to them only if the visitor allows those cookies, and that some, such as social networks and advertising platforms, also use it for their own purposes. Omitted otherwise; Your own wording is unchanged.
 - Fixed: Meta Pixel for WordPress (Meta's own plugin, 5.2 and later) is held properly with Cookie consent on (#158). It set the `_fbp` and `_fbc` marketing cookies from the server on a visitor's first page, before any choice; its server events (Conversions API) were not held; and the pixel never started, even after consent, because its new inline start-up code ran before the held loader. Now the browser sets Meta's own state cookie (`wc_facebook_signals_state`) to `active` only while Meta Pixel is allowed and removes it otherwise; for a visitor without `active` the server sends no server events and takes back the `_fbp` and `_fbc` cookies Meta set before this plugin loaded; and the pixel's inline start-up and tracking code is held with its loader, so it runs after it once allowed. Pages look the same to every visitor, so page caches keep working. Withdrawing marketing deletes `_fbc` as well as `_fbp`. Sites without Meta's plugins are unchanged.
 
 ### 1.0.16
