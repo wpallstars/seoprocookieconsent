@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-11-06T15:38:06Z",
+  "generated_at": "2026-11-07T15:47:49Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -11,21 +11,21 @@
     "slug": "wpallstars/seoprocookieconsent"
   },
   "summary": {
-    "source_files": 149,
-    "code": 28707,
-    "comments": 7875,
-    "blanks": 2808,
+    "source_files": 152,
+    "code": 29316,
+    "comments": 8223,
+    "blanks": 2884,
     "languages": 10,
     "dependencies": 14
   },
   "languages": [
     {
       "name": "PHP",
-      "files": 50,
-      "code": 11265,
-      "comments": 5828,
-      "blanks": 1126,
-      "percentage": 39.24,
+      "files": 53,
+      "code": 11755,
+      "comments": 6167,
+      "blanks": 1185,
+      "percentage": 40.1,
       "color": "#4F5D95"
     },
     {
@@ -34,25 +34,25 @@
       "code": 7186,
       "comments": 1419,
       "blanks": 550,
-      "percentage": 25.03,
+      "percentage": 24.51,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 2902,
+      "code": 2997,
       "comments": 0,
-      "blanks": 550,
-      "percentage": 10.11,
+      "blanks": 566,
+      "percentage": 10.22,
       "color": "#083fa1"
     },
     {
       "name": "JavaScript",
       "files": 7,
-      "code": 2086,
-      "comments": 272,
-      "blanks": 156,
-      "percentage": 7.27,
+      "code": 2110,
+      "comments": 281,
+      "blanks": 157,
+      "percentage": 7.2,
       "color": "#f1e05a"
     },
     {
@@ -61,7 +61,7 @@
       "code": 1979,
       "comments": 48,
       "blanks": 13,
-      "percentage": 6.89,
+      "percentage": 6.75,
       "color": "#6e7781"
     },
     {
@@ -70,7 +70,7 @@
       "code": 1794,
       "comments": 171,
       "blanks": 331,
-      "percentage": 6.25,
+      "percentage": 6.12,
       "color": "#563d7c"
     },
     {
@@ -79,7 +79,7 @@
       "code": 733,
       "comments": 0,
       "blanks": 0,
-      "percentage": 2.55,
+      "percentage": 2.5,
       "color": "#292929"
     },
     {
@@ -88,7 +88,7 @@
       "code": 651,
       "comments": 115,
       "blanks": 72,
-      "percentage": 2.27,
+      "percentage": 2.22,
       "color": "#cb171e"
     },
     {
@@ -97,7 +97,7 @@
       "code": 103,
       "comments": 19,
       "blanks": 8,
-      "percentage": 0.36,
+      "percentage": 0.35,
       "color": "#3178c6"
     },
     {
