@@ -112,9 +112,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 == Changelog ==
 
 = Unreleased =
-* Fixed: Terms and Privacy translated in all languages.
+* Fixed: Terms and Privacy translated.
 
 = 1.0.17 =
-* Fixed: Meta Pixel for WordPress waits for consent. The Privacy policy names analytics and advertising providers.
+* Fixed: Meta Pixel for WordPress waits for consent. Privacy names analytics providers.
 
 Every change: changelog.txt.
