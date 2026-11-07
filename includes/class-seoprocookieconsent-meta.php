@@ -1,11 +1,14 @@
 <?php
 /**
- * Meta's own plugins (Meta Pixel for WordPress, Facebook for WooCommerce)
- * hold their pixel, their server events (Conversions API) and their
- * _fbp/_fbc cookies while their state cookie says "held". While Cookie
- * consent is on, the browser keeps that cookie in step with Meta Pixel
- * (spcc.syncMeta() in spcc-head.js), and the server treats a request
- * without it as held (docs/architecture.md → Signals to other code).
+ * Meta Pixel for WordPress (Meta's own plugin, 5.2 and later) sets the
+ * _fbp/_fbc cookies from the server and sends server events (Conversions
+ * API) unless its state cookie says "held". While Cookie consent is on, the
+ * browser sets that cookie to "active" only while Meta Pixel is allowed and
+ * removes it otherwise (spcc.syncMeta() in spcc-head.js); the server then
+ * sends no server events and sets no _fbp/_fbc cookies for a visitor
+ * without "active". Meta's "held" state is never used: it changes the page
+ * HTML, which page caches would then serve to visitors who allowed Meta
+ * Pixel (docs/architecture.md → Signals to other code).
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  * SPDX-FileCopyrightText: 2026 Marcus Quinn
@@ -22,19 +25,19 @@ if (!defined('ABSPATH')) {
 
 final class SEOProCookieConsent_Meta {
 
-    /** Meta's state cookie, shared by both plugins: "active" or "held". */
+    /** Meta's state cookie: "active" or "held". */
     const COOKIE = 'wc_facebook_signals_state';
 
     /** Cookies Meta's server code sets for the pixel. */
     const COOKIES = array('_fbp', '_fbc');
 
     /**
-     * Whether one of Meta's plugins with the state cookie is active.
+     * Whether Meta Pixel for WordPress with the state cookie is active.
      *
      * @return bool
      */
     public static function active() {
-        return class_exists('FacebookPixelPlugin\Core\Signals') || class_exists('WooCommerce\Facebook\Signals');
+        return class_exists('FacebookPixelPlugin\Core\Signals');
     }
 
     /**
@@ -44,21 +47,29 @@ final class SEOProCookieConsent_Meta {
         if (!self::active()) {
             return;
         }
-        add_filter('facebook_signals_held', array(__CLASS__, 'held'));
+        add_filter('before_conversions_api_event_sent', array(__CLASS__, 'server_events'), 99);
         add_filter('seoprocookieconsent_front_config', array(__CLASS__, 'config'));
         self::drop_cookies();
     }
 
     /**
-     * Meta Pixel for WordPress: held unless Meta's state cookie says
-     * "active", so a request without it (a first page, a crawler, a
-     * browser without JavaScript) sends no server events.
+     * Send server events only for a visitor who allowed Meta Pixel. A
+     * request without "active" (a first page, a crawler, a browser without
+     * JavaScript) sends none. Meta's background send carries the visitor's
+     * cookies, so it follows the same rule. Scheduled tasks and wp-admin
+     * screens (Meta's test events) have no visitor and send as before.
      *
-     * @param mixed $held Whether Meta's plugin holds signals already.
-     * @return bool
+     * @param mixed $events Server events about to be sent.
+     * @return mixed
      */
-    public static function held($held) {
-        return (bool) $held || !self::released();
+    public static function server_events($events) {
+        if (self::released() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI)) {
+            return $events;
+        }
+        if (is_admin() && !wp_doing_ajax() && 'admin-post.php' !== ($GLOBALS['pagenow'] ?? '')) {
+            return $events;
+        }
+        return array();
     }
 
     /**
@@ -74,7 +85,7 @@ final class SEOProCookieConsent_Meta {
     }
 
     /**
-     * Whether the visitor's browser released Meta's signals.
+     * Whether the visitor's browser says Meta Pixel is allowed.
      *
      * @return bool
      */
@@ -83,9 +94,9 @@ final class SEOProCookieConsent_Meta {
     }
 
     /**
-     * Take back the _fbp and _fbc cookies Meta's plugin set on a held
-     * request before this plugin loaded: it sets them when its own file
-     * loads, from PHP.
+     * Take back the _fbp and _fbc cookies Meta's plugin set for a visitor
+     * who has not allowed Meta Pixel: it sets them from PHP when its own
+     * file loads, before this plugin loads.
      */
     private static function drop_cookies() {
         if (self::released() || headers_sent()) {

@@ -189,20 +189,32 @@
     };
 
     /**
-     * Meta's own plugins (c.metaSignals is their state cookie's name) start
-     * the pixel, send server events and set _fbp/_fbc only while that
-     * cookie says "active": keep it in step with Meta Pixel. Run here,
-     * before any other script, and by spcc.js after each choice, before
-     * it releases what was held.
+     * Meta Pixel for WordPress (c.metaSignals is its state cookie's name):
+     * the server sends server events and sets _fbp/_fbc only while that
+     * cookie says "active", so set it only while Meta Pixel is allowed and
+     * remove it otherwise. Never "held": Meta then changes the page HTML,
+     * which a page cache would serve to everyone. Run here, before any
+     * other script, and by spcc.js after each choice, before it releases
+     * what was held.
      */
     spcc.syncMeta = function () {
         var name = c.metaSignals;
         if (!name || c.preview) {
             return;
         }
-        var state = spcc.allows('meta-pixel', 'marketing') ? 'active' : 'held';
-        if ((d.cookie ? d.cookie.split('; ') : []).indexOf(name + '=' + state) === -1) {
-            d.cookie = name + '=' + state + ';path=/;max-age=31536000;SameSite=Lax' + (c.secure ? ';Secure' : '');
+        var cookies = d.cookie ? d.cookie.split('; ') : [];
+        var tail = ';path=/;SameSite=Lax' + (c.secure ? ';Secure' : '');
+        if (spcc.allows('meta-pixel', 'marketing')) {
+            if (cookies.indexOf(name + '=active') === -1) {
+                d.cookie = name + '=active;max-age=31536000' + tail;
+            }
+            return;
+        }
+        for (var i = 0; i < cookies.length; i++) {
+            if (cookies[i].indexOf(name + '=') === 0) {
+                d.cookie = name + '=;max-age=0' + tail;
+                return;
+            }
         }
     };
     spcc.syncMeta();
