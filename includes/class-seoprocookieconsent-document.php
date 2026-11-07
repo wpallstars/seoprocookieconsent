@@ -140,6 +140,22 @@ abstract class SEOProCookieConsent_Document extends SEOProCookieConsent_Feature 
     }
 
     /**
+     * A section of suggested wording: a heading, then each part in order,
+     * a string as paragraphs and an array as a list.
+     *
+     * @param string                $heading Plain text.
+     * @param array<string|string[]> $parts   Paragraphs and lists.
+     * @return string
+     */
+    protected static function part($heading, array $parts) {
+        $html = self::heading($heading);
+        foreach ($parts as $part) {
+            $html .= is_array($part) ? self::items($part) : self::paragraphs((string) $part);
+        }
+        return $html;
+    }
+
+    /**
      * Escape each nonempty item as a list item.
      *
      * @param string[] $items Plain text.
