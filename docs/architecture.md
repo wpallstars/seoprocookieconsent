@@ -25,6 +25,7 @@ list, regions or the cookie policy. Users' docs are in `README.md`.
 | Blocker | `includes/class-seoprocookieconsent-blocker.php` | Output buffer on front-end HTML: holds back matching `<script>` and `<iframe>` tags and wraps iframes in a placeholder. |
 | Thumbnails | `includes/class-seoprocookieconsent-thumbnails.php` | Validates YouTube/Vimeo embed IDs, queues WP-Cron, and serves only locally cached JPEGs; maps get a bundled generic image. |
 | Consent | `includes/features/class-seoprocookieconsent-consent.php` | The feature: settings, buffer start, head config, banner and dialog markup, footer menu link (placed beside the policy links) and the Appearance → Menus box, Cookie settings shortcode and block. |
+| Meta | `includes/class-seoprocookieconsent-meta.php` | While Consent is on: keeps Meta's own plugins held (pixel, server events, `_fbp`/`_fbc`) until Meta Pixel is allowed. |
 | Policy | `includes/features/class-seoprocookieconsent-policy.php` | Cookie policy shortcode and block (auto-updating), privacy policy guide text. |
 | Documents | `includes/class-seoprocookieconsent-document.php` | Shared base of Terms and Privacy: questions under the switch, shortcode and block, Your own wording, add-on sections, plain-text escaping. |
 | Privacy | `includes/features/class-seoprocookieconsent-privacy.php` | Privacy policy shortcode and block from the owner's answers, with the AI section. |
@@ -232,6 +233,21 @@ No record table or cron is created for sites that never enable records.
   `personalization_storage`.
 - WP Consent API (when its plugin is active): `wp_set_consent()` for
   each category it knows.
+- Meta's own plugins (Meta Pixel for WordPress 5.2+, Facebook for
+  WooCommerce; `includes/class-seoprocookieconsent-meta.php`): they start
+  the pixel, send server events (Conversions API) and set `_fbp`/`_fbc`
+  only while their state cookie `wc_facebook_signals_state` says `active`,
+  and send by default when it is missing. With one active, the config
+  carries `metaSignals` (the cookie's name, the same for every visitor) and
+  `spcc.syncMeta()` sets the cookie to `active` when Meta Pixel is allowed
+  and `held` otherwise: in the head before any other script, and from
+  `signal()` after each choice, before held scripts are released. On the
+  server, the `facebook_signals_held` filter treats a request without
+  `active` as held, and the `_fbp`/`_fbc` `Set-Cookie` headers Meta Pixel
+  for WordPress sends when its file loads (before this plugin) are taken
+  back on such a request. The pixel's inline `FacebookSignal.initPixel()`
+  and `fbq('track'…)` are held with its loader, so they run after it.
+  Withdrawing marketing deletes `_fbp` and `_fbc` like other cookies.
 
 ## Policies
 

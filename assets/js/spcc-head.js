@@ -188,6 +188,25 @@
         return spcc.has(category) || !!(spcc.choice && spcc.choice.s && spcc.choice.s.indexOf(service) !== -1);
     };
 
+    /**
+     * Meta's own plugins (c.metaSignals is their state cookie's name) start
+     * the pixel, send server events and set _fbp/_fbc only while that
+     * cookie says "active": keep it in step with Meta Pixel. Run here,
+     * before any other script, and by spcc.js after each choice, before
+     * it releases what was held.
+     */
+    spcc.syncMeta = function () {
+        var name = c.metaSignals;
+        if (!name || c.preview) {
+            return;
+        }
+        var state = spcc.allows('meta-pixel', 'marketing') ? 'active' : 'held';
+        if ((d.cookie ? d.cookie.split('; ') : []).indexOf(name + '=' + state) === -1) {
+            d.cookie = name + '=' + state + ';path=/;max-age=31536000;SameSite=Lax' + (c.secure ? ';Secure' : '');
+        }
+    };
+    spcc.syncMeta();
+
     /** Google Consent Mode v2 state for the current choice. */
     spcc.googleState = function () {
         var g = function (cat) {

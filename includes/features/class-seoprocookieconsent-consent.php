@@ -234,6 +234,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (!self::enabled()) {
             return;
         }
+        require_once SEOPROCOOKIECONSENT_DIR . 'includes/class-seoprocookieconsent-meta.php';
+        SEOProCookieConsent_Meta::boot();
         add_action('admin_init', array(__CLASS__, 'register_translations'));
         add_action('seoprocookieconsent_settings_changed', array(__CLASS__, 'register_translations'));
         if (isset($_GET[self::PREVIEW_ARG])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only shows the banner to the admin; preview() checks who asks.
