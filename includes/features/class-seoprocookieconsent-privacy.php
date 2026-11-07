@@ -258,18 +258,19 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
      * @return string
      */
     private static function rights() {
+        $rights = array(
+            __('be told how we use your personal information, as this policy does;', 'seoprocookieconsent'),
+            __('ask for a copy of the personal information we hold about you;', 'seoprocookieconsent'),
+            __('have it corrected if it is wrong or incomplete;', 'seoprocookieconsent'),
+            __('have it deleted, or its use restricted;', 'seoprocookieconsent'),
+            __('object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;', 'seoprocookieconsent'),
+            __('receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;', 'seoprocookieconsent'),
+            __('not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;', 'seoprocookieconsent'),
+            __('withdraw your consent at any time, without affecting what we did before.', 'seoprocookieconsent'),
+        );
         return self::part(__('Your rights', 'seoprocookieconsent'), array(
             __('Depending on where you live, you may have the right to:', 'seoprocookieconsent'),
-            array(
-                __('be told how we use your personal information, as this policy does;', 'seoprocookieconsent'),
-                __('ask for a copy of the personal information we hold about you;', 'seoprocookieconsent'),
-                __('have it corrected if it is wrong or incomplete;', 'seoprocookieconsent'),
-                __('have it deleted, or its use restricted;', 'seoprocookieconsent'),
-                __('object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;', 'seoprocookieconsent'),
-                __('receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;', 'seoprocookieconsent'),
-                __('not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;', 'seoprocookieconsent'),
-                __('withdraw your consent at any time, without affecting what we did before.', 'seoprocookieconsent'),
-            ),
+            $rights,
             __('Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you.', 'seoprocookieconsent'),
             __('To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else\'s information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission.', 'seoprocookieconsent'),
             __('We reply without undue delay and within one month. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it.', 'seoprocookieconsent'),
