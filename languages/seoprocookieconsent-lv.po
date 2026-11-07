@@ -665,7 +665,7 @@ msgid "%s left data on the site."
 msgstr "%s atstāja datus vietnē."
 
 #: includes/class-seoprocookieconsent-blocker.php:345
-#: includes/features/class-seoprocookieconsent-consent.php:427
+#: includes/features/class-seoprocookieconsent-consent.php:429
 msgid "This content"
 msgstr "Šis saturs"
 
@@ -676,7 +676,7 @@ msgstr "saturs"
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
-#: includes/features/class-seoprocookieconsent-consent.php:424
+#: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr "%1$s var iestatīt sīkfailus. Tas tiek ielādēts, kad to atļaujat vai kad atļaujat %2$s sīkfailu iestatījumos."
@@ -688,12 +688,12 @@ msgid "Load %s"
 msgstr "Ielādēt %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
-#: includes/features/class-seoprocookieconsent-consent.php:429
-#: includes/features/class-seoprocookieconsent-consent.php:533
-#: includes/features/class-seoprocookieconsent-consent.php:790
-#: includes/features/class-seoprocookieconsent-consent.php:802
-#: includes/features/class-seoprocookieconsent-consent.php:861
-#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/features/class-seoprocookieconsent-consent.php:431
+#: includes/features/class-seoprocookieconsent-consent.php:535
+#: includes/features/class-seoprocookieconsent-consent.php:792
+#: includes/features/class-seoprocookieconsent-consent.php:804
+#: includes/features/class-seoprocookieconsent-consent.php:863
+#: includes/features/class-seoprocookieconsent-consent.php:889
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Sīkfailu iestatījumi"
@@ -942,7 +942,7 @@ msgid "Tells people from bots"
 msgstr "Atšķir cilvēkus no robotiem"
 
 #: includes/class-seoprocookieconsent-services.php:183
-#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:346
 msgid "30 days"
 msgstr "30 dienas"
 
@@ -954,7 +954,7 @@ msgstr "Palīdz novērst krāpšanu ar maksājumiem"
 #: includes/class-seoprocookieconsent-services.php:191
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:355
 #: includes/features/class-seoprocookieconsent-policy.php:120
 msgid "1 year"
 msgstr "1 gads"
@@ -964,14 +964,15 @@ msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's ow
 msgstr "Pieņem maksājumus un palīdz novērst krāpšanu. Tas var iestatīt sīkfailus PayPal vietnēs."
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:342
-#: includes/class-seoprocookieconsent-services.php:351
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:346
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "Measures ad conversions"
 msgstr "Mēra reklāmu konversijas"
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
 msgid "3 months"
 msgstr "3 mēneši"
 
@@ -980,96 +981,97 @@ msgid "Shows and measures ads"
 msgstr "Rāda un mēra reklāmas"
 
 #: includes/class-seoprocookieconsent-services.php:278
-#: includes/class-seoprocookieconsent-services.php:333
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:337
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "13 months"
 msgstr "13 mēneši"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:381
 msgid "Tells visitors apart"
 msgstr "Atšķir apmeklētājus"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:295
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "2 years"
 msgstr "2 gadi"
 
 #: includes/class-seoprocookieconsent-services.php:295
 #: includes/class-seoprocookieconsent-services.php:305
 #: includes/class-seoprocookieconsent-services.php:315
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "Keeps the visit together"
 msgstr "Saglabā vizīti kopā"
 
 #: includes/class-seoprocookieconsent-services.php:305
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "1 day"
 msgstr "1 diena"
 
-#: includes/class-seoprocookieconsent-services.php:324
-#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+#: includes/class-seoprocookieconsent-services.php:337
 msgid "Measures and personalises ads"
 msgstr "Mēra un personalizē reklāmas"
 
-#: includes/class-seoprocookieconsent-services.php:377
-#: includes/class-seoprocookieconsent-services.php:387
-#: includes/class-seoprocookieconsent-services.php:408
-#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:381
+#: includes/class-seoprocookieconsent-services.php:391
+#: includes/class-seoprocookieconsent-services.php:412
+#: includes/class-seoprocookieconsent-services.php:470
 msgid "6 months"
 msgstr "6 mēneši"
 
-#: includes/class-seoprocookieconsent-services.php:383
-#: includes/class-seoprocookieconsent-services.php:394
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:398
 msgid "video"
 msgstr "video"
 
-#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:391
 msgid "Remembers player settings"
 msgstr "Atceras spēlētāja iestatījumus"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "Counts views"
 msgstr "Skatījumu skaits"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Session"
 msgstr "Sesija"
 
-#: includes/class-seoprocookieconsent-services.php:404
+#: includes/class-seoprocookieconsent-services.php:408
 msgid "map"
 msgstr "karte"
 
-#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:412
 msgid "Remembers preferences"
 msgstr "Atceras preferences"
 
-#: includes/class-seoprocookieconsent-services.php:414
-#: includes/class-seoprocookieconsent-services.php:422
+#: includes/class-seoprocookieconsent-services.php:418
+#: includes/class-seoprocookieconsent-services.php:426
 msgid "player"
 msgstr "spēlētājs"
 
-#: includes/class-seoprocookieconsent-services.php:430
-#: includes/class-seoprocookieconsent-services.php:438
-#: includes/class-seoprocookieconsent-services.php:446
+#: includes/class-seoprocookieconsent-services.php:434
+#: includes/class-seoprocookieconsent-services.php:442
+#: includes/class-seoprocookieconsent-services.php:450
 msgid "post"
 msgstr "pasts"
 
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Keeps the chat connected"
 msgstr "Uztur tērzēšanu savienotu"
 
-#: includes/class-seoprocookieconsent-services.php:466
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:470
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "Keeps the chat going"
 msgstr "Turpina sarunu"
 
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "9 months"
 msgstr "9 mēneši"
 
@@ -1239,174 +1241,174 @@ msgid "Visitors are asked again after this. 365 is usual; some regulators prefer
 msgstr "Pēc tam apmeklētājiem tiek jautāts vēlreiz. Parasti tiek izmantota 365 sekundes; daži regulatori dod priekšroku 180 sekundēm."
 
 #. translators: %s: service names, such as "Google Analytics, Hotjar".
-#: includes/features/class-seoprocookieconsent-consent.php:416
+#: includes/features/class-seoprocookieconsent-consent.php:418
 #: includes/views/consent-banner.php:91
 #, php-format
 msgid "Used by: %s."
 msgstr "Izmanto: %s."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:419
+#: includes/features/class-seoprocookieconsent-consent.php:421
 #, php-format
 msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
 msgstr "Šī lapa izmanto %s, kas var iestatīt sīkfailus un kopīgot datus par jūsu apmeklējumu. Izvēlieties, ko atļaut."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:421
+#: includes/features/class-seoprocookieconsent-consent.php:423
 #, php-format
 msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
 msgstr "Šī lapa izmanto %s, kas var iestatīt sīkfailus. Jūs varat tos atspējot sīkfailu iestatījumos."
 
-#: includes/features/class-seoprocookieconsent-consent.php:422
+#: includes/features/class-seoprocookieconsent-consent.php:424
 msgid "other services"
 msgstr "citi pakalpojumi"
 
 #. translators: 1: service name, such as "YouTube"; 2: cookie category.
-#: includes/features/class-seoprocookieconsent-consent.php:426
+#: includes/features/class-seoprocookieconsent-consent.php:428
 #, php-format
 msgid "%1$s needs %2$s to show here. Allow it to see this content."
 msgstr "Lai %1$s tiktu rādīts šeit, jāatļauj %2$s. Atļaujiet to, lai redzētu šo saturu."
 
-#: includes/features/class-seoprocookieconsent-consent.php:428
+#: includes/features/class-seoprocookieconsent-consent.php:430
 msgid "Load content"
 msgstr "Ielādēt saturu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:816
+#: includes/features/class-seoprocookieconsent-consent.php:818
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Saite, kas atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles. Kad izvēlnei ir šāda saite, automātiskā kājenes saite netiek pievienota."
 
-#: includes/features/class-seoprocookieconsent-consent.php:832
+#: includes/features/class-seoprocookieconsent-consent.php:834
 msgid "Add to Menu"
 msgstr "Pievienot izvēlnei"
 
-#: includes/features/class-seoprocookieconsent-consent.php:879
+#: includes/features/class-seoprocookieconsent-consent.php:881
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Sīkfailu iestatījumu poga"
 
-#: includes/features/class-seoprocookieconsent-consent.php:880
+#: includes/features/class-seoprocookieconsent-consent.php:882
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles."
 
-#: includes/features/class-seoprocookieconsent-consent.php:886
+#: includes/features/class-seoprocookieconsent-consent.php:888
 msgid "Text"
 msgstr "Teksts"
 
-#: includes/features/class-seoprocookieconsent-consent.php:892
+#: includes/features/class-seoprocookieconsent-consent.php:894
 msgid "Show as"
 msgstr "Rādīt kā"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:896
 msgid "Button"
 msgstr "Poga"
 
-#: includes/features/class-seoprocookieconsent-consent.php:895
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Link"
 msgstr "Saite"
 
-#: includes/features/class-seoprocookieconsent-consent.php:912
+#: includes/features/class-seoprocookieconsent-consent.php:914
 msgid "Get started"
 msgstr "Sākt darbu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:913
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Switch on Cookie consent."
 msgstr "Ieslēdziet sīkfailu piekrišanu."
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Izvēlieties Skenēt tūlīt un pēc tam atzīmējiet Atrasts jūsu lapās zemāk."
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Cilnē Politikas ieslēdziet sīkfailu politiku un pievienojiet sīkfailu politikas bloku savai privātuma vai sīkfailu politikas lapai."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:919
 msgid "Scan now"
 msgstr "Skenēt tūlīt"
 
-#: includes/features/class-seoprocookieconsent-consent.php:918
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Pārbauda jūsu sākumlapu, privātuma lapu un līdz trim nesenajiem ierakstiem un trim lapām. Šis ir paraugs, nevis pilnīgs audits; lapas tiek pārbaudītas arī apmeklētāju pārlūkošanas laikā. Skripti netiek palaisti."
 
-#: includes/features/class-seoprocookieconsent-consent.php:939
+#: includes/features/class-seoprocookieconsent-consent.php:941
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Vēl nav atrasts neviens pakalpojums, kas iestatītu sīkfailus. Skenējiet tūlīt pēc šīs opcijas ieslēgšanas vai atveriet dažas savas vietnes lapas."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:943
 msgid "Found on your pages and held back until allowed:"
 msgstr "Atrasts jūsu lapās un glabāts, līdz atļaus:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:952
+#: includes/features/class-seoprocookieconsent-consent.php:954
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Nepieciešams, nekad netiek slēpts un norādīts sīkfailu politikā:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:959
+#: includes/features/class-seoprocookieconsent-consent.php:961
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Citi skripti no šīm vietnēm tiek ielādēti kā parasti. Ja kāds no tiem iestata sīkfailus, pievienojiet to sadaļā Problēmu novēršana → Arī aizturēt:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:968
+#: includes/features/class-seoprocookieconsent-consent.php:970
 msgid "You cannot scan this site."
 msgstr "Jūs nevarat skenēt šo vietni."
 
-#: includes/features/class-seoprocookieconsent-consent.php:972
+#: includes/features/class-seoprocookieconsent-consent.php:974
 msgid "Switch on Cookie consent before scanning."
 msgstr "Pirms skenēšanas ieslēdziet sīkfailu piekrišanas opciju."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1082
+#: includes/features/class-seoprocookieconsent-consent.php:1084
 msgid "Preview the banner"
 msgstr "Priekšskatīt reklāmkarogu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1086
+#: includes/features/class-seoprocookieconsent-consent.php:1088
 msgid "Visitor"
 msgstr "Apmeklētājs"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1090
 msgid "Asked first (Europe, Quebec)"
 msgstr "Vispirms jautāts (Eiropa, Kvebeka)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1089
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Shown a notice (elsewhere)"
 msgstr "Parādīja paziņojumu (citur)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1093
+#: includes/features/class-seoprocookieconsent-consent.php:1095
 msgid "Screen"
 msgstr "Ekrāns"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1097
 msgid "Desktop"
 msgstr "Darbvirsma"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1096
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Phone"
 msgstr "Tālrunis"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1099
+#: includes/features/class-seoprocookieconsent-consent.php:1101
 msgid "Reload"
 msgstr "Pārlādēt"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1102
+#: includes/features/class-seoprocookieconsent-consent.php:1104
 msgid "Banner preview on your home page"
 msgstr "Banera priekšskatījums jūsu sākumlapā"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1106
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Jūsu sākumlapa ar reklāmkarogu tā, kā to redz apmeklētāji, pat ja lapai nav ko slēpt. Tas tiek atjaunināts pēc katrām izmaiņām. Priekšskatījumā veiktās izvēles netiek saglabātas."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1123
+#: includes/features/class-seoprocookieconsent-consent.php:1125
 msgid "No pages found."
 msgstr "Nav atrasta neviena lapa."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1126
+#: includes/features/class-seoprocookieconsent-consent.php:1128
 msgid "Scanning…"
 msgstr "Skenēšana…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1130
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Skenēšana pabeigta: pārbaudītas %1$s lapas; %2$s nevarēja pārbaudīt. Pārskatiet tālāk sniegtos rezultātus."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1129
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "Skenēšanas laikā neizdevās pārbaudīt jūsu lapas. Atgriezeniskās saites pieprasījumi var būt bloķēti. Mēģiniet vēlreiz vai atveriet savas vietnes lapas, lai aizpildītu sarakstu pārlūkošanas laikā."
 
@@ -1578,7 +1580,7 @@ msgstr "Izmantojot šo tīmekļa vietni"
 msgid "What we offer"
 msgstr "Ko mēs piedāvājam"
 
-#: includes/features/class-seoprocookieconsent-privacy.php:280
+#: includes/features/class-seoprocookieconsent-privacy.php:285
 #: includes/features/class-seoprocookieconsent-terms.php:329
 msgid "Your rights"
 msgstr "Jūsu tiesības"
@@ -2690,249 +2692,249 @@ msgid "You can also set your browser to refuse or delete cookies. Some parts of 
 msgstr "Jūs varat arī iestatīt savu pārlūkprogrammu, lai tā noraidītu vai dzēstu sīkfailus. Dažas šīs tīmekļa vietnes daļas bez tiem var nedarboties."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:225
+#: includes/features/class-seoprocookieconsent-privacy.php:236
 msgid "Who we share it with"
 msgstr "Ar ko mēs to kopīgojam"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:226
+#: includes/features/class-seoprocookieconsent-privacy.php:237
 msgid "We share personal information only when needed:"
 msgstr "Mēs kopīgojam personas datus tikai tad, ja tas nepieciešams:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:228
+#: includes/features/class-seoprocookieconsent-privacy.php:226
 msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;"
 msgstr "ar pakalpojumu sniedzējiem, kas tos apstrādā mūsu vārdā pēc mūsu norādījumiem, piemēram, hostingam, dublēšanai, IT atbalstam, e-pastam, maksājumiem un klientu atbalstam. Viņi drīkst tos izmantot tikai, lai sniegtu mums savus pakalpojumus, viņiem tie jāglabā droši, un viņi drīkst izmantot citus sniedzējus tikai uz tādiem pašiem noteikumiem;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:229
+#: includes/features/class-seoprocookieconsent-privacy.php:227
 msgid "with professional advisers, such as accountants, auditors, lawyers, banks and insurers;"
 msgstr "ar profesionāliem konsultantiem, piemēram, grāmatvežiem, revidentiem, juristiem, bankām un apdrošinātājiem;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:230
+#: includes/features/class-seoprocookieconsent-privacy.php:228
 msgid "with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;"
 msgstr "ar nodokļu iestādēm, regulatoriem, tiesām, policiju un citiem, ja to prasa likums vai lai aizsargātu mūsu klientu, citu personu vai mūsu tiesības, īpašumu vai drošību;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:231
+#: includes/features/class-seoprocookieconsent-privacy.php:229
 msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
 msgstr "ar pircēju vai tiesību pārņēmēju, ja mūsu uzņēmums vai šī tīmekļa vietne tiek pārdota vai apvienota, kas var tos izmantot, kā aprakstīts šajā politikā;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:232
+#: includes/features/class-seoprocookieconsent-privacy.php:235
 msgid "with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice."
 msgstr "ar citiem, ja jūs to lūdzat vai tam piekrītat, piemēram, ar uzņēmumu, ar kuru jūs lūdzat mūs jūs sazināt, un kas tos pēc tam izmanto saskaņā ar savu privātuma paziņojumu."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:234
+#: includes/features/class-seoprocookieconsent-privacy.php:239
 msgid "If you pay on a payment provider's page, the provider handles your payment details under its own terms and privacy notice."
 msgstr "Ja jūs maksājat maksājumu sniedzēja lapā, sniedzējs apstrādā jūsu maksājuma datus saskaņā ar saviem noteikumiem un privātuma paziņojumu."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:238
+#: includes/features/class-seoprocookieconsent-privacy.php:243
 msgid "Our main service providers are:"
 msgstr "Mūsu galvenie pakalpojumu sniedzēji ir:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:241
+#: includes/features/class-seoprocookieconsent-privacy.php:246
 msgid "International transfers"
 msgstr "Starptautiskā datu nosūtīšana"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:242
+#: includes/features/class-seoprocookieconsent-privacy.php:247
 msgid "Some of our service providers store or process information in other countries, depending on their settings, where their systems are and where their support teams work. Where practical, we choose providers and settings that keep information in our own region."
 msgstr "Daži mūsu pakalpojumu sniedzēji glabā vai apstrādā informāciju citās valstīs atkarībā no saviem iestatījumiem, no tā, kur atrodas viņu sistēmas un kur strādā viņu atbalsta komandas. Ja iespējams, mēs izvēlamies sniedzējus un iestatījumus, kas glabā informāciju mūsu pašu reģionā."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:243
+#: includes/features/class-seoprocookieconsent-privacy.php:248
 msgid "Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision, standard contractual clauses or an equivalent agreement, together with measures such as encryption and access controls. You can ask us for more information about them."
 msgstr "Ja datu aizsardzības tiesību akti to pieprasa, mēs nodrošinām piemērotas garantijas, piemēram, lēmumu par aizsardzības līmeņa pietiekamību, standarta līguma klauzulas vai līdzvērtīgu vienošanos, kā arī tādus pasākumus kā šifrēšana un piekļuves kontrole. Jūs varat lūgt mums sniegt papildu informāciju par tām."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:253
+#: includes/features/class-seoprocookieconsent-privacy.php:258
 msgid "How long we keep it"
 msgstr "Cik ilgi mēs to glabājam"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:254
+#: includes/features/class-seoprocookieconsent-privacy.php:259
 msgid "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymise it."
 msgstr "Mēs glabājam personas datus tikai tik ilgi, cik tie mums vajadzīgi iepriekš minētajiem nolūkiem, tostarp lai izpildītu juridiskās, grāmatvedības vai ziņošanas prasības, pēc tam tos dzēšam vai anonimizējam."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:255
+#: includes/features/class-seoprocookieconsent-privacy.php:260
 msgid "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorised use, why we hold it and whether we can achieve that another way, and what the law requires."
 msgstr "Lai noteiktu glabāšanas laiku, mēs ņemam vērā informācijas apjomu, raksturu un sensitivitāti, kaitējuma risku no neatļautas izmantošanas, to, kāpēc mēs to glabājam un vai varam sasniegt šo mērķi citādi, kā arī to, ko prasa likums."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:256
+#: includes/features/class-seoprocookieconsent-privacy.php:261
 msgid "For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires, which can be several years. If you ask us to delete information, we keep a short record of the request to show we dealt with it. Copies in backups are deleted as the backups are replaced."
 msgstr "Piemēram, ziņojumus mēs glabājam tik ilgi, cik nepieciešams to izskatīšanai un jebkurai turpmākai rīcībai, konta datus – kamēr jūsu konts ir atvērts, bet pasūtījumu un grāmatvedības ierakstus – tik ilgi, cik prasa nodokļu un grāmatvedības tiesību akti, kas var būt vairāki gadi. Ja jūs lūdzat mums dzēst informāciju, mēs glabājam īsu pieprasījuma ierakstu, lai pierādītu, ka esam to izpildījuši. Dublējumos esošās kopijas tiek dzēstas, kad dublējumi tiek nomainīti."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:257
+#: includes/features/class-seoprocookieconsent-privacy.php:262
 msgid "Security"
 msgstr "Drošība"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:258
+#: includes/features/class-seoprocookieconsent-privacy.php:263
 msgid "We protect personal information with appropriate technical and organisational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
 msgstr "Mēs aizsargājam personas datus ar atbilstošiem tehniskiem un organizatoriskiem pasākumiem. Atkarībā no pakalpojuma tie var ietvert šifrētus savienojumus, drošu pieteikšanos ar stiprām parolēm un daudzfaktoru autentifikāciju, piekļuvi tikai tiem, kam tā nepieciešama un kam jāievēro konfidencialitāte, regulāras atjauninājumus, ugunsmūrus un uzraudzību, kā arī dublēšanu. Mēs sagaidām, ka mūsu pakalpojumu sniedzēji tos aizsargās tāpat."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:259
+#: includes/features/class-seoprocookieconsent-privacy.php:264
 msgid "If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it."
 msgstr "Ja datu aizsardzības pārkāpums apdraud jūsu tiesības, mēs informēsim jūs un iestādes, ja to prasa likums."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:260
+#: includes/features/class-seoprocookieconsent-privacy.php:265
 msgid "No website or email is completely secure, so please think carefully before sending sensitive information by email, or ask us for a more secure way to send it."
 msgstr "Neviena tīmekļa vietne vai e-pasts nav pilnīgi drošs, tāpēc, lūdzu, rūpīgi apdomājiet, pirms sūtāt sensitīvu informāciju pa e-pastu, vai lūdziet mums drošāku nosūtīšanas veidu."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:271
+#: includes/features/class-seoprocookieconsent-privacy.php:276
 msgid "be told how we use your personal information, as this policy does;"
 msgstr "saņemt informāciju par to, kā mēs izmantojam jūsu personas datus, kā tas darīts šajā politikā;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:272
+#: includes/features/class-seoprocookieconsent-privacy.php:277
 msgid "ask for a copy of the personal information we hold about you;"
 msgstr "pieprasīt mūsu rīcībā esošo jūsu personas datu kopiju;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:273
+#: includes/features/class-seoprocookieconsent-privacy.php:278
 msgid "have it corrected if it is wrong or incomplete;"
 msgstr "panākt to labošanu, ja tie ir nepareizi vai nepilnīgi;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:274
+#: includes/features/class-seoprocookieconsent-privacy.php:279
 msgid "have it deleted, or its use restricted;"
 msgstr "panākt to dzēšanu vai to izmantošanas ierobežošanu;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:275
+#: includes/features/class-seoprocookieconsent-privacy.php:280
 msgid "object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;"
 msgstr "iebilst pret to izmantošanu, tostarp jebkurā laikā pret tiešo mārketingu un pret izmantošanu, kas balstīta uz mūsu leģitīmajām interesēm;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:276
+#: includes/features/class-seoprocookieconsent-privacy.php:281
 msgid "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;"
 msgstr "saņemt jūsu sniegto informāciju plaši izmantotā, mašīnlasāmā formātā vai panākt tās nosūtīšanu citai organizācijai, ja mēs to izmantojam ar jūsu piekrišanu vai līguma izpildei;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:277
+#: includes/features/class-seoprocookieconsent-privacy.php:282
 msgid "not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;"
 msgstr "nebūt pakļautam lēmumiem, kas balstīti tikai uz automatizētu apstrādi un kam ir tiesiskas vai līdzīgi būtiskas sekas jums;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:278
+#: includes/features/class-seoprocookieconsent-privacy.php:283
 msgid "withdraw your consent at any time, without affecting what we did before."
 msgstr "jebkurā laikā atsaukt savu piekrišanu, neietekmējot to, ko mēs darījām iepriekš."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:281
+#: includes/features/class-seoprocookieconsent-privacy.php:286
 msgid "Depending on where you live, you may have the right to:"
 msgstr "Atkarībā no jūsu dzīvesvietas jums var būt tiesības:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:283
+#: includes/features/class-seoprocookieconsent-privacy.php:288
 msgid "Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you."
 msgstr "Dažas tiesības ir piemērojamas tikai noteiktos apstākļos vai var tikt ierobežotas ar likumu, piemēram, ja mums jāglabā ieraksti. Ja tā, mēs jums par to paziņosim."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:284
+#: includes/features/class-seoprocookieconsent-privacy.php:289
 msgid "To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else's information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission."
 msgstr "Lai izmantotu šīs tiesības, sazinieties ar mums, izmantojot tālāk norādīto informāciju, un pastāstiet, ko vēlaties. Mums var būt nepieciešams vispirms apstiprināt jūsu identitāti, lai neizpaustu, nemainītu vai nedzēstu kāda cita informāciju, un mēs varam lūgt datus, kas palīdz mums atrast jums nepieciešamo. Ja kāds vēršas jūsu vārdā, mums nepieciešama jūsu rakstveida atļauja."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:285
+#: includes/features/class-seoprocookieconsent-privacy.php:290
 msgid "We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it."
 msgstr "Mēs atbildam bez nepamatotas kavēšanās un četru nedēļu laikā. Ja pieprasījums ir sarežģīts vai jūs nosūtāt vairākus, mēs varam ilgāk, ja likums to pieļauj, un paskaidrosim kāpēc. Mēs neprasām maksu, izņemot gadījumus, kad pieprasījums ir acīmredzami nepamatots, atkārtots vai pārmērīgs; tad mēs varam prasīt saprātīgu maksu vai to noraidīt."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:286
+#: includes/features/class-seoprocookieconsent-privacy.php:291
 msgid "Please tell us if your personal information changes, so we can keep it accurate."
 msgstr "Lūdzu, informējiet mūs, ja jūsu personas dati mainās, lai mēs varētu tos uzturēt precīzus."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:299
+#: includes/features/class-seoprocookieconsent-privacy.php:304
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or where we are based."
 msgstr "Jums ir arī tiesības jebkurā laikā iesniegt sūdzību datu aizsardzības iestādei tur, kur jūs dzīvojat vai strādājat, vai tur, kur mēs atrodamies."
 
 # machine translation
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-privacy.php:302
+#: includes/features/class-seoprocookieconsent-privacy.php:307
 #, php-format
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or in %s, where we are based."
 msgstr "Jums ir arī tiesības jebkurā laikā iesniegt sūdzību datu aizsardzības iestādei tur, kur jūs dzīvojat vai strādājat, vai šeit: %s, kur mēs atrodamies."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:305
+#: includes/features/class-seoprocookieconsent-privacy.php:310
 msgid "Complaints"
 msgstr "Sūdzības"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:306
+#: includes/features/class-seoprocookieconsent-privacy.php:311
 msgid "If you are unhappy with how we handle your personal information, including our use of automated tools such as AI, please contact us first so we can try to put it right. Tell us what happened and what you would like us to do. We will acknowledge your complaint, look into it promptly and fairly, and tell you the outcome and what we will do about it."
 msgstr "Ja jūs neapmierina tas, kā mēs apstrādājam jūsu personas datus, tostarp mūsu automatizēto rīku, piemēram, MI, izmantošana, lūdzu, vispirms sazinieties ar mums, lai mēs varētu mēģināt to labot. Pastāstiet, kas notika un ko vēlaties, lai mēs darām. Mēs apstiprināsim jūsu sūdzības saņemšanu, izskatīsim to nekavējoties un taisnīgi un paziņosim jums rezultātu un to, ko mēs darīsim."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:308
+#: includes/features/class-seoprocookieconsent-privacy.php:313
 msgid "Children"
 msgstr "Bērni"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:309
+#: includes/features/class-seoprocookieconsent-privacy.php:314
 msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live, and ask them not to send it without a parent's or guardian's permission. If you think a child has given us personal information, please contact us and we will delete it."
 msgstr "Šī tīmekļa vietne nav paredzēta bērniem. Mēs apzināti nevācam personas datus no bērniem, kas jaunāki par vecumu, no kura viņi var par to dot piekrišanu savā dzīvesvietā, un lūdzam viņus tos nesūtīt bez vecāku vai aizbildņa atļaujas. Ja uzskatāt, ka bērns ir sniedzis mums personas datus, lūdzu, sazinieties ar mums, un mēs tos izdzēsīsim."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:310
+#: includes/features/class-seoprocookieconsent-privacy.php:315
 msgid "Other websites"
 msgstr "Citas tīmekļa vietnes"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:311
+#: includes/features/class-seoprocookieconsent-privacy.php:316
 msgid "This website may link to other websites, or include content, plug-ins or applications from them, such as videos, maps and social media posts. Following those links or allowing those connections may let the other websites collect information about you. We do not control them and are not responsible for their privacy practices, and this policy does not cover them; please read their own privacy policies."
 msgstr "Šī tīmekļa vietne var saturēt saites uz citām tīmekļa vietnēm vai iekļaut no tām saturu, spraudņus vai lietotnes, piemēram, video, kartes un sociālo tīklu ierakstus. Sekojot šīm saitēm vai atļaujot šos savienojumus, citas tīmekļa vietnes var iegūt informāciju par jums. Mēs tās nekontrolējam un neatbildam par to privātuma praksi, un šī politika uz tām neattiecas; lūdzu, izlasiet to pašu privātuma politikas."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:312
+#: includes/features/class-seoprocookieconsent-privacy.php:317
 msgid "Changes to this policy"
 msgstr "Izmaiņas šajā politikā"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:313
+#: includes/features/class-seoprocookieconsent-privacy.php:318
 msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can. Please check this page from time to time."
 msgstr "Mēs varam atjaunināt šo politiku, mainoties mūsu pakalpojumiem vai likumiem. Pašreizējā versija vienmēr ir šajā lapā, un par būtiskām izmaiņām mēs paziņosim, ja varēsim. Lūdzu, laiku pa laikam pārbaudiet šo lapu."
 
 # machine translation
 #. translators: %s: "Cookie settings" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:352
+#: includes/features/class-seoprocookieconsent-privacy.php:357
 #, php-format
 msgid "You can change or withdraw your consent at any time in %s."
 msgstr "Jūs varat jebkurā laikā mainīt vai atsaukt savu piekrišanu šeit: %s."
 
 # machine translation
 #. translators: %s: "Our cookie policy" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:370
+#: includes/features/class-seoprocookieconsent-privacy.php:375
 #, php-format
 msgid "%s lists the cookies we use, what each does and how long it is kept."
 msgstr "%s uzskaita mūsu izmantotos sīkfailus, katra sīkfaila darbību un to, cik ilgi tas tiek glabāts."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:371
+#: includes/features/class-seoprocookieconsent-privacy.php:376
 msgid "Our cookie policy"
 msgstr "Mūsu sīkfailu politika"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:385
+#: includes/features/class-seoprocookieconsent-privacy.php:390
 msgid "Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them."
 msgstr "Ja likums pieprasa piekrišanu, mēs aizturam neobligātos sīkfailus, kā arī skriptus un iegulto saturu, kas tos izveido, līdz jūs tos atļaujat."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:388
+#: includes/features/class-seoprocookieconsent-privacy.php:393
 #, php-format
 msgid "We remember your choice in a necessary cookie in your browser for %s day, then ask again."
 msgid_plural "We remember your choice in a necessary cookie in your browser for %s days, then ask again."
@@ -2941,13 +2943,13 @@ msgstr[1] "Mēs atceramies jūsu izvēli nepieciešamajā sīkfailā jūsu pārl
 msgstr[2] "Mēs atceramies jūsu izvēli nepieciešamajā sīkfailā jūsu pārlūkprogrammā %s dienas, pēc tam jautājam vēlreiz."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:391
+#: includes/features/class-seoprocookieconsent-privacy.php:396
 msgid "If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise."
 msgstr "Ja jūsu pārlūkprogramma nosūta signālu Global Privacy Control, mēs to uzskatām par mārketinga sīkfailu noraidīšanu, ja vien jūs neizvēlaties citādi."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:397
+#: includes/features/class-seoprocookieconsent-privacy.php:402
 #, php-format
 msgid "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests."
 msgid_plural "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests."
@@ -3383,3 +3385,8 @@ msgstr "Uz šiem noteikumiem attiecas tās vietas tiesību akti, kur uzņēmums 
 #: includes/features/class-seoprocookieconsent-terms.php:349
 msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
 msgstr "Ja jūs esat patērētājs, jūs saglabājat arī savas dzīvesvalsts obligāto tiesību aktu aizsardzību un varat iesniegt strīdu savas vietas tiesā, ja šie tiesību akti to pieļauj."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:233
+msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
+msgstr "ar analītikas un reklāmas pakalpojumu sniedzējiem, piemēram, statistikai, reklāmu mērīšanai un atbilstošu reklāmu rādīšanai, tikai tad, ja atļausiet šīs sīkdatnes (skatiet Sīkfaili). Daži no tiem, piemēram, sociālie tīkli un reklāmas platformas, tās izmanto arī saviem mērķiem saskaņā ar saviem privātuma paziņojumiem;"
