@@ -245,10 +245,13 @@ No record table or cron is created for sites that never enable records.
   request without `active` (cron, WP-CLI and wp-admin screens excepted;
   Meta's background send carries the visitor's cookies), and the
   `_fbp`/`_fbc` `Set-Cookie` headers it sent before this plugin loaded are
-  taken back. Never `held`, and not Meta's `facebook_signals_held` filter:
+  taken back, as is a `held` state cookie header. Never `held`:
   held, Meta renders the page differently (events queued for a release
   request instead of `fbq('track'…)`), and a page cache filled by such a
-  request loses the page view for visitors who allowed Meta Pixel. The
+  request loses the page view for visitors who allowed Meta Pixel. So
+  `facebook_signals_held` returns false (Meta's JS reads the cookie itself),
+  and `syncMeta()` expires a `held` cookie on the host and every parent
+  domain (a `COOKIE_DOMAIN` or another tool may set it there). The
   pixel's inline `FacebookSignal.initPixel()` and `fbq('track'…)` are held
   with its loader, so they run after it. Withdrawing marketing deletes
   `_fbp` and `_fbc` like other cookies.

@@ -204,15 +204,39 @@
         }
         var cookies = d.cookie ? d.cookie.split('; ') : [];
         var tail = ';path=/;SameSite=Lax' + (c.secure ? ';Secure' : '');
+        // Expire the cookie for the host and each parent domain (a
+        // COOKIE_DOMAIN or another tool may have set it there), stopping
+        // before the last label, which a browser refuses as a domain.
+        var expire = function () {
+            d.cookie = name + '=;max-age=0' + tail;
+            var parts = location.hostname.split('.');
+            if (parts.length < 2 || /^[\d.]+$/.test(location.hostname) || location.hostname.indexOf(':') !== -1) {
+                return;
+            }
+            for (var j = 0; j < parts.length - 1; j++) {
+                var dom = parts.slice(j).join('.');
+                d.cookie = name + '=;max-age=0;domain=' + dom + tail;
+                d.cookie = name + '=;max-age=0;domain=.' + dom + tail;
+            }
+        };
         if (spcc.allows('meta-pixel', 'marketing')) {
-            if (cookies.indexOf(name + '=active') === -1) {
+            var other = false;
+            for (var k = 0; k < cookies.length; k++) {
+                if (cookies[k].indexOf(name + '=') === 0 && cookies[k] !== name + '=active') {
+                    other = true;
+                }
+            }
+            if (other) {
+                expire();
+            }
+            if (other || cookies.indexOf(name + '=active') === -1) {
                 d.cookie = name + '=active;max-age=31536000' + tail;
             }
             return;
         }
         for (var i = 0; i < cookies.length; i++) {
             if (cookies[i].indexOf(name + '=') === 0) {
-                d.cookie = name + '=;max-age=0' + tail;
+                expire();
                 return;
             }
         }

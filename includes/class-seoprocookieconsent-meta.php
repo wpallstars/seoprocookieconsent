@@ -49,6 +49,9 @@ final class SEOProCookieConsent_Meta {
         }
         add_filter('before_conversions_api_event_sent', array(__CLASS__, 'server_events'), 99);
         add_filter('seoprocookieconsent_front_config', array(__CLASS__, 'config'));
+        // Never render Meta's held HTML (it varies by visitor); its JS reads
+        // the state cookie itself.
+        add_filter('facebook_signals_held', '__return_false', 99);
         self::drop_cookies();
     }
 
@@ -108,7 +111,10 @@ final class SEOProCookieConsent_Meta {
             if (0 !== stripos($header, 'set-cookie:')) {
                 continue;
             }
-            if (preg_match('/^set-cookie:\s*(' . implode('|', self::COOKIES) . ')=/i', $header)) {
+            if (
+                preg_match('/^set-cookie:\s*(' . implode('|', self::COOKIES) . ')=/i', $header)
+                || preg_match('/^set-cookie:\s*' . self::COOKIE . '=held(;|\s|$)/i', $header)
+            ) {
                 $dropped = true;
                 continue;
             }
