@@ -45,7 +45,8 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
                 'privacy_registration' => array('type' => 'lines', 'label' => __('Data protection registration', 'seoprocookieconsent'), 'description' => __('Optional: your registration with a data protection authority, where the law asks for one, such as the authority\'s name and your registration number.', 'seoprocookieconsent')),
                 'privacy_contact'      => array('type' => 'lines', 'label' => __('Contact details', 'seoprocookieconsent'), 'description' => __('Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text.', 'seoprocookieconsent')),
                 'privacy_providers'    => array('type' => 'lines', 'label' => __('Main service providers', 'seoprocookieconsent'), 'description' => __('Optional: services that handle personal information for you, one per line with their country and what they do, such as "Web host, Germany: hosting and backups". Listed where the policy explains sharing.', 'seoprocookieconsent')),
-                'privacy_ai'           => array('type' => 'bool', 'default' => true, 'label' => __('Section on the use of AI', 'seoprocookieconsent'), 'description' => __('Says that you use AI services from several providers to develop the site and your services and to help answer questions and support requests, and that you endeavour to remove personal information before anything is processed by AI. Turn it off if that is not true for this site.', 'seoprocookieconsent')),
+                'privacy_ai'           => array('type' => 'bool', 'default' => true, 'label' => __('Section on the use of AI', 'seoprocookieconsent'), 'description' => __('Says that you use AI services from several providers to develop the site and your services, and may also use them to help answer questions and support requests, and that you endeavour to remove personal information from what you send to AI. Turn it off if that is not true for this site.', 'seoprocookieconsent')),
+                'privacy_ai_features'  => array('type' => 'bool', 'default' => false, 'label' => __('AI features on this website', 'seoprocookieconsent'), 'description' => __('Turn on if visitors can use AI through this site, such as a chat assistant, AI search, or forms and tools that use AI. Adds to the section on AI that what they type, upload or submit is sent in full to the AI provider, without personal information removed, and asks them not to include personal or confidential information. Say so where they use the feature too.', 'seoprocookieconsent')),
                 'privacy_wording'      => array('type' => 'lines', 'label' => __('Your own wording', 'seoprocookieconsent'), 'description' => __('Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed.', 'seoprocookieconsent')),
             )
         );
@@ -168,24 +169,32 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
             ),
             __('More than one legal basis may apply, and you can ask us which one we rely on for a particular use. When we rely on legitimate interests, we weigh them against the effect on you and your rights, and do not rely on them where your interests override ours. You can ask us how we made that assessment.', 'seoprocookieconsent'),
             __('We send marketing only if you ask for it or, where the law allows, about similar products and services after you buy from us. Every message explains how to stop. Stopping marketing does not stop messages we need to send about an order, account or service.', 'seoprocookieconsent'),
-            __('We do not sell your personal information or share it with others for their own marketing.', 'seoprocookieconsent'),
+            __('We do not sell your personal information or give it to others for their own marketing. If you allow marketing cookies, however, the advertising services that set them may also use what they collect for their own purposes, as their privacy policies explain.', 'seoprocookieconsent'),
             __('We do not use personal information for an unrelated purpose without telling you first.', 'seoprocookieconsent'),
         ));
     }
 
     /**
-     * The section on the use of AI, or '' while it is switched off.
+     * The section on the use of AI: our own use (privacy_ai), AI features
+     * visitors use on the site (privacy_ai_features), or '' with both off.
      *
      * @return string
      */
     private static function ai_use() {
-        if (!(bool) SEOProCookieConsent_Settings::get('privacy_ai')) {
+        $parts = array();
+        if ((bool) SEOProCookieConsent_Settings::get('privacy_ai')) {
+            $parts[] = __('We use AI services from several providers to help develop and maintain this website and our services, and may also use them to help us answer questions and support requests.', 'seoprocookieconsent');
+            $parts[] = __('When we use AI to help with a message or request you send us, we endeavour to remove personal information, such as names, contact details and account or order details, from what we send to the AI service, so that only the general content of the message is processed to help prepare an answer.', 'seoprocookieconsent');
+        }
+        if ((bool) SEOProCookieConsent_Settings::get('privacy_ai_features')) {
+            $parts[] = __('Some features on this website use AI directly, such as a chat assistant, AI search, or forms and tools that use AI. When you use one, what you type, upload or submit is sent in full to the AI provider that runs it, to produce a response. We do not remove personal information from it first, so please do not include personal, sensitive or confidential information that you do not want the provider to receive.', 'seoprocookieconsent');
+            $parts[] = __('The provider handles what you send under its own terms and privacy policy, and may process it in other countries, as explained under International transfers. Where we keep a copy, such as a chat history, we handle it as this policy describes.', 'seoprocookieconsent');
+        }
+        if (array() === $parts) {
             return '';
         }
-        return self::heading(__('Artificial intelligence (AI)', 'seoprocookieconsent'))
-            . self::paragraphs(__('We use AI services from several providers to help develop and maintain this website and our services, and to help us answer questions and support requests.', 'seoprocookieconsent'))
-            . self::paragraphs(__('We endeavour to remove personal information, such as names, contact details and account or order details, from anything we send to an AI service, so that only the general content of a message is processed to help prepare an answer.', 'seoprocookieconsent'))
-            . self::paragraphs(__('Where we can, we choose AI services and settings that do not use what we send to train their models. AI helps us prepare answers; it does not make decisions about you that have legal or similarly significant effects.', 'seoprocookieconsent'));
+        $parts[] = __('Where we can, we choose AI services and settings that do not use what is sent to them to train their models. AI does not make decisions about you that have legal or similarly significant effects.', 'seoprocookieconsent');
+        return self::part(__('Artificial intelligence (AI)', 'seoprocookieconsent'), $parts);
     }
 
     /**
@@ -273,7 +282,7 @@ final class SEOProCookieConsent_Privacy extends SEOProCookieConsent_Document {
             $rights,
             __('Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you.', 'seoprocookieconsent'),
             __('To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else\'s information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission.', 'seoprocookieconsent'),
-            __('We reply without undue delay and within one month. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it.', 'seoprocookieconsent'),
+            __('We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it.', 'seoprocookieconsent'),
             __('Please tell us if your personal information changes, so we can keep it accurate.', 'seoprocookieconsent'),
         ));
     }

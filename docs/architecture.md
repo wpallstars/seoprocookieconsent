@@ -257,8 +257,15 @@ separate, off-by-default feature on Policies, built like Terms below.
 `seoprocookieconsent/privacy-policy` and `[spcc_privacy_policy]` render a
 general policy from live settings: business, country and contact (each
 falling back to the matching `terms_*` answer when empty), optional
-registration and service provider lines, the `privacy_ai` section (on by
-default) and a full plain-text override. Fixed sections are translatable
+registration and service provider lines, the AI section and a full
+plain-text override. The AI section has two parts: `privacy_ai` (on by
+default) for the owner's own AI use, where personal information is removed
+before sending, and `privacy_ai_features` (off by default) for AI visitors
+use on the site, whose input goes to the provider in full; with both off
+the section is omitted. Keep "removed" wording out of the second part.
+Rights promise a reply within four weeks, which never exceeds a one-month
+limit. Marketing says nothing is sold, but allowed marketing cookies let
+advertisers use data for their own purposes. Fixed sections are translatable
 strings, built with the base's `part()` (a heading, then paragraphs and
 lists); owner answers are escaped as paragraphs or list items. Country is
 named in the introduction and under Complaints. The Cookies section lists
@@ -284,6 +291,9 @@ payment" follows "What we offer" only when `terms_sells` is answered, and
 "Governing law" (the place's law and courts, keeping consumers' mandatory
 local protection) only when `terms_country` is. Filtered sections come
 after the offering and returns, before "Information on this website".
+Complaints go to the owner first, with voluntary mediation if the visitor
+chooses it and legal rights kept; do not add an arbitration clause, since
+pre-dispute arbitration generally cannot bind consumers in the UK.
 Every line is escaped
 as a paragraph; there are no extra front-end assets, HTML execution or
 visitor-dependent responses. Incomplete suggested wording is hidden from
