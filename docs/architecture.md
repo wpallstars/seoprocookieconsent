@@ -294,6 +294,11 @@ after the offering and returns, before "Information on this website".
 Complaints go to the owner first, with voluntary mediation if the visitor
 chooses it and legal rights kept; do not add an arbitration clause, since
 pre-dispute arbitration generally cannot bind consumers in the UK.
+After the acceptable-use list, the owner reserves anti-scraping measures,
+data fingerprinting (marks in the owner's content and data) and canary
+tokens (decoy details), and their records as evidence. It says "may"
+because sites differ, and it never means browser or device fingerprinting,
+which this plugin does not do.
 Every line is escaped
 as a paragraph; there are no extra front-end assets, HTML execution or
 visitor-dependent responses. Incomplete suggested wording is hidden from

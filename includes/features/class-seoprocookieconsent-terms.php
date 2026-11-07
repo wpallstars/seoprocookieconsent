@@ -180,6 +180,7 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Document {
                 __('show the website in a frame on another website, or present it as part of another website;', 'seoprocookieconsent'),
                 __('use the website where its content or our offerings are illegal, or in breach of export or sanctions laws.', 'seoprocookieconsent'),
             ),
+            __('To protect this website and its content, we may use measures that detect and block automated access. We may also mark our content and data in ways unique to us (data fingerprinting) and include decoy details that appear nowhere else (canary tokens), so that we can recognise copies and trace who made them. We may keep what these measures record and use it as evidence, including in legal action against unauthorised copying, and to recover our costs where the law allows.', 'seoprocookieconsent'),
         )) . self::part(__('Accounts and passwords', 'seoprocookieconsent'), array(
             __('If you create an account, please give accurate information and keep it up to date. Keep your password secure and do not share your account; you are responsible for what happens under it, unless that is our fault. Tell us straight away if you think someone else has used it.', 'seoprocookieconsent'),
             __('If we close your account because you broke these terms, please do not open another one without our permission.', 'seoprocookieconsent'),

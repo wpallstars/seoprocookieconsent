@@ -1889,7 +1889,7 @@ msgid "withdraw your consent at any time, without affecting what we did before."
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-privacy.php:280
-#: includes/features/class-seoprocookieconsent-terms.php:328
+#: includes/features/class-seoprocookieconsent-terms.php:329
 msgid "Your rights"
 msgstr ""
 
@@ -2021,7 +2021,7 @@ msgid "Describe your goods, services, digital content or information, including 
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-terms.php:48
-#: includes/features/class-seoprocookieconsent-terms.php:237
+#: includes/features/class-seoprocookieconsent-terms.php:238
 msgid "Returns, refunds and cancellations"
 msgstr ""
 
@@ -2142,248 +2142,252 @@ msgid "use the website where its content or our offerings are illegal, or in bre
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-terms.php:183
-msgid "Accounts and passwords"
+msgid "To protect this website and its content, we may use measures that detect and block automated access. We may also mark our content and data in ways unique to us (data fingerprinting) and include decoy details that appear nowhere else (canary tokens), so that we can recognise copies and trace who made them. We may keep what these measures record and use it as evidence, including in legal action against unauthorised copying, and to recover our costs where the law allows."
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-terms.php:184
-msgid "If you create an account, please give accurate information and keep it up to date. Keep your password secure and do not share your account; you are responsible for what happens under it, unless that is our fault. Tell us straight away if you think someone else has used it."
+msgid "Accounts and passwords"
 msgstr ""
 
 #: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "If you create an account, please give accurate information and keep it up to date. Keep your password secure and do not share your account; you are responsible for what happens under it, unless that is our fault. Tell us straight away if you think someone else has used it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:186
 msgid "If we close your account because you broke these terms, please do not open another one without our permission."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:195
+#: includes/features/class-seoprocookieconsent-terms.php:196
 msgid "Content you send or post"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:196
+#: includes/features/class-seoprocookieconsent-terms.php:197
 msgid "Where this website lets you post comments, reviews or other content, you keep ownership of it, and you give us a non-exclusive, royalty-free permission to publish, display, store and adapt it for format or length in connection with this website and our services. You are responsible for what you post and confirm that you have the right to post it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:197
+#: includes/features/class-seoprocookieconsent-terms.php:198
 msgid "What you post may be public. We will consider reasonable requests to remove it, but copies may remain with search engines or archives that we do not control."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:198
+#: includes/features/class-seoprocookieconsent-terms.php:199
 msgid "We cannot check everything posted, but we may review, edit, refuse or remove any content at our discretion, for example if it breaks these terms. Where the law requires it, such as under a court order, we will cooperate with the authorities, including by disclosing who posted unlawful content."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:199
+#: includes/features/class-seoprocookieconsent-terms.php:200
 msgid "If you send us ideas, suggestions or feedback, we may use them freely without paying you. Please do not send us anything you consider confidential or your own invention unless we have agreed in writing how it will be handled. Personal information you send is handled as our privacy policy explains."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:209
+#: includes/features/class-seoprocookieconsent-terms.php:210
 msgid "Intellectual property"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:210
+#: includes/features/class-seoprocookieconsent-terms.php:211
 msgid "This website and its content, such as text, images, graphics, logos and software, and its design and arrangement, belong to us or to those who license them to us, and are protected by copyright and other laws. All rights are reserved except as these terms allow."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:211
+#: includes/features/class-seoprocookieconsent-terms.php:212
 msgid "You may view, download and print pages for your own personal, non-commercial use, and share links to them. Unless we agree in writing or the law allows it, such as quoting a short extract with acknowledgement, you must not copy, republish, sell, adapt or otherwise use our content commercially, or remove copyright or other notices."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:212
+#: includes/features/class-seoprocookieconsent-terms.php:213
 msgid "Names, logos and trade marks on this website belong to us or their owners. Please do not use them without permission."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:213
+#: includes/features/class-seoprocookieconsent-terms.php:214
 msgid "Where we provide software, files or other downloads, they are licensed, not sold, and any licence that comes with them applies. Unless that licence or the law allows it, do not share, resell, reverse engineer or decompile them."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:214
+#: includes/features/class-seoprocookieconsent-terms.php:215
 msgid "If we send you a newsletter, you are welcome to forward it to people who may be interested."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:215
+#: includes/features/class-seoprocookieconsent-terms.php:216
 msgid "Links and other websites"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:216
+#: includes/features/class-seoprocookieconsent-terms.php:217
 msgid "Links to other websites, and content from them, are provided for convenience. We do not control or endorse them and are not responsible for their content, products or privacy practices; their own terms and policies apply, and you use them at your own risk. Where we list or link to other businesses, any arrangement you make with them is between you and them."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:217
+#: includes/features/class-seoprocookieconsent-terms.php:218
 msgid "Some links may be affiliate or sponsored links, which means we may earn a commission or payment if you buy. We say so where the law requires it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:218
+#: includes/features/class-seoprocookieconsent-terms.php:219
 msgid "If you pay on a payment provider's page, its own terms and privacy policy also apply."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:219
+#: includes/features/class-seoprocookieconsent-terms.php:220
 msgid "You may link to this website fairly and lawfully, as long as you do not suggest a connection with us, or approval or endorsement from us, that does not exist, and do not link from a website with unlawful or offensive content. We may ask you to remove a link."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:233
+#: includes/features/class-seoprocookieconsent-terms.php:234
 msgid "What we offer"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:248
+#: includes/features/class-seoprocookieconsent-terms.php:249
 msgid "Orders and payment"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:249
+#: includes/features/class-seoprocookieconsent-terms.php:250
 msgid "If you buy from us, prices are as shown on the website or in our quote, with any taxes and delivery charges shown before you order. Quotes are valid for the period they state."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:250
+#: includes/features/class-seoprocookieconsent-terms.php:251
 msgid "Your order is an offer to buy. A contract is made when we confirm that we have accepted it, for example by email or by providing what you ordered. We may decline an order, for example if something is unavailable, and will refund anything you have paid for it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:251
+#: includes/features/class-seoprocookieconsent-terms.php:252
 msgid "If we find a mistake in a price or description before we accept your order, we will tell you, and you can go ahead at the correct price or cancel."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:252
+#: includes/features/class-seoprocookieconsent-terms.php:253
 msgid "Delivery and completion dates are estimates unless we agree a fixed date. We will tell you if there is a delay."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:253
+#: includes/features/class-seoprocookieconsent-terms.php:254
 msgid "If you subscribe or pay regularly, you can cancel as explained when you sign up, and keep access until the end of the period you have paid for."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:263
+#: includes/features/class-seoprocookieconsent-terms.php:264
 msgid "Information on this website"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:264
+#: includes/features/class-seoprocookieconsent-terms.php:265
 msgid "We take reasonable care to keep this website accurate and up to date, but its content is for general information only. It may contain errors or be out of date, and we may change it at any time without notice."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:265
+#: includes/features/class-seoprocookieconsent-terms.php:266
 msgid "Nothing on this website is legal, financial, medical or other professional advice. Please get advice from a suitably qualified professional before acting on it. Examples and case studies are illustrations; we cannot promise any particular result."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:266
+#: includes/features/class-seoprocookieconsent-terms.php:267
 msgid "Availability and security"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:267
+#: includes/features/class-seoprocookieconsent-terms.php:268
 msgid "We aim to keep this website available, but it may sometimes be unavailable because of maintenance, technical problems or other things outside our control, and we will warn you in advance where we reasonably can. We may change, suspend or withdraw the website or any part of it. If this affects something you have paid for, we will tell you and refund what you paid for anything you do not receive."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:268
+#: includes/features/class-seoprocookieconsent-terms.php:269
 msgid "We take reasonable steps to keep this website secure, but cannot promise that it, or anything you download from it, is free from viruses or other harmful code. Please use your own virus protection and backups, and make sure your device and connection are suitable; we are not responsible for problems caused by them."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:281
+#: includes/features/class-seoprocookieconsent-terms.php:282
 msgid "AI-assisted services"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:282
+#: includes/features/class-seoprocookieconsent-terms.php:283
 msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:283
+#: includes/features/class-seoprocookieconsent-terms.php:284
 msgid "AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:294
+#: includes/features/class-seoprocookieconsent-terms.php:295
 msgid "Our responsibility for loss or damage"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:295
+#: includes/features/class-seoprocookieconsent-terms.php:296
 msgid "Nothing in these terms limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for anything else that the law does not allow us to limit or exclude."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:296
+#: includes/features/class-seoprocookieconsent-terms.php:297
 msgid "If you are a consumer, we are responsible for loss or damage you suffer that is a foreseeable result of our breaking these terms or failing to use reasonable care and skill, but not for loss or damage that is not foreseeable. We provide this website for domestic and private use, so we are not responsible to consumers for business losses, such as loss of profit, revenue, business or opportunity."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:297
+#: includes/features/class-seoprocookieconsent-terms.php:298
 msgid "If you use this website or buy from us for business purposes, then, as far as the law allows: the website and its content are provided \"as is\" and \"as available\", without any promise not set out in these terms; we are not responsible for indirect or consequential loss, or for loss of profit, revenue, data, business or opportunity; and our total liability to you is limited to the price you paid for the product or service concerned."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:298
+#: includes/features/class-seoprocookieconsent-terms.php:299
 msgid "If you use this website in breach of these terms or the law, you are responsible for any reasonable, foreseeable loss or claim that results, as far as the law allows."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:299
+#: includes/features/class-seoprocookieconsent-terms.php:300
 msgid "Neither of us is responsible for delays or failures caused by events outside our reasonable control, for as long as they last, except for payments due. If such an event affects something you have ordered, we will tell you and do what we reasonably can to limit the effect."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:300
+#: includes/features/class-seoprocookieconsent-terms.php:301
 msgid "Suspending or ending access"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:301
+#: includes/features/class-seoprocookieconsent-terms.php:302
 msgid "If you break these terms, we may take the action we think appropriate, such as removing content, suspending or closing your account, blocking your access, or taking legal action. We may also restrict or end access to the website or any part of it for other good reasons, such as security. If this affects a service you have paid for, we will give you reasonable notice where we can."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:311
+#: includes/features/class-seoprocookieconsent-terms.php:312
 msgid "Privacy and communications"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:312
+#: includes/features/class-seoprocookieconsent-terms.php:313
 msgid "Our privacy policy explains how we handle personal information and use cookies."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:313
+#: includes/features/class-seoprocookieconsent-terms.php:314
 msgid "When you use this website or contact us electronically, you agree that we may reply and send you notices electronically, such as by email or on the website, and that these meet any legal requirement for them to be in writing, except where the law requires another form."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:314
+#: includes/features/class-seoprocookieconsent-terms.php:315
 msgid "Accessibility and complaints"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:315
+#: includes/features/class-seoprocookieconsent-terms.php:316
 msgid "We want everyone to be able to use this website. If something stops you using part of it, such as an accessibility problem, please tell us what happened, and we will try to fix it or provide the information another way."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:316
+#: includes/features/class-seoprocookieconsent-terms.php:317
 msgid "If you have a complaint or concern, please contact us first so we can try to put things right. Tell us what happened and what you would like us to do, and we will reply as soon as we can."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:317
+#: includes/features/class-seoprocookieconsent-terms.php:318
 msgid "If we cannot resolve it between us and you choose to try mediation, we will endeavour to take part in good faith where the concern is legitimate. Mediation is voluntary and does not affect your legal rights, including your right to go to a regulator or the courts."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:329
+#: includes/features/class-seoprocookieconsent-terms.php:330
 msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:330
+#: includes/features/class-seoprocookieconsent-terms.php:331
 msgid "These include rights about faulty goods, services and digital content, and any right to cancel an online purchase. Some places do not allow certain promises to be excluded or liability to be limited, so some of these terms may not apply to you."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:331
+#: includes/features/class-seoprocookieconsent-terms.php:332
 msgid "General"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:332
+#: includes/features/class-seoprocookieconsent-terms.php:333
 msgid "These terms, with the policies and any other agreement they refer to, are the whole agreement between you and us about their subject, and replace any earlier understanding about it."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:333
+#: includes/features/class-seoprocookieconsent-terms.php:334
 msgid "If a court or authority decides that part of these terms is invalid or unenforceable, that part is changed or removed only as far as needed, and the rest stays in force."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:334
+#: includes/features/class-seoprocookieconsent-terms.php:335
 msgid "If we do not enforce a term straight away, we can still enforce it later."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:335
+#: includes/features/class-seoprocookieconsent-terms.php:336
 msgid "You may not transfer your rights or obligations under these terms to anyone else without our written agreement. We may transfer ours to another organisation, such as a buyer of our business; we will tell you if this happens and make sure it does not reduce your rights."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:336
+#: includes/features/class-seoprocookieconsent-terms.php:337
 msgid "Only you and we have rights under these terms, unless they say otherwise."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:342
+#: includes/features/class-seoprocookieconsent-terms.php:343
 msgid "Governing law"
 msgstr ""
 
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-terms.php:345
+#: includes/features/class-seoprocookieconsent-terms.php:346
 #, php-format
 msgid "These terms are governed by the law of the place where the business is based (%s), and its courts can hear any dispute about them."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-terms.php:348
+#: includes/features/class-seoprocookieconsent-terms.php:349
 msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
 msgstr ""
 
