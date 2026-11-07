@@ -659,7 +659,7 @@ msgid "%s left data on the site."
 msgstr ""
 
 #: includes/class-seoprocookieconsent-blocker.php:345
-#: includes/features/class-seoprocookieconsent-consent.php:427
+#: includes/features/class-seoprocookieconsent-consent.php:429
 msgid "This content"
 msgstr ""
 
@@ -670,7 +670,7 @@ msgstr ""
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
-#: includes/features/class-seoprocookieconsent-consent.php:424
+#: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr ""
@@ -682,12 +682,12 @@ msgid "Load %s"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-blocker.php:359
-#: includes/features/class-seoprocookieconsent-consent.php:429
-#: includes/features/class-seoprocookieconsent-consent.php:533
-#: includes/features/class-seoprocookieconsent-consent.php:790
-#: includes/features/class-seoprocookieconsent-consent.php:802
-#: includes/features/class-seoprocookieconsent-consent.php:861
-#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/features/class-seoprocookieconsent-consent.php:431
+#: includes/features/class-seoprocookieconsent-consent.php:535
+#: includes/features/class-seoprocookieconsent-consent.php:792
+#: includes/features/class-seoprocookieconsent-consent.php:804
+#: includes/features/class-seoprocookieconsent-consent.php:863
+#: includes/features/class-seoprocookieconsent-consent.php:889
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr ""
@@ -936,7 +936,7 @@ msgid "Tells people from bots"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:183
-#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:346
 msgid "30 days"
 msgstr ""
 
@@ -948,7 +948,7 @@ msgstr ""
 #: includes/class-seoprocookieconsent-services.php:191
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:355
 #: includes/features/class-seoprocookieconsent-policy.php:120
 msgid "1 year"
 msgstr ""
@@ -958,14 +958,15 @@ msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's ow
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:342
-#: includes/class-seoprocookieconsent-services.php:351
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:346
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "Measures ad conversions"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
 msgid "3 months"
 msgstr ""
 
@@ -974,96 +975,97 @@ msgid "Shows and measures ads"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:278
-#: includes/class-seoprocookieconsent-services.php:333
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:337
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "13 months"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:381
 msgid "Tells visitors apart"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:295
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "2 years"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:295
 #: includes/class-seoprocookieconsent-services.php:305
 #: includes/class-seoprocookieconsent-services.php:315
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "Keeps the visit together"
 msgstr ""
 
 #: includes/class-seoprocookieconsent-services.php:305
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "1 day"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:324
-#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+#: includes/class-seoprocookieconsent-services.php:337
 msgid "Measures and personalises ads"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:377
-#: includes/class-seoprocookieconsent-services.php:387
-#: includes/class-seoprocookieconsent-services.php:408
-#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:381
+#: includes/class-seoprocookieconsent-services.php:391
+#: includes/class-seoprocookieconsent-services.php:412
+#: includes/class-seoprocookieconsent-services.php:470
 msgid "6 months"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:383
-#: includes/class-seoprocookieconsent-services.php:394
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:398
 msgid "video"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:391
 msgid "Remembers player settings"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "Counts views"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Session"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:404
+#: includes/class-seoprocookieconsent-services.php:408
 msgid "map"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:412
 msgid "Remembers preferences"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:414
-#: includes/class-seoprocookieconsent-services.php:422
+#: includes/class-seoprocookieconsent-services.php:418
+#: includes/class-seoprocookieconsent-services.php:426
 msgid "player"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:430
-#: includes/class-seoprocookieconsent-services.php:438
-#: includes/class-seoprocookieconsent-services.php:446
+#: includes/class-seoprocookieconsent-services.php:434
+#: includes/class-seoprocookieconsent-services.php:442
+#: includes/class-seoprocookieconsent-services.php:450
 msgid "post"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Keeps the chat connected"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:466
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:470
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "Keeps the chat going"
 msgstr ""
 
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "9 months"
 msgstr ""
 
@@ -1237,174 +1239,174 @@ msgid "Visitors are asked again after this. 365 is usual; some regulators prefer
 msgstr ""
 
 #. translators: %s: service names, such as "Google Analytics, Hotjar".
-#: includes/features/class-seoprocookieconsent-consent.php:416
+#: includes/features/class-seoprocookieconsent-consent.php:418
 #: includes/views/consent-banner.php:91
 #, php-format
 msgid "Used by: %s."
 msgstr ""
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:419
+#: includes/features/class-seoprocookieconsent-consent.php:421
 #, php-format
 msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
 msgstr ""
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:421
+#: includes/features/class-seoprocookieconsent-consent.php:423
 #, php-format
 msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:422
+#: includes/features/class-seoprocookieconsent-consent.php:424
 msgid "other services"
 msgstr ""
 
 #. translators: 1: service name, such as "YouTube"; 2: cookie category.
-#: includes/features/class-seoprocookieconsent-consent.php:426
+#: includes/features/class-seoprocookieconsent-consent.php:428
 #, php-format
 msgid "%1$s needs %2$s to show here. Allow it to see this content."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:428
+#: includes/features/class-seoprocookieconsent-consent.php:430
 msgid "Load content"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:816
+#: includes/features/class-seoprocookieconsent-consent.php:818
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:832
+#: includes/features/class-seoprocookieconsent-consent.php:834
 msgid "Add to Menu"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:879
+#: includes/features/class-seoprocookieconsent-consent.php:881
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:880
+#: includes/features/class-seoprocookieconsent-consent.php:882
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:886
+#: includes/features/class-seoprocookieconsent-consent.php:888
 msgid "Text"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:892
+#: includes/features/class-seoprocookieconsent-consent.php:894
 msgid "Show as"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:896
 msgid "Button"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:895
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Link"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:912
+#: includes/features/class-seoprocookieconsent-consent.php:914
 msgid "Get started"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:913
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Switch on Cookie consent."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:919
 msgid "Scan now"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:918
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:939
+#: includes/features/class-seoprocookieconsent-consent.php:941
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:943
 msgid "Found on your pages and held back until allowed:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:952
+#: includes/features/class-seoprocookieconsent-consent.php:954
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:959
+#: includes/features/class-seoprocookieconsent-consent.php:961
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:968
+#: includes/features/class-seoprocookieconsent-consent.php:970
 msgid "You cannot scan this site."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:972
+#: includes/features/class-seoprocookieconsent-consent.php:974
 msgid "Switch on Cookie consent before scanning."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1082
+#: includes/features/class-seoprocookieconsent-consent.php:1084
 msgid "Preview the banner"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1086
+#: includes/features/class-seoprocookieconsent-consent.php:1088
 msgid "Visitor"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1090
 msgid "Asked first (Europe, Quebec)"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1089
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Shown a notice (elsewhere)"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1093
+#: includes/features/class-seoprocookieconsent-consent.php:1095
 msgid "Screen"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1097
 msgid "Desktop"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1096
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Phone"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1099
+#: includes/features/class-seoprocookieconsent-consent.php:1101
 msgid "Reload"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1102
+#: includes/features/class-seoprocookieconsent-consent.php:1104
 msgid "Banner preview on your home page"
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1106
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1123
+#: includes/features/class-seoprocookieconsent-consent.php:1125
 msgid "No pages found."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1126
+#: includes/features/class-seoprocookieconsent-consent.php:1128
 msgid "Scanning…"
 msgstr ""
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1130
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr ""
 
-#: includes/features/class-seoprocookieconsent-consent.php:1129
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr ""
 

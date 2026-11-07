@@ -192,6 +192,9 @@
 
     function signal() {
         var cats = current();
+        if (typeof spcc.syncMeta === 'function') {
+            spcc.syncMeta();
+        }
         if (typeof w.gtag === 'function') {
             w.gtag('consent', 'update', spcc.googleState());
         } else {

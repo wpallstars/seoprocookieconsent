@@ -318,10 +318,14 @@ final class SEOProCookieConsent_Services {
             'meta-pixel'      => array(
                 'name'     => 'Meta Pixel',
                 'category' => 'marketing',
-                'patterns' => array('connect.facebook.net/en_us/fbevents.js', 'fbevents.js', "fbq('init'", 'fbq("init"'),
+                // Meta Pixel for WordPress 5.2+ starts the pixel from inline
+                // FacebookSignal.initPixel() and tracks with inline fbq('track'):
+                // held too, so they run after the loader (SEOProCookieConsent_Meta).
+                'patterns' => array('connect.facebook.net/en_us/fbevents.js', 'fbevents.js', "fbq('init'", 'fbq("init"', 'facebooksignal.initpixel(', "fbq('track", 'fbq("track'),
                 'privacy'  => 'https://www.facebook.com/privacy/policy/',
                 'cookies'  => array(
                     '_fbp' => array(__('Measures and personalises ads', 'seoprocookieconsent'), __('3 months', 'seoprocookieconsent')),
+                    '_fbc' => array(__('Measures and personalises ads', 'seoprocookieconsent'), __('3 months', 'seoprocookieconsent')),
                 ),
             ),
             'tiktok-pixel'    => array(
