@@ -665,7 +665,7 @@ msgid "%s left data on the site."
 msgstr "%s pozostawił dane na stronie."
 
 #: includes/class-seoprocookieconsent-blocker.php:345
-#: includes/features/class-seoprocookieconsent-consent.php:427
+#: includes/features/class-seoprocookieconsent-consent.php:429
 msgid "This content"
 msgstr "Ta treść"
 
@@ -676,7 +676,7 @@ msgstr "treść"
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
-#: includes/features/class-seoprocookieconsent-consent.php:424
+#: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr "%1$s może ustawiać pliki cookie. Wczyta się, gdy na to zezwolisz albo zezwolisz na %2$s w Ustawieniach plików cookie."
@@ -688,12 +688,12 @@ msgid "Load %s"
 msgstr "Załaduj %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
-#: includes/features/class-seoprocookieconsent-consent.php:429
-#: includes/features/class-seoprocookieconsent-consent.php:533
-#: includes/features/class-seoprocookieconsent-consent.php:790
-#: includes/features/class-seoprocookieconsent-consent.php:802
-#: includes/features/class-seoprocookieconsent-consent.php:861
-#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/features/class-seoprocookieconsent-consent.php:431
+#: includes/features/class-seoprocookieconsent-consent.php:535
+#: includes/features/class-seoprocookieconsent-consent.php:792
+#: includes/features/class-seoprocookieconsent-consent.php:804
+#: includes/features/class-seoprocookieconsent-consent.php:863
+#: includes/features/class-seoprocookieconsent-consent.php:889
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Ustawienia plików cookie"
@@ -942,7 +942,7 @@ msgid "Tells people from bots"
 msgstr "Informuje ludzi od botów"
 
 #: includes/class-seoprocookieconsent-services.php:183
-#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:346
 msgid "30 days"
 msgstr "30 dni"
 
@@ -954,7 +954,7 @@ msgstr "Pomaga zapobiegać oszustwom płatniczym"
 #: includes/class-seoprocookieconsent-services.php:191
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:355
 #: includes/features/class-seoprocookieconsent-policy.php:120
 msgid "1 year"
 msgstr "1 rok"
@@ -964,14 +964,15 @@ msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's ow
 msgstr "Przyjmuje płatności i pomaga zapobiegać oszustwom. Może umieszczać pliki cookie na stronach PayPal."
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:342
-#: includes/class-seoprocookieconsent-services.php:351
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:346
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "Measures ad conversions"
 msgstr "Pomiary konwersji reklam"
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
 msgid "3 months"
 msgstr "3 miesiące"
 
@@ -980,96 +981,97 @@ msgid "Shows and measures ads"
 msgstr "Pokazuje i mierzy reklamy"
 
 #: includes/class-seoprocookieconsent-services.php:278
-#: includes/class-seoprocookieconsent-services.php:333
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:337
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "13 months"
 msgstr "13 miesięcy"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:381
 msgid "Tells visitors apart"
 msgstr "Rozróżnia odwiedzających"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:295
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "2 years"
 msgstr "2 lata"
 
 #: includes/class-seoprocookieconsent-services.php:295
 #: includes/class-seoprocookieconsent-services.php:305
 #: includes/class-seoprocookieconsent-services.php:315
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "Keeps the visit together"
 msgstr "Utrzymuje wizytę w całości"
 
 #: includes/class-seoprocookieconsent-services.php:305
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "1 day"
 msgstr "1 dzień"
 
-#: includes/class-seoprocookieconsent-services.php:324
-#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+#: includes/class-seoprocookieconsent-services.php:337
 msgid "Measures and personalises ads"
 msgstr "Mierzy i personalizuje reklamy"
 
-#: includes/class-seoprocookieconsent-services.php:377
-#: includes/class-seoprocookieconsent-services.php:387
-#: includes/class-seoprocookieconsent-services.php:408
-#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:381
+#: includes/class-seoprocookieconsent-services.php:391
+#: includes/class-seoprocookieconsent-services.php:412
+#: includes/class-seoprocookieconsent-services.php:470
 msgid "6 months"
 msgstr "6 miesięcy"
 
-#: includes/class-seoprocookieconsent-services.php:383
-#: includes/class-seoprocookieconsent-services.php:394
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:398
 msgid "video"
 msgstr "wideo"
 
-#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:391
 msgid "Remembers player settings"
 msgstr "Zapamiętuje ustawienia odtwarzacza"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "Counts views"
 msgstr "Zlicza wyświetlenia"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Session"
 msgstr "Sesja"
 
-#: includes/class-seoprocookieconsent-services.php:404
+#: includes/class-seoprocookieconsent-services.php:408
 msgid "map"
 msgstr "mapa"
 
-#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:412
 msgid "Remembers preferences"
 msgstr "Zapamiętuje preferencje"
 
-#: includes/class-seoprocookieconsent-services.php:414
-#: includes/class-seoprocookieconsent-services.php:422
+#: includes/class-seoprocookieconsent-services.php:418
+#: includes/class-seoprocookieconsent-services.php:426
 msgid "player"
 msgstr "odtwarzacz"
 
-#: includes/class-seoprocookieconsent-services.php:430
-#: includes/class-seoprocookieconsent-services.php:438
-#: includes/class-seoprocookieconsent-services.php:446
+#: includes/class-seoprocookieconsent-services.php:434
+#: includes/class-seoprocookieconsent-services.php:442
+#: includes/class-seoprocookieconsent-services.php:450
 msgid "post"
 msgstr "post"
 
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Keeps the chat connected"
 msgstr "Utrzymuje połączenie czatu"
 
-#: includes/class-seoprocookieconsent-services.php:466
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:470
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "Keeps the chat going"
 msgstr "Podtrzymuje czat"
 
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "9 months"
 msgstr "9 miesięcy"
 
@@ -1239,174 +1241,174 @@ msgid "Visitors are asked again after this. 365 is usual; some regulators prefer
 msgstr "Następnie goście są proszeni o ponowne udzielenie odpowiedzi. Zazwyczaj jest to 365, ale niektórzy regulatorzy preferują 180."
 
 #. translators: %s: service names, such as "Google Analytics, Hotjar".
-#: includes/features/class-seoprocookieconsent-consent.php:416
+#: includes/features/class-seoprocookieconsent-consent.php:418
 #: includes/views/consent-banner.php:91
 #, php-format
 msgid "Used by: %s."
 msgstr "Używane przez: %s."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:419
+#: includes/features/class-seoprocookieconsent-consent.php:421
 #, php-format
 msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
 msgstr "Ta strona korzysta z: %s. Mogą one ustawiać pliki cookie i udostępniać dane o Twojej wizycie. Wybierz, na co zezwalasz."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:421
+#: includes/features/class-seoprocookieconsent-consent.php:423
 #, php-format
 msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
 msgstr "Ta strona korzysta z: %s. Mogą one ustawiać pliki cookie. Możesz je wyłączyć w Ustawieniach plików cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:422
+#: includes/features/class-seoprocookieconsent-consent.php:424
 msgid "other services"
 msgstr "inne usługi"
 
 #. translators: 1: service name, such as "YouTube"; 2: cookie category.
-#: includes/features/class-seoprocookieconsent-consent.php:426
+#: includes/features/class-seoprocookieconsent-consent.php:428
 #, php-format
 msgid "%1$s needs %2$s to show here. Allow it to see this content."
 msgstr "%1$s wymaga zgody na %2$s, aby się tu wyświetlić. Zezwól, aby zobaczyć tę treść."
 
-#: includes/features/class-seoprocookieconsent-consent.php:428
+#: includes/features/class-seoprocookieconsent-consent.php:430
 msgid "Load content"
 msgstr "Załaduj zawartość"
 
-#: includes/features/class-seoprocookieconsent-consent.php:816
+#: includes/features/class-seoprocookieconsent-consent.php:818
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Link otwierający ustawienia plików cookie, dzięki czemu odwiedzający mogą zmienić swoje wybory. Po dodaniu tego linku do menu, automatyczny link do stopki nie jest dodawany."
 
-#: includes/features/class-seoprocookieconsent-consent.php:832
+#: includes/features/class-seoprocookieconsent-consent.php:834
 msgid "Add to Menu"
 msgstr "Dodaj do menu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:879
+#: includes/features/class-seoprocookieconsent-consent.php:881
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Przycisk ustawień plików cookie"
 
-#: includes/features/class-seoprocookieconsent-consent.php:880
+#: includes/features/class-seoprocookieconsent-consent.php:882
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Otwiera ustawienia plików cookie, dzięki którym odwiedzający mogą zmienić swoje wybory."
 
-#: includes/features/class-seoprocookieconsent-consent.php:886
+#: includes/features/class-seoprocookieconsent-consent.php:888
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/features/class-seoprocookieconsent-consent.php:892
+#: includes/features/class-seoprocookieconsent-consent.php:894
 msgid "Show as"
 msgstr "Pokaż jako"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:896
 msgid "Button"
 msgstr "Przycisk"
 
-#: includes/features/class-seoprocookieconsent-consent.php:895
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Link"
 msgstr "Połączyć"
 
-#: includes/features/class-seoprocookieconsent-consent.php:912
+#: includes/features/class-seoprocookieconsent-consent.php:914
 msgid "Get started"
 msgstr "Zacznij"
 
-#: includes/features/class-seoprocookieconsent-consent.php:913
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Switch on Cookie consent."
 msgstr "Włącz zgodę na pliki cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Wybierz opcję Skanuj teraz, a następnie zaznacz opcję Znaleziono na Twoich stronach poniżej."
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Włącz opcję „Zasady dotyczące plików cookie” na karcie „Zasady” i dodaj blok „Zasady dotyczące plików cookie” do swojej strony poświęconej prywatności lub polityce dotyczącej plików cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:919
 msgid "Scan now"
 msgstr "Zeskanuj teraz"
 
-#: includes/features/class-seoprocookieconsent-consent.php:918
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Sprawdza stronę główną, stronę prywatności oraz maksymalnie trzy ostatnie wpisy i trzy podstrony. To przykład, a nie pełny audyt; strony są również sprawdzane podczas przeglądania stron przez użytkowników. Skrypty nie są uruchamiane."
 
-#: includes/features/class-seoprocookieconsent-consent.php:939
+#: includes/features/class-seoprocookieconsent-consent.php:941
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Nie znaleziono jeszcze usług, które ustawiają pliki cookie. Zeskanuj teraz po włączeniu tej opcji lub otwórz kilka stron swojej witryny."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:943
 msgid "Found on your pages and held back until allowed:"
 msgstr "Znalezione na Twoich stronach i wstrzymane do momentu uzyskania pozwolenia:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:952
+#: includes/features/class-seoprocookieconsent-consent.php:954
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Niezbędne, nigdy nie ukrywane i wymienione w polityce plików cookie:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:959
+#: includes/features/class-seoprocookieconsent-consent.php:961
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Inne skrypty z tych witryn ładują się normalnie. Jeśli któryś z nich ustawia pliki cookie, dodaj je w sekcji Rozwiązywanie problemów → Powstrzymaj się również:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:968
+#: includes/features/class-seoprocookieconsent-consent.php:970
 msgid "You cannot scan this site."
 msgstr "Nie możesz skanować tej witryny."
 
-#: includes/features/class-seoprocookieconsent-consent.php:972
+#: includes/features/class-seoprocookieconsent-consent.php:974
 msgid "Switch on Cookie consent before scanning."
 msgstr "Przed skanowaniem włącz opcję zgody na pliki cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1082
+#: includes/features/class-seoprocookieconsent-consent.php:1084
 msgid "Preview the banner"
 msgstr "Podgląd baneru"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1086
+#: includes/features/class-seoprocookieconsent-consent.php:1088
 msgid "Visitor"
 msgstr "Gość"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1090
 msgid "Asked first (Europe, Quebec)"
 msgstr "Zadano pierwsze pytanie (Europa, Quebec)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1089
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Shown a notice (elsewhere)"
 msgstr "Pokazano powiadomienie (gdzie indziej)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1093
+#: includes/features/class-seoprocookieconsent-consent.php:1095
 msgid "Screen"
 msgstr "Ekran"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1097
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1096
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Phone"
 msgstr "Telefon"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1099
+#: includes/features/class-seoprocookieconsent-consent.php:1101
 msgid "Reload"
 msgstr "Przeładować"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1102
+#: includes/features/class-seoprocookieconsent-consent.php:1104
 msgid "Banner preview on your home page"
 msgstr "Podgląd banera na stronie głównej"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1106
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Twoja strona główna z banerem takim, jakim widzą ją odwiedzający, nawet jeśli strona nie ma żadnych ukrytych elementów. Aktualizuje się po każdej zmianie. Wybory dokonane w podglądzie nie są zapisywane."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1123
+#: includes/features/class-seoprocookieconsent-consent.php:1125
 msgid "No pages found."
 msgstr "Nie znaleziono żadnych stron."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1126
+#: includes/features/class-seoprocookieconsent-consent.php:1128
 msgid "Scanning…"
 msgstr "Łów…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1130
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Skanowanie zakończone: sprawdzono strony %1$s ; nie udało się sprawdzić %2$s. Sprawdź wyniki poniżej."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1129
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "Skanowanie nie mogło sprawdzić Twoich stron. Żądania pętli zwrotnej mogą być zablokowane. Spróbuj ponownie lub otwórz strony swojej witryny, aby wypełnić listę podczas przeglądania."
 
@@ -1578,7 +1580,7 @@ msgstr "Korzystanie z tej witryny internetowej"
 msgid "What we offer"
 msgstr "Co oferujemy"
 
-#: includes/features/class-seoprocookieconsent-privacy.php:280
+#: includes/features/class-seoprocookieconsent-privacy.php:285
 #: includes/features/class-seoprocookieconsent-terms.php:329
 msgid "Your rights"
 msgstr "Twoje prawa"
@@ -2690,249 +2692,249 @@ msgid "You can also set your browser to refuse or delete cookies. Some parts of 
 msgstr "Możesz też ustawić przeglądarkę tak, aby odrzucała lub usuwała pliki cookie. Niektóre części tej witryny mogą bez nich nie działać."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:225
+#: includes/features/class-seoprocookieconsent-privacy.php:236
 msgid "Who we share it with"
 msgstr "Komu je udostępniamy"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:226
+#: includes/features/class-seoprocookieconsent-privacy.php:237
 msgid "We share personal information only when needed:"
 msgstr "Dane osobowe udostępniamy tylko wtedy, gdy jest to potrzebne:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:228
+#: includes/features/class-seoprocookieconsent-privacy.php:226
 msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;"
 msgstr "dostawcom usług, którzy przetwarzają je dla nas na nasze polecenie, na przykład w zakresie hostingu, kopii zapasowych, wsparcia IT, poczty e-mail, płatności i obsługi klienta. Mogą wykorzystywać je tylko do świadczenia nam swoich usług, muszą je zabezpieczać i mogą korzystać z innych dostawców tylko na tych samych warunkach;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:229
+#: includes/features/class-seoprocookieconsent-privacy.php:227
 msgid "with professional advisers, such as accountants, auditors, lawyers, banks and insurers;"
 msgstr "doradcom zawodowym, takim jak księgowi, audytorzy, prawnicy, banki i ubezpieczyciele;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:230
+#: includes/features/class-seoprocookieconsent-privacy.php:228
 msgid "with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;"
 msgstr "organom podatkowym, regulatorom, sądom, policji i innym podmiotom, gdy wymaga tego prawo, lub aby chronić prawa, mienie lub bezpieczeństwo naszych klientów, innych osób lub nasze;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:231
+#: includes/features/class-seoprocookieconsent-privacy.php:229
 msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
 msgstr "nabywcy lub następcy prawnemu, jeśli nasza firma lub ta witryna zostanie sprzedana lub połączona z inną, który może wykorzystywać je tak, jak opisuje ta polityka;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:232
+#: includes/features/class-seoprocookieconsent-privacy.php:235
 msgid "with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice."
 msgstr "innym podmiotom, gdy o to prosisz lub wyrażasz na to zgodę, na przykład firmie, z którą prosisz o nawiązanie kontaktu, która następnie wykorzystuje je zgodnie z własną informacją o prywatności."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:234
+#: includes/features/class-seoprocookieconsent-privacy.php:239
 msgid "If you pay on a payment provider's page, the provider handles your payment details under its own terms and privacy notice."
 msgstr "Jeśli płacisz na stronie dostawcy płatności, dostawca przetwarza Twoje dane płatnicze na podstawie własnych warunków i informacji o prywatności."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:238
+#: includes/features/class-seoprocookieconsent-privacy.php:243
 msgid "Our main service providers are:"
 msgstr "Nasi główni dostawcy usług to:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:241
+#: includes/features/class-seoprocookieconsent-privacy.php:246
 msgid "International transfers"
 msgstr "Przekazywanie danych za granicę"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:242
+#: includes/features/class-seoprocookieconsent-privacy.php:247
 msgid "Some of our service providers store or process information in other countries, depending on their settings, where their systems are and where their support teams work. Where practical, we choose providers and settings that keep information in our own region."
 msgstr "Niektórzy z naszych dostawców usług przechowują lub przetwarzają dane w innych krajach, w zależności od swoich ustawień, lokalizacji swoich systemów i miejsca pracy zespołów wsparcia. Tam, gdzie to praktyczne, wybieramy dostawców i ustawienia, które utrzymują dane w naszym regionie."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:243
+#: includes/features/class-seoprocookieconsent-privacy.php:248
 msgid "Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision, standard contractual clauses or an equivalent agreement, together with measures such as encryption and access controls. You can ask us for more information about them."
 msgstr "Tam, gdzie wymagają tego przepisy o ochronie danych, zapewniamy odpowiednie zabezpieczenia, takie jak decyzja stwierdzająca odpowiedni stopień ochrony, standardowe klauzule umowne lub równoważna umowa, wraz ze środkami takimi jak szyfrowanie i kontrola dostępu. Możesz poprosić nas o więcej informacji na ich temat."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:253
+#: includes/features/class-seoprocookieconsent-privacy.php:258
 msgid "How long we keep it"
 msgstr "Jak długo je przechowujemy"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:254
+#: includes/features/class-seoprocookieconsent-privacy.php:259
 msgid "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymise it."
 msgstr "Dane osobowe przechowujemy tylko tak długo, jak jest to potrzebne do powyższych celów, w tym do spełnienia wymogów prawnych, księgowych lub sprawozdawczych, a następnie je usuwamy lub anonimizujemy."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:255
+#: includes/features/class-seoprocookieconsent-privacy.php:260
 msgid "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorised use, why we hold it and whether we can achieve that another way, and what the law requires."
 msgstr "Aby ustalić, jak długo, bierzemy pod uwagę ilość, charakter i wrażliwość danych, ryzyko szkody w razie nieuprawnionego wykorzystania, powód ich przechowywania i to, czy możemy osiągnąć ten cel w inny sposób, a także wymogi prawa."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:256
+#: includes/features/class-seoprocookieconsent-privacy.php:261
 msgid "For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires, which can be several years. If you ask us to delete information, we keep a short record of the request to show we dealt with it. Copies in backups are deleted as the backups are replaced."
 msgstr "Na przykład wiadomości przechowujemy tak długo, jak potrzeba do ich załatwienia i ewentualnych dalszych działań, dane konta, dopóki Twoje konto jest otwarte, a dokumentację zamówień i księgową tak długo, jak wymaga tego prawo podatkowe i rachunkowe, co może oznaczać kilka lat. Jeśli poprosisz nas o usunięcie danych, przechowujemy krótki zapis tej prośby, aby wykazać, że ją załatwiliśmy. Kopie w kopiach zapasowych są usuwane w miarę ich zastępowania."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:257
+#: includes/features/class-seoprocookieconsent-privacy.php:262
 msgid "Security"
 msgstr "Bezpieczeństwo"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:258
+#: includes/features/class-seoprocookieconsent-privacy.php:263
 msgid "We protect personal information with appropriate technical and organisational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
 msgstr "Chronimy dane osobowe odpowiednimi środkami technicznymi i organizacyjnymi. W zależności od usługi mogą one obejmować szyfrowane połączenia, bezpieczne logowanie z silnymi hasłami i uwierzytelnianiem wieloskładnikowym, dostęp tylko dla osób, które go potrzebują i które muszą zachować poufność, regularne aktualizacje, zapory sieciowe i monitorowanie oraz kopie zapasowe. Oczekujemy, że nasi dostawcy usług będą chronić dane w taki sam sposób."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:259
+#: includes/features/class-seoprocookieconsent-privacy.php:264
 msgid "If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it."
 msgstr "Jeśli naruszenie ochrony danych zagraża Twoim prawom, poinformujemy Cię o tym oraz właściwe organy, jeśli wymaga tego prawo."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:260
+#: includes/features/class-seoprocookieconsent-privacy.php:265
 msgid "No website or email is completely secure, so please think carefully before sending sensitive information by email, or ask us for a more secure way to send it."
 msgstr "Żadna witryna ani wiadomość e-mail nie jest całkowicie bezpieczna, dlatego zastanów się dobrze, zanim wyślesz informacje wrażliwe pocztą e-mail, lub poproś nas o bezpieczniejszy sposób ich przesłania."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:271
+#: includes/features/class-seoprocookieconsent-privacy.php:276
 msgid "be told how we use your personal information, as this policy does;"
 msgstr "uzyskania informacji o tym, jak wykorzystujemy Twoje dane osobowe, tak jak robi to ta polityka;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:272
+#: includes/features/class-seoprocookieconsent-privacy.php:277
 msgid "ask for a copy of the personal information we hold about you;"
 msgstr "żądania kopii danych osobowych, które o Tobie posiadamy;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:273
+#: includes/features/class-seoprocookieconsent-privacy.php:278
 msgid "have it corrected if it is wrong or incomplete;"
 msgstr "sprostowania danych, jeśli są błędne lub niekompletne;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:274
+#: includes/features/class-seoprocookieconsent-privacy.php:279
 msgid "have it deleted, or its use restricted;"
 msgstr "usunięcia danych lub ograniczenia ich wykorzystywania;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:275
+#: includes/features/class-seoprocookieconsent-privacy.php:280
 msgid "object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;"
 msgstr "sprzeciwu wobec sposobu, w jaki je wykorzystujemy, w tym wobec marketingu bezpośredniego w dowolnym momencie oraz wobec wykorzystania opartego na naszych prawnie uzasadnionych interesach;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:276
+#: includes/features/class-seoprocookieconsent-privacy.php:281
 msgid "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;"
 msgstr "otrzymania informacji przekazanych nam przez Ciebie w powszechnie używanym formacie nadającym się do odczytu maszynowego lub przesłania ich innej organizacji, jeśli wykorzystujemy je za Twoją zgodą lub w związku z umową;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:277
+#: includes/features/class-seoprocookieconsent-privacy.php:282
 msgid "not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;"
 msgstr "niepodlegania decyzjom opartym wyłącznie na zautomatyzowanym przetwarzaniu, które wywołują wobec Ciebie skutki prawne lub podobnie istotne skutki;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:278
+#: includes/features/class-seoprocookieconsent-privacy.php:283
 msgid "withdraw your consent at any time, without affecting what we did before."
 msgstr "wycofania zgody w dowolnym momencie, bez wpływu na to, co zrobiliśmy wcześniej."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:281
+#: includes/features/class-seoprocookieconsent-privacy.php:286
 msgid "Depending on where you live, you may have the right to:"
 msgstr "W zależności od tego, gdzie mieszkasz, możesz mieć prawo do:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:283
+#: includes/features/class-seoprocookieconsent-privacy.php:288
 msgid "Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you."
 msgstr "Niektóre prawa mają zastosowanie tylko w określonych okolicznościach lub mogą być ograniczone przepisami prawa, na przykład gdy musimy przechowywać dokumentację. W takim przypadku poinformujemy Cię o tym."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:284
+#: includes/features/class-seoprocookieconsent-privacy.php:289
 msgid "To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else's information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission."
 msgstr "Aby skorzystać z tych praw, skontaktuj się z nami, korzystając z danych poniżej, i napisz, czego oczekujesz. Możemy najpierw potrzebować potwierdzenia Twojej tożsamości, aby nie ujawnić, nie zmienić ani nie usunąć danych kogoś innego, i możemy poprosić o informacje, które pomogą nam znaleźć to, czego potrzebujesz. Jeśli ktoś występuje w Twoim imieniu, potrzebujemy Twojego pisemnego upoważnienia."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:285
+#: includes/features/class-seoprocookieconsent-privacy.php:290
 msgid "We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it."
 msgstr "Odpowiadamy bez zbędnej zwłoki i w ciągu czterech tygodni. Jeśli wniosek jest złożony lub przesyłasz ich kilka, możemy potrzebować więcej czasu, jeśli prawo na to pozwala, i poinformujemy Cię dlaczego. Nie pobieramy opłat, chyba że wniosek jest ewidentnie bezzasadny, powtarzający się lub nadmierny, wtedy możemy pobrać rozsądną opłatę lub odmówić jego realizacji."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:286
+#: includes/features/class-seoprocookieconsent-privacy.php:291
 msgid "Please tell us if your personal information changes, so we can keep it accurate."
 msgstr "Poinformuj nas, jeśli Twoje dane osobowe się zmienią, abyśmy mogli utrzymywać je w aktualnym stanie."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:299
+#: includes/features/class-seoprocookieconsent-privacy.php:304
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or where we are based."
 msgstr "Masz także prawo w dowolnym momencie złożyć skargę do organu ochrony danych w miejscu, w którym mieszkasz lub pracujesz, albo w miejscu naszej siedziby."
 
 # machine translation
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-privacy.php:302
+#: includes/features/class-seoprocookieconsent-privacy.php:307
 #, php-format
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or in %s, where we are based."
 msgstr "Masz także prawo w dowolnym momencie złożyć skargę do organu ochrony danych w miejscu, w którym mieszkasz lub pracujesz, albo w miejscu naszej siedziby (%s)."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:305
+#: includes/features/class-seoprocookieconsent-privacy.php:310
 msgid "Complaints"
 msgstr "Skargi"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:306
+#: includes/features/class-seoprocookieconsent-privacy.php:311
 msgid "If you are unhappy with how we handle your personal information, including our use of automated tools such as AI, please contact us first so we can try to put it right. Tell us what happened and what you would like us to do. We will acknowledge your complaint, look into it promptly and fairly, and tell you the outcome and what we will do about it."
 msgstr "Jeśli jesteś niezadowolony ze sposobu, w jaki postępujemy z Twoimi danymi osobowymi, w tym z naszego korzystania z narzędzi zautomatyzowanych, takich jak AI, skontaktuj się najpierw z nami, abyśmy mogli spróbować to naprawić. Napisz, co się stało i czego oczekujesz. Potwierdzimy otrzymanie skargi, rozpatrzymy ją niezwłocznie i rzetelnie oraz poinformujemy Cię o wyniku i o tym, co zamierzamy zrobić."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:308
+#: includes/features/class-seoprocookieconsent-privacy.php:313
 msgid "Children"
 msgstr "Dzieci"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:309
+#: includes/features/class-seoprocookieconsent-privacy.php:314
 msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live, and ask them not to send it without a parent's or guardian's permission. If you think a child has given us personal information, please contact us and we will delete it."
 msgstr "Ta witryna nie jest przeznaczona dla dzieci. Świadomie nie zbieramy danych osobowych od dzieci poniżej wieku, w którym mogą one wyrazić na to zgodę w miejscu zamieszkania, i prosimy je, aby nie przesyłały ich bez zgody rodzica lub opiekuna. Jeśli uważasz, że dziecko przekazało nam dane osobowe, skontaktuj się z nami, a my je usuniemy."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:310
+#: includes/features/class-seoprocookieconsent-privacy.php:315
 msgid "Other websites"
 msgstr "Inne witryny"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:311
+#: includes/features/class-seoprocookieconsent-privacy.php:316
 msgid "This website may link to other websites, or include content, plug-ins or applications from them, such as videos, maps and social media posts. Following those links or allowing those connections may let the other websites collect information about you. We do not control them and are not responsible for their privacy practices, and this policy does not cover them; please read their own privacy policies."
 msgstr "Ta witryna może zawierać linki do innych witryn lub zawartość, wtyczki albo aplikacje z nich pochodzące, takie jak filmy, mapy i wpisy z mediów społecznościowych. Kliknięcie tych linków lub zezwolenie na takie połączenia może umożliwić tym witrynom zbieranie informacji o Tobie. Nie kontrolujemy ich i nie odpowiadamy za ich praktyki dotyczące prywatności, a niniejsza polityka ich nie obejmuje; zapoznaj się z ich własnymi politykami prywatności."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:312
+#: includes/features/class-seoprocookieconsent-privacy.php:317
 msgid "Changes to this policy"
 msgstr "Zmiany tej polityki"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:313
+#: includes/features/class-seoprocookieconsent-privacy.php:318
 msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can. Please check this page from time to time."
 msgstr "Możemy aktualizować tę politykę, gdy zmienią się nasze usługi lub prawo. Aktualna wersja jest zawsze na tej stronie, a o istotnych zmianach poinformujemy Cię, jeśli to możliwe. Zaglądaj na tę stronę od czasu do czasu."
 
 # machine translation
 #. translators: %s: "Cookie settings" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:352
+#: includes/features/class-seoprocookieconsent-privacy.php:357
 #, php-format
 msgid "You can change or withdraw your consent at any time in %s."
 msgstr "Możesz w dowolnym momencie zmienić lub wycofać zgodę: %s."
 
 # machine translation
 #. translators: %s: "Our cookie policy" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:370
+#: includes/features/class-seoprocookieconsent-privacy.php:375
 #, php-format
 msgid "%s lists the cookies we use, what each does and how long it is kept."
 msgstr "%s zawiera listę używanych przez nas plików cookie, informację o tym, do czego służy każdy z nich, i jak długo jest przechowywany."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:371
+#: includes/features/class-seoprocookieconsent-privacy.php:376
 msgid "Our cookie policy"
 msgstr "Nasza polityka plików cookie"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:385
+#: includes/features/class-seoprocookieconsent-privacy.php:390
 msgid "Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them."
 msgstr "Jeśli prawo wymaga zgody, wstrzymujemy opcjonalne pliki cookie oraz skrypty i treści osadzone, które je ustawiają, dopóki na nie nie zezwolisz."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:388
+#: includes/features/class-seoprocookieconsent-privacy.php:393
 #, php-format
 msgid "We remember your choice in a necessary cookie in your browser for %s day, then ask again."
 msgid_plural "We remember your choice in a necessary cookie in your browser for %s days, then ask again."
@@ -2941,13 +2943,13 @@ msgstr[1] "Zapamiętujemy Twój wybór w niezbędnym pliku cookie w Twojej przeg
 msgstr[2] "Zapamiętujemy Twój wybór w niezbędnym pliku cookie w Twojej przeglądarce przez %s dni, a następnie pytamy ponownie."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:391
+#: includes/features/class-seoprocookieconsent-privacy.php:396
 msgid "If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise."
 msgstr "Jeśli Twoja przeglądarka wysyła sygnał Global Privacy Control, traktujemy go jako odmowę zgody na marketingowe pliki cookie, chyba że zdecydujesz inaczej."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:397
+#: includes/features/class-seoprocookieconsent-privacy.php:402
 #, php-format
 msgid "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests."
 msgid_plural "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests."
@@ -3383,3 +3385,8 @@ msgstr "Te warunki podlegają prawu miejsca siedziby firmy (%s), a jego sądy mo
 #: includes/features/class-seoprocookieconsent-terms.php:349
 msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
 msgstr "Jeśli jesteś konsumentem, zachowujesz również ochronę wynikającą z bezwzględnie obowiązującego prawa kraju, w którym mieszkasz, i możesz wnieść spór do sądów w miejscu zamieszkania, jeśli to prawo na to pozwala."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:233
+msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
+msgstr "z dostawcami analityki i reklam, na przykład do statystyk, mierzenia reklam i wyświetlania odpowiednich reklam, tylko jeśli zezwolisz na te pliki cookie (zob. Ciastka). Niektórzy z nich, tacy jak sieci społecznościowe i platformy reklamowe, wykorzystują je także do własnych celów, zgodnie z własnymi informacjami o prywatności;"

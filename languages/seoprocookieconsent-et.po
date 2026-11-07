@@ -660,7 +660,7 @@ msgid "%s left data on the site."
 msgstr "%s jättis saidile andmed."
 
 #: includes/class-seoprocookieconsent-blocker.php:345
-#: includes/features/class-seoprocookieconsent-consent.php:427
+#: includes/features/class-seoprocookieconsent-consent.php:429
 msgid "This content"
 msgstr "See sisu"
 
@@ -671,7 +671,7 @@ msgstr "sisu"
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
 #. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
-#: includes/features/class-seoprocookieconsent-consent.php:424
+#: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
 msgstr "%1$s võib seada küpsiseid. See laaditakse, kui te selle lubate või lubate küpsiste seadetes %2$s."
@@ -683,12 +683,12 @@ msgid "Load %s"
 msgstr "Laadi %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
-#: includes/features/class-seoprocookieconsent-consent.php:429
-#: includes/features/class-seoprocookieconsent-consent.php:533
-#: includes/features/class-seoprocookieconsent-consent.php:790
-#: includes/features/class-seoprocookieconsent-consent.php:802
-#: includes/features/class-seoprocookieconsent-consent.php:861
-#: includes/features/class-seoprocookieconsent-consent.php:887
+#: includes/features/class-seoprocookieconsent-consent.php:431
+#: includes/features/class-seoprocookieconsent-consent.php:535
+#: includes/features/class-seoprocookieconsent-consent.php:792
+#: includes/features/class-seoprocookieconsent-consent.php:804
+#: includes/features/class-seoprocookieconsent-consent.php:863
+#: includes/features/class-seoprocookieconsent-consent.php:889
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Küpsiste seaded"
@@ -937,7 +937,7 @@ msgid "Tells people from bots"
 msgstr "Eristab inimesi robotitest"
 
 #: includes/class-seoprocookieconsent-services.php:183
-#: includes/class-seoprocookieconsent-services.php:342
+#: includes/class-seoprocookieconsent-services.php:346
 msgid "30 days"
 msgstr "30 päeva"
 
@@ -949,7 +949,7 @@ msgstr "Aitab vältida maksepettusi"
 #: includes/class-seoprocookieconsent-services.php:191
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:351
+#: includes/class-seoprocookieconsent-services.php:355
 #: includes/features/class-seoprocookieconsent-policy.php:120
 msgid "1 year"
 msgstr "1 aasta"
@@ -959,14 +959,15 @@ msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's ow
 msgstr "Võtab vastu makseid ja aitab pettusi ennetada. See võib PayPal enda saitidele küpsiseid seadistada."
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:342
-#: includes/class-seoprocookieconsent-services.php:351
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:346
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "Measures ad conversions"
 msgstr "Mõõdab reklaamikonversioone"
 
 #: includes/class-seoprocookieconsent-services.php:277
-#: includes/class-seoprocookieconsent-services.php:324
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
 msgid "3 months"
 msgstr "3 kuud"
 
@@ -975,96 +976,97 @@ msgid "Shows and measures ads"
 msgstr "Näitab ja mõõdab reklaame"
 
 #: includes/class-seoprocookieconsent-services.php:278
-#: includes/class-seoprocookieconsent-services.php:333
-#: includes/class-seoprocookieconsent-services.php:360
+#: includes/class-seoprocookieconsent-services.php:337
+#: includes/class-seoprocookieconsent-services.php:364
 msgid "13 months"
 msgstr "13 kuud"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:304
 #: includes/class-seoprocookieconsent-services.php:314
-#: includes/class-seoprocookieconsent-services.php:377
+#: includes/class-seoprocookieconsent-services.php:381
 msgid "Tells visitors apart"
 msgstr "Eristab külastajaid"
 
 #: includes/class-seoprocookieconsent-services.php:294
 #: includes/class-seoprocookieconsent-services.php:295
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "2 years"
 msgstr "2 aastat"
 
 #: includes/class-seoprocookieconsent-services.php:295
 #: includes/class-seoprocookieconsent-services.php:305
 #: includes/class-seoprocookieconsent-services.php:315
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "Keeps the visit together"
 msgstr "Hoiab külastuse koos"
 
 #: includes/class-seoprocookieconsent-services.php:305
-#: includes/class-seoprocookieconsent-services.php:361
+#: includes/class-seoprocookieconsent-services.php:365
 msgid "1 day"
 msgstr "1 päev"
 
-#: includes/class-seoprocookieconsent-services.php:324
-#: includes/class-seoprocookieconsent-services.php:333
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+#: includes/class-seoprocookieconsent-services.php:337
 msgid "Measures and personalises ads"
 msgstr "Mõõdab ja isikupärastab reklaame"
 
-#: includes/class-seoprocookieconsent-services.php:377
-#: includes/class-seoprocookieconsent-services.php:387
-#: includes/class-seoprocookieconsent-services.php:408
-#: includes/class-seoprocookieconsent-services.php:466
+#: includes/class-seoprocookieconsent-services.php:381
+#: includes/class-seoprocookieconsent-services.php:391
+#: includes/class-seoprocookieconsent-services.php:412
+#: includes/class-seoprocookieconsent-services.php:470
 msgid "6 months"
 msgstr "6 kuud"
 
-#: includes/class-seoprocookieconsent-services.php:383
-#: includes/class-seoprocookieconsent-services.php:394
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:398
 msgid "video"
 msgstr "video"
 
-#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:391
 msgid "Remembers player settings"
 msgstr "Mäletab mängija seadeid"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:398
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:402
 msgid "Counts views"
 msgstr "Loendab vaatamisi"
 
-#: includes/class-seoprocookieconsent-services.php:388
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Session"
 msgstr "Seanss"
 
-#: includes/class-seoprocookieconsent-services.php:404
+#: includes/class-seoprocookieconsent-services.php:408
 msgid "map"
 msgstr "kaart"
 
-#: includes/class-seoprocookieconsent-services.php:408
+#: includes/class-seoprocookieconsent-services.php:412
 msgid "Remembers preferences"
 msgstr "Mäletab eelistusi"
 
-#: includes/class-seoprocookieconsent-services.php:414
-#: includes/class-seoprocookieconsent-services.php:422
+#: includes/class-seoprocookieconsent-services.php:418
+#: includes/class-seoprocookieconsent-services.php:426
 msgid "player"
 msgstr "mängija"
 
-#: includes/class-seoprocookieconsent-services.php:430
-#: includes/class-seoprocookieconsent-services.php:438
-#: includes/class-seoprocookieconsent-services.php:446
+#: includes/class-seoprocookieconsent-services.php:434
+#: includes/class-seoprocookieconsent-services.php:442
+#: includes/class-seoprocookieconsent-services.php:450
 msgid "post"
 msgstr "postitus"
 
-#: includes/class-seoprocookieconsent-services.php:457
+#: includes/class-seoprocookieconsent-services.php:461
 msgid "Keeps the chat connected"
 msgstr "Hoiab vestluse ühenduses"
 
-#: includes/class-seoprocookieconsent-services.php:466
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:470
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "Keeps the chat going"
 msgstr "Hoiab vestlust käimas"
 
-#: includes/class-seoprocookieconsent-services.php:475
+#: includes/class-seoprocookieconsent-services.php:479
 msgid "9 months"
 msgstr "9 kuud"
 
@@ -1234,174 +1236,174 @@ msgid "Visitors are asked again after this. 365 is usual; some regulators prefer
 msgstr "Pärast seda küsitakse külastajatelt uuesti. Tavaliselt on see 365; mõned regulaatorid eelistavad 180."
 
 #. translators: %s: service names, such as "Google Analytics, Hotjar".
-#: includes/features/class-seoprocookieconsent-consent.php:416
+#: includes/features/class-seoprocookieconsent-consent.php:418
 #: includes/views/consent-banner.php:91
 #, php-format
 msgid "Used by: %s."
 msgstr "Kasutab: %s."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:419
+#: includes/features/class-seoprocookieconsent-consent.php:421
 #, php-format
 msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
 msgstr "See leht kasutab teenuseid %s, mis võivad seada küpsiseid ja jagada andmeid teie külastuse kohta. Valige, mida lubada."
 
 #. translators: %s: the services on the page, such as "YouTube and Google Analytics".
-#: includes/features/class-seoprocookieconsent-consent.php:421
+#: includes/features/class-seoprocookieconsent-consent.php:423
 #, php-format
 msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
 msgstr "See leht kasutab teenuseid %s, mis võivad seada küpsiseid. Saate need küpsiste seadetes välja lülitada."
 
-#: includes/features/class-seoprocookieconsent-consent.php:422
+#: includes/features/class-seoprocookieconsent-consent.php:424
 msgid "other services"
 msgstr "muud teenused"
 
 #. translators: 1: service name, such as "YouTube"; 2: cookie category.
-#: includes/features/class-seoprocookieconsent-consent.php:426
+#: includes/features/class-seoprocookieconsent-consent.php:428
 #, php-format
 msgid "%1$s needs %2$s to show here. Allow it to see this content."
 msgstr "%1$s vajab siin kuvamiseks luba: %2$s. Lubage see, et seda sisu näha."
 
-#: includes/features/class-seoprocookieconsent-consent.php:428
+#: includes/features/class-seoprocookieconsent-consent.php:430
 msgid "Load content"
 msgstr "Laadi sisu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:816
+#: includes/features/class-seoprocookieconsent-consent.php:818
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Link, mis avab küpsiste seaded, et külastajad saaksid oma valikuid muuta. Kui menüüs on see olemas, siis automaatset jaluselinki enam ei lisata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:832
+#: includes/features/class-seoprocookieconsent-consent.php:834
 msgid "Add to Menu"
 msgstr "Lisa menüüsse"
 
-#: includes/features/class-seoprocookieconsent-consent.php:879
+#: includes/features/class-seoprocookieconsent-consent.php:881
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Küpsiste seadete nupp"
 
-#: includes/features/class-seoprocookieconsent-consent.php:880
+#: includes/features/class-seoprocookieconsent-consent.php:882
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Avab küpsiste seaded, et külastajad saaksid oma valikuid muuta."
 
-#: includes/features/class-seoprocookieconsent-consent.php:886
+#: includes/features/class-seoprocookieconsent-consent.php:888
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/features/class-seoprocookieconsent-consent.php:892
+#: includes/features/class-seoprocookieconsent-consent.php:894
 msgid "Show as"
 msgstr "Näita kui"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:896
 msgid "Button"
 msgstr "Nupp"
 
-#: includes/features/class-seoprocookieconsent-consent.php:895
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Link"
 msgstr "Link"
 
-#: includes/features/class-seoprocookieconsent-consent.php:912
+#: includes/features/class-seoprocookieconsent-consent.php:914
 msgid "Get started"
 msgstr "Alustamine"
 
-#: includes/features/class-seoprocookieconsent-consent.php:913
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Switch on Cookie consent."
 msgstr "Lülitage sisse küpsiste nõusolek."
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Valige „Skanni kohe“ ja seejärel märkige allpool teie lehtedel „Leitud“."
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Lülitage küpsiste poliitika sisse vahekaardil Poliitikad ja lisage küpsiste poliitika plokk oma privaatsus- või küpsiste poliitika lehele."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:919
 msgid "Scan now"
 msgstr "Skanni kohe"
 
-#: includes/features/class-seoprocookieconsent-consent.php:918
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Kontrollib teie avalehte, privaatsuslehte ja kuni kolme hiljutist postitust ning kolme lehte. See on näidis, mitte täielik audit; lehti kontrollitakse ka külastajate sirvimise ajal. Skripte ei käivitata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:939
+#: includes/features/class-seoprocookieconsent-consent.php:941
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Küpsiseid seadistavaid teenuseid veel ei leitud. Pärast selle sisselülitamist skanni kohe või ava oma saidil paar lehte."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:943
 msgid "Found on your pages and held back until allowed:"
 msgstr "Leitud teie lehtedelt ja hoiti tagasi kuni loa saamiseni:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:952
+#: includes/features/class-seoprocookieconsent-consent.php:954
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Vajalik, mitte kunagi varjatud ja küpsiste poliitikas loetletud:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:959
+#: includes/features/class-seoprocookieconsent-consent.php:961
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Nende saitide teised skriptid laadivad tavapäraselt. Kui üks neist määrab küpsised, lisage see jaotisse Veaotsing → Hoidke ka tagasi:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:968
+#: includes/features/class-seoprocookieconsent-consent.php:970
 msgid "You cannot scan this site."
 msgstr "Te ei saa seda saiti skannida."
 
-#: includes/features/class-seoprocookieconsent-consent.php:972
+#: includes/features/class-seoprocookieconsent-consent.php:974
 msgid "Switch on Cookie consent before scanning."
 msgstr "Enne skannimist lülitage sisse küpsiste nõusolek."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1082
+#: includes/features/class-seoprocookieconsent-consent.php:1084
 msgid "Preview the banner"
 msgstr "Vaadake bännerit eelvaates"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1086
+#: includes/features/class-seoprocookieconsent-consent.php:1088
 msgid "Visitor"
 msgstr "Külastaja"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1090
 msgid "Asked first (Europe, Quebec)"
 msgstr "Esmalt küsitud (Euroopa, Quebec)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1089
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Shown a notice (elsewhere)"
 msgstr "Näidati teadet (mujal)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1093
+#: includes/features/class-seoprocookieconsent-consent.php:1095
 msgid "Screen"
 msgstr "Ekraan"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1097
 msgid "Desktop"
 msgstr "Lauaarvuti"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1096
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Phone"
 msgstr "Telefon"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1099
+#: includes/features/class-seoprocookieconsent-consent.php:1101
 msgid "Reload"
 msgstr "Laadi uuesti"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1102
+#: includes/features/class-seoprocookieconsent-consent.php:1104
 msgid "Banner preview on your home page"
 msgstr "Bänneri eelvaade teie avalehel"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1106
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Sinu avaleht koos bänneriga nii, nagu külastajad seda näevad, isegi kui lehel pole midagi varjata. See uueneb pärast iga muudatust. Eelvaates tehtud valikuid ei salvestata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1123
+#: includes/features/class-seoprocookieconsent-consent.php:1125
 msgid "No pages found."
 msgstr "Ühtegi lehekülge ei leitud."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1126
+#: includes/features/class-seoprocookieconsent-consent.php:1128
 msgid "Scanning…"
 msgstr "Skannimine…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1130
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Skannimine lõpetatud: %1$s lehekülge kontrollitud; %2$s ei õnnestunud kontrollida. Vaadake üle allolevad tulemused."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1129
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "Skannimisel ei õnnestunud teie lehti kontrollida. Tagasihelistustaotlused võivad olla blokeeritud. Proovige uuesti või avage sirvimise ajal oma saidi lehti, et loendit täiendada."
 
@@ -1572,7 +1574,7 @@ msgstr "Selle veebisaidi kasutamine"
 msgid "What we offer"
 msgstr "Mida me pakume"
 
-#: includes/features/class-seoprocookieconsent-privacy.php:280
+#: includes/features/class-seoprocookieconsent-privacy.php:285
 #: includes/features/class-seoprocookieconsent-terms.php:329
 msgid "Your rights"
 msgstr "Teie õigused"
@@ -2683,249 +2685,249 @@ msgid "You can also set your browser to refuse or delete cookies. Some parts of 
 msgstr "Võite oma brauseri seadistada ka küpsiseid keelama või kustutama. Mõned selle veebisaidi osad ei pruugi ilma nendeta töötada."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:225
+#: includes/features/class-seoprocookieconsent-privacy.php:236
 msgid "Who we share it with"
 msgstr "Kellega me seda jagame"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:226
+#: includes/features/class-seoprocookieconsent-privacy.php:237
 msgid "We share personal information only when needed:"
 msgstr "Jagame isikuandmeid ainult vajaduse korral:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:228
+#: includes/features/class-seoprocookieconsent-privacy.php:226
 msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;"
 msgstr "teenusepakkujatega, kes töötlevad neid meie eest meie juhiste alusel, näiteks majutuse, varukoopiate, IT-toe, e-posti, maksete ja klienditoe jaoks. Nad võivad neid kasutada ainult meile teenuste osutamiseks, peavad need turvaliselt hoidma ja võivad kasutada teisi pakkujaid ainult samadel tingimustel;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:229
+#: includes/features/class-seoprocookieconsent-privacy.php:227
 msgid "with professional advisers, such as accountants, auditors, lawyers, banks and insurers;"
 msgstr "professionaalsete nõustajatega, näiteks raamatupidajate, audiitorite, juristide, pankade ja kindlustajatega;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:230
+#: includes/features/class-seoprocookieconsent-privacy.php:228
 msgid "with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;"
 msgstr "maksuhaldurite, järelevalveasutuste, kohtute, politsei ja teistega, kui seadus seda nõuab või meie klientide, teiste või enda õiguste, vara või ohutuse kaitsmiseks;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:231
+#: includes/features/class-seoprocookieconsent-privacy.php:229
 msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
 msgstr "ostja või õigusjärglasega, kui meie ettevõte või see veebisait müüakse või ühendatakse, kes võib neid kasutada, nagu see poliitika kirjeldab;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:232
+#: includes/features/class-seoprocookieconsent-privacy.php:235
 msgid "with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice."
 msgstr "teistega, kui te seda palute või nõustute, näiteks ettevõttega, millega palute meil teid ühendada ja mis kasutab neid seejärel oma privaatsusteate alusel."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:234
+#: includes/features/class-seoprocookieconsent-privacy.php:239
 msgid "If you pay on a payment provider's page, the provider handles your payment details under its own terms and privacy notice."
 msgstr "Kui maksate makseteenuse pakkuja lehel, käsitleb pakkuja teie maksendiandmeid oma tingimuste ja privaatsusteate alusel."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:238
+#: includes/features/class-seoprocookieconsent-privacy.php:243
 msgid "Our main service providers are:"
 msgstr "Meie peamised teenusepakkujad on:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:241
+#: includes/features/class-seoprocookieconsent-privacy.php:246
 msgid "International transfers"
 msgstr "Rahvusvaheline edastamine"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:242
+#: includes/features/class-seoprocookieconsent-privacy.php:247
 msgid "Some of our service providers store or process information in other countries, depending on their settings, where their systems are and where their support teams work. Where practical, we choose providers and settings that keep information in our own region."
 msgstr "Mõned meie teenusepakkujad salvestavad või töötlevad andmeid teistes riikides, sõltuvalt nende seadetest, nende süsteemide asukohast ja nende tugimeeskondade töökohast. Kus praktiline, valime pakkujad ja seaded, mis hoiavad andmed meie enda piirkonnas."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:243
+#: includes/features/class-seoprocookieconsent-privacy.php:248
 msgid "Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision, standard contractual clauses or an equivalent agreement, together with measures such as encryption and access controls. You can ask us for more information about them."
 msgstr "Kui andmekaitseõigus seda nõuab, tagame sobivad kaitsemeetmed, näiteks piisavusotsuse, standardsed lepingutingimused või samaväärse kokkuleppe, koos selliste meetmetega nagu krüpteerimine ja juurdepääsukontroll. Võite meilt nende kohta lisateavet küsida."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:253
+#: includes/features/class-seoprocookieconsent-privacy.php:258
 msgid "How long we keep it"
 msgstr "Kui kaua me seda säilitame"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:254
+#: includes/features/class-seoprocookieconsent-privacy.php:259
 msgid "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymise it."
 msgstr "Säilitame isikuandmeid ainult nii kaua, kuni neid ülaltoodud eesmärkidel vajame, sealhulgas õiguslike, raamatupidamis- või aruandlusnõuete täitmiseks, seejärel kustutame need või muudame anonüümseks."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:255
+#: includes/features/class-seoprocookieconsent-privacy.php:260
 msgid "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorised use, why we hold it and whether we can achieve that another way, and what the law requires."
 msgstr "Säilitusaja otsustamisel arvestame andmete hulka, laadi ja delikaatsust, loata kasutamisest tuleneva kahju ohtu, seda, miks me neid hoiame ja kas saame sama eesmärgi saavutada muul viisil, ning seda, mida seadus nõuab."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:256
+#: includes/features/class-seoprocookieconsent-privacy.php:261
 msgid "For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires, which can be several years. If you ask us to delete information, we keep a short record of the request to show we dealt with it. Copies in backups are deleted as the backups are replaced."
 msgstr "Näiteks säilitame sõnumeid nii kaua, kui on vaja nende ja võimaliku järeltegevuse käsitlemiseks, kontoandmeid seni, kuni teie konto on avatud, ning tellimus- ja raamatupidamisdokumente nii kaua, kui maksu- ja raamatupidamisõigus nõuab, mis võib olla mitu aastat. Kui palute meil teavet kustutada, säilitame taotlusest lühikese kirje, et tõendada selle käsitlemist. Varukoopiate koopiad kustutatakse varukoopiate asendamisel."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:257
+#: includes/features/class-seoprocookieconsent-privacy.php:262
 msgid "Security"
 msgstr "Turvalisus"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:258
+#: includes/features/class-seoprocookieconsent-privacy.php:263
 msgid "We protect personal information with appropriate technical and organisational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
 msgstr "Kaitseme isikuandmeid asjakohaste tehniliste ja korralduslike meetmetega. Sõltuvalt teenusest võivad need hõlmata krüpteeritud ühendusi, turvalisi sisselogimisi tugevate paroolide ja mitmeastmelise autentimisega, juurdepääsu ainult neile, kes seda vajavad ja peavad seda konfidentsiaalsena hoidma, korrapäraseid uuendusi, tulemüüre ja seiret ning varukoopiaid. Eeldame, et meie teenusepakkujad kaitsevad neid samamoodi."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:259
+#: includes/features/class-seoprocookieconsent-privacy.php:264
 msgid "If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it."
 msgstr "Kui andmetega seotud rikkumine ohustab teie õigusi, teavitame teid ja ametiasutusi, kui seadus seda nõuab."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:260
+#: includes/features/class-seoprocookieconsent-privacy.php:265
 msgid "No website or email is completely secure, so please think carefully before sending sensitive information by email, or ask us for a more secure way to send it."
 msgstr "Ükski veebisait ega e-kiri ei ole täiesti turvaline, seega mõelge hoolikalt enne delikaatse teabe e-postiga saatmist või paluge meilt turvalisemat saatmisviisi."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:271
+#: includes/features/class-seoprocookieconsent-privacy.php:276
 msgid "be told how we use your personal information, as this policy does;"
 msgstr "saada teada, kuidas me teie isikuandmeid kasutame, nagu see poliitika seda teeb;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:272
+#: includes/features/class-seoprocookieconsent-privacy.php:277
 msgid "ask for a copy of the personal information we hold about you;"
 msgstr "paluda koopiat isikuandmetest, mida me teie kohta hoiame;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:273
+#: includes/features/class-seoprocookieconsent-privacy.php:278
 msgid "have it corrected if it is wrong or incomplete;"
 msgstr "lasta need parandada, kui need on valed või puudulikud;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:274
+#: includes/features/class-seoprocookieconsent-privacy.php:279
 msgid "have it deleted, or its use restricted;"
 msgstr "lasta need kustutada või nende kasutamist piirata;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:275
+#: includes/features/class-seoprocookieconsent-privacy.php:280
 msgid "object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;"
 msgstr "esitada vastuväiteid selle kohta, kuidas me neid kasutame, sealhulgas otseturunduse vastu igal ajal ja meie õigustatud huvidel põhinevate kasutuste vastu;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:276
+#: includes/features/class-seoprocookieconsent-privacy.php:281
 msgid "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;"
 msgstr "saada meile antud andmed üldkasutatavas masinloetavas vormingus või lasta need saata teisele organisatsioonile, kui kasutame neid teie nõusolekul või lepingu alusel;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:277
+#: includes/features/class-seoprocookieconsent-privacy.php:282
 msgid "not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;"
 msgstr "et teie suhtes ei tehtaks otsuseid, mis põhinevad ainult automatiseeritud töötlemisel ja millel on teie jaoks õiguslikud või sarnaselt olulised tagajärjed;"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:278
+#: includes/features/class-seoprocookieconsent-privacy.php:283
 msgid "withdraw your consent at any time, without affecting what we did before."
 msgstr "võtta oma nõusolek igal ajal tagasi, mõjutamata seda, mida me enne tegime."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:281
+#: includes/features/class-seoprocookieconsent-privacy.php:286
 msgid "Depending on where you live, you may have the right to:"
 msgstr "Sõltuvalt sellest, kus te elate, võib teil olla õigus:"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:283
+#: includes/features/class-seoprocookieconsent-privacy.php:288
 msgid "Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you."
 msgstr "Mõned õigused kehtivad ainult teatud asjaoludel või võivad olla seadusega piiratud, näiteks kui peame säilitama dokumente. Sel juhul ütleme teile seda."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:284
+#: includes/features/class-seoprocookieconsent-privacy.php:289
 msgid "To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else's information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission."
 msgstr "Nende õiguste kasutamiseks võtke meiega ühendust allpool toodud andmetel ja öelge, mida soovite. Võime enne vajada teie isikusamasuse kinnitamist, et me ei annaks välja, ei muudaks ega kustutaks kellegi teise andmeid, ning võime küsida üksikasju, mis aitavad meil leida, mida vajate. Kui keegi küsib teie nimel, vajame teie kirjalikku luba."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:285
+#: includes/features/class-seoprocookieconsent-privacy.php:290
 msgid "We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it."
 msgstr "Vastame põhjendamatu viivituseta ja nelja nädala jooksul. Kui taotlus on keeruline või saadate neid mitu, võime võtta kauem aega, kui seadus seda lubab, ning ütleme teile, miks. Me ei võta tasu, välja arvatud juhul, kui taotlus on ilmselgelt põhjendamatu, korduv või liigne; siis võime küsida mõistlikku tasu või sellest keelduda."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:286
+#: includes/features/class-seoprocookieconsent-privacy.php:291
 msgid "Please tell us if your personal information changes, so we can keep it accurate."
 msgstr "Palun teavitage meid, kui teie isikuandmed muutuvad, et saaksime need täpsena hoida."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:299
+#: includes/features/class-seoprocookieconsent-privacy.php:304
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or where we are based."
 msgstr "Teil on õigus igal ajal esitada kaebus andmekaitseasutusele, kus te elate või töötate või kus me asume."
 
 # machine translation
 #. translators: %s: country where the business is based.
-#: includes/features/class-seoprocookieconsent-privacy.php:302
+#: includes/features/class-seoprocookieconsent-privacy.php:307
 #, php-format
 msgid "You also have the right to complain at any time to the data protection authority where you live or work, or in %s, where we are based."
 msgstr "Teil on õigus igal ajal esitada kaebus andmekaitseasutusele, kus te elate või töötate või riigis %s, kus me asume."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:305
+#: includes/features/class-seoprocookieconsent-privacy.php:310
 msgid "Complaints"
 msgstr "Kaebused"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:306
+#: includes/features/class-seoprocookieconsent-privacy.php:311
 msgid "If you are unhappy with how we handle your personal information, including our use of automated tools such as AI, please contact us first so we can try to put it right. Tell us what happened and what you would like us to do. We will acknowledge your complaint, look into it promptly and fairly, and tell you the outcome and what we will do about it."
 msgstr "Kui olete rahulolematu sellega, kuidas me teie isikuandmeid käsitleme, sealhulgas automatiseeritud tööriistade, näiteks tehisintellekti kasutamisega, võtke palun esmalt meiega ühendust, et saaksime proovida olukorda parandada. Öelge, mis juhtus ja mida soovite, et me teeksime. Kinnitame teie kaebuse kättesaamist, uurime seda kiiresti ja õiglaselt ning teavitame teid tulemusest ja sellest, mida me selles osas teeme."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:308
+#: includes/features/class-seoprocookieconsent-privacy.php:313
 msgid "Children"
 msgstr "Lapsed"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:309
+#: includes/features/class-seoprocookieconsent-privacy.php:314
 msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live, and ask them not to send it without a parent's or guardian's permission. If you think a child has given us personal information, please contact us and we will delete it."
 msgstr "See veebisait ei ole mõeldud lastele. Me ei kogu teadlikult isikuandmeid lastelt, kes on nooremad kui vanus, millest alates nad saavad oma elukohas nende andmete töötlemiseks nõusoleku anda, ning palume neil neid mitte saata ilma vanema või eestkostja loata. Kui arvate, et laps on meile isikuandmeid andnud, võtke palun meiega ühendust ja me kustutame need."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:310
+#: includes/features/class-seoprocookieconsent-privacy.php:315
 msgid "Other websites"
 msgstr "Muud veebisaidid"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:311
+#: includes/features/class-seoprocookieconsent-privacy.php:316
 msgid "This website may link to other websites, or include content, plug-ins or applications from them, such as videos, maps and social media posts. Following those links or allowing those connections may let the other websites collect information about you. We do not control them and are not responsible for their privacy practices, and this policy does not cover them; please read their own privacy policies."
 msgstr "See veebisait võib viidata teistele veebisaitidele või sisaldada nende sisu, pistikprogramme või rakendusi, näiteks videoid, kaarte ja sotsiaalmeedia postitusi. Nendele linkidele järgimine või nende ühenduste lubamine võib lubada teistel veebisaitidel koguda teie kohta teavet. Me ei kontrolli neid ega vastuta nende privaatsustavade eest ning see poliitika neid ei hõlma; lugege palun nende endi privaatsuspoliitikaid."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:312
+#: includes/features/class-seoprocookieconsent-privacy.php:317
 msgid "Changes to this policy"
 msgstr "Selle poliitika muudatused"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:313
+#: includes/features/class-seoprocookieconsent-privacy.php:318
 msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can. Please check this page from time to time."
 msgstr "Võime seda poliitikat uuendada, kui meie teenused või seadus muutuvad. Kehtiv versioon on alati sellel lehel ja teavitame olulistest muudatustest, kus võimalik. Vaadake seda lehte aeg-ajalt."
 
 # machine translation
 #. translators: %s: "Cookie settings" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:352
+#: includes/features/class-seoprocookieconsent-privacy.php:357
 #, php-format
 msgid "You can change or withdraw your consent at any time in %s."
 msgstr "Võite oma nõusolekut igal ajal muuta või tagasi võtta jaotises %s."
 
 # machine translation
 #. translators: %s: "Our cookie policy" link.
-#: includes/features/class-seoprocookieconsent-privacy.php:370
+#: includes/features/class-seoprocookieconsent-privacy.php:375
 #, php-format
 msgid "%s lists the cookies we use, what each does and how long it is kept."
 msgstr "%s loetleb meie kasutatavad küpsised, iga küpsise ülesande ja selle säilitusaja."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:371
+#: includes/features/class-seoprocookieconsent-privacy.php:376
 msgid "Our cookie policy"
 msgstr "Meie küpsiste poliitika"
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:385
+#: includes/features/class-seoprocookieconsent-privacy.php:390
 msgid "Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them."
 msgstr "Kui seadus nõuab nõusolekut, hoiame valikulised küpsised ning neid seadvad skriptid ja manustatud sisu tagasi, kuni te need lubate."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:388
+#: includes/features/class-seoprocookieconsent-privacy.php:393
 #, php-format
 msgid "We remember your choice in a necessary cookie in your browser for %s day, then ask again."
 msgid_plural "We remember your choice in a necessary cookie in your browser for %s days, then ask again."
@@ -2933,13 +2935,13 @@ msgstr[0] "Jätame teie valiku meelde brauseris vajalikus küpsises %s päevaks,
 msgstr[1] "Jätame teie valiku meelde brauseris vajalikus küpsises %s päevaks, seejärel küsime uuesti."
 
 # machine translation
-#: includes/features/class-seoprocookieconsent-privacy.php:391
+#: includes/features/class-seoprocookieconsent-privacy.php:396
 msgid "If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise."
 msgstr "Kui teie brauser saadab signaali Global Privacy Control, käsitleme seda turundusküpsistest keeldumisena, kui te ei vali teisiti."
 
 # machine translation
 #. translators: %s: number of days.
-#: includes/features/class-seoprocookieconsent-privacy.php:397
+#: includes/features/class-seoprocookieconsent-privacy.php:402
 #, php-format
 msgid "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests."
 msgid_plural "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests."
@@ -3374,3 +3376,8 @@ msgstr "Nende tingimuste suhtes kohaldatakse selle koha õigust, kus ettevõte a
 #: includes/features/class-seoprocookieconsent-terms.php:349
 msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
 msgstr "Kui olete tarbija, säilib teil ka teie elukohariigi kohustusliku õiguse kaitse ning võite viia vaidluse oma kohalikku kohtusse, kui see õigus seda lubab."
+
+# machine translation
+#: includes/features/class-seoprocookieconsent-privacy.php:233
+msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
+msgstr "analüüsi- ja reklaamiteenuse pakkujatega, näiteks statistika, reklaamide mõõtmise ja asjakohaste reklaamide näitamise jaoks, ainult siis, kui lubate need küpsised (vt Küpsised). Mõned neist, näiteks sotsiaalvõrgustikud ja reklaamiplatvormid, kasutavad neid ka oma eesmärkidel oma privaatsusteadete alusel;"
