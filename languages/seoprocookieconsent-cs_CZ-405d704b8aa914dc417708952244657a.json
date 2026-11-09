@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "",
+    "generator": "WP-CLI\/2.12.0",
+    "source": "admin\/js\/seoprocookieconsent-theme.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "cs_CZ",
+                "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
+            },
+            "Light": [
+                "Sv\u011btl\u00fd"
+            ],
+            "Dark": [
+                "Tmav\u00fd"
+            ],
+            "System": [
+                "Syst\u00e9mov\u00fd"
+            ],
+            "Colour mode: %s": [
+                "Barevn\u00fd re\u017eim: %s"
+            ],
+            "The colour mode could not be saved. Please try again.": [
+                "Barevn\u00fd re\u017eim se nepoda\u0159ilo ulo\u017eit. Zkuste to pros\u00edm znovu."
+            ],
+            "Colour mode": [
+                "Barevn\u00fd re\u017eim"
+            ]
+        }
+    }
+}
