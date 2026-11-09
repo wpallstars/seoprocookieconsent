@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.19 =
+* Fixed: translators see one comment per string (#176). The held-embed notice and the migration note "Add by hand to Also hold back" each had two different translator comments, so the translation template kept both and every catalog refresh warned. Wording and translations are unchanged.
+
 = 1.0.18 =
 * New: Czech (cs_CZ) translation (#154), in formal Czech. The admin screens' strings are machine translations marked with a translator comment; review them before relying on them. With TranslatePress, Czech strings it stored as machine translations before this release keep its text until they are updated to the catalog.
 * Fixed: Meta Pixel for WordPress no longer stays held after a visitor allows it when a held state cookie was set on a parent domain (for example with COOKIE_DOMAIN defined, or by another tool) (#169). The browser now expires that cookie on the host and every parent domain; Meta's PHP never renders its held page (facebook_signals_held returns false, as Meta's JS reads the cookie itself), so cached pages stay the same for every visitor; and a held state cookie header Meta sent is taken back.

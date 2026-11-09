@@ -5,7 +5,7 @@ Tags: cookie consent, gdpr, cookie banner, consent mode, privacy
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.18
+Stable tag: 1.0.19
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -111,7 +111,7 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
-= 1.0.18 =
-* New: Czech translation. Fixed: Terms and Privacy translated; Meta Pixel held on parent domains.
+= 1.0.19 =
+* Fixed: one translator comment per string.
 
 Every change: changelog.txt.
