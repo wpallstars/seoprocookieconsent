@@ -3,7 +3,7 @@
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
 = Unreleased =
-* Developers: sync 3 core files with WP Plugin Starter at b7d27fa (#147): scripts/lib/deploy-remote.sh, scripts/sync-core.sh and RELEASING.md. Plugin-own blocks and consent defaults are unchanged.
+* Developers: core files synced with WP Plugin Starter at d67bfaf (#147). scripts/deploy-sites.sh deploys by folder swap, purges each site's Cloudflare zone with --cloudflare-token-env NAME, pins the home fetch to the origin when LiteSpeed Cache knows its IP, removes older run folders on the host after a successful --apply (--keep-releases N), reads a replaced or rotated log from its top, and treats cron races and cron-save contention lines as warnings; scripts/build-release.sh and scripts/test-site.sh support licensed add-ons; scripts/sync-core.sh finds the starter beside the main checkout; the issue triage gate and CodeQL SARIF upload pins move to the starter's newer ones. Plugin-own blocks and consent defaults are unchanged.
 
 = 1.0.17 =
 * New: The Privacy policy's "Who we share it with" list adds analytics and advertising providers (#162). When the site was seen using a Statistics or Marketing service, it says data goes to them only if the visitor allows those cookies, and that some, such as social networks and advertising platforms, also use it for their own purposes. Omitted otherwise; Your own wording is unchanged.

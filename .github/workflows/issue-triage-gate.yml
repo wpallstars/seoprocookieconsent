@@ -7,9 +7,6 @@ name: Issue Triage Gate
 # authors without write access, at creation time (GH#36905). Event metadata
 # only: no caller-repository code is checked out or executed.
 #
-# Pinned to a full aidevops commit (v3.39.132), as the other aidevops
-# callers here are; keep uses: and aidevops_ref on the same commit.
-#
 # Manage with:
 #   aidevops check-workflows --workflow issue-triage-gate
 #   aidevops sync-workflows --workflow issue-triage-gate --install-missing
@@ -24,11 +21,11 @@ on:
 
 jobs:
   triage:
-    uses: marcusquinn/aidevops/.github/workflows/issue-triage-gate-reusable.yml@648679a340953abd6c53fa1008c4b2be40738066 # v3.39.132
+    uses: marcusquinn/aidevops/.github/workflows/issue-triage-gate-reusable.yml@2ec658b0aa97327546754ada70a44cb05bc3ac3d # v3.39.136
     # GH#20976: `secrets: inherit` only works within the same GitHub account/org.
     # The optional read token fetches the scanner from a private framework mirror.
     secrets:
       AIDEVOPS_READ_TOKEN: ${{ secrets.AIDEVOPS_READ_TOKEN }}
     with:
       # Keep this equal to the ref on `uses:` so the scanner is pinned with the reusable YAML.
-      aidevops_ref: 648679a340953abd6c53fa1008c4b2be40738066 # v3.39.132, the same commit as uses:
+      aidevops_ref: 2ec658b0aa97327546754ada70a44cb05bc3ac3d
