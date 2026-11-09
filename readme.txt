@@ -55,7 +55,7 @@ Not until you switch on Cookie consent, so nothing changes on a live site before
 
 = Does it work on multilingual sites? =
 
-Dutch, German, French, Spanish, Italian, Portuguese, Polish, Romanian, Latvian and Estonian are bundled, with country variants (list: README.md). Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
+Dutch, German, French, Spanish, Italian, Portuguese, Polish, Czech, Romanian, Latvian and Estonian are bundled, with country variants (list: README.md). Choose Site Language under Settings → General, or your profile Language. English is the fallback; translate your own text separately.
 
 WPML/Polylang: translate consent_message and consent_policy_url in the SEO Pro Cookie Consent group. Policy links follow published translations. TranslatePress handles banner text and pages. Clear language page caches after changes. Details: README.md.
 
