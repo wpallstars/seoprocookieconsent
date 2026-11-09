@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Developers: core files synced with WP Plugin Starter at 3ef1457 (#179). Adds scripts/check-deploy-log.sh (the deploy log classifier); scripts/deploy-sites.sh, scripts/lib/deploy-remote.sh, scripts/plugin-check.sh and scripts/sync-core.sh take the starter's newer deploy and check fixes; DEVELOPMENT.md and RELEASING.md follow the starter. Plugin-own blocks and consent defaults are unchanged.
+
 = 1.0.20 =
 * Improved: less work on each page view (#181). The check that keeps button text readable in the theme's light and dark modes (#68) read every colour by drawing it on a small canvas, and a page's first canvas read is slow. Hex and plain rgb() colours, which theme palettes almost always are, are now read directly; others still use the canvas. Same results. Lighthouse on a phone, Kadence site with the banner: the plugin's script took 4-5 ms of script time instead of 34-65 ms (up to 232 ms in a slower run).
 
