@@ -669,7 +669,6 @@ msgid "content"
 msgstr "sisu"
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
-#. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
 #: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
@@ -1691,8 +1690,7 @@ msgstr "Küpsisteatis aktsepteeritakse kerimisel või klõpsamisel, mis pole sel
 msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
 msgstr "Küpsiseteade käivitas teie „pärast aktsepteerimist” skriptid ise; need peatuvad, kui see on kadunud. Lisage need pärast vahetamist oma teemasse või päisekoodi pistikprogrammi: allpool olevad skriptireeglid ja teenused, mida see pistikprogramm tunneb, hoitakse seejärel tagasi, kuni külastajad need lubavad. Kopeerige need enne ülejäänud andmete eemaldamist."
 
-#. translators: %s: start of an inline script.
-#. translators: %s: a script pattern.
+#. translators: %s: the start of an inline script or a script pattern.
 #: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
 #: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
 #: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108

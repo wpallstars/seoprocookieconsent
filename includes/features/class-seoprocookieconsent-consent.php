@@ -422,7 +422,7 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
                 /* translators: %s: the services on the page, such as "YouTube and Google Analytics". */
                 'optOut'  => __('This page uses %s, which may set cookies. You can turn them off in Cookie settings.', 'seoprocookieconsent'),
                 'other'   => __('other services', 'seoprocookieconsent'),
-                /* translators: 1: service name; 2: cookie category. */
+                /* translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content. */
                 'embed'   => __('%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings.', 'seoprocookieconsent'),
                 /* translators: 1: service name, such as "YouTube"; 2: cookie category. */
                 'ask'     => __('%1$s needs %2$s to show here. Allow it to see this content.', 'seoprocookieconsent'),

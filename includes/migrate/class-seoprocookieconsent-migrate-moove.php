@@ -104,7 +104,7 @@ final class SEOProCookieConsent_Migrate_Moove extends SEOProCookieConsent_Migrat
             $notes[] = __('GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data.', 'seoprocookieconsent');
             foreach ($this->code() as $snippet) {
                 if (null === self::script_rule($snippet)) {
-                    /* translators: %s: start of an inline script. */
+                    /* translators: %s: the start of an inline script or a script pattern. */
                     $notes[] = sprintf(__('Add by hand to Also hold back (no address to recognise): %s', 'seoprocookieconsent'), mb_substr(trim((string) preg_replace('/\s+/', ' ', $snippet)), 0, 120));
                 }
             }

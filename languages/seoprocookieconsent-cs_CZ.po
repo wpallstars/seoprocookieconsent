@@ -674,7 +674,6 @@ msgid "content"
 msgstr "obsah"
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
-#. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
 #: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
@@ -2706,8 +2705,7 @@ msgstr "Cookie Notice přijímal souhlas při posunu stránky nebo kliknutí, co
 msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
 msgstr "Cookie Notice spouštěl vaše skripty „po přijetí“ sám; po jeho odebrání přestanou fungovat. Po přechodu je přidejte do svého motivu nebo do pluginu pro kód v hlavičce: pravidla pro skripty níže a služby, které tento plugin rozpozná, jsou pak blokovány, dokud je návštěvníci nepovolí. Zkopírujte je před odstraněním zbylých dat."
 
-#. translators: %s: start of an inline script.
-#. translators: %s: a script pattern.
+#. translators: %s: the start of an inline script or a script pattern.
 #: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
 #: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
 #: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108

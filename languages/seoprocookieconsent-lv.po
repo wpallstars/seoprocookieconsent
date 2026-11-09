@@ -674,7 +674,6 @@ msgid "content"
 msgstr "saturs"
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
-#. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
 #: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
@@ -1697,8 +1696,7 @@ msgstr "Sīkfailu paziņojums tiek pieņemts ritinot vai noklikšķinot, kas nav
 msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
 msgstr "Sīkfailu paziņojums pats palaidīs jūsu \"pēc pieņemšanas\" skriptus; tie apstājas, kad tas ir pazudis. Pievienojiet tos savai tēmai vai galvenes koda spraudnim pēc pārslēgšanas: tālāk norādītie skripta noteikumi un pakalpojumi, ko šis spraudnis atpazīst, tiek aizturēti, līdz apmeklētāji tos atļauj. Pirms atlikušo datu noņemšanas nokopējiet tos."
 
-#. translators: %s: start of an inline script.
-#. translators: %s: a script pattern.
+#. translators: %s: the start of an inline script or a script pattern.
 #: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
 #: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
 #: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108

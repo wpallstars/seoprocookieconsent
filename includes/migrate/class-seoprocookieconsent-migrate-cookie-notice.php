@@ -63,7 +63,7 @@ final class SEOProCookieConsent_Migrate_Cookie_Notice extends SEOProCookieConsen
             $notes[] = __('Cookie Notice ran your "after acceptance" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data.', 'seoprocookieconsent');
             foreach ($scripts as $snippet) {
                 if (null === self::script_rule($snippet)) {
-                    /* translators: %s: start of an inline script. */
+                    /* translators: %s: the start of an inline script or a script pattern. */
                     $notes[] = sprintf(__('Add by hand to Also hold back (no address to recognise): %s', 'seoprocookieconsent'), mb_substr(trim((string) preg_replace('/\s+/', ' ', $snippet)), 0, 120));
                 }
             }

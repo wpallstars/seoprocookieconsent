@@ -65,7 +65,7 @@ final class SEOProCookieConsent_Migrate_CookieAdmin extends SEOProCookieConsent_
         $notes[] = __('Scripts you marked for CookieAdmin in your theme (type="text/plain" with data-cookieadmin-category) stay switched off once it is gone: remove those two attributes so this plugin holds them back instead.', 'seoprocookieconsent');
         foreach ($this->patterns() as $pattern) {
             if (null === self::script_rule($pattern['pattern'])) {
-                /* translators: %s: a script pattern. */
+                /* translators: %s: the start of an inline script or a script pattern. */
                 $notes[] = sprintf(__('Add by hand to Also hold back (no address to recognise): %s', 'seoprocookieconsent'), mb_substr($pattern['pattern'], 0, 120));
             }
         }

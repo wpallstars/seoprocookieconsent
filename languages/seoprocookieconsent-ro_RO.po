@@ -674,7 +674,6 @@ msgid "content"
 msgstr "conţinut"
 
 #. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
-#. translators: 1: service name; 2: cookie category.
 #: includes/class-seoprocookieconsent-blocker.php:350
 #: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
@@ -1697,8 +1696,7 @@ msgstr "Notificare privind cookie-urile acceptată la derulare sau clic, ceea ce
 msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
 msgstr "Notificarea privind cookie-urile a rulat singur scripturile „după acceptare”; acestea se opresc când acestea dispar. Adăugați-le la tema dvs. sau la un plugin de cod antet după schimbare: regulile scriptului de mai jos și serviciile pe care le recunoaște acest plugin sunt apoi reținute până când vizitatorii le permit. Copiați-le înainte de a elimina datele rămase."
 
-#. translators: %s: start of an inline script.
-#. translators: %s: a script pattern.
+#. translators: %s: the start of an inline script or a script pattern.
 #: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
 #: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
 #: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108
