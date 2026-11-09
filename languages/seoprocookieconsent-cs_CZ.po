@@ -679,7 +679,7 @@ msgstr "obsah"
 #: includes/features/class-seoprocookieconsent-consent.php:426
 #, php-format
 msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
-msgstr "%1$s může ukládat soubory cookie. Načte se, až to povolíte, nebo povolte kategorii %2$s v Nastavení souborů cookie."
+msgstr "%1$s může ukládat soubory cookie. Načte se, jakmile to povolíte nebo když v Nastavení souborů cookie povolíte kategorii %2$s."
 
 #. translators: %s: what is embedded, such as video or map.
 #: includes/class-seoprocookieconsent-blocker.php:352
