@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Developers: core files synced with WP Plugin Starter at 3ef1457 (#179). Adds scripts/check-deploy-log.sh (the deploy log classifier); scripts/deploy-sites.sh, scripts/lib/deploy-remote.sh, scripts/plugin-check.sh and scripts/sync-core.sh take the starter's newer deploy and check fixes; DEVELOPMENT.md and RELEASING.md follow the starter. Plugin-own blocks and consent defaults are unchanged.
+
 = 1.0.19 =
 * Fixed: translators see one comment per string (#176). The held-embed notice and the migration note "Add by hand to Also hold back" each had two different translator comments, so the translation template kept both and every catalog refresh warned. Wording and translations are unchanged.
 
