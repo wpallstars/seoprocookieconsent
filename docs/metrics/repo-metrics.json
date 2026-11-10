@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-11-09T02:08:30Z",
+  "generated_at": "2026-11-10T10:50:27Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -12,9 +12,9 @@
   },
   "summary": {
     "source_files": 154,
-    "code": 29459,
-    "comments": 8254,
-    "blanks": 2888,
+    "code": 30077,
+    "comments": 8421,
+    "blanks": 2929,
     "languages": 10,
     "dependencies": 14
   },
@@ -25,34 +25,34 @@
       "code": 11761,
       "comments": 6171,
       "blanks": 1185,
-      "percentage": 39.92,
+      "percentage": 39.1,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
       "files": 24,
-      "code": 7250,
-      "comments": 1427,
-      "blanks": 550,
-      "percentage": 24.61,
+      "code": 7790,
+      "comments": 1593,
+      "blanks": 583,
+      "percentage": 25.9,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 3002,
+      "code": 3055,
       "comments": 0,
-      "blanks": 566,
-      "percentage": 10.19,
+      "blanks": 573,
+      "percentage": 10.16,
       "color": "#083fa1"
     },
     {
       "name": "JavaScript",
       "files": 7,
-      "code": 2131,
-      "comments": 284,
-      "blanks": 157,
-      "percentage": 7.23,
+      "code": 2156,
+      "comments": 288,
+      "blanks": 158,
+      "percentage": 7.17,
       "color": "#f1e05a"
     },
     {
@@ -61,7 +61,7 @@
       "code": 1979,
       "comments": 48,
       "blanks": 13,
-      "percentage": 6.72,
+      "percentage": 6.58,
       "color": "#6e7781"
     },
     {
@@ -70,7 +70,7 @@
       "code": 1794,
       "comments": 171,
       "blanks": 331,
-      "percentage": 6.09,
+      "percentage": 5.96,
       "color": "#563d7c"
     },
     {
@@ -79,16 +79,16 @@
       "code": 766,
       "comments": 0,
       "blanks": 0,
-      "percentage": 2.6,
+      "percentage": 2.55,
       "color": "#292929"
     },
     {
       "name": "YAML",
       "files": 13,
       "code": 665,
-      "comments": 131,
+      "comments": 128,
       "blanks": 76,
-      "percentage": 2.26,
+      "percentage": 2.21,
       "color": "#cb171e"
     },
     {
@@ -97,7 +97,7 @@
       "code": 103,
       "comments": 19,
       "blanks": 8,
-      "percentage": 0.35,
+      "percentage": 0.34,
       "color": "#3178c6"
     },
     {
