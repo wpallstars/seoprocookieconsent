@@ -549,11 +549,41 @@
 
     var paint = null;
 
+    // Hex and plain-number rgb() colours, read without a canvas: the first
+    // canvas in a page is slow to set up (tens of ms on a phone), and theme
+    // palettes are almost always hex (#181). [r, g, b], null if not opaque,
+    // or false for any other colour, which the canvas reads.
+    function quick(value) {
+        var hex = /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.exec(value);
+        if (hex) {
+            var h = hex[1].length < 5 ? hex[1].replace(/./g, '$&$&') : hex[1];
+            if (h.length === 8 && h.slice(6).toLowerCase() !== 'ff') {
+                return null;
+            }
+            return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+        }
+        var fn = /^rgba?\(\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*,\s*(\d*\.?\d+)\s*(?:,\s*(\d*\.?\d+)(%?)\s*)?\)$/i.exec(value) ||
+            /^rgba?\(\s*(\d*\.?\d+)\s+(\d*\.?\d+)\s+(\d*\.?\d+)\s*(?:\/\s*(\d*\.?\d+)(%?)\s*)?\)$/i.exec(value);
+        if (!fn) {
+            return false;
+        }
+        if (fn[4] !== undefined && parseFloat(fn[4]) < (fn[5] ? 100 : 1)) {
+            return null;
+        }
+        return [fn[1], fn[2], fn[3]].map(function (v) {
+            return Math.min(255, Math.round(parseFloat(v)));
+        });
+    }
+
     // Any CSS colour as [r, g, b], or null if invalid or not opaque.
     function rgb(value) {
         value = (value || '').trim();
         if (!value) {
             return null;
+        }
+        var known = quick(value);
+        if (known !== false) {
+            return known;
         }
         try {
             if (!paint) {
