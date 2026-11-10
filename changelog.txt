@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= 1.0.20 =
+* Improved: less work on each page view (#181). The check that keeps button text readable in the theme's light and dark modes (#68) read every colour by drawing it on a small canvas, and a page's first canvas read is slow. Hex and plain rgb() colours, which theme palettes almost always are, are now read directly; others still use the canvas. Same results. Lighthouse on a phone, Kadence site with the banner: the plugin's script took 4-5 ms of script time instead of 34-65 ms (up to 232 ms in a slower run).
+
 = 1.0.19 =
 * Fixed: translators see one comment per string (#176). The held-embed notice and the migration note "Add by hand to Also hold back" each had two different translator comments, so the translation template kept both and every catalog refresh warned. Wording and translations are unchanged.
 
