@@ -711,7 +711,10 @@
     var sizes = w.ResizeObserver ? new w.ResizeObserver(function (entries) {
         entries.forEach(function (entry) {
             var t = entry.target;
-            fit(t.classList.contains('spcc-embed') ? t : t.closest('.spcc-embed'));
+            var box = t.classList.contains('spcc-embed') ? t : t.closest('.spcc-embed');
+            if (box) {
+                fit(box);
+            }
         });
     }) : null;
 
