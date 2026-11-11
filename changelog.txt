@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.21 =
 * Developers: core files synced with WP Plugin Starter at 836feb5 (#179). Adds scripts/check-deploy-log.sh (the deploy log classifier) and scripts/release-bump.sh X.Y.Z (sets the version everywhere and renames each Unreleased block); scripts/deploy-sites.sh purges only the updated hosts at Cloudflare (--cloudflare-purge zone keeps the whole-zone purge) and, with scripts/update-test.sh, retries a GitHub release read that gh defers or GitHub rate limits; scripts/lib/deploy-remote.sh, scripts/plugin-check.sh, scripts/sync-core.sh and scripts/rename-plugin.sh take the starter's newer fixes; scripts/smoke-test.sh, the issue template config and CONTRIBUTING.md get empty own blocks; DEVELOPMENT.md and RELEASING.md follow the starter (release coordination). Plugin-own blocks and consent defaults are unchanged.
 
 = 1.0.20 =
