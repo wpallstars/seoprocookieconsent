@@ -653,7 +653,15 @@
         });
     }
 
-    contrast();
+    // After the first style pass, so getComputedStyle reads clean styles
+    // instead of forcing the page's first recalculation.
+    if (w.requestAnimationFrame) {
+        w.requestAnimationFrame(function () {
+            setTimeout(contrast, 0);
+        });
+    } else {
+        setTimeout(contrast, 0);
+    }
     // Kadence's switcher swaps body classes; block themes may follow the OS.
     if (w.MutationObserver && d.body) {
         var watch = new MutationObserver(contrast);
@@ -702,7 +710,8 @@
 
     var sizes = w.ResizeObserver ? new w.ResizeObserver(function (entries) {
         entries.forEach(function (entry) {
-            fit(entry.target);
+            var t = entry.target;
+            fit(t.classList.contains('spcc-embed') ? t : t.closest('.spcc-embed'));
         });
     }) : null;
 
@@ -710,13 +719,19 @@
         each(d.querySelectorAll('.spcc-embed'), function (box) {
             if (sizes) {
                 sizes.observe(box);
+                // A web font changes the notice's size, not the box's.
+                var inner = box.querySelector('.spcc-embed__notice');
+                if (inner) {
+                    sizes.observe(inner);
+                }
             } else {
                 fit(box);
             }
         });
     }
 
-    if (d.fonts && d.fonts.ready) {
+    // With ResizeObserver, fit() runs only in its callbacks, after layout.
+    if (!sizes && d.fonts && d.fonts.ready) {
         d.fonts.ready.then(function () {
             each(d.querySelectorAll('.spcc-embed'), fit);
         });
