@@ -2,6 +2,9 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
+= Unreleased =
+* Developers: core files synced from WP Plugin Starter 1.0.59 (68fc4d5), including the hooks check (scripts/check-hooks.js, skipped until docs/HOOKS.md exists), the changelog check, the secret text setting, minified .min copies of assets/ files in release builds (SEOProCookieConsent::asset_url()), the deploy load-check retry and the auto-dispatch label on the Starter sync issue. No change to the plugin's behaviour (#186).
+
 = 1.0.22 =
 * Improved: no forced reflow at start-up (#188). PageSpeed Insights listed the script under Forced reflow (up to 57 ms). The button text colour check now runs after the browser's first style pass, and small embed placeholders are fitted only when their size changes (after layout, including when a web font loads) in browsers with ResizeObserver. Results are the same, except that a placeholder on a narrow screen is no longer stepped down one step further than it needs (seen at 320 px with a 560 × 315 YouTube embed: level 1 instead of 2).
 

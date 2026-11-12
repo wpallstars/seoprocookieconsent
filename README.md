@@ -424,6 +424,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Developers: core files synced from WP Plugin Starter 1.0.59, including the hooks and changelog checks in `scripts/lint.sh` and minified asset copies in release builds. No change to the plugin's behaviour (#186).
+
 ### 1.0.22
 
 - Improved: no forced reflow at start-up (#188). PageSpeed Insights listed the script under Forced reflow (up to 57 ms). The button text colour check now runs after the browser's first style pass, and small embed placeholders are fitted only when their size changes (after layout, including when a web font loads) in browsers with `ResizeObserver`. Results are the same, except that a placeholder on a narrow screen is no longer stepped down one step further than it needs (seen at 320 px with a 560 × 315 YouTube embed: level 1 instead of 2).
