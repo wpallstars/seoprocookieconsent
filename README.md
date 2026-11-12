@@ -426,7 +426,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
-- Developers: core files synced from WP Plugin Starter 1.0.59, including the hooks and changelog checks in `scripts/lint.sh` and minified asset copies in release builds. No change to the plugin's behaviour (#186).
+- Developers: core files synced from WP Plugin Starter 1.0.60, including the hooks and changelog checks in `scripts/lint.sh` and minified asset copies in release builds. No change to the plugin's behaviour (#186).
 
 ### 1.0.22
 
