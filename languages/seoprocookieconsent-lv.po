@@ -47,7 +47,7 @@ msgstr "Izlasi mani"
 #: admin/includes/class-admin-page.php:238
 #: admin/includes/class-network-manager.php:102
 #: includes/class-seoprocookieconsent-records.php:156
-#: includes/class-seoprocookieconsent-setup.php:169
+#: includes/class-seoprocookieconsent-setup.php:182
 #: includes/views/consent-banner.php:43
 #: includes/views/consent-banner.php:48
 msgid "Settings"
@@ -688,11 +688,11 @@ msgstr "Ielādēt %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
 #: includes/features/class-seoprocookieconsent-consent.php:431
-#: includes/features/class-seoprocookieconsent-consent.php:535
-#: includes/features/class-seoprocookieconsent-consent.php:792
-#: includes/features/class-seoprocookieconsent-consent.php:804
-#: includes/features/class-seoprocookieconsent-consent.php:863
-#: includes/features/class-seoprocookieconsent-consent.php:889
+#: includes/features/class-seoprocookieconsent-consent.php:536
+#: includes/features/class-seoprocookieconsent-consent.php:793
+#: includes/features/class-seoprocookieconsent-consent.php:805
+#: includes/features/class-seoprocookieconsent-consent.php:864
+#: includes/features/class-seoprocookieconsent-consent.php:890
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Sīkfailu iestatījumi"
@@ -1090,15 +1090,15 @@ msgstr "Jums nav atļauts mainīt šos iestatījumus."
 msgid "Saved. Reload the page to see the change."
 msgstr "Saglabāts. Lai redzētu izmaiņas, ielādējiet lapu atkārtoti."
 
-#: includes/class-seoprocookieconsent-setup.php:265
+#: includes/class-seoprocookieconsent-setup.php:278
 msgid "Consent"
 msgstr "Piekrišana"
 
-#: includes/class-seoprocookieconsent-setup.php:266
+#: includes/class-seoprocookieconsent-setup.php:279
 msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
 msgstr "Aizturēt sīkfailus, līdz apmeklētāji tos atļauj, ar īsu reklāmkarogu tikai tur, kur tas nepieciešams."
 
-#: includes/class-seoprocookieconsent-setup.php:269
+#: includes/class-seoprocookieconsent-setup.php:282
 msgid "Policies"
 msgstr "Politikas"
 
@@ -1272,142 +1272,142 @@ msgstr "Lai %1$s tiktu rādīts šeit, jāatļauj %2$s. Atļaujiet to, lai redz�
 msgid "Load content"
 msgstr "Ielādēt saturu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:818
+#: includes/features/class-seoprocookieconsent-consent.php:819
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Saite, kas atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles. Kad izvēlnei ir šāda saite, automātiskā kājenes saite netiek pievienota."
 
-#: includes/features/class-seoprocookieconsent-consent.php:834
+#: includes/features/class-seoprocookieconsent-consent.php:835
 msgid "Add to Menu"
 msgstr "Pievienot izvēlnei"
 
-#: includes/features/class-seoprocookieconsent-consent.php:881
+#: includes/features/class-seoprocookieconsent-consent.php:882
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Sīkfailu iestatījumu poga"
 
-#: includes/features/class-seoprocookieconsent-consent.php:882
+#: includes/features/class-seoprocookieconsent-consent.php:883
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Atver sīkfailu iestatījumus, lai apmeklētāji varētu mainīt savas izvēles."
 
-#: includes/features/class-seoprocookieconsent-consent.php:888
+#: includes/features/class-seoprocookieconsent-consent.php:889
 msgid "Text"
 msgstr "Teksts"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:895
 msgid "Show as"
 msgstr "Rādīt kā"
 
-#: includes/features/class-seoprocookieconsent-consent.php:896
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Button"
 msgstr "Poga"
 
-#: includes/features/class-seoprocookieconsent-consent.php:897
+#: includes/features/class-seoprocookieconsent-consent.php:898
 msgid "Link"
 msgstr "Saite"
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Get started"
 msgstr "Sākt darbu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Switch on Cookie consent."
 msgstr "Ieslēdziet sīkfailu piekrišanu."
 
-#: includes/features/class-seoprocookieconsent-consent.php:916
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Izvēlieties Skenēt tūlīt un pēc tam atzīmējiet Atrasts jūsu lapās zemāk."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:918
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Cilnē Politikas ieslēdziet sīkfailu politiku un pievienojiet sīkfailu politikas bloku savai privātuma vai sīkfailu politikas lapai."
 
-#: includes/features/class-seoprocookieconsent-consent.php:919
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Scan now"
 msgstr "Skenēt tūlīt"
 
-#: includes/features/class-seoprocookieconsent-consent.php:920
+#: includes/features/class-seoprocookieconsent-consent.php:921
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Pārbauda jūsu sākumlapu, privātuma lapu un līdz trim nesenajiem ierakstiem un trim lapām. Šis ir paraugs, nevis pilnīgs audits; lapas tiek pārbaudītas arī apmeklētāju pārlūkošanas laikā. Skripti netiek palaisti."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:942
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Vēl nav atrasts neviens pakalpojums, kas iestatītu sīkfailus. Skenējiet tūlīt pēc šīs opcijas ieslēgšanas vai atveriet dažas savas vietnes lapas."
 
-#: includes/features/class-seoprocookieconsent-consent.php:943
+#: includes/features/class-seoprocookieconsent-consent.php:944
 msgid "Found on your pages and held back until allowed:"
 msgstr "Atrasts jūsu lapās un glabāts, līdz atļaus:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:954
+#: includes/features/class-seoprocookieconsent-consent.php:955
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Nepieciešams, nekad netiek slēpts un norādīts sīkfailu politikā:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:961
+#: includes/features/class-seoprocookieconsent-consent.php:962
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Citi skripti no šīm vietnēm tiek ielādēti kā parasti. Ja kāds no tiem iestata sīkfailus, pievienojiet to sadaļā Problēmu novēršana → Arī aizturēt:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:970
+#: includes/features/class-seoprocookieconsent-consent.php:971
 msgid "You cannot scan this site."
 msgstr "Jūs nevarat skenēt šo vietni."
 
-#: includes/features/class-seoprocookieconsent-consent.php:974
+#: includes/features/class-seoprocookieconsent-consent.php:975
 msgid "Switch on Cookie consent before scanning."
 msgstr "Pirms skenēšanas ieslēdziet sīkfailu piekrišanas opciju."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1084
+#: includes/features/class-seoprocookieconsent-consent.php:1085
 msgid "Preview the banner"
 msgstr "Priekšskatīt reklāmkarogu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1089
 msgid "Visitor"
 msgstr "Apmeklētājs"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1090
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Asked first (Europe, Quebec)"
 msgstr "Vispirms jautāts (Eiropa, Kvebeka)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1091
+#: includes/features/class-seoprocookieconsent-consent.php:1092
 msgid "Shown a notice (elsewhere)"
 msgstr "Parādīja paziņojumu (citur)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1096
 msgid "Screen"
 msgstr "Ekrāns"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1097
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Desktop"
 msgstr "Darbvirsma"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1098
+#: includes/features/class-seoprocookieconsent-consent.php:1099
 msgid "Phone"
 msgstr "Tālrunis"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1101
+#: includes/features/class-seoprocookieconsent-consent.php:1102
 msgid "Reload"
 msgstr "Pārlādēt"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1105
 msgid "Banner preview on your home page"
 msgstr "Banera priekšskatījums jūsu sākumlapā"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1106
+#: includes/features/class-seoprocookieconsent-consent.php:1107
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Jūsu sākumlapa ar reklāmkarogu tā, kā to redz apmeklētāji, pat ja lapai nav ko slēpt. Tas tiek atjaunināts pēc katrām izmaiņām. Priekšskatījumā veiktās izvēles netiek saglabātas."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1125
+#: includes/features/class-seoprocookieconsent-consent.php:1126
 msgid "No pages found."
 msgstr "Nav atrasta neviena lapa."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1129
 msgid "Scanning…"
 msgstr "Skenēšana…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1130
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Skenēšana pabeigta: pārbaudītas %1$s lapas; %2$s nevarēja pārbaudīt. Pārskatiet tālāk sniegtos rezultātus."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1131
+#: includes/features/class-seoprocookieconsent-consent.php:1132
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "Skenēšanas laikā neizdevās pārbaudīt jūsu lapas. Atgriezeniskās saites pieprasījumi var būt bloķēti. Mēģiniet vēlreiz vai atveriet savas vietnes lapas, lai aizpildītu sarakstu pārlūkošanas laikā."
 
@@ -2381,7 +2381,7 @@ msgid "Colour mode"
 msgstr "Krāsu režīms"
 
 # machine translation
-#: includes/class-seoprocookieconsent-setup.php:270
+#: includes/class-seoprocookieconsent-setup.php:283
 msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
 msgstr "Sīkfailu politika, privātuma politika un noteikumi un nosacījumi jūsu rakstītajās lapās. Pirms publicēšanas pārskatiet; tas nav juridisks padoms."
 

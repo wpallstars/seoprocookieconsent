@@ -47,7 +47,7 @@ msgstr "Loe mind"
 #: admin/includes/class-admin-page.php:238
 #: admin/includes/class-network-manager.php:102
 #: includes/class-seoprocookieconsent-records.php:156
-#: includes/class-seoprocookieconsent-setup.php:169
+#: includes/class-seoprocookieconsent-setup.php:182
 #: includes/views/consent-banner.php:43
 #: includes/views/consent-banner.php:48
 msgid "Settings"
@@ -683,11 +683,11 @@ msgstr "Laadi %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
 #: includes/features/class-seoprocookieconsent-consent.php:431
-#: includes/features/class-seoprocookieconsent-consent.php:535
-#: includes/features/class-seoprocookieconsent-consent.php:792
-#: includes/features/class-seoprocookieconsent-consent.php:804
-#: includes/features/class-seoprocookieconsent-consent.php:863
-#: includes/features/class-seoprocookieconsent-consent.php:889
+#: includes/features/class-seoprocookieconsent-consent.php:536
+#: includes/features/class-seoprocookieconsent-consent.php:793
+#: includes/features/class-seoprocookieconsent-consent.php:805
+#: includes/features/class-seoprocookieconsent-consent.php:864
+#: includes/features/class-seoprocookieconsent-consent.php:890
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Küpsiste seaded"
@@ -1085,15 +1085,15 @@ msgstr "Teil ei ole lubatud neid sätteid muuta."
 msgid "Saved. Reload the page to see the change."
 msgstr "Salvestatud. Muudatuse nägemiseks laadige leht uuesti."
 
-#: includes/class-seoprocookieconsent-setup.php:265
+#: includes/class-seoprocookieconsent-setup.php:278
 msgid "Consent"
 msgstr "Nõusolek"
 
-#: includes/class-seoprocookieconsent-setup.php:266
+#: includes/class-seoprocookieconsent-setup.php:279
 msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
 msgstr "Hoidke küpsiseid eemal, kuni külastajad neid lubavad, kasutades lühikest ribareklaami ainult seal, kus see on vajalik."
 
-#: includes/class-seoprocookieconsent-setup.php:269
+#: includes/class-seoprocookieconsent-setup.php:282
 msgid "Policies"
 msgstr "Poliitikad"
 
@@ -1267,142 +1267,142 @@ msgstr "%1$s vajab siin kuvamiseks luba: %2$s. Lubage see, et seda sisu näha."
 msgid "Load content"
 msgstr "Laadi sisu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:818
+#: includes/features/class-seoprocookieconsent-consent.php:819
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Link, mis avab küpsiste seaded, et külastajad saaksid oma valikuid muuta. Kui menüüs on see olemas, siis automaatset jaluselinki enam ei lisata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:834
+#: includes/features/class-seoprocookieconsent-consent.php:835
 msgid "Add to Menu"
 msgstr "Lisa menüüsse"
 
-#: includes/features/class-seoprocookieconsent-consent.php:881
+#: includes/features/class-seoprocookieconsent-consent.php:882
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Küpsiste seadete nupp"
 
-#: includes/features/class-seoprocookieconsent-consent.php:882
+#: includes/features/class-seoprocookieconsent-consent.php:883
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Avab küpsiste seaded, et külastajad saaksid oma valikuid muuta."
 
-#: includes/features/class-seoprocookieconsent-consent.php:888
+#: includes/features/class-seoprocookieconsent-consent.php:889
 msgid "Text"
 msgstr "Tekst"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:895
 msgid "Show as"
 msgstr "Näita kui"
 
-#: includes/features/class-seoprocookieconsent-consent.php:896
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Button"
 msgstr "Nupp"
 
-#: includes/features/class-seoprocookieconsent-consent.php:897
+#: includes/features/class-seoprocookieconsent-consent.php:898
 msgid "Link"
 msgstr "Link"
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Get started"
 msgstr "Alustamine"
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Switch on Cookie consent."
 msgstr "Lülitage sisse küpsiste nõusolek."
 
-#: includes/features/class-seoprocookieconsent-consent.php:916
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Valige „Skanni kohe“ ja seejärel märkige allpool teie lehtedel „Leitud“."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:918
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Lülitage küpsiste poliitika sisse vahekaardil Poliitikad ja lisage küpsiste poliitika plokk oma privaatsus- või küpsiste poliitika lehele."
 
-#: includes/features/class-seoprocookieconsent-consent.php:919
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Scan now"
 msgstr "Skanni kohe"
 
-#: includes/features/class-seoprocookieconsent-consent.php:920
+#: includes/features/class-seoprocookieconsent-consent.php:921
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Kontrollib teie avalehte, privaatsuslehte ja kuni kolme hiljutist postitust ning kolme lehte. See on näidis, mitte täielik audit; lehti kontrollitakse ka külastajate sirvimise ajal. Skripte ei käivitata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:942
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Küpsiseid seadistavaid teenuseid veel ei leitud. Pärast selle sisselülitamist skanni kohe või ava oma saidil paar lehte."
 
-#: includes/features/class-seoprocookieconsent-consent.php:943
+#: includes/features/class-seoprocookieconsent-consent.php:944
 msgid "Found on your pages and held back until allowed:"
 msgstr "Leitud teie lehtedelt ja hoiti tagasi kuni loa saamiseni:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:954
+#: includes/features/class-seoprocookieconsent-consent.php:955
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Vajalik, mitte kunagi varjatud ja küpsiste poliitikas loetletud:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:961
+#: includes/features/class-seoprocookieconsent-consent.php:962
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Nende saitide teised skriptid laadivad tavapäraselt. Kui üks neist määrab küpsised, lisage see jaotisse Veaotsing → Hoidke ka tagasi:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:970
+#: includes/features/class-seoprocookieconsent-consent.php:971
 msgid "You cannot scan this site."
 msgstr "Te ei saa seda saiti skannida."
 
-#: includes/features/class-seoprocookieconsent-consent.php:974
+#: includes/features/class-seoprocookieconsent-consent.php:975
 msgid "Switch on Cookie consent before scanning."
 msgstr "Enne skannimist lülitage sisse küpsiste nõusolek."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1084
+#: includes/features/class-seoprocookieconsent-consent.php:1085
 msgid "Preview the banner"
 msgstr "Vaadake bännerit eelvaates"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1089
 msgid "Visitor"
 msgstr "Külastaja"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1090
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Asked first (Europe, Quebec)"
 msgstr "Esmalt küsitud (Euroopa, Quebec)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1091
+#: includes/features/class-seoprocookieconsent-consent.php:1092
 msgid "Shown a notice (elsewhere)"
 msgstr "Näidati teadet (mujal)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1096
 msgid "Screen"
 msgstr "Ekraan"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1097
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Desktop"
 msgstr "Lauaarvuti"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1098
+#: includes/features/class-seoprocookieconsent-consent.php:1099
 msgid "Phone"
 msgstr "Telefon"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1101
+#: includes/features/class-seoprocookieconsent-consent.php:1102
 msgid "Reload"
 msgstr "Laadi uuesti"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1105
 msgid "Banner preview on your home page"
 msgstr "Bänneri eelvaade teie avalehel"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1106
+#: includes/features/class-seoprocookieconsent-consent.php:1107
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "Sinu avaleht koos bänneriga nii, nagu külastajad seda näevad, isegi kui lehel pole midagi varjata. See uueneb pärast iga muudatust. Eelvaates tehtud valikuid ei salvestata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1125
+#: includes/features/class-seoprocookieconsent-consent.php:1126
 msgid "No pages found."
 msgstr "Ühtegi lehekülge ei leitud."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1129
 msgid "Scanning…"
 msgstr "Skannimine…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1130
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Skannimine lõpetatud: %1$s lehekülge kontrollitud; %2$s ei õnnestunud kontrollida. Vaadake üle allolevad tulemused."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1131
+#: includes/features/class-seoprocookieconsent-consent.php:1132
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "Skannimisel ei õnnestunud teie lehti kontrollida. Tagasihelistustaotlused võivad olla blokeeritud. Proovige uuesti või avage sirvimise ajal oma saidi lehti, et loendit täiendada."
 
@@ -2374,7 +2374,7 @@ msgid "Colour mode"
 msgstr "Värvirežiim"
 
 # machine translation
-#: includes/class-seoprocookieconsent-setup.php:270
+#: includes/class-seoprocookieconsent-setup.php:283
 msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
 msgstr "Küpsiste poliitika, privaatsuspoliitika ja kasutustingimused teie kirjutatud lehtede sees. Vaadake üle enne avaldamist; see ei ole õigusnõu."
 

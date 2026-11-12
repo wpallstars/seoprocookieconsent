@@ -47,7 +47,7 @@ msgstr "Leggimi"
 #: admin/includes/class-admin-page.php:238
 #: admin/includes/class-network-manager.php:102
 #: includes/class-seoprocookieconsent-records.php:156
-#: includes/class-seoprocookieconsent-setup.php:169
+#: includes/class-seoprocookieconsent-setup.php:182
 #: includes/views/consent-banner.php:43
 #: includes/views/consent-banner.php:48
 msgid "Settings"
@@ -683,11 +683,11 @@ msgstr "Carica %s"
 
 #: includes/class-seoprocookieconsent-blocker.php:359
 #: includes/features/class-seoprocookieconsent-consent.php:431
-#: includes/features/class-seoprocookieconsent-consent.php:535
-#: includes/features/class-seoprocookieconsent-consent.php:792
-#: includes/features/class-seoprocookieconsent-consent.php:804
-#: includes/features/class-seoprocookieconsent-consent.php:863
-#: includes/features/class-seoprocookieconsent-consent.php:889
+#: includes/features/class-seoprocookieconsent-consent.php:536
+#: includes/features/class-seoprocookieconsent-consent.php:793
+#: includes/features/class-seoprocookieconsent-consent.php:805
+#: includes/features/class-seoprocookieconsent-consent.php:864
+#: includes/features/class-seoprocookieconsent-consent.php:890
 #: includes/views/consent-banner.php:68
 msgid "Cookie settings"
 msgstr "Impostazioni dei cookie"
@@ -1085,15 +1085,15 @@ msgstr "Non è consentito modificare queste impostazioni."
 msgid "Saved. Reload the page to see the change."
 msgstr "Salvato. Ricarica la pagina per visualizzare la modifica."
 
-#: includes/class-seoprocookieconsent-setup.php:265
+#: includes/class-seoprocookieconsent-setup.php:278
 msgid "Consent"
 msgstr "Consenso"
 
-#: includes/class-seoprocookieconsent-setup.php:266
+#: includes/class-seoprocookieconsent-setup.php:279
 msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
 msgstr "Non consentire l'utilizzo dei cookie finché i visitatori non li autorizzano, mostrando un breve banner solo quando necessario."
 
-#: includes/class-seoprocookieconsent-setup.php:269
+#: includes/class-seoprocookieconsent-setup.php:282
 msgid "Policies"
 msgstr "Politiche"
 
@@ -1267,142 +1267,142 @@ msgstr "%1$s richiede %2$s per essere mostrato qui. Consentilo per vedere questo
 msgid "Load content"
 msgstr "Carica contenuto"
 
-#: includes/features/class-seoprocookieconsent-consent.php:818
+#: includes/features/class-seoprocookieconsent-consent.php:819
 msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
 msgstr "Un link che apre le impostazioni dei cookie, consentendo ai visitatori di modificare le proprie preferenze. Una volta che un menu lo include, il link automatico nel piè di pagina non viene aggiunto."
 
-#: includes/features/class-seoprocookieconsent-consent.php:834
+#: includes/features/class-seoprocookieconsent-consent.php:835
 msgid "Add to Menu"
 msgstr "Aggiungi al menu"
 
-#: includes/features/class-seoprocookieconsent-consent.php:881
+#: includes/features/class-seoprocookieconsent-consent.php:882
 #: includes/features/class-seoprocookieconsent-policy.php:77
 msgid "Cookie settings button"
 msgstr "Pulsante Impostazioni cookie"
 
-#: includes/features/class-seoprocookieconsent-consent.php:882
+#: includes/features/class-seoprocookieconsent-consent.php:883
 msgid "Opens Cookie settings so visitors can change their choices."
 msgstr "Apre le impostazioni dei cookie in modo che i visitatori possano modificare le proprie preferenze."
 
-#: includes/features/class-seoprocookieconsent-consent.php:888
+#: includes/features/class-seoprocookieconsent-consent.php:889
 msgid "Text"
 msgstr "Testo"
 
-#: includes/features/class-seoprocookieconsent-consent.php:894
+#: includes/features/class-seoprocookieconsent-consent.php:895
 msgid "Show as"
 msgstr "Mostra come"
 
-#: includes/features/class-seoprocookieconsent-consent.php:896
+#: includes/features/class-seoprocookieconsent-consent.php:897
 msgid "Button"
 msgstr "Pulsante"
 
-#: includes/features/class-seoprocookieconsent-consent.php:897
+#: includes/features/class-seoprocookieconsent-consent.php:898
 msgid "Link"
 msgstr "Collegamento"
 
-#: includes/features/class-seoprocookieconsent-consent.php:914
+#: includes/features/class-seoprocookieconsent-consent.php:915
 msgid "Get started"
 msgstr "Inizia"
 
-#: includes/features/class-seoprocookieconsent-consent.php:915
+#: includes/features/class-seoprocookieconsent-consent.php:916
 msgid "Switch on Cookie consent."
 msgstr "Attiva il consenso ai cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:916
+#: includes/features/class-seoprocookieconsent-consent.php:917
 msgid "Choose Scan now, then check Found on your pages below."
 msgstr "Seleziona \"Avvia scansione\", quindi seleziona \"Trovato\" nelle pagine sottostanti."
 
-#: includes/features/class-seoprocookieconsent-consent.php:917
+#: includes/features/class-seoprocookieconsent-consent.php:918
 msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
 msgstr "Attiva la politica sui cookie nella scheda Politiche e aggiungi il blocco relativo alla politica sui cookie alla pagina della tua informativa sulla privacy o sui cookie."
 
-#: includes/features/class-seoprocookieconsent-consent.php:919
+#: includes/features/class-seoprocookieconsent-consent.php:920
 msgid "Scan now"
 msgstr "Scansiona ora"
 
-#: includes/features/class-seoprocookieconsent-consent.php:920
+#: includes/features/class-seoprocookieconsent-consent.php:921
 msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
 msgstr "Controlla la tua home page, la pagina sulla privacy e fino a tre articoli recenti e tre pagine. Questo è un campione, non un controllo completo; le pagine vengono controllate anche durante la navigazione degli utenti. Non vengono eseguiti script."
 
-#: includes/features/class-seoprocookieconsent-consent.php:941
+#: includes/features/class-seoprocookieconsent-consent.php:942
 msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
 msgstr "Non sono stati ancora trovati servizi che impostano cookie. Esegui una scansione ora dopo aver attivato questa funzione oppure apri alcune pagine del tuo sito."
 
-#: includes/features/class-seoprocookieconsent-consent.php:943
+#: includes/features/class-seoprocookieconsent-consent.php:944
 msgid "Found on your pages and held back until allowed:"
 msgstr "Trovato sulle tue pagine e bloccato fino a autorizzazione:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:954
+#: includes/features/class-seoprocookieconsent-consent.php:955
 msgid "Necessary, never held back, and listed in the cookie policy:"
 msgstr "Necessari, mai esclusi e elencati nella politica sui cookie:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:961
+#: includes/features/class-seoprocookieconsent-consent.php:962
 msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
 msgstr "Altri script di questi siti vengono caricati normalmente. Se uno di essi imposta i cookie, aggiungilo in Risoluzione dei problemi → Inoltre, tieni premuto:"
 
-#: includes/features/class-seoprocookieconsent-consent.php:970
+#: includes/features/class-seoprocookieconsent-consent.php:971
 msgid "You cannot scan this site."
 msgstr "Non è possibile eseguire la scansione di questo sito."
 
-#: includes/features/class-seoprocookieconsent-consent.php:974
+#: includes/features/class-seoprocookieconsent-consent.php:975
 msgid "Switch on Cookie consent before scanning."
 msgstr "Attiva il consenso ai cookie prima di procedere con la scansione."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1084
+#: includes/features/class-seoprocookieconsent-consent.php:1085
 msgid "Preview the banner"
 msgstr "Anteprima del banner"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1088
+#: includes/features/class-seoprocookieconsent-consent.php:1089
 msgid "Visitor"
 msgstr "Visitatore"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1090
+#: includes/features/class-seoprocookieconsent-consent.php:1091
 msgid "Asked first (Europe, Quebec)"
 msgstr "Interpellato per primo (Europa, Quebec)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1091
+#: includes/features/class-seoprocookieconsent-consent.php:1092
 msgid "Shown a notice (elsewhere)"
 msgstr "Mostrato un avviso (altrove)"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1095
+#: includes/features/class-seoprocookieconsent-consent.php:1096
 msgid "Screen"
 msgstr "Schermo"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1097
+#: includes/features/class-seoprocookieconsent-consent.php:1098
 msgid "Desktop"
 msgstr "Desktop"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1098
+#: includes/features/class-seoprocookieconsent-consent.php:1099
 msgid "Phone"
 msgstr "Telefono"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1101
+#: includes/features/class-seoprocookieconsent-consent.php:1102
 msgid "Reload"
 msgstr "Ricaricare"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1104
+#: includes/features/class-seoprocookieconsent-consent.php:1105
 msgid "Banner preview on your home page"
 msgstr "Anteprima del banner sulla tua home page"
 
-#: includes/features/class-seoprocookieconsent-consent.php:1106
+#: includes/features/class-seoprocookieconsent-consent.php:1107
 msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
 msgstr "La tua home page con il banner così come la vedono i visitatori, anche se la pagina è vuota. Si aggiorna dopo ogni modifica. Le scelte effettuate nell'anteprima non vengono salvate."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1125
+#: includes/features/class-seoprocookieconsent-consent.php:1126
 msgid "No pages found."
 msgstr "Nessuna pagina trovata."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1128
+#: includes/features/class-seoprocookieconsent-consent.php:1129
 msgid "Scanning…"
 msgstr "Scansione in corso…"
 
 #. translators: 1: pages checked; 2: pages that could not be checked.
-#: includes/features/class-seoprocookieconsent-consent.php:1130
+#: includes/features/class-seoprocookieconsent-consent.php:1131
 #, php-format
 msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
 msgstr "Scansione completata: controllate le pagine %1$s ; non è stato possibile controllare %2$s. Esaminare i risultati qui di seguito."
 
-#: includes/features/class-seoprocookieconsent-consent.php:1131
+#: includes/features/class-seoprocookieconsent-consent.php:1132
 msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
 msgstr "La scansione non è riuscita a controllare le tue pagine. Le richieste di loopback potrebbero essere bloccate. Riprova oppure apri le pagine del tuo sito per compilare l'elenco durante la navigazione."
 
@@ -2374,7 +2374,7 @@ msgid "Colour mode"
 msgstr "Modalità colore"
 
 # machine translation
-#: includes/class-seoprocookieconsent-setup.php:270
+#: includes/class-seoprocookieconsent-setup.php:283
 msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
 msgstr "Informativa sui cookie, politica sulla riservatezza e termini e condizioni, all'interno delle pagine che scrivi. Rivedili prima di pubblicare; non costituiscono consulenza legale."
 

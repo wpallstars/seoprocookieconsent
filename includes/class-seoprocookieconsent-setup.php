@@ -121,6 +121,19 @@ final class SEOProCookieConsent_Setup {
     }
 
     /**
+     * Path, relative to the plugin folder, of the file
+     * SEOProCookieConsent::asset_url() names: the .min copy a release build
+     * carries, unless SCRIPT_DEBUG is on, else the readable file. For code
+     * that reads the file itself (an inline script, a style's path data).
+     *
+     * @param string $file Path relative to the plugin folder, such as assets/x.js.
+     * @return string
+     */
+    public static function asset_path($file) {
+        return substr(SEOProCookieConsent::asset_url($file), strlen(SEOPROCOOKIECONSENT_URL));
+    }
+
+    /**
      * Register a server-rendered block, seoprocookieconsent/{name}, shown
      * in the editor with ServerSideRender (assets/js/blocks.js).
      *

@@ -424,6 +424,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Improved: visitors get the minified copies of the plugin's own files (#195). Release builds carry them since 1.0.23, but the head script (printed into every page), `spcc.js` and `spcc.css` were still the readable files, so PageSpeed Insights listed the plugin under Minify JavaScript. Every page's HTML is now about 15 KB smaller before compression (head script 13,120 bytes instead of 28,616), and `spcc.js` (13,780 instead of 31,166) and `spcc.css` (11,103 instead of 16,962) are smaller downloads. With `SCRIPT_DEBUG` on, and in a Git checkout, the readable files load as before.
+
 ### 1.0.23
 
 - Improved: no forced style recalculation from the button text colour check (#192). On long pages PageSpeed Insights still listed the script under Forced reflow (72 ms on a phone): the check read the page's styles before the browser had worked them out, at start-up and after every class change on the page. It now reads them in a `ResizeObserver` callback, just after the browser's own style and layout pass and before the frame is drawn, at most once a frame, so a changed colour also shows in that same frame (other browsers as before). Same colours. Lighthouse on a phone, long Kadence page with the banner, 5 runs each (medians): forced reflow 63 ms instead of 137 ms and Total Blocking Time 23 ms instead of 50 ms; the largest paint is unchanged.
