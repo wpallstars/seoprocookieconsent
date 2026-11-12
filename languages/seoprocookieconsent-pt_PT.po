@@ -73,15 +73,15 @@ msgstr "Salvo"
 msgid "Could not save. Please try again."
 msgstr "Não foi possível guardar. Tente novamente."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Escolha uma imagem"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Use esta imagem"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Copiar estas definições para as definições individuais de cada site? Cada site poderá voltar a alterá-las posteriormente, a menos que sejam aplicadas a todos os sites."
 
@@ -3381,6 +3381,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "com fornecedores de análise e publicidade, por exemplo para estatísticas, medição de anúncios e apresentação de anúncios relevantes, apenas se permitir esses cookies (ver Cookies). Alguns deles, como as redes sociais e as plataformas de publicidade, também os utilizam para fins próprios, nos termos dos seus próprios avisos de privacidade;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Guardado (oculto). Escreva um novo para o substituir ou um espaço para o remover."

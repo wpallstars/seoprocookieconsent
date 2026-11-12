@@ -73,15 +73,15 @@ msgstr "Salvat"
 msgid "Could not save. Please try again."
 msgstr "Nu s-a putut salva. Vă rugăm să încercați din nou."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Alege o imagine"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Folosește această imagine"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Copiați aceste setări în setările fiecărui site? Fiecare site le poate modifica ulterior, cu excepția cazului în care sunt aplicate fiecărui site."
 
@@ -3390,6 +3390,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "cu furnizori de analiză și publicitate, de exemplu pentru statistici, măsurarea reclamelor și afișarea de reclame relevante, doar dacă permiteți aceste cookie-uri (vezi Cookie-uri). Unii dintre ei, precum rețelele sociale și platformele de publicitate, le folosesc și în scopuri proprii, conform propriilor notificări de confidențialitate;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Salvat (ascuns). Introduceți unul nou pentru a-l înlocui sau un spațiu pentru a-l elimina."

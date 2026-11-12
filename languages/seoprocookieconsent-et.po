@@ -73,15 +73,15 @@ msgstr "Salvestatud"
 msgid "Could not save. Please try again."
 msgstr "Salvestamine ebaõnnestus. Palun proovige uuesti."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Valige pilt"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Kasuta seda pilti"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Kas kopeerida need seaded iga saidi enda seadetesse? Iga sait saab neid hiljem uuesti muuta, kui neid ei rakendata igale saidile."
 
@@ -3381,6 +3381,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "analüüsi- ja reklaamiteenuse pakkujatega, näiteks statistika, reklaamide mõõtmise ja asjakohaste reklaamide näitamise jaoks, ainult siis, kui lubate need küpsised (vt Küpsised). Mõned neist, näiteks sotsiaalvõrgustikud ja reklaamiplatvormid, kasutavad neid ka oma eesmärkidel oma privaatsusteadete alusel;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Salvestatud (peidetud). Asendamiseks sisestage uus, eemaldamiseks tühik."

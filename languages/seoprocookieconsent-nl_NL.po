@@ -71,15 +71,15 @@ msgstr "Opgeslagen"
 msgid "Could not save. Please try again."
 msgstr "Opslaan is niet gelukt. Probeer het opnieuw."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Kies een afbeelding"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Deze afbeelding gebruiken"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Deze instellingen naar de eigen instellingen van elke site kopiëren? Elke site kan ze nadien weer wijzigen, tenzij ze voor alle sites zijn vastgelegd."
 
@@ -3379,6 +3379,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "met analyse- en advertentieaanbieders, bijvoorbeeld voor statistieken, het meten van advertenties en het tonen van relevante advertenties, alleen als u die cookies toestaat (zie Cookies). Sommige daarvan, zoals sociale netwerken en advertentieplatforms, gebruiken ze ook voor eigen doeleinden volgens hun eigen privacyverklaringen;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Opgeslagen (verborgen). Typ een nieuwe om deze te vervangen, of een spatie om deze te verwijderen."

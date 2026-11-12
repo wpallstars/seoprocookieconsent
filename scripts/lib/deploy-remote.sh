@@ -293,20 +293,18 @@ active_check() {
 }
 
 # Even when the command fails, check for damage before stopping the install.
-# Sets GUARD_WP_STDERR_EMPTY (WP-CLI itself wrote nothing to stderr) and
-# GUARD_ACTIVE_OK (1 only when the activation lists were checked and are as
+# Sets GUARD_ACTIVE_OK (1 only when the activation lists were checked and are as
 # they should be; a retry is safe only then).
 active_guard() {
 	local root="$1" add="$2" remove="$3"
 	shift 3
 	local before status=0
-	GUARD_WP_STDERR_EMPTY=0 GUARD_ACTIVE_OK=0
+	GUARD_ACTIVE_OK=0
 	before="$(active_snapshot "$root")" || return 1
 	# Validate the machine-readable snapshot before ANY mutation.
 	FLEET_BEFORE="$before" wp_checked "$root" --skip-plugins --skip-themes eval \
 		'if (!is_array(json_decode(getenv("FLEET_BEFORE"), true))) { WP_CLI::error("Invalid activation snapshot output"); }' >/dev/null || return 1
 	wp_checked "$root" "$@" || status=$?
-	GUARD_WP_STDERR_EMPTY="$WP_STDERR_EMPTY"
 	if active_check "$root" "$before" "$add" "$remove"; then
 		GUARD_ACTIVE_OK=1
 	else
@@ -727,6 +725,26 @@ PHP
 	return 0
 }
 
+# Prints the site's hooks that have exactly one event, a one-off: the only
+# hooks a killed run may retry. WP-CLI shows a one-off's recurrence as
+# "Non-repeating". A hook with two events is left out: the list shows hooks,
+# not events, so it cannot tell which one was killed. Returns 1, printing
+# nothing, when the list cannot be read, so no killed hook is retried. Read,
+# then filter: as a library, pipefail may be off.
+cron_lone_oneoffs() {
+	local root="$1"
+	shift
+	local events
+	events="$("$WP_CLI" --path="$root" "$@" cron event list --fields=hook,recurrence --format=csv 2>/dev/null)" || return 1
+	printf '%s\n' "$events" | awk '
+		NR > 1 && split($0, field, ",") >= 2 && field[1] != "" {
+			n[field[1]]++
+			if (field[2] != "Non-repeating") repeats[field[1]] = 1
+		}
+		END { for (h in n) if (n[h] == 1 && !(h in repeats)) print h }'
+	return 0
+}
+
 # Runs the plugin's own scheduled events once on one site, each in its own
 # WP-CLI process (a fatal error ends one process, not the count). A fatal
 # error that only a cron callback reaches never shows in the full load, the
@@ -785,11 +803,34 @@ run_site_cron() {
 		CRON_FAILURE="cron events not run: timeout is not installed on this host (set DEPLOY_CRON_TIMEOUT=0 for no limit); "
 		return 0
 	fi
+	# Read before the first run: a run changes the list.
+	local retryable=""
+	retryable="$(cron_lone_oneoffs "$root" "$@")" || retryable=""
 	while IFS= read -r hook; do
 		[[ -n "$hook" ]] || continue
 		CRON_TOTAL=$((CRON_TOTAL + 1))
 		status=0
 		out="$("${cmd[@]+"${cmd[@]}"}" "$WP_CLI" --path="$root" "$@" cron event run "$hook" 2>&1)" || status=$?
+		# A killed event (137) is run again, up to 3 tries in all, but only a
+		# hook's lone one-off still listed: WP-CLI removes a one-off before
+		# its callback and reschedules a recurring event before it, so a
+		# retry of either runs the next occurrence early or a callback twice.
+		# Any other final 137 stays a failure, even for a one-off no longer
+		# listed.
+		local tries=1 still=""
+		while [[ "$status" -eq 137 && "$tries" -lt 3 ]]; do
+			printf '%s\n' "$retryable" | grep -qxF "$hook" || break
+			still="$("$WP_CLI" --path="$root" "$@" cron event list --field=hook 2>/dev/null)" || break
+			printf '%s\n' "$still" | grep -qxF "$hook" || break
+			tries=$((tries + 1))
+			sleep "$LOAD_RETRY_DELAY"
+			status=0
+			out="$("${cmd[@]+"${cmd[@]}"}" "$WP_CLI" --path="$root" "$@" cron event run "$hook" 2>&1)" || status=$?
+		done
+		if [[ "$status" -eq 137 && -z "$out" ]]; then
+			out="cron $hook killed (137)"
+		fi
+		[[ "$tries" -eq 1 ]] || CRON_WARN+="cron $hook retried (137), "
 		if [[ "$status" -eq 124 && "${#cmd[@]}" -gt 0 ]]; then
 			CRON_WARN+="cron $hook timed out (${limit}s), "
 			CRON_RUN=$((CRON_RUN + 1))
@@ -991,14 +1032,30 @@ cdn_announce() {
 	return 0
 }
 
+# Waits, at most 10 minutes, while the account runs more than
+# DEPLOY_MAX_ACCOUNT_PROCS processes (unset or not a number: no wait), so a
+# host at its process limit does not kill the install's checks.
+wait_for_account_load() {
+	local max="${DEPLOY_MAX_ACCOUNT_PROCS:-}" count waited=0
+	[[ "$max" =~ ^[0-9]+$ ]] || return 0
+	command -v pgrep >/dev/null 2>&1 || return 0
+	while [[ "$waited" -lt 600 ]]; do
+		count="$(pgrep -u "$(id -u)" | wc -l | tr -d ' ')"
+		[[ "$count" =~ ^[0-9]+$ && "$count" -gt "$max" ]] || return 0
+		sleep 10
+		waited=$((waited + 10))
+	done
+	return 0
+}
+
 # The load check: $1 root, $2 stderr file, rest WP-CLI args. Sets LOAD_OUT,
-# LOAD_STATUS and LOAD_RETRIED. Only a SIGKILL (137) with nothing on stderr,
+# LOAD_STATUS and LOAD_RETRIED. Only a SIGKILL (137), whatever stderr holds,
 # after which the activation lists were found intact, is retried, once,
 # after LOAD_RETRY_DELAY: an activation failure stays FAIL.
 load_check() {
 	local root="$1" errors="$2"
 	shift 2
-	LOAD_STATUS=0 LOAD_RETRIED="" LOAD_OUT="" GUARD_WP_STDERR_EMPTY=0 GUARD_ACTIVE_OK=0
+	LOAD_STATUS=0 LOAD_RETRIED="" LOAD_OUT="" GUARD_ACTIVE_OK=0
 	local out_file
 	out_file="$(mktemp)" || {
 		LOAD_STATUS=1
@@ -1007,7 +1064,7 @@ load_check() {
 	# active_guard runs in this shell, not in $(...), so its GUARD_* flags
 	# reach the retry test below; stdout goes through a private file.
 	active_guard "$root" "" "" "$@" eval "$(load_code)" >"$out_file" 2>"$errors" || LOAD_STATUS=$?
-	if [[ "$LOAD_STATUS" -eq 137 && "$GUARD_WP_STDERR_EMPTY" -eq 1 && "$GUARD_ACTIVE_OK" -eq 1 ]]; then
+	if [[ "$LOAD_STATUS" -eq 137 && "$GUARD_ACTIVE_OK" -eq 1 ]]; then
 		LOAD_RETRIED=137 LOAD_STATUS=0
 		sleep "$LOAD_RETRY_DELAY"
 		active_guard "$root" "" "" "$@" eval "$(load_code)" >"$out_file" 2>"$errors" || LOAD_STATUS=$?
@@ -1248,6 +1305,7 @@ apply_one() {
 		return 0
 	fi
 
+	wait_for_account_load
 	INSTALL_START="$(date +%s)"
 	if ! install_build "$root" "$name" "$zip" "$plugins" "$backup"; then
 		FAILED=1

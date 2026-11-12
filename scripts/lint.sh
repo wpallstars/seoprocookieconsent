@@ -183,7 +183,7 @@ check_build() {
 }
 
 # Line numbers (in the new file) of lines a one-file --unified=0 diff on
-# stdin adds that start with PREFIX.
+# stdin adds that start with PREFIX, after any indent (a sub-bullet).
 added_lines() {
 	local prefix="$1"
 	awk -v prefix="$prefix" '
@@ -194,7 +194,9 @@ added_lines() {
 		}
 		/^\+\+\+ / { next }
 		/^\+/ {
-			if (index(substr($0, 2), prefix) == 1) print n
+			line = substr($0, 2)
+			sub(/^[[:space:]]+/, "", line)
+			if (index(line, prefix) == 1) print n
 			n++
 		}
 	'
@@ -217,7 +219,7 @@ heading_above() {
 			if (hash && !inlog) head = "(outside the changelog)"
 			print head
 		}
-	' "$file"
+	' < <(git -C "$ROOT" show "HEAD:$file")
 	return 0
 }
 
@@ -248,7 +250,7 @@ changelog_file() {
 	local style="$4"
 	local unreleased="$5"
 	local version="$6"
-	local diff number heading escaped status=0
+	local diff number heading escaped status=0 release=0
 	diff="$(git diff --unified=0 "$base"...HEAD -- "$file")"
 	[[ -n "$diff" ]] || return 0
 	# A release PR renames the Unreleased heading to the new version.
@@ -256,13 +258,17 @@ changelog_file() {
 		escaped="${version//./\\.}"
 		if grep -Eq '^-(= *Unreleased *=|### *Unreleased)[[:space:]]*$' <<<"$diff" &&
 			grep -Eq "^\\+(= *v?${escaped} *=|### *v?${escaped})[[:space:]]*\$" <<<"$diff"; then
-			return 0
+			release=1
 		fi
 	fi
 	while IFS= read -r number; do
 		[[ -n "$number" ]] || continue
 		heading="$(heading_above "$file" "$number" "$style")"
 		[[ "$heading" == "(outside the changelog)" ]] && continue
+		heading="${heading%"${heading##*[![:space:]]}"}"
+		if [[ "$release" == 1 ]] && grep -Eq "^(= *v?${escaped} *=|### *v?${escaped})\$" <<<"$heading"; then
+			continue
+		fi
 		if [[ "$heading" != "$unreleased" ]]; then
 			printf '%s:%s: changelog line is under "%s"; move it under "%s"\n' \
 				"$file" "$number" "${heading:-no heading}" "$unreleased"

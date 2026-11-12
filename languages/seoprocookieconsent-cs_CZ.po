@@ -73,15 +73,15 @@ msgstr "Uloženo"
 msgid "Could not save. Please try again."
 msgstr "Uložení se nepodařilo. Zkuste to prosím znovu."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Vybrat obrázek"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Použít tento obrázek"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Zkopírovat tato nastavení do vlastních nastavení každého webu? Každý web je pak může znovu změnit, pokud nejsou uplatněna na všechny weby."
 
@@ -3390,6 +3390,7 @@ msgid "Colour mode"
 msgstr "Barevný režim"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Uloženo (skryto). Zadejte nový pro nahrazení, nebo mezeru pro odstranění."
