@@ -65,7 +65,7 @@ msgstr "Salvando…"
 
 #: admin/includes/class-admin-manager.php:418
 #: admin/includes/class-network-manager.php:321
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved"
 msgstr "Salvo"
 
@@ -706,8 +706,8 @@ msgstr "Esta rede tem mais de %d sites, demasiados para serem alterados de uma s
 
 #: includes/class-seoprocookieconsent-network-settings.php:231
 #: includes/class-seoprocookieconsent-network-settings.php:253
-#: includes/class-seoprocookieconsent-settings.php:392
-#: includes/class-seoprocookieconsent-settings.php:408
+#: includes/class-seoprocookieconsent-settings.php:396
+#: includes/class-seoprocookieconsent-settings.php:412
 msgid "The setting could not be saved. Please try again."
 msgstr "Não foi possível guardar as definições. Tente novamente."
 
@@ -1069,19 +1069,19 @@ msgstr "Mantém a conversa ativa"
 msgid "9 months"
 msgstr "9 meses"
 
-#: includes/class-seoprocookieconsent-settings.php:380
+#: includes/class-seoprocookieconsent-settings.php:384
 msgid "Unknown setting."
 msgstr "Cenário desconhecido."
 
-#: includes/class-seoprocookieconsent-settings.php:383
+#: includes/class-seoprocookieconsent-settings.php:387
 msgid "The network administrator sets this for every site, so it cannot be changed here."
 msgstr "O administrador de rede define isto para cada site, pelo que não pode ser alterado aqui."
 
-#: includes/class-seoprocookieconsent-settings.php:1054
+#: includes/class-seoprocookieconsent-settings.php:1058
 msgid "You are not allowed to change these settings."
 msgstr "Não tem permissão para alterar essas definições."
 
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved. Reload the page to see the change."
 msgstr "Salvo. Recarregue a página para ver a alteração."
 
@@ -3379,3 +3379,8 @@ msgstr "Se for consumidor, mantém também a proteção da lei imperativa do pa�
 #: includes/features/class-seoprocookieconsent-privacy.php:233
 msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
 msgstr "com fornecedores de análise e publicidade, por exemplo para estatísticas, medição de anúncios e apresentação de anúncios relevantes, apenas se permitir esses cookies (ver Cookies). Alguns deles, como as redes sociais e as plataformas de publicidade, também os utilizam para fins próprios, nos termos dos seus próprios avisos de privacidade;"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:878
+msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
+msgstr "Guardado (oculto). Escreva um novo para o substituir ou um espaço para o remover."
