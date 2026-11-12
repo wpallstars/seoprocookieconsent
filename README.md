@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.24-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.25-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.24
+Version: 1.0.25
 
 <!-- github-only:start -->
 ## Screenshots
@@ -424,7 +424,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.25
 
 - Developers: core files synced with WP Plugin Starter 1.0.64 at 5494b8b (#198). The Starter sync workflow can close an issue its own token wrote and open the maintainer's in its place when `STARTER_SYNC_TOKEN` is set. `scripts/deploy-sites.sh` retries only a killed (exit 137) cron event that is a hook's lone one-off still listed, forwards `DEPLOY_MAX_ACCOUNT_PROCS` and `DEPLOY_LOAD_RETRY_DELAY` to the host, and sends an ssh keep-alive so a dropped connection fails in about 2 minutes. `scripts/release-bump.sh` stops when `README.md` has no Unreleased section; `scripts/build-release.sh` no longer repeats code after a file's opening comment in its `.min` copy; `scripts/check-hooks.js` ignores calls in PHP comments and checks each hook's type; CI's lint job sets up Node 22. No change to the plugin's behaviour.
 
