@@ -733,8 +733,9 @@
         });
     }
 
-    // With ResizeObserver, fit() runs only in its callbacks, after layout.
-    if (!sizes && d.fonts && d.fonts.ready) {
+    // Fonts can make a hidden paragraph fit without changing observed sizes,
+    // so refit once they load, with or without ResizeObserver.
+    if (d.fonts && d.fonts.ready) {
         d.fonts.ready.then(function () {
             each(d.querySelectorAll('.spcc-embed'), fit);
         });
