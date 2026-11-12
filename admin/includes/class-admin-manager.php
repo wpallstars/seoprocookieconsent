@@ -417,6 +417,7 @@ class SEOProCookieConsent_Admin_Manager {
                 'saving'      => __('Saving…', 'seoprocookieconsent'),
                 'saved'       => __('Saved', 'seoprocookieconsent'),
                 'saveFailed'  => __('Could not save. Please try again.', 'seoprocookieconsent'),
+                'secretSaved' => __('Saved (hidden). Type a new one to replace it, or a space to remove it.', 'seoprocookieconsent'),
                 'chooseImage' => __('Choose a picture', 'seoprocookieconsent'),
                 'useImage'    => __('Use this picture', 'seoprocookieconsent'),
                 'copyConfirm' => __('Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site.', 'seoprocookieconsent'),

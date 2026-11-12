@@ -183,6 +183,29 @@
 			}
 		},
 
+		// Show what the server stored in the field that was saved.
+		reflect: function ($input, value, saved) {
+			if ($input.is('[data-spcc-multi]')) {
+				var chosen = $.map(saved || [], String);
+				$input.find(':checkbox').each(function () {
+					this.checked = this.hasAttribute('data-spcc-locked') || $.inArray(this.value, chosen) !== -1;
+				});
+			} else if ($input.is(':checkbox')) {
+				$input.data('spcc-saved', saved ? '1' : '0');
+			} else if ($input.is('input[type="password"][data-spcc-empty-placeholder]')) {
+				// A secret field: change it only if untouched since this save
+				// started. The stored value decides: a space (or only spaces)
+				// is stored as nothing, which removes the secret.
+				if ($input.val() === value) {
+					var removed = saved === undefined || saved === null || String(saved) === '';
+					$input.attr('placeholder', removed ? $input.attr('data-spcc-empty-placeholder') : i18n.secretSaved);
+					$input.val('');
+				}
+			} else if (saved !== undefined && String(saved) !== String($input.val())) {
+				$input.val(saved); // Show the sanitized value.
+			}
+		},
+
 		save: function ($input) {
 			var key = $input.data('spcc-setting');
 			var value = this.valueOf($input);
@@ -205,16 +228,7 @@
 					return;
 				}
 				var saved = response.data.value;
-				if ($input.is('[data-spcc-multi]')) {
-					var chosen = $.map(saved || [], String);
-					$input.find(':checkbox').each(function () {
-						this.checked = this.hasAttribute('data-spcc-locked') || $.inArray(this.value, chosen) !== -1;
-					});
-				} else if ($input.is(':checkbox')) {
-					$input.data('spcc-saved', saved ? '1' : '0');
-				} else if (saved !== undefined && String(saved) !== String($input.val())) {
-					$input.val(saved); // Show the sanitized value.
-				}
+				Settings.reflect($input, value, saved);
 				if (!$input.is(':checkbox')) {
 					$input.data('spcc-saved', $input.val());
 				}
