@@ -65,7 +65,7 @@ msgstr "Salvestamine…"
 
 #: admin/includes/class-admin-manager.php:418
 #: admin/includes/class-network-manager.php:321
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved"
 msgstr "Salvestatud"
 
@@ -706,8 +706,8 @@ msgstr "Sellel võrgustikul on rohkem kui %d saiti, liiga palju, et neid korraga
 
 #: includes/class-seoprocookieconsent-network-settings.php:231
 #: includes/class-seoprocookieconsent-network-settings.php:253
-#: includes/class-seoprocookieconsent-settings.php:392
-#: includes/class-seoprocookieconsent-settings.php:408
+#: includes/class-seoprocookieconsent-settings.php:396
+#: includes/class-seoprocookieconsent-settings.php:412
 msgid "The setting could not be saved. Please try again."
 msgstr "Seadet ei õnnestunud salvestada. Palun proovige uuesti."
 
@@ -1069,19 +1069,19 @@ msgstr "Hoiab vestlust käimas"
 msgid "9 months"
 msgstr "9 kuud"
 
-#: includes/class-seoprocookieconsent-settings.php:380
+#: includes/class-seoprocookieconsent-settings.php:384
 msgid "Unknown setting."
 msgstr "Tundmatu seade."
 
-#: includes/class-seoprocookieconsent-settings.php:383
+#: includes/class-seoprocookieconsent-settings.php:387
 msgid "The network administrator sets this for every site, so it cannot be changed here."
 msgstr "Võrguadministraator määrab selle iga saidi jaoks eraldi, seega ei saa seda siin muuta."
 
-#: includes/class-seoprocookieconsent-settings.php:1054
+#: includes/class-seoprocookieconsent-settings.php:1058
 msgid "You are not allowed to change these settings."
 msgstr "Teil ei ole lubatud neid sätteid muuta."
 
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved. Reload the page to see the change."
 msgstr "Salvestatud. Muudatuse nägemiseks laadige leht uuesti."
 
@@ -3379,3 +3379,8 @@ msgstr "Kui olete tarbija, säilib teil ka teie elukohariigi kohustusliku õigus
 #: includes/features/class-seoprocookieconsent-privacy.php:233
 msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
 msgstr "analüüsi- ja reklaamiteenuse pakkujatega, näiteks statistika, reklaamide mõõtmise ja asjakohaste reklaamide näitamise jaoks, ainult siis, kui lubate need küpsised (vt Küpsised). Mõned neist, näiteks sotsiaalvõrgustikud ja reklaamiplatvormid, kasutavad neid ka oma eesmärkidel oma privaatsusteadete alusel;"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:878
+msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
+msgstr "Salvestatud (peidetud). Asendamiseks sisestage uus, eemaldamiseks tühik."

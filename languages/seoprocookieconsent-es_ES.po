@@ -65,7 +65,7 @@ msgstr "Ahorro…"
 
 #: admin/includes/class-admin-manager.php:418
 #: admin/includes/class-network-manager.php:321
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved"
 msgstr "Guardado"
 
@@ -706,8 +706,8 @@ msgstr "Esta red tiene más de sitios %d, demasiados para cambiarlos a la vez."
 
 #: includes/class-seoprocookieconsent-network-settings.php:231
 #: includes/class-seoprocookieconsent-network-settings.php:253
-#: includes/class-seoprocookieconsent-settings.php:392
-#: includes/class-seoprocookieconsent-settings.php:408
+#: includes/class-seoprocookieconsent-settings.php:396
+#: includes/class-seoprocookieconsent-settings.php:412
 msgid "The setting could not be saved. Please try again."
 msgstr "No se pudo guardar la configuración. Inténtelo de nuevo."
 
@@ -1069,19 +1069,19 @@ msgstr "Mantiene la conversación en marcha."
 msgid "9 months"
 msgstr "9 meses"
 
-#: includes/class-seoprocookieconsent-settings.php:380
+#: includes/class-seoprocookieconsent-settings.php:384
 msgid "Unknown setting."
 msgstr "Configuración desconocida."
 
-#: includes/class-seoprocookieconsent-settings.php:383
+#: includes/class-seoprocookieconsent-settings.php:387
 msgid "The network administrator sets this for every site, so it cannot be changed here."
 msgstr "El administrador de red configura esto para cada sitio, por lo que no se puede cambiar aquí."
 
-#: includes/class-seoprocookieconsent-settings.php:1054
+#: includes/class-seoprocookieconsent-settings.php:1058
 msgid "You are not allowed to change these settings."
 msgstr "No tienes permiso para cambiar esta configuración."
 
-#: includes/class-seoprocookieconsent-settings.php:1079
+#: includes/class-seoprocookieconsent-settings.php:1083
 msgid "Saved. Reload the page to see the change."
 msgstr "Guardado. Recarga la página para ver el cambio."
 
@@ -3379,3 +3379,8 @@ msgstr "Si es consumidor, también conserva la protección de la ley imperativa 
 #: includes/features/class-seoprocookieconsent-privacy.php:233
 msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
 msgstr "con proveedores de análisis y publicidad, por ejemplo para estadísticas, medir anuncios y mostrar anuncios relevantes, solo si usted permite esas cookies (véase Cookies). Algunos de ellos, como las redes sociales y las plataformas publicitarias, también los usan para sus propios fines conforme a sus propios avisos de privacidad;"
+
+# machine translation
+#: admin/includes/class-settings-manager.php:878
+msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
+msgstr "Guardado (oculto). Escribe uno nuevo para sustituirlo o un espacio para eliminarlo."
