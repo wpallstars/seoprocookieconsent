@@ -653,27 +653,55 @@
         });
     }
 
-    // After the first style pass, so getComputedStyle reads clean styles
-    // instead of forcing the page's first recalculation.
-    if (w.requestAnimationFrame) {
-        w.requestAnimationFrame(function () {
-            setTimeout(contrast, 0);
-        });
-    } else {
-        setTimeout(contrast, 0);
+    // contrast() at most once a frame, from a ResizeObserver callback: it
+    // runs after the browser's own style and layout pass and before it
+    // paints, so getComputedStyle reads clean styles and a changed button
+    // colour shows in that same frame. Reading at once forced a style
+    // recalculation of the whole page (#188, #192): at start-up, and after
+    // every class change on <html> or <body>, such as another script's on
+    // DOMContentLoaded. Without ResizeObserver: after the next frame.
+    var due = false;
+    var settled = w.ResizeObserver ? new w.ResizeObserver(function () {
+        settled.unobserve(d.documentElement);
+        due = false;
+        contrast();
+    }) : null;
+
+    function later() {
+        if (due) {
+            return;
+        }
+        due = true;
+        if (settled) {
+            settled.observe(d.documentElement);
+            return;
+        }
+        var run = function () {
+            due = false;
+            contrast();
+        };
+        if (w.requestAnimationFrame) {
+            w.requestAnimationFrame(function () {
+                setTimeout(run, 0);
+            });
+        } else {
+            setTimeout(run, 0);
+        }
     }
+
+    later();
     // Kadence's switcher swaps body classes; block themes may follow the OS.
     if (w.MutationObserver && d.body) {
-        var watch = new MutationObserver(contrast);
+        var watch = new MutationObserver(later);
         watch.observe(d.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'] });
         watch.observe(d.body, { attributes: true, attributeFilter: ['class', 'data-theme'] });
     }
     if (w.matchMedia) {
         var scheme = w.matchMedia('(prefers-color-scheme: dark)');
         if (scheme.addEventListener) {
-            scheme.addEventListener('change', contrast);
+            scheme.addEventListener('change', later);
         } else if (scheme.addListener) {
-            scheme.addListener(contrast);
+            scheme.addListener(later);
         }
     }
 

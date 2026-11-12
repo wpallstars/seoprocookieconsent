@@ -426,6 +426,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Improved: no forced style recalculation from the button text colour check (#192). On long pages PageSpeed Insights still listed the script under Forced reflow (72 ms on a phone): the check read the page's styles before the browser had worked them out, at start-up and after every class change on the page. It now reads them in a `ResizeObserver` callback, just after the browser's own style and layout pass and before the frame is drawn, at most once a frame, so a changed colour also shows in that same frame (other browsers as before). Same colours. Lighthouse on a phone, long Kadence page with the banner, 5 runs each (medians): forced reflow 63 ms instead of 137 ms and Total Blocking Time 23 ms instead of 50 ms; the largest paint is unchanged.
 - Developers: core files synced from WP Plugin Starter 1.0.62, including the hooks and changelog checks in `scripts/lint.sh` and minified asset copies in release builds. No change to the plugin's behaviour (#186).
 
 ### 1.0.22
