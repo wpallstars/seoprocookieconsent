@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.23-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.24-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.23
+Version: 1.0.24
 
 <!-- github-only:start -->
 ## Screenshots
@@ -424,7 +424,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.24
 
 - Improved: visitors get the minified copies of the plugin's own files (#195). Release builds carry them since 1.0.23, but the head script (printed into every page), `spcc.js` and `spcc.css` were still the readable files, so PageSpeed Insights listed the plugin under Minify JavaScript. Every page's HTML is now about 15 KB smaller before compression (head script 13,120 bytes instead of 28,616), and `spcc.js` (13,780 instead of 31,166) and `spcc.css` (11,103 instead of 16,962) are smaller downloads. With `SCRIPT_DEBUG` on, and in a Git checkout, the readable files load as before.
 

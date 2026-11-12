@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.24 =
 * Improved: visitors get the minified copies of the plugin's own files (#195). Release builds carry them since 1.0.23, but the head script, which is printed into every page, and spcc.js and spcc.css were still the readable files, so PageSpeed Insights listed the plugin under Minify JavaScript. Every page's HTML is now about 15 KB smaller before compression (the head script is 13,120 bytes instead of 28,616), and spcc.js (13,780 bytes instead of 31,166) and spcc.css (11,103 instead of 16,962) are smaller downloads. The settings screen's own script and styles use their minified copies too. With SCRIPT_DEBUG on, and in a Git checkout, the readable files load as before.
 
 = 1.0.23 =
