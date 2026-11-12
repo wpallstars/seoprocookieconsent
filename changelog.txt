@@ -2,7 +2,7 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
+= 1.0.23 =
 * Improved: no forced style recalculation from the button text colour check (#192). On long pages PageSpeed Insights still listed the script under Forced reflow (72 ms on a phone): the check read the page's styles before the browser had worked them out, at start-up and after every class change on the page (such as another script's on page load). It now reads them just after the browser's own style and layout pass, before the frame is drawn, at most once a frame, so a changed colour also shows in that same frame (browsers with ResizeObserver; others as before). Same colours. Lighthouse on a phone, long Kadence page with the banner, 5 runs each (medians): forced reflow 63 ms instead of 137 ms (the script's own 2 × 22–29 ms gone, and with it the extra cost it added to Kadence's scripts) and Total Blocking Time 23 ms instead of 50 ms; the largest paint is unchanged.
 * Developers: core files synced from WP Plugin Starter 1.0.62, including the hooks check (scripts/check-hooks.js, skipped until docs/HOOKS.md exists), the changelog check, the secret text setting, minified .min copies of assets/ files in release builds (SEOProCookieConsent::asset_url()), the deploy load-check retry and the auto-dispatch label on the Starter sync issue. No change to the plugin's behaviour (#186).
 
