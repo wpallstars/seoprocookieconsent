@@ -10,7 +10,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent/badge)](https://www.codefactor.io/repository/github/wpallstars/seoprocookieconsent)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/wpallstars/seoprocookieconsent/badge)](https://scorecard.dev/viewer/?uri=github.com/wpallstars/seoprocookieconsent)
 [![License: GPL v3 or later](https://img.shields.io/badge/License-GPL%20v3%20or%20later-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/badge/release-v1.0.22-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
+[![Latest release](https://img.shields.io/badge/release-v1.0.23-blue.svg)](https://github.com/wpallstars/seoprocookieconsent/releases)
 
 [![Requires WordPress](https://img.shields.io/badge/WordPress-6.2%2B-21759B.svg?logo=wordpress)](readme.txt)
 [![Tested up to](https://img.shields.io/badge/tested%20up%20to-7.1-21759B.svg?logo=wordpress)](readme.txt)
@@ -42,7 +42,7 @@ Built and maintained with [aidevops](https://aidevops.sh), made from [WP Plugin 
 
 If this saves you time, headaches and costs, feel free to [buy me a coffee](https://buymeacoffee.com/marcusquinn), or whatever you like, to invest in making more things open-source.
 
-Version: 1.0.22
+Version: 1.0.23
 
 <!-- github-only:start -->
 ## Screenshots
@@ -424,7 +424,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
-### Unreleased
+### 1.0.23
 
 - Improved: no forced style recalculation from the button text colour check (#192). On long pages PageSpeed Insights still listed the script under Forced reflow (72 ms on a phone): the check read the page's styles before the browser had worked them out, at start-up and after every class change on the page. It now reads them in a `ResizeObserver` callback, just after the browser's own style and layout pass and before the frame is drawn, at most once a frame, so a changed colour also shows in that same frame (other browsers as before). Same colours. Lighthouse on a phone, long Kadence page with the banner, 5 runs each (medians): forced reflow 63 ms instead of 137 ms and Total Blocking Time 23 ms instead of 50 ms; the largest paint is unchanged.
 - Developers: core files synced from WP Plugin Starter 1.0.62, including the hooks and changelog checks in `scripts/lint.sh` and minified asset copies in release builds. No change to the plugin's behaviour (#186).
