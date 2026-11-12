@@ -111,6 +111,9 @@ With Cookie consent on, WP-Cron fetches thumbnails for embedded videos: YouTube 
 
 == Changelog ==
 
+= Unreleased =
+* Improved: no forced reflow at start-up (#188); the script no longer forces a style recalculation before the first paint.
+
 = 1.0.21 =
 * Developers: core files synced with the starter; no plugin changes.
 
