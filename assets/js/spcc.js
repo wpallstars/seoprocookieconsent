@@ -661,11 +661,17 @@
     // every class change on <html> or <body>, such as another script's on
     // DOMContentLoaded. Without ResizeObserver: after the next frame.
     var due = false;
-    var settled = w.ResizeObserver ? new w.ResizeObserver(function () {
+    var settled = null;
+
+    function settle() {
         settled.unobserve(d.documentElement);
         due = false;
         contrast();
-    }) : null;
+    }
+
+    if (w.ResizeObserver) {
+        settled = new w.ResizeObserver(settle);
+    }
 
     function later() {
         if (due) {
