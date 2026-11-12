@@ -73,14 +73,19 @@ msgid "Could not save. Please try again."
 msgstr ""
 
 #: admin/includes/class-admin-manager.php:420
-msgid "Choose a picture"
+#: admin/includes/class-settings-manager.php:878
+msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr ""
 
 #: admin/includes/class-admin-manager.php:421
-msgid "Use this picture"
+msgid "Choose a picture"
 msgstr ""
 
 #: admin/includes/class-admin-manager.php:422
+msgid "Use this picture"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr ""
 
@@ -453,10 +458,6 @@ msgstr ""
 
 #: admin/includes/class-settings-manager.php:839
 msgid "Remove"
-msgstr ""
-
-#: admin/includes/class-settings-manager.php:878
-msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr ""
 
 #: includes/admin/class-seoprocookieconsent-import-tab.php:28

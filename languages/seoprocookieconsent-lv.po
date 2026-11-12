@@ -73,15 +73,15 @@ msgstr "Saglabāts"
 msgid "Could not save. Please try again."
 msgstr "Nevarēja saglabāt. Lūdzu, mēģiniet vēlreiz."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Izvēlieties attēlu"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Izmantojiet šo attēlu"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Vai kopēt šos iestatījumus katras vietnes iestatījumos? Katra vietne tos var mainīt vēlāk, ja vien tie netiek lietoti visām vietnēm."
 
@@ -3390,6 +3390,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "ar analītikas un reklāmas pakalpojumu sniedzējiem, piemēram, statistikai, reklāmu mērīšanai un atbilstošu reklāmu rādīšanai, tikai tad, ja atļausiet šīs sīkdatnes (skatiet Sīkfaili). Daži no tiem, piemēram, sociālie tīkli un reklāmas platformas, tās izmanto arī saviem mērķiem saskaņā ar saviem privātuma paziņojumiem;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Saglabāts (paslēpts). Ierakstiet jaunu, lai to aizstātu, vai atstarpi, lai to noņemtu."

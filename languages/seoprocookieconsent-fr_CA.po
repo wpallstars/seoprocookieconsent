@@ -71,15 +71,15 @@ msgstr "Enregistré"
 msgid "Could not save. Please try again."
 msgstr "Impossible d’enregistrer. Veuillez réessayer."
 
-#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-admin-manager.php:421
 msgid "Choose a picture"
 msgstr "Choisir une image"
 
-#: admin/includes/class-admin-manager.php:421
+#: admin/includes/class-admin-manager.php:422
 msgid "Use this picture"
 msgstr "Utiliser cette image"
 
-#: admin/includes/class-admin-manager.php:422
+#: admin/includes/class-admin-manager.php:423
 msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
 msgstr "Copier ces réglages dans les réglages propres à chaque site? Chaque site pourra les modifier ensuite, sauf s’ils sont imposés à tous les sites."
 
@@ -3379,6 +3379,7 @@ msgid "with analytics and advertising providers, such as for statistics, measuri
 msgstr "avec des fournisseurs d'analyse et de publicité, par exemple pour les statistiques, la mesure des publicités et l'affichage de publicités pertinentes, uniquement si vous autorisez ces cookies (voir Cookies). Certains d'entre eux, tels que les réseaux sociaux et les plateformes publicitaires, les utilisent aussi à leurs propres fins, conformément à leurs propres avis de confidentialité ;"
 
 # machine translation
+#: admin/includes/class-admin-manager.php:420
 #: admin/includes/class-settings-manager.php:878
 msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
 msgstr "Enregistré (masqué). Saisissez-en un nouveau pour le remplacer, ou une espace pour le supprimer."
