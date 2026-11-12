@@ -483,7 +483,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      * defaults, before any other script.
      */
     public static function head() {
-        $file = SEOPROCOOKIECONSENT_DIR . 'assets/js/spcc-head.js';
+        // The .min copy in a release build (SCRIPT_DEBUG: the readable file).
+        $file = SEOPROCOOKIECONSENT_DIR . SEOProCookieConsent_Setup::asset_path('assets/js/spcc-head.js');
         $code = is_readable($file) ? (string) file_get_contents($file) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- a local plugin file.
         $code = 'window.spccConfig=' . wp_json_encode(self::config(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) . ";\n" . $code;
         wp_print_inline_script_tag($code, array('id' => 'spcc-head', 'data-spcc-ignore' => true));
@@ -494,10 +495,10 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
      */
     public static function enqueue() {
         $stylesheet = 'assets/css/spcc.css';
-        wp_enqueue_style('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . $stylesheet, array(), SEOProCookieConsent_Setup::asset_version($stylesheet));
-        wp_style_add_data('seoprocookieconsent', 'path', SEOPROCOOKIECONSENT_DIR . $stylesheet);
+        wp_enqueue_style('seoprocookieconsent', SEOProCookieConsent::asset_url($stylesheet), array(), SEOProCookieConsent_Setup::asset_version($stylesheet));
+        wp_style_add_data('seoprocookieconsent', 'path', SEOPROCOOKIECONSENT_DIR . SEOProCookieConsent_Setup::asset_path($stylesheet));
         // In the footer on WordPress 6.2; deferred from 6.3.
-        wp_enqueue_script('seoprocookieconsent', SEOPROCOOKIECONSENT_URL . 'assets/js/spcc.js', array(), SEOProCookieConsent_Setup::asset_version('assets/js/spcc.js'), array('in_footer' => true, 'strategy' => 'defer'));
+        wp_enqueue_script('seoprocookieconsent', SEOProCookieConsent::asset_url('assets/js/spcc.js'), array(), SEOProCookieConsent_Setup::asset_version('assets/js/spcc.js'), array('in_footer' => true, 'strategy' => 'defer'));
     }
 
     /**
@@ -1117,8 +1118,8 @@ final class SEOProCookieConsent_Consent extends SEOProCookieConsent_Feature {
         if (wp_script_is('seoprocookieconsent-consent-admin', 'enqueued')) {
             return;
         }
-        wp_enqueue_style('seoprocookieconsent-consent-admin', SEOPROCOOKIECONSENT_URL . 'assets/css/consent-admin.css', array('seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/css/consent-admin.css'));
-        wp_enqueue_script('seoprocookieconsent-consent-admin', SEOPROCOOKIECONSENT_URL . 'assets/js/consent-admin.js', array('jquery', 'jquery-ui-autocomplete', 'wp-api-fetch', 'seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/js/consent-admin.js'), true);
+        wp_enqueue_style('seoprocookieconsent-consent-admin', SEOProCookieConsent::asset_url('assets/css/consent-admin.css'), array('seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/css/consent-admin.css'));
+        wp_enqueue_script('seoprocookieconsent-consent-admin', SEOProCookieConsent::asset_url('assets/js/consent-admin.js'), array('jquery', 'jquery-ui-autocomplete', 'wp-api-fetch', 'seoprocookieconsent-admin'), SEOProCookieConsent_Setup::asset_version('assets/js/consent-admin.js'), true);
         wp_localize_script('seoprocookieconsent-consent-admin', 'spccConsentAdmin', array(
             'home'    => home_url('/'),
             'arg'     => self::PREVIEW_ARG,
