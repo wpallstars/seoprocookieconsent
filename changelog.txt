@@ -2,8 +2,8 @@
 
 Every change to SEO Pro Cookie Consent. readme.txt lists the latest version in short.
 
-= Unreleased =
-* Improved: no forced reflow at start-up (#188). PageSpeed Insights listed the script under Forced reflow (up to 57 ms). The button text colour check now runs after the browser's first style pass, and small embed placeholders are fitted only when their size changes (after layout, including when a web font loads) in browsers with ResizeObserver. Results are the same.
+= 1.0.22 =
+* Improved: no forced reflow at start-up (#188). PageSpeed Insights listed the script under Forced reflow (up to 57 ms). The button text colour check now runs after the browser's first style pass, and small embed placeholders are fitted only when their size changes (after layout, including when a web font loads) in browsers with ResizeObserver. Results are the same, except that a placeholder on a narrow screen is no longer stepped down one step further than it needs (seen at 320 px with a 560 × 315 YouTube embed: level 1 instead of 2).
 
 = 1.0.21 =
 * Developers: core files synced with WP Plugin Starter at 836feb5 (#179). Adds scripts/check-deploy-log.sh (the deploy log classifier) and scripts/release-bump.sh X.Y.Z (sets the version everywhere and renames each Unreleased block); scripts/deploy-sites.sh purges only the updated hosts at Cloudflare (--cloudflare-purge zone keeps the whole-zone purge) and, with scripts/update-test.sh, retries a GitHub release read that gh defers or GitHub rate limits; scripts/lib/deploy-remote.sh, scripts/plugin-check.sh, scripts/sync-core.sh and scripts/rename-plugin.sh take the starter's newer fixes; scripts/smoke-test.sh, the issue template config and CONTRIBUTING.md get empty own blocks; DEVELOPMENT.md and RELEASING.md follow the starter (release coordination). Plugin-own blocks and consent defaults are unchanged.
