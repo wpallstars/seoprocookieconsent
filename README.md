@@ -424,6 +424,10 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ## Changelog
 
+### Unreleased
+
+- Developers: core files synced with WP Plugin Starter 1.0.66 at ffb0c87 (#207). `scripts/deploy-sites.sh` waits while another plugin made from the starter is deploying on the same host, takes its PHP log baseline after the load wait, handles a host-killed WP-CLI (exit 137) with a recheck, and has `--ignore-log-line`; `scripts/lib/plugin.sh` reads a multi-line `_VERSION` define for the shell scripts; `scripts/check-hooks.js` reads joined hook names; `scripts/release-bump.sh` stops when the README heading is not exactly `### X.Y.Z`; the Starter sync workflow keeps a `no-auto-dispatch` hold when replacing an issue. The release workflow keeps the starter's `actions/setup-node` v6.4.0 pin until the starter takes v7. No change to the plugin's behaviour.
+
 ### 1.0.25
 
 - Developers: core files synced with WP Plugin Starter 1.0.64 at 5494b8b (#198). The Starter sync workflow can close an issue its own token wrote and open the maintainer's in its place when `STARTER_SYNC_TOKEN` is set. `scripts/deploy-sites.sh` retries only a killed (exit 137) cron event that is a hook's lone one-off still listed, forwards `DEPLOY_MAX_ACCOUNT_PROCS` and `DEPLOY_LOAD_RETRY_DELAY` to the host, and sends an ssh keep-alive so a dropped connection fails in about 2 minutes. `scripts/release-bump.sh` stops when `README.md` has no Unreleased section; `scripts/build-release.sh` no longer repeats code after a file's opening comment in its `.min` copy; `scripts/check-hooks.js` ignores calls in PHP comments and checks each hook's type; CI's lint job sets up Node 22. No change to the plugin's behaviour.
