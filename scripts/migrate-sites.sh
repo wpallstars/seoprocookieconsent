@@ -55,6 +55,20 @@ remote() {
 	return 0
 }
 
+# The deploy library as one stream, as deploy-sites.sh sends it:
+# DEPLOY_REMOTE_BUNDLED=1, its function modules (deploy-remote-*.sh), then
+# deploy-remote.sh, which then sources no modules (the host has none).
+remote_library() {
+	local module
+	printf 'DEPLOY_REMOTE_BUNDLED=1\n'
+	for module in "$SCRIPT_DIR"/lib/deploy-remote-*.sh; do
+		cat "$module" || return 1
+		printf '\n'
+	done
+	cat "$SCRIPT_DIR/lib/deploy-remote.sh" || return 1
+	return 0
+}
+
 sha256_of() {
 	local file="$1"
 	if command -v sha256sum >/dev/null 2>&1; then
@@ -123,7 +137,7 @@ download_zip() {
 
 main() {
 	parse_args "$@"
-	local tool dirs mode=list command dir base run stamp file
+	local tool dirs mode=list command dir base run stamp
 	for tool in gh ssh php; do
 		command -v "$tool" >/dev/null || die "needs $tool"
 	done
@@ -143,7 +157,7 @@ main() {
 	command="$(remote_words env "DEPLOY_LIBRARY_ONLY=1" "DEPLOY_WP_CLI=$WP_CLI" "MIGRATE_USER=$USER_ID" "MIGRATE_SOURCE_DIRS=$dirs")"
 	if [[ "$APPLY" -eq 0 ]]; then
 		command+=" $(remote_words bash -s -- list "$SLUG" "$PARENT" "$SOURCE" "${TAG#v}" '' '' '' ${SKIPS[@]+"${SKIPS[@]}"})"
-		cat "$SCRIPT_DIR/lib/deploy-remote.sh" "$SCRIPT_DIR/lib/migrate-remote.sh" | remote "$command" || die 'dry run failed'
+		{ remote_library && cat "$SCRIPT_DIR/lib/migrate-remote.sh"; } | remote "$command" || die 'dry run failed'
 		printf 'Dry run: nothing changed; --finish also requires --apply.\n'
 		return 0
 	fi
@@ -153,9 +167,9 @@ main() {
 	dir="$(remote "umask 077 && cd && mkdir -p $run && chmod 700 $base $run && cd $run && pwd")" || die 'cannot create private remote folder'
 	[[ "$dir" == /* ]] || die 'unexpected remote folder'
 	remote "umask 077; cat >$(remote_words "$dir/plugin.zip")" <"$ZIP" || die 'cannot copy zip'
-	for file in deploy-remote.sh migrate-remote.sh; do
-		remote "umask 077; cat >$(remote_words "$dir/$file")" <"$SCRIPT_DIR/lib/$file" || die 'cannot copy remote runner'
-	done
+	# migrate-remote.sh sources deploy-remote.sh beside it: the bundled library.
+	remote_library | remote "umask 077; cat >$(remote_words "$dir/deploy-remote.sh")" || die 'cannot copy remote runner'
+	remote "umask 077; cat >$(remote_words "$dir/migrate-remote.sh")" <"$SCRIPT_DIR/lib/migrate-remote.sh" || die 'cannot copy remote runner'
 	command+=" $(remote_words bash "$dir/migrate-remote.sh" "$mode" "$SLUG" "$PARENT" "$SOURCE" "${TAG#v}" "$dir/plugin.zip" "$SHA" "${dir%/*}" ${SKIPS[@]+"${SKIPS[@]}"})"
 	remote "$command" || return 1
 	return 0
