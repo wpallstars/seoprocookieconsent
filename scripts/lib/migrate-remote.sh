@@ -212,6 +212,7 @@ migrate_main() {
 	shift 8 || return 2
 	SLUG="$slug"
 	SOURCE="$source"
+	# shellcheck disable=SC2034 # read by skipped() in deploy-remote-core.sh
 	SKIPS=("$@")
 	[[ "$mode" == list || "$mode" == apply || "$mode" == finish ]] || return 2
 	[[ "$SLUG" == seoprocookieconsent && "$SOURCE" =~ ^[a-z0-9-]+$ && -n "$parent" ]] || return 2
