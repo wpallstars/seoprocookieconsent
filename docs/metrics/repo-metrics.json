@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-11-13T11:24:02Z",
+  "generated_at": "2026-11-14T17:15:02Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -11,10 +11,10 @@
     "slug": "wpallstars/seoprocookieconsent"
   },
   "summary": {
-    "source_files": 157,
-    "code": 31435,
-    "comments": 8782,
-    "blanks": 3048,
+    "source_files": 165,
+    "code": 32003,
+    "comments": 9076,
+    "blanks": 3081,
     "languages": 10,
     "dependencies": 14
   },
@@ -25,34 +25,34 @@
       "code": 11784,
       "comments": 6198,
       "blanks": 1187,
-      "percentage": 37.49,
+      "percentage": 36.82,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
-      "files": 26,
-      "code": 8540,
-      "comments": 1793,
-      "blanks": 643,
-      "percentage": 27.17,
+      "files": 34,
+      "code": 9013,
+      "comments": 2063,
+      "blanks": 669,
+      "percentage": 28.16,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 3196,
+      "code": 3254,
       "comments": 0,
-      "blanks": 593,
+      "blanks": 598,
       "percentage": 10.17,
       "color": "#083fa1"
     },
     {
       "name": "JavaScript",
       "files": 8,
-      "code": 2546,
-      "comments": 386,
-      "blanks": 185,
-      "percentage": 8.1,
+      "code": 2569,
+      "comments": 407,
+      "blanks": 187,
+      "percentage": 8.03,
       "color": "#f1e05a"
     },
     {
@@ -61,7 +61,7 @@
       "code": 1979,
       "comments": 48,
       "blanks": 13,
-      "percentage": 6.3,
+      "percentage": 6.18,
       "color": "#6e7781"
     },
     {
@@ -70,7 +70,7 @@
       "code": 1794,
       "comments": 171,
       "blanks": 331,
-      "percentage": 5.71,
+      "percentage": 5.61,
       "color": "#563d7c"
     },
     {
@@ -79,14 +79,14 @@
       "code": 766,
       "comments": 0,
       "blanks": 0,
-      "percentage": 2.44,
+      "percentage": 2.39,
       "color": "#292929"
     },
     {
       "name": "YAML",
       "files": 13,
-      "code": 719,
-      "comments": 164,
+      "code": 733,
+      "comments": 167,
       "blanks": 86,
       "percentage": 2.29,
       "color": "#cb171e"
@@ -97,7 +97,7 @@
       "code": 103,
       "comments": 19,
       "blanks": 8,
-      "percentage": 0.33,
+      "percentage": 0.32,
       "color": "#3178c6"
     },
     {
@@ -106,7 +106,7 @@
       "code": 8,
       "comments": 3,
       "blanks": 2,
-      "percentage": 0.03,
+      "percentage": 0.02,
       "color": "#9c4221"
     }
   ],
