@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-11-14T17:15:02Z",
+  "generated_at": "2026-11-16T04:33:23Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -12,9 +12,9 @@
   },
   "summary": {
     "source_files": 165,
-    "code": 32003,
-    "comments": 9076,
-    "blanks": 3081,
+    "code": 32151,
+    "comments": 9136,
+    "blanks": 3086,
     "languages": 10,
     "dependencies": 14
   },
@@ -25,22 +25,22 @@
       "code": 11784,
       "comments": 6198,
       "blanks": 1187,
-      "percentage": 36.82,
+      "percentage": 36.65,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
       "files": 34,
-      "code": 9013,
-      "comments": 2063,
-      "blanks": 669,
-      "percentage": 28.16,
+      "code": 9145,
+      "comments": 2123,
+      "blanks": 674,
+      "percentage": 28.44,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 3254,
+      "code": 3270,
       "comments": 0,
       "blanks": 598,
       "percentage": 10.17,
@@ -52,7 +52,7 @@
       "code": 2569,
       "comments": 407,
       "blanks": 187,
-      "percentage": 8.03,
+      "percentage": 7.99,
       "color": "#f1e05a"
     },
     {
@@ -61,7 +61,7 @@
       "code": 1979,
       "comments": 48,
       "blanks": 13,
-      "percentage": 6.18,
+      "percentage": 6.16,
       "color": "#6e7781"
     },
     {
@@ -70,7 +70,7 @@
       "code": 1794,
       "comments": 171,
       "blanks": 331,
-      "percentage": 5.61,
+      "percentage": 5.58,
       "color": "#563d7c"
     },
     {
@@ -79,7 +79,7 @@
       "code": 766,
       "comments": 0,
       "blanks": 0,
-      "percentage": 2.39,
+      "percentage": 2.38,
       "color": "#292929"
     },
     {
@@ -88,7 +88,7 @@
       "code": 733,
       "comments": 167,
       "blanks": 86,
-      "percentage": 2.29,
+      "percentage": 2.28,
       "color": "#cb171e"
     },
     {
