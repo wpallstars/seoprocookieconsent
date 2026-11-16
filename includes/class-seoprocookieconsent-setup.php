@@ -153,7 +153,7 @@ final class SEOProCookieConsent_Setup {
         if (!wp_script_is(self::BLOCKS_SCRIPT, 'registered')) {
             wp_register_script(
                 self::BLOCKS_SCRIPT,
-                SEOPROCOOKIECONSENT_URL . 'assets/js/blocks.js',
+                SEOProCookieConsent::asset_url('assets/js/blocks.js'),
                 array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render'),
                 self::asset_version('assets/js/blocks.js'),
                 true
