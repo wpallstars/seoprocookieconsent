@@ -279,8 +279,11 @@ final class SEOProCookieConsent_Terms extends SEOProCookieConsent_Document {
         if (!(bool) SEOProCookieConsent_Settings::get('terms_ai')) {
             return '';
         }
+        $help = (bool) SEOProCookieConsent_Settings::get('privacy_ai_operations')
+            ? __('We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests, and deliver orders. By using this website and our services, you accept that they are provided with AI support.', 'seoprocookieconsent')
+            : __('We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support.', 'seoprocookieconsent');
         return self::part(__('AI-assisted services', 'seoprocookieconsent'), array(
-            __('We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support.', 'seoprocookieconsent'),
+            $help,
             __('AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions.', 'seoprocookieconsent'),
         ));
     }
