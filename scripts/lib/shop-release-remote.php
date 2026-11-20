@@ -290,13 +290,44 @@ function wpas_shop_backup_inserted($backup, array $inserted) {
  */
 function wpas_shop_write(array $plan, &$error = '', array &$inserted = array()) {
     global $wpdb;
-    $now                 = current_time('mysql');
-    $meta                = $wpdb->prefix . 'fct_product_meta';
-    $settings            = $plan['settings'];
-    $settings['version'] = $plan['version'];
-    $log                 = $plan['log_row'] ? (string) $plan['log_row']['meta_value'] : '';
-    $log                 = wpas_shop_changelog_merge($log, $plan['version'], $plan['changelog']);
-    $file                = array(
+    $now  = current_time('mysql');
+    $undo = array();
+    $id   = 0;
+    $what = wpas_shop_write_download($plan, $now, $undo, $inserted, $id);
+    if ('' === $what) {
+        $what = wpas_shop_write_settings($plan, $now, $undo);
+    }
+    if ('' === $what) {
+        $what = wpas_shop_write_changelog($plan, $now, $undo, $inserted);
+    }
+    if ('' === $what && false === $wpdb->update($wpdb->posts, array('post_modified' => $now, 'post_modified_gmt' => current_time('mysql', true)), array('ID' => $plan['item']))) {
+        $what = 'The product time could not be updated';
+    }
+    if ('' !== $what) {
+        // Keep the first database error: the undo queries replace last_error.
+        $error = $what . ('' !== $wpdb->last_error ? ': ' . $wpdb->last_error : '');
+        foreach (array_reverse($undo) as $restore) {
+            $restore();
+        }
+        $id = 0;
+    }
+    clean_post_cache($plan['item']);
+    return $id;
+}
+
+/**
+ * Add or update the download row (first step of wpas_shop_write()).
+ *
+ * @param array<string,mixed> $plan     The release's facts.
+ * @param string              $now      The current MySQL time.
+ * @param callable[]          $undo     Appended with this step's undo.
+ * @param array<string,?int>  $inserted Set to the IDs of the rows inserted.
+ * @param int                 $id       Set to the download row's ID.
+ * @return string The failure's description, or '' on success.
+ */
+function wpas_shop_write_download(array $plan, $now, array &$undo, array &$inserted, &$id) {
+    global $wpdb;
+    $file      = array(
         'title'      => $plan['title'] . ' ' . $plan['version'],
         'file_name'  => $plan['file'],
         'file_path'  => $plan['file'],
@@ -304,18 +335,8 @@ function wpas_shop_write(array $plan, &$error = '', array &$inserted = array()) 
         'file_size'  => (string) $plan['size'],
         'updated_at' => $now,
     );
-    $id                  = (int) $plan['download']['id'];
-    $downloads           = $wpdb->prefix . 'fct_product_downloads';
-    $undo                = array();
-    $fail                = static function ($what) use (&$error, &$undo, $wpdb, $plan) {
-        // Keep the first database error: the undo queries replace last_error.
-        $error = $what . ('' !== $wpdb->last_error ? ': ' . $wpdb->last_error : '');
-        foreach (array_reverse($undo) as $restore) {
-            $restore();
-        }
-        clean_post_cache($plan['item']);
-        return 0;
-    };
+    $id        = (int) $plan['download']['id'];
+    $downloads = $wpdb->prefix . 'fct_product_downloads';
     if (0 === $id) {
         // First release: the row FluentCart's product editor would add.
         $added = $wpdb->insert($downloads, $file + array(
@@ -329,7 +350,7 @@ function wpas_shop_write(array $plan, &$error = '', array &$inserted = array()) 
             'created_at'           => $now,
         ));
         if (!$added) {
-            return $fail('The download row could not be added');
+            return 'The download row could not be added';
         }
         $id                      = (int) $wpdb->insert_id;
         $inserted['download_id'] = $id;
@@ -339,30 +360,63 @@ function wpas_shop_write(array $plan, &$error = '', array &$inserted = array()) 
     } else {
         $old = array_intersect_key($plan['download'], $file);
         if (false === $wpdb->update($downloads, $file, array('id' => $id))) {
-            return $fail('The download row could not be updated');
+            return 'The download row could not be updated';
         }
         $undo[] = static function () use ($wpdb, $downloads, $id, $old) {
             $wpdb->update($downloads, $old, array('id' => $id));
         };
     }
-    // The licence version and changelog advance only after the download row did.
-    $old_settings = $plan['settings_row'];
+    return '';
+}
+
+/**
+ * Set the licence version (second step of wpas_shop_write(); it advances only
+ * after the download row did).
+ *
+ * @param array<string,mixed> $plan The release's facts.
+ * @param string              $now  The current MySQL time.
+ * @param callable[]          $undo Appended with this step's undo.
+ * @return string The failure's description, or '' on success.
+ */
+function wpas_shop_write_settings(array $plan, $now, array &$undo) {
+    global $wpdb;
+    $meta                = $wpdb->prefix . 'fct_product_meta';
+    $settings            = $plan['settings'];
+    $settings['version'] = $plan['version'];
+    $old_settings        = $plan['settings_row'];
     if (false === $wpdb->update($meta, array('meta_value' => wp_json_encode($settings, JSON_UNESCAPED_SLASHES), 'updated_at' => $now), array('id' => (int) $old_settings['id']))) { // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- FluentCart's own table, by primary key.
-        return $fail('The licence settings could not be updated');
+        return 'The licence settings could not be updated';
     }
     $undo[] = static function () use ($wpdb, $meta, $old_settings) {
         $wpdb->update($meta, array('meta_value' => $old_settings['meta_value'], 'updated_at' => isset($old_settings['updated_at']) ? $old_settings['updated_at'] : current_time('mysql')), array('id' => (int) $old_settings['id'])); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- as above.
     };
+    return '';
+}
+
+/**
+ * Update or add the changelog row (third step of wpas_shop_write()).
+ *
+ * @param array<string,mixed> $plan     The release's facts.
+ * @param string              $now      The current MySQL time.
+ * @param callable[]          $undo     Appended with this step's undo.
+ * @param array<string,?int>  $inserted Set to the IDs of the rows inserted.
+ * @return string The failure's description, or '' on success.
+ */
+function wpas_shop_write_changelog(array $plan, $now, array &$undo, array &$inserted) {
+    global $wpdb;
+    $meta = $wpdb->prefix . 'fct_product_meta';
+    $log  = $plan['log_row'] ? (string) $plan['log_row']['meta_value'] : '';
+    $log  = wpas_shop_changelog_merge($log, $plan['version'], $plan['changelog']);
     if ($plan['log_row']) {
         $old_log = $plan['log_row'];
         if (false === $wpdb->update($meta, array('meta_value' => $log, 'updated_at' => $now), array('id' => (int) $old_log['id']))) { // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- as above.
-            return $fail('The changelog could not be updated');
+            return 'The changelog could not be updated';
         }
         $undo[] = static function () use ($wpdb, $meta, $old_log) {
             $wpdb->update($meta, array('meta_value' => $old_log['meta_value'], 'updated_at' => isset($old_log['updated_at']) ? $old_log['updated_at'] : current_time('mysql')), array('id' => (int) $old_log['id'])); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- as above.
         };
     } elseif (!$wpdb->insert($meta, array('object_id' => $plan['item'], 'object_type' => $plan['settings_row']['object_type'], 'meta_key' => '_fluent_sl_changelog', 'meta_value' => $log, 'created_at' => $now, 'updated_at' => $now))) { // phpcs:ignore WordPress.DB.SlowDBQuery -- as above.
-        return $fail('The changelog could not be added');
+        return 'The changelog could not be added';
     } else {
         $log_id                       = (int) $wpdb->insert_id;
         $inserted['changelog_row_id'] = $log_id;
@@ -370,11 +424,7 @@ function wpas_shop_write(array $plan, &$error = '', array &$inserted = array()) 
             $wpdb->delete($meta, array('id' => $log_id));
         };
     }
-    if (false === $wpdb->update($wpdb->posts, array('post_modified' => $now, 'post_modified_gmt' => current_time('mysql', true)), array('ID' => $plan['item']))) {
-        return $fail('The product time could not be updated');
-    }
-    clean_post_cache($plan['item']);
-    return $id;
+    return '';
 }
 
 /**
