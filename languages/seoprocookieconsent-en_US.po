@@ -1,0 +1,3389 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SEO Pro Cookie Consent 1.0.25\n"
+"Report-Msgid-Bugs-To: https://github.com/wpallstars/seoprocookieconsent/issues\n"
+"Last-Translator: Marcus Quinn\n"
+"Language-Team: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-11-20 00:00+0000\n"
+"Language: en_US\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: seoprocookieconsent\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#. translators: %s: the plugin's name.
+#: seoprocookieconsent.php
+#: admin/includes/class-admin-manager.php:293
+#: admin/includes/class-admin-manager.php:294
+#: admin/includes/class-admin-manager.php:303
+#: admin/includes/class-admin-page.php:36
+#: admin/includes/class-network-manager.php:62
+#: admin/includes/class-network-manager.php:63
+msgid "SEO Pro Cookie Consent"
+msgstr ""
+
+#. Description of the plugin
+#: seoprocookieconsent.php
+msgid "Simple, light cookie consent: blocks scripts until consent, asks only where the law and the page need it, and fits your theme."
+msgstr ""
+
+#. Author of the plugin
+#: seoprocookieconsent.php
+msgid "Marcus Quinn"
+msgstr ""
+
+#: admin/data/readme.php:32
+#: admin/includes/class-admin-manager.php:175
+msgid "Read Me"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:281
+#: admin/includes/class-admin-manager.php:304
+#: admin/includes/class-admin-page.php:238
+#: admin/includes/class-network-manager.php:102
+#: includes/class-seoprocookieconsent-records.php:156
+#: includes/class-seoprocookieconsent-setup.php:182
+#: includes/views/consent-banner.php:43
+#: includes/views/consent-banner.php:48
+msgid "Settings"
+msgstr ""
+
+#. translators: %s: the plugin's name.
+#: admin/includes/class-admin-manager.php:303
+#, php-format
+msgid "%s settings"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:417
+msgid "Saving…"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:418
+#: admin/includes/class-network-manager.php:321
+#: includes/class-seoprocookieconsent-settings.php:1083
+msgid "Saved"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:419
+msgid "Could not save. Please try again."
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:420
+#: admin/includes/class-settings-manager.php:878
+msgid "Saved (hidden). Type a new one to replace it, or a space to remove it."
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:421
+msgid "Choose a picture"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:422
+msgid "Use this picture"
+msgstr ""
+
+#: admin/includes/class-admin-manager.php:423
+msgid "Copy these settings into every site’s own settings? Each site can change them again afterwards, unless they are applied to every site."
+msgstr ""
+
+#: admin/includes/class-admin-page.php:39
+msgid "Network"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:62
+#: admin/includes/class-admin-page.php:71
+msgid "Search features"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:73
+msgid "Search"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:90
+msgid "Source code"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:92
+msgid "Visit website"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:98
+msgid "Support"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:105
+msgid "Buy me a coffee"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:117
+#: includes/views/consent-banner.php:39
+#: includes/views/consent-banner.php:74
+msgid "(opens in a new tab)"
+msgstr ""
+
+#. translators: Browser title of a section of an admin screen. 1: the screen's name, 2: the section's name.
+#. translators: 1: product name, 2: the licence's state
+#: admin/includes/class-admin-page.php:170
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1078
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:182
+msgid "Search results"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:239
+msgid "Discover"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:240
+msgid "About"
+msgstr ""
+
+#: admin/includes/class-admin-page.php:243
+#: admin/includes/class-admin-page.php:274
+msgid "SEO Pro Cookie Consent sections"
+msgstr ""
+
+#: admin/includes/class-admin-theme.php:172
+msgid "You cannot change this."
+msgstr ""
+
+#: admin/includes/class-admin-theme.php:176
+msgid "Unknown colour mode."
+msgstr "Unknown color mode."
+
+#: admin/includes/class-admin-theme.php:179
+msgid "The colour mode could not be saved."
+msgstr "The color mode could not be saved."
+
+#: admin/includes/class-network-manager.php:122
+msgid "Apply to every site"
+msgstr ""
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:175
+#, php-format
+msgid "This network has more than %d sites, so they are not compared here."
+msgstr ""
+
+#: admin/includes/class-network-manager.php:178
+msgid "No site has used SEO Pro Cookie Consent yet. Each starts with these settings."
+msgstr ""
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site uses these settings."
+msgstr ""
+
+#: admin/includes/class-network-manager.php:182
+msgid "Every site has these settings."
+msgstr ""
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:188
+#, php-format
+msgid "Every site uses these settings. When they stop applying, %1$d of %2$d sites goes back to different settings of its own: %3$s."
+msgid_plural "Every site uses these settings. When they stop applying, %1$d of %2$d sites go back to different settings of their own: %3$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of sites that differ, 2: number of sites, 3: list of those sites
+#: admin/includes/class-network-manager.php:190
+#, php-format
+msgid "%1$d of %2$d sites has different settings of its own: %3$s."
+msgid_plural "%1$d of %2$d sites have different settings of their own: %3$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/includes/class-network-manager.php:193
+msgid "Make every site the same"
+msgstr ""
+
+#. translators: 1: list of sites, 2: number of other sites
+#: admin/includes/class-network-manager.php:247
+#, php-format
+msgid "%1$s and %2$d more"
+msgid_plural "%1$s and %2$d more"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/includes/class-network-manager.php:297
+msgid "You are not allowed to change the network’s settings."
+msgstr ""
+
+#: admin/includes/class-network-manager.php:345
+msgid "Every site now uses these settings."
+msgstr ""
+
+#: admin/includes/class-network-manager.php:346
+msgid "Each site uses its own settings again."
+msgstr ""
+
+#. translators: %d: number of sites
+#: admin/includes/class-network-manager.php:366
+#, php-format
+msgid "%d site now has these settings."
+msgid_plural "%d sites now have these settings."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/includes/class-network-manager.php:367
+msgid "Every site already has these settings."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:157
+msgid "Redundant"
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:212
+msgid "You are not allowed to deactivate this plugin."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:215
+msgid "SEO Pro Cookie Consent only deactivates plugins it replaces."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:308
+msgid "Plugin deactivated."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:329
+#: admin/includes/class-replaced-plugins.php:594
+#: admin/includes/class-replaced-plugins.php:611
+msgid "Show the setting"
+msgstr ""
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:336
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: %s is on and takes over once you deactivate this plugin. Then you can delete it."
+msgstr ""
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:340
+#, php-format
+msgid "SEO Pro Cookie Consent can do this plugin's job: %1$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %2$s."
+msgstr ""
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:344
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then deactivate and delete this plugin."
+msgstr ""
+
+#. translators: 1: SEO Pro Cookie Consent setting names, 2: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:348
+#, php-format
+msgid "SEO Pro Cookie Consent can do part of this plugin's job with %1$s. It does not do these, which this plugin has on: %2$s."
+msgstr ""
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:352
+#, php-format
+msgid "SEO Pro Cookie Consent makes this plugin redundant: turn on %s in SEO Pro Cookie Consent, then you can delete this plugin."
+msgstr ""
+
+#. translators: %s: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:356
+#, php-format
+msgid "No longer needed: %s in SEO Pro Cookie Consent does this plugin's job. You can delete it."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:544
+msgid "SEO Pro Cookie Consent can do the job of these plugins:"
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:550
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:186
+msgid "Hide"
+msgstr ""
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:570
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it. Then you can delete it."
+msgstr ""
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:574
+#: admin/includes/class-replaced-plugins.php:587
+#: admin/includes/class-settings-manager.php:489
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:238
+#, php-format
+msgid "Deactivate %s"
+msgstr ""
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:583
+#, php-format
+msgid "%1$s: %2$s is on and takes over once you deactivate it, except for these, which SEO Pro Cookie Consent does not do: %3$s. Deactivate it only if you no longer need them."
+msgstr ""
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names, 3: the plugin's settings SEO Pro Cookie Consent does not have
+#: admin/includes/class-replaced-plugins.php:592
+#, php-format
+msgid "%1$s: %2$s can do part of its job. SEO Pro Cookie Consent does not do these, which it has on: %3$s."
+msgstr ""
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:599
+#, php-format
+msgid "%1$s is inactive and no longer needed: %2$s does its job."
+msgstr ""
+
+#. translators: %s: plugin name
+#: admin/includes/class-replaced-plugins.php:603
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:249
+#, php-format
+msgid "Delete %s"
+msgstr ""
+
+#. translators: 1: plugin name, 2: SEO Pro Cookie Consent setting names
+#: admin/includes/class-replaced-plugins.php:609
+#, php-format
+msgid "%1$s: switch on %2$s, then deactivate and delete it."
+msgstr ""
+
+#: admin/includes/class-replaced-plugins.php:620
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:346
+msgid "You are not allowed to manage plugins on this site."
+msgstr ""
+
+#. translators: %s: search text
+#: admin/includes/class-settings-manager.php:104
+#, php-format
+msgid "Results for “%s”"
+msgstr ""
+
+#. translators: %d: number of matching features
+#: admin/includes/class-settings-manager.php:112
+#, php-format
+msgid "%d feature found."
+msgid_plural "%d features found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/includes/class-settings-manager.php:113
+msgid "No features match. Try another word."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:117
+#: admin/includes/class-settings-manager.php:158
+msgid "Changes are saved automatically."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:156
+msgid "New sites start with these settings. Apply a card to every site to set it for every site, so sites cannot change it. Changes are saved automatically."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:171
+msgid "No settings yet."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:258
+msgid "Options"
+msgstr ""
+
+#. translators: %s: setting name
+#: admin/includes/class-settings-manager.php:260
+#, php-format
+msgid "for %s"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:291
+msgid "The network administrator sets this for every site."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:293
+msgid "Change it for the network"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:343
+msgid "Troubleshooting"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:344
+msgid "Leave these as they are unless something is missing or broken."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:500
+msgid "Replaces:"
+msgstr ""
+
+#. translators: %s: plugin names
+#: admin/includes/class-settings-manager.php:507
+#, php-format
+msgid "%s is still active, so it does this job and this setting waits until it is deactivated."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:586
+msgid "Tokens:"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:588
+msgid "Insert token"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:683
+msgid "Select all"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:684
+msgid "Clear"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:701
+msgid "(always chosen)"
+msgstr ""
+
+#. translators: %s: a choice, such as Facebook.
+#: admin/includes/class-settings-manager.php:710
+#, php-format
+msgid "Move %s: drag, or press the up or down arrow key"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:726
+msgid "Drag the handles to change the order."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:729
+msgid "Choices with a lock are always chosen."
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:834
+msgid "Choose picture"
+msgstr ""
+
+#: admin/includes/class-settings-manager.php:839
+msgid "Remove"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:28
+#: includes/admin/class-seoprocookieconsent-import-tab.php:101
+msgid "Import"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:50
+msgid "Move here"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:51
+msgid "Review the dry run below. Import fills only default settings and adds missing script rules. Pages change only when selected. Check the banner and pages, then deactivate and delete the old plugin. Purge page caches after switching."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:65
+msgid "Dry run: settings and script rules to add"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:67
+msgid "Consent cookie mapping"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:71
+msgid "No choices carry over: visitors are asked again."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:73
+msgid "Only complete explicit choices carry over; dismissing the banner does not allow anything. Embeds without an equivalent category remain off. Carry-over starts only after the old banner is inactive."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:76
+msgid "Policy pages (select each page to confirm conversion)"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:81
+msgid "Replace with Cookie policy block, and turn on Cookie policy (Policies tab) so it shows."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:82
+msgid "Replace with Cookie settings button block."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:83
+msgid "Keep your edited document as editable HTML, with a revision."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:84
+msgid "No document is selected, so it shows nothing. Remove it yourself."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:85
+msgid "Form or live list with no direct equivalent. Not changed: replace or remove it yourself."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:86
+msgid "Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognises, and your script rules, are then held back."
+msgstr "Content shown only after acceptance. Not changed: take its scripts out of the shortcode yourself; services this plugin recognizes, and your script rules, are then held back."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:87
+msgid "Banner button, link or status with no equivalent here. Not changed: replace or remove it yourself."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:88
+msgid "Make this link or button open Cookie settings, keeping its text."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:89
+msgid "Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognises them."
+msgstr "Keep the content and remove the tags around it. Its scripts are added to Also hold back, unless this plugin already recognizes them."
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:90
+msgid "Keep the content and remove the tags around it."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:91
+msgid "Hosted document, button or widget that stops working when the old plugin or account goes. Not changed: replace it with your own page or link, or remove it yourself."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:92
+msgid "Marked to wait for the old banner, so it never loads without it. Not changed: make it a normal script or embed again yourself."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Freeze the rendered document as editable HTML, with a revision."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:95
+msgid "Cannot render while the source is inactive: rewrite this document or reactivate the source before importing."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:105
+msgid "Stop carrying over old consent"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:108
+#: includes/admin/class-seoprocookieconsent-import-tab.php:124
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:253
+msgid "Remove leftover data"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:111
+msgid "Kept: old consent records, data requests and anything not known to be generated. Export records from the old plugin before deleting it if you must keep them, then remove these tables or folders yourself after your retention period."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:116
+msgid "Nothing to remove."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:123
+msgid "Remove exactly the listed data from this site. This cannot be undone. Make a backup first. Network-wide data is not removed."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:130
+msgid "No supported source data found."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:132
+msgid "Import history"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:134
+msgid "Undone"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:138
+msgid "Undo"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:157
+msgid "You cannot import on this screen."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-import-tab.php:163
+msgid "Confirm the irreversible cleanup first."
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:75
+#, php-format
+msgid "Import from %s first"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:182
+msgid "Move to SEO Pro Cookie Consent:"
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:204
+#, php-format
+msgid "%s is asking your visitors now. Bring its settings across, then switch."
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:207
+#, php-format
+msgid "%s is not active, but its settings are still here. Bring them across."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:209
+msgid "Pages that show its documents may already be blank."
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:214
+#, php-format
+msgid "Import from %s"
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:220
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once and visitors keep their choices."
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:222
+#, php-format
+msgid "Check the import, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:225
+#, php-format
+msgid "Check the import and turn on Cookie consent, then deactivate %s: SEO Pro Cookie Consent takes over at once."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:227
+msgid "If it has a delete-data setting, turn that on first."
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:229
+msgid "Check the import"
+msgstr ""
+
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:231
+msgid "Turn on Cookie consent"
+msgstr ""
+
+#. translators: %s: other cookie plugin's name
+#: includes/admin/class-seoprocookieconsent-migrate-notices.php:244
+#, php-format
+msgid "%s left data on the site."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-blocker.php:345
+#: includes/features/class-seoprocookieconsent-consent.php:429
+msgid "This content"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-blocker.php:346
+msgid "content"
+msgstr ""
+
+#. translators: 1: service name, such as YouTube; 2: cookie category, such as Embedded content.
+#: includes/class-seoprocookieconsent-blocker.php:350
+#: includes/features/class-seoprocookieconsent-consent.php:426
+#, php-format
+msgid "%1$s can set cookies. It loads when you allow it, or allow %2$s in Cookie settings."
+msgstr ""
+
+#. translators: %s: what is embedded, such as video or map.
+#: includes/class-seoprocookieconsent-blocker.php:352
+#, php-format
+msgid "Load %s"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-blocker.php:359
+#: includes/features/class-seoprocookieconsent-consent.php:431
+#: includes/features/class-seoprocookieconsent-consent.php:536
+#: includes/features/class-seoprocookieconsent-consent.php:793
+#: includes/features/class-seoprocookieconsent-consent.php:805
+#: includes/features/class-seoprocookieconsent-consent.php:864
+#: includes/features/class-seoprocookieconsent-consent.php:890
+#: includes/views/consent-banner.php:68
+msgid "Cookie settings"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-network-differences.php:183
+#: includes/class-seoprocookieconsent-network-settings.php:223
+#: includes/class-seoprocookieconsent-network-settings.php:244
+msgid "This setting is set on each site."
+msgstr ""
+
+#. translators: %d: number of sites
+#: includes/class-seoprocookieconsent-network-differences.php:188
+#, php-format
+msgid "This network has more than %d sites, too many to change at once."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-network-settings.php:231
+#: includes/class-seoprocookieconsent-network-settings.php:253
+#: includes/class-seoprocookieconsent-settings.php:396
+#: includes/class-seoprocookieconsent-settings.php:412
+msgid "The setting could not be saved. Please try again."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:157
+#: includes/views/consent-banner.php:44
+#: includes/views/consent-banner.php:105
+msgid "Reject all"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:158
+#: includes/views/consent-banner.php:45
+#: includes/views/consent-banner.php:107
+msgid "Accept all"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:159
+#: includes/views/consent-banner.php:49
+msgid "OK"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:160
+#: includes/views/consent-banner.php:106
+msgid "Save choices"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:161
+#: includes/views/consent-banner.php:69
+msgid "Close"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:163
+#: includes/views/consent-banner.php:72
+msgid "Choose which cookies to allow. You can change this at any time from the Cookie settings link."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:167
+#: includes/features/class-seoprocookieconsent-policy.php:42
+#: includes/features/class-seoprocookieconsent-policy.php:65
+#: includes/views/consent-banner.php:39
+#: includes/views/consent-banner.php:74
+msgid "Cookie policy"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:238
+msgid "Choice is too large."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:247
+msgid "Invalid choice."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:252
+msgid "Invalid categories."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:258
+msgid "Invalid services."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:262
+msgid "Records are not ready yet."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:275
+msgid "Could not store choice."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:305
+msgid "Export consent records (CSV)"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:307
+msgid "Export consent snapshots (CSV)"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:324
+msgid "Older records"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:329
+msgid "Look up a consent ID"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:331
+msgid "Look up"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:338
+msgid "You cannot look up consent records."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:344
+msgid "Invalid consent ID. Enter 32 lowercase hexadecimal characters."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:347
+msgid "Consent records are not ready yet. Open settings with recording enabled first."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:354
+msgid "Could not read consent records."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:362
+#: includes/class-seoprocookieconsent-records.php:381
+msgid "Consent records"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:363
+msgid "Consent ID:"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Recorded (UTC)"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice time (UTC)"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Choice (JSON)"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:365
+#: includes/features/class-seoprocookieconsent-consent.php:184
+msgid "Policy version"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:365
+msgid "Snapshot"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:374
+msgid "No unexpired records found for this consent ID."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:378
+msgid "Back to settings"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:400
+msgid "You cannot export consent records."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-records.php:404
+msgid "No consent records yet."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:45
+msgid "Necessary"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:46
+msgid "Needed for the site to work, such as remembering your cookie choices. Always on."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:49
+msgid "Preferences"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:50
+msgid "Remember your choices and load extras such as live chat."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:53
+msgid "Statistics"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:54
+msgid "Help us see how the site is used, so we can improve it."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:57
+msgid "Embedded content"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:58
+msgid "Videos, maps and posts from other sites, which may track you there."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:61
+msgid "Marketing"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:62
+msgid "Measure and personalise ads, on this site and others."
+msgstr "Measure and personalize ads, on this site and others."
+
+#: includes/class-seoprocookieconsent-services.php:157
+msgid "Tells people from bots, when bot protection is on"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:157
+#: includes/class-seoprocookieconsent-services.php:192
+#: includes/class-seoprocookieconsent-services.php:315
+msgid "30 minutes"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "Remembers that you passed a security check"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:158
+msgid "30 minutes, unless the site sets another time"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Tells visitors who share an IP address apart, when rate limiting needs it"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:159
+msgid "Varies"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:168
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:176
+msgid "Checks that forms are sent by a person, not a bot. It receives your IP address and details of your browser, and may set cookies on Google's own sites."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:183
+msgid "Tells people from bots"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:183
+#: includes/class-seoprocookieconsent-services.php:346
+msgid "30 days"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:192
+msgid "Helps prevent payment fraud"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:191
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/features/class-seoprocookieconsent-policy.php:120
+msgid "1 year"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:200
+msgid "Takes payments and helps prevent fraud. It may set cookies on PayPal's own sites."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:346
+#: includes/class-seoprocookieconsent-services.php:355
+#: includes/class-seoprocookieconsent-services.php:364
+msgid "Measures ad conversions"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:277
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+msgid "3 months"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:278
+msgid "Shows and measures ads"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:278
+#: includes/class-seoprocookieconsent-services.php:337
+#: includes/class-seoprocookieconsent-services.php:364
+msgid "13 months"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:304
+#: includes/class-seoprocookieconsent-services.php:314
+#: includes/class-seoprocookieconsent-services.php:381
+msgid "Tells visitors apart"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:294
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:402
+msgid "2 years"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:295
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:315
+#: includes/class-seoprocookieconsent-services.php:365
+msgid "Keeps the visit together"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:305
+#: includes/class-seoprocookieconsent-services.php:365
+msgid "1 day"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:327
+#: includes/class-seoprocookieconsent-services.php:328
+#: includes/class-seoprocookieconsent-services.php:337
+msgid "Measures and personalises ads"
+msgstr "Measures and personalizes ads"
+
+#: includes/class-seoprocookieconsent-services.php:381
+#: includes/class-seoprocookieconsent-services.php:391
+#: includes/class-seoprocookieconsent-services.php:412
+#: includes/class-seoprocookieconsent-services.php:470
+msgid "6 months"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:387
+#: includes/class-seoprocookieconsent-services.php:398
+msgid "video"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:391
+msgid "Remembers player settings"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:402
+msgid "Counts views"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:392
+#: includes/class-seoprocookieconsent-services.php:461
+msgid "Session"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:408
+msgid "map"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:412
+msgid "Remembers preferences"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:418
+#: includes/class-seoprocookieconsent-services.php:426
+msgid "player"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:434
+#: includes/class-seoprocookieconsent-services.php:442
+#: includes/class-seoprocookieconsent-services.php:450
+msgid "post"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:461
+msgid "Keeps the chat connected"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:470
+#: includes/class-seoprocookieconsent-services.php:479
+msgid "Keeps the chat going"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-services.php:479
+msgid "9 months"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-settings.php:384
+msgid "Unknown setting."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-settings.php:387
+msgid "The network administrator sets this for every site, so it cannot be changed here."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-settings.php:1058
+msgid "You are not allowed to change these settings."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-settings.php:1083
+msgid "Saved. Reload the page to see the change."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-setup.php:278
+msgid "Consent"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-setup.php:279
+msgid "Hold back cookies until visitors allow them, with a short banner only where it is needed."
+msgstr ""
+
+#: includes/class-seoprocookieconsent-setup.php:282
+msgid "Policies"
+msgstr ""
+
+#: includes/class-seoprocookieconsent-setup.php:283
+msgid "Cookie policy, privacy policy and terms and conditions, inside pages you write. Review before publishing; not legal advice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:89
+#: includes/views/consent-banner.php:34
+msgid "Cookie consent"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:90
+msgid "Holds back scripts and embeds that set cookies, such as Google Analytics, ad pixels and YouTube videos, until visitors allow them. A short banner shows only on pages that have them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:98
+msgid "Who is asked first"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:99
+msgid "Europe (EU, EEA, UK, Switzerland), Quebec and visitors whose location is unclear are always asked before anything loads. The browser's time zone tells them apart: nothing is looked up or sent anywhere."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:101
+msgid "By region, with a notice elsewhere"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:102
+msgid "By region, no notice elsewhere"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:103
+msgid "Everyone"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:110
+msgid "Banner position"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:112
+msgid "Bar along the bottom"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:113
+msgid "Box at the bottom left"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:114
+msgid "Box at the bottom right"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:121
+msgid "Banner message"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:122
+msgid "Leave empty for a message that names what is on the page, such as \"This page uses YouTube and Google Analytics, which may set cookies.\""
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:123
+msgid "Automatic"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:130
+msgid "Cookie policy page"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:131
+msgid "Linked from the banner. Start typing to pick a page, or enter an address. Leave empty for your privacy policy page (Settings → Privacy). Add the Cookie policy block to whichever page you use."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:132
+msgid "Your privacy policy page"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:138
+msgid "Cookie settings link in the footer menu"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:139
+msgid "Lets visitors change their mind at any time. It goes after your cookie policy link, or before your privacy policy link, in a footer menu; otherwise at the end of the theme's footer menu. To place it yourself, use the Cookie settings box in Appearance → Menus; then this adds nothing. No menu? Add the Cookie settings button block, or link to #cookie-settings anywhere."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:145
+msgid "Floating Cookie settings button"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:146
+msgid "A small button in the bottom corner after visitors choose. It shows only on pages with no other Cookie settings link or button."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:153
+msgid "Also hold back"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:154
+msgid "Scripts or embeds the plugin does not know, one per line: part of their address or code. They count as Marketing; start a line with \"statistics:\", \"preferences:\" or \"embeds:\" for another category."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:162
+msgid "Never hold back"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:163
+msgid "Scripts or embeds that must always load, one per line: part of their address or code. Use this only for something that does not set cookies or is needed for the site to work."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:170
+msgid "Load Google tags before consent (Consent Mode advanced)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:171
+msgid "Google Analytics, Ads and Tag Manager load straight away and are told consent is denied until visitors allow it, so Google sends cookieless pings. Leave off unless your Google set-up needs it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:177
+msgid "Keep consent records"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:178
+msgid "Optional anonymous choice history, stored on this site. Adds a request and database write per choice, not per page view. No IP addresses or browser details are stored."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:185
+msgid "A label saved with each record. Change it when your policy changes. This does not ask visitors again or keep a copy of the policy text."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:193
+msgid "Keep records for (days)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:194
+msgid "0 keeps them as long as visitors' choices. Set this to how long you need evidence of consent. Records older than this are deleted."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:203
+msgid "Remember choices for (days)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:204
+msgid "Visitors are asked again after this. 365 is usual; some regulators prefer 180."
+msgstr ""
+
+#. translators: %s: service names, such as "Google Analytics, Hotjar".
+#: includes/features/class-seoprocookieconsent-consent.php:418
+#: includes/views/consent-banner.php:91
+#, php-format
+msgid "Used by: %s."
+msgstr ""
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:421
+#, php-format
+msgid "This page uses %s, which may set cookies and share data about your visit. Choose what to allow."
+msgstr ""
+
+#. translators: %s: the services on the page, such as "YouTube and Google Analytics".
+#: includes/features/class-seoprocookieconsent-consent.php:423
+#, php-format
+msgid "This page uses %s, which may set cookies. You can turn them off in Cookie settings."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:424
+msgid "other services"
+msgstr ""
+
+#. translators: 1: service name, such as "YouTube"; 2: cookie category.
+#: includes/features/class-seoprocookieconsent-consent.php:428
+#, php-format
+msgid "%1$s needs %2$s to show here. Allow it to see this content."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:430
+msgid "Load content"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:819
+msgid "A link that opens Cookie settings, so visitors can change their choices. Once a menu has it, the automatic footer link is not added."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:835
+msgid "Add to Menu"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:882
+#: includes/features/class-seoprocookieconsent-policy.php:77
+msgid "Cookie settings button"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:883
+msgid "Opens Cookie settings so visitors can change their choices."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:889
+msgid "Text"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:895
+msgid "Show as"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:897
+msgid "Button"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:898
+msgid "Link"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:915
+msgid "Get started"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:916
+msgid "Switch on Cookie consent."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:917
+msgid "Choose Scan now, then check Found on your pages below."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:918
+msgid "Switch on Cookie policy on the Policies tab and add the Cookie policy block to your privacy or cookie policy page."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:920
+msgid "Scan now"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:921
+msgid "Checks your home page, privacy page and up to three recent posts and three pages. This is a sample, not a full audit; pages are also checked as visitors browse. Scripts are not run."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:942
+msgid "No services that set cookies found yet. Scan now after switching this on, or open a few pages of your site."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:944
+msgid "Found on your pages and held back until allowed:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:955
+msgid "Necessary, never held back, and listed in the cookie policy:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:962
+msgid "Other scripts from these sites load as usual. If one sets cookies, add it under Troubleshooting → Also hold back:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:971
+msgid "You cannot scan this site."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:975
+msgid "Switch on Cookie consent before scanning."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1085
+msgid "Preview the banner"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1089
+msgid "Visitor"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1091
+msgid "Asked first (Europe, Quebec)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1092
+msgid "Shown a notice (elsewhere)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1096
+msgid "Screen"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1098
+msgid "Desktop"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1099
+msgid "Phone"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1102
+msgid "Reload"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1105
+msgid "Banner preview on your home page"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1107
+msgid "Your home page with the banner as visitors see it, even if the page has nothing to hold back. It updates after each change. Choices made in the preview are not saved."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1126
+msgid "No pages found."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1129
+msgid "Scanning…"
+msgstr ""
+
+#. translators: 1: pages checked; 2: pages that could not be checked.
+#: includes/features/class-seoprocookieconsent-consent.php:1131
+#, php-format
+msgid "Scan finished: %1$s pages checked; %2$s could not be checked. Review the findings below."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-consent.php:1132
+msgid "The scan could not check your pages. Loopback requests may be blocked. Try again, or open pages of your site to fill the list as you browse."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:43
+msgid "Adds a Cookie policy block (and the [spcc_cookie_policy] shortcode) that lists the cookies your site uses, grouped and kept up to date from what Cookie consent finds. Put it in your privacy or cookie policy page and write the rest of the page as you like. It is a starting point, not legal advice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:66
+msgid "Lists the cookies this site uses, kept up to date."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:72
+msgid "Short introduction"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:82
+msgid "Heading level for each kind of cookie"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:88
+msgid "Date the list was last updated"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:110
+msgid "Remembers your cookie choices"
+msgstr ""
+
+#. translators: %d: number of days.
+#: includes/features/class-seoprocookieconsent-policy.php:112
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:115
+msgid "Keeps you logged in, only if you log in"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:116
+msgid "Session, or 14 days with Remember me"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:119
+msgid "Fills in your name when you comment, only if you ask it to"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:154
+msgid "This site uses cookies: small files stored on your device. Necessary cookies are always on. Others are used only if you allow them where the law asks for consent, and you can change your choice at any time."
+msgstr ""
+
+#. translators: %s: date.
+#: includes/features/class-seoprocookieconsent-policy.php:168
+#, php-format
+msgid "List last updated %s."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:183
+msgid "Service"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:184
+msgid "Cookie"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:185
+msgid "What it does"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:186
+msgid "Kept for"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:191
+#: includes/features/class-seoprocookieconsent-privacy.php:38
+#: includes/features/class-seoprocookieconsent-privacy.php:63
+msgid "Privacy policy"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:195
+msgid "Sets cookies on its own site when its content loads."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:219
+#: includes/features/class-seoprocookieconsent-privacy.php:215
+msgid "Cookies"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:220
+msgid "Add the Cookie policy block below this heading: it lists the cookies your site uses and stays up to date."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-policy.php:221
+msgid "We use cookies and similar technologies. Necessary cookies make the site work and remember your choices. With your consent where the law requires it, we also use cookies for preferences, statistics, embedded content and marketing. You can change or withdraw your consent at any time from the Cookie settings link at the bottom of every page."
+msgstr ""
+
+#. translators: %s: service names, such as "Cloudflare, Cloudflare Turnstile".
+#: includes/features/class-seoprocookieconsent-policy.php:226
+#, php-format
+msgid "To protect the site, its forms and payments from spam, fraud and attacks, we use %s. These services receive your IP address and details of your browser, and may set the necessary cookies listed in the cookie policy. They are needed for the site to work safely, so they are always on."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:39
+msgid "Adds the Privacy policy block and [spcc_privacy_policy] shortcode: a general privacy policy from your answers, covering who is responsible, what you collect and why, AI, cookies, sharing, transfers, retention, security, rights, complaints, children and changes. Review the wording before publishing and add anything your site does that it does not cover. This is a starting point, not legal advice, and may not cover your business or local law. Existing privacy pages are not changed."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:43
+#: includes/features/class-seoprocookieconsent-terms.php:45
+msgid "Business or owner name"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:43
+msgid "The legal name responsible for personal information collected through this site. Leave empty to use the Terms and conditions answer. Required for the suggested wording."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:44
+#: includes/features/class-seoprocookieconsent-terms.php:46
+msgid "Country"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:44
+msgid "Where the business is based, named in the introduction and under Complaints. Leave empty to use the Terms and conditions answer."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:45
+msgid "Data protection registration"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:45
+msgid "Optional: your registration with a data protection authority, where the law asks for one, such as the authority's name and your registration number."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:46
+#: includes/features/class-seoprocookieconsent-terms.php:50
+msgid "Contact details"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:46
+msgid "Public email, contact page or postal address for privacy questions and requests. Leave empty to use the Terms and conditions answer. Required for the suggested wording; this is shown as plain text."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:47
+msgid "Main service providers"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:47
+msgid "Optional: services that handle personal information for you, one per line with their country and what they do, such as \"Web host, Germany: hosting and backups\". Listed where the policy explains sharing."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:48
+msgid "Section on the use of AI"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:48
+msgid "Says that you use AI services from several providers to develop the site and your services, and may also use them to help answer questions and support requests, and that you endeavour to remove personal information from what you send to AI (unless \"AI answers messages and delivers orders\" is on, which says the AI service may receive names, contact and order details instead). Turn it off if that is not true for this site."
+msgstr "Says that you use AI services from several providers to develop the site and your services, and may also use them to help answer questions and support requests, and that you endeavor to remove personal information from what you send to AI (unless \"AI answers messages and delivers orders\" is on, which says the AI service may receive names, contact and order details instead). Turn it off if that is not true for this site."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:49
+msgid "AI answers messages and delivers orders"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:49
+msgid "Turn on if AI answers messages or tickets and delivers orders on this site. Replaces the sentence that personal information is removed before it reaches the AI service with one saying the service may receive what was sent, including name, contact and order details. Also adds delivering orders to the Terms section on AI."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:50
+msgid "AI features on this website"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:50
+msgid "Turn on if visitors can use AI through this site, such as a chat assistant, AI search, or forms and tools that use AI. Adds to the section on AI that what they type, upload or submit is sent in full to the AI provider, without personal information removed, and asks them not to include personal or confidential information. Say so where they use the feature too."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:51
+#: includes/features/class-seoprocookieconsent-terms.php:51
+msgid "Your own wording"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:51
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Privacy policy block; those are never changed."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:64
+msgid "Privacy policy from your answers. Review before publishing; not legal advice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:91
+#: includes/features/class-seoprocookieconsent-terms.php:126
+msgid "Contact"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:92
+msgid "If you have any questions about this policy or how we handle your personal information, or want to use your rights, please contact us:"
+msgstr ""
+
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-privacy.php:107
+#, php-format
+msgid "This privacy policy explains how %s (\"we\") collects, uses and protects personal information through this website and our services, and the choices and rights you have. We are responsible for that information (its controller, in data protection law)."
+msgstr ""
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-privacy.php:114
+#, php-format
+msgid "We are based in %s."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:119
+msgid "This policy applies wherever you visit from. Please read it with any more specific notice we give you when we collect information, such as on a form; those notices add to this policy."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:120
+msgid "If we handle personal information for a customer as part of a service we provide to them, we do so on their instructions, and their privacy notice explains how it is used."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:129
+msgid "What we collect"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:130
+msgid "Personal information means any information about a person who can be identified from it. Depending on how you use this website and our services, we may collect:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:132
+msgid "identity details, such as your name or username;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:133
+msgid "contact details, such as your email address, phone number and postal or delivery address;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:134
+msgid "order and payment details, such as what you buy from us and confirmation of payment; when a payment provider handles a card payment, we do not receive your full card number;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:135
+msgid "account and profile details, such as your login, preferences, interests, feedback and survey answers;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:136
+msgid "what you write to us or post, such as messages, comments, reviews and attachments;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:137
+msgid "technical details, such as your IP address, browser and device type, operating system and an approximate location based on your IP address;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:138
+msgid "usage details, such as the pages you visit, how you reached them and how you use the site;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:139
+msgid "your marketing preferences and cookie choices."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:141
+msgid "We collect it in these ways:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:143
+msgid "Information you give us: when you contact us, comment, create an account, subscribe to updates, take part in a survey or buy from us."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:144
+msgid "Information collected automatically: your IP address, browser and device details and the pages you visit, which our hosting and security services record to deliver and protect the site, and information from cookies and similar technologies, as explained under Cookies."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:145
+msgid "Information from others: for example confirmation of a payment from a payment provider, or details from a service you choose to sign in with."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:147
+msgid "We may also use aggregated or anonymised information, such as how many people visit a page, which does not identify you. If we combine it with other information so that it can identify you, we treat it as personal information."
+msgstr "We may also use aggregated or anonymized information, such as how many people visit a page, which does not identify you. If we combine it with other information so that it can identify you, we treat it as personal information."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:148
+msgid "We do not ask for sensitive information, such as about your health, religious beliefs or ethnic origin. Please do not send it to us unless we have agreed how it will be handled."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:149
+msgid "Where we need information to provide what you ask for, or because the law requires it, we say so when we ask. Without it, we may not be able to provide what you asked for, such as an order or a reply."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:150
+msgid "If you post a comment, review or other content on this website, other people can see it. We will consider reasonable requests to remove it, but copies may already be held by search engines or archives that we do not control."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:160
+msgid "How we use it and why"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:161
+msgid "We use personal information only for these purposes. Where data protection law asks for a legal basis, we rely on the one given for each:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:163
+msgid "To reply to you and provide what you ask for, including orders and support: to take steps at your request or to perform a contract with you."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:164
+msgid "To tell you about changes to our terms, this policy or a service you use: to perform a contract with you, or legal obligation."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:165
+msgid "To run, secure and improve the website and our services, and to prevent fraud and abuse: our legitimate interests, balanced against your rights."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:166
+msgid "To send newsletters or marketing you asked for: your consent, which you can withdraw at any time with the unsubscribe link or by contacting us."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:167
+msgid "To use optional cookies, such as for statistics or marketing: your consent, where the law requires it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:168
+msgid "To keep records and meet our legal, tax and accounting obligations: legal obligation."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:169
+msgid "To establish, exercise or defend legal claims: our legitimate interests."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:171
+msgid "More than one legal basis may apply, and you can ask us which one we rely on for a particular use. When we rely on legitimate interests, we weigh them against the effect on you and your rights, and do not rely on them where your interests override ours. You can ask us how we made that assessment."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:172
+msgid "We send marketing only if you ask for it or, where the law allows, about similar products and services after you buy from us. Every message explains how to stop. Stopping marketing does not stop messages we need to send about an order, account or service."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:173
+msgid "We do not sell your personal information or give it to others for their own marketing. If you allow marketing cookies, however, the advertising services that set them may also use what they collect for their own purposes, as their privacy policies explain."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:174
+msgid "We do not use personal information for an unrelated purpose without telling you first."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:187
+msgid "We use AI services from several providers to help develop and maintain this website and our services, and may also use them to help us answer questions and support requests."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:189
+msgid "When we use AI to help answer a message or deliver an order, the AI service may receive what you sent us, including your name, contact details and order details, because it needs them to do the work."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:191
+msgid "When we use AI to help with a message or request you send us, we endeavour to remove personal information, such as names, contact details and account or order details, from what we send to the AI service, so that only the general content of the message is processed to help prepare an answer."
+msgstr "When we use AI to help with a message or request you send us, we endeavor to remove personal information, such as names, contact details and account or order details, from what we send to the AI service, so that only the general content of the message is processed to help prepare an answer."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:195
+msgid "Some features on this website use AI directly, such as a chat assistant, AI search, or forms and tools that use AI. When you use one, what you type, upload or submit is sent in full to the AI provider that runs it, to produce a response. We do not remove personal information from it first, so please do not include personal, sensitive or confidential information that you do not want the provider to receive."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:196
+msgid "The provider handles what you send under its own terms and privacy policy, and may process it in other countries, as explained under International transfers. Where we keep a copy, such as a chat history, we handle it as this policy describes."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:201
+msgid "Where we can, we choose AI services and settings that do not use what is sent to them to train their models. AI does not make decisions about you that have legal or similarly significant effects."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:202
+msgid "Artificial intelligence (AI)"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:216
+msgid "Cookies are small text files that a website stores in your browser. Similar technologies, such as local storage and tracking pixels, work in a similar way, so we call them all cookies here."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:217
+msgid "We use cookies and similar technologies. Necessary ones make the site work and are always on. Others, such as for statistics, embedded content or marketing, are used only with your consent where the law requires it. The kinds we may use are:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:219
+msgid "Embedded content, such as videos, maps and social media posts, and sharing buttons from other websites can set their own cookies and work as if you visited those websites."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:220
+msgid "You can also set your browser to refuse or delete cookies. Some parts of this website may not work without them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:231
+msgid "with service providers who handle it for us on our instructions, such as for hosting, backups, IT support, email, payments and customer support. They may use it only to provide their services to us, must keep it secure, and may use other providers only on the same terms;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:232
+msgid "with professional advisers, such as accountants, auditors, lawyers, banks and insurers;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:233
+msgid "with tax authorities, regulators, courts, the police and others when the law requires it, or to protect the rights, property or safety of our customers, others or us;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:234
+msgid "with a buyer or successor if our business or this website is sold or merged, who may use it as this policy describes;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:238
+msgid "with analytics and advertising providers, such as for statistics, measuring adverts and showing relevant adverts, only if you allow those cookies (see Cookies). Some of them, such as social networks and advertising platforms, also use it for their own purposes under their own privacy notices;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:240
+msgid "with others when you ask us to or agree to it, such as a business you ask us to put you in touch with, which then uses it under its own privacy notice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:241
+msgid "Who we share it with"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:242
+msgid "We share personal information only when needed:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:244
+msgid "If you pay on a payment provider's page, the provider handles your payment details under its own terms and privacy notice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:248
+msgid "Our main service providers are:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:251
+msgid "International transfers"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:252
+msgid "Some of our service providers store or process information in other countries, depending on their settings, where their systems are and where their support teams work. Where practical, we choose providers and settings that keep information in our own region."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:253
+msgid "Where data protection law requires it, we make sure suitable safeguards are in place, such as an adequacy decision, standard contractual clauses or an equivalent agreement, together with measures such as encryption and access controls. You can ask us for more information about them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:263
+msgid "How long we keep it"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:264
+msgid "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymise it."
+msgstr "We keep personal information only as long as we need it for the purposes above, including to meet legal, accounting or reporting requirements, then delete or anonymize it."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:265
+msgid "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorised use, why we hold it and whether we can achieve that another way, and what the law requires."
+msgstr "To decide how long, we consider the amount, nature and sensitivity of the information, the risk of harm from unauthorized use, why we hold it and whether we can achieve that another way, and what the law requires."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:266
+msgid "For example, we keep messages as long as needed to deal with them and any follow-up, account details while your account is open, and order and accounting records as long as tax and accounting law requires, which can be several years. If you ask us to delete information, we keep a short record of the request to show we dealt with it. Copies in backups are deleted as the backups are replaced."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:267
+msgid "Security"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:268
+msgid "We protect personal information with appropriate technical and organisational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
+msgstr "We protect personal information with appropriate technical and organizational measures. Depending on the service, these may include encrypted connections, secure logins with strong passwords and multi-factor authentication, access only for people who need it and who must keep it confidential, regular updates, firewalls and monitoring, and backups. We expect our service providers to protect it in the same way."
+
+#: includes/features/class-seoprocookieconsent-privacy.php:269
+msgid "If a data breach puts your rights at risk, we will tell you and the authorities where the law requires it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:270
+msgid "No website or email is completely secure, so please think carefully before sending sensitive information by email, or ask us for a more secure way to send it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:281
+msgid "be told how we use your personal information, as this policy does;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:282
+msgid "ask for a copy of the personal information we hold about you;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:283
+msgid "have it corrected if it is wrong or incomplete;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:284
+msgid "have it deleted, or its use restricted;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:285
+msgid "object to how we use it, including to direct marketing at any time and to uses based on our legitimate interests;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:286
+msgid "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organisation, where we use it with your consent or for a contract;"
+msgstr "receive information you gave us in a commonly used, machine-readable format, or have it sent to another organization, where we use it with your consent or for a contract;"
+
+#: includes/features/class-seoprocookieconsent-privacy.php:287
+msgid "not be subject to decisions based solely on automated processing that have legal or similarly significant effects on you;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:288
+msgid "withdraw your consent at any time, without affecting what we did before."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:290
+#: includes/features/class-seoprocookieconsent-terms.php:332
+msgid "Your rights"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:291
+msgid "Depending on where you live, you may have the right to:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:293
+msgid "Some rights apply only in certain circumstances or may be limited by law, for example where we must keep records. If so, we will tell you."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:294
+msgid "To use these rights, contact us using the details below and tell us what you would like. We may need to confirm your identity first, so that we do not give out, change or delete someone else's information, and may ask for details that help us find what you need. If someone asks on your behalf, we need your written permission."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:295
+msgid "We reply without undue delay and within four weeks. If a request is complex or you send several, we may take longer where the law allows, and will tell you why. We do not charge, unless a request is clearly unfounded, repetitive or excessive, when we may charge a reasonable fee or decline it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:296
+msgid "Please tell us if your personal information changes, so we can keep it accurate."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:309
+msgid "You also have the right to complain at any time to the data protection authority where you live or work, or where we are based."
+msgstr ""
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-privacy.php:312
+#, php-format
+msgid "You also have the right to complain at any time to the data protection authority where you live or work, or in %s, where we are based."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:315
+msgid "Complaints"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:316
+msgid "If you are unhappy with how we handle your personal information, including our use of automated tools such as AI, please contact us first so we can try to put it right. Tell us what happened and what you would like us to do. We will acknowledge your complaint, look into it promptly and fairly, and tell you the outcome and what we will do about it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:318
+msgid "Children"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:319
+msgid "This website is not intended for children. We do not knowingly collect personal information from children under the age at which they can consent to it where they live, and ask them not to send it without a parent's or guardian's permission. If you think a child has given us personal information, please contact us and we will delete it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:320
+msgid "Other websites"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:321
+msgid "This website may link to other websites, or include content, plug-ins or applications from them, such as videos, maps and social media posts. Following those links or allowing those connections may let the other websites collect information about you. We do not control them and are not responsible for their privacy practices, and this policy does not cover them; please read their own privacy policies."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:322
+msgid "Changes to this policy"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:323
+msgid "We may update this policy when our services or the law change. The current version is always on this page, and we will tell you about significant changes where we can. Please check this page from time to time."
+msgstr ""
+
+#. translators: %s: "Cookie settings" link.
+#: includes/features/class-seoprocookieconsent-privacy.php:362
+#, php-format
+msgid "You can change or withdraw your consent at any time in %s."
+msgstr ""
+
+#. translators: %s: "Our cookie policy" link.
+#: includes/features/class-seoprocookieconsent-privacy.php:380
+#, php-format
+msgid "%s lists the cookies we use, what each does and how long it is kept."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:381
+msgid "Our cookie policy"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:395
+msgid "Where the law requires consent, we hold back optional cookies, and the scripts and embedded content that set them, until you allow them."
+msgstr ""
+
+#. translators: %s: number of days.
+#: includes/features/class-seoprocookieconsent-privacy.php:398
+#, php-format
+msgid "We remember your choice in a necessary cookie in your browser for %s day, then ask again."
+msgid_plural "We remember your choice in a necessary cookie in your browser for %s days, then ask again."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/features/class-seoprocookieconsent-privacy.php:401
+msgid "If your browser sends a Global Privacy Control signal, we treat it as a refusal of marketing cookies unless you choose otherwise."
+msgstr ""
+
+#. translators: %s: number of days.
+#: includes/features/class-seoprocookieconsent-privacy.php:407
+#, php-format
+msgid "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s day, relying on our legal obligation to show consent and our legitimate interests."
+msgid_plural "To show what was agreed, we also keep a record of each choice on this website: the choice, when it was made, the wording shown and a random ID that is kept with your choice and shown in Cookie settings, but not your IP address or browser details. We keep these records for %s days, relying on our legal obligation to show consent and our legitimate interests."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:39
+#: includes/features/class-seoprocookieconsent-terms.php:97
+msgid "Terms and conditions"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:40
+msgid "Adds the Terms and conditions block and [spcc_terms] shortcode: general terms from your answers, covering acceptance and changes, use of the site, accounts, content, intellectual property, links, orders, information, AI, liability, ending access, privacy, complaints, your rights and, with a country, governing law. Answer the questions, then review the wording before publishing. This is a starting point, not legal advice, and may not cover your business or local law. Existing Complianz pages are not changed: replace their block or shortcode yourself after review."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:45
+msgid "The legal name responsible for this site. Required for the suggested wording."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:46
+msgid "Where the business is based, named as it should be for its law and courts, such as \"England and Wales\" or \"Jersey\". Adds a Governing law section, which also keeps consumers' protection where they live; leave empty to leave that section out."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:47
+msgid "What the site offers or sells"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:47
+msgid "Describe your goods, services, digital content or information, including payment and delivery terms where needed. When this is answered, general wording on orders and payment follows it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:48
+#: includes/features/class-seoprocookieconsent-terms.php:238
+msgid "Returns, refunds and cancellations"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:48
+msgid "Your policy and how customers use it. Include any withdrawal rights and required contact or online withdrawal process. Leave empty if not applicable; no return period is assumed."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:49
+msgid "Section on AI-assisted services"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:49
+msgid "Says that the site and your services are developed with the help of AI from several providers, which may also help answer questions and support requests, and that visitors accept this and should check what you provide for correctness, themselves or with their own AI, before relying on it. Turn it off if you do not use AI."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:50
+msgid "Public email, contact page, postal address or phone number for questions about these terms. Required for the suggested wording; this is shown as plain text."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:51
+msgid "Optional: replaces all suggested wording. Plain text only, one paragraph per line. Leave empty to use the answers above. You can also write normal blocks around the Terms and conditions block; those are never changed."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:98
+msgid "Terms from your answers. Review before publishing; not legal advice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:127
+msgid "If you have any questions about these terms, please contact us:"
+msgstr ""
+
+#. translators: %s: legal business or owner name.
+#: includes/features/class-seoprocookieconsent-terms.php:142
+#, php-format
+msgid "This website is operated by %s (\"we\", \"us\" or \"our\"). These terms apply to anyone using it (\"you\") and to the offerings described below. Please read them before using the site or placing an order."
+msgstr ""
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:149
+#, php-format
+msgid "The business is based in %s."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:153
+msgid "Accepting these terms"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:154
+msgid "By using this website, you agree to these terms. If you do not agree, please do not use it. Where we ask you to accept these or other terms, such as when you create an account or place an order, those apply too."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:155
+msgid "These terms work together with our privacy policy and any other agreement we make with you, such as an order confirmation or a contract for services. If another agreement with you conflicts with these terms, that agreement applies."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:156
+msgid "Changes to these terms"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:157
+msgid "We may update these terms from time to time, for example when our services or the law change. The current version is always on this page, and changes apply from when they are posted, so please check it from time to time. If you pay us for an ongoing service, we will give you reasonable notice of significant changes to it or its price, and you can end it before they apply."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:158
+msgid "Who can use this website"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:159
+msgid "This website is not aimed at children. If you are under the age at which you can make a contract where you live, please ask a parent or guardian to use it with you and to agree to these terms and place any order for you."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:169
+msgid "Using this website"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:170
+msgid "Please use this website only for its intended purposes, lawfully, in line with these terms and generally accepted online practice, and with respect for the rights of others. You must not:"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:172
+msgid "post or send anything unlawful, harmful, threatening, abusive, harassing, defamatory, obscene or hateful, or that invades someone's privacy or breaks a confidence;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:173
+msgid "infringe anyone's intellectual property or other rights, or post anything without the permission it needs;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:174
+msgid "upload or spread viruses, malware or other harmful code;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:175
+msgid "try to gain unauthorised access to the website, its servers or other people's accounts, or get around any restriction on access;"
+msgstr "try to gain unauthorized access to the website, its servers or other people's accounts, or get around any restriction on access;"
+
+#: includes/features/class-seoprocookieconsent-terms.php:176
+msgid "interfere with or disrupt the website, its security or other people's use of it, for example by overloading it;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:177
+msgid "collect information from the website by automated means, such as scraping or harvesting email addresses, without our written permission, or use information from it for unsolicited marketing;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:178
+msgid "pretend to be someone else, or misrepresent your connection with anyone;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:179
+msgid "send spam, chain letters or unsolicited advertising through the website;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:180
+msgid "show the website in a frame on another website, or present it as part of another website;"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:181
+msgid "use the website where its content or our offerings are illegal, or in breach of export or sanctions laws."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:183
+msgid "To protect this website and its content, we may use measures that detect and block automated access. We may also mark our content and data in ways unique to us (data fingerprinting) and include decoy details that appear nowhere else (canary tokens), so that we can recognise copies and trace who made them. We may keep what these measures record and use it as evidence, including in legal action against unauthorised copying, and to recover our costs where the law allows."
+msgstr "To protect this website and its content, we may use measures that detect and block automated access. We may also mark our content and data in ways unique to us (data fingerprinting) and include decoy details that appear nowhere else (canary tokens), so that we can recognize copies and trace who made them. We may keep what these measures record and use it as evidence, including in legal action against unauthorized copying, and to recover our costs where the law allows."
+
+#: includes/features/class-seoprocookieconsent-terms.php:184
+msgid "Accounts and passwords"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:185
+msgid "If you create an account, please give accurate information and keep it up to date. Keep your password secure and do not share your account; you are responsible for what happens under it, unless that is our fault. Tell us straight away if you think someone else has used it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:186
+msgid "If we close your account because you broke these terms, please do not open another one without our permission."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:196
+msgid "Content you send or post"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:197
+msgid "Where this website lets you post comments, reviews or other content, you keep ownership of it, and you give us a non-exclusive, royalty-free permission to publish, display, store and adapt it for format or length in connection with this website and our services. You are responsible for what you post and confirm that you have the right to post it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:198
+msgid "What you post may be public. We will consider reasonable requests to remove it, but copies may remain with search engines or archives that we do not control."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:199
+msgid "We cannot check everything posted, but we may review, edit, refuse or remove any content at our discretion, for example if it breaks these terms. Where the law requires it, such as under a court order, we will cooperate with the authorities, including by disclosing who posted unlawful content."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:200
+msgid "If you send us ideas, suggestions or feedback, we may use them freely without paying you. Please do not send us anything you consider confidential or your own invention unless we have agreed in writing how it will be handled. Personal information you send is handled as our privacy policy explains."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:210
+msgid "Intellectual property"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:211
+msgid "This website and its content, such as text, images, graphics, logos and software, and its design and arrangement, belong to us or to those who license them to us, and are protected by copyright and other laws. All rights are reserved except as these terms allow."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:212
+msgid "You may view, download and print pages for your own personal, non-commercial use, and share links to them. Unless we agree in writing or the law allows it, such as quoting a short extract with acknowledgement, you must not copy, republish, sell, adapt or otherwise use our content commercially, or remove copyright or other notices."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:213
+msgid "Names, logos and trade marks on this website belong to us or their owners. Please do not use them without permission."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:214
+msgid "Where we provide software, files or other downloads, they are licensed, not sold, and any licence that comes with them applies. Unless that licence or the law allows it, do not share, resell, reverse engineer or decompile them."
+msgstr "Where we provide software, files or other downloads, they are licensed, not sold, and any license that comes with them applies. Unless that license or the law allows it, do not share, resell, reverse engineer or decompile them."
+
+#: includes/features/class-seoprocookieconsent-terms.php:215
+msgid "If we send you a newsletter, you are welcome to forward it to people who may be interested."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:216
+msgid "Links and other websites"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:217
+msgid "Links to other websites, and content from them, are provided for convenience. We do not control or endorse them and are not responsible for their content, products or privacy practices; their own terms and policies apply, and you use them at your own risk. Where we list or link to other businesses, any arrangement you make with them is between you and them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:218
+msgid "Some links may be affiliate or sponsored links, which means we may earn a commission or payment if you buy. We say so where the law requires it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:219
+msgid "If you pay on a payment provider's page, its own terms and privacy policy also apply."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:220
+msgid "You may link to this website fairly and lawfully, as long as you do not suggest a connection with us, or approval or endorsement from us, that does not exist, and do not link from a website with unlawful or offensive content. We may ask you to remove a link."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:234
+msgid "What we offer"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:249
+msgid "Orders and payment"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:250
+msgid "If you buy from us, prices are as shown on the website or in our quote, with any taxes and delivery charges shown before you order. Quotes are valid for the period they state."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:251
+msgid "Your order is an offer to buy. A contract is made when we confirm that we have accepted it, for example by email or by providing what you ordered. We may decline an order, for example if something is unavailable, and will refund anything you have paid for it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:252
+msgid "If we find a mistake in a price or description before we accept your order, we will tell you, and you can go ahead at the correct price or cancel."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:253
+msgid "Delivery and completion dates are estimates unless we agree a fixed date. We will tell you if there is a delay."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:254
+msgid "If you subscribe or pay regularly, you can cancel as explained when you sign up, and keep access until the end of the period you have paid for."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:264
+msgid "Information on this website"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:265
+msgid "We take reasonable care to keep this website accurate and up to date, but its content is for general information only. It may contain errors or be out of date, and we may change it at any time without notice."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:266
+msgid "Nothing on this website is legal, financial, medical or other professional advice. Please get advice from a suitably qualified professional before acting on it. Examples and case studies are illustrations; we cannot promise any particular result."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:267
+msgid "Availability and security"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:268
+msgid "We aim to keep this website available, but it may sometimes be unavailable because of maintenance, technical problems or other things outside our control, and we will warn you in advance where we reasonably can. We may change, suspend or withdraw the website or any part of it. If this affects something you have paid for, we will tell you and refund what you paid for anything you do not receive."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:269
+msgid "We take reasonable steps to keep this website secure, but cannot promise that it, or anything you download from it, is free from viruses or other harmful code. Please use your own virus protection and backups, and make sure your device and connection are suitable; we are not responsible for problems caused by them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:283
+msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests, and deliver orders. By using this website and our services, you accept that they are provided with AI support."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:284
+msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests. By using this website and our services, you accept that they are provided with AI support."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:285
+msgid "AI-assisted services"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:287
+msgid "AI can make mistakes. Please check information, answers and other content we provide for correctness, yourself or with your own AI tools, before you rely on it, especially for important decisions."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:298
+msgid "Our responsibility for loss or damage"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:299
+msgid "Nothing in these terms limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for anything else that the law does not allow us to limit or exclude."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:300
+msgid "If you are a consumer, we are responsible for loss or damage you suffer that is a foreseeable result of our breaking these terms or failing to use reasonable care and skill, but not for loss or damage that is not foreseeable. We provide this website for domestic and private use, so we are not responsible to consumers for business losses, such as loss of profit, revenue, business or opportunity."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:301
+msgid "If you use this website or buy from us for business purposes, then, as far as the law allows: the website and its content are provided \"as is\" and \"as available\", without any promise not set out in these terms; we are not responsible for indirect or consequential loss, or for loss of profit, revenue, data, business or opportunity; and our total liability to you is limited to the price you paid for the product or service concerned."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:302
+msgid "If you use this website in breach of these terms or the law, you are responsible for any reasonable, foreseeable loss or claim that results, as far as the law allows."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:303
+msgid "Neither of us is responsible for delays or failures caused by events outside our reasonable control, for as long as they last, except for payments due. If such an event affects something you have ordered, we will tell you and do what we reasonably can to limit the effect."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:304
+msgid "Suspending or ending access"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:305
+msgid "If you break these terms, we may take the action we think appropriate, such as removing content, suspending or closing your account, blocking your access, or taking legal action. We may also restrict or end access to the website or any part of it for other good reasons, such as security. If this affects a service you have paid for, we will give you reasonable notice where we can."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:315
+msgid "Privacy and communications"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:316
+msgid "Our privacy policy explains how we handle personal information and use cookies."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:317
+msgid "When you use this website or contact us electronically, you agree that we may reply and send you notices electronically, such as by email or on the website, and that these meet any legal requirement for them to be in writing, except where the law requires another form."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:318
+msgid "Accessibility and complaints"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:319
+msgid "We want everyone to be able to use this website. If something stops you using part of it, such as an accessibility problem, please tell us what happened, and we will try to fix it or provide the information another way."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:320
+msgid "If you have a complaint or concern, please contact us first so we can try to put things right. Tell us what happened and what you would like us to do, and we will reply as soon as we can."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:321
+msgid "If we cannot resolve it between us and you choose to try mediation, we will endeavour to take part in good faith where the concern is legitimate. Mediation is voluntary and does not affect your legal rights, including your right to go to a regulator or the courts."
+msgstr "If we cannot resolve it between us and you choose to try mediation, we will endeavor to take part in good faith where the concern is legitimate. Mediation is voluntary and does not affect your legal rights, including your right to go to a regulator or the courts."
+
+#: includes/features/class-seoprocookieconsent-terms.php:333
+msgid "Nothing in these terms takes away rights that applicable law gives you and that cannot be excluded, including mandatory consumer rights."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:334
+msgid "These include rights about faulty goods, services and digital content, and any right to cancel an online purchase. Some places do not allow certain promises to be excluded or liability to be limited, so some of these terms may not apply to you."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:335
+msgid "General"
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:336
+msgid "These terms, with the policies and any other agreement they refer to, are the whole agreement between you and us about their subject, and replace any earlier understanding about it."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:337
+msgid "If a court or authority decides that part of these terms is invalid or unenforceable, that part is changed or removed only as far as needed, and the rest stays in force."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:338
+msgid "If we do not enforce a term straight away, we can still enforce it later."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:339
+msgid "You may not transfer your rights or obligations under these terms to anyone else without our written agreement. We may transfer ours to another organisation, such as a buyer of our business; we will tell you if this happens and make sure it does not reduce your rights."
+msgstr "You may not transfer your rights or obligations under these terms to anyone else without our written agreement. We may transfer ours to another organization, such as a buyer of our business; we will tell you if this happens and make sure it does not reduce your rights."
+
+#: includes/features/class-seoprocookieconsent-terms.php:340
+msgid "Only you and we have rights under these terms, unless they say otherwise."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:346
+msgid "Governing law"
+msgstr ""
+
+#. translators: %s: country where the business is based.
+#: includes/features/class-seoprocookieconsent-terms.php:349
+#, php-format
+msgid "These terms are governed by the law of the place where the business is based (%s), and its courts can hear any dispute about them."
+msgstr ""
+
+#: includes/features/class-seoprocookieconsent-terms.php:352
+msgid "If you are a consumer, you also keep the protection of the mandatory law of the country where you live, and can bring a dispute to your local courts where that law allows."
+msgstr ""
+
+#. translators: %d: HTTP status code
+#: includes/github-updater/class-wpallstars-github-updater.php:611
+#, php-format
+msgid "GitHub answered with status %d."
+msgstr ""
+
+#. translators: 1: owner/repo in the plugin's header, 2: owner/repo GitHub points to
+#: includes/github-updater/class-wpallstars-github-updater.php:644
+#, php-format
+msgid "GitHub repository %1$s has moved to %2$s; change the plugin's GitHub Plugin URI header."
+msgstr ""
+
+#. translators: %s: time since the check, such as "5 mins"
+#: includes/github-updater/class-wpallstars-github-updater.php:1021
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1033
+msgid "Could not check GitHub for updates to these plugins, so a newer release may be missing here until a check succeeds:"
+msgstr ""
+
+#. translators: 1: time since the check, such as "5 mins ago", 2: error message
+#: includes/github-updater/class-wpallstars-github-updater.php:1087
+#, php-format
+msgid "Could not check GitHub for updates (%1$s): %2$s. A newer release may not be shown until a check succeeds; WordPress tries again within an hour."
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1092
+msgid "Check again now"
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1323
+msgid "Release notes on GitHub"
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1578
+msgid "GitHub did not give a download address. Check the token’s access to the repository."
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1582
+msgid "GitHub sent the download to an unexpected address."
+msgstr ""
+
+#: includes/github-updater/class-wpallstars-github-updater.php:1616
+#: includes/github-updater/class-wpallstars-github-updater.php:1620
+msgid "The update could not be unpacked into the plugin’s folder."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:116
+msgid "Visitors' Borlabs Cookie choices are not carried over: its cookie version, which decides whether a saved choice is still valid, could not be checked, so visitors are asked again once."
+msgstr ""
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:125
+#, php-format
+msgid "Borlabs Cookie ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Borlabs Cookie ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognizes, and the script rules below, are then held back."
+
+#. translators: %s: list of script blocker names.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:130
+#, php-format
+msgid "Borlabs Cookie script blockers match scripts by handle or code, which this import does not turn into rules: %s. Add anything this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "Borlabs Cookie script blockers match scripts by handle or code, which this import does not turn into rules: %s. Add anything this plugin does not recognize under Troubleshooting → Also hold back."
+
+#. translators: %s: CSS class name.
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:134
+#, php-format
+msgid "A menu link has the %s class. Point it at #cookie-settings instead, or rely on the Cookie settings footer link."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:137
+msgid "Its dialog texts are not imported: they describe its own dialog."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:140
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:73
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:105
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:101
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:60
+msgid "The import turns on Keep consent records to continue its records."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-borlabs.php:405
+msgid "Deleting Borlabs Cookie runs its own uninstall, which removes all its data, including its consent log: export the consent records you must keep before deleting it. Remove leftover data removes its settings, services, content blockers and other tables after it is deactivated, keeps its consent log and statistics, and leaves its generated files in uploads/borlabs-cookie. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-complianz.php:314
+msgid "Check Complianz’s own delete-data-on-uninstall setting before deleting it. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:57
+msgid "Compliance (hosted) mode is on: the banner and visitors' choices live in the Cookie Compliance web app. Only what is stored on this site is imported, and visitors are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:59
+msgid "Cookie Notice accepted on scroll or click, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:63
+msgid "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "Cookie Notice ran your \"after acceptance\" scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognizes, are then held back until visitors allow them. Copy them before removing leftover data."
+
+#. translators: %s: the start of an inline script or a script pattern.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:67
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:69
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:108
+#, php-format
+msgid "Add by hand to Also hold back (no address to recognise): %s"
+msgstr "Add by hand to Also hold back (no address to recognize): %s"
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookie-notice.php:197
+msgid "Cookie Notice deletes its settings when deactivated if its Deactivation option is on: copy your after-acceptance scripts first. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:59
+msgid "CookieAdmin follows US state laws (opt-out) or a Pro law here, so visitors' choices are not carried over: they are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:63
+msgid "CookieAdmin Pro showed its banner only in some regions. That is not imported: check Who is asked first."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:65
+msgid "Scripts you marked for CookieAdmin in your theme (type=\"text/plain\" with data-cookieadmin-category) stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieadmin.php:211
+msgid "Deleting CookieAdmin removes its settings but leaves its cookie list table; use Remove leftover data afterwards. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:47
+msgid "This site uses a Usercentrics account through Cookiebot, so its banner and choices are kept by Usercentrics."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:50
+msgid "The Cookiebot banner is switched off on this site."
+msgstr ""
+
+#. translators: %s: Google Tag Manager container ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:55
+#, php-format
+msgid "Cookiebot loaded Google Tag Manager (%s) itself, which stops when it is removed. Add the Tag Manager code to your theme or a header-code plugin; this plugin holds it back until allowed."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:43
+msgid "Google Consent Mode"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:42
+msgid "TCF"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "US privacy (CCPA)"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:58
+msgid "banners by region"
+msgstr ""
+
+#. translators: %s: list of Cookiebot features.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:65
+#, php-format
+msgid "These Cookiebot settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching."
+msgstr ""
+
+#. translators: %s: list of Cookiebot add-on keys.
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:70
+#, php-format
+msgid "Cookiebot add-ons held back other plugins' scripts: %s. Services this plugin recognises are held back without them; check the rest after switching."
+msgstr "Cookiebot add-ons held back other plugins' scripts: %s. Services this plugin recognizes are held back without them; check the rest after switching."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:73
+msgid "Its WPForms add-on switched off WPForms' own GDPR settings: check them in WPForms."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:76
+msgid "A Cookiebot cookie declaration widget is in a sidebar. Replace it with the Cookie policy block, or link to your cookie policy page."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:79
+msgid "Scripts marked for Cookiebot with type=\"text/plain\" and data-cookieconsent never run without it: make them normal scripts again in your theme or pages; services this plugin recognises, and your script rules, are then held back."
+msgstr "Scripts marked for Cookiebot with type=\"text/plain\" and data-cookieconsent never run without it: make them normal scripts again in your theme or pages; services this plugin recognizes, and your script rules, are then held back."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookiebot.php:156
+msgid "Deleting Cookiebot removes its main settings but leaves its add-on, widget and notice settings; Remove leftover data deletes those too. Imports never change its settings or contact Cookiebot."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:54
+msgid "This site is connected to the CookieYes web app, which keeps the banner, categories and scripts. Only what is stored on this site is imported, and visitors are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:56
+msgid "CookieYes is still in its legacy (version 2) mode. Its settings and visitors' choices are not imported: set the banner up here, and visitors are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:58
+msgid "The CookieYes banner follows CCPA (opt-out), so visitors' choices are not carried over: they are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:60
+msgid "Scripts you marked for CookieYes in your theme (data-cookieyes, type=\"text/plain\") stay switched off once it is gone: remove those two attributes so this plugin holds them back instead."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-cookieyes.php:283
+msgid "CookieYes keeps its data when deleted unless CKY_REMOVE_ALL_DATA is set; use Remove leftover data afterwards. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:64
+msgid "Visitors' Ultimate GDPR & CCPA choices are not carried over: its cookie format was not checked on a running site, so visitors are asked again once."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:68
+msgid "Ultimate GDPR & CCPA was not set to block cookies, so its banner did not hold anything back. This plugin holds back recognised services and the rules below until visitors agree."
+msgstr "Ultimate GDPR & CCPA was not set to block cookies, so its banner did not hold anything back. This plugin holds back recognized services and the rules below until visitors agree."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:71
+msgid "Ultimate GDPR & CCPA showed its banner only on selected pages. Here the banner shows on every page, so Who is asked first is left as it is."
+msgstr ""
+
+#. translators: %s: list of service names with their script keywords.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:83
+#, php-format
+msgid "These Ultimate GDPR & CCPA script keywords are not addresses, so they are not imported: %s. Add any this plugin does not recognise under Troubleshooting → Also hold back."
+msgstr "These Ultimate GDPR & CCPA script keywords are not addresses, so they are not imported: %s. Add any this plugin does not recognize under Troubleshooting → Also hold back."
+
+#. translators: %s: list of shortcodes.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:95
+#, php-format
+msgid "Its privacy request forms, age gate and acceptance boxes are not cookie consent and are not replaced: %s. They stop working when it is removed; use WordPress's own export and erase personal data tools, or another forms plugin."
+msgstr ""
+
+#. translators: %s: user name.
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:99
+#, php-format
+msgid "Its cookie scanner left the user %s behind, which it hides from the Users screen while active. Delete that user after deactivating it."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:102
+msgid "Its banner texts are not imported: they describe its own banner."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-ct-gdpr.php:260
+msgid "Deleting Ultimate GDPR & CCPA removes only its files: its settings, services and consent log stay. Remove leftover data deletes its settings and services after it is deactivated, and keeps its consent log and the consents saved on user accounts. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:69
+msgid "Its TCF (IAB framework) setting is not imported and stops when it is removed."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:72
+msgid "iubenda also handled US or Brazilian privacy laws, which have no equivalent here. Check Who is asked first before switching."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:75
+msgid "iubenda held back Google Tag Manager; this plugin recognises and holds it back too."
+msgstr "iubenda held back Google Tag Manager; this plugin recognizes and holds it back too."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:78
+msgid "iubenda was set up with pasted code, so its banner position and who it asked are not imported."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:82
+msgid "A menu has an iubenda preferences link (class iubenda-cs-preferences-link). Replace it with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:85
+msgid "An iubenda legal widget is in a sidebar. It stops showing when iubenda is removed: link to your policies instead."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:88
+msgid "iubenda sent form submissions to its hosted consent database. That stops when it is removed; its records stay with iubenda."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-iubenda.php:228
+msgid "Deleting iubenda removes its settings only if its own delete-on-deactivation option is on; Remove leftover data deletes its settings, form mappings and scheduled checks. Imports never change its settings or contact iubenda."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:98
+msgid "Some categories were on before visitors chose, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:100
+msgid "Its close button accepted all cookies, which is not a clear choice: only rejections carry over, and visitors who accepted are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:102
+msgid "If its add-on accepted cookies on scroll or after a timer, those look the same as Accept: choose Stop carrying over old consent so visitors are asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:104
+msgid "GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognises, are then held back until visitors allow them. Copy them before removing leftover data."
+msgstr "GDPR Cookie Compliance added your category scripts itself; they stop when it is gone. Add them to your theme or a header-code plugin after switching: the script rules below, and services this plugin recognizes, are then held back until visitors allow them. Copy them before removing leftover data."
+
+#. translators: 1: service name, 2: its tracking ID.
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:114
+#, php-format
+msgid "GDPR Cookie Compliance loaded %1$s (%2$s) itself; it stops when the plugin is gone. Add it to your site another way, such as Site Kit or your theme: this plugin recognises it and holds it back."
+msgstr "GDPR Cookie Compliance loaded %1$s (%2$s) itself; it stops when the plugin is gone. Add it to your site another way, such as Site Kit or your theme: this plugin recognizes it and holds it back."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:127
+msgid "no ID"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-moove.php:238
+msgid "GDPR Cookie Compliance keeps its settings table when deleted; use Remove leftover data afterwards. Copy its category scripts first. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:44
+msgid "country bypass"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:45
+msgid "consent forwarding"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:46
+msgid "banner-less consent"
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:71
+msgid "The Real Cookie Banner banner is switched off, so visitors' choices are not carried over."
+msgstr ""
+
+#. translators: %s: list of Real Cookie Banner Pro features.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:81
+#, php-format
+msgid "Real Cookie Banner Pro settings are not imported and stop when it is removed: %s. Check Who is asked first and your Google tags before switching; visitors' choices are not carried over while country bypass or banner-less consent is on."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:83
+msgid "Real Cookie Banner let visitors choose single services. A category carries over as allowed only when every Real Cookie Banner service in it was accepted; otherwise it is refused. Closing its banner with the close icon is not carried over."
+msgstr ""
+
+#. translators: %s: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:92
+#, php-format
+msgid "Real Cookie Banner ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognises, and the script rules below, are then held back."
+msgstr "Real Cookie Banner ran code for these services, which stops when it is removed: %s. Add any code you still need to your theme or a header-code plugin; services this plugin recognizes, and the script rules below, are then held back."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:95
+msgid "A menu has Real Cookie Banner privacy links (#consent-change, #consent-history or #consent-revoke). Replace them with a #cookie-settings link, or rely on the Cookie settings footer link."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:98
+msgid "Its banner texts are not imported: they describe its own dialog."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-real-cookie-banner.php:427
+msgid "Deleting Real Cookie Banner removes only its copied script files; its settings, services, content blockers and consent records stay. Remove leftover data deletes its settings, services, content blockers, groups and scan and statistics tables, but keeps consent records and the revisions they refer to. Imports never change its settings."
+msgstr ""
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:221
+#, php-format
+msgid "%s keeps its banner texts, categories and cookie scan in its own dashboard, which this import never contacts; only settings saved on this site are imported. Check Who is asked first, Banner position, Banner message and Remember choices for here before switching."
+msgstr ""
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:223
+#, php-format
+msgid "Visitors' %s choices are not carried over: its hosted script stores them in a format not checked against a live account, so visitors are asked again once."
+msgstr ""
+
+#. translators: 1: name of the old consent plugin, 2: list of service names.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:233
+#, php-format
+msgid "Compare %1$s's cookie scan with the services this plugin found on your pages: %2$s. Add anything missing under Troubleshooting → Also hold back."
+msgstr ""
+
+#. translators: %s: name of the old consent plugin.
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:236
+#, php-format
+msgid "This plugin has not found services on your pages yet. After switching, use Scan now on the Cookie consent tab and compare its list with %s's cookie scan; add anything missing under Troubleshooting → Also hold back."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-source.php:238
+msgid "Consent records it kept on its own servers stay there: export any you must keep before closing that account. Turn on Keep consent records here to go on documenting choices."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:42
+msgid "Termly's auto blocker held back scripts it recognised. This plugin holds back the services it recognises; compare the lists above."
+msgstr "Termly's auto blocker held back scripts it recognized. This plugin holds back the services it recognizes; compare the lists above."
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:46
+msgid "Termly may have added a \"TermlyBot\" section to your robots.txt file. Remove it after switching, if it is there."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-termly.php:128
+msgid "Deleting Termly leaves its settings and daily account check; Remove leftover data deletes them, including its saved API key. Imports never change its settings or contact Termly."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:53
+msgid "The WPConsent banner is switched off, so visitors' choices are not carried over."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:56
+msgid "WPConsent let visitors choose single services. Only its Statistics and Marketing choices carry over; anyone who chose only some services in a category is asked again."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:58
+msgid "WPConsent Pro geolocation rules and custom scripts are not imported: check Who is asked first, and add any custom scripts to your theme or a header-code plugin before switching."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate-wpconsent.php:180
+msgid "WPConsent removes its cookie list and settings when deleted only if its own delete-data option is on; Remove leftover data deletes its settings and scan tables but not that cookie list. Imports never change its settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:109
+msgid "Unknown import source."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:168
+msgid "You cannot import settings."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:204
+msgid "You do not have permission for this action."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:207
+msgid "Another import action is running. If an interrupted action left a lock, review its import record before removing the lock."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:225
+msgid "Unknown import action."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:251
+msgid "A selected page cannot be edited with a saved revision."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:266
+msgid "A source document could not render. It was not replaced."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:280
+msgid "A page revision could not be saved. Nothing was replaced."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:309
+msgid "The undo record could not be saved."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:361
+msgid "This import cannot be undone."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:367
+msgid "Settings changed after import. Restore the imported values before undoing, so later edits are not lost."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:373
+msgid "A page changed after import or its revision is missing. Undo was stopped to protect later edits."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:378
+msgid "A page revision could not be restored. The undo record was kept."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:393
+msgid "Cleanup needs permission to manage options and delete plugins."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:400
+msgid "Deactivate the source on this site and network before removing leftover data."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:405
+msgid "Network-wide data is not deleted."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:408
+msgid "The leftovers list changed. Review a fresh dry run before confirming."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:414
+msgid "A source table could not be removed. Review a new dry run."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:426
+msgid "A source post could not be removed. Review a new dry run."
+msgstr ""
+
+#: includes/migrate/class-seoprocookieconsent-migrate.php:447
+msgid "A source term could not be removed. Review a new dry run."
+msgstr ""
+
+#. translators: %s: folder under uploads
+#: includes/migrate/class-seoprocookieconsent-migrate.php:477
+#, php-format
+msgid "The folder uploads/%s could not be removed. Delete it yourself, or review a new dry run."
+msgstr ""
+
+#: includes/views/consent-banner.php:28
+msgid "login"
+msgstr ""
+
+#: includes/views/consent-banner.php:29
+msgid "security"
+msgstr ""
+
+#: includes/views/consent-banner.php:99
+msgid "Your consent ID:"
+msgstr ""
+
+#: includes/views/consent-banner.php:101
+msgid "Copy consent ID"
+msgstr ""
+
+#: includes/views/consent-banner.php:101
+msgid "Copy"
+msgstr ""
+
+#: includes/views/consent-banner.php:102
+msgid "Consent ID copied."
+msgstr ""
+
+#: includes/views/consent-banner.php:102
+msgid "Could not copy. Select the consent ID and copy it manually."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:381
+msgid "Name the product by its item ID in the shop."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:384
+msgid "Enter the licence key from the purchase receipt or the account on wpallstars.com."
+msgstr "Enter the license key from the purchase receipt or the account on wpallstars.com."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:413
+msgid "No licence key is stored for this product."
+msgstr "No license key is stored for this product."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:417
+msgid "This site cannot read the stored licence key: its security keys changed, or it was copied from another site. Activate the key again."
+msgstr "This site cannot read the stored license key: its security keys changed, or it was copied from another site. Activate the key again."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:524
+msgid "The shop does not know this licence key. Check it against the purchase receipt."
+msgstr "The shop does not know this license key. Check it against the purchase receipt."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:525
+msgid "This licence has expired. Renew it in the account on wpallstars.com, then check it again."
+msgstr "This license has expired. Renew it in the account on wpallstars.com, then check it again."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:529
+msgid "This site is no longer activated for the licence (it was freed in the account on wpallstars.com, or the site's address changed). Activate the key again."
+msgstr "This site is no longer activated for the license (it was freed in the account on wpallstars.com, or the site's address changed). Activate the key again."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:530
+msgid "This licence key is for another product."
+msgstr "This license key is for another product."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:533
+msgid "This licence is not active. Contact support on wpallstars.com."
+msgstr "This license is not active. Contact support on wpallstars.com."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:534
+msgid "This licence is in use on as many sites as it allows. Deactivate it on another site, or upgrade it in the account on wpallstars.com."
+msgstr "This license is in use on as many sites as it allows. Deactivate it on another site, or upgrade it in the account on wpallstars.com."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:535
+msgid "This site is not activated for the licence."
+msgstr "This site is not activated for the license."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:536
+msgid "The shop says this licence is no longer active (refunded, cancelled or disabled). Check the account on wpallstars.com."
+msgstr "The shop says this license is no longer active (refunded, canceled or disabled). Check the account on wpallstars.com."
+
+#. translators: %s: the shop's message
+#: includes/wpallstars-licence/class-wpallstars-licence.php:546
+#, php-format
+msgid "The shop refused the licence: %s"
+msgstr "The shop refused the license: %s"
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:547
+msgid "The shop refused the licence."
+msgstr "The shop refused the license."
+
+#. translators: %s: the error
+#: includes/wpallstars-licence/class-wpallstars-licence.php:586
+#, php-format
+msgid "wpallstars.com could not be reached: %s"
+msgstr ""
+
+#. translators: %d: HTTP status
+#: includes/wpallstars-licence/class-wpallstars-licence.php:593
+#, php-format
+msgid "wpallstars.com gave an answer that is not the licensing API's (HTTP %d). Try again later."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:753
+msgid "Download failed."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:881
+msgid "PHP's sodium functions, which WordPress normally provides, are missing, so the licence key cannot be stored safely."
+msgstr "PHP's sodium functions, which WordPress normally provides, are missing, so the license key cannot be stored safely."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:933
+#: includes/wpallstars-licence/class-wpallstars-licence.php:934
+#: includes/wpallstars-licence/class-wpallstars-licence.php:961
+msgid "Licences"
+msgstr "Licenses"
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:965
+msgid "A licence brings each new release of its product from wpallstars.com as a normal WordPress update. Without one the product keeps working, but is not updated. Licences are checked once a day from WP-Cron, never while a visitor loads a page, sending the key, this site's address and the WordPress, PHP and product versions."
+msgstr "A license brings each new release of its product from wpallstars.com as a normal WordPress update. Without one the product keeps working, but is not updated. Licenses are checked once a day from WP-Cron, never while a visitor loads a page, sending the key, this site's address and the WordPress, PHP and product versions."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:967
+msgid "One licence per product covers the whole network."
+msgstr "One license per product covers the whole network."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:971
+msgid "Product"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:972
+msgid "Licence"
+msgstr "License"
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:973
+msgid "Actions"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:982
+msgid "This version still updates from elsewhere; a later release moves it to wpallstars.com."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:997
+msgid "Licence key"
+msgstr "License key"
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:999
+msgid "Activate"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1001
+msgid "Check now"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1002
+msgid "Deactivate"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1024
+msgid "No licence: not updated from wpallstars.com."
+msgstr "No license: not updated from wpallstars.com."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1027
+msgid "The stored key cannot be read on this site; activate it again."
+msgstr ""
+
+#. translators: %s: time span such as "3 hours"
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1032
+#, php-format
+msgid "checked %s ago"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1033
+msgid "not checked yet"
+msgstr ""
+
+#. translators: %s: date
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1037
+#, php-format
+msgid "renews or expires on %s"
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1038
+msgid "never expires"
+msgstr ""
+
+#. translators: 1: plan, 2: key's last four characters, 3: sites in use, 4: sites allowed, 5: when it expires, 6: when it was checked
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1040
+#, php-format
+msgid "%1$s (key ending %2$s): %3$d of %4$d sites, %5$s; %6$s."
+msgstr ""
+
+#. translators: 1: plan, 2: key's last four characters, 3: sites in use, 4: sites allowed, 5: when it expires, 6: when it was checked
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1040
+msgid "Active"
+msgstr ""
+
+#. translators: 1: date, 2: when it was checked
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1044
+#, php-format
+msgid "Expired on %1$s (%2$s): not updated until it is renewed."
+msgstr ""
+
+#. translators: 1: key's last four characters, 2: when it was checked
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1047
+#, php-format
+msgid "Not valid (key ending %1$s, %2$s): not updated."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1058
+msgid "Sorry, you are not allowed to manage licences."
+msgstr "Sorry, you are not allowed to manage licenses."
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1065
+msgid "That product is not installed."
+msgstr ""
+
+#. translators: %s: product slugs, comma-separated.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:270
+#, php-format
+msgid "Name the plugin or theme the report is about, one of: %s."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:279
+msgid "A report needs a title and details."
+msgstr ""
+
+#. translators: %d: number of drafts.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:307
+#, php-format
+msgid "There are already %d draft reports waiting for review. Send or delete some in Tools → Report a problem first."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:341
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1034
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1205
+msgid "That report no longer exists."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:344
+msgid "That report has been sent already."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Improvement"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:432
+msgid "Problem"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:640
+msgid "That plugin or theme no longer takes reports here."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:660
+msgid "The site could not send email."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:710
+#: includes/wpallstars-reports/class-wpallstars-reports.php:711
+#: includes/wpallstars-reports/class-wpallstars-reports.php:769
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1112
+msgid "Report a problem"
+msgstr ""
+
+#. translators: %d: number of draft reports.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:743
+#, php-format
+msgid "Your AI assistant drafted %d report about a wpallstars plugin or theme. Nothing is sent until you review it."
+msgid_plural "Your AI assistant drafted %d reports about wpallstars plugins or themes. Nothing is sent until you review them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:752
+msgid "Review reports"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:761
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1012
+msgid "Sorry, you are not allowed to review reports."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:772
+msgid "New report"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:793
+msgid "Draft saved. Check what will be sent below, then send it."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:794
+msgid "Report sent. Thank you: the maker will look into it."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:795
+msgid "Report deleted."
+msgstr ""
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:826
+#, php-format
+msgid "a public GitHub issue on %s"
+msgstr ""
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:829
+#, php-format
+msgid "a private email to %s"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:839
+msgid "Tell the makers of the wpallstars plugins and themes on this site about a problem or an improvement, so every site using them gets the fix. Your AI assistant can draft reports too (the wpallstars/report-problem ability, or wp wpallstars report create); nothing leaves the site until an administrator sends it here."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:852
+msgid "No reports yet."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:937
+msgid "Title"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:917
+msgid "Plugin or theme"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+#: includes/wpallstars-reports/class-wpallstars-reports.php:927
+msgid "Type"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Status"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Drafted by"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:856
+msgid "Date"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "Administrator"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:867
+msgid "AI assistant"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:882
+msgid "Draft, waiting for review"
+msgstr ""
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:887
+#, php-format
+msgid "Opened on GitHub %s"
+msgstr ""
+
+#. translators: %s: date.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:890
+#, php-format
+msgid "Emailed %s"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:907
+msgid "All reports"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:909
+msgid "Your AI assistant drafted this report. Check it says what you want the maker to know, change anything that is wrong, then send it."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:941
+msgid "Details"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:944
+msgid "What you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Leave out passwords and licence keys."
+msgstr "What you did, what you expected and what happened, with the steps to see it again, or the improvement and why it would help. Leave out passwords and license keys."
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:955
+msgid "Save draft"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:960
+msgid "Open the issue on GitHub"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:962
+msgid "Send by email"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:969
+msgid "Delete"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:984
+msgid "What will be sent"
+msgstr ""
+
+#. translators: %s: GitHub repository, owner/name.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:988
+#, php-format
+msgid "Opens a new issue on GitHub (%s) with this text filled in, for you to submit with your own GitHub account. GitHub issues are public, so the site's address, email and IP addresses, server paths and anything that looks like a key are taken out. Check the text below before you submit it."
+msgstr ""
+
+#. translators: %s: email address.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:996
+#, php-format
+msgid "Sent privately by this site's email to %s, with your name and email address to reply to. Anything that looks like a password or key is taken out."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1003
+msgid "Changed the text or the plugin or theme? Save the draft to see the new version here."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1098
+msgid "wpallstars plugins and themes"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1099
+msgid "Problem reports and improvements for the makers of the wpallstars plugins and themes on this site."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1113
+msgid "Draft a problem report or an improvement for the maker of one of this site's wpallstars plugins or themes (list them with wpallstars/reports), so every site using it gets the fix. Use it when a problem or improvement belongs to that product's own code, not to this site's content or settings. It only saves a draft: nothing leaves the site until a site administrator reviews and sends it in Tools → Report a problem, so tell them to. Say what was done, what was expected and what happened, with steps, versions and error messages; leave out passwords, keys and personal data."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1123
+msgid "The plugin folder or theme the report is about. May be left out when only one takes reports."
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1151
+msgid "Problem reports"
+msgstr ""
+
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1152
+msgid "List the wpallstars plugins and themes that take problem reports, where each sends them, and this site's reports with their status; with an id, one report and exactly what would be sent."
+msgstr ""
+
+#. translators: %s: address of the Report a problem screen.
+#: includes/wpallstars-reports/class-wpallstars-reports.php:1188
+#, php-format
+msgid "Saved as a draft; nothing has been sent. Ask a site administrator to review and send it in Tools → Report a problem: %s"
+msgstr ""
+
+#: admin/js/seoprocookieconsent-theme.js:24
+msgid "Light"
+msgstr ""
+
+#: admin/js/seoprocookieconsent-theme.js:28
+msgid "Dark"
+msgstr ""
+
+#: admin/js/seoprocookieconsent-theme.js:32
+msgid "System"
+msgstr ""
+
+#. translators: %s: the colour mode, Light, Dark or System.
+#: admin/js/seoprocookieconsent-theme.js:63
+#, js-format
+msgid "Colour mode: %s"
+msgstr "Color mode: %s"
+
+#: admin/js/seoprocookieconsent-theme.js:106
+msgid "The colour mode could not be saved. Please try again."
+msgstr "The color mode could not be saved. Please try again."
+
+#: admin/js/seoprocookieconsent-theme.js:185
+msgid "Colour mode"
+msgstr "Color mode"
