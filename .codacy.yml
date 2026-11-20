@@ -6,3 +6,8 @@
 exclude_paths:
   - "composer.lock"
   - "assets/build/**"
+  # Shared starter core files (scripts/core-files.txt): the starter holds the
+  # master copy and is analysed there; a copy here must not be edited, so
+  # complexity findings are fixed upstream and synced back.
+  - "includes/wpallstars-licence/**"
+  - "scripts/lib/shop-release-remote.php"
