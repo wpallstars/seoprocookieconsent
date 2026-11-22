@@ -123,7 +123,7 @@ msgstr "(atveras jaunā cilnē)"
 #. translators: Browser title of a section of an admin screen. 1: the screen's name, 2: the section's name.
 #. translators: 1: product name, 2: the licence's state
 #: admin/includes/class-admin-page.php:170
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1130
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1195
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
@@ -3412,189 +3412,197 @@ msgstr ""
 msgid "We use artificial intelligence (AI) services from several providers to help develop this website and our services, and may also use them to help answer questions and support requests, and deliver orders. By using this website and our services, you accept that they are provided with AI support."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:430
+#: includes/wpallstars-licence/class-wpallstars-licence.php:460
 msgid "Name the product by its item ID in the shop."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:433
+#: includes/wpallstars-licence/class-wpallstars-licence.php:463
 msgid "Enter the licence key from the purchase receipt or the account on wpallstars.com."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:465
+#: includes/wpallstars-licence/class-wpallstars-licence.php:495
 msgid "No licence key is stored for this product."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:469
+#: includes/wpallstars-licence/class-wpallstars-licence.php:499
 msgid "This site cannot read the stored licence key: its security keys changed, or it was copied from another site. Activate the key again."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:576
+#: includes/wpallstars-licence/class-wpallstars-licence.php:638
 msgid "The shop does not know this licence key. Check it against the purchase receipt."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:577
+#: includes/wpallstars-licence/class-wpallstars-licence.php:639
 msgid "This licence has expired. Renew it in the account on wpallstars.com, then check it again."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:581
+#: includes/wpallstars-licence/class-wpallstars-licence.php:643
 msgid "This site is no longer activated for the licence (it was freed in the account on wpallstars.com, or the site's address changed). Activate the key again."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:582
+#: includes/wpallstars-licence/class-wpallstars-licence.php:644
 msgid "This licence key is for another product."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:585
+#: includes/wpallstars-licence/class-wpallstars-licence.php:647
 msgid "This licence is not active. Contact support on wpallstars.com."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:586
+#: includes/wpallstars-licence/class-wpallstars-licence.php:648
 msgid "This licence is in use on as many sites as it allows. Deactivate it on another site, or upgrade it in the account on wpallstars.com."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:587
+#: includes/wpallstars-licence/class-wpallstars-licence.php:649
 msgid "This site is not activated for the licence."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:588
+#: includes/wpallstars-licence/class-wpallstars-licence.php:650
 msgid "The shop says this licence is no longer active (refunded, cancelled or disabled). Check the account on wpallstars.com."
 msgstr ""
 
 #. translators: %s: the shop's message
-#: includes/wpallstars-licence/class-wpallstars-licence.php:598
+#: includes/wpallstars-licence/class-wpallstars-licence.php:660
 #, php-format
 msgid "The shop refused the licence: %s"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:599
+#: includes/wpallstars-licence/class-wpallstars-licence.php:661
 msgid "The shop refused the licence."
 msgstr ""
 
 #. translators: %s: the error
-#: includes/wpallstars-licence/class-wpallstars-licence.php:638
+#: includes/wpallstars-licence/class-wpallstars-licence.php:700
 #, php-format
 msgid "wpallstars.com could not be reached: %s"
 msgstr ""
 
 #. translators: %d: HTTP status
-#: includes/wpallstars-licence/class-wpallstars-licence.php:645
+#: includes/wpallstars-licence/class-wpallstars-licence.php:707
 #, php-format
 msgid "wpallstars.com gave an answer that is not the licensing API's (HTTP %d). Try again later."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:805
+#: includes/wpallstars-licence/class-wpallstars-licence.php:867
 msgid "Download failed."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:933
+#: includes/wpallstars-licence/class-wpallstars-licence.php:998
 msgid "PHP's sodium functions, which WordPress normally provides, are missing, so the licence key cannot be stored safely."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:985
-#: includes/wpallstars-licence/class-wpallstars-licence.php:986
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1013
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1050
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1051
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1078
 msgid "Licences"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1017
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1082
 msgid "A licence brings each new release of its product from wpallstars.com as a normal WordPress update. Without one the product keeps working, but is not updated. Licences are checked once a day from WP-Cron, never while a visitor loads a page, sending the key, this site's address and the WordPress, PHP and product versions."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1019
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1084
 msgid "One licence per product covers the whole network."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1023
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1088
 msgid "Product"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1024
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1089
 msgid "Licence"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1025
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1090
 msgid "Actions"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1034
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1099
 msgid "This version still updates from elsewhere; a later release moves it to wpallstars.com."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1049
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1114
 msgid "Licence key"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1051
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1116
 msgid "Activate"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1053
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1118
 msgid "Check now"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1054
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1119
 msgid "Deactivate"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1076
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1141
 msgid "No licence: not updated from wpallstars.com."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1079
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1144
 msgid "The stored key cannot be read on this site; activate it again."
 msgstr ""
 
 #. translators: %s: time span such as "3 hours"
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1084
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1149
 #, php-format
 msgid "checked %s ago"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1085
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1150
 msgid "not checked yet"
 msgstr ""
 
 #. translators: %s: date
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1089
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1154
 #, php-format
 msgid "renews or expires on %s"
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1090
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1155
 msgid "never expires"
 msgstr ""
 
 #. translators: 1: plan, 2: key's last four characters, 3: sites in use, 4: sites allowed, 5: when it expires, 6: when it was checked
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1092
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1157
 #, php-format
 msgid "%1$s (key ending %2$s): %3$d of %4$d sites, %5$s; %6$s."
 msgstr ""
 
 #. translators: 1: plan, 2: key's last four characters, 3: sites in use, 4: sites allowed, 5: when it expires, 6: when it was checked
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1092
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1157
 msgid "Active"
 msgstr ""
 
 #. translators: 1: date, 2: when it was checked
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1096
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1161
 #, php-format
 msgid "Expired on %1$s (%2$s): not updated until it is renewed."
 msgstr ""
 
 #. translators: 1: key's last four characters, 2: when it was checked
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1099
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1164
 #, php-format
 msgid "Not valid (key ending %1$s, %2$s): not updated."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1110
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1175
 msgid "Sorry, you are not allowed to manage licences."
 msgstr ""
 
-#: includes/wpallstars-licence/class-wpallstars-licence.php:1117
+#: includes/wpallstars-licence/class-wpallstars-licence.php:1182
 msgid "That product is not installed."
 msgstr ""
 
 #: includes/wpallstars-licence/class-wpallstars-licence.php:285
 msgid "The licence could not be saved because another request holds the save lock. Try again."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:308
+msgid "The licence could not be written to the database. Try again."
+msgstr ""
+
+#: includes/wpallstars-licence/class-wpallstars-licence.php:550
+msgid "The key was freed in the shop, but another key was activated meanwhile and was kept."
 msgstr ""
