@@ -1,7 +1,7 @@
 {
   "schema": "aidevops.repo-metrics.v1",
   "schema_version": 1,
-  "generated_at": "2026-11-23T14:43:15Z",
+  "generated_at": "2026-11-24T19:58:51Z",
   "tool": {
     "name": "aidevops repo-metrics",
     "version": "1.0.0"
@@ -12,9 +12,9 @@
   },
   "summary": {
     "source_files": 171,
-    "code": 33900,
-    "comments": 9954,
-    "blanks": 3212,
+    "code": 33954,
+    "comments": 9967,
+    "blanks": 3215,
     "languages": 10,
     "dependencies": 14
   },
@@ -25,25 +25,25 @@
       "code": 13127,
       "comments": 6905,
       "blanks": 1285,
-      "percentage": 38.72,
+      "percentage": 38.66,
       "color": "#4F5D95"
     },
     {
       "name": "Shell",
       "files": 35,
-      "code": 9400,
-      "comments": 2219,
-      "blanks": 695,
-      "percentage": 27.73,
+      "code": 9435,
+      "comments": 2232,
+      "blanks": 696,
+      "percentage": 27.79,
       "color": "#89e051"
     },
     {
       "name": "Markdown",
       "files": 15,
-      "code": 3347,
+      "code": 3366,
       "comments": 0,
-      "blanks": 601,
-      "percentage": 9.87,
+      "blanks": 603,
+      "percentage": 9.91,
       "color": "#083fa1"
     },
     {
@@ -52,7 +52,7 @@
       "code": 2581,
       "comments": 411,
       "blanks": 187,
-      "percentage": 7.61,
+      "percentage": 7.6,
       "color": "#f1e05a"
     },
     {
@@ -61,7 +61,7 @@
       "code": 1979,
       "comments": 48,
       "blanks": 13,
-      "percentage": 5.84,
+      "percentage": 5.83,
       "color": "#6e7781"
     },
     {
@@ -70,7 +70,7 @@
       "code": 1794,
       "comments": 171,
       "blanks": 331,
-      "percentage": 5.29,
+      "percentage": 5.28,
       "color": "#563d7c"
     },
     {
@@ -79,7 +79,7 @@
       "code": 799,
       "comments": 0,
       "blanks": 0,
-      "percentage": 2.36,
+      "percentage": 2.35,
       "color": "#292929"
     },
     {
@@ -88,7 +88,7 @@
       "code": 762,
       "comments": 178,
       "blanks": 90,
-      "percentage": 2.25,
+      "percentage": 2.24,
       "color": "#cb171e"
     },
     {
