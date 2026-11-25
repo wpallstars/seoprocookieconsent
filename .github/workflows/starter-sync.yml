@@ -88,8 +88,15 @@ jobs:
         run: |
           # GitHub's API sometimes answers with a passing "Something went
           # wrong" error (GH#236): retry each gh call before failing.
+          # "issue create" is never retried: it has no idempotency key, so a
+          # replay after a lost response could open a duplicate issue (and,
+          # with the dispatch label, start a second worker).
           gh() {
             local try
+            if [[ "${1:-}" == "issue" && "${2:-}" == "create" ]]; then
+              command gh "$@"
+              return $?
+            fi
             for try in 1 2 3; do
               command gh "$@" && return 0
               [[ "$try" -lt 3 ]] && sleep $((try * 5))
