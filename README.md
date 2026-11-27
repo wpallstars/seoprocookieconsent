@@ -426,6 +426,7 @@ Deleting the plugin removes its settings (on multisite, every site's and the net
 
 ### Unreleased
 
+- Developers: core files synced with WP Plugin Starter commit 7d210b8 (#248). `CONTRIBUTING.md` and `DEVELOPMENT.md` follow the starter (reasons for n/a checklist items and dependency PR checks; the pull request template is filled in). The `sonarcloud.yml` workflow keeps its `SonarSource/sonarqube-scan-action` 8.5.1 pin until the starter takes it. No change to the plugin's behaviour.
 - Developers: core files synced with WP Plugin Starter commit 7363e11 (#240). `scripts/deploy-sites.sh` clears `CDPATH` before `cd`, so a `CDPATH` set in the shell can no longer change where the script runs. No change to the plugin's behaviour.
 - Developers: core files synced with WP Plugin Starter commit 1567c82 (#237). `scripts/deploy-sites.sh` takes the starter's `--zip` hardening, `RELEASING.md` its deploy-step fixes (`scripts/build-release.sh` named, consistent indent), and the Starter sync workflow the starter's own retry of transient `gh` API errors in place of this plugin's copy. No change to the plugin's behaviour.
 - Developers: core files synced with WP Plugin Starter commit 55531c6 (#234). `scripts/deploy-sites.sh`, the Scorecard workflow (ossf/scorecard-action 2.6.0, upload-sarif 4.39.4), `DEVELOPMENT.md` and `RELEASING.md` follow the starter. No change to the plugin's behaviour.
